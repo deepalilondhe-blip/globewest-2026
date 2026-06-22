@@ -1,0 +1,32 @@
+{
+  "name": "globewest-qa-2026",
+  "version": "1.0.0",
+  "description": "Accessibility and Functional Journey QA Automation for GlobeWest Storefront (2026)",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:accessibility": "playwright test tests/accessibility.spec.js",
+    "test:journeys": "playwright test tests/journeys.spec.js",
+    "test:nvda": "playwright test tests/nvda-check.spec.js",
+    "test:nvda-w3c": "playwright test tests/nvda-w3c.spec.js",
+    "test:amazon": "playwright test tests/amazon-accessibility.spec.js",
+    "report": "playwright show-report"
+  },
+  "keywords": [
+    "accessibility",
+    "playwright",
+    "wcag-2.2",
+    "axe-core",
+    "guidepup",
+    "nvda"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@guidepup/playwright": "^0.13.0",
+    "@playwright/test": "^1.60.0"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "^4.11.3"
+  }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility Dummy Test Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #fafafa;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    .button-container {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+    button {
+      padding: 10px 15px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    /* Inaccessible focus style */
+    .no-focus-outline:focus {
+      outline: none;
+    }
+    /* Skip to main content style */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #e0533c;
+      color: white;
+      padding: 8px;
+      z-index: 100;
+      transition: top 0.2s;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to Main Content</a>
+
+  <div class="card">
+    <h2>1st Task: Screen Reader NVDA Automation Sandbox</h2>
+    <p>This dummy page contains elements to demonstrate how NVDA automation reads content.</p>
+  </div>
+
+  <main id="main-content" tabindex="-1">
+    
+    <!-- ACCESSIBLE COMPONENT -->
+    <div class="card">
+      <h3>🟢 Accessible Component</h3>
+      <p>This button has a descriptive screen reader label:</p>
+      <div class="button-container">
+        <button id="accessible-btn" aria-label="Close Shopping Cart">✖</button>
+      </div>
+    </div>
+
+    <!-- INACCESSIBLE COMPONENT -->
+    <div class="card">
+      <h3>🔴 Inaccessible Component</h3>
+      <p>This button has no text label or aria-label, and its focus outline is hidden:</p>
+      <div class="button-container">
+        <button id="inaccessible-btn" class="no-focus-outline">✖</button>
+      </div>
+    </div>
+
+    <!-- ACCORDION / TOGGLE COMPONENT -->
+    <div class="card">
+      <h3>🟡 Dynamic State Component</h3>
+      <button id="faq-trigger" aria-expanded="false" onclick="toggleFaq()">Toggle Product Description</button>
+      <p id="faq-content" style="display:none; margin-top:10px;">
+        This sofa is made of premium timber frames and upholstered in commercial-grade linen.
+      </p>
+    </div>
+
+  </main>
+
+  <script>
+    function toggleFaq() {
+      const trigger = document.getElementById('faq-trigger');
+      const content = document.getElementById('faq-content');
+      const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+      
+      trigger.setAttribute('aria-expanded', !isExpanded);
+      content.style.display = isExpanded ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

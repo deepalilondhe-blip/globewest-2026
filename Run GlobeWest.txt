@@ -1,0 +1,75 @@
+================================================================================
+🛋️ GLOBEWEST 2026 QA AUTOMATION - HOW TO RUN TESTS & SHARE REPORTS
+================================================================================
+
+This document provides the exact commands to execute the accessibility and 
+functional journey test suites inside VS Code, run them in headed mode, and 
+open the HTML reports to share with clients.
+
+--------------------------------------------------------------------------------
+1. GETTING STARTED (First Time Only)
+--------------------------------------------------------------------------------
+Open your terminal in VS Code and run the following setup commands:
+
+  cd "GlobeWest 2026"
+  npm install
+  npx playwright install
+
+--------------------------------------------------------------------------------
+2. RUNNING TESTS IN HEADED MODE (Watch browser execute & hear screen reader)
+--------------------------------------------------------------------------------
+Run these commands inside the "GlobeWest 2026" directory:
+
+* Run the W3C Accessibility Scan using your running System NVDA (Audible Speech):
+  npx playwright test tests/system-nvda.spec.js --project=desktop-chrome --headed
+
+* Run the W3C Accessibility Page NVDA Scan (using portable NVDA setup):
+  npx playwright test tests/nvda-w3c.spec.js --project=desktop-chrome --headed
+
+* Run the Amazon Homepage Accessibility Scan (headed mode):
+  npx playwright test tests/amazon-accessibility.spec.js --project=desktop-chrome --headed
+
+* Run the Dummy Accessibility Scan (headed mode):
+  npx playwright test tests/accessibility-dummy.spec.js --project=desktop-chrome --headed
+
+* Run the full GlobeWest Storefront Accessibility Scan (all 8 templates, headed):
+  npx playwright test tests/accessibility.spec.js --project=desktop-chrome --headed
+
+* Run the GlobeWest Core Functional Journey tests (headed):
+  npx playwright test tests/journeys.spec.js --project=desktop-chrome --headed
+
+* Run the Dummy NVDA Screen Reader simulation (headed):
+  npx playwright test tests/nvda-check.spec.js --project=desktop-chrome --headed
+
+--------------------------------------------------------------------------------
+3. VIEWING & SHARING REPORTS WITH THE CLIENT
+--------------------------------------------------------------------------------
+Playwright generates a fully interactive HTML report containing log outputs, 
+screenshots, and pass/fail states.
+
+* How to open the report locally in VS Code:
+  npm run report
+
+* File path to open directly in a Web Browser:
+  "GlobeWest 2026/playwright-report/index.html"
+  (Right-click this file in VS Code explorer, select "Reveal in File Explorer",
+   and double-click it to open it in Chrome/Edge.)
+
+* How to share it with the Client:
+  Zip the entire folder "GlobeWest 2026/playwright-report" and send it to the 
+  client. They can unzip it, double-click the "index.html" file, and view the 
+  interactive test results on their own machine!
+
+--------------------------------------------------------------------------------
+4. WHAT WAS TESTED
+--------------------------------------------------------------------------------
+* W3C Accessibility Showcase: Loaded the bad demo page, ran NVDA, navigated to 
+  the main logo and search box, and asserted that NVDA spoke the elements.
+* Dummy Page (dummy-a11y.html): Tested skip links, accessible labels (Close Cart),
+  inaccessible controls (missing labels/focus), and accordion state toggles.
+* Amazon Homepage (WCAG 2.2 AA): Scanned the page layout to extract accessibility 
+  violations (e.g. image alt attributes, link labels, structural landmarks).
+* GlobeWest Storefront (8 Templates): Configured POMs and Axe-Core automated scans 
+  to run on Homepage, PLP, PDP, Checkout, My Account, Trade Portal, Search, 
+  and Static pages.
+================================================================================
