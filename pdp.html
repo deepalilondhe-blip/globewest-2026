@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Granada Modular Sectional – GlobeWest 2026</title>
+  <meta name="description" content="View details and order the Granada Modular Sectional sofa.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .pdp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+    .gallery-container {
+      background-color: var(--panel-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      height: 450px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #777;
+      font-size: 1.2rem;
+    }
+    .product-info-panel {
+      display: flex;
+      flex-direction: column;
+    }
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 1.5rem 0;
+    }
+    .qty-btn {
+      width: 44px;
+      height: 44px;
+      background-color: #222;
+      border: 1px solid #444;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .qty-btn:hover {
+      background-color: #333;
+    }
+    .qty-input {
+      width: 60px;
+      height: 44px;
+      text-align: center;
+      background-color: #121212;
+      border: 1px solid #444;
+      color: #fff;
+      font-size: 1.1rem;
+      border-radius: 4px;
+    }
+    .details-tabs {
+      margin-top: 3rem;
+      border-top: 1px solid var(--border-color);
+      padding-top: 2rem;
+    }
+    .tab-headers {
+      display: flex;
+      gap: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .tab-header {
+      color: #a1a1aa;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.2rem 0;
+    }
+    .tab-header.active {
+      color: var(--accent-color);
+      border-bottom: 2px solid var(--accent-color);
+    }
+    @media (max-width: 768px) {
+      .pdp-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+  <header>
+    <a href="index.html" class="logo">GlobeWest<span>2026</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="plp.html">PLP (Browse)</a>
+      <a href="pdp.html" class="active">PDP (Detail)</a>
+      <a href="search.html">Search</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="account.html">Account</a>
+      <a href="trade.html">Trade Portal</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="report.html">Report</a>
+    </nav>
+  </header>
+
+  <main class="main" id="main-content" tabindex="-1">
+    <div class="pdp-grid">
+      <!-- Product Gallery -->
+      <div class="gallery-container" aria-label="Product Images Carousel">
+        📷 Granada Modular Sofa High-Res Main Image
+      </div>
+
+      <!-- Product Purchase Info -->
+      <div class="product-info-panel">
+        <h1>Granada Modular Sectional</h1>
+        <p class="product-price">$3,499.00</p>
+        <p>Expertly crafted with deep, comfortable seating panels and upholstered in premium oatmeal boucle linen. Meets strict durability standards.</p>
+
+        <div style="margin-top: 1.5rem;">
+          <span style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Color / Fabric:</span>
+          <div class="product-swatches">
+            <span class="swatch active" style="background-color: #ddd;" title="Oatmeal" aria-label="Oatmeal Fabric Swatch Option" role="button" tabindex="0"></span>
+            <span class="swatch" style="background-color: #444;" title="Charcoal" aria-label="Charcoal Fabric Swatch Option" role="button" tabindex="0"></span>
+          </div>
+        </div>
+
+        <div class="qty-controls">
+          <label for="qty" style="margin-right: 0.5rem; font-weight: 500;">Quantity:</label>
+          <button class="qty-btn" id="qty-dec" aria-label="Decrease Quantity" onclick="adjustQty(-1)">-</button>
+          <input type="text" id="qty" class="qty-input" value="1" aria-label="Product Quantity Field">
+          <button class="qty-btn" id="qty-inc" aria-label="Increase Quantity" onclick="adjustQty(1)">+</button>
+        </div>
+
+        <button class="btn" style="padding: 1rem 2rem; font-size: 1.1rem; width: 100%; text-align: center; margin-top: 1rem;" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Product Tab details -->
+    <section class="details-tabs" aria-label="Product Specification Details">
+      <div class="tab-headers">
+        <button class="tab-header active" aria-selected="true" role="tab">Specifications</button>
+        <button class="tab-header" aria-selected="false" role="tab">Delivery &amp; Care</button>
+      </div>
+      <div>
+        <p><strong>Dimensions:</strong> Width: 280cm | Depth: 160cm | Height: 85cm</p>
+        <p><strong>Frame Composition:</strong> Solid Tasmanian Oak frame with premium webbed spring suspension and high-density foam filling.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 GlobeWest 2026. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function adjustQty(val) {
+      const qty = document.getElementById('qty');
+      let currentVal = parseInt(qty.value, 10);
+      if (isNaN(currentVal)) currentVal = 1;
+      currentVal += val;
+      if (currentVal < 1) currentVal = 1;
+      qty.value = currentVal;
+    }
+
+    function addToCart() {
+      alert('Product added to checkout cart!');
+    }
+  </script>
+</body>
+</html>

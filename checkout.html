@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout – GlobeWest 2026</title>
+  <meta name="description" content="Secure Checkout page for GlobeWest furniture store.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .checkout-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+    .checkout-step {
+      background-color: var(--panel-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .order-summary {
+      background-color: #06070a;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      position: sticky;
+      top: 20px;
+    }
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.8rem;
+    }
+    .summary-total {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      border-top: 1px solid #333;
+      padding-top: 0.8rem;
+      margin-top: 0.8rem;
+    }
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin: 1rem 0;
+    }
+    .radio-option {
+      background-color: #121212;
+      border: 1px solid #333;
+      padding: 1rem;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .checkout-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+  <header>
+    <a href="index.html" class="logo">GlobeWest<span>2026</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="plp.html">PLP (Browse)</a>
+      <a href="pdp.html">PDP (Detail)</a>
+      <a href="search.html">Search</a>
+      <a href="checkout.html" class="active">Checkout</a>
+      <a href="account.html">Account</a>
+      <a href="trade.html">Trade Portal</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="report.html">Report</a>
+    </nav>
+  </header>
+
+  <main class="main" id="main-content" tabindex="-1">
+    <h1>Secure Checkout</h1>
+    <p>Complete your delivery and payment details to place your order.</p>
+
+    <div class="checkout-grid">
+      <!-- Shipping & Checkout Details Form -->
+      <section aria-label="Checkout Details Form">
+        <div class="checkout-step">
+          <h2>1. Shipping Address</h2>
+          <form id="shipping-form" style="margin-top: 1.5rem;">
+            <div class="form-group">
+              <label for="customer-email">Email Address</label>
+              <input type="email" id="customer-email" class="form-control" placeholder="name@example.com" required>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" name="firstname" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" name="lastname" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="street">Street Address</label>
+              <input type="text" id="street" name="street" class="form-control" placeholder="123 Design Way" required>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label for="city">City / Suburb</label>
+                <input type="text" id="city" name="city" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="postcode">Postcode</label>
+                <input type="text" id="postcode" name="postcode" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="telephone">Telephone Number</label>
+              <input type="tel" id="telephone" name="telephone" class="form-control" placeholder="+61 400 000 000" required>
+            </div>
+          </form>
+        </div>
+
+        <div class="checkout-step">
+          <h2>2. Shipping Method</h2>
+          <div class="radio-group" aria-label="Select Shipping Rate">
+            <label class="radio-option">
+              <input type="radio" name="shipping-method" value="standard" checked>
+              <span><strong>Standard Flat Delivery</strong> - $120.00 (3-5 Business Days)</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="shipping-method" value="white-glove">
+              <span><strong>White-Glove Home Assembly</strong> - $250.00 (Scheduled Delivery)</span>
+            </label>
+          </div>
+        </div>
+
+        <button type="button" class="btn" style="width: 100%; font-size: 1.1rem; padding: 1rem;" onclick="submitOrder()">Place Order &amp; Pay</button>
+      </section>
+
+      <!-- Sticky Order Summary -->
+      <aside aria-label="Order Summary Column">
+        <div class="order-summary">
+          <h2>Order Summary</h2>
+          <div style="margin: 1.5rem 0; border-bottom: 1px solid #333; padding-bottom: 1rem;">
+            <div class="summary-row">
+              <span>Granada Modular Sectional (x1)</span>
+              <span>$3,499.00</span>
+            </div>
+          </div>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span>$3,499.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span>$120.00</span>
+          </div>
+          <div class="summary-row summary-total">
+            <span>Total (AUD)</span>
+            <span>$3,619.00</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 GlobeWest 2026. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function submitOrder() {
+      const email = document.getElementById('customer-email').value;
+      const firstName = document.getElementById('firstname').value;
+      if (!email || !firstName) {
+        alert('Please fill out the shipping address details!');
+        return;
+      }
+      alert('Order successfully placed! Order Number: GW-882901');
+    }
+  </script>
+</body>
+</html>

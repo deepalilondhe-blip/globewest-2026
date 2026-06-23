@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B2B Trade Registration – GlobeWest 2026</title>
+  <meta name="description" content="Register for a GlobeWest trade account.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .trade-form-container {
+      max-width: 650px;
+      margin: 2rem auto;
+      background-color: var(--panel-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 2.5rem;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+  <header>
+    <a href="index.html" class="logo">GlobeWest<span>2026</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="plp.html">PLP (Browse)</a>
+      <a href="pdp.html">PDP (Detail)</a>
+      <a href="search.html">Search</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="account.html">Account</a>
+      <a href="trade.html" class="active">Trade Portal</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="report.html">Report</a>
+    </nav>
+  </header>
+
+  <main class="main" id="main-content" tabindex="-1">
+    <div class="trade-form-container">
+      <h1>B2B Trade Application</h1>
+      <p>Register as a certified trade client (Interior Designers, Architects, Builders, and Retailers) to access wholesale pricing catalogues.</p>
+
+      <form id="trade-registration-form" style="margin-top: 2rem;" aria-label="Trade Account Registration Form">
+        <h2>Company Details</h2>
+        <hr style="border: none; border-top: 1px solid #333; margin: 1rem 0;">
+
+        <div class="form-group">
+          <label for="company-name">Company Legal Name</label>
+          <input type="text" id="company-name" name="company-name" class="form-control" placeholder="e.g. ACME Furnishings Pty Ltd" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label for="abn">Australian Business Number (ABN)</label>
+            <input type="text" id="abn" name="abn" class="form-control" placeholder="11 222 333 444" required>
+          </div>
+          <div class="form-group">
+            <label for="trade-category">Trade Category</label>
+            <select id="trade-category" name="trade-category" class="form-control" required>
+              <option value="">Select a category...</option>
+              <option value="Interior Designer">Interior Designer</option>
+              <option value="Architect">Architect</option>
+              <option value="Builder / Developer">Builder / Developer</option>
+              <option value="Furniture Retailer">Furniture Retailer</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="website">Company Website URL</label>
+          <input type="url" id="website" name="website" class="form-control" placeholder="https://mycompany.com.au" required>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <input type="checkbox" id="terms-agree" style="margin-right: 0.5rem;" required>
+          <label for="terms-agree">I agree to the GlobeWest Trade terms of service and verify that the business details provided are active and valid.</label>
+        </div>
+
+        <button type="button" class="btn" style="width: 100%; margin-top: 2rem; padding: 1rem;" onclick="submitTradeForm()">Submit Trade Application</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 GlobeWest 2026. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function submitTradeForm() {
+      const company = document.getElementById('company-name').value;
+      const abn = document.getElementById('abn').value;
+      const category = document.getElementById('trade-category').value;
+      const agree = document.getElementById('terms-agree').checked;
+
+      if (!company || !abn || !category) {
+        alert('Please fill out all trade company details!');
+        return;
+      }
+      if (!agree) {
+        alert('You must agree to the Trade Terms of Service to apply!');
+        return;
+      }
+      alert('Trade Application Submitted! Our team will review your business credentials (ABN) within 24-48 hours.');
+    }
+  </script>
+</body>
+</html>

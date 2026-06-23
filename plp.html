@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Furniture – GlobeWest 2026</title>
+  <meta name="description" content="Browse GlobeWest premium sofas and modular lounge furniture.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .plp-container {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .filters-sidebar {
+      width: 250px;
+      flex-shrink: 0;
+      background-color: var(--panel-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+    .products-content {
+      flex: 1;
+    }
+    .sorting-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .product-card {
+      background-color: var(--panel-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.2rem;
+      position: relative;
+    }
+    .product-img {
+      width: 100%;
+      height: 200px;
+      background-color: #333;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    .product-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .product-title:hover {
+      color: var(--accent-color);
+    }
+    .filter-group-title {
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      display: block;
+      border-bottom: 1px solid #333;
+      padding-bottom: 0.4rem;
+      color: #fff;
+    }
+    .filter-list {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+    .filter-list li {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    @media (max-width: 768px) {
+      .plp-container {
+        flex-direction: column;
+      }
+      .filters-sidebar {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+  <header>
+    <a href="index.html" class="logo">GlobeWest<span>2026</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="plp.html" class="active">PLP (Browse)</a>
+      <a href="pdp.html">PDP (Detail)</a>
+      <a href="search.html">Search</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="account.html">Account</a>
+      <a href="trade.html">Trade Portal</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="report.html">Report</a>
+    </nav>
+  </header>
+
+  <main class="main" id="main-content" tabindex="-1">
+    <h1>Sofas &amp; Modulars</h1>
+    <p>Explore our range of premium, handcrafted luxury modular loungers and sofas.</p>
+
+    <div class="plp-container">
+      <!-- Filters Sidebar -->
+      <aside class="filters-sidebar" aria-label="Product Filters">
+        <span class="filter-group-title">Category</span>
+        <ul class="filter-list">
+          <li><input type="checkbox" id="cat-1"><label for="cat-1">3 Seater Sofas</label></li>
+          <li><input type="checkbox" id="cat-2"><label for="cat-2">Modular Loungers</label></li>
+          <li><input type="checkbox" id="cat-3"><label for="cat-3">Daybeds</label></li>
+        </ul>
+
+        <span class="filter-group-title">Color / Material</span>
+        <ul class="filter-list">
+          <li><input type="checkbox" id="col-1"><label for="col-1">Boucle Charcoal</label></li>
+          <li><input type="checkbox" id="col-2"><label for="col-2">Oatmeal Linen</label></li>
+          <li><input type="checkbox" id="col-3"><label for="col-3">Emerald Velvet</label></li>
+        </ul>
+      </aside>
+
+      <!-- Products Grid -->
+      <section class="products-content" aria-label="Products Grid">
+        <div class="sorting-header">
+          <span>Showing 3 Products</span>
+          <div class="form-group" style="margin-bottom: 0; display: flex; align-items: center; gap: 0.5rem;">
+            <label for="sorter" style="margin-bottom: 0;">Sort By:</label>
+            <select id="sorter" class="form-control" style="width: auto; padding: 0.4rem 1.5rem 0.4rem 0.6rem;">
+              <option>Position</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="product-img">📷 Granada Modular Sofa</div>
+            <a href="pdp.html" class="product-title">Granada Modular Sectional</a>
+            <div class="product-price">$3,499.00</div>
+            <div class="product-swatches">
+              <span class="swatch active" style="background-color: #ddd;" title="Oatmeal" aria-label="Oatmeal Color Swatch" role="button" tabindex="0"></span>
+              <span class="swatch" style="background-color: #444;" title="Charcoal" aria-label="Charcoal Color Swatch" role="button" tabindex="0"></span>
+            </div>
+            <a href="pdp.html" class="btn" style="width: 100%; text-align: center; font-size: 0.9rem; padding: 0.6rem;">View Details</a>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img">📷 Vittoria 3-Seater Sofa</div>
+            <a href="pdp.html" class="product-title">Vittoria Velvet 3-Seater</a>
+            <div class="product-price">$2,899.00</div>
+            <div class="product-swatches">
+              <span class="swatch active" style="background-color: #0f5132;" title="Emerald" aria-label="Emerald Color Swatch" role="button" tabindex="0"></span>
+              <span class="swatch" style="background-color: #ddd;" title="Oatmeal" aria-label="Oatmeal Color Swatch" role="button" tabindex="0"></span>
+            </div>
+            <a href="pdp.html" class="btn" style="width: 100%; text-align: center; font-size: 0.9rem; padding: 0.6rem;">View Details</a>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img">📷 Mauritius Lounger</div>
+            <a href="pdp.html" class="product-title">Mauritius Daybed Lounger</a>
+            <div class="product-price">$4,199.00</div>
+            <div class="product-swatches">
+              <span class="swatch active" style="background-color: #beb29e;" title="Beige Rope" aria-label="Beige Rope Swatch" role="button" tabindex="0"></span>
+            </div>
+            <a href="pdp.html" class="btn" style="width: 100%; text-align: center; font-size: 0.9rem; padding: 0.6rem;">View Details</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 GlobeWest 2026. All rights reserved.</p>
+  </footer>
+</body>
+</html>

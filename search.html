@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results – GlobeWest 2026</title>
+  <meta name="description" content="Search the GlobeWest catalog for high-end designer furniture.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .search-panel {
+      background-color: var(--panel-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .search-input-group {
+      display: flex;
+      gap: 1rem;
+    }
+    .results-info {
+      margin-bottom: 1.5rem;
+      color: #a1a1aa;
+    }
+    .search-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+  <header>
+    <a href="index.html" class="logo">GlobeWest<span>2026</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="plp.html">PLP (Browse)</a>
+      <a href="pdp.html">PDP (Detail)</a>
+      <a href="search.html" class="active">Search</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="account.html">Account</a>
+      <a href="trade.html">Trade Portal</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="report.html">Report</a>
+    </nav>
+  </header>
+
+  <main class="main" id="main-content" tabindex="-1">
+    <h1>Search Catalog</h1>
+    <p>Find premium furniture, modular sofas, dining tables, and lighting decor.</p>
+
+    <div class="search-panel">
+      <form action="search.html" method="GET" aria-label="Catalog Search Form">
+        <div class="search-input-group">
+          <div style="flex: 1;">
+            <label for="q" class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">Search query</label>
+            <input type="text" name="q" id="q" class="form-control" placeholder="Type to search (e.g. sofa, table, lounger)..." value="sofa" aria-label="Search catalog input">
+          </div>
+          <button type="submit" class="btn" style="padding: 0.8rem 2.2rem;">Search</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="results-info">
+      <h2>Results for "sofa"</h2>
+      <p>We found 2 premium matches matching your query.</p>
+    </div>
+
+    <div class="search-grid">
+      <div class="card">
+        <h3>Granada Modular Sectional</h3>
+        <p class="product-price">$3,499.00</p>
+        <p>Premium boucle linen, deep modular frames.</p>
+        <a href="pdp.html" class="btn" style="margin-top: 1rem;">View Details</a>
+      </div>
+
+      <div class="card">
+        <h3>Vittoria Velvet 3-Seater</h3>
+        <p class="product-price">$2,899.00</p>
+        <p>Plush velvet seating, australian Tasmanian oak base.</p>
+        <a href="pdp.html" class="btn" style="margin-top: 1rem;">View Details</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 GlobeWest 2026. All rights reserved.</p>
+  </footer>
+</body>
+</html>

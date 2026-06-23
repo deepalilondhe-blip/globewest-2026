@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us – GlobeWest 2026</title>
+  <meta name="description" content="About the GlobeWest accessibility remediation QA scope.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+  <header>
+    <a href="index.html" class="logo">GlobeWest<span>2026</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="plp.html">PLP (Browse)</a>
+      <a href="pdp.html">PDP (Detail)</a>
+      <a href="search.html">Search</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="account.html">Account</a>
+      <a href="trade.html">Trade Portal</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="report.html">Report</a>
+    </nav>
+  </header>
+
+  <main class="main" id="main-content" tabindex="-1">
+    <h1>Project Overview</h1>
+    <p>This repository hosts the isolated GlobeWest 2026 front-end code, test scripts, and documentation. It separates the GlobeWest storefront from the main FLM project to avoid directory conflicts.</p>
+    
+    <h2>🔑 Core Pillars of Accessibility</h2>
+    <ul class="audit-list" style="margin-bottom: 2rem;">
+      <li>Color Contrast (Criteria 1.4.3): Clear 4.5:1 ratio for all body copy.</li>
+      <li>ARIA &amp; Text Labels (Criteria 1.1.1): Clear accessible labels on all controls.</li>
+      <li>Touch Target Sizing (Criteria 2.5.8): Minimum 44x44 CSS pixels for interactive elements.</li>
+      <li>Scalability (Criteria 1.4.4): Free browser-level zooming enabled.</li>
+    </ul>
+
+    <p>Our automation suites are run using Playwright and Axe-Core to verify compliance programmatically on the mcstaging2.globewest.com.au staging server.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 GlobeWest 2026. All rights reserved.</p>
+  </footer>
+</body>
+</html>
