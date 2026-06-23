@@ -10,6 +10,7 @@
     "test:nvda": "playwright test tests/nvda-check.spec.js",
     "test:nvda-w3c": "playwright test tests/nvda-w3c.spec.js",
     "test:amazon": "playwright test tests/amazon-accessibility.spec.js",
+    "test:staging-nvda": "playwright test tests/staging-nvda.spec.js --project=desktop-chrome --headed",
     "report": "playwright show-report"
   },
   "keywords": [
