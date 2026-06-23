@@ -35,6 +35,9 @@ Run these commands inside the "GlobeWest 2026" directory:
 * Run the full GlobeWest Storefront Accessibility Scan (all 8 templates, headed):
   npx playwright test tests/accessibility.spec.js --project=desktop-chrome --headed
 
+* Run the GlobeWest Staging Screen Reader NVDA Simulation (Headed, 15 tabs, auto-dismiss popups):
+  npm run test:staging-nvda
+
 * Run the GlobeWest Core Functional Journey tests (headed):
   npx playwright test tests/journeys.spec.js --project=desktop-chrome --headed
 
@@ -47,8 +50,9 @@ Run these commands inside the "GlobeWest 2026" directory:
 Playwright generates a fully interactive HTML report containing log outputs, 
 screenshots, and pass/fail states.
 
-* How to open the report locally in VS Code:
+* How to open the report locally in VS Code (auto-configured to port 9325 to avoid port conflicts):
   npm run report
+  (or run: npx playwright show-report --port 9325)
 
 * File path to open directly in a Web Browser:
   "GlobeWest 2026/playwright-report/index.html"
