@@ -2,31 +2,26 @@
 const { test, expect } = require('@playwright/test');
 const { execSync } = require('child_process');
 
-// Helper function to trigger a physical system beep sound on Windows
-function playSystemBeep(frequency = 800, durationMs = 200) {
+// Helper function to speak text aloud using Windows Speech Synthesizer at a fast, screen-reader-like rate
+function speakText(text) {
   try {
-    execSync(`powershell.exe "[console]::beep(${frequency}, ${durationMs})"`, { stdio: 'ignore' });
+    const cleanText = text.replace(/['"<>|]/g, '').trim();
+    execSync(`powershell.exe -Command "Add-Type -AssemblyName System.Speech; $synth = New-Object System.Speech.Synthesis.SpeechSynthesizer; $synth.Rate = 4; $synth.Speak('${cleanText}')"`, { stdio: 'ignore' });
   } catch (e) {
-    process.stdout.write('\u0007');
+    console.error('Speech synthesis failed:', e);
   }
-}
-
-// Play a camera shutter "click" sound when focusing on images/buttons
-function playPhotoClickSound() {
-  playSystemBeep(1800, 50);
-  playSystemBeep(1800, 50);
 }
 
 // List of target pages on GlobeWest staging to test
 const PAGES_TO_TEST = [
   { name: '1. Homepage', path: '/' },
-  { name: '2. Product Listing Page (PLP)', path: '/furniture/sofas-modulars.html' },
-  { name: '3. Product Detail Page (PDP)', path: '/sofas-modulars/3-seater/sofa-name.html' },
+  { name: '2. Product Listing Page (PLP)', path: '/indoor' },
+  { name: '3. Product Detail Page (PDP)', path: '/celine-dining-chair-loden-antique-brass-ch-celin-antique-brass' },
   { name: '4. Shopping Cart / Checkout', path: '/checkout/cart/' },
   { name: '5. My Account Login', path: '/customer/account/login/' },
-  { name: '6. B2B Trade Portal', path: '/trade-portal-registration/' },
+  { name: '6. B2B Trade Portal', path: '/help-centre/general/trade-registration' },
   { name: '7. Search Results Page', path: '/catalogsearch/result/?q=sofa' },
-  { name: '8. Content / Static Page', path: '/about-us/' }
+  { name: '8. Content / Static Page', path: '/about-us' }
 ];
 
 test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
@@ -37,14 +32,31 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
       console.log(`Starting Staging Audit: ${pageInfo.name}`);
       console.log(`Navigating to path: ${pageInfo.path}`);
       
-      // 1. Navigate to target staging page
+      // 1. Navigate to target staging page and wait for the page to render fully
       await page.goto(pageInfo.path);
-      await page.waitForLoadState('domcontentloaded');
       
-      // 2. Dismiss cookie banner if it is visible
+      // Wait for network activity to settle or load state
+      try {
+        await page.waitForLoadState('networkidle', { timeout: 10000 });
+      } catch (e) {
+        await page.waitForLoadState('load');
+      }
+      
+      // Additional wait to ensure client-side components and images are completely rendered
+      await page.waitForTimeout(4000);
+      
+      // 2. Dismiss welcome newsletter popup if visible
+      const welcomePopupCloseBtn = page.locator('a#lpclose');
+      if (await welcomePopupCloseBtn.isVisible()) {
+        await welcomePopupCloseBtn.click();
+        await page.waitForTimeout(1000);
+      }
+
+      // Dismiss cookie banner if it is visible
       const cookieAcceptBtn = page.locator('#btn-cookie-allow, button.cookie-accept');
       if (await cookieAcceptBtn.isVisible()) {
         await cookieAcceptBtn.click();
+        await page.waitForTimeout(1000);
       }
 
       // Capture initial page state screenshot to artifact directory for reporting
@@ -76,27 +88,31 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
         }, true);
       });
 
-      // 4. Bring browser window to front and focus body
+      // 4. Bring browser window to front and anchor focus on the skip link or logo to avoid third-party iframe traps
       await page.bringToFront();
-      await page.locator('body').click();
+      const skipLink = page.locator('a.skip-link, a.logo, .logo a, a.logo-image, header a, a').first();
+      if (await skipLink.isVisible()) {
+        await skipLink.focus();
+      } else {
+        await page.locator('body').click();
+      }
       await page.waitForTimeout(1000);
 
-      // Play double-beep warning tone to notify start of keyboard navigation loop
-      playSystemBeep(1000, 100);
-      playSystemBeep(1200, 100);
+      // Announce the start of the page audit via speech
+      speakText(`Auditing ${pageInfo.name.replace(/^\d+\.\s*/, '')}`);
 
       // 5. Tab loop - Simulate keyboard navigation and capture screenshots
-      const totalTabs = 5;
+      const totalTabs = 15;
       for (let i = 1; i <= totalTabs; i++) {
         console.log(`Pressing TAB #${i}...`);
         await page.keyboard.press('Tab');
-        await page.waitForTimeout(500); // Allow brief animation time
+        await page.waitForTimeout(800); // Allow focus state transition
 
         // Extract element details from the browser context
         const elementInfo = await page.evaluate(() => {
           const active = document.activeElement;
           if (!active || active === document.body) {
-            return { tag: 'None', text: 'No active focus element', isClickable: false };
+            return { tag: 'None', name: 'No active focus element', isClickable: false };
           }
           const tag = active.tagName.toLowerCase();
           const role = active.getAttribute('role') || 'None';
@@ -108,22 +124,24 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
           if (name.length > 50) name = name.substring(0, 47) + '...';
 
           const isClickable = tag === 'a' || tag === 'button' || role === 'button' || active.getAttribute('onclick') !== null;
-          return { tag, text: `${tag} [role="${role}"]: "${name}"`, isClickable };
+          return { tag, name, isClickable };
         });
 
-        // Speak/Notify through audible beeps
-        if (elementInfo.isClickable) {
-          console.log(`  Focused clickable element: ${elementInfo.text}. Playing Photo Click Sound...`);
-          playPhotoClickSound();
-        } else {
-          console.log(`  Focused element: ${elementInfo.text}. Playing Normal focus beep...`);
-          const pitch = 600 + (i * 80);
-          playSystemBeep(pitch, 150);
-        }
+        // Screen-reader style announcement (concise)
+        let role = elementInfo.tag;
+        if (role === 'a') role = 'link';
+        if (role === 'input') role = 'edit';
+        if (role === 'img') role = 'image';
+        if (role === 'button') role = 'button';
+        if (role === 'select') role = 'combo box';
+        
+        const speakMsg = `${elementInfo.name} ${role}`;
+        console.log(`  Tab ${i}: ${speakMsg}`);
+        speakText(speakMsg);
 
         // Capture screenshot of the highlighted focused element
         const stepScreenshot = await page.screenshot({ fullPage: false });
-        await testInfo.attach(`Tab #${i} - Focused: ${elementInfo.text}`, {
+        await testInfo.attach(`Tab #${i} - Focused: ${elementInfo.tag} [${elementInfo.name}]`, {
           body: stepScreenshot,
           contentType: 'image/png'
         });
@@ -131,10 +149,7 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
         await page.waitForTimeout(500);
       }
 
-      // Play final completion alert sound
-      playSystemBeep(1200, 100);
-      await page.waitForTimeout(50);
-      playSystemBeep(1500, 250);
+      speakText(`Finished auditing ${pageInfo.name.replace(/^\d+\.\s*/, '')}`);
     });
   }
 });
