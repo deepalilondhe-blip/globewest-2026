@@ -1,0 +1,215 @@
+{
+  "name": "GlobeWest QA Automation Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 8 * * 1-5"
+            }
+          ]
+        }
+      },
+      "id": "7f8b9e0a-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
+      "name": "Schedule Trigger (Daily 8 AM)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        380,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "run-globewest-tests",
+        "options": {}
+      },
+      "id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+      "name": "Webhook (On-Demand / GitHub)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        380,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "command": "powershell.exe -Command \"cd 'C:\\GlobeWest 2026'; npm run test:staging-nvda\""
+      },
+      "id": "9b0c1d2e-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
+      "name": "Execute Playwright Tests",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        640,
+        320
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "command": "powershell.exe -Command \"Compress-Archive -Path 'C:\\GlobeWest 2026\\playwright-report\\*' -DestinationPath 'C:\\GlobeWest 2026\\playwright-report.zip' -Force\""
+      },
+      "id": "0c1d2e3f-4a5b-6c7d-8e9f-0a1b2c3d4e5f",
+      "name": "Zip HTML Report",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        860,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [],
+          "string": [
+            {
+              "value1": "={{ $node[\"Execute Playwright Tests\"].json[\"exitCode\"] }}",
+              "value2": "0"
+            }
+          ]
+        }
+      },
+      "id": "1d2e3f4a-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
+      "name": "Verify Exit Code",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "YOUR_SLACK_OR_DISCORD_WEBHOOK_URL",
+        "sendHeaders": true,
+        "specifyHeaders": "keypair",
+        "headers": {
+          "parameter": [
+            {
+              "name": "Content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "{\n  \"text\": \"✅ **GlobeWest QA Run Succeeded!**\\n- Date: {{ new Date().toLocaleString() }}\\n- Status: All WCAG 2.2 AA accessibility template audits passed successfully.\\n- Report: Report zip created at `C:\\\\GlobeWest 2026\\\\playwright-report.zip`\"\n}",
+        "options": {}
+      },
+      "id": "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
+      "name": "Notify Success",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1320,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "YOUR_SLACK_OR_DISCORD_WEBHOOK_URL",
+        "sendHeaders": true,
+        "specifyHeaders": "keypair",
+        "headers": {
+          "parameter": [
+            {
+              "name": "Content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "{\n  \"text\": \"❌ **GlobeWest QA Run Failed!**\\n- Date: {{ new Date().toLocaleString() }}\\n- Error Code: {{ $node[\\\"Execute Playwright Tests\\\"].json[\\\"exitCode\\\"] }}\\n- Details: One or more accessibility template audits or functional journeys failed.\\n- Action Required: Please inspect the zipped report at `C:\\\\GlobeWest 2026\\\\playwright-report.zip` or run `npm run report` locally on port 9325.\"\n}",
+        "options": {}
+      },
+      "id": "3f4a5b6c-7d8e-9f0a-1b2c-3d4e5f6a7b8c",
+      "name": "Notify Failure",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1320,
+        420
+      ]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger (Daily 8 AM)": {
+      "main": [
+        [
+          {
+            "node": "Execute Playwright Tests",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook (On-Demand / GitHub)": {
+      "main": [
+        [
+          {
+            "node": "Execute Playwright Tests",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Playwright Tests": {
+      "main": [
+        [
+          {
+            "node": "Zip HTML Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zip HTML Report": {
+      "main": [
+        [
+          {
+            "node": "Verify Exit Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verify Exit Code": {
+      "main": [
+        [
+          {
+            "node": "Notify Success",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Notify Failure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {},
+  "id": "globewest-qa-automation-pipeline",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  }
+}
