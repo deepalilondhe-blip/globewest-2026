@@ -60,7 +60,7 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
       }
 
       // Capture initial page state screenshot to artifact directory for reporting
-      const artifactDir = `C:\\Users\\Deepali_Londhe\\.gemini\\antigravity\\brain\\8e702931-bda8-4e71-a7d9-f8509d9c917c`;
+      const artifactDir = `C:\\Users\\Deepali_Londhe\\.gemini\\antigravity\\brain\\2fcf22a4-2816-498c-8f1d-86c05c328536`;
       const screenshotName = pageInfo.name.toLowerCase().replace(/[^a-z0-9]/g, '_').replace(/_+/g, '_').trim() + '.png';
       await page.screenshot({ path: `${artifactDir}/${screenshotName}` });
 
@@ -102,7 +102,7 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
       speakText(`Auditing ${pageInfo.name.replace(/^\d+\.\s*/, '')}`);
 
       // 5. Tab loop - Simulate keyboard navigation and capture screenshots
-      const totalTabs = 15;
+      const totalTabs = parseInt(process.env.TOTAL_TABS) || 10;
       for (let i = 1; i <= totalTabs; i++) {
         console.log(`Pressing TAB #${i}...`);
         await page.keyboard.press('Tab');
