@@ -38,6 +38,9 @@ Run these commands inside the "GlobeWest 2026" directory:
 * Run the GlobeWest Staging Screen Reader NVDA Simulation (Headed, 15 tabs, auto-dismiss popups):
   npm run test:staging-nvda
 
+  Run the GlobeWest Statiging Screen Reader 
+  npm run test:staging-nvda
+
 * Run the GlobeWest Core Functional Journey tests (headed):
   npx playwright test tests/journeys.spec.js --project=desktop-chrome --headed
 

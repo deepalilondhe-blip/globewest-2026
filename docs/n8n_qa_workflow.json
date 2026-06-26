@@ -23,12 +23,12 @@
     },
     {
       "parameters": {
-        "httpMethod": "POST",
+        "httpMethod": "GET",
         "path": "run-globewest-tests",
         "options": {}
       },
       "id": "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
-      "name": "Webhook (On-Demand / GitHub)",
+      "name": "webhook",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
@@ -38,7 +38,7 @@
     },
     {
       "parameters": {
-        "command": "powershell.exe -Command \"cd 'C:\\GlobeWest 2026'; npm run test:staging-nvda\""
+        "command": "powershell.exe -Command \"cd 'C:\\GlobeWest 2026'; npm run test:staging-nvda; npm run test:accessibility; npm run test:journeys\""
       },
       "id": "9b0c1d2e-3f4a-5b6c-7d8e-9f0a1b2c3d4e",
       "name": "Execute Playwright Tests",
@@ -65,6 +65,19 @@
     },
     {
       "parameters": {
+        "fileSelector": "C:\\GlobeWest 2026\\playwright-report.zip"
+      },
+      "id": "e2f3a4b5-c6d7-8e9f-0a1b-2c3d4e5f6a7b",
+      "name": "Read Zip File",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        970,
+        320
+      ]
+    },
+    {
+      "parameters": {
         "conditions": {
           "number": [],
           "string": [
@@ -86,28 +99,18 @@
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "YOUR_SLACK_OR_DISCORD_WEBHOOK_URL",
-        "sendHeaders": true,
-        "specifyHeaders": "keypair",
-        "headers": {
-          "parameter": [
-            {
-              "name": "Content-type",
-              "value": "application/json"
-            }
-          ]
-        },
-        "sendBody": true,
-        "contentType": "raw",
-        "rawContentType": "application/json",
-        "body": "{\n  \"text\": \"✅ **GlobeWest QA Run Succeeded!**\\n- Date: {{ new Date().toLocaleString() }}\\n- Status: All WCAG 2.2 AA accessibility template audits passed successfully.\\n- Report: Report zip created at `C:\\\\GlobeWest 2026\\\\playwright-report.zip`\"\n}",
-        "options": {}
+        "fromEmail": "deepali.londhe@magnetoitsolutions.com",
+        "toEmail": "deepali.londhe@magnetoitsolutions.com",
+        "subject": "✅ GlobeWest QA Run Succeeded!",
+        "html": "<h3>GlobeWest QA Run Succeeded!</h3><p>Date: {{ new Date().toLocaleString() }}</p><p>Status: All accessibility audits passed successfully.</p><p>The test report zip is located at: <code>C:\\GlobeWest 2026\\playwright-report.zip</code></p>",
+        "options": {
+          "attachments": "data"
+        }
       },
       "id": "2e3f4a5b-6c7d-8e9f-0a1b-2c3d4e5f6a7b",
-      "name": "Notify Success",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
+      "name": "Send Success Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
       "position": [
         1320,
         220
@@ -115,28 +118,18 @@
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "YOUR_SLACK_OR_DISCORD_WEBHOOK_URL",
-        "sendHeaders": true,
-        "specifyHeaders": "keypair",
-        "headers": {
-          "parameter": [
-            {
-              "name": "Content-type",
-              "value": "application/json"
-            }
-          ]
-        },
-        "sendBody": true,
-        "contentType": "raw",
-        "rawContentType": "application/json",
-        "body": "{\n  \"text\": \"❌ **GlobeWest QA Run Failed!**\\n- Date: {{ new Date().toLocaleString() }}\\n- Error Code: {{ $node[\\\"Execute Playwright Tests\\\"].json[\\\"exitCode\\\"] }}\\n- Details: One or more accessibility template audits or functional journeys failed.\\n- Action Required: Please inspect the zipped report at `C:\\\\GlobeWest 2026\\\\playwright-report.zip` or run `npm run report` locally on port 9325.\"\n}",
-        "options": {}
+        "fromEmail": "deepali.londhe@magnetoitsolutions.com",
+        "toEmail": "deepali.londhe@magnetoitsolutions.com",
+        "subject": "❌ GlobeWest QA Run Failed!",
+        "html": "<h3>GlobeWest QA Run Failed!</h3><p>Date: {{ new Date().toLocaleString() }}</p><p>Status: One or more accessibility audits failed.</p><p>Exit Code: {{ $node[\"Execute Playwright Tests\"].json[\"exitCode\"] }}</p><p>Please inspect the zipped report at: <code>C:\\GlobeWest 2026\\playwright-report.zip</code></p>",
+        "options": {
+          "attachments": "data"
+        }
       },
       "id": "3f4a5b6c-7d8e-9f0a-1b2c-3d4e5f6a7b8c",
-      "name": "Notify Failure",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
+      "name": "Send Failure Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
       "position": [
         1320,
         420
@@ -155,7 +148,7 @@
         ]
       ]
     },
-    "Webhook (On-Demand / GitHub)": {
+    "webhook": {
       "main": [
         [
           {
@@ -181,6 +174,17 @@
       "main": [
         [
           {
+            "node": "Read Zip File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Zip File": {
+      "main": [
+        [
+          {
             "node": "Verify Exit Code",
             "type": "main",
             "index": 0
@@ -192,14 +196,14 @@
       "main": [
         [
           {
-            "node": "Notify Success",
+            "node": "Send Success Email",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Notify Failure",
+            "node": "Send Failure Email",
             "type": "main",
             "index": 0
           }

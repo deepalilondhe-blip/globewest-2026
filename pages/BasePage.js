@@ -14,9 +14,27 @@ class BasePage {
    * @param {string} path
    */
   async navigate(path = '/') {
-    await this.page.goto(path);
-    await this.page.waitForLoadState('domcontentloaded');
+    await this.page.goto(path, { waitUntil: 'domcontentloaded' });
+    try {
+      // Dismiss welcome newsletter popup if visible
+      const welcomePopupCloseBtn = this.page.locator('a#lpclose');
+      if (await welcomePopupCloseBtn.isVisible()) {
+        await welcomePopupCloseBtn.click();
+        await this.page.waitForTimeout(500);
+      }
+      
+      // Dismiss cookie banner if visible
+      const cookieAcceptBtn = this.page.locator('#btn-cookie-allow, button.cookie-accept');
+      if (await cookieAcceptBtn.isVisible()) {
+        await cookieAcceptBtn.click();
+        await this.page.waitForTimeout(500);
+      }
+    } catch (e) {
+      console.warn("Popup dismissal failed or timed out:", e.message);
+    }
   }
+
+
 
   /**
    * Capture a screenshot for audit evidence
