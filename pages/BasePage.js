@@ -16,11 +16,27 @@ class BasePage {
   async navigate(path = '/') {
     await this.page.goto(path, { waitUntil: 'domcontentloaded' });
     try {
-      // Dismiss welcome newsletter popup if visible
-      const welcomePopupCloseBtn = this.page.locator('a#lpclose');
-      if (await welcomePopupCloseBtn.isVisible()) {
-        await welcomePopupCloseBtn.click();
-        await this.page.waitForTimeout(500);
+      // Dismiss welcome newsletter popup or modal if visible
+      const closeSelectors = [
+        'a#lpclose',
+        'button#lpclose',
+        '.modal-popup button.action-close',
+        '.modal-header button.action-close',
+        'button.action-close',
+        '.lp-close',
+        '.close-popup',
+        '#newsletter-popup button.close',
+        'button.close',
+        'a.close',
+        '[aria-label="Close"]',
+        '.action.close'
+      ];
+      for (const selector of closeSelectors) {
+        const closeBtn = this.page.locator(selector).first();
+        if (await closeBtn.isVisible()) {
+          await closeBtn.click();
+          await this.page.waitForTimeout(500);
+        }
       }
       
       // Dismiss cookie banner if visible

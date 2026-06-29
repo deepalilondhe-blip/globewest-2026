@@ -58,11 +58,31 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
       // Additional wait to ensure client-side components and images are completely rendered
       await page.waitForTimeout(4000);
       
-      // 2. Dismiss welcome newsletter popup if visible
-      const welcomePopupCloseBtn = page.locator('a#lpclose');
-      if (await welcomePopupCloseBtn.isVisible()) {
-        await welcomePopupCloseBtn.click();
-        await page.waitForTimeout(1000);
+      // 2. Dismiss any overlay welcome newsletter popups or modals
+      const closeSelectors = [
+        'a#lpclose',
+        'button#lpclose',
+        '.modal-popup button.action-close',
+        '.modal-header button.action-close',
+        'button.action-close',
+        '.lp-close',
+        '.close-popup',
+        '#newsletter-popup button.close',
+        'button.close',
+        'a.close',
+        '[aria-label="Close"]',
+        '.action.close'
+      ];
+      for (const selector of closeSelectors) {
+        try {
+          const closeBtn = page.locator(selector).first();
+          if (await closeBtn.isVisible()) {
+            await closeBtn.click();
+            await page.waitForTimeout(1000);
+          }
+        } catch (e) {
+          // Ignore error checks
+        }
       }
 
       // Dismiss cookie banner if it is visible
@@ -114,19 +134,24 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
       // Announce the start of the page audit via speech
       speakText(`Auditing ${pageInfo.name.replace(/^\d+\.\s*/, '')}`);
 
-      // 5. Tab loop - Simulate keyboard navigation and capture screenshots
-      const totalTabs = parseInt(process.env.TOTAL_TABS) || 10;
-      for (let i = 1; i <= totalTabs; i++) {
-        console.log(`Pressing TAB #${i}...`);
+      // 5. Dynamic Tab loop - Simulate keyboard navigation through all focusable elements until they wrap around
+      const maxTabs = 150; // Safety limit to prevent infinite loops
+      let tabCount = 0;
+      let consecutiveBodyCount = 0;
+
+      while (tabCount < maxTabs) {
+        tabCount++;
+        console.log(`Pressing TAB #${tabCount}...`);
         await page.keyboard.press('Tab');
         await page.waitForTimeout(800); // Allow focus state transition
 
-        // Extract element details from the browser context
+        // Evaluate the focused element and check if we have seen it before
         const elementInfo = await page.evaluate(() => {
           const active = document.activeElement;
           if (!active || active === document.body) {
-            return { tag: 'None', name: 'No active focus element', isClickable: false };
+            return { tag: 'body', name: 'body', isClickable: false, alreadySeen: false };
           }
+
           const tag = active.tagName.toLowerCase();
           const role = active.getAttribute('role') || 'None';
           const ariaLabel = active.getAttribute('aria-label') || '';
@@ -137,8 +162,30 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
           if (name.length > 50) name = name.substring(0, 47) + '...';
 
           const isClickable = tag === 'a' || tag === 'button' || role === 'button' || active.getAttribute('onclick') !== null;
-          return { tag, name, isClickable };
+          
+          const alreadySeen = active.hasAttribute('data-a11y-seen');
+          if (!alreadySeen) {
+            active.setAttribute('data-a11y-seen', 'true');
+          }
+          return { tag, name, isClickable, alreadySeen };
         });
+
+        // Break if we wrap around to an already seen element
+        if (elementInfo.alreadySeen) {
+          console.log(`[A11y] Wrapped around to an already inspected element: ${elementInfo.name}. Finishing tab loop.`);
+          break;
+        }
+
+        // Handle body focus: if we stay on body multiple times consecutively, we exit
+        if (elementInfo.tag === 'body') {
+          consecutiveBodyCount++;
+          if (consecutiveBodyCount > 3) {
+            console.log(`[A11y] Focused on body consecutively. Ending tab loop.`);
+            break;
+          }
+        } else {
+          consecutiveBodyCount = 0;
+        }
 
         // Screen-reader style announcement (concise)
         let role = elementInfo.tag;
@@ -149,12 +196,12 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
         if (role === 'select') role = 'combo box';
         
         const speakMsg = `${elementInfo.name} ${role}`;
-        console.log(`  Tab ${i}: ${speakMsg}`);
+        console.log(`  Tab ${tabCount}: ${speakMsg}`);
         speakText(speakMsg);
 
         // Capture screenshot of the highlighted focused element
         const stepScreenshot = await page.screenshot({ fullPage: false });
-        await testInfo.attach(`Tab #${i} - Focused: ${elementInfo.tag} [${elementInfo.name}]`, {
+        await testInfo.attach(`Tab #${tabCount} - Focused: ${elementInfo.tag} [${elementInfo.name}]`, {
           body: stepScreenshot,
           contentType: 'image/png'
         });
