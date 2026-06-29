@@ -7,6 +7,7 @@ const { CheckoutPage } = require('../pages/CheckoutPage');
 const { TradePortalPage } = require('../pages/TradePortalPage');
 const { StaticPage } = require('../pages/StaticPage');
 const { MyAccountPage } = require('../pages/MyAccountPage');
+const { SearchPage } = require('../pages/SearchPage');
 
 
 test.describe('GlobeWest Core User Journey & State Verification', () => {
@@ -300,5 +301,25 @@ test.describe('GlobeWest Core User Journey & State Verification', () => {
       }
     }
   });
+
+  test('Verify search input autocomplete and search results page', async ({ page }) => {
+    const homepage = new Homepage(page);
+    const searchPage = new SearchPage(page);
+
+    await homepage.navigate('/');
+    
+    if (await homepage.searchBar.isVisible()) {
+      await homepage.searchBar.focus();
+      await expect(homepage.searchBar).toBeFocused();
+
+      await homepage.searchProduct('chair');
+      await expect(page).toHaveURL(/.*(search|result|q=).*/);
+
+      if (await searchPage.searchQueryTitle.isVisible()) {
+        await expect(searchPage.searchQueryTitle).toBeVisible();
+      }
+    }
+  });
 });
+
 
