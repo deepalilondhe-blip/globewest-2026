@@ -1,0 +1,52 @@
+========================================================================
+                 NVDA Screen Reader - Sound Effects & Testing Guide
+========================================================================
+
+This guide explains how to configure and listen to sound effects (audio cues) 
+during manual accessibility testing on the GlobeWest project, along with 
+useful keyboard shortcuts.
+
+1. Native NVDA Sound Effects
+------------------------------------------------------------------------
+* Progress Bar Tones:
+  - What it does: Plays a sequence of beeps while a page or process is loading.
+  - Audio Cue: The pitch gets higher as the progress gets closer to 100%.
+  
+* Error Sound:
+  - What it does: Plays a distinct low-pitched warning tone if NVDA crashes 
+    or fails to run a command.
+
+* Capital Letter Beep:
+  - What it does: Plays a short beep sound every time a capital letter is read.
+  - How to Enable:
+    1. Open NVDA Menu (Insert + N).
+    2. Go to Preferences -> Settings -> Speech.
+    3. Find and check the "Beep for capitals" checkbox.
+
+2. Element Sound Effects (Audio Cues Add-on)
+------------------------------------------------------------------------
+To hear a unique sound effect for every HTML element as you tab through:
+* Install the "Audio Cues" NVDA Add-on.
+* Sounds you will hear:
+  - Link: A soft "swoosh" sound.
+  - Button: A keyboard-like click sound.
+  - Heading: A bell or chime sound.
+  - Edit Field (Text Input): A rapid ticking sound.
+  - Checkbox/Radio: A toggle/snap sound.
+
+3. Essential NVDA Keyboard Shortcuts for QA Testing
+------------------------------------------------------------------------
+* Insert + N (or Caps Lock + N)  -> Open the NVDA Menu.
+* Insert + F7                    -> Open the Elements List (Links, Headings, Buttons).
+* H                              -> Jump to the next Heading.
+* Shift + H                      -> Jump to the previous Heading.
+* D                              -> Jump to the next Landmark (Header, Main, Footer).
+* Tab                            -> Jump to the next focusable item (Links, Buttons).
+* Down Arrow                     -> Read the next line of text.
+
+4. Using Speech Viewer (Visual Text Log)
+------------------------------------------------------------------------
+Instead of listening, you can see and copy the spoken text output:
+* Open NVDA Menu -> Tools -> Check "Speech Viewer".
+* Copy the text from the Speech Viewer window directly into your test log.
+========================================================================
