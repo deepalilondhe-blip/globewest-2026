@@ -18,6 +18,7 @@ test.describe('GlobeWest Core User Journey & State Verification', () => {
     await page.route('**/*klaviyo*', route => route.abort());
     await page.route('**/*hotjar*', route => route.abort());
     await page.route('**/*google-analytics*', route => route.abort());
+    await page.route('**/*yotpo*', route => route.abort());
   });
 
   test('Verify skip link shifts keyboard focus to main content', async ({ page }) => {

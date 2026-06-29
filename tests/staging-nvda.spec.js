@@ -1,12 +1,16 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
-const { execSync } = require('child_process');
+const { execSync, exec } = require('child_process');
 
 // Helper function to speak text aloud using Windows Speech Synthesizer at a fast, screen-reader-like rate
 function speakText(text) {
   try {
     const cleanText = text.replace(/['"<>|]/g, '').trim();
-    execSync(`powershell.exe -Command "Add-Type -AssemblyName System.Speech; $synth = New-Object System.Speech.Synthesis.SpeechSynthesizer; $synth.Rate = 4; $synth.Speak('${cleanText}')"`, { stdio: 'ignore' });
+    exec(`powershell.exe -Command "Add-Type -AssemblyName System.Speech; $synth = New-Object System.Speech.Synthesis.SpeechSynthesizer; $synth.Rate = 4; $synth.Speak('${cleanText}')"`, (err) => {
+      if (err) {
+        // Suppress sound card error details in headless logs to keep logs clean
+      }
+    });
   } catch (e) {
     console.error('Speech synthesis failed:', e);
   }
@@ -25,6 +29,15 @@ const PAGES_TO_TEST = [
 ];
 
 test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
+
+  test.beforeEach(async ({ page }) => {
+    // Block third-party scripts that generate blocking overlay popups and slow down page navigation on staging
+    await page.route('**/*listrak*', route => route.abort());
+    await page.route('**/*klaviyo*', route => route.abort());
+    await page.route('**/*hotjar*', route => route.abort());
+    await page.route('**/*google-analytics*', route => route.abort());
+    await page.route('**/*yotpo*', route => route.abort());
+  });
 
   for (const pageInfo of PAGES_TO_TEST) {
     test(`Audit ${pageInfo.name}`, async ({ page }, testInfo) => {
