@@ -20,7 +20,7 @@ module.exports = defineConfig({
     baseURL: process.env.BASE_URL || 'https://mcstaging2.globewest.com.au', // Fallback to live URL if staging is not accessible
     trace: 'on-first-retry',
     headless: false,
-    screenshot: 'only-on-failure',
+    screenshot: 'on',
     video: 'on',
     ignoreHTTPSErrors: true,
   },
