@@ -26,7 +26,8 @@
   "devDependencies": {
     "@guidepup/playwright": "^0.13.0",
     "@playwright/test": "^1.60.0",
-    "lighthouse": "^13.4.0"
+    "lighthouse": "^13.4.0",
+    "xlsx": "^0.18.5"
   },
   "dependencies": {
     "@axe-core/playwright": "^4.11.3"
