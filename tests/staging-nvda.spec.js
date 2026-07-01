@@ -31,6 +31,8 @@ const PAGES_TO_TEST = [
 test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
 
   test.beforeEach(async ({ page }) => {
+    // Increase test timeout to accommodate slow staging pages and complete page tab loops
+    test.setTimeout(240000);
     // Block third-party scripts that generate blocking overlay popups and slow down page navigation on staging
     await page.route('**/*listrak*', route => route.abort());
     await page.route('**/*klaviyo*', route => route.abort());
@@ -143,7 +145,7 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
         tabCount++;
         console.log(`Pressing TAB #${tabCount}...`);
         await page.keyboard.press('Tab');
-        await page.waitForTimeout(800); // Allow focus state transition
+        await page.waitForTimeout(300); // Allow focus state transition
 
         // Evaluate the focused element and check if we have seen it before
         const elementInfo = await page.evaluate(() => {
@@ -206,7 +208,7 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
           contentType: 'image/png'
         });
 
-        await page.waitForTimeout(500);
+        await page.waitForTimeout(200);
       }
 
       speakText(`Finished auditing ${pageInfo.name.replace(/^\d+\.\s*/, '')}`);
