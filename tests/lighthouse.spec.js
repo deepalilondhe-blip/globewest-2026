@@ -37,18 +37,21 @@ test.describe('GlobeWest Automated Lighthouse Audits', () => {
       port: 9222,
       disableStorageReset: true,
       logLevel: 'info',
-      output: 'html',
+      output: ['html', 'json'],
       onlyCategories: ['accessibility', 'performance']
     });
 
-    // 3. Save the Lighthouse HTML report
+    // 3. Save the Lighthouse reports
     const reportDir = path.resolve(__dirname, '../playwright-report');
     if (!fs.existsSync(reportDir)) {
       fs.mkdirSync(reportDir, { recursive: true });
     }
-    const reportPath = path.join(reportDir, 'lighthouse-homepage-report.html');
-    fs.writeFileSync(reportPath, result.report);
-    console.log(`Lighthouse HTML Report saved to: ${reportPath}`);
+    const htmlReportPath = path.join(reportDir, 'lighthouse-homepage-report.html');
+    const jsonReportPath = path.join(reportDir, 'lighthouse-homepage-report.json');
+    fs.writeFileSync(htmlReportPath, result.report[0]);
+    fs.writeFileSync(jsonReportPath, result.report[1]);
+    console.log(`Lighthouse HTML Report saved to: ${htmlReportPath}`);
+    console.log(`Lighthouse JSON Report saved to: ${jsonReportPath}`);
 
     // 4. Assert scores
     const accessibilityScore = result.lhr.categories.accessibility.score * 100;
