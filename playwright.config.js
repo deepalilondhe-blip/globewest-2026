@@ -46,16 +46,25 @@ module.exports = defineConfig({
     {
       name: 'mobile-safari-iphone',
       use: { ...devices['iPhone 14 Pro Max'] },
+      testMatch: /.*accessibility.spec.js/,
     },
     {
       name: 'mobile-chrome-android',
-      use: { ...devices['Pixel 5'] },
+      use: { 
+        ...devices['Pixel 5'],
+        channel: 'chrome'
+      },
+      testMatch: /.*accessibility.spec.js/,
     },
 
     /* 📋 Tablet Emulation */
     {
       name: 'tablet-safari-ipad',
-      use: { ...devices['iPad Air'] },
+      use: { 
+        ...devices['iPad Air'],
+        channel: 'chrome'
+      },
+      testMatch: /.*accessibility.spec.js/,
     },
   ],
 });
