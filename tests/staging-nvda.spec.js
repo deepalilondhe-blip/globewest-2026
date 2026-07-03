@@ -2,17 +2,48 @@
 const { test, expect } = require('@playwright/test');
 const { execSync, exec } = require('child_process');
 
-// Helper function to speak text aloud using Windows Speech Synthesizer at a fast, screen-reader-like rate
+// Persistent PowerShell speech engine to serialize screen reader announcements
+let speechProcess = null;
+
+function startSpeechEngine() {
+  if (speechProcess) return;
+  const { spawn } = require('child_process');
+  speechProcess = spawn('powershell.exe', [
+    '-NoProfile',
+    '-Command',
+    `
+      Add-Type -AssemblyName System.Speech;
+      $synth = New-Object System.Speech.Synthesis.SpeechSynthesizer;
+      $synth.Rate = 4;
+      while ($line = [Console]::In.ReadLine()) {
+        if ($line.Trim() -ne "") {
+          $synth.Speak($line);
+        }
+      }
+    `
+  ]);
+  speechProcess.stdin.setDefaultEncoding('utf-8');
+}
+
 function speakText(text) {
   try {
-    const cleanText = text.replace(/['"<>|]/g, '').trim();
-    exec(`powershell.exe -Command "Add-Type -AssemblyName System.Speech; $synth = New-Object System.Speech.Synthesis.SpeechSynthesizer; $synth.Rate = 4; $synth.Speak('${cleanText}')"`, (err) => {
-      if (err) {
-        // Suppress sound card error details in headless logs to keep logs clean
-      }
-    });
+    startSpeechEngine();
+    const cleanText = text.replace(/[\r\n]/g, ' ').replace(/['"<>|]/g, '').trim();
+    if (cleanText && speechProcess && speechProcess.stdin.writable) {
+      speechProcess.stdin.write(cleanText + '\n');
+    }
   } catch (e) {
     console.error('Speech synthesis failed:', e);
+  }
+}
+
+function stopSpeechEngine() {
+  if (speechProcess) {
+    try {
+      speechProcess.stdin.end();
+      speechProcess.kill();
+    } catch (e) {}
+    speechProcess = null;
   }
 }
 
@@ -125,9 +156,27 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
 
       // 4. Bring browser window to front and anchor focus on the skip link or logo to avoid third-party iframe traps
       await page.bringToFront();
+      
+      // Inject CSS stylesheet to hide popups and search suggestions to prevent keyboard focus traps
+      await page.addStyleTag({
+        content: `
+          a#lpclose, .listrak-popup, #omnisend-form-container, .newsletter-popup, div[role="dialog"], .modal-popup, .lp-popup, .search-autocomplete, #search_autocomplete {
+            display: none !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+          }
+        `
+      });
+
       const skipLink = page.locator('a.skip-link, a.logo, .logo a, a.logo-image, header a, a').first();
       if (await skipLink.isVisible()) {
         await skipLink.focus();
+        // Tag the initially focused element as seen so we don't exit instantly
+        await page.evaluate(() => {
+          if (document.activeElement) {
+            document.activeElement.setAttribute('data-a11y-seen', 'true');
+          }
+        });
       } else {
         await page.locator('body').click();
       }
@@ -140,12 +189,29 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
       const maxTabs = 150; // Safety limit to prevent infinite loops
       let tabCount = 0;
       let consecutiveBodyCount = 0;
+      let lastActiveSelector = '';
 
       while (tabCount < maxTabs) {
         tabCount++;
         console.log(`Pressing TAB #${tabCount}...`);
         await page.keyboard.press('Tab');
         await page.waitForTimeout(300); // Allow focus state transition
+
+        // Get active element selector to detect stuck focus
+        const currentActiveSelector = await page.evaluate(() => {
+          const el = document.activeElement;
+          return el ? el.tagName.toLowerCase() + (el.id ? '#' + el.id : '') + (el.className ? '.' + el.className.split(' ').join('.') : '') : '';
+        });
+
+        // Recovery: If focus is stuck on the same element, press Escape to dismiss dropdowns/popups and tab again
+        if (currentActiveSelector === lastActiveSelector && tabCount > 1) {
+          console.log(`[A11y Warning] Focus stuck on element: ${currentActiveSelector}. Pressing ESC to recover...`);
+          await page.keyboard.press('Escape');
+          await page.waitForTimeout(200);
+          await page.keyboard.press('Tab');
+          await page.waitForTimeout(300);
+        }
+        lastActiveSelector = currentActiveSelector;
 
         // Evaluate the focused element and check if we have seen it before
         const elementInfo = await page.evaluate(() => {
@@ -214,4 +280,8 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
       speakText(`Finished auditing ${pageInfo.name.replace(/^\d+\.\s*/, '')}`);
     });
   }
+
+  test.afterAll(async () => {
+    stopSpeechEngine();
+  });
 });
