@@ -2,48 +2,15 @@
 const { test, expect } = require('@playwright/test');
 const { execSync, exec } = require('child_process');
 
-// Persistent PowerShell speech engine to serialize screen reader announcements
-let speechProcess = null;
-
-function startSpeechEngine() {
-  if (speechProcess) return;
-  const { spawn } = require('child_process');
-  speechProcess = spawn('powershell.exe', [
-    '-NoProfile',
-    '-Command',
-    `
-      Add-Type -AssemblyName System.Speech;
-      $synth = New-Object System.Speech.Synthesis.SpeechSynthesizer;
-      $synth.Rate = 4;
-      while ($line = [Console]::In.ReadLine()) {
-        if ($line.Trim() -ne "") {
-          $synth.Speak($line);
-        }
-      }
-    `
-  ]);
-  speechProcess.stdin.setDefaultEncoding('utf-8');
-}
-
+// Helper function to speak text aloud using Windows Speech Synthesizer synchronously to ensure visual focus alignment
 function speakText(text) {
   try {
-    startSpeechEngine();
     const cleanText = text.replace(/[\r\n]/g, ' ').replace(/['"<>|]/g, '').trim();
-    if (cleanText && speechProcess && speechProcess.stdin.writable) {
-      speechProcess.stdin.write(cleanText + '\n');
+    if (cleanText) {
+      execSync(`powershell.exe -Command "Add-Type -AssemblyName System.Speech; $synth = New-Object System.Speech.Synthesis.SpeechSynthesizer; $synth.Rate = 4; $synth.Speak('${cleanText}')"`, { stdio: 'ignore' });
     }
   } catch (e) {
-    console.error('Speech synthesis failed:', e);
-  }
-}
-
-function stopSpeechEngine() {
-  if (speechProcess) {
-    try {
-      speechProcess.stdin.end();
-      speechProcess.kill();
-    } catch (e) {}
-    speechProcess = null;
+    // Suppress sound card error details in headless logs to keep logs clean
   }
 }
 
@@ -280,8 +247,4 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
       speakText(`Finished auditing ${pageInfo.name.replace(/^\d+\.\s*/, '')}`);
     });
   }
-
-  test.afterAll(async () => {
-    stopSpeechEngine();
-  });
 });
