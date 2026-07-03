@@ -1,0 +1,67 @@
+====================================================================
+GLOBEWEST Storefront - Step-by-Step Manual QA Verification Guide
+====================================================================
+Follow this step-by-step guide on each of the 8 pages to ensure 100% 
+WCAG 2.2 AA compliance and prevent any defect leakage.
+
+--------------------------------------------------------------------
+STEP 1: Keyboard Focus Visibility Audit (Tab Key Test)
+--------------------------------------------------------------------
+1. Open the page in your browser (Chrome/Edge).
+2. Click the address bar to clear any mouse state.
+3. Press the [Tab] key repeatedly to move forward, and [Shift + Tab] to move backward.
+4. VERIFY:
+   * Do you see a clear, high-contrast visual outline (colored border) on 
+     EVERY link, button, menu item, and input field as you land on it?
+   * If the focus indicator disappears or is invisible on an element, log a defect.
+   * Verify that the focus moves in a logical order (top-to-bottom, left-to-right).
+
+--------------------------------------------------------------------
+STEP 2: Focus Traps & Modal/Popup Audits (Escape Key Test)
+--------------------------------------------------------------------
+1. Tab to the Search Bar (q edit), type a keyword, and trigger suggestions.
+   * Press [Tab] to navigate inside suggestions.
+   * Press [Escape] to close the dropdown. Focus must remain on the search input.
+2. Open the Shopping Cart (Minicart overlay) by clicking/tabbing to it.
+   * Verify focus moves into the Cart dropdown.
+   * Press [Escape]. The overlay must close, and focus must return to the Cart icon button.
+3. Open any mobile navigation menu or dynamic modal.
+   * Confirm the keyboard focus is restricted inside the modal.
+   * Confirm pressing [Escape] dismisses the modal and returns focus to the trigger.
+
+--------------------------------------------------------------------
+STEP 3: 200% Zoom & Responsive Reflow Audit (Ctrl + Test)
+--------------------------------------------------------------------
+1. Open the Product Listing Page (PLP) or Product Detail Page (PDP).
+2. Press [Ctrl + '+'] repeatedly until the browser zoom is set to 200%.
+3. VERIFY:
+   * Check if any text overlaps other blocks, overlays, or icons.
+   * Verify that no button or content gets cut off at the page margins.
+   * Ensure that the page wraps into a clean mobile-like single column layout 
+     without requiring horizontal scrolling to read the text.
+
+--------------------------------------------------------------------
+STEP 4: Touch Target Size Audit (Minimum 44x44 CSS Pixels)
+--------------------------------------------------------------------
+1. Hover and inspect target buttons/links, specifically:
+   * Swatch color circles (PDP).
+   * Social icon links (Footer).
+   * Header menu toggle arrows.
+   * Pagination next/prev buttons.
+2. VERIFY:
+   * Right-click the element and select "Inspect".
+   * Under the Computed tab, verify that the width and height of the 
+     interactive click area is at least 44px by 44px (or has sufficient spacing).
+
+--------------------------------------------------------------------
+STEP 5: Screen Reader Semantic Announcements (Audio Test)
+--------------------------------------------------------------------
+1. Open NVDA or Windows Narrator.
+2. Tab through interactive items.
+3. VERIFY:
+   * When focusing on icon-only buttons (like Search, Close, Social Icons), 
+     does the screen reader read a descriptive name (e.g., "Search button") 
+     instead of "button" or the filename of the image?
+   * When focusing on input fields, does the reader read the label name 
+     (e.g., "First Name edit") instead of "blank edit"?
+====================================================================
