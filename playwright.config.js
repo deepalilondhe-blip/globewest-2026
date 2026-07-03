@@ -45,14 +45,22 @@ module.exports = defineConfig({
     /* 📱 Mobile Emulation */
     {
       name: 'mobile-safari-iphone',
-      use: { ...devices['iPhone 14 Pro Max'] },
+      use: { 
+        ...devices['iPhone 14 Pro Max'],
+        launchOptions: {
+          args: ['--window-size=430,932']
+        }
+      },
       testMatch: /.*accessibility.spec.js/,
     },
     {
       name: 'mobile-chrome-android',
       use: { 
         ...devices['Pixel 5'],
-        channel: 'chrome'
+        channel: 'chrome',
+        launchOptions: {
+          args: ['--window-size=393,851']
+        }
       },
       testMatch: /.*accessibility.spec.js/,
     },
@@ -62,7 +70,10 @@ module.exports = defineConfig({
       name: 'tablet-safari-ipad',
       use: { 
         ...devices['iPad Air'],
-        channel: 'chrome'
+        channel: 'chrome',
+        launchOptions: {
+          args: ['--window-size=820,1180']
+        }
       },
       testMatch: /.*accessibility.spec.js/,
     },
