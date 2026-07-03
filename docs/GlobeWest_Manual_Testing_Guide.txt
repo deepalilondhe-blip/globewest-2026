@@ -64,4 +64,33 @@ STEP 5: Screen Reader Semantic Announcements (Audio Test)
      instead of "button" or the filename of the image?
    * When focusing on input fields, does the reader read the label name 
      (e.g., "First Name edit") instead of "blank edit"?
+
+--------------------------------------------------------------------
+STEP 6: Chrome Browser Extensions & Lighthouse Verification
+--------------------------------------------------------------------
+To double-check the automated scores and verify that no defects were 
+missed, install and run these browser tools:
+
+A. Built-in Google Lighthouse
+   1. Press [F12] (or right-click -> Inspect) to open Chrome DevTools.
+   2. Select the "Lighthouse" tab from the top menu.
+   3. Under Categories, check "Accessibility" and "Performance".
+   4. Click "Analyze page load".
+   5. Confirm the scores align with your automated baseline (e.g., 71/100).
+
+B. Axe DevTools Extension (Recommended)
+   1. Install the "axe DevTools" extension from the Chrome Web Store.
+   2. Open Chrome DevTools [F12] and click the "axe DevTools" tab.
+   3. Click "Scan all of my page".
+   4. It will show a list of violations categorized by impact (Critical, Serious).
+   5. Highlight each issue to visually confirm its position in the DOM.
+
+C. WAVE Extension (Web Accessibility Evaluation Tool)
+   1. Install the "WAVE Evaluation Tool" extension in Chrome.
+   2. Click the "WAVE" extension icon next to your address bar on the target page.
+   3. Review the visual icons added to the page:
+      * Red Icons = Errors (missing alt text, button labels).
+      * Yellow Icons = Alerts (suspicious links, structure).
+      * Contrast (tab) = Highlights text contrast failures.
+   4. Fix any Red/Contrast failures showing on the page.
 ====================================================================
