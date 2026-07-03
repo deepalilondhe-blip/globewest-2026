@@ -23,6 +23,54 @@ test.describe('GlobeWest storefront Accessibility Audit (WCAG 2.2 AA)', () => {
       await cookieAcceptBtn.click();
     }
 
+    // Check if we are running in a mobile viewport and inject the physical device frame
+    const viewport = page.viewportSize();
+    const isMobile = viewport && viewport.width < 600;
+    if (isMobile) {
+      await page.evaluate(() => {
+        // Create the phone bezel frame overlay
+        const bezel = document.createElement('div');
+        bezel.id = 'a11y-phone-bezel';
+        bezel.style.cssText = `
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          border: 14px solid #1f1f20;
+          border-radius: 36px;
+          box-shadow: inset 0 0 0 2px #000, 0 0 0 3px #8e8e93;
+          pointer-events: none;
+          z-index: 999999;
+          box-sizing: border-box;
+        `;
+
+        // Create the camera notch (dynamic island)
+        const notch = document.createElement('div');
+        notch.id = 'a11y-phone-notch';
+        notch.style.cssText = `
+          position: fixed;
+          top: 14px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 90px;
+          height: 24px;
+          background: #000;
+          border-radius: 12px;
+          z-index: 1000000;
+          pointer-events: none;
+        `;
+
+        document.body.appendChild(bezel);
+        document.body.appendChild(notch);
+
+        // Adjust document padding to fit the content within the bezel margins
+        document.documentElement.style.padding = '14px';
+        document.documentElement.style.boxSizing = 'border-box';
+      });
+      await page.waitForTimeout(500); // Settle rendering
+    }
+
     const scanResults = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'])
       .exclude('iframe[src*="yotpo.com"]')
