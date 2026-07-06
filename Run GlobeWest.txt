@@ -1,82 +1,61 @@
 ================================================================================
-🛋️ GLOBEWEST 2026 QA AUTOMATION - HOW TO RUN TESTS & SHARE REPORTS
+🛋️ GLOBEWEST 2026 QA AUTOMATION - HOW TO RUN ACTIVE UAT TEST SUITES
 ================================================================================
 
-This document provides the exact commands to execute the accessibility and 
-functional journey test suites inside VS Code, run them in headed mode, and 
-open the HTML reports to share with clients.
+This document contains the exact commands to execute the active accessibility, 
+performance, and user journey test suites for the GlobeWest staging storefront
+(https://mcstaging2.globewest.com.au/).
 
 --------------------------------------------------------------------------------
-1. GETTING STARTED (First Time Only)
+1. SETUP (First Time Only)
 --------------------------------------------------------------------------------
-Open your terminal in VS Code and run the following setup commands:
+Open your terminal in VS Code inside the "GlobeWest 2026" directory and run:
 
-  cd "GlobeWest 2026"
   npm install
   npx playwright install
 
 --------------------------------------------------------------------------------
-2. RUNNING TESTS IN HEADED MODE (Watch browser execute & hear screen reader)
+2. RUNNING THE ACTIVE TESTS
 --------------------------------------------------------------------------------
-Run these commands inside the "GlobeWest 2026" directory:
 
-* Run the W3C Accessibility Scan using your running System NVDA (Audible Speech):
-  npx playwright test tests/system-nvda.spec.js --project=desktop-chrome --headed
+* Run the Axe accessibility scans (All 8 templates):
+  - Headless (Background - Fast):
+    npx playwright test tests/accessibility.spec.js --project=desktop-chrome
+  - Headed (Visual - Opens browser):
+    npx playwright test tests/accessibility.spec.js --project=desktop-chrome --headed
 
-* Run the W3C Accessibility Page NVDA Scan (using portable NVDA setup):
-  npx playwright test tests/nvda-w3c.spec.js --project=desktop-chrome --headed
+* Run the Screen Reader / Keyboard Focus Simulator (with audio voice announcements):
+  - Headless (Background - Fast - No audio):
+    npx playwright test tests/staging-nvda.spec.js --project=desktop-chrome
+  - Headed (Visual - Plays voice reader aloud):
+    npx playwright test tests/staging-nvda.spec.js --project=desktop-chrome --headed
 
-* Run the Amazon Homepage Accessibility Scan (headed mode):
-  npx playwright test tests/amazon-accessibility.spec.js --project=desktop-chrome --headed
+* Run the Core Functional Journeys (Cart flow, Mega menus, Login):
+  - Headless (Background):
+    npx playwright test tests/journeys.spec.js --project=desktop-chrome
+  - Headed (Visual):
+    npx playwright test tests/journeys.spec.js --project=desktop-chrome --headed
 
-* Run the Dummy Accessibility Scan (headed mode):
-  npx playwright test tests/accessibility-dummy.spec.js --project=desktop-chrome --headed
+* Run the Lighthouse Audits (Loops through all 8 templates and saves reports):
+  npx playwright test tests/lighthouse.spec.js --project=desktop-chrome
 
-* Run the full GlobeWest Storefront Accessibility Scan (all 8 templates, headed):
-  npx playwright test tests/accessibility.spec.js --project=desktop-chrome --headed
-
-* Run the GlobeWest Staging Screen Reader NVDA Simulation (Headed, 15 tabs, auto-dismiss popups):
-  npm run test:staging-nvda
-
-  Run the GlobeWest Statiging Screen Reader 
-  npm run test:staging-nvda
-
-* Run the GlobeWest Core Functional Journey tests (headed):
-  npx playwright test tests/journeys.spec.js --project=desktop-chrome --headed
-
-* Run the Dummy NVDA Screen Reader simulation (headed):
-  npx playwright test tests/nvda-check.spec.js --project=desktop-chrome --headed
+* Run the Mobile Layout Audit (Visually verify inside the realistic phone mockup):
+  npx playwright test tests/accessibility.spec.js --project=mobile-chrome-android --headed
 
 --------------------------------------------------------------------------------
-3. VIEWING & SHARING REPORTS WITH THE CLIENT
+3. LOCATION OF TEST REPORTS & ATTACHMENTS
 --------------------------------------------------------------------------------
-Playwright generates a fully interactive HTML report containing log outputs, 
-screenshots, and pass/fail states.
 
-* How to open the report locally in VS Code (auto-configured to port 9325 to avoid port conflicts):
-  npm run report
-  (or run: npx playwright show-report --port 9325)
+* Playwright Interactive HTML Report (Videos, screenshots, and trace logs):
+  - Open File: "C:/GlobeWest 2026/playwright-report/index.html" in Chrome or Edge.
+  
+* Zipped Report for sharing with PM/Developers:
+  - File: "C:/GlobeWest 2026/playwright-report.zip"
 
-* File path to open directly in a Web Browser:
-  "GlobeWest 2026/playwright-report/index.html"
-  (Right-click this file in VS Code explorer, select "Reveal in File Explorer",
-   and double-click it to open it in Chrome/Edge.)
+* Lighthouse Scorecard Reports:
+  - Saved as: "C:/GlobeWest 2026/playwright-report/lighthouse-[page_name]-report.html"
 
-* How to share it with the Client:
-  Zip the entire folder "GlobeWest 2026/playwright-report" and send it to the 
-  client. They can unzip it, double-click the "index.html" file, and view the 
-  interactive test results on their own machine!
+* Excel Defect Remediation Log:
+  - File: "C:/GlobeWest 2026/docs/GlobeWest_Remediation_Log.xlsx"
 
---------------------------------------------------------------------------------
-4. WHAT WAS TESTED
---------------------------------------------------------------------------------
-* W3C Accessibility Showcase: Loaded the bad demo page, ran NVDA, navigated to 
-  the main logo and search box, and asserted that NVDA spoke the elements.
-* Dummy Page (dummy-a11y.html): Tested skip links, accessible labels (Close Cart),
-  inaccessible controls (missing labels/focus), and accordion state toggles.
-* Amazon Homepage (WCAG 2.2 AA): Scanned the page layout to extract accessibility 
-  violations (e.g. image alt attributes, link labels, structural landmarks).
-* GlobeWest Storefront (8 Templates): Configured POMs and Axe-Core automated scans 
-  to run on Homepage, PLP, PDP, Checkout, My Account, Trade Portal, Search, 
-  and Static pages.
 ================================================================================
