@@ -1,16 +1,75 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
-const { execSync, exec } = require('child_process');
+const { execSync } = require('child_process');
 
-// Helper function to speak text aloud using Windows Speech Synthesizer synchronously to ensure visual focus alignment
-function speakText(text) {
-  try {
-    const cleanText = text.replace(/[\r\n]/g, ' ').replace(/['"<>|]/g, '').trim();
-    if (cleanText) {
-      execSync(`powershell.exe -Command "Add-Type -AssemblyName System.Speech; $synth = New-Object System.Speech.Synthesis.SpeechSynthesizer; $synth.Rate = 4; $synth.Speak('${cleanText}')"`, { stdio: 'ignore' });
+// Persistent PowerShell speech engine to serialize screen reader announcements without process spawning overhead
+let speechProcess = null;
+let speechResolver = null;
+
+function startSpeechEngine() {
+  if (speechProcess) return;
+  const { spawn } = require('child_process');
+  speechProcess = spawn('powershell.exe', [
+    '-NoProfile',
+    '-Command',
+    `
+      Add-Type -AssemblyName System.Speech;
+      $synth = New-Object System.Speech.Synthesis.SpeechSynthesizer;
+      $synth.Rate = 4;
+      [Console]::Out.WriteLine("Ready");
+      while ($line = [Console]::In.ReadLine()) {
+        if ($line.Trim() -ne "") {
+          $synth.Speak($line);
+          [Console]::Out.WriteLine("Done");
+        }
+      }
+    `
+  ]);
+  
+  speechProcess.stdin.setDefaultEncoding('utf-8');
+  
+  // Listen for the "Done" callback from PowerShell to unblock the tabbing flow
+  speechProcess.stdout.on('data', (data) => {
+    const message = data.toString().trim();
+    if (message.includes('Done') && speechResolver) {
+      const resolve = speechResolver;
+      speechResolver = null;
+      resolve();
     }
-  } catch (e) {
-    // Suppress sound card error details in headless logs to keep logs clean
+  });
+}
+
+async function speakText(text, isHeaded = true) {
+  return new Promise((resolve) => {
+    try {
+      // Disable speech and resolve immediately if running headless for speed optimization
+      if (!isHeaded) {
+        resolve();
+        return;
+      }
+
+      const cleanText = text.replace(/[\r\n]/g, ' ').replace(/['"<>|]/g, '').trim();
+      if (!cleanText) {
+        resolve();
+        return;
+      }
+      
+      startSpeechEngine();
+      speechResolver = resolve;
+      speechProcess.stdin.write(cleanText + '\n');
+    } catch (e) {
+      resolve();
+    }
+  });
+}
+
+function stopSpeechEngine() {
+  if (speechProcess) {
+    try {
+      speechProcess.stdin.end();
+      speechProcess.kill();
+    } catch (e) {}
+    speechProcess = null;
   }
 }
 
@@ -28,9 +87,14 @@ const PAGES_TO_TEST = [
 
 test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
 
-  test.beforeEach(async ({ page }) => {
-    // Increase test timeout to accommodate slow staging pages and complete page tab loops
-    test.setTimeout(240000);
+  test.afterAll(async () => {
+    stopSpeechEngine();
+  });
+
+  test.beforeEach(async ({ page }, testInfo) => {
+    const isHeadedMode = !testInfo.project.use.headless;
+    // Set high timeout for headed runs with audio, and safe 2-minute timeout for headless speed runs
+    test.setTimeout(isHeadedMode ? 600000 : 120000);
     // Block third-party scripts that generate blocking overlay popups and slow down page navigation on staging
     await page.route('**/*listrak*', route => route.abort());
     await page.route('**/*klaviyo*', route => route.abort());
@@ -149,8 +213,10 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
       }
       await page.waitForTimeout(1000);
 
+      const isHeadedMode = !testInfo.project.use.headless;
+
       // Announce the start of the page audit via speech
-      speakText(`Auditing ${pageInfo.name.replace(/^\d+\.\s*/, '')}`);
+      await speakText(`Auditing ${pageInfo.name.replace(/^\d+\.\s*/, '')}`, isHeadedMode);
 
       // 5. Dynamic Tab loop - Simulate keyboard navigation through all focusable elements until they wrap around
       const maxTabs = 150; // Safety limit to prevent infinite loops
@@ -164,10 +230,12 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
         await page.keyboard.press('Tab');
         await page.waitForTimeout(300); // Allow focus state transition
 
-        // Get active element selector to detect stuck focus
+        // Get active element selector to detect stuck focus (excluding the highlight class)
         const currentActiveSelector = await page.evaluate(() => {
           const el = document.activeElement;
-          return el ? el.tagName.toLowerCase() + (el.id ? '#' + el.id : '') + (el.className ? '.' + el.className.split(' ').join('.') : '') : '';
+          if (!el) return '';
+          const classes = Array.from(el.classList).filter(c => c !== 'a11y-focus-highlight');
+          return el.tagName.toLowerCase() + (el.id ? '#' + el.id : '') + (classes.length ? '.' + classes.join('.') : '');
         });
 
         // Recovery: If focus is stuck on the same element, press Escape to dismiss dropdowns/popups and tab again
@@ -232,7 +300,7 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
         
         const speakMsg = `${elementInfo.name} ${role}`;
         console.log(`  Tab ${tabCount}: ${speakMsg}`);
-        speakText(speakMsg);
+        await speakText(speakMsg, isHeadedMode);
 
         // Capture screenshot of the highlighted focused element
         const stepScreenshot = await page.screenshot({ fullPage: false });
@@ -244,7 +312,7 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
         await page.waitForTimeout(200);
       }
 
-      speakText(`Finished auditing ${pageInfo.name.replace(/^\d+\.\s*/, '')}`);
+      await speakText(`Finished auditing ${pageInfo.name.replace(/^\d+\.\s*/, '')}`, isHeadedMode);
     });
   }
 });
