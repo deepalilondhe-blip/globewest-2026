@@ -231,12 +231,18 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
         await page.waitForTimeout(300); // Allow focus state transition
 
         // Get active element selector to detect stuck focus (excluding the highlight class)
-        const currentActiveSelector = await page.evaluate(() => {
-          const el = document.activeElement;
-          if (!el) return '';
-          const classes = Array.from(el.classList).filter(c => c !== 'a11y-focus-highlight');
-          return el.tagName.toLowerCase() + (el.id ? '#' + el.id : '') + (classes.length ? '.' + classes.join('.') : '');
-        });
+        let currentActiveSelector = '';
+        try {
+          currentActiveSelector = await page.evaluate(() => {
+            const el = document.activeElement;
+            if (!el) return '';
+            const classes = Array.from(el.classList).filter(c => c !== 'a11y-focus-highlight');
+            return el.tagName.toLowerCase() + (el.id ? '#' + el.id : '') + (classes.length ? '.' + classes.join('.') : '');
+          });
+        } catch (e) {
+          console.log(`[A11y Info] Navigation or context destruction detected during active element query. Ending tab loop.`);
+          break;
+        }
 
         // Recovery: If focus is stuck on the same element, press Escape to dismiss dropdowns/popups and tab again
         if (currentActiveSelector === lastActiveSelector && tabCount > 1) {
@@ -249,29 +255,35 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
         lastActiveSelector = currentActiveSelector;
 
         // Evaluate the focused element and check if we have seen it before
-        const elementInfo = await page.evaluate(() => {
-          const active = document.activeElement;
-          if (!active || active === document.body) {
-            return { tag: 'body', name: 'body', isClickable: false, alreadySeen: false };
-          }
+        let elementInfo;
+        try {
+          elementInfo = await page.evaluate(() => {
+            const active = document.activeElement;
+            if (!active || active === document.body) {
+              return { tag: 'body', name: 'body', isClickable: false, alreadySeen: false };
+            }
 
-          const tag = active.tagName.toLowerCase();
-          const role = active.getAttribute('role') || 'None';
-          const ariaLabel = active.getAttribute('aria-label') || '';
-          const alt = active.getAttribute('alt') || '';
-          const textContent = active.textContent?.trim() || '';
-          
-          let name = ariaLabel || alt || textContent || active.getAttribute('name') || 'Unnamed Control';
-          if (name.length > 50) name = name.substring(0, 47) + '...';
+            const tag = active.tagName.toLowerCase();
+            const role = active.getAttribute('role') || 'None';
+            const ariaLabel = active.getAttribute('aria-label') || '';
+            const alt = active.getAttribute('alt') || '';
+            const textContent = active.textContent?.trim() || '';
+            
+            let name = ariaLabel || alt || textContent || active.getAttribute('name') || 'Unnamed Control';
+            if (name.length > 50) name = name.substring(0, 47) + '...';
 
-          const isClickable = tag === 'a' || tag === 'button' || role === 'button' || active.getAttribute('onclick') !== null;
-          
-          const alreadySeen = active.hasAttribute('data-a11y-seen');
-          if (!alreadySeen) {
-            active.setAttribute('data-a11y-seen', 'true');
-          }
-          return { tag, name, isClickable, alreadySeen };
-        });
+            const isClickable = tag === 'a' || tag === 'button' || role === 'button' || active.getAttribute('onclick') !== null;
+            
+            const alreadySeen = active.hasAttribute('data-a11y-seen');
+            if (!alreadySeen) {
+              active.setAttribute('data-a11y-seen', 'true');
+            }
+            return { tag, name, isClickable, alreadySeen };
+          });
+        } catch (e) {
+          console.log(`[A11y Info] Navigation or context destruction detected during element info query. Ending tab loop.`);
+          break;
+        }
 
         // Break if we wrap around to an already seen element
         if (elementInfo.alreadySeen) {
