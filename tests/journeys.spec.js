@@ -125,7 +125,7 @@ test.describe('GlobeWest Core User Journey & State Verification', () => {
 
   test('Verify Trade Portal business fields and inputs', async ({ page }) => {
     const tradePortal = new TradePortalPage(page);
-    await tradePortal.navigate('/help-centre/general/trade-registration');
+    await tradePortal.navigate('/gwcustomer/trade/create');
 
     // Strictly assert the registration form is visible to prevent silent passes on 404s
     await expect(tradePortal.companyNameInput).toBeVisible({ timeout: 10000 });
