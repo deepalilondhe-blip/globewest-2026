@@ -55,8 +55,8 @@ test.describe('GlobeWest Automated Lighthouse Audits', () => {
         onlyCategories: ['accessibility', 'performance']
       });
 
-      // 3. Save the Lighthouse reports
-      const reportDir = path.resolve(__dirname, '../playwright-report');
+      // 3. Save the Lighthouse reports in a dedicated directory to prevent Playwright cleaning
+      const reportDir = path.resolve(__dirname, '../lighthouse-reports');
       if (!fs.existsSync(reportDir)) {
         fs.mkdirSync(reportDir, { recursive: true });
       }
