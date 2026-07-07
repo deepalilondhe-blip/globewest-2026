@@ -5,6 +5,19 @@ const { defineConfig, devices } = require('@playwright/test');
  * Playwright Configuration for GlobeWest 2026 Accessibility & Journey Automation
  * @see https://playwright.dev/docs/test-configuration
  */
+// Dynamically set output folder based on the running test spec to prevent reports being overwritten
+const argvStr = process.argv.join(' ');
+let reportFolder = 'playwright-report/general';
+if (argvStr.includes('accessibility.spec.js')) {
+  reportFolder = 'playwright-report/accessibility';
+} else if (argvStr.includes('journeys.spec.js')) {
+  reportFolder = 'playwright-report/journeys';
+} else if (argvStr.includes('lighthouse.spec.js')) {
+  reportFolder = 'playwright-report/lighthouse';
+} else if (argvStr.includes('staging-nvda.spec.js')) {
+  reportFolder = 'playwright-report/nvda';
+}
+
 module.exports = defineConfig({
   testDir: './tests',
   fullyParallel: false,
@@ -15,7 +28,7 @@ module.exports = defineConfig({
   expect: {
     timeout: 10000,
   },
-  reporter: [['html', { outputFolder: 'playwright-report' }]],
+  reporter: [['html', { outputFolder: reportFolder }]],
   use: {
     baseURL: process.env.BASE_URL || 'https://mcstaging2.globewest.com.au', // Fallback to live URL if staging is not accessible
     trace: 'on-first-retry',
