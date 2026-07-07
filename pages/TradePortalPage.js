@@ -25,7 +25,16 @@ class TradePortalPage extends BasePage {
   async fillTradeApplication(data) {
     await this.companyNameInput.fill(data.companyName);
     await this.abnInput.fill(data.abn);
-    await this.tradeCategorySelect.selectOption(data.category);
+    
+    // Select option on the hidden Select2 dropdown via Javascript evaluation to bypass Select2 hidden styling
+    await this.tradeCategorySelect.evaluate((el, category) => {
+      const option = Array.from(el.options).find(opt => opt.text.trim().includes(category) || opt.value === category);
+      if (option) {
+        el.value = option.value;
+        el.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+    }, data.category);
+
     if (data.website) {
       await this.websiteInput.fill(data.website);
     }
