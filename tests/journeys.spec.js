@@ -148,8 +148,7 @@ test.describe('GlobeWest Core User Journey & State Verification', () => {
     await tradePortal.fillTradeApplication({
       companyName: 'ACME Furnishings Pty Ltd',
       abn: '12 345 678 910',
-      category: 'Interior Designer',
-      website: 'https://acmefurnishings.com.au'
+      category: 'Interior Designer'
     });
 
     await expect(tradePortal.companyNameInput).toHaveValue('ACME Furnishings Pty Ltd');
