@@ -128,8 +128,11 @@ test.describe('GlobeWest Core User Journey & State Verification', () => {
     await tradePortal.navigate('/gwcustomer/trade/create');
 
     // 1. Fill out Step 1 (Contact Details)
+    const titleSelect = page.locator('select[name="title"], select#title');
+    await expect(titleSelect).toBeVisible({ timeout: 15000 });
+    await titleSelect.selectOption({ index: 1 }); // Select the first available option (e.g. Mr./Ms.)
+
     const firstNameInput = page.locator('input[placeholder="First name"], input[name="firstname"]');
-    await expect(firstNameInput).toBeVisible({ timeout: 15000 });
     await firstNameInput.fill('John');
     
     await page.locator('input[placeholder="Last Name"], input[name="lastname"]').fill('Doe');
