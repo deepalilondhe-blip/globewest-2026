@@ -125,19 +125,20 @@ test.describe('GlobeWest Core User Journey & State Verification', () => {
 
   test('Verify Trade Portal business fields and inputs', async ({ page }) => {
     const tradePortal = new TradePortalPage(page);
-    await tradePortal.navigate('/trade-portal-registration/');
+    await tradePortal.navigate('/help-centre/general/trade-registration');
 
-    if (await tradePortal.companyNameInput.isVisible()) {
-      await tradePortal.fillTradeApplication({
-        companyName: 'ACME Furnishings Pty Ltd',
-        abn: '12 345 678 910',
-        category: 'Interior Designer',
-        website: 'https://acmefurnishings.com.au'
-      });
+    // Strictly assert the registration form is visible to prevent silent passes on 404s
+    await expect(tradePortal.companyNameInput).toBeVisible({ timeout: 10000 });
 
-      await expect(tradePortal.companyNameInput).toHaveValue('ACME Furnishings Pty Ltd');
-      await expect(tradePortal.abnInput).toHaveValue('12 345 678 910');
-    }
+    await tradePortal.fillTradeApplication({
+      companyName: 'ACME Furnishings Pty Ltd',
+      abn: '12 345 678 910',
+      category: 'Interior Designer',
+      website: 'https://acmefurnishings.com.au'
+    });
+
+    await expect(tradePortal.companyNameInput).toHaveValue('ACME Furnishings Pty Ltd');
+    await expect(tradePortal.abnInput).toHaveValue('12 345 678 910');
   });
 
   test('Verify main navigation category keyboard focus and menus', async ({ page }) => {
