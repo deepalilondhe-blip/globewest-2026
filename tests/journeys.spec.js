@@ -127,8 +127,20 @@ test.describe('GlobeWest Core User Journey & State Verification', () => {
     const tradePortal = new TradePortalPage(page);
     await tradePortal.navigate('/gwcustomer/trade/create');
 
-    // Strictly assert the registration form is visible to prevent silent passes on 404s
-    await expect(tradePortal.companyNameInput).toBeVisible({ timeout: 10000 });
+    // 1. Fill out Step 1 (Contact Details)
+    const firstNameInput = page.locator('input[placeholder="First name"], input[name="firstname"]');
+    await expect(firstNameInput).toBeVisible({ timeout: 15000 });
+    await firstNameInput.fill('John');
+    
+    await page.locator('input[placeholder="Last Name"], input[name="lastname"]').fill('Doe');
+    await page.locator('input[placeholder="Email"], input[name="email"]').fill('john.doe@acmefurnishings.com.au');
+    await page.locator('input[placeholder="Mobile"], input[name="mobile"]').fill('0412345678');
+    
+    // Click the Next button to load Step 2
+    await page.locator('button:has-text("next"), button.action.next').click();
+
+    // 2. Verify and Fill out Step 2 (Business Details)
+    await expect(tradePortal.companyNameInput).toBeVisible({ timeout: 15000 });
 
     await tradePortal.fillTradeApplication({
       companyName: 'ACME Furnishings Pty Ltd',
