@@ -8,9 +8,9 @@ class TradePortalPage extends BasePage {
   constructor(page) {
     super(page);
     // Registration form selectors
-    this.companyNameInput = page.locator('input#company_name, input[name="company"]');
-    this.abnInput = page.locator('input#abn, input[name="abn"]'); // Australian Business Number field
-    this.tradeCategorySelect = page.locator('select#trade_category, select[name="trade_category"]');
+    this.companyNameInput = page.locator('input#company_name, input[name="company"], input[placeholder="Business Name"]');
+    this.abnInput = page.locator('input#abn, input[name="abn"], input[placeholder="ABN"]'); // Australian Business Number field
+    this.tradeCategorySelect = page.locator('select#trade_category, select[name="trade_category"], select[name="primary_business_type"]');
     this.websiteInput = page.locator('input#website, input[name="website"]');
     this.submitApplicationButton = page.locator('button.action.submit, button#submit-trade-app');
     
