@@ -30,7 +30,7 @@ test.describe('GlobeWest Automated Lighthouse Audits', () => {
       });
 
       const page = await browser.newPage();
-      const baseURL = 'https://mcstaging2.globewest.com.au';
+      const baseURL = 'https://mcstaging.globewest.com.au';
       const targetURL = `${baseURL}${pageInfo.path}`;
       
       // Navigate and let the page load
