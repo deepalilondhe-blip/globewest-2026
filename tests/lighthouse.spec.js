@@ -74,15 +74,13 @@ test.describe('GlobeWest Automated Lighthouse Audits', () => {
 
       // 4. Assert scores
       const accessibilityScore = result.lhr.categories.accessibility.score * 100;
-      const performanceScore = result.lhr.categories.performance.score * 100;
 
       console.log(`--- Lighthouse Summary for ${pageInfo.name} ---`);
       console.log(`Accessibility Score: ${accessibilityScore}/100`);
-      console.log(`Performance Score:   ${performanceScore}/100`);
       console.log(`-----------------------------------------------`);
 
       // Verify accessibility meets staging baseline threshold
-      expect(accessibilityScore).toBeGreaterThanOrEqual(40);
+      expect(accessibilityScore).toBeGreaterThanOrEqual(50);
 
       await browser.close();
     });
