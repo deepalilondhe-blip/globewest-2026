@@ -72,7 +72,10 @@ test.describe('GlobeWest Automated Lighthouse Audits', () => {
       console.log(`Lighthouse HTML Report saved to: ${htmlFileUrl}`);
       console.log(`Lighthouse JSON Report saved to: ${jsonFileUrl}`);
 
-      // 4. Load baseline score for comparison
+      // 4. Assert scores
+      const accessibilityScore = result.lhr.categories.accessibility.score * 100;
+
+      // Load baseline score for comparison
       let baselineScoreText = 'No baseline found';
       const baselinePath = path.resolve(__dirname, '../Comparison before and After snapshout/Before', `lighthouse-${pageInfo.name}-report.json`);
       if (fs.existsSync(baselinePath)) {
