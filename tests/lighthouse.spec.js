@@ -56,7 +56,7 @@ test.describe('GlobeWest Automated Lighthouse Audits', () => {
       });
 
       // 3. Save the Lighthouse reports in a dedicated directory to prevent Playwright cleaning
-      const reportDir = path.resolve(__dirname, '../lighthouse-reports');
+      const reportDir = path.resolve(__dirname, '../Comparison before and After snapshout');
       if (!fs.existsSync(reportDir)) {
         fs.mkdirSync(reportDir, { recursive: true });
       }
