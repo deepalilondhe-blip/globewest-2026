@@ -72,11 +72,24 @@ test.describe('GlobeWest Automated Lighthouse Audits', () => {
       console.log(`Lighthouse HTML Report saved to: ${htmlFileUrl}`);
       console.log(`Lighthouse JSON Report saved to: ${jsonFileUrl}`);
 
-      // 4. Assert scores
-      const accessibilityScore = result.lhr.categories.accessibility.score * 100;
+      // 4. Load baseline score for comparison
+      let baselineScoreText = 'No baseline found';
+      const baselinePath = path.resolve(__dirname, '../Comparison before and After snapshout/Before', `lighthouse-${pageInfo.name}-report.json`);
+      if (fs.existsSync(baselinePath)) {
+        try {
+          const baselineData = JSON.parse(fs.readFileSync(baselinePath, 'utf8'));
+          const baselineScore = Math.round(baselineData.categories.accessibility.score * 100);
+          const diff = accessibilityScore - baselineScore;
+          const diffText = diff >= 0 ? `+${diff}` : `${diff}`;
+          baselineScoreText = `${baselineScore}/100 (${diffText} improvement)`;
+        } catch (e) {
+          baselineScoreText = 'Error reading baseline';
+        }
+      }
 
       console.log(`--- Lighthouse Summary for ${pageInfo.name} ---`);
-      console.log(`Accessibility Score: ${accessibilityScore}/100`);
+      console.log(`Baseline Score:     ${baselineScoreText}`);
+      console.log(`Current Score:      ${accessibilityScore}/100`);
       console.log(`-----------------------------------------------`);
 
       // Verify accessibility meets staging baseline threshold
