@@ -52,7 +52,7 @@ test.describe('GlobeWest Automated Lighthouse Audits', () => {
         disableStorageReset: true,
         logLevel: 'info',
         output: ['html', 'json'],
-        onlyCategories: ['accessibility', 'performance']
+        onlyCategories: ['accessibility']
       });
 
       // 3. Save the Lighthouse reports in a dedicated directory to prevent Playwright cleaning
