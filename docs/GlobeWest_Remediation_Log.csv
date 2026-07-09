@@ -14,11 +14,11 @@ GW-A11Y-12,3. PDP (Product Detail),2.4.4 Link Purpose,link-name,Thumbnail galler
 GW-A11Y-13,3. PDP (Product Detail),4.1.2 Name Role Value,aria-command-name,Color swatches lack accessible labels.,Inject aria-label detailing color and selected state dynamically.,VERIFIED FIXED
 GW-A11Y-14,3. PDP (Product Detail),1.4.4 Resize Text,meta-viewport,Mobile scaling is disabled in meta tag (user-scalable=no).,Modify viewport meta tag in page header to remove user-scalable restriction.,VERIFIED FIXED
 GW-A11Y-15,3. PDP (Product Detail),2.5.8 Target Size,target-size,Carousel next/prev arrows tap target is below 24x24px.,Increase click/tap margins on slide navigation controls to 24px minimum.,VERIFIED FIXED
-GW-A11Y-16,4. Shopping Cart,1.4.3 Contrast (Min),color-contrast,Order summary text labels contrast ratio is below 4.5:1.,Darken gray labels in the price calculation sidebar.,PENDING REMEDIATION
+GW-A11Y-16,4. Shopping Cart,1.4.3 Contrast (Min),color-contrast,Order summary text labels contrast ratio is below 4.5:1.,Darken gray labels in the price calculation sidebar.,VERIFIED FIXED
 GW-A11Y-17,4. Shopping Cart,4.1.2 Name Role Value,aria-command-name,Cart update and remove buttons lack clear aria-labels.,Add descriptive labels (e.g. aria-label="Remove item Celine Dining Chair").,VERIFIED FIXED
 GW-A11Y-18,4. Shopping Cart,1.4.4 Resize Text,meta-viewport,Mobile scaling is disabled in meta tag (user-scalable=no).,Modify viewport meta tag in page header to remove user-scalable restriction.,VERIFIED FIXED
 GW-A11Y-19,4. Shopping Cart,2.5.8 Target Size,target-size,Cart drawer close button tap target is below 24x24px.,Increase tap dimensions of the drawer close button to 24px.,VERIFIED FIXED
-GW-A11Y-20,5. My Account,1.4.3 Contrast (Min),color-contrast,Validation error messages text contrast ratio is below 4.5:1.,Increase color depth of form validation messages.,PENDING REMEDIATION
+GW-A11Y-20,5. My Account,1.4.3 Contrast (Min),color-contrast,Validation error messages text contrast ratio is below 4.5:1.,Increase color depth of form validation messages.,VERIFIED FIXED
 GW-A11Y-21,5. My Account,2.4.4 Link Purpose,link-name,Dashboard navigation menu links lack discernible text.,Verify text exists inside sidebar navigation anchor tags.,VERIFIED FIXED
 GW-A11Y-22,5. My Account,4.1.2 Name Role Value,aria-command-name,Login portal submit controls lack clear accessible text.,Add a discernible value to form buttons or input type="submit" elements.,VERIFIED FIXED
 GW-A11Y-23,5. My Account,1.4.4 Resize Text,meta-viewport,Mobile scaling is disabled in meta tag (user-scalable=no).,Modify viewport meta tag in page header to remove user-scalable restriction.,VERIFIED FIXED
@@ -41,4 +41,4 @@ GW-A11Y-39,8. Static Content,1.4.4 Resize Text,meta-viewport,Mobile scaling is d
 GW-A11Y-40,8. Static Content,2.5.8 Target Size,target-size,Showrooms list phone icon tap target is under 24px.,Increase click targets of telephone/email direct links to 24px.,VERIFIED FIXED
 GW-A11Y-41,2. PLP (Furniture),2.4.4 Link Purpose,button-name,Wishlist icon buttons on product grid cards lack accessible text labels.,Add an aria-label containing the product name to the wishlist button element.,PENDING REMEDIATION
 GW-A11Y-42,2. PLP (Furniture),4.1.2 Name Role Value,nested-interactive,Sort By selection wrapper element nests interactive select inputs inside a button-role container.,Remove button role from the select2 container or restructure to prevent nested controls.,PENDING REMEDIATION
-GW-A11Y-43,1. Homepage,2.4.3 Focus Order,keyboard-navigation,Collapsed header navigation dropdown sub-links remain focusable in the DOM.,Apply display: none or visibility: hidden to collapsed submenu containers when closed.,PENDING REMEDIATION
+GW-A11Y-43,1. Homepage,2.4.3 Focus Order,keyboard-navigation,Collapsed header navigation dropdown sub-links remain focusable in the DOM.,Apply display: none or visibility: hidden to collapsed submenu containers when closed.,VERIFIED FIXED
