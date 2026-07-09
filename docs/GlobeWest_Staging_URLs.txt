@@ -2,8 +2,41 @@
 GLOBEWEST Storefront Accessibility Audits - Staging URL Reference
 ====================================================================
 
-The automated test suite and manual audits target the following 8 core page templates:
+The storefront templates can be tested across both staging environments.
 
+--------------------------------------------------------------------
+STAGING ENVIRONMENT 1 (Primary - Target for recent deployments)
+Base URL: https://mcstaging.globewest.com.au
+--------------------------------------------------------------------
+1. Homepage
+   URL: https://mcstaging.globewest.com.au/
+
+2. Product Listing Page (PLP)
+   URL: https://mcstaging.globewest.com.au/indoor
+
+3. Product Detail Page (PDP)
+   URL: https://mcstaging.globewest.com.au/celine-dining-chair-loden-antique-brass-ch-celin-antique-brass
+
+4. Shopping Cart Page
+   URL: https://mcstaging.globewest.com.au/checkout/cart/
+
+5. My Account / Login Page
+   URL: https://mcstaging.globewest.com.au/customer/account/login/
+
+6. B2B Trade Portal / Registration Page
+   URL: https://mcstaging.globewest.com.au/help-centre/general/trade-registration
+
+7. Search Results Page
+   URL: https://mcstaging.globewest.com.au/catalogsearch/result/?q=sofa
+
+8. Content / Static Page (About Us)
+   URL: https://mcstaging.globewest.com.au/about-us
+
+
+--------------------------------------------------------------------
+STAGING ENVIRONMENT 2 (Alternative / Sandbox)
+Base URL: https://mcstaging2.globewest.com.au
+--------------------------------------------------------------------
 1. Homepage
    URL: https://mcstaging2.globewest.com.au/
 
