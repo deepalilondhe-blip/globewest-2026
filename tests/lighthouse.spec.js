@@ -43,6 +43,13 @@ test.describe('GlobeWest Automated Lighthouse Audits', () => {
         await welcomePopupCloseBtn.click();
       }
 
+      // 1.5 Take page screenshot and attach it directly to the Playwright report
+      const screenshot = await page.screenshot();
+      await test.info().attach('screenshot', {
+        body: screenshot,
+        contentType: 'image/png'
+      });
+
       // 2. Dynamically import Lighthouse to run audits
       const lighthouse = (await import('lighthouse')).default;
       
