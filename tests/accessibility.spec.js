@@ -98,7 +98,7 @@ test.describe('GlobeWest storefront Accessibility Audit (WCAG 2.2 AA)', () => {
   });
 
   test('2. Product Listing Page (PLP) accessibility scan', async ({ page }) => {
-    await runAxeScan(page, '/furniture/sofas-modulars.html', 'PLP');
+    await runAxeScan(page, '/indoor', 'PLP');
   });
 
   test('3. Product Detail Page (PDP) accessibility scan', async ({ page }) => {
