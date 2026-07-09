@@ -77,12 +77,13 @@ function stopSpeechEngine() {
 const PAGES_TO_TEST = [
   { name: '1. Homepage', path: '/' },
   { name: '2. Product Listing Page (PLP)', path: '/indoor' },
-  { name: '3. Product Detail Page (PDP)', path: '/celine-dining-chair-loden-antique-brass-ch-celin-antique-brass' },
+  { name: '3. Product Detail Page (PDP)', path: '/jasper-marble-console-monica-red-marble-cons-jasp-mar' },
   { name: '4. Shopping Cart / Checkout', path: '/checkout/cart/' },
   { name: '5. My Account Login', path: '/customer/account/login/' },
   { name: '6. B2B Trade Portal', path: '/help-centre/general/trade-registration' },
   { name: '7. Search Results Page', path: '/catalogsearch/result/?q=sofa' },
-  { name: '8. Content / Static Page', path: '/about-us' }
+  { name: '8. Content / Static Page', path: '/blog' },
+  { name: '9. Blog Detail Page', path: '/blog/stockist-in-profile/stockist-in-profile-%7C-ikos-home-duplicated' }
 ];
 
 test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
@@ -191,7 +192,7 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
       // Inject CSS stylesheet to hide popups and search suggestions to prevent keyboard focus traps
       await page.addStyleTag({
         content: `
-          a#lpclose, .listrak-popup, #omnisend-form-container, .newsletter-popup, div[role="dialog"], .modal-popup, .lp-popup, .search-autocomplete, #search_autocomplete {
+          a#lpclose, .listrak-popup, #omnisend-form-container, .newsletter-popup, div[role="dialog"], .modal-popup, .lp-popup, .search-autocomplete, #search_autocomplete, #_lpSurveyPopover_7GUA-CY8, iframe#lpdialog, div[id*="SurveyPopover"] {
             display: none !important;
             visibility: hidden !important;
             pointer-events: none !important;
@@ -237,7 +238,7 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
             const el = document.activeElement;
             if (!el) return '';
             const classes = Array.from(el.classList).filter(c => c !== 'a11y-focus-highlight');
-            return el.tagName.toLowerCase() + (el.id ? '#' + el.id : '') + (classes.length ? '.' + classes.join('.') : '');
+            return el.tagName.toLowerCase() + (el.id ? '#' + el.id : '') + (classes.length ? '.' + classes.join('.') : '') + '::' + (el.textContent || '').trim();
           });
         } catch (e) {
           console.log(`[A11y Info] Navigation or context destruction detected during active element query. Ending tab loop.`);

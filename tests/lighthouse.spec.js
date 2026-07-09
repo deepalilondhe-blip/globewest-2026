@@ -7,12 +7,13 @@ const path = require('path');
 const PAGES_TO_TEST = [
   { name: '1_homepage', path: '/' },
   { name: '2_plp', path: '/indoor' },
-  { name: '3_pdp', path: '/celine-dining-chair-loden-antique-brass-ch-celin-antique-brass' },
+  { name: '3_pdp', path: '/jasper-marble-console-monica-red-marble-cons-jasp-mar' },
   { name: '4_cart', path: '/checkout/cart/' },
   { name: '5_login', path: '/customer/account/login/' },
   { name: '6_trade', path: '/help-centre/general/trade-registration' },
   { name: '7_search', path: '/catalogsearch/result/?q=sofa' },
-  { name: '8_static', path: '/about-us' }
+  { name: '8_static', path: '/blog' },
+  { name: '9_blog_detail', path: '/blog/stockist-in-profile/stockist-in-profile-%7C-ikos-home-duplicated' }
 ];
 
 test.describe('GlobeWest Automated Lighthouse Audits', () => {

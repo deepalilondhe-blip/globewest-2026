@@ -102,7 +102,7 @@ test.describe('GlobeWest storefront Accessibility Audit (WCAG 2.2 AA)', () => {
   });
 
   test('3. Product Detail Page (PDP) accessibility scan', async ({ page }) => {
-    await runAxeScan(page, '/sofas-modulars/3-seater/sofa-name.html', 'PDP');
+    await runAxeScan(page, '/jasper-marble-console-monica-red-marble-cons-jasp-mar', 'PDP');
   });
 
   test('4. Shopping Cart / Checkout Page accessibility scan', async ({ page }) => {
@@ -122,6 +122,10 @@ test.describe('GlobeWest storefront Accessibility Audit (WCAG 2.2 AA)', () => {
   });
 
   test('8. Content / Static Page accessibility scan', async ({ page }) => {
-    await runAxeScan(page, '/about-us/', 'About Us Content');
+    await runAxeScan(page, '/blog', 'Blog Page');
+  });
+
+  test('9. Blog Detail Page accessibility scan', async ({ page }) => {
+    await runAxeScan(page, '/blog/stockist-in-profile/stockist-in-profile-%7C-ikos-home-duplicated', 'Blog Detail Page');
   });
 });
