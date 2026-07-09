@@ -25,7 +25,7 @@ GW-A11Y-23,5. My Account,1.4.4 Resize Text,meta-viewport,Mobile scaling is disab
 GW-A11Y-24,5. My Account,2.5.8 Target Size,target-size,Address edit action buttons tap target is below 24px.,Set min-width and min-height properties to 24px on address action links.,PENDING REMEDIATION
 GW-A11Y-25,6. B2B Trade Portal,1.4.3 Contrast (Min),color-contrast,Form instruction label text contrast ratio is below 4.5:1.,Darken helper text and placeholder prompts for form fields.,VERIFIED FIXED
 GW-A11Y-26,6. B2B Trade Portal,2.4.4 Link Purpose,link-name,Help center sidebar anchor links lack discernible text.,Ensure helper links wrap readable text. Add aria-label if empty icons are used.,VERIFIED FIXED
-GW-A11Y-27,6. B2B Trade Portal,4.1.2 Name Role Value,aria-command-name,File uploader upload button lacks accessible name.,Ensure upload input/button has valid label connection or aria-label.,VERIFIED FIXED
+GW-A11Y-27,6. B2B Trade Portal,4.1.2 Name Role Value,aria-command-name,File uploader upload button lacks accessible name.,Ensure upload input/button has valid label connection or aria-label.,PENDING REMEDIATION
 GW-A11Y-28,6. B2B Trade Portal,1.4.4 Resize Text,meta-viewport,Mobile scaling is disabled in meta tag (user-scalable=no).,Modify viewport meta tag in page header to remove user-scalable restriction.,VERIFIED FIXED
 GW-A11Y-29,6. B2B Trade Portal,2.5.8 Target Size,target-size,Form file attachment delete button target is under 24px.,Increase padding on dynamic file upload list controls.,VERIFIED FIXED
 GW-A11Y-30,7. Search Results,1.4.3 Contrast (Min),color-contrast,Search query matching text contrast ratio is below 4.5:1.,Darken text indicators displaying matching search results query counts.,VERIFIED FIXED
