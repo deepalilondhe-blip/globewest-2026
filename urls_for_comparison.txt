@@ -1,0 +1,30 @@
+====================================================================
+               GLOBEWEST URLS COMPARISON LIST (STAGING vs PROD)
+====================================================================
+
+1. Homepage
+--------------------------------------------------------------------
+Staging:    https://mcstaging.globewest.com.au/
+Production: http://www.globewest.com.au/
+
+2. Product Listing Page (PLP)
+--------------------------------------------------------------------
+Staging:    https://mcstaging.globewest.com.au/indoor
+Production: http://www.globewest.com.au/indoor
+
+3. Product Detail Page (PDP)
+--------------------------------------------------------------------
+Staging:    https://mcstaging.globewest.com.au/jasper-marble-console-monica-red-marble-cons-jasp-mar
+Production: http://www.globewest.com.au/lumi-occasional-chair-tapioca-ch-lumi-occ
+
+4. Blog Listing Page
+--------------------------------------------------------------------
+Staging:    https://mcstaging.globewest.com.au/blog
+Production: http://www.globewest.com.au/blog
+
+5. Blog Details Page
+--------------------------------------------------------------------
+Staging:    https://mcstaging.globewest.com.au/blog/stockist-in-profile/stockist-in-profile-%7C-ikos-home-duplicated
+Production: http://www.globewest.com.au/blog/stockist-in-profile/stockist-in-profile-%7C-ikos-home
+
+====================================================================
