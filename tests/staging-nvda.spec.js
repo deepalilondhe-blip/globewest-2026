@@ -236,9 +236,26 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
         try {
           currentActiveSelector = await page.evaluate(() => {
             const el = document.activeElement;
-            if (!el) return '';
-            const classes = Array.from(el.classList).filter(c => c !== 'a11y-focus-highlight');
-            return el.tagName.toLowerCase() + (el.id ? '#' + el.id : '') + (classes.length ? '.' + classes.join('.') : '') + '::' + (el.textContent || '').trim();
+            if (!el || el === document.body) return '';
+            
+            // Generate a unique CSS path for the element
+            const getUniquePath = (node) => {
+              const parts = [];
+              let current = node;
+              while (current && current.nodeType === Node.ELEMENT_NODE) {
+                let index = 1;
+                for (let sib = current.previousSibling; sib; sib = sib.previousSibling) {
+                  if (sib.nodeType === Node.ELEMENT_NODE && sib.tagName === current.tagName) {
+                    index++;
+                  }
+                }
+                parts.unshift(current.tagName.toLowerCase() + ':nth-of-type(' + index + ')');
+                current = current.parentNode;
+              }
+              return parts.join(' > ');
+            };
+            
+            return getUniquePath(el);
           });
         } catch (e) {
           console.log(`[A11y Info] Navigation or context destruction detected during active element query. Ending tab loop.`);
