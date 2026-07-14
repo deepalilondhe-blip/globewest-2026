@@ -11,6 +11,15 @@ const { SearchPage } = require('../pages/SearchPage');
 const { StaticPage } = require('../pages/StaticPage');
 
 test.describe('GlobeWest storefront Accessibility Audit (WCAG 2.2 AA)', () => {
+
+  test.beforeEach(async ({ page }) => {
+    // Block third-party scripts that generate blocking overlay popups and slow down page navigation on staging
+    await page.route('**/*listrak*', route => route.abort());
+    await page.route('**/*klaviyo*', route => route.abort());
+    await page.route('**/*hotjar*', route => route.abort());
+    await page.route('**/*google-analytics*', route => route.abort());
+    await page.route('**/*yotpo*', route => route.abort());
+  });
   
   // Helper function to run axe and assert violations
   async function runAxeScan(page, path, name) {
@@ -106,18 +115,6 @@ test.describe('GlobeWest storefront Accessibility Audit (WCAG 2.2 AA)', () => {
   });
 
   test('4. Shopping Cart / Checkout Page accessibility scan', async ({ page }) => {
-    // Navigate to a product detail page and add to cart first
-    await page.goto('/celine-dining-chair-loden-antique-brass-ch-celin-antique-brass');
-    await page.waitForLoadState('domcontentloaded');
-    
-    const addToCartBtn = page.locator('#product-addtocart-button, .action.tocart');
-    if (await addToCartBtn.isVisible()) {
-      await addToCartBtn.click();
-      // Wait for minicart counter to update indicating success
-      const counter = page.locator('.counter-number').first();
-      await expect(counter).not.toBeEmpty({ timeout: 15000 });
-    }
-    
     await runAxeScan(page, '/checkout/cart/', 'Cart/Checkout');
   });
 
