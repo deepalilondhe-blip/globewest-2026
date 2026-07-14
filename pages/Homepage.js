@@ -22,6 +22,9 @@ class Homepage extends BasePage {
     await this.skipLink.click();
   }
 
+  /**
+   * @param {string} query
+   */
   async searchProduct(query) {
     await this.searchBar.fill(query);
     await this.searchBar.press('Enter');
