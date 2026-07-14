@@ -38,6 +38,8 @@ test.describe('GlobeWest Automated Lighthouse Audits', () => {
       await page.route('**/*hotjar*', route => route.abort());
       await page.route('**/*google-analytics*', route => route.abort());
       await page.route('**/*yotpo*', route => route.abort());
+      await page.route('**/*dotdigital*', route => route.abort());
+      await page.route('**/*popover*', route => route.abort());
 
       const baseURL = 'https://mcstaging.globewest.com.au';
       
@@ -88,10 +90,27 @@ test.describe('GlobeWest Automated Lighthouse Audits', () => {
       console.log(`Running Lighthouse Audit on Staging ${pageInfo.name}...`);
       const result = await lighthouse(targetURL, {
         port: 9222,
-        disableStorageReset: true,
+        disableStorageReset: pageInfo.name === '4_cart', // Only disable storage reset on Cart to preserve cart items
         logLevel: 'info',
         output: ['html', 'json'],
         onlyCategories: ['accessibility']
+      }, {
+        extends: 'lighthouse:default',
+        settings: {
+          blockedUrlPatterns: [
+            '*listrak*',
+            '*klaviyo*',
+            '*hotjar*',
+            '*google-analytics*',
+            '*yotpo*',
+            '*dotdigital-pages.com*',
+            '*r3.dotdigital-pages.com*',
+            '*dotdigital*',
+            '*popover*',
+            '*Dotdigitalgroup_Email*',
+            '*emailCapture*'
+          ]
+        }
       });
 
       // 3. Save the Lighthouse reports in a dedicated directory to prevent Playwright cleaning

@@ -19,6 +19,8 @@ test.describe('GlobeWest storefront Accessibility Audit (WCAG 2.2 AA)', () => {
     await page.route('**/*hotjar*', route => route.abort());
     await page.route('**/*google-analytics*', route => route.abort());
     await page.route('**/*yotpo*', route => route.abort());
+    await page.route('**/*dotdigital*', route => route.abort());
+    await page.route('**/*popover*', route => route.abort());
   });
   
   // Helper function to run axe and assert violations
