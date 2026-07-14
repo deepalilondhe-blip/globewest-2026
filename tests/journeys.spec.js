@@ -308,10 +308,9 @@ test.describe('GlobeWest Core User Journey & State Verification', () => {
       if (await checkout.emailInput.isVisible()) {
         await expect(checkout.emailInput).toBeVisible();
       }
-    } else {
       // Fallback: Navigate directly to /checkout/ and verify forms exist
       await checkout.navigate('/checkout/');
-      await page.waitForLoadState('networkidle');
+      await page.waitForLoadState('domcontentloaded');
       if (await checkout.emailInput.isVisible()) {
         await expect(checkout.emailInput).toBeVisible();
       }
