@@ -115,6 +115,16 @@ test.describe('GlobeWest storefront Accessibility Audit (WCAG 2.2 AA)', () => {
   });
 
   test('4. Shopping Cart / Checkout Page accessibility scan', async ({ page }) => {
+    // Navigate to a simple in-stock product detail page and add to cart first
+    await page.goto('/ezra-buffet-mocha-oak-buf-ezra');
+    await page.waitForLoadState('domcontentloaded');
+    
+    const addToCartBtn = page.locator('#product-addtocart-button, .action.tocart');
+    if (await addToCartBtn.isVisible()) {
+      await addToCartBtn.click();
+      await page.waitForTimeout(5000); // Wait for AJAX cart addition request to finish
+    }
+    
     await runAxeScan(page, '/checkout/cart/', 'Cart/Checkout');
   });
 
