@@ -81,7 +81,7 @@ test.describe('GlobeWest storefront Accessibility Audit (WCAG 2.2 AA)', () => {
     }
 
     const scanResults = await new AxeBuilder({ page })
-      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'])
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice'])
       .exclude('iframe[src*="yotpo.com"]')
       .exclude('.yotpo-widget')
       .analyze();
