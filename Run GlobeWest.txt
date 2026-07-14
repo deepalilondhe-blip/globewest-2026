@@ -59,3 +59,5 @@ Open your terminal in VS Code inside the "GlobeWest 2026" directory and run:
   - File: "C:/GlobeWest 2026/docs/GlobeWest_Remediation_Log.xlsx"
 
 ================================================================================
+* Verfiy the performance score : 
+-  node verify_scores.js
