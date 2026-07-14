@@ -31,7 +31,38 @@ test.describe('GlobeWest Automated Lighthouse Audits', () => {
       });
 
       const page = await browser.newPage();
+      
+      // Block third-party scripts that generate blocking overlay popups and slow down page navigation on staging
+      await page.route('**/*listrak*', route => route.abort());
+      await page.route('**/*klaviyo*', route => route.abort());
+      await page.route('**/*hotjar*', route => route.abort());
+      await page.route('**/*google-analytics*', route => route.abort());
+      await page.route('**/*yotpo*', route => route.abort());
+
       const baseURL = 'https://mcstaging.globewest.com.au';
+      
+      if (pageInfo.name === '4_cart') {
+        console.log('Populating cart with Ezra Buffet for Lighthouse Cart Audit...');
+        await page.goto(`${baseURL}/ezra-buffet-mocha-oak-buf-ezra`);
+        await page.waitForLoadState('domcontentloaded');
+        
+        // Dismiss popups first to avoid pointer interception
+        const closeSelectors = ['a#lpclose', 'button#lpclose', '.action.close', '[aria-label="Close"]'];
+        for (const selector of closeSelectors) {
+          const closeBtn = page.locator(selector).first();
+          if (await closeBtn.isVisible()) {
+            await closeBtn.click();
+            await page.waitForTimeout(500);
+          }
+        }
+
+        const addToCartBtn = page.locator('#product-addtocart-button, .action.tocart');
+        if (await addToCartBtn.isVisible()) {
+          await addToCartBtn.click();
+          await page.waitForTimeout(5000); // Wait for AJAX addition request to complete
+        }
+      }
+
       const targetURL = `${baseURL}${pageInfo.path}`;
       
       // Navigate and let the page load
