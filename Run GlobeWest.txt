@@ -43,7 +43,14 @@ Open your terminal in VS Code inside the "GlobeWest 2026" directory and run:
   - Desktop Chrome:
     npx playwright test tests/staging-nvda.spec.js --project=desktop-chrome --headed
   - Mobile iPhone Safari:
-    npx playwright test tests/staging-nvda.spec.js --project=mobile-safari-iphone --headed
+    * Run all pages at once:
+      npx playwright test tests/staging-nvda.spec.js --project=mobile-safari-iphone --headed
+    * Run My Account Dashboard:
+      npx playwright test tests/staging-nvda.spec.js -g "7. My Account Dashboard" --project=mobile-safari-iphone --headed
+    * Run My Account Login Page:
+      npx playwright test tests/staging-nvda.spec.js -g "8. My Account Login" --project=mobile-safari-iphone --headed
+    * Run B2B Quotes Index Page:
+      npx playwright test tests/staging-nvda.spec.js -g "9. B2B Quotes Index" --project=mobile-safari-iphone --headed
   - Mobile Android Chrome:
     npx playwright test tests/staging-nvda.spec.js --project=mobile-chrome-android --headed
 
