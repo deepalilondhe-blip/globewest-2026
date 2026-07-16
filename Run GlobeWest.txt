@@ -4,7 +4,7 @@
 
 This document contains the exact commands to execute the active accessibility, 
 performance, and user journey test suites for the GlobeWest staging storefront
-(https://mcstaging2.globewest.com.au/).
+(https://mcstaging.globewest.com.au/).
 
 --------------------------------------------------------------------------------
 1. SETUP (First Time Only)
@@ -25,10 +25,12 @@ Open your terminal in VS Code inside the "GlobeWest 2026" directory and run:
     npx playwright test tests/accessibility.spec.js --project=desktop-chrome --headed
 
 * Run the Screen Reader / Keyboard Focus Simulator (with audio voice announcements):
-  - Headless (Background - Fast - No audio):
-    npx playwright test tests/staging-nvda.spec.js --project=desktop-chrome
-  - Headed (Visual - Plays voice reader aloud):
+  - Desktop Chrome:
     npx playwright test tests/staging-nvda.spec.js --project=desktop-chrome --headed
+  - Mobile iPhone Safari:
+    npx playwright test tests/staging-nvda.spec.js --project=mobile-safari-iphone --headed
+  - Mobile Android Chrome:
+    npx playwright test tests/staging-nvda.spec.js --project=mobile-chrome-android --headed
 
 * Run the Core Functional Journeys (Cart flow, Mega menus, Login):
   - Headless (Background):
