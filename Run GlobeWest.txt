@@ -18,41 +18,21 @@ Open your terminal in VS Code inside the "GlobeWest 2026" directory and run:
 2. RUNNING THE ACTIVE TESTS
 --------------------------------------------------------------------------------
 
-* Run the Axe accessibility scans:
-  - Run all pages at once:
+* Run the Axe accessibility scans (All 8 templates):
+  - Headless (Background - Fast):
+    npx playwright test tests/accessibility.spec.js --project=desktop-chrome
+  - Headed (Visual - Opens browser):
     npx playwright test tests/accessibility.spec.js --project=desktop-chrome --headed
-  - Run individual pages:
-    1. Homepage:
-       npx playwright test tests/accessibility.spec.js -g "1. Homepage" --project=desktop-chrome --headed
-    2. Product Listing Page (PLP):
-       npx playwright test tests/accessibility.spec.js -g "2. Product Listing" --project=desktop-chrome --headed
-    3. Product Detail Page (PDP):
-       npx playwright test tests/accessibility.spec.js -g "3. Product Detail" --project=desktop-chrome --headed
-    4. Shopping Cart Page:
-       npx playwright test tests/accessibility.spec.js -g "4. Shopping Cart" --project=desktop-chrome --headed
-    5. Checkout Shipping Page:
-       npx playwright test tests/accessibility.spec.js -g "5. Checkout shipping" --project=desktop-chrome --headed
-    6. Checkout Payment Page:
-       npx playwright test tests/accessibility.spec.js -g "6. Checkout payment" --project=desktop-chrome --headed
-    7. My Account Login Page:
-       npx playwright test tests/accessibility.spec.js -g "7. My Account Login" --project=desktop-chrome --headed
-    8. B2B Quotes Index Page:
-       npx playwright test tests/accessibility.spec.js -g "8. B2B Quotes Index" --project=desktop-chrome --headed
 
 * Run the Screen Reader / Keyboard Focus Simulator (with audio voice announcements):
-  - Desktop Chrome:
+  - Headless (Background - Fast - No audio):
+    npx playwright test tests/staging-nvda.spec.js --project=desktop-chrome
+  - Headed (Visual - Plays voice reader aloud):
     npx playwright test tests/staging-nvda.spec.js --project=desktop-chrome --headed
-  - Mobile iPhone Safari:
-    * Run all pages at once:
-      npx playwright test tests/staging-nvda.spec.js --project=mobile-safari-iphone --headed
-    * Run My Account Dashboard:
-      npx playwright test tests/staging-nvda.spec.js -g "7. My Account Dashboard" --project=mobile-safari-iphone --headed
-    * Run My Account Login Page:
-      npx playwright test tests/staging-nvda.spec.js -g "8. My Account Login" --project=mobile-safari-iphone --headed
-    * Run B2B Quotes Index Page:
-      npx playwright test tests/staging-nvda.spec.js -g "9. B2B Quotes Index" --project=mobile-safari-iphone --headed
-  - Mobile Android Chrome:
-    npx playwright test tests/staging-nvda.spec.js --project=mobile-chrome-android --headed
+  - Run My Account Page (Desktop View):
+    npx playwright test tests/staging-nvda.spec.js -g "7. My Account Dashboard" --project=desktop-chrome --headed
+  - Run My Account Page (Mobile View):
+    npx playwright test tests/staging-nvda.spec.js -g "7. My Account Dashboard" --project=mobile-safari-iphone --headed
 
 * Run the Core Functional Journeys (Cart flow, Mega menus, Login):
   - Headless (Background):
