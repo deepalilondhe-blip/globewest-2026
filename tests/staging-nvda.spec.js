@@ -80,7 +80,8 @@ const PAGES_TO_TEST = [
   { name: '3. Product Detail Page (PDP)', path: '/celine-dining-chair-loden-antique-brass-ch-celin-antique-brass' },
   { name: '4. Shopping Cart Page', path: '/checkout/cart/' },
   { name: '5. Checkout shipping Page', path: 'https://mcstaging.globewest.com.au/checkout/#shipping' },
-  { name: '6. Checkout payment Page', path: 'https://mcstaging.globewest.com.au/checkout/#payment' }
+  { name: '6. Checkout payment Page', path: 'https://mcstaging.globewest.com.au/checkout/#payment' },
+  { name: '7. My Account Dashboard', path: 'https://mcstaging.globewest.com.au/customer/account/index/' }
 ];
 
 test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
@@ -225,14 +226,57 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
           await page.locator('button.continue.primary:visible').click();
           await page.waitForTimeout(4000);
         }
+      } else if (pageInfo.name.includes('7. My Account Dashboard')) {
+        console.log('Logging in via Admin to access My Account Dashboard...');
+        const loginUrl = 'https://mcstaging.globewest.com.au/godmode/customer/index/edit/id/112317/key/3cef45675f154e3048246abb9227c3e3113730cfb1e7b2886b8460a9335c5516/#';
+        await page.goto(loginUrl, { timeout: 25000, waitUntil: 'domcontentloaded' });
+        
+        await page.locator('input#username').fill('deepali_od');
+        await page.locator('input#login').fill('xMKbkaep4AQqxfuwbskhqA');
+        await page.locator('button.action-login, button:has-text("Sign in")').click();
+        await page.waitForURL('**/dashboard/**', { timeout: 15000 });
+        
+        // Expand Customers and go to All Customers
+        await page.locator('li#menu-magento-customer-customer > a, a:has-text("Customers")').first().click();
+        await page.waitForTimeout(2000);
+        await page.locator('a:has-text("All Customers"), .submenu a[href*="customer/index"]').first().click();
+        await page.waitForURL('**/customer/index/index/**', { timeout: 15000 });
+        
+        // Click Edit customer row
+        const customerRow = page.locator('tr.data-row, tr').filter({ hasText: '112317' }).first();
+        await customerRow.waitFor({ state: 'visible', timeout: 10000 });
+        await customerRow.locator('a.action-menu-item').filter({ hasText: 'Edit' }).first().click();
+        await page.waitForURL('**/customer/index/edit/**', { timeout: 25000 });
+        await page.waitForTimeout(6000);
+        
+        // Login as Customer (handle popup)
+        const loginBtn = page.locator('button:has-text("Login as Customer"), button[id*="login_as_customer"]').first();
+        await loginBtn.click();
+        await page.waitForTimeout(3000);
+        
+        const confirmBtn = page.locator('.modal-popup button:has-text("Login as Customer"), button.action-accept').first();
+        
+        // Listen for new page tab
+        const [newPage] = await Promise.all([
+          page.context().waitForEvent('page'),
+          confirmBtn.click()
+        ]);
+        
+        await newPage.waitForLoadState('load');
+        await newPage.waitForTimeout(5000);
+        
+        // Point target page context to the newly authenticated frontend tab
+        page = newPage;
       }
       
       // 1. Navigate to target staging page and wait for the page to render fully
-      try {
-        await page.goto(pageInfo.path, { timeout: 20000 });
-        await page.waitForLoadState('load');
-      } catch (e) {
-        console.warn(`Primary page navigation failed/timed out, continuing scan: ${pageInfo.path}`);
+      if (!pageInfo.name.includes('7. My Account Dashboard')) {
+        try {
+          await page.goto(pageInfo.path, { timeout: 20000 });
+          await page.waitForLoadState('load');
+        } catch (e) {
+          console.warn(`Primary page navigation failed/timed out, continuing scan: ${pageInfo.path}`);
+        }
       }
       
       // Additional wait to ensure client-side components and images are completely rendered
