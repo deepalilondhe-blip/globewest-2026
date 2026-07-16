@@ -41,24 +41,41 @@ function startSpeechEngine() {
 
 async function speakText(text, isHeaded = true) {
   return new Promise((resolve) => {
+    let resolved = false;
+    const safeResolve = () => {
+      if (!resolved) {
+        resolved = true;
+        resolve();
+      }
+    };
+
+    // Safety timeout: automatically unblock after 3 seconds if speech engine hangs
+    const timeoutId = setTimeout(safeResolve, 3000);
+
     try {
       // Disable speech and resolve immediately if running headless for speed optimization
       if (!isHeaded) {
-        resolve();
+        clearTimeout(timeoutId);
+        safeResolve();
         return;
       }
 
       const cleanText = text.replace(/[\r\n]/g, ' ').replace(/['"<>|]/g, '').trim();
       if (!cleanText) {
-        resolve();
+        clearTimeout(timeoutId);
+        safeResolve();
         return;
       }
       
       startSpeechEngine();
-      speechResolver = resolve;
+      speechResolver = () => {
+        clearTimeout(timeoutId);
+        safeResolve();
+      };
       speechProcess.stdin.write(cleanText + '\n');
     } catch (e) {
-      resolve();
+      clearTimeout(timeoutId);
+      safeResolve();
     }
   });
 }
