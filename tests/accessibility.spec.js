@@ -252,4 +252,48 @@ test.describe('GlobeWest storefront Accessibility Audit (WCAG 2.2 AA)', () => {
       console.log('Order successfully placed!');
     }
   });
+
+  test('7. My Account Login accessibility scan', async ({ page }) => {
+    await runAxeScan(page, '/customer/account/login/', 'My Account Login');
+  });
+
+  test('8. B2B Quotes Index accessibility scan', async ({ page }) => {
+    const checkoutUrl = 'https://mcstaging.globewest.com.au';
+    console.log('Logging in via Admin to access Quotes Index...');
+    await page.goto('https://mcstaging.globewest.com.au/godmode/customer/index/edit/id/112317/key/3cef45675f154e3048246abb9227c3e3113730cfb1e7b2886b8460a9335c5516/#', { timeout: 25000, waitUntil: 'domcontentloaded' });
+    
+    await page.locator('input#username').fill('deepali_od');
+    await page.locator('input#login').fill('xMKbkaep4AQqxfuwbskhqA');
+    await page.locator('button.action-login, button:has-text("Sign in")').click();
+    await page.waitForURL('**/dashboard/**', { timeout: 15000 });
+    
+    await page.locator('li#menu-magento-customer-customer > a, a:has-text("Customers")').first().click();
+    await page.waitForTimeout(2000);
+    await page.locator('a:has-text("All Customers"), .submenu a[href*="customer/index"]').first().click();
+    await page.waitForURL('**/customer/index/index/**', { timeout: 15000 });
+    
+    const customerRow = page.locator('tr.data-row, tr').filter({ hasText: '112317' }).first();
+    await customerRow.waitFor({ state: 'visible', timeout: 10000 });
+    await customerRow.locator('a.action-menu-item').filter({ hasText: 'Edit' }).first().click();
+    await page.waitForURL('**/customer/index/edit/**', { timeout: 25000 });
+    await page.waitForTimeout(6000);
+    
+    const loginBtn = page.locator('button:has-text("Login as Customer"), button[id*="login_as_customer"]').first();
+    await loginBtn.click();
+    await page.waitForTimeout(3000);
+    
+    const confirmBtn = page.locator('.modal-popup button:has-text("Login as Customer"), button.action-accept').first();
+    
+    const [newPage] = await Promise.all([
+      page.context().waitForEvent('page'),
+      confirmBtn.click()
+    ]);
+    
+    await newPage.waitForLoadState('load');
+    await newPage.waitForTimeout(5000);
+    
+    // Navigate to the Quotes page on frontend
+    await newPage.goto(`${checkoutUrl}/gw_quotes/quote/index/`, { timeout: 20000 });
+    await runAxeScan(newPage, `${checkoutUrl}/gw_quotes/quote/index/`, 'B2B Quotes Index');
+  });
 });
