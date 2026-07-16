@@ -316,6 +316,52 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
         await page.waitForTimeout(1000);
       }
 
+      // Inject Space Black iPhone 17 Pro device frame bezel on mobile viewports
+      const viewport = page.viewportSize();
+      const isMobile = viewport && viewport.width < 600;
+      if (isMobile) {
+        await page.evaluate(() => {
+          const bezel = document.createElement('div');
+          bezel.id = 'a11y-phone-bezel';
+          bezel.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            border: 12px solid #0c0d10;
+            border-radius: 44px;
+            box-shadow: inset 0 0 0 2px #1c1c1e, inset 0 0 0 3px #2c2c2e, 0 0 20px rgba(0,0,0,0.8);
+            pointer-events: none;
+            z-index: 999999;
+            box-sizing: border-box;
+          `;
+
+          const notch = document.createElement('div');
+          notch.id = 'a11y-phone-notch';
+          notch.style.cssText = `
+            position: fixed;
+            top: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 110px;
+            height: 28px;
+            background: #000000;
+            border-radius: 18px;
+            box-shadow: inset 0 0 2px rgba(255,255,255,0.15);
+            z-index: 1000000;
+            pointer-events: none;
+          `;
+
+          document.body.appendChild(bezel);
+          document.body.appendChild(notch);
+
+          document.documentElement.style.padding = '12px';
+          document.documentElement.style.boxSizing = 'border-box';
+        });
+        await page.waitForTimeout(500);
+      }
+
       // Capture initial page state screenshot to artifact directory for reporting
       const artifactDir = `C:\\Users\\Deepali_Londhe\\.gemini\\antigravity\\brain\\2fcf22a4-2816-498c-8f1d-86c05c328536`;
       const screenshotName = pageInfo.name.toLowerCase().replace(/[^a-z0-9]/g, '_').replace(/_+/g, '_').trim() + '.png';
