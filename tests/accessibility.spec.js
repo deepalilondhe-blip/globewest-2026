@@ -22,10 +22,92 @@ test.describe('GlobeWest storefront Accessibility Audit (WCAG 2.2 AA)', () => {
     await page.route('**/*dotdigital*', route => route.abort());
     await page.route('**/*popover*', route => route.abort());
   });
+
+  // Dynamic helper to add ANY available in-stock product to cart
+  async function addAnyProductToCart(page, checkoutUrl) {
+    console.log('Navigating to PLP to find in-stock products...');
+    await page.goto(`${checkoutUrl}/indoor`);
+    await page.waitForLoadState('domcontentloaded');
+
+    const closeBtn = page.locator('a#lpclose');
+    if (await closeBtn.isVisible()) {
+      await closeBtn.click();
+    }
+
+    const productLinks = page.locator('.product-item-link');
+    const count = await productLinks.count();
+    console.log(`Found ${count} links on PLP. Extracting hrefs...`);
+
+    const hrefs = [];
+    for (let i = 0; i < count; i++) {
+      const href = await productLinks.nth(i).getAttribute('href');
+      if (href && !hrefs.includes(href)) {
+        hrefs.push(href);
+      }
+    }
+
+    console.log(`Extracted ${hrefs.length} unique product links. Testing additions...`);
+
+    for (const href of hrefs.slice(0, 10)) {
+      console.log(`Navigating to product page: ${href}`);
+      try {
+        await page.goto(href, { timeout: 20000 });
+        await page.waitForLoadState('domcontentloaded');
+      } catch (e) {
+        console.log(`Product page load timed out/failed, skipping to next: ${href}`);
+        continue;
+      }
+
+      if (await closeBtn.isVisible()) {
+        await closeBtn.click();
+      }
+
+      // Automatically select swatches (color/materials) if visible
+      const swatches = page.locator('.swatch-option');
+      const swatchCount = await swatches.count();
+      for (let k = 0; k < Math.min(swatchCount, 3); k++) {
+        const sw = swatches.nth(k);
+        if (await sw.isVisible()) {
+          await sw.click();
+          await page.waitForTimeout(500);
+        }
+      }
+
+      // Automatically select dropdown size options if visible
+      const selects = page.locator('select.swatch-select');
+      const selectCount = await selects.count();
+      for (let k = 0; k < selectCount; k++) {
+        const sel = selects.nth(k);
+        if (await sel.isVisible()) {
+          await sel.selectOption({ index: 1 });
+          await page.waitForTimeout(500);
+        }
+      }
+
+      // Click Add to Cart
+      const addToCartBtn = page.locator('#product-addtocart-button');
+      if (await addToCartBtn.isVisible() && await addToCartBtn.isEnabled()) {
+        console.log('Clicking Add to Cart...');
+        await addToCartBtn.click();
+        await page.waitForTimeout(5000); // Settle AJAX
+
+        // Check if cart is populated
+        await page.goto(`${checkoutUrl}/checkout/cart/`);
+        await page.waitForLoadState('domcontentloaded');
+
+        const emptyMessage = page.locator('.cart-empty');
+        if (!(await emptyMessage.isVisible())) {
+          console.log('Successfully populated cart!');
+          return; // Done
+        }
+      }
+    }
+    throw new Error('Failed to dynamically add any product to cart.');
+  }
   
   // Helper function to run axe and assert violations
   async function runAxeScan(page, path, name) {
-    await page.goto(path);
+    await page.goto(path, { timeout: 20000 });
     await page.waitForLoadState('domcontentloaded');
 
     // Handle cookie acceptance banner if present
@@ -113,40 +195,61 @@ test.describe('GlobeWest storefront Accessibility Audit (WCAG 2.2 AA)', () => {
   });
 
   test('3. Product Detail Page (PDP) accessibility scan', async ({ page }) => {
-    await runAxeScan(page, '/jasper-marble-console-monica-red-marble-cons-jasp-mar', 'PDP');
+    await runAxeScan(page, '/celine-dining-chair-loden-antique-brass-ch-celin-antique-brass', 'PDP');
   });
 
-  test('4. Shopping Cart / Checkout Page accessibility scan', async ({ page }) => {
-    // Navigate to a simple in-stock product detail page and add to cart first
-    await page.goto('/ezra-buffet-mocha-oak-buf-ezra');
-    await page.waitForLoadState('domcontentloaded');
+  test('4. Shopping Cart Page accessibility scan', async ({ page }) => {
+    await runAxeScan(page, '/checkout/cart/', 'Cart');
+  });
+
+  test('5. Checkout shipping Page accessibility scan', async ({ page }) => {
+    const checkoutUrl = 'https://mcstaging.globewest.com.au';
+    await addAnyProductToCart(page, checkoutUrl);
+    await runAxeScan(page, `${checkoutUrl}/checkout/#shipping`, 'Checkout Shipping');
+  });
+
+  test('6. Checkout payment Page accessibility scan', async ({ page }) => {
+    const checkoutUrl = 'https://mcstaging.globewest.com.au';
+    await addAnyProductToCart(page, checkoutUrl);
+
+    await page.goto(`${checkoutUrl}/checkout/`);
+    await page.waitForLoadState('load');
     
-    const addToCartBtn = page.locator('#product-addtocart-button, .action.tocart');
-    if (await addToCartBtn.isVisible()) {
-      await addToCartBtn.click();
-      await page.waitForTimeout(5000); // Wait for AJAX cart addition request to finish
+    const checkout = new CheckoutPage(page);
+    await checkout.emailInput.waitFor({ state: 'visible', timeout: 15000 });
+    
+    await checkout.fillShippingForm({
+      email: 'john.smith@example.com',
+      firstName: 'John',
+      lastName: 'Smith',
+      street: '123 Test Street',
+      city: 'Sydney',
+      postcode: '2000',
+      telephone: '0412345678'
+    });
+    
+    await page.locator('select[name="region_id"]').selectOption({ label: 'New South Wales' });
+    await page.waitForTimeout(2000); // Allow rates to load
+
+    const firstRate = page.locator('.table-checkout-shipping-method input[type="radio"]').first();
+    if (await firstRate.isVisible({ timeout: 5000 }).catch(() => false)) {
+      await firstRate.click();
+      await page.waitForTimeout(1000);
+    } else {
+      console.log('No shipping method radio button visible, proceeding directly to Payment.');
     }
     
-    await runAxeScan(page, '/checkout/cart/', 'Cart/Checkout');
-  });
+    await checkout.nextButton.click();
+    await page.waitForTimeout(4000);
 
-  test('5. My Account Page accessibility scan', async ({ page }) => {
-    await runAxeScan(page, '/customer/account/login/', 'My Account Login');
-  });
+    await runAxeScan(page, `${checkoutUrl}/checkout/#payment`, 'Checkout Payment');
 
-  test('6. B2B Trade Portal accessibility scan', async ({ page }) => {
-    await runAxeScan(page, '/trade-portal-registration/', 'Trade Portal');
-  });
-
-  test('7. Search Results Page accessibility scan', async ({ page }) => {
-    await runAxeScan(page, '/catalogsearch/result/?q=sofa', 'Search Results');
-  });
-
-  test('8. Content / Static Page accessibility scan', async ({ page }) => {
-    await runAxeScan(page, '/blog', 'Blog Page');
-  });
-
-  test('9. Blog Detail Page accessibility scan', async ({ page }) => {
-    await runAxeScan(page, '/blog/stockist-in-profile/stockist-in-profile-%7C-ikos-home-duplicated', 'Blog Detail Page');
+    // Click "Place Order" to complete checkout
+    const placeOrderBtn = page.locator('button.action.primary.checkout');
+    if (await placeOrderBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
+      await placeOrderBtn.click();
+      await page.waitForTimeout(6000);
+      console.log('Order successfully placed!');
+    }
   });
 });

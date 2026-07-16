@@ -20,7 +20,7 @@ class CheckoutPage extends BasePage {
     this.postcodeInput = page.locator('input[name="postcode"]');
     this.telephoneInput = page.locator('input[name="telephone"]');
     this.shippingRates = page.locator('.table-checkout-shipping-method input[type="radio"]');
-    this.nextButton = page.locator('button.continue.primary');
+    this.nextButton = page.locator('button.continue.primary:visible');
 
     // Billing/Payment step selectors
     this.placeOrderButton = page.locator('button.action.primary.checkout');

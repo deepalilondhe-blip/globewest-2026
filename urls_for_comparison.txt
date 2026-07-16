@@ -14,17 +14,27 @@ Production: http://www.globewest.com.au/indoor
 
 3. Product Detail Page (PDP)
 --------------------------------------------------------------------
-Staging:    https://mcstaging.globewest.com.au/jasper-marble-console-monica-red-marble-cons-jasp-mar
-Production: http://www.globewest.com.au/lumi-occasional-chair-tapioca-ch-lumi-occ
+Staging:    https://mcstaging.globewest.com.au/celine-dining-chair-loden-antique-brass-ch-celin-antique-brass
+Production: http://www.globewest.com.au/celine-dining-chair-loden-antique-brass-ch-celin-antique-brass
 
-4. Blog Listing Page
+4. Shopping Cart Page
 --------------------------------------------------------------------
-Staging:    https://mcstaging.globewest.com.au/blog
-Production: http://www.globewest.com.au/blog
+Staging:    https://mcstaging.globewest.com.au/checkout/cart/
+Production: http://www.globewest.com.au/checkout/cart/
 
-5. Blog Details Page
+5. Checkout shipping Page
 --------------------------------------------------------------------
-Staging:    https://mcstaging.globewest.com.au/blog/stockist-in-profile/stockist-in-profile-%7C-ikos-home-duplicated
-Production: http://www.globewest.com.au/blog/stockist-in-profile/stockist-in-profile-%7C-ikos-home
+Staging:    https://mcstaging.globewest.com.au/checkout/#shipping
+Production: http://www.globewest.com.au/checkout/#shipping
+
+6. Checkout payment Page
+--------------------------------------------------------------------
+Staging:    https://mcstaging.globewest.com.au/checkout/#payment
+Production: http://www.globewest.com.au/checkout/#payment
+
+7. B2B Trade Portal Page
+--------------------------------------------------------------------
+Staging:    https://mcstaging.globewest.com.au/gwcustomer/trade/create
+Production: https://www.globewest.com.au/gwcustomer/trade/create
 
 ====================================================================
