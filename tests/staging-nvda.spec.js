@@ -81,7 +81,9 @@ const PAGES_TO_TEST = [
   { name: '4. Shopping Cart Page', path: '/checkout/cart/' },
   { name: '5. Checkout shipping Page', path: 'https://mcstaging.globewest.com.au/checkout/#shipping' },
   { name: '6. Checkout payment Page', path: 'https://mcstaging.globewest.com.au/checkout/#payment' },
-  { name: '7. My Account Dashboard', path: 'https://mcstaging.globewest.com.au/customer/account/index/' }
+  { name: '7. My Account Dashboard', path: 'https://mcstaging.globewest.com.au/customer/account/index/' },
+  { name: '8. My Account Login', path: 'https://mcstaging.globewest.com.au/customer/account/login/' },
+  { name: '9. B2B Quotes Index', path: 'https://mcstaging.globewest.com.au/gw_quotes/quote/index/' }
 ];
 
 test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
@@ -226,8 +228,8 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
           await page.locator('button.continue.primary:visible').click();
           await page.waitForTimeout(4000);
         }
-      } else if (pageInfo.name.includes('7. My Account Dashboard')) {
-        console.log('Logging in via Admin to access My Account Dashboard...');
+      } else if (pageInfo.name.includes('7. My Account Dashboard') || pageInfo.name.includes('9. B2B Quotes Index')) {
+        console.log(`Logging in via Admin to access ${pageInfo.name}...`);
         const loginUrl = 'https://mcstaging.globewest.com.au/godmode/customer/index/edit/id/112317/key/3cef45675f154e3048246abb9227c3e3113730cfb1e7b2886b8460a9335c5516/#';
         await page.goto(loginUrl, { timeout: 25000, waitUntil: 'domcontentloaded' });
         
@@ -265,12 +267,18 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
         await newPage.waitForLoadState('load');
         await newPage.waitForTimeout(5000);
         
+        if (pageInfo.name.includes('9. B2B Quotes Index')) {
+          console.log('Navigating to B2B Quotes Index Page...');
+          await newPage.goto('https://mcstaging.globewest.com.au/gw_quotes/quote/index/', { timeout: 25000 });
+          await newPage.waitForLoadState('load');
+        }
+        
         // Point target page context to the newly authenticated frontend tab
         page = newPage;
       }
       
       // 1. Navigate to target staging page and wait for the page to render fully
-      if (!pageInfo.name.includes('7. My Account Dashboard')) {
+      if (!pageInfo.name.includes('7. My Account Dashboard') && !pageInfo.name.includes('9. B2B Quotes Index')) {
         try {
           await page.goto(pageInfo.path, { timeout: 20000 });
           await page.waitForLoadState('load');
