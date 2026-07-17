@@ -31,7 +31,7 @@ module.exports = defineConfig({
   },
   reporter: [['html', { outputFolder: reportFolder }]],
   use: {
-    baseURL: process.env.BASE_URL || 'https://mcstaging2.globewest.com.au', // Fallback to live URL if staging is not accessible
+    baseURL: process.env.BASE_URL || 'https://mcstaging.globewest.com.au', // Fallback to live URL if staging is not accessible
     trace: 'on-first-retry',
     headless: false,
     screenshot: 'on',
