@@ -5,17 +5,18 @@ const { defineConfig, devices } = require('@playwright/test');
  * Playwright Configuration for GlobeWest 2026 Accessibility & Journey Automation
  * @see https://playwright.dev/docs/test-configuration
  */
-// Dynamically set output folder based on the running test spec to prevent reports being overwritten
+// Dynamically set output folder based on the running test spec with timestamps to prevent reports being deleted/overwritten
 const argvStr = process.argv.join(' ');
-let reportFolder = 'playwright-report/general';
+const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19); // Format: YYYY-MM-DDTHH-MM-SS
+let reportFolder = `playwright-report/general-${timestamp}`;
 if (argvStr.includes('accessibility.spec.js')) {
-  reportFolder = 'playwright-report/accessibility';
+  reportFolder = `playwright-report/accessibility-${timestamp}`;
 } else if (argvStr.includes('journeys.spec.js')) {
-  reportFolder = 'playwright-report/journeys';
+  reportFolder = `playwright-report/journeys-${timestamp}`;
 } else if (argvStr.includes('lighthouse.spec.js')) {
-  reportFolder = 'playwright-report/lighthouse';
+  reportFolder = `playwright-report/lighthouse-${timestamp}`;
 } else if (argvStr.includes('staging-nvda.spec.js')) {
-  reportFolder = 'playwright-report/nvda';
+  reportFolder = `playwright-report/nvda-${timestamp}`;
 }
 
 module.exports = defineConfig({
