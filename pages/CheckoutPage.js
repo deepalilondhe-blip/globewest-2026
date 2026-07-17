@@ -17,7 +17,7 @@ class CheckoutPage extends BasePage {
     this.lastNameInput = page.locator('input[name="lastname"]');
     this.streetAddressInput = page.locator('input[name="street[0]"]');
     this.cityInput = page.locator('input[name="city"]');
-    this.postcodeInput = page.locator('input[name="postcode"]');
+    this.postcodeInput = page.locator('form#co-shipping-form input[name="postcode"], .form-shipping-address input[name="postcode"], input[name="postcode"]').first();
     this.telephoneInput = page.locator('input[name="telephone"]');
     this.shippingRates = page.locator('.table-checkout-shipping-method input[type="radio"]');
     this.nextButton = page.locator('button.continue.primary:visible');
