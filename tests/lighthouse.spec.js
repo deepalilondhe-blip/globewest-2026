@@ -13,7 +13,8 @@ const PAGES_TO_TEST = [
   { name: '6_trade', path: '/help-centre/general/trade-registration' },
   { name: '7_search', path: '/catalogsearch/result/?q=sofa' },
   { name: '8_static', path: '/blog' },
-  { name: '9_blog_detail', path: '/blog/stockist-in-profile/stockist-in-profile-%7C-ikos-home-duplicated' }
+  { name: '9_blog_detail', path: '/blog/stockist-in-profile/stockist-in-profile-%7C-ikos-home-duplicated' },
+  { name: '10_account_dashboard', path: '/customer/account/' }
 ];
 
 test.describe('GlobeWest Automated Lighthouse Audits', () => {
@@ -65,20 +66,60 @@ test.describe('GlobeWest Automated Lighthouse Audits', () => {
         }
       }
 
-      const targetURL = `${baseURL}${pageInfo.path}`;
+      let targetURL = `${baseURL}${pageInfo.path}`;
+      let targetPage = page;
       
-      // Navigate and let the page load
-      await page.goto(targetURL);
-      await page.waitForLoadState('domcontentloaded');
+      if (pageInfo.name === '10_account_dashboard') {
+        console.log('Logging in via Admin for Lighthouse Dashboard Audit...');
+        const loginUrl = 'https://mcstaging.globewest.com.au/godmode/customer/index/edit/id/112317/key/3cef45675f154e3048246abb9227c3e3113730cfb1e7b2886b8460a9335c5516/#';
+        await page.goto(loginUrl, { timeout: 25000, waitUntil: 'domcontentloaded' });
+        
+        await page.locator('input#username').fill('deepali_od');
+        await page.locator('input#login').fill('xMKbkaep4AQqxfuwbskhqA');
+        await page.locator('button.action-login, button:has-text("Sign in")').click();
+        await page.waitForURL('**/dashboard/**', { timeout: 15000 });
+        
+        await page.locator('li#menu-magento-customer-customer > a, a:has-text("Customers")').first().click();
+        await page.waitForTimeout(2000);
+        await page.locator('a:has-text("All Customers"), .submenu a[href*="customer/index"]').first().click();
+        await page.waitForURL('**/customer/index/index/**', { timeout: 15000 });
+        
+        const customerRow = page.locator('tr.data-row, tr').filter({ hasText: '112317' }).first();
+        await customerRow.waitFor({ state: 'visible', timeout: 10000 });
+        await customerRow.locator('a.action-menu-item').filter({ hasText: 'Edit' }).first().click();
+        await page.waitForURL('**/customer/index/edit/**', { timeout: 25000 });
+        await page.waitForTimeout(6000);
+        
+        const loginBtn = page.locator('button:has-text("Login as Customer"), button[id*="login_as_customer"]').first();
+        await loginBtn.click();
+        await page.waitForTimeout(3000);
+        
+        const confirmBtn = page.locator('.modal-popup button:has-text("Login as Customer"), button.action-accept').first();
+        
+        const [newPage] = await Promise.all([
+          page.context().waitForEvent('page'),
+          confirmBtn.click()
+        ]);
+        
+        await newPage.waitForLoadState('load');
+        await newPage.waitForTimeout(5000);
+        
+        targetPage = newPage;
+        targetURL = newPage.url();
+      } else {
+        // Navigate and let the page load
+        await page.goto(targetURL);
+        await page.waitForLoadState('domcontentloaded');
+      }
 
       // Dismiss popups if visible to clean the audit state
-      const welcomePopupCloseBtn = page.locator('a#lpclose');
-      if (await welcomePopupCloseBtn.isVisible()) {
+      const welcomePopupCloseBtn = targetPage.locator('a#lpclose');
+      if (await welcomePopupCloseBtn.isVisible().catch(() => false)) {
         await welcomePopupCloseBtn.click();
       }
 
       // 1.5 Take page screenshot and attach it directly to the Playwright report
-      const screenshot = await page.screenshot();
+      const screenshot = await targetPage.screenshot();
       await test.info().attach('screenshot', {
         body: screenshot,
         contentType: 'image/png'
@@ -90,7 +131,7 @@ test.describe('GlobeWest Automated Lighthouse Audits', () => {
       console.log(`Running Lighthouse Audit on Staging ${pageInfo.name}...`);
       const result = await lighthouse(targetURL, {
         port: 9222,
-        disableStorageReset: pageInfo.name === '4_cart', // Only disable storage reset on Cart to preserve cart items
+        disableStorageReset: pageInfo.name === '4_cart' || pageInfo.name === '10_account_dashboard', // Only disable storage reset on Cart/Dashboard to preserve session
         logLevel: 'info',
         output: ['html', 'json'],
         onlyCategories: ['accessibility']
