@@ -65,7 +65,7 @@ module.exports = defineConfig({
           args: ['--window-size=430,932']
         }
       },
-      testMatch: /.*accessibility.spec.js/,
+      testMatch: /.*(accessibility|staging-nvda)\.spec\.js/,
     },
     {
       name: 'mobile-chrome-android',
@@ -76,7 +76,7 @@ module.exports = defineConfig({
           args: ['--window-size=393,851']
         }
       },
-      testMatch: /.*accessibility.spec.js/,
+      testMatch: /.*(accessibility|staging-nvda)\.spec\.js/,
     },
 
     /* 📋 Tablet Emulation */
