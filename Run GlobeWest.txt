@@ -62,6 +62,16 @@ Open your terminal in VS Code inside the "GlobeWest 2026" directory and run:
 * Excel Defect Remediation Log:
   - File: "C:/GlobeWest 2026/docs/GlobeWest_Remediation_Log.xlsx"
 
+--------------------------------------------------------------------------------
+4. RUNNING THE N8N AUTOMATION PIPELINE
+--------------------------------------------------------------------------------
+To start n8n and launch the scheduled daily QA pipeline, run:
+
+  $env:NODES_EXCLUDE="[]"; npx n8n start
+
+* Access n8n in your browser at: http://localhost:5678
+* Import/pasted workflow from: "C:/GlobeWest 2026/docs/n8n_qa_workflow.json"
+
 ================================================================================
-* Verfiy the performance score : 
+* Verify the performance score : 
 -  node verify_scores.js
