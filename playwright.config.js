@@ -17,6 +17,8 @@ if (argvStr.includes('accessibility.spec.js')) {
   reportFolder = `playwright-report/lighthouse-${timestamp}`;
 } else if (argvStr.includes('staging-nvda.spec.js')) {
   reportFolder = `playwright-report/nvda-${timestamp}`;
+} else if (argvStr.includes('staging2-critical-path-nvda.spec.js')) {
+  reportFolder = `playwright-report/staging2-audit-${timestamp}`;
 }
 
 module.exports = defineConfig({
@@ -29,14 +31,19 @@ module.exports = defineConfig({
   expect: {
     timeout: 10000,
   },
-  reporter: [['html', { outputFolder: reportFolder }]],
+  reporter: [
+    ['html', { outputFolder: reportFolder, open: 'never' }],
+    ['list'],
+  ],
   use: {
-    baseURL: process.env.BASE_URL || 'https://mcstaging.globewest.com.au', // Fallback to live URL if staging is not accessible
-    trace: 'on-first-retry',
-    headless: false,
-    screenshot: 'on',
-    video: 'on',
+    baseURL: process.env.BASE_URL || 'https://mcstaging.globewest.com.au',
+    trace: 'on',           // Always capture trace for every run (client shareable)
+    headless: true,
+    screenshot: 'on',      // Screenshot every step
+    video: 'on',           // Record video of EVERY test run
     ignoreHTTPSErrors: true,
+    actionTimeout: 30000,
+    navigationTimeout: 60000,
   },
 
   projects: [
@@ -48,6 +55,25 @@ module.exports = defineConfig({
         channel: 'chrome',
         launchOptions: {
           args: ['--force-renderer-accessibility']
+        }
+      },
+    },
+    // ── Staging 2 NVDA Desktop (Headed — video + speech + screenshot per step) ──
+    {
+      name: 'staging2-nvda-desktop',
+      use: {
+        ...devices['Desktop Chrome'],
+        channel: 'chrome',
+        headless: false,        // Headed = NVDA can see the screen
+        screenshot: 'on',
+        video: 'on',
+        trace: 'on',
+        viewport: { width: 1280, height: 900 },
+        launchOptions: {
+          args: [
+            '--force-renderer-accessibility',
+            '--start-maximized'
+          ]
         }
       },
     },
@@ -66,6 +92,21 @@ module.exports = defineConfig({
         }
       },
       testMatch: /.*(accessibility|staging-nvda)\.spec\.js/,
+    },
+    {
+      name: 'mobile-iphone17pro',
+      use: {
+        // iPhone 17 Pro viewport: 393x852, device pixel ratio 3
+        ...devices['iPhone 15 Pro'],
+        userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1',
+        viewport: { width: 393, height: 852 },
+        deviceScaleFactor: 3,
+        hasTouch: true,
+        isMobile: true,
+        launchOptions: {
+          args: ['--window-size=393,852']
+        }
+      },
     },
     {
       name: 'mobile-chrome-android',

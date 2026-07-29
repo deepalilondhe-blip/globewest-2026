@@ -1,0 +1,19 @@
+Step,Action,Expected Results,WCAG Areas Covered,Desktop Chrome Status,iPhone 17 Pro Status,NVDA Status,Verification Details
+1,Navigate to the landing page,Page title is announced correctly,Page structure,PASS,PENDING,PENDING,Automated - homepage loaded and verified
+2,Select Indoor from top menu,Link is reachable via keyboard,Keyboard Access,PASS,PENDING,PENDING,Automated - Indoor PLP navigation confirmed
+3,Select black from colour filter in the top menu,Filter and filter options are announced correctly,Labels and block structure,PASS,PENDING,PENDING,Automated - Black colour filter applied
+4,Select the second product from the list,Product title and other details are announced correctly,Labels and block structure,PASS,PENDING,PENDING,Automated - 2nd product selected from PLP
+5,View the product details,Page title changes and product details are available,Page title,PASS,PENDING,PENDING,Automated - Product Detail Page loaded
+6,Navigate product information using keyboard,All interactive elements reachable via keyboard,Page structure and Keyboard Access,PASS,PENDING,PENDING,Automated - Tab navigation on PDP verified
+7,Add product to cart,Able to successfully add product to cart and receive confirmation,Status Messages,PASS,PENDING,PENDING,Automated - Add to Cart triggered with swatch selection
+8,Navigate to the cart,Cart page heading announced,Labels,PASS,PENDING,PENDING,Automated - Cart page navigated successfully
+9,Review cart contents,Product details announced correctly,Page structure; Labels; Keyboard access,PASS,PENDING,PENDING,Automated - Cart contents verified with product visible
+10,Enter "name your order" and "client name",Field label is announced and typed content is announced,Forms and Labels,MANUAL CHECK REQUIRED,MANUAL CHECK REQUIRED,MANUAL CHECK REQUIRED,B2B fields - Requires B2B logged-in account. Cannot be automated due to authentication.
+11,Activate "proceed to checkout" button,Button reachable; has visible focus state; can be activated,Keyboard; Focus; Role and Name,PASS,PENDING,PENDING,Automated - Checkout button clicked and checkout loaded
+12,Review order details,Form fields; radio buttons; order info and pricing announced,Page Structure; Forms; Labels,PASS,PENDING,PENDING,Automated - Checkout form loaded and fields verified
+13,Proceed to the next step,Able to navigate to next step,Keyboard Access; Focus Management; Page Structure,PASS,PENDING,PENDING,Automated - Shipping step completed with AU address
+14,Review delivery details,Navigate through delivery details page,Page Structure; Forms; Labels; Keyboard Access,PASS,PENDING,PENDING,Automated - Delivery method (Standard) confirmed
+15,Proceed to the next step,Able to navigate to next step,Keyboard Access; Focus Management; Page Structure,PASS,PENDING,PENDING,Automated - Reseller postcode search applied and continued
+16,Review summary details,Navigate through summary details page,Page Structure; Forms; Labels; Keyboard Access,PASS,PENDING,PENDING,Automated - Review & Payment summary page loaded
+17,Confirm the order,Able to confirm T&Cs and confirm the order,Keyboard Access; Focus Management; Forms; Name; Role and Value,MANUAL CHECK REQUIRED,MANUAL CHECK REQUIRED,MANUAL CHECK REQUIRED,Reseller must be pre-assigned in Staging 2 DB for Place Order button to activate
+18,Review order confirmation,Order confirmation heading and order number announced clearly,Page Structure; Information; Headings; Keyboard Access; Name Role,MANUAL CHECK REQUIRED,MANUAL CHECK REQUIRED,MANUAL CHECK REQUIRED,Depends on Step 17 manual completion

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GlobeWest Staging 2 - Remediation Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{background:#0c0e14;color:#e2e8f0;font-family:Outfit,-apple-system,sans-serif;min-height:100vh;padding:0 0 4rem;margin:0}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+.hero{background:linear-gradient(135deg,#0f1625,#1a0e1e,#0c1220);border-bottom:1px solid #232b3a;padding:2.5rem 3rem 2rem;position:relative;overflow:hidden}
+.hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap}
+.hero-label{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#e0533c;background:rgba(224,83,60,.12);border:1px solid rgba(224,83,60,.3);padding:.25rem .75rem;border-radius:4px;display:inline-block}
+h1{font-size:2rem;font-weight:700;line-height:1.2;margin:.4rem 0}
+h1 span{background:linear-gradient(135deg,#e0533c,#ff7e67);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{color:#8896a8;font-size:.92rem}
+.hero-meta{display:flex;flex-direction:column;align-items:flex-end;gap:.5rem}
+.meta-pill{font-size:.78rem;font-weight:500;color:#8896a8;background:rgba(255,255,255,.05);border:1px solid #232b3a;padding:.3rem .8rem;border-radius:20px}
+.meta-pill strong{color:#e2e8f0}
+.stats-row{display:flex;gap:1rem;padding:1.5rem 3rem;border-bottom:1px solid #232b3a;flex-wrap:wrap}
+.sc{flex:1;min-width:120px;background:#13161e;border:1px solid #232b3a;border-radius:10px;padding:1rem 1.2rem;display:flex;flex-direction:column;gap:.3rem}
+.sc .v{font-size:2rem;font-weight:700;line-height:1}
+.sc .l{font-size:.73rem;text-transform:uppercase;letter-spacing:.1em;color:#8896a8;font-weight:500}
+.v-pass{color:#10b981}.v-manual{color:#a78bfa}.v-pending{color:#64748b}.v-warn{color:#f59e0b}.v-total{color:#e2e8f0}
+.devices-row{display:flex;align-items:center;gap:1rem;padding:1rem 3rem;border-bottom:1px solid #232b3a;flex-wrap:wrap;font-size:.82rem}
+.dl{font-size:.8rem;color:#8896a8;font-weight:600;text-transform:uppercase;letter-spacing:.1em}
+.db{background:#13161e;border:1px solid #232b3a;border-radius:8px;padding:.4rem .9rem;font-weight:500}
+.cmds{margin:1.5rem 3rem 0;background:#181c26;border:1px solid #232b3a;border-radius:12px;overflow:hidden}
+.cmds-hdr{background:rgba(224,83,60,.08);border-bottom:1px solid #232b3a;padding:.75rem 1.2rem;font-size:.8rem;font-weight:600;color:#e0533c;text-transform:uppercase;letter-spacing:.1em}
+.cmd-row{display:flex;align-items:flex-start;gap:1rem;padding:.9rem 1.2rem;border-bottom:1px solid #232b3a;flex-wrap:wrap}
+.cmd-row:last-child{border-bottom:none}
+.cmd-tag{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.2rem .6rem;border-radius:5px;white-space:nowrap;margin-top:2px;flex-shrink:0}
+.t-d{background:rgba(59,130,246,.15);color:#60a5fa;border:1px solid rgba(59,130,246,.25)}
+.t-m{background:rgba(167,139,250,.15);color:#a78bfa;border:1px solid rgba(167,139,250,.25)}
+.t-b{background:rgba(16,185,129,.15);color:#34d399;border:1px solid rgba(16,185,129,.25)}
+.t-n{background:rgba(245,158,11,.15);color:#fbbf24;border:1px solid rgba(245,158,11,.25)}
+.cmd-code{font-family:"Space Grotesk",monospace;font-size:.82rem;background:rgba(0,0,0,.4);border:1px solid #232b3a;border-radius:6px;padding:.45rem .85rem;color:#93c5fd;flex:1;word-break:break-all;cursor:pointer;transition:background .2s;user-select:all}
+.cmd-code:hover{background:rgba(0,0,0,.6);border-color:#3b82f6}
+.hint{font-size:.75rem;color:#8896a8;align-self:center}
+.legend{display:flex;gap:1.2rem;padding:1.2rem 3rem 0;flex-wrap:wrap;align-items:center}
+.li{display:flex;align-items:center;gap:.4rem;font-size:.78rem;color:#8896a8}
+.table-wrap{margin:1.5rem 3rem 0;overflow-x:auto;border-radius:14px;border:1px solid #232b3a}
+table{width:100%;border-collapse:collapse;font-size:.875rem}
+thead tr{background:linear-gradient(135deg,rgba(224,83,60,.15),rgba(255,126,103,.08));border-bottom:2px solid #e0533c}
+thead th{padding:.9rem 1rem;text-align:left;font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:#8896a8;white-space:nowrap}
+thead th:first-child{color:#e0533c}
+tbody tr{border-bottom:1px solid #232b3a;transition:background .15s}
+tbody tr:hover{background:rgba(255,255,255,.03)}
+tbody tr:last-child{border-bottom:none}
+td{padding:.85rem 1rem;vertical-align:top}
+.snum{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;font-family:monospace;background:rgba(224,83,60,.1);border:1px solid rgba(224,83,60,.2);color:#e0533c}
+.at{font-weight:500;color:#e2e8f0;line-height:1.45}
+.et{color:#8896a8;font-size:.82rem;line-height:1.4}
+.wtags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.35rem}
+.wtag{font-size:.65rem;font-weight:600;padding:.15rem .5rem;border-radius:4px;background:rgba(148,163,184,.1);color:#8896a8;border:1px solid rgba(148,163,184,.15);white-space:nowrap}
+.badge{display:inline-flex;align-items:center;gap:.3rem;font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:.3rem .7rem;border-radius:6px;white-space:nowrap}
+.bp{background:rgba(16,185,129,.12);color:#10b981;border:1px solid rgba(16,185,129,.25)}
+.bf{background:rgba(239,68,68,.12);color:#ef4444;border:1px solid rgba(239,68,68,.25)}
+.bm{background:rgba(167,139,250,.12);color:#a78bfa;border:1px solid rgba(167,139,250,.25)}
+.bn{background:rgba(100,116,139,.12);color:#64748b;border:1px solid rgba(100,116,139,.25)}
+.nt{font-size:.78rem;color:#8896a8;line-height:1.45;max-width:280px}
+footer{margin-top:3rem;border-top:1px solid #232b3a;padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer p{font-size:.8rem;color:#8896a8}
+.fb{font-weight:700;color:#e2e8f0}
+.fb span{color:#e0533c}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-top">
+    <div>
+      <div class="hero-label">Remediation Report - Staging 2</div>
+      <h1>GlobeWest <span>Staging 2</span> Audit</h1>
+      <p class="hero-sub">Critical Path — Accessibility and Functionality Verification<br>
+        <strong style="color:#ff7e67">https://mcstaging2.globewest.com.au/</strong></p>
+    </div>
+    <div class="hero-meta">
+      <span class="meta-pill">Date: <strong id="today"></strong></span>
+      <span class="meta-pill">CSV: <strong>docs/remediation2.csv</strong></span>
+      <span class="meta-pill">Spec: <strong>staging2-critical-path-nvda.spec.js</strong></span>
+    </div>
+  </div>
+</div>
+
+<div class="stats-row">
+  <div class="sc"><div class="v v-total">18</div><div class="l">Total Steps</div></div>
+  <div class="sc"><div class="v v-pass">15</div><div class="l">Desktop Chrome Pass</div></div>
+  <div class="sc"><div class="v v-manual">3</div><div class="l">Manual Check Required</div></div>
+  <div class="sc"><div class="v v-pending">15</div><div class="l">iPhone 17 Pro Pending</div></div>
+  <div class="sc"><div class="v v-pending">15</div><div class="l">NVDA Pending</div></div>
+  <div class="sc"><div class="v v-warn">1</div><div class="l">Known Blocker</div></div>
+</div>
+
+<div class="devices-row">
+  <span class="dl">Testing Devices:</span>
+  <div class="db">&#128187; Desktop Chrome</div>
+  <div class="db">&#128241; iPhone 17 Pro (393x852, DPR 3)</div>
+  <div class="db">&#128266; NVDA Screen Reader</div>
+</div>
+
+<div class="cmds">
+  <div class="cmds-hdr">Playwright Run Commands — Click command to copy</div>
+  <div class="cmd-row">
+    <span class="cmd-tag t-d">Desktop Chrome</span>
+    <code class="cmd-code" onclick="copyCmd(this)">npx playwright test tests/staging2-critical-path-nvda.spec.js --project=desktop-chrome --headed --workers=1</code>
+  </div>
+  <div class="cmd-row">
+    <span class="cmd-tag t-m">iPhone 17 Pro</span>
+    <code class="cmd-code" onclick="copyCmd(this)">npx playwright test tests/staging2-critical-path-nvda.spec.js --project=mobile-iphone17pro --headed --workers=1</code>
+  </div>
+  <div class="cmd-row">
+    <span class="cmd-tag t-b">Both Devices</span>
+    <code class="cmd-code" onclick="copyCmd(this)">npx playwright test tests/staging2-critical-path-nvda.spec.js --project=desktop-chrome --project=mobile-iphone17pro --headed --workers=1</code>
+  </div>
+  <div class="cmd-row">
+    <span class="cmd-tag t-n">NVDA</span>
+    <code class="cmd-code" onclick="copyCmd(this)">npx playwright test tests/staging2-critical-path-nvda.spec.js --project=desktop-chrome --headed --workers=1</code>
+    <span class="hint">Run with NVDA active on your machine</span>
+  </div>
+  <div class="cmd-row">
+    <span class="cmd-tag t-b">View Report</span>
+    <code class="cmd-code" onclick="copyCmd(this)">npx playwright show-report</code>
+  </div>
+</div>
+
+<div class="legend">
+  <span class="li"><span class="badge bp">Pass</span> Automated passed</span>
+  <span class="li"><span class="badge bf">Fail</span> Automated failed</span>
+  <span class="li"><span class="badge bm">Manual</span> Human tester needed</span>
+  <span class="li"><span class="badge bn">Pending</span> Not yet run on this device</span>
+</div>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Action</th>
+        <th>Expected Result</th>
+        <th>WCAG Areas</th>
+        <th>&#128187; Desktop Chrome</th>
+        <th>&#128241; iPhone 17 Pro</th>
+        <th>&#128266; NVDA</th>
+        <th>Verification Notes</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</div>
+
+<footer>
+  <p><span class="fb">Globe<span>West</span></span> Staging 2 Remediation Dashboard - Powered by Playwright + NVDA</p>
+  <p>C:\GlobeWest 2026\google.html | docs/remediation2.csv</p>
+</footer>
+
+<script>
+var S=[
+{s:1,a:'Navigate to the landing page',e:'Page title is announced correctly',w:['Page structure'],d:'pass',i:'pending',n:'pending',t:'Automated - homepage loaded, title verified'},
+{s:2,a:'Select Indoor from top menu',e:'Link is reachable via keyboard',w:['Keyboard Access'],d:'pass',i:'pending',n:'pending',t:'Automated - Indoor PLP navigation confirmed'},
+{s:3,a:'Select Black from colour filter',e:'Filter and options are announced correctly',w:['Labels','Block structure'],d:'pass',i:'pending',n:'pending',t:'Automated - Black colour filter applied'},
+{s:4,a:'Select 2nd product from list',e:'Product title and details are announced correctly',w:['Labels','Block structure'],d:'pass',i:'pending',n:'pending',t:'Automated - 2nd product selected from PLP'},
+{s:5,a:'View the product details',e:'Page title changes and product details are available',w:['Page title'],d:'pass',i:'pending',n:'pending',t:'Automated - Product Detail Page loaded and verified'},
+{s:6,a:'Navigate product info via keyboard',e:'All interactive elements reachable via keyboard',w:['Page structure','Keyboard Access'],d:'pass',i:'pending',n:'pending',t:'Automated - Tab navigation on PDP confirmed'},
+{s:7,a:'Add product to cart',e:'Successfully add product and receive confirmation',w:['Status Messages'],d:'pass',i:'pending',n:'pending',t:'Automated - Add to Cart with swatch selection triggered'},
+{s:8,a:'Navigate to the cart',e:'Cart page heading announced',w:['Labels'],d:'pass',i:'pending',n:'pending',t:'Automated - Cart page navigated successfully'},
+{s:9,a:'Review cart contents',e:'Product details announced correctly',w:['Page structure','Labels','Keyboard access'],d:'pass',i:'pending',n:'pending',t:'Automated - Cart contents verified with product visible'},
+{s:10,a:'Enter name your order and client name',e:'Field label announced and typed content is announced',w:['Forms','Labels'],d:'manual',i:'manual',n:'manual',t:'B2B customer fields - Requires logged-in B2B session. Blocked by auth/CAPTCHA.'},
+{s:11,a:'Activate Proceed to Checkout button',e:'Button reachable, visible focus state, can be activated',w:['Keyboard','Focus','Role','Name'],d:'pass',i:'pending',n:'pending',t:'Automated - Checkout button clicked, checkout page loaded'},
+{s:12,a:'Review order details',e:'Form fields, radio buttons, order info and pricing announced',w:['Page Structure','Forms','Labels'],d:'pass',i:'pending',n:'pending',t:'Automated - Checkout form loaded, all fields verified'},
+{s:13,a:'Proceed to next step (Shipping)',e:'Able to navigate to the next step',w:['Keyboard Access','Focus Management','Page Structure'],d:'pass',i:'pending',n:'pending',t:'Automated - AU shipping address filled and continued'},
+{s:14,a:'Review delivery details',e:'Navigate through the delivery details page',w:['Page Structure','Forms','Labels','Keyboard Access'],d:'pass',i:'pending',n:'pending',t:'Automated - Standard delivery method confirmed'},
+{s:15,a:'Proceed to next step (Reseller)',e:'Able to navigate to the next step',w:['Keyboard Access','Focus Management','Page Structure'],d:'pass',i:'pending',n:'pending',t:'Automated - Reseller postcode search (3000) applied, continued'},
+{s:16,a:'Review summary details',e:'Navigate through the summary details page',w:['Page Structure','Forms','Labels','Keyboard Access'],d:'pass',i:'pending',n:'pending',t:'Automated - Review and Payment summary page loaded'},
+{s:17,a:'Confirm the order',e:'Able to confirm T&Cs and confirm the order',w:['Keyboard Access','Focus','Forms','Name','Role','Value'],d:'manual',i:'manual',n:'manual',t:'Reseller must be pre-assigned in Staging 2 DB for Place Order button to activate'},
+{s:18,a:'Review order confirmation',e:'Order confirmation heading and order number announced clearly',w:['Page Structure','Information','Headings','Keyboard Access'],d:'manual',i:'manual',n:'manual',t:'Depends on Step 17 manual completion'}
+];
+var B={
+  pass:'<span class="badge bp">&#10003; Pass</span>',
+  fail:'<span class="badge bf">&#10007; Fail</span>',
+  manual:'<span class="badge bm">&#9873; Manual</span>',
+  pending:'<span class="badge bn">&#9675; Pending</span>'
+};
+var tb=document.getElementById('tbody');
+S.forEach(function(r){
+  var tr=document.createElement('tr');
+  tr.innerHTML='<td><div class="snum">'+r.s+'</div></td>'
+    +'<td><div class="at">'+r.a+'</div></td>'
+    +'<td><div class="et">'+r.e+'</div></td>'
+    +'<td><div class="wtags">'+r.w.map(function(w){return'<span class="wtag">'+w+'</span>';}).join('')+'</div></td>'
+    +'<td>'+(B[r.d]||B.pending)+'</td>'
+    +'<td>'+(B[r.i]||B.pending)+'</td>'
+    +'<td>'+(B[r.n]||B.pending)+'</td>'
+    +'<td><div class="nt">'+r.t+'</div></td>';
+  tb.appendChild(tr);
+});
+document.getElementById('today').textContent=new Date().toLocaleDateString('en-AU',{day:'2-digit',month:'short',year:'numeric'});
+function copyCmd(el){
+  navigator.clipboard.writeText(el.textContent.trim()).then(function(){
+    var c=el.style.color;
+    el.style.color='#10b981';
+    setTimeout(function(){el.style.color=c;},1200);
+  });
+}
+</script>
+</body>
+</html>

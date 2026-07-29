@@ -1,0 +1,116 @@
+====================================================
+ HOW TO CREATE THE GLOBEWEST STAGING 2 GOOGLE SHEET
+ Step-by-step instructions to run the Apps Script
+====================================================
+
+SCRIPT FILE: docs/GlobeWest_Staging2_GoogleSheet_Script.gs
+
+----------------------------------------------------
+ STEP 1: OPEN GOOGLE APPS SCRIPT
+----------------------------------------------------
+  1. Open your browser
+  2. Go to: https://script.google.com
+  3. Sign in with your Google account (same account
+     where you want the sheet saved)
+
+----------------------------------------------------
+ STEP 2: CREATE NEW PROJECT
+----------------------------------------------------
+  1. Click "New project" (top-left button)
+  2. A new script editor opens
+  3. DELETE all the existing code in the editor
+     (select all with Ctrl+A then Delete)
+
+----------------------------------------------------
+ STEP 3: PASTE THE SCRIPT
+----------------------------------------------------
+  1. Open this file in Notepad or VS Code:
+     C:\GlobeWest 2026\docs\GlobeWest_Staging2_GoogleSheet_Script.gs
+  2. Select ALL the code (Ctrl+A)
+  3. Copy it (Ctrl+C)
+  4. Go back to the Apps Script editor
+  5. PASTE the code (Ctrl+V)
+
+----------------------------------------------------
+ STEP 4: RUN THE SCRIPT
+----------------------------------------------------
+  1. At the top dropdown, make sure it shows:
+     "createStaging2RemediationSheet"
+  2. Click the ▶ RUN button (or press Ctrl+R)
+  3. A popup will ask for permissions — click
+     "Review permissions"
+  4. Choose your Google account
+  5. Click "Advanced" → "Go to project (unsafe)"
+     (this is safe — it's your own script)
+  6. Click "Allow"
+
+----------------------------------------------------
+ STEP 5: GET YOUR SHEET URL
+----------------------------------------------------
+  1. After the script runs (takes ~10 seconds)
+  2. A popup will appear showing the Google Sheet URL
+  3. Copy that URL — share it with your team!
+  4. OR: Check your Google Drive for a file called:
+     "GlobeWest Staging 2 — Critical Path Remediation"
+
+----------------------------------------------------
+ WHAT THE SHEET CONTAINS (3 Tabs):
+----------------------------------------------------
+
+  Tab 1: "Staging 2 Critical Path"
+  ─────────────────────────────────
+  • All 18 steps from the QA checklist
+  • 3 device status columns:
+    - 💻 Desktop Chrome (15 PASS, 3 MANUAL)
+    - 📱 iPhone 17 Pro  (Pending)
+    - 🔊 NVDA           (Pending)
+  • Dark themed, colour-coded status badges
+  • Frozen header rows for easy scrolling
+
+  Tab 2: "Run Commands"
+  ─────────────────────
+  • All Playwright commands ready to copy-paste
+  • Desktop Chrome, iPhone 17 Pro, Both, NVDA
+  • Terminal commands for headless and headed modes
+
+  Tab 3: "Manual Check Areas"
+  ────────────────────────────
+  • Step 10 — B2B Name/Client Name fields
+  • Step 17 — Place Order (Reseller blocker)
+  • Step 18 — Order confirmation page
+  • Empty "Tester Result" column to fill manually
+
+----------------------------------------------------
+ CURRENT STAGING 2 TEST STATUS SUMMARY:
+----------------------------------------------------
+
+  Steps 1–9:   ✅ PASS (automated via Playwright)
+  Step 10:     ⚑ MANUAL (B2B login required)
+  Steps 11–16: ✅ PASS (automated via Playwright)
+  Step 17:     ⚑ MANUAL (Reseller DB blocker)
+  Step 18:     ⚑ MANUAL (depends on Step 17)
+
+  KNOWN BLOCKER: Step 17 Place Order button is
+  not enabled unless a Reseller is pre-assigned
+  in the Staging 2 database (postcode 3000).
+
+----------------------------------------------------
+ PLAYWRIGHT TEST COMMANDS (Quick Reference):
+----------------------------------------------------
+
+  # Desktop Chrome (headed - watch the browser):
+  npx playwright test tests/staging2-critical-path-nvda.spec.js --project=desktop-chrome --headed --workers=1
+
+  # iPhone 17 Pro (headed):
+  npx playwright test tests/staging2-critical-path-nvda.spec.js --project=mobile-iphone17pro --headed --workers=1
+
+  # Both devices together:
+  npx playwright test tests/staging2-critical-path-nvda.spec.js --project=desktop-chrome --project=mobile-iphone17pro --headed --workers=1
+
+  # NVDA (turn on NVDA first, then run):
+  npx playwright test tests/staging2-critical-path-nvda.spec.js --project=desktop-chrome --headed --workers=1
+
+  # View HTML report after run:
+  npx playwright show-report
+
+====================================================

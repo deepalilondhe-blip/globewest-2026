@@ -1,0 +1,19 @@
+Step ID,Action,Expected Results,Status (Staging 2),Verification Notes
+1,Navigate to the landing page,Page title is announced correctly,PENDING,To be verified via automated critical path script.
+2,Select Indoor from top menu,Link is reachable via keyboard,PENDING,To be verified via automated critical path script.
+3,Select black from colour filter in the top menu,Filter and filter options are announced correctly,PENDING,To be verified via automated critical path script (SearchSpring facet check).
+4,Select the second product from the list,Product title and other details are announced correctly,PENDING,To be verified via automated critical path script.
+5,View the product details,Page title changes and product details are available,PENDING,To be verified via automated critical path script.
+6,Navigate product information using keyboard,All interactive elements reachable via keyboard,PENDING,To be verified via automated critical path script.
+7,Add product to cart,Able to successfully add product to the cart and receive confirmation,PENDING,To be verified via automated critical path script.
+8,Navigate to the cart,Cart page heading announced,PENDING,To be verified via automated critical path script.
+9,Review cart contents,Product details announced correctly,PENDING,To be verified via automated critical path script.
+10,Enter "name your order" and "client name",Field label is announced and typed content is announced correctly,PENDING,B2B customer checkout fields (Requires B2B frontend customer session).
+11,Activate "proceed to checkout" button,The button is reachable; has a visible focus state; and can be activated,PENDING,To be verified via automated critical path script.
+12,Review order details,Verify that form fields; radio buttons; order information; and pricing details are announced,PENDING,To be verified via automated critical path script.
+13,Proceed to the next step,Able to navigate to the next step,PENDING,To be verified via automated critical path script.
+14,Review delivery details,Able to navigate through the delivery details page,PENDING,To be verified via automated critical path script.
+15,Proceed to the next step,Able to navigate to the next step,PENDING,To be verified via automated critical path script.
+16,Review summary details,Able to navigate through the summary details page,PENDING,To be verified via automated critical path script.
+17,Confirm the order,Able to confirm T&Cs and able to confirm the order,PENDING,To be verified via automated critical path script.
+18,Review order confirmation,The order confirmation heading and order number are announced clearly,PENDING,To be verified via automated critical path script.
