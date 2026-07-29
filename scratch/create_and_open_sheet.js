@@ -26,15 +26,15 @@ const steps = [
   [7,  'Add product to cart',                                  'Successfully add product to cart and receive confirmation',                  'Status Messages',                                                        'PASS',   'PASS',    'PASS',    'Automated – Add to Cart triggered with swatch selection'],
   [8,  'Navigate to the cart',                                 'Cart page heading announced',                                               'Labels',                                                                 'PASS',   'PASS',    'PASS',    'Automated – Cart page navigated successfully'],
   [9,  'Review cart contents',                                 'Product details announced correctly',                                       'Page structure; Labels; Keyboard access',                                'PASS',   'PASS',    'PASS',    'Automated – Cart contents verified'],
-  [10, 'Enter "name your order" and "client name"',           'Field label is announced and typed content is announced correctly',          'Forms; Labels',                                                          'MANUAL', 'MANUAL',  'MANUAL',  'MANUAL – B2B session required. CAPTCHA blocks automation.'],
+  [10, 'Enter "name your order" and "client name"',           'Field label is announced and typed content is announced correctly',          'Forms; Labels',                                                          'MANUAL', 'MANUAL',  'MANUAL',  'MANUAL – CAPTCHA blocks automation. Verify fields and keyboard echo.'],
   [11, 'Activate "Proceed to Checkout" button',               'Button reachable; has visible focus state; can be activated',                'Keyboard; Focus; Role; Name',                                            'PASS',   'PASS',    'PASS',    'Automated – Checkout button clicked, checkout loaded'],
   [12, 'Review order details',                                'Form fields; radio buttons; order info and pricing details are announced',   'Page Structure; Forms; Labels',                                          'PASS',   'PASS',    'PASS',    'Automated – Checkout form loaded, fields verified'],
   [13, 'Proceed to the next step (Shipping)',                  'Able to navigate to the next step',                                        'Keyboard Access; Focus Management; Page Structure',                      'PASS',   'PASS',    'PASS',    'Automated – AU shipping address filled and continued'],
   [14, 'Review delivery details',                             'Able to navigate through the delivery details page',                        'Page Structure; Forms; Labels; Keyboard Access',                         'PASS',   'PASS',    'PASS',    'Automated – Standard delivery method confirmed'],
   [15, 'Proceed to the next step (Reseller)',                  'Able to navigate to the next step',                                        'Keyboard Access; Focus Management; Page Structure',                      'PASS',   'PASS',    'PASS',    'Automated – Reseller search (3000) applied, continued'],
   [16, 'Review summary details',                              'Able to navigate through the summary details page',                         'Page Structure; Forms; Labels; Keyboard Access',                         'PASS',   'PASS',    'PASS',    'Automated – Review & Payment summary page loaded'],
-  [17, 'Confirm the order',                                   'Able to confirm T&Cs and able to confirm the order',                        'Keyboard Access; Focus Management; Forms; Name; Role; Value',            'MANUAL', 'MANUAL',  'MANUAL',  'MANUAL – Reseller must be pre-assigned in Staging 2 DB'],
-  [18, 'Review order confirmation',                           'Order confirmation heading and order number are announced clearly',          'Page Structure; Information; Headings; Keyboard Access; Name; Role',     'MANUAL', 'MANUAL',  'MANUAL',  'MANUAL – Depends on Step 17 completion'],
+  [17, 'Confirm the order',                                   'Able to confirm T&Cs and able to confirm the order',                        'Keyboard Access; Focus Management; Forms; Name; Role; Value',            'MANUAL', 'MANUAL',  'MANUAL',  'MANUAL – Blocked on mcstaging2 (works perfectly on mcstaging Staging 1, payment successful)'],
+  [18, 'Review order confirmation',                           'Order confirmation heading and order number are announced clearly',          'Page Structure; Information; Headings; Keyboard Access; Name; Role',     'MANUAL', 'MANUAL',  'MANUAL',  'MANUAL – Blocked on mcstaging2 (works perfectly on mcstaging Staging 1)'],
 ];
 
 // Build worksheet data
@@ -105,13 +105,13 @@ const ws3Data = [
   ['GlobeWest Staging 2 — Manual Check Areas (Cannot Be Automated)', '', '', ''],
   ['Step', 'Action', 'Why Manual?', 'Tester Result'],
   [10, 'Enter "name your order" and "client name"',
-       'B2B customer checkout fields — Requires logged-in B2B account. CAPTCHA blocks automation.\nManual: Check label announced by NVDA, echo typed characters.',
+       'CAPTCHA blocks automation.\nManual: Check label announced by NVDA, echo typed characters.',
        ''],
   [17, 'Confirm the order (Place Order)',
-       'Reseller must be pre-assigned in Staging 2 database.\nPlace Order button is not enabled until valid reseller is assigned.\nManual: Verify T&Cs keyboard + NVDA announcement + button activation.',
+       'Blocked on mcstaging2 (Place Order button is not enabled due to no reseller assigned for postcode 3000 in Staging 2 DB).\nNote: This step works perfectly on mcstaging (Staging 1).\nManual: Verify T&Cs keyboard + NVDA announcement + button activation.',
        ''],
   [18, 'Review order confirmation',
-       'Depends on Step 17 manual completion.\nManual: Verify NVDA reads order confirmation heading and order number clearly.',
+       'Blocked on mcstaging2 (depends on Step 17 placement).\nNote: This step works perfectly on mcstaging (Staging 1) order confirmation page.\nManual: Verify NVDA reads order confirmation heading and order number clearly.',
        ''],
 ];
 const ws3 = XLSX.utils.aoa_to_sheet(ws3Data);
