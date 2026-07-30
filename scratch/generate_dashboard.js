@@ -55,10 +55,22 @@ function buildHtml(data) {
     if (s.status === 'FAIL') statusClass = 'status-fail';
     else if (s.status === 'MANUAL' || s.step === 10 || s.step === 17 || s.step === 18) statusClass = 'status-manual';
     
-    // Convert absolute screenshot path to relative if it's absolute
-    let relativeScreenshot = s.screenshot || '';
-    if (relativeScreenshot.includes('c:\\GlobeWest 2026\\') || relativeScreenshot.includes('C:/GlobeWest 2026/')) {
-      relativeScreenshot = '../' + relativeScreenshot.replace(/\\/g, '/').split('GlobeWest 2026/')[1];
+    // Convert screenshot to Base64 Data URL to make the HTML fully self-contained
+    let base64Image = '';
+    let screenshotPath = s.screenshot || '';
+    if (screenshotPath) {
+      let absolutePath = screenshotPath;
+      if (!path.isAbsolute(absolutePath)) {
+        absolutePath = path.resolve(__dirname, '../', screenshotPath);
+      }
+      if (fs.existsSync(absolutePath)) {
+        try {
+          const imgBuffer = fs.readFileSync(absolutePath);
+          base64Image = `data:image/png;base64,${imgBuffer.toString('base64')}`;
+        } catch (e) {
+          console.warn(`[Warning] Failed to read screenshot at ${absolutePath}: ${e.message}`);
+        }
+      }
     }
     
     return `
@@ -119,9 +131,9 @@ function buildHtml(data) {
         </div>
         
         <div class="step-image-col">
-          ${relativeScreenshot ? `
+          ${base64Image ? `
             <div class="image-wrapper">
-              <img src="${relativeScreenshot}" alt="Step ${s.step} Screenshot" class="step-screenshot" onclick="openLightbox('${relativeScreenshot}')">
+              <img src="${base64Image}" alt="Step ${s.step} Screenshot" class="step-screenshot" onclick="openLightbox(this.src)">
               <div class="image-overlay">Click to expand</div>
             </div>
           ` : '<div class="no-image">No screenshot captured</div>'}
