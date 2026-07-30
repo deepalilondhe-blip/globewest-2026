@@ -143,7 +143,7 @@ test.describe('GlobeWest Staging 2 — 18-Step Client Critical Path Audit', () =
 
   // ── MAIN TEST: All 18 Steps ──────────────────────────────────────────────────
   test('Staging 2 — All 18 Steps Critical Path (Video + Screenshot + NVDA)', async ({ page }, testInfo) => {
-    test.setTimeout(450000); // 7.5 minutes for mobile/NVDA runs on slow staging environment
+    test.setTimeout(600000); // 10 minutes for headed mobile/NVDA runs on slow staging environment
 
     const isHeaded = !testInfo.project.use.headless;
     const projectName = testInfo.project.name;
@@ -284,8 +284,28 @@ test.describe('GlobeWest Staging 2 — 18-Step Client Critical Path Audit', () =
         wcag: wcagAreas,
         status: stepStatus,
         error: stepError,
-        nvda: nvdaAnnouncement
+        nvda: nvdaAnnouncement,
+        screenshot: screenshotPath
       });
+
+      // Save dynamic JSON results incrementally for dashboard generator
+      const clientJson = {
+        summary: {
+          targetURL: baseURL,
+          device: projectName,
+          date: new Date().toLocaleDateString('en-AU'),
+          totalSteps: 18,
+          pass: stepResults.filter(r => r.status === 'PASS').length,
+          fail: stepResults.filter(r => r.status === 'FAIL').length,
+          manual: 3, // Steps 10, 17, 18
+          runTimestamp: runTimestamp
+        },
+        steps: stepResults
+      };
+      if (!fs.existsSync('playwright-report')) {
+        fs.mkdirSync('playwright-report');
+      }
+      fs.writeFileSync('playwright-report/staging2-run-results.json', JSON.stringify(clientJson, null, 2), 'utf8');
 
       if (stepStatus === 'FAIL') {
         throw new Error(`Step ${stepNum} (${stepName}) failed: ${stepError}`);
@@ -961,19 +981,29 @@ test.describe('GlobeWest Staging 2 — 18-Step Client Critical Path Audit', () =
     });
 
     // Attach step results as JSON for client
+    const clientJson = {
+      summary: {
+        targetURL: baseURL,
+        device: projectName,
+        date: new Date().toLocaleDateString('en-AU'),
+        totalSteps: 18,
+        pass: passCount,
+        fail: failCount,
+        manual: manualCount,
+        runTimestamp: runTimestamp
+      },
+      steps: stepResults
+    };
+
+    // Save dynamic JSON results locally for dashboard generator
+    if (!fs.existsSync('playwright-report')) {
+      fs.mkdirSync('playwright-report');
+    }
+    fs.writeFileSync('playwright-report/staging2-run-results.json', JSON.stringify(clientJson, null, 2), 'utf8');
+    console.log('📊 Local JSON run results saved to playwright-report/staging2-run-results.json');
+
     await testInfo.attach('📊 Step Results (JSON)', {
-      body: Buffer.from(JSON.stringify({
-        summary: {
-          targetURL: baseURL,
-          device: projectName,
-          date: new Date().toLocaleDateString('en-AU'),
-          totalSteps: 18,
-          pass: passCount,
-          fail: failCount,
-          manual: manualCount
-        },
-        steps: stepResults
-      }, null, 2)),
+      body: Buffer.from(JSON.stringify(clientJson, null, 2)),
       contentType: 'application/json'
     });
 
