@@ -165,6 +165,61 @@ test.describe('GlobeWest Staging 2 — 18-Step Client Critical Path Audit', () =
       contentType: 'application/json'
     });
 
+    const injectVisualHelpers = async (targetPage) => {
+      // 1. Inject focused element red outline highlight
+      await targetPage.addStyleTag({
+        content: `
+          *:focus {
+            outline: 3px solid red !important;
+            outline-offset: 3px !important;
+          }
+        `
+      }).catch(() => {});
+
+      // 2. Inject Space Black iPhone device bezel on mobile viewports
+      const viewport = targetPage.viewportSize();
+      const isMobile = viewport && viewport.width < 600;
+      if (isMobile) {
+        await targetPage.evaluate(() => {
+          if (document.getElementById('a11y-phone-bezel')) return;
+          const bezel = document.createElement('div');
+          bezel.id = 'a11y-phone-bezel';
+          bezel.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            border: 12px solid #0c0d10;
+            border-radius: 44px;
+            box-shadow: inset 0 0 0 2px #1c1c1e, inset 0 0 0 3px #2c2c2e, 0 0 20px rgba(0,0,0,0.8);
+            pointer-events: none;
+            z-index: 999999;
+            box-sizing: border-box;
+          `;
+
+          const notch = document.createElement('div');
+          notch.id = 'a11y-phone-notch';
+          notch.style.cssText = `
+            position: fixed;
+            top: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 110px;
+            height: 28px;
+            background: #000000;
+            border-radius: 18px;
+            box-shadow: inset 0 0 2px rgba(255,255,255,0.15);
+            z-index: 1000000;
+            pointer-events: none;
+          `;
+
+          document.body.appendChild(bezel);
+          document.body.appendChild(notch);
+        }).catch(() => {});
+      }
+    };
+
     // ── Step Runner Helper ─────────────────────────────────────────────────────
     // FIX 1: Speech fires AFTER page action completes (not before)
     // FIX 2: Screenshot attached via file PATH (reliable report embedding)
@@ -187,6 +242,9 @@ test.describe('GlobeWest Staging 2 — 18-Step Client Critical Path Audit', () =
         // Wait for page to fully settle before speaking and screenshotting
         await page.waitForLoadState('domcontentloaded').catch(() => {});
         await page.waitForTimeout(2000); // Extra settle time for animations/AJAX
+
+        // Inject highlights and phone bezel
+        await injectVisualHelpers(page);
 
         // ✅ FIX: Now speak step name + NVDA announcement AFTER page has loaded
         await speakText(`Step ${stepNum}. ${stepName}`, isHeaded);
@@ -345,7 +403,7 @@ test.describe('GlobeWest Staging 2 — 18-Step Client Critical Path Audit', () =
         const productTitle = await productLink.innerText();
         console.log(`Second product: ${productTitle}`);
         await productLink.focus();
-        await productLink.click();
+        await productLink.evaluate(el => el.click());
         await page.waitForLoadState('domcontentloaded');
       }
     );

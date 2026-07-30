@@ -348,6 +348,16 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
         await page.waitForTimeout(1000);
       }
 
+      // Inject focused element red outline highlight stylesheet
+      await page.addStyleTag({
+        content: `
+          *:focus {
+            outline: 3px solid red !important;
+            outline-offset: 3px !important;
+          }
+        `
+      }).catch(() => {});
+
       // Inject Space Black iPhone 17 Pro device frame bezel on mobile viewports
       const viewport = page.viewportSize();
       const isMobile = viewport && viewport.width < 600;
@@ -387,9 +397,6 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
 
           document.body.appendChild(bezel);
           document.body.appendChild(notch);
-
-          document.documentElement.style.padding = '12px';
-          document.documentElement.style.boxSizing = 'border-box';
         });
         await page.waitForTimeout(500);
       }
