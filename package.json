@@ -11,6 +11,8 @@
     "test:nvda-w3c": "playwright test tests/nvda-w3c.spec.js",
     "test:amazon": "playwright test tests/amazon-accessibility.spec.js",
     "test:staging-nvda": "playwright test tests/staging-nvda.spec.js --project=desktop-chrome --headed --workers=1 --timeout=240000",
+    "audit:iphone": "node scratch/run_audit.js iphone",
+    "audit:desktop": "node scratch/run_audit.js desktop",
     "report": "playwright show-report --port 9325"
   },
   "keywords": [
