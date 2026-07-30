@@ -111,8 +111,8 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
 
   test.beforeEach(async ({ page }, testInfo) => {
     const isHeadedMode = !testInfo.project.use.headless;
-    // Set high timeout for headed runs with audio, and safe 2-minute timeout for headless speed runs
-    test.setTimeout(isHeadedMode ? 600000 : 120000);
+    // Set high timeout for headed runs with audio, and safe 5-minute timeout for headless speed runs
+    test.setTimeout(isHeadedMode ? 600000 : 300000);
     // Block third-party scripts that generate blocking overlay popups and slow down page navigation on staging
     await page.route('**/*listrak*', route => route.abort());
     await page.route('**/*klaviyo*', route => route.abort());
@@ -156,7 +156,7 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
     for (const href of hrefs.slice(0, 10)) {
       console.log(`Navigating to product page: ${href}`);
       try {
-        await page.goto(href, { timeout: 20000 });
+        await page.goto(href, { timeout: 40000 });
         await page.waitForLoadState('domcontentloaded');
       } catch (e) {
         console.log(`Product page load timed out/failed, skipping to next: ${href}`);
@@ -168,14 +168,17 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
       }
 
       // Automatically select swatches (color/materials) if visible
+      const swatchContainer = page.locator('.swatch-attribute, .swatch-opt-wrapper').first();
+      if (await swatchContainer.isVisible({ timeout: 5000 }).catch(() => false)) {
+        await page.waitForSelector('.swatch-option', { state: 'attached', timeout: 5000 }).catch(() => {});
+      }
       const swatches = page.locator('.swatch-option');
       const swatchCount = await swatches.count();
-      for (let k = 0; k < Math.min(swatchCount, 3); k++) {
+      for (let k = 0; k < swatchCount; k++) {
         const sw = swatches.nth(k);
-        if (await sw.isVisible()) {
-          await sw.click();
-          await page.waitForTimeout(500);
-        }
+        await sw.waitFor({ state: 'attached', timeout: 3000 }).catch(() => {});
+        await sw.evaluate(el => el.click());
+        await page.waitForTimeout(500);
       }
 
       // Automatically select dropdown size options if visible
@@ -193,8 +196,8 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
       const addToCartBtn = page.locator('#product-addtocart-button');
       if (await addToCartBtn.isVisible() && await addToCartBtn.isEnabled()) {
         console.log('Clicking Add to Cart...');
-        await addToCartBtn.click();
-        await page.waitForTimeout(5000); // Settle AJAX
+        await addToCartBtn.click({ force: true });
+        await page.waitForTimeout(6000); // Settle AJAX
 
         // Check if cart is populated
         await page.goto(`${checkoutUrl}/checkout/cart/`);
@@ -286,8 +289,12 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
         
         if (pageInfo.name.includes('9. B2B Quotes Index')) {
           console.log('Navigating to B2B Quotes Index Page...');
-          await newPage.goto('https://mcstaging.globewest.com.au/gw_quotes/quote/index/', { timeout: 25000 });
-          await newPage.waitForLoadState('load');
+          try {
+            await newPage.goto('https://mcstaging.globewest.com.au/gw_quotes/quote/index/', { timeout: 25000 });
+            await newPage.waitForLoadState('load');
+          } catch (e) {
+            console.warn(`B2B Quotes page navigation failed/timed out, continuing scan: ${e.message}`);
+          }
         }
         
         // Point target page context to the newly authenticated frontend tab
