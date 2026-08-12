@@ -33,6 +33,7 @@ module.exports = defineConfig({
   },
   reporter: [
     ['html', { outputFolder: reportFolder, open: 'never' }],
+    ['json', { outputFile: 'playwright-report/results.json' }],
     ['list'],
   ],
   use: {
@@ -111,6 +112,21 @@ module.exports = defineConfig({
         isMobile: true,
         launchOptions: {
           args: ['--window-size=393,852']
+        }
+      },
+    },
+    {
+      name: 'mobile-iphone18pro',
+      use: {
+        // iPhone 18 Pro (Hypothetical) viewport assumption: 400x874, device pixel ratio 3
+        ...devices['Pixel 5'],
+        userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 19_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/19.0 Mobile/15E148 Safari/604.1',
+        viewport: { width: 400, height: 874 },
+        deviceScaleFactor: 3,
+        hasTouch: true,
+        isMobile: true,
+        launchOptions: {
+          args: ['--window-size=420,950']
         }
       },
     },
