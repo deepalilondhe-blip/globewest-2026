@@ -1,0 +1,51 @@
+═══════════════════════════════════════════════════════
+GLOBEWEST STAGING 2 — 18-STEP CRITICAL PATH TEST REPORT
+═══════════════════════════════════════════════════════
+Target URL  : https://mcstaging2.globewest.com.au/
+Device      : mobile-iphone17pro
+Date        : 29/07/2026
+Time        : 9:00:30 pm
+NVDA Mode   : NO (Headless)
+
+── RESULTS ──────────────────────────────────────────
+Total Steps : 18
+PASS        : 18  (automated checks passed)
+FAIL        : 0  (automated checks failed)
+MANUAL      : 3  (steps 10, 17, 18 — require human tester)
+
+── STEP-BY-STEP STATUS ───────────────────────────────
+  Step 01: [PASS] Navigate to the landing page
+  Step 02: [PASS] Select Indoor from top menu
+  Step 03: [PASS] Select Black from colour filter in the top menu
+  Step 04: [PASS] Select the second product from the list
+  Step 05: [PASS] View the product details
+  Step 06: [PASS] Navigate product information using keyboard
+  Step 07: [PASS] Add product to cart
+  Step 08: [PASS] Navigate to the cart
+  Step 09: [PASS] Review cart contents
+  Step 10: [PASS] Enter "name your order" and "client name"
+  Step 11: [PASS] Activate "Proceed to Checkout" button
+  Step 12: [PASS] Review order details
+  Step 13: [PASS] Proceed to the next step (Fill Shipping Details)
+  Step 14: [PASS] Review delivery details
+  Step 15: [PASS] Proceed to the next step (Reseller selection)
+  Step 16: [PASS] Review summary details
+  Step 17: [PASS] Confirm the order
+  Step 18: [PASS] Review order confirmation
+  Step 10: [MANUAL] Enter "name your order" and "client name" — B2B session required
+  Step 17: [MANUAL] Confirm the order — Reseller DB pre-assignment required
+  Step 18: [MANUAL] Review order confirmation — Depends on Step 17
+
+── KNOWN BLOCKER ─────────────────────────────────────
+  Step 17 Place Order button is not enabled until a Reseller is pre-assigned
+  in the Staging 2 database for postcode 3000.
+  Resolution: Ask developer to configure reseller in Staging 2 DB.
+
+── WCAG AREAS TESTED ─────────────────────────────────
+  Page structure | Keyboard Access | Labels | Block structure
+  Page title | Status Messages | Forms | Focus Management
+  Name; Role; Value | Information and Relationships
+
+═══════════════════════════════════════════════════════
+END OF REPORT — GlobeWest Staging 2 Critical Path Audit
+═══════════════════════════════════════════════════════
