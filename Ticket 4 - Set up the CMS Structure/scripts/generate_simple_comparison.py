@@ -106,7 +106,7 @@ def create_simple_single_defect(
     return img
 
 def create_one_combined_master(single_images, explanations, titles, out_path):
-    # Combine all 4 defect comparisons vertically into exactly ONE master comparison image
+    # Combine all defect comparisons vertically into exactly ONE master comparison image
     w = single_images[0].size[0]
     pad = 20
     top_banner_h = 60
@@ -134,6 +134,14 @@ def run():
     out_dir = os.path.join(base_dir, 'screenshots/simple_defect_reports')
     os.makedirs(out_dir, exist_ok=True)
     
+    # Crop user screenshot for Defect 5 to preserve status bar
+    user_screen = '/home/deepali/.gemini/antigravity-ide/brain/35949052-5130-4815-b7ea-118ef98c2f2b/.user_uploaded/media_1789033963791.png'
+    us_hover_crop_path = os.path.join(sec_dir, 'TC_US_Hover_Status_Leak.png')
+    if os.path.exists(user_screen):
+        src_im = Image.open(user_screen)
+        cropped = src_im.crop((0, 85, 1024, 578))
+        cropped.save(us_hover_crop_path)
+    
     defects = [
         {
             'num': 1,
@@ -142,6 +150,7 @@ def run():
             'us_img': os.path.join(sec_dir, 'DEFECT_Section_1_Hero_Banner_AU_Leak.png'),
             'au_img': os.path.join(au_dir, 'AU_Section_1_Hero_Banner.png'),
             'us_box': (0.32, 0.42, 0.68, 0.62),
+            'us_box_label': None,
             'au_box': (0.32, 0.42, 0.68, 0.62),
             'file': 'DEFECT_1_HERO_BANNER_CTA.png'
         },
@@ -152,6 +161,7 @@ def run():
             'us_img': os.path.join(sec_dir, 'DEFECT_Section_3_Category_Card_1_AU_Leak.png'),
             'au_img': os.path.join(au_dir, 'AU_Section_2_Category_Carousel.png'),
             'us_box': (0.02, 0.15, 0.35, 0.88),
+            'us_box_label': None,
             'au_box': (0.02, 0.15, 0.35, 0.88),
             'file': 'DEFECT_2_CATEGORY_CAROUSEL.png'
         },
@@ -162,6 +172,7 @@ def run():
             'us_img': os.path.join(sec_dir, 'Section_6_insta-us-block-home-page.png'),
             'au_img': os.path.join(au_dir, 'AU_Section_7_Instagram_Feed.png'),
             'us_box': (0.05, 0.15, 0.95, 0.85),
+            'us_box_label': None,
             'au_box': (0.05, 0.15, 0.95, 0.85),
             'file': 'DEFECT_3_INSTAGRAM_FEED.png'
         },
@@ -172,8 +183,20 @@ def run():
             'us_img': os.path.join(sec_dir, 'Section_9_home-us-seo-text.png'),
             'au_img': os.path.join(au_dir, 'AU_Section_9_SEO_Text_FullWidth.png'),
             'us_box': (0.05, 0.15, 0.95, 0.85),
+            'us_box_label': None,
             'au_box': (0.05, 0.15, 0.95, 0.85),
             'file': 'DEFECT_4_SEO_TEXT.png'
+        },
+        {
+            'num': 5,
+            'title': 'Hero Banner Hover Link Leak',
+            'exp': 'Hovering over Hero Banner CTA shows Australian URL (https://www.globewest.com.au) instead of US store.',
+            'us_img': us_hover_crop_path,
+            'au_img': os.path.join(au_dir, 'AU_Section_1_Hero_Banner.png'),
+            'us_box': (0.005, 0.89, 0.22, 0.99),
+            'us_box_label': 'AU LEAK: globewest.com.au',
+            'au_box': (0.32, 0.42, 0.68, 0.62),
+            'file': 'DEFECT_5_HERO_BANNER_HOVER.png'
         }
     ]
     
