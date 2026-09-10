@@ -54,6 +54,16 @@
 
 ---
 
+## Defect 5: Hero Banner CTA Hover Link Leak
+
+![Defect 5 Hero Banner Hover Link Leak](/home/deepali/.gemini/antigravity-ide/brain/35949052-5130-4815-b7ea-118ef98c2f2b/simple_defect_reports/DEFECT_5_HERO_BANNER_HOVER.png)
+
+- **US Storefront (RED):** Hovering over "EXPLORE COLLECTIONS" displays `https://www.globewest.com.au` in the browser preview.
+- **AU Storefront (GREEN):** Hovering over the banner CTA previews internal Australian store links.
+- **Defect Explanation:** Hovering over the Hero Banner CTA button previews and redirects to the Australian live domain instead of staying on the US storefront domain.
+
+---
+
 ## Summary Table
 
 | Defect | US Storefront (Red) | AU Storefront (Green) | Defect Explanation |
@@ -62,3 +72,4 @@
 | **2. Category Carousel** | 14 cards link to `.com.au` | Links within AU catalog | All 14 cards redirect US users to the Australian catalog. |
 | **3. Instagram Feed** | Completely blank (0 photos) | Live photo feed displayed | Instagram feed displays no photos on the US storefront. |
 | **4. SEO Text Block** | Empty container (0 words) | 3 paragraphs displayed | SEO content block is completely empty on the US storefront. |
+| **5. Hero Banner Hover Leak** | Hover shows `globewest.com.au` | Hover within AU domain | Hovering on CTA previews and redirects to the Australian live website. |
