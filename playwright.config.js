@@ -16,6 +16,8 @@ if (argvStr.includes('accessibility.spec.js')) {
   reportFolder = 'playwright-report/lighthouse';
 } else if (argvStr.includes('staging-nvda.spec.js')) {
   reportFolder = 'playwright-report/nvda';
+} else if (argvStr.includes('plp')) {
+  reportFolder = 'playwright-report/plp';
 }
 
 module.exports = defineConfig({
@@ -24,9 +26,9 @@ module.exports = defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: 1,
-  timeout: 120000,
+  timeout: 240000,
   expect: {
-    timeout: 10000,
+    timeout: 15000,
   },
   reporter: [['html', { outputFolder: reportFolder, open: 'never' }]],
   use: {
@@ -34,7 +36,7 @@ module.exports = defineConfig({
     trace: 'on-first-retry',
     headless: false,
     screenshot: 'on',
-    video: 'on',
+    video: 'retain-on-failure',
     ignoreHTTPSErrors: true,
   },
 

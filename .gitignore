@@ -11,3 +11,5 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.log
+test-results/
+playwright-report/
