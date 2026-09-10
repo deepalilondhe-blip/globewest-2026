@@ -1,0 +1,80 @@
+"Test Case ID","Test Case Name","Ticket","Priority","Category","Admin Navigation Path","Test Steps","Expected Result","Why It Matters","Automation File","Status"
+"TC-US-CFG-01","USA Website Timezone is Set to a Valid US Timezone","Ticket 2: Configure US Store-View Scope","P1 (Critical)","Store Configuration – Locale","Stores > Configuration > [US Scope] > General > General > Locale Options > Timezone","1. Login to Magento Admin Panel
+2. Go to Stores > Configuration
+3. Switch scope to GlobeWest US store-view
+4. Navigate to General > General > Locale Options
+5. Read the Timezone dropdown value","Timezone value contains 'America/' prefix (e.g. America/Chicago, America/New_York, America/Los_Angeles). Must NOT contain 'Australia'.","Incorrect timezone produces wrong order timestamps, scheduled email times, and order processing windows for US customers.","ticket2-us-store-scope-config.spec.js","READY FOR EXECUTION"
+"TC-US-CFG-02","Locale Language & Format is Set to United States English (en_US)","Ticket 2: Configure US Store-View Scope","P1 (Critical)","Store Configuration – Locale","Stores > Configuration > [US Scope] > General > General > Locale Options > Locale","1. Login to Magento Admin Panel
+2. Go to Stores > Configuration
+3. Switch scope to GlobeWest US store-view
+4. Navigate to General > General > Locale Options
+5. Read the Locale dropdown value","Locale = en_US (English - United States). Label must contain 'United States'. Must NOT be en_AU.","AU locale (en_AU) formats dates (DD/MM/YYYY), numbers, and currency differently to US standards (MM/DD/YYYY). This governs all date and number formatting across the US storefront.","ticket2-us-store-scope-config.spec.js","READY FOR EXECUTION"
+"TC-US-CFG-03","Store Information Country is Set to United States","Ticket 2: Configure US Store-View Scope","P1 (Critical)","Store Configuration – Store Info","Stores > Configuration > [US Scope] > General > General > Store Information > Country","1. Login to Magento Admin Panel
+2. Go to Stores > Configuration
+3. Switch scope to GlobeWest US store-view
+4. Navigate to General > General > Store Information
+5. Read the Country dropdown value","Country value = 'US'. Label = 'United States'. Must NOT be 'AU' or 'Australia'.","This is the default country the store 'sells to'. Used in tax calculations, shipping origin, and B2B customer registration country defaults.","ticket2-us-store-scope-config.spec.js","READY FOR EXECUTION"
+"TC-US-CFG-04","Store Name is Populated and References the GlobeWest Brand for US Customers","Ticket 2: Configure US Store-View Scope","P1 (Critical)","Store Configuration – Store Info","Stores > Configuration > [US Scope] > General > General > Store Information > Store Name","1. Login to Magento Admin Panel
+2. Go to Stores > Configuration
+3. Switch scope to GlobeWest US store-view
+4. Navigate to General > General > Store Information
+5. Read the Store Name input field value","Store Name is non-empty and contains 'GlobeWest' (case insensitive).","The store/brand name displayed to US customers in transactional emails, tax invoices, and storefront header/footer. Empty or wrong name breaks brand consistency.","ticket2-us-store-scope-config.spec.js","READY FOR EXECUTION"
+"TC-US-CFG-05","USA Customer Support Phone Number is Populated and Uses US Format","Ticket 2: Configure US Store-View Scope","P1 (Critical)","Store Configuration – Store Info","Stores > Configuration > [US Scope] > General > General > Store Information > Store Phone Number","1. Login to Magento Admin Panel
+2. Go to Stores > Configuration
+3. Switch scope to GlobeWest US store-view
+4. Navigate to General > General > Store Information
+5. Read the Phone Number input field value","Phone is non-empty. Must NOT start with +61, 1800, or 0x (Australian phone formats).","The customer support phone number displayed in storefront header/footer and contact pages for US customers. An AU phone number on the US site is a critical UX and trust failure.","ticket2-us-store-scope-config.spec.js","READY FOR EXECUTION"
+"TC-US-CFG-06","Store Address City is Set to a US City (Not an Australian City)","Ticket 2: Configure US Store-View Scope","P2 (High)","Store Configuration – Store Address","Stores > Configuration > [US Scope] > General > General > Store Information > City","1. Login to Magento Admin Panel
+2. Go to Stores > Configuration
+3. Switch scope to GlobeWest US store-view
+4. Navigate to General > General > Store Information
+5. Read the City input field value","City is non-empty. Must NOT contain: Melbourne, Sydney, Brisbane, Perth, Adelaide, Canberra, Darwin, Hobart.","Used in store address fields on tax invoices and order confirmation emails sent to US B2B customers. An Australian city on a US tax invoice is a compliance and trust issue.","ticket2-us-store-scope-config.spec.js","READY FOR EXECUTION"
+"TC-US-CFG-07","Store Address State is a Valid US State (Not an Australian State)","Ticket 2: Configure US Store-View Scope","P2 (High)","Store Configuration – Store Address","Stores > Configuration > [US Scope] > General > General > Store Information > Region / State","1. Login to Magento Admin Panel
+2. Go to Stores > Configuration
+3. Switch scope to GlobeWest US store-view
+4. Navigate to General > General > Store Information
+5. Read the Region/State dropdown or input value","State is non-empty. Must NOT be: VIC, NSW, QLD, SA, WA, TAS, NT, ACT, or their full names.","State drives US tax rate computation (Avalara) and US carrier rate lookups (UPS, FedEx). An AU state value will cause tax and shipping calculation failures.","ticket2-us-store-scope-config.spec.js","READY FOR EXECUTION"
+"TC-US-CFG-08","Store ZIP Code is a Valid 5-Digit US ZIP (Not a 4-Digit AU Postcode)","Ticket 2: Configure US Store-View Scope","P2 (High)","Store Configuration – Store Address","Stores > Configuration > [US Scope] > General > General > Store Information > ZIP / Postal Code","1. Login to Magento Admin Panel
+2. Go to Stores > Configuration
+3. Switch scope to GlobeWest US store-view
+4. Navigate to General > General > Store Information
+5. Read the Postcode input field value","ZIP code is non-empty and matches regex: ^\d{5}(-\d{4})?$ (e.g. 60601 or 60601-1234). Must NOT be a 4-digit AU postcode (e.g. 3000).","Used on invoices and US carrier shipping rate lookups (UPS, FedEx). A 4-digit AU postcode will fail US carrier ZIP validation and break shipping rate calculation.","ticket2-us-store-scope-config.spec.js","READY FOR EXECUTION"
+"TC-US-CFG-09","Store Street Address is Populated for the US Location (No Australian Keywords)","Ticket 2: Configure US Store-View Scope","P2 (High)","Store Configuration – Store Address","Stores > Configuration > [US Scope] > General > General > Store Information > Street Address Line 1","1. Login to Magento Admin Panel
+2. Go to Stores > Configuration
+3. Switch scope to GlobeWest US store-view
+4. Navigate to General > General > Store Information
+5. Read Street Address Line 1 input value","Street address is non-empty. Must NOT contain: VIC, NSW, QLD, Australia, Melbourne, Sydney, Brisbane, Perth.","Printed on tax invoices and order confirmation emails sent to US B2B customers. An AU street address on a US invoice is a serious compliance issue.","ticket2-us-store-scope-config.spec.js","READY FOR EXECUTION"
+"TC-US-CFG-10","State/Region Required Checkbox Includes United States for Checkout Address Validation","Ticket 2: Configure US Store-View Scope","P1 (Critical)","Store Configuration – State Options","Stores > Configuration > [US Scope] > General > General > State Options > State is Required for","1. Login to Magento Admin Panel
+2. Go to Stores > Configuration
+3. Switch scope to GlobeWest US store-view
+4. Navigate to General > General > State Options
+5. Inspect the 'State is Required for' multi-select list
+6. Verify 'United States' is selected","'United States' is present in the selected options of the 'State is Required for' multi-select field.","US tax compliance and carrier integrations (UPS, FedEx, Avalara) require a valid state in the checkout address. Without this, customers can submit checkout without a state, causing tax and shipping failures.","ticket2-us-store-scope-config.spec.js","READY FOR EXECUTION"
+"TC-US-CFG-11","Public HTTP Base URL is Bound to the US Domain (globewest.com, Not .com.au)","Ticket 2: Configure US Store-View Scope","P1 (Critical)","Store Configuration – Web / Domain Binding","Stores > Configuration > [US Scope] > General > Web > Base URLs > Base URL","1. Login to Magento Admin Panel
+2. Go to Stores > Configuration
+3. Switch scope to GlobeWest US store-view
+4. Navigate to General > Web > Base URLs
+5. Read the Base URL input field value","Base URL contains 'globewest.com' (US domain). Must NOT contain '.com.au'. Must NOT be empty.","This is the primary domain binding for all US storefront public URLs. Incorrect binding causes cross-domain redirects, AU scope leakage, and broken US storefront navigation.","ticket2-us-store-scope-config.spec.js","READY FOR EXECUTION"
+"TC-US-CFG-12","Secure HTTPS Base URL is Bound to the US Domain with Valid HTTPS Protocol","Ticket 2: Configure US Store-View Scope","P1 (Critical)","Store Configuration – Web / Domain Binding","Stores > Configuration > [US Scope] > General > Web > Base URLs (Secure) > Secure Base URL","1. Login to Magento Admin Panel
+2. Go to Stores > Configuration
+3. Switch scope to GlobeWest US store-view
+4. Navigate to General > Web > Base URLs (Secure)
+5. Read the Secure Base URL input field value","Secure URL starts with 'https://'. Contains 'globewest.com'. Must NOT contain '.com.au'.","Required for secure checkout, payment gateway processing (Stripe/PayPal), and SSL certificate matching for the US domain. Wrong domain causes SSL warnings and payment failures.","ticket2-us-store-scope-config.spec.js","READY FOR EXECUTION"
+"TC-US-CFG-13","Product Image & Media Base URL Points to US Location (Not AU Domain)","Ticket 2: Configure US Store-View Scope","P2 (High)","Store Configuration – Web / Media","Stores > Configuration > [US Scope] > General > Web > Base URLs > Base URL for User Media Files","1. Login to Magento Admin Panel
+2. Go to Stores > Configuration
+3. Switch scope to GlobeWest US store-view
+4. Navigate to General > Web > Base URLs
+5. Read the Base URL for User Media Files input value","If populated: must NOT contain '.com.au'. If fully qualified (starts with http), must contain 'globewest.com'. Empty/relative value is acceptable (inherits base URL).","Incorrect media URL serves product images from the AU domain, causing broken product images, CORS errors, and CDN misconfiguration on the US B2B storefront.","ticket2-us-store-scope-config.spec.js","READY FOR EXECUTION"
+"TC-US-CFG-14","Base Currency and Default Display Currency are Both Configured as USD (Not AUD)","Ticket 2: Configure US Store-View Scope","P1 (Critical)","Store Configuration – Currency","Stores > Configuration > [US Scope] > General > Currency Setup > Currency Options","1. Login to Magento Admin Panel
+2. Go to Stores > Configuration
+3. Switch scope to GlobeWest US store-view
+4. Navigate to General > Currency Setup > Currency Options
+5. Read Base Currency dropdown value
+6. Read Default Display Currency dropdown value","Base Currency contains 'USD'. Default Display Currency contains 'USD'. Neither must contain 'AUD'.","Core revenue integrity — wrong currency causes all US prices to display in AUD, completely breaking the US B2B commerce flow, pricing, and financial reporting.","ticket2-us-store-scope-config.spec.js","READY FOR EXECUTION"
+"TC-US-CFG-15","US Storefront Prices Display in USD — AUD and GST Labels Not Shown to US Customers","Ticket 2: Configure US Store-View Scope","P1 (Critical)","Frontend Storefront Verification","Frontend: https://mcstaging2.globewest.com (Homepage > PLP > PDP)","1. Navigate to US Homepage: https://mcstaging2.globewest.com
+2. Verify URL is on globewest.com (not .com.au)
+3. Navigate to PLP: /indoor
+4. Check price element displays '$' symbol (not 'AUD')
+5. Navigate to PDP product URL
+6. Check price element displays '$' symbol
+7. Verify no GST notice/label is visible on the PDP","All prices show '$' (USD format). 'AUD', 'A$', and 'GST' are NOT visible anywhere to US customers.","End-to-end verification that all admin currency config flows through correctly to the customer-facing US B2B storefront. GST is AU-specific — US customers must never see it.","ticket2-us-store-scope-config.spec.js","READY FOR EXECUTION"

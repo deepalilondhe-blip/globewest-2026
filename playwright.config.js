@@ -28,9 +28,9 @@ module.exports = defineConfig({
   expect: {
     timeout: 10000,
   },
-  reporter: [['html', { outputFolder: reportFolder }]],
+  reporter: [['html', { outputFolder: reportFolder, open: 'never' }]],
   use: {
-    baseURL: process.env.BASE_URL || 'https://mcstaging.globewest.com.au', // Fallback to live URL if staging is not accessible
+    baseURL: process.env.BASE_URL || 'https://mcstaging2.globewest.com.au', // Fallback to live URL if staging is not accessible
     trace: 'on-first-retry',
     headless: false,
     screenshot: 'on',

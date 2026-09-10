@@ -54,21 +54,33 @@ GlobeWest 2026/
 
 You can execute different scripts configured in `package.json`:
 
-* **Run all tests (headless mode):**
+* **Run all tests:**
   ```bash
   npm test
   ```
-* **Run accessibility scans only (all 8 templates):**
+* **Run accessibility scans (Axe-core WCAG 2.2 AA on all templates):**
   ```bash
   npm run test:accessibility
   ```
-* **Run functional user journeys only (dynamic states & forms):**
+* **Run functional user journeys (Cart flow, Mega menus, Login):**
   ```bash
   npm run test:journeys
   ```
-* **Run tests in a specific browser environment (e.g. Mobile Safari emulation):**
+* **Run screen reader & keyboard navigation audit (Audio simulation):**
   ```bash
-  npx playwright test --project=mobile-safari-iphone
+  npm run test:staging-nvda
+  ```
+* **Run Lighthouse audits (Generates accessibility & performance reports):**
+  ```bash
+  npm run test:lighthouse
+  ```
+* **Verify accessibility scores summary table:**
+  ```bash
+  npm run verify:scores
+  ```
+* **Run tests in a specific browser environment (e.g. Mobile Chrome):**
+  ```bash
+  npx playwright test --project=mobile-chrome-android
   ```
 * **Show HTML Test Report:**
   ```bash

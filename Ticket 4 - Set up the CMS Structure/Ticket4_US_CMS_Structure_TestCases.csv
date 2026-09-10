@@ -1,0 +1,98 @@
+"Test Case ID","Test Case Name","Preconditions","Admin / Storefront Navigation Path","Test Steps","Expected Result","Why It Matters","Verification Type"
+"TC-US-CMS-01","Verify CMS Home Page Assignment in Magento Admin Store Configuration","Admin user deepali.londhe@overdose.digital has valid access to Magento Admin panel.","Magento Admin > Stores > Configuration > General > Web > Default Pages > CMS Home Page","1. Login to Magento Admin panel (godmode/admin).
+2. Navigate to Stores > Configuration.
+3. Change Scope dropdown to ""USA Website"" or ""GlobeWest US"".
+4. Expand General > Web > Default Pages section.
+5. Inspect the ""CMS Home Page"" field.
+6. Verify ""Use Default"" checkbox is unchecked.
+7. Verify selected value is ""Home page - US"" (identifier: home-us).
+8. Capture screenshot proof.","The ""CMS Home Page"" dropdown under US scope is set to ""Home page - US"". ""Use Default"" is unchecked.","If the CMS Home page is not assigned under the US scope, the US storefront will fall back to the AU homepage or a 404 page, breaking the US customer entry point.","Automated (Playwright) + Manual"
+"TC-US-CMS-02","Verify CMS Page ""Home page - US"" (home-us) in Content > Pages","Admin panel logged in.","Magento Admin > Content > Elements > Pages","1. In Magento Admin, go to Content > Pages.
+2. In search filter, enter URL Key: ""home-us"" or Title: ""Home page - US"".
+3. Click Apply Filters.
+4. Verify row exists.
+5. Verify Status is ""Enabled"".
+6. Verify Scope/Store View includes ""USA Website"" (or US Store View).
+7. Click Select > Edit to inspect content structure and layout.
+8. Verify Layout is ""1 column"" or ""CMS Home Page"" template.
+9. Capture screenshot proof.","Page ""Home page - US"" is found, Status = Enabled, assigned to USA Website, and contains the required layout/content references.","Ensures the master CMS container page exists, is enabled, and is strictly restricted to the US scope.","Automated (Playwright) + Manual"
+"TC-US-CMS-03","Verify All 9 CMS Blocks Exist & Enabled in Content > Blocks","Admin panel logged in.","Magento Admin > Content > Elements > Blocks","1. In Magento Admin, navigate to Content > Blocks.
+2. For each of the 9 identifiers:
+   - home-us-video-block-b2b
+   - main-us-banner
+   - home-us-category-carousel
+   - global-us-visit-showroom
+   - homepage_us_recent_articles
+   - insta-us-block-home-page
+   - home-us-seo-text
+   - home-us-page-about-us
+   - global-us-find-designer
+3. Filter by Identifier and verify row exists.
+4. Verify Status = ""Enabled"".
+5. Verify Store View = ""USA Website"" or ""All Store Views"".
+6. Capture screenshot evidence.","All 9 CMS blocks are successfully created, status is ""Enabled"", and mapped to the US store scope.","Missing or disabled CMS blocks will cause blank gaps, broken widgets, or PHP widget exceptions on the live US homepage.","Automated (Playwright) + Manual"
+"TC-US-CMS-04","US Storefront: Hero Banner Block (main-us-banner) Rendering","US Staging storefront URL reachable (https://mcstaging2.globewest.com/).","US Storefront Homepage (/)","1. Navigate to US storefront homepage.
+2. Wait for page load and inspect top hero section.
+3. Verify presence of block container matching ""main-us-banner"".
+4. Check banner image renders without 404 broken image icon.
+5. Verify headline text, sub-copy, and CTA button (""Shop Collection"" / ""Discover"").
+6. Click or inspect CTA link to ensure it stays on the US domain.
+7. Capture screenshot.","Hero banner displays prominently at top of page, high-resolution imagery loads, CTA link points to US catalog URL.","First impression for US B2B trade customers; broken hero banner immediately ruins trust and conversion.","Automated (Playwright) + Manual"
+"TC-US-CMS-05","US Storefront: B2B Video Block (home-us-video-block-b2b) Rendering","US Staging storefront URL reachable.","US Storefront Homepage (/)","1. Scroll to the video section on the US homepage.
+2. Locate block container for ""home-us-video-block-b2b"".
+3. Check video element or embed (HTML5 video, YouTube, or Vimeo embed).
+4. Verify video poster thumbnail loads.
+5. Verify play/pause controls or autoplay muted functionality.
+6. Ensure no console errors or mixed content HTTP warnings.
+7. Capture screenshot.","Video block container renders smoothly, video poster/media loads without CORS or 404 errors, responsive across viewports.","Key storytelling element tailored for US B2B audience showcasing craftsmanship and design.","Automated (Playwright) + Manual"
+"TC-US-CMS-06","US Storefront: Category Carousel Block (home-us-category-carousel) Rendering","US Staging storefront URL reachable.","US Storefront Homepage (/)","1. Locate the category carousel section.
+2. Verify block container for ""home-us-category-carousel"".
+3. Verify category items render (e.g., Living, Dining, Bedroom, Outdoor).
+4. Test carousel navigation (Next/Prev buttons, swipe on touch).
+5. Check all category image cards load.
+6. Verify category links point to US catalog URLs without /au or .com.au.
+7. Capture screenshot.","Category carousel displays all active cards with images and titles; slider controls respond to clicks; links route to US PLPs.","Primary navigation pathway for US customers to browse product categories.","Automated (Playwright) + Manual"
+"TC-US-CMS-07","US Storefront: Visit Showroom Block (global-us-visit-showroom) Rendering","US Staging storefront URL reachable.","US Storefront Homepage (/)","1. Scroll to the showroom locator section.
+2. Locate block container for ""global-us-visit-showroom"".
+3. Verify imagery and copy.
+4. Check that showroom details do NOT list Australian addresses (Melbourne, Sydney, Brisbane).
+5. Verify CTA button (""Book a Visit"" / ""US Showrooms"" / ""Virtual Consultation"").
+6. Verify destination URL is valid on US site.
+7. Capture screenshot.","Showroom promo block renders with US-appropriate copy/links; zero Australian showroom addresses shown.","Crucial for preventing US trade clients from seeing Australian showroom locations or phone numbers.","Automated (Playwright) + Manual"
+"TC-US-CMS-08","US Storefront: Recent Articles Block (homepage_us_recent_articles) Rendering","US Staging storefront URL reachable.","US Storefront Homepage (/)","1. Scroll to the blog / recent articles section.
+2. Locate block container for ""homepage_us_recent_articles"".
+3. Verify article cards render (thumbnails, publication titles, read more links).
+4. Verify images are responsive and not broken.
+5. Click an article link and ensure it opens the US blog/article page.
+6. Capture screenshot.","Recent articles grid renders with active content, valid links, and clean typography.","Maintains editorial parity with AU site and provides SEO value for the US market.","Automated (Playwright) + Manual"
+"TC-US-CMS-09","US Storefront: Instagram Feed Block (insta-us-block-home-page) Known Limitation & Fallback Audit","US Staging storefront URL reachable.","US Storefront Homepage (/)","1. Scroll to the social feed area where Instagram widget is placed.
+2. Locate container element for ""insta-us-block-home-page"".
+3. Verify DOM presence of the block.
+4. Check DevTools Console for widget errors (e.g., Instagram API token invalid for US domain, script blocked, or empty feed container).
+5. Confirm the dev team note: block code is present, but feed posts do not render.
+6. Verify that missing feed does NOT break page layout, cause UI overlap, or trigger fatal JavaScript crashes.
+7. Capture screenshot and console log.","Block container is present in DOM; gracefully degrades (empty or hidden) without breaking the rest of the page; defect documented with root cause.","Validates the specific note provided by the dev team and ensures graceful degradation until API/token is connected.","Automated (Playwright) + Manual"
+"TC-US-CMS-10","US Storefront: About Us Brand Story Block (home-us-page-about-us) Rendering","US Staging storefront URL reachable.","US Storefront Homepage (/)","1. Scroll to the About Us brand section.
+2. Locate container for ""home-us-page-about-us"".
+3. Verify headline, brand story paragraph, and imagery.
+4. Verify any links (""Read Our Story"" / ""About GlobeWest"") route to the US About Us CMS page.
+5. Verify text formatting, contrast, and alignment.
+6. Capture screenshot.","About Us block renders cleanly with clear brand story and working link to US About page.","Builds brand credibility and introduces GlobeWest design pedigree to the American trade audience.","Automated (Playwright) + Manual"
+"TC-US-CMS-11","US Storefront: Find a Designer CTA Block (global-us-find-designer) Rendering","US Staging storefront URL reachable.","US Storefront Homepage (/)","1. Scroll to the Find a Designer section.
+2. Locate container for ""global-us-find-designer"".
+3. Verify headline, subtext, and action buttons.
+4. Verify CTA link routes to the US designer directory or trade registration portal.
+5. Check responsive behavior on tablet and mobile.
+6. Capture screenshot.","Find a Designer section displays properly with accessible CTA button routing to US trade / directory page.","Connects US trade professionals and interior designers to the brand.","Automated (Playwright) + Manual"
+"TC-US-CMS-12","US Storefront: SEO Text Block (home-us-seo-text) Rendering","US Staging storefront URL reachable.","US Storefront Homepage (/)","1. Scroll to the bottom of the homepage above the footer.
+2. Locate container for ""home-us-seo-text"".
+3. Inspect heading tags (H2/H3) and paragraphs.
+4. Verify text content mentions GlobeWest US offerings without Australian legal disclaimers (ABN, AU GST).
+5. Check expand/collapse accordion behavior if applicable.
+6. Capture screenshot.","SEO text block renders formatted paragraphs at bottom of page; no AU-specific regulatory text present.","Drives organic search ranking for US interior design and wholesale furniture keywords in Google US.","Automated (Playwright) + Manual"
+"TC-US-CMS-13","US Storefront: Responsive Layout Integrity & Zero AU Scope Leakage","US Staging storefront URL reachable.","US Storefront Homepage (/) across Desktop, Tablet, Mobile","1. Emulate Desktop (1920x1080), Tablet (820x1180), and Mobile (393x851).
+2. Load US homepage under each viewport.
+3. Verify all CMS blocks stack gracefully without horizontal overflow.
+4. Run regex search on page text for Australian leakage: ""AUD"", ""$AU"", ""ABN"", ""GST inc"", ""+61"", ""Victoria 3204"".
+5. Check all images for natural dimensions (naturalWidth > 0).
+6. Capture responsive screenshots.","Zero horizontal scrolling or overlapping blocks; all images render; zero AU scope leakage found on US homepage.","Guarantees end-to-end presentation excellence and strict multi-store scope isolation.","Automated (Playwright) + Manual"

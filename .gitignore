@@ -1,0 +1,13 @@
+# Dependency directories
+node_modules/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Office temporary lock files
+.~lock*
+
+# Temporary files
+*.tmp
+*.log

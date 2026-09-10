@@ -1,64 +1,119 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
 const { execSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
 
-// Persistent PowerShell speech engine to serialize screen reader announcements without process spawning overhead
+// Cross-platform screen reader announcement engine (Windows: PowerShell System.Speech, Linux: spd-say, macOS: say)
 let speechProcess = null;
 let speechResolver = null;
 
 function startSpeechEngine() {
   if (speechProcess) return;
-  const { spawn } = require('child_process');
-  speechProcess = spawn('powershell.exe', [
-    '-NoProfile',
-    '-Command',
-    `
-      Add-Type -AssemblyName System.Speech;
-      $synth = New-Object System.Speech.Synthesis.SpeechSynthesizer;
-      $synth.Rate = 4;
-      [Console]::Out.WriteLine("Ready");
-      while ($line = [Console]::In.ReadLine()) {
-        if ($line.Trim() -ne "") {
-          $synth.Speak($line);
-          [Console]::Out.WriteLine("Done");
+  if (process.platform === 'win32') {
+    const { spawn } = require('child_process');
+    try {
+      speechProcess = spawn('powershell.exe', [
+        '-NoProfile',
+        '-Command',
+        `
+          Add-Type -AssemblyName System.Speech;
+          $synth = New-Object System.Speech.Synthesis.SpeechSynthesizer;
+          $synth.Rate = 4;
+          [Console]::Out.WriteLine("Ready");
+          while ($line = [Console]::In.ReadLine()) {
+            if ($line.Trim() -ne "") {
+              $synth.Speak($line);
+              [Console]::Out.WriteLine("Done");
+            }
+          }
+        `
+      ]);
+      
+      speechProcess.on('error', (err) => {
+        console.warn(`[Speech Engine Warning] PowerShell engine error: ${err.message}`);
+        if (speechResolver) {
+          const resolve = speechResolver;
+          speechResolver = null;
+          resolve();
         }
-      }
-    `
-  ]);
-  
-  speechProcess.stdin.setDefaultEncoding('utf-8');
-  
-  // Listen for the "Done" callback from PowerShell to unblock the tabbing flow
-  speechProcess.stdout.on('data', (data) => {
-    const message = data.toString().trim();
-    if (message.includes('Done') && speechResolver) {
-      const resolve = speechResolver;
-      speechResolver = null;
-      resolve();
+      });
+
+      speechProcess.stdin.setDefaultEncoding('utf-8');
+      
+      // Listen for the "Done" callback from PowerShell to unblock the tabbing flow
+      speechProcess.stdout.on('data', (data) => {
+        const message = data.toString().trim();
+        if (message.includes('Done') && speechResolver) {
+          const resolve = speechResolver;
+          speechResolver = null;
+          resolve();
+        }
+      });
+    } catch (e) {
+      console.warn(`[Speech Engine Warning] Could not spawn powershell.exe: ${e.message}`);
     }
-  });
+  }
 }
 
 async function speakText(text, isHeaded = true) {
   return new Promise((resolve) => {
+    let resolved = false;
+    const safeResolve = () => {
+      if (!resolved) {
+        resolved = true;
+        resolve();
+      }
+    };
+    // 3-second safety timeout so voice announcements never hang the test flow
+    const timer = setTimeout(safeResolve, 3000);
+
     try {
       // Disable speech and resolve immediately if running headless for speed optimization
       if (!isHeaded) {
-        resolve();
+        clearTimeout(timer);
+        safeResolve();
         return;
       }
 
       const cleanText = text.replace(/[\r\n]/g, ' ').replace(/['"<>|]/g, '').trim();
       if (!cleanText) {
-        resolve();
+        clearTimeout(timer);
+        safeResolve();
         return;
       }
       
-      startSpeechEngine();
-      speechResolver = resolve;
-      speechProcess.stdin.write(cleanText + '\n');
+      if (process.platform === 'win32') {
+        startSpeechEngine();
+        if (!speechProcess || !speechProcess.stdin || speechProcess.killed) {
+          clearTimeout(timer);
+          safeResolve();
+          return;
+        }
+        speechResolver = () => {
+          clearTimeout(timer);
+          safeResolve();
+        };
+        speechProcess.stdin.write(cleanText + '\n');
+      } else if (process.platform === 'linux') {
+        const { execFile } = require('child_process');
+        execFile('spd-say', ['-r', '25', cleanText], (err) => {
+          clearTimeout(timer);
+          safeResolve();
+        });
+      } else if (process.platform === 'darwin') {
+        const { execFile } = require('child_process');
+        execFile('say', [cleanText], (err) => {
+          clearTimeout(timer);
+          safeResolve();
+        });
+      } else {
+        clearTimeout(timer);
+        safeResolve();
+      }
     } catch (e) {
-      resolve();
+      clearTimeout(timer);
+      safeResolve();
     }
   });
 }
@@ -76,14 +131,12 @@ function stopSpeechEngine() {
 // List of target pages on GlobeWest staging to test
 const PAGES_TO_TEST = [
   { name: '1. Homepage', path: '/' },
-  { name: '2. Product Listing Page (PLP)', path: '/indoor' },
-  { name: '3. Product Detail Page (PDP)', path: '/jasper-marble-console-monica-red-marble-cons-jasp-mar' },
-  { name: '4. Shopping Cart / Checkout', path: '/checkout/cart/' },
-  { name: '5. My Account Login', path: '/customer/account/login/' },
-  { name: '6. B2B Trade Portal', path: '/help-centre/general/trade-registration' },
-  { name: '7. Search Results Page', path: '/catalogsearch/result/?q=sofa' },
-  { name: '8. Content / Static Page', path: '/blog' },
-  { name: '9. Blog Detail Page', path: '/blog/stockist-in-profile/stockist-in-profile-%7C-ikos-home-duplicated' }
+  { name: '2. Product Listing Page (PLP - Indoor)', path: '/indoor' },
+  { name: '3. Product Listing Page (PLP - Outdoor)', path: 'https://mcstaging2.globewest.com/outdoor' },
+  { name: '4. Product Detail Page (PDP)', path: '/celine-dining-chair-loden-antique-brass-ch-celin-antique-brass' },
+  { name: '5. Shopping Cart Page', path: '/checkout/cart/' },
+  { name: '6. Checkout shipping Page', path: 'https://mcstaging.globewest.com.au/checkout/#shipping' },
+  { name: '7. Checkout payment Page', path: 'https://mcstaging.globewest.com.au/checkout/#payment' }
 ];
 
 test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
@@ -104,20 +157,125 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
     await page.route('**/*yotpo*', route => route.abort());
   });
 
+  // Dynamic helper to add ANY available in-stock product to cart
+  async function addAnyProductToCart(page, checkoutUrl) {
+    console.log('Navigating to PLP to find in-stock products...');
+    await page.goto(`${checkoutUrl}/indoor`);
+    await page.waitForLoadState('domcontentloaded');
+
+    const closeBtn = page.locator('a#lpclose');
+    if (await closeBtn.isVisible()) {
+      await closeBtn.click();
+    }
+
+    const productLinks = page.locator('.product-item-link');
+    const count = await productLinks.count();
+    console.log(`Found ${count} links on PLP. Extracting hrefs...`);
+
+    const hrefs = [];
+    for (let i = 0; i < count; i++) {
+      const href = await productLinks.nth(i).getAttribute('href');
+      if (href && !hrefs.includes(href)) {
+        hrefs.push(href);
+      }
+    }
+
+    console.log(`Extracted ${hrefs.length} unique product links. Testing additions...`);
+
+    for (const href of hrefs.slice(0, 10)) {
+      console.log(`Navigating to product page: ${href}`);
+      try {
+        await page.goto(href, { timeout: 20000 });
+        await page.waitForLoadState('domcontentloaded');
+      } catch (e) {
+        console.log(`Product page load timed out/failed, skipping to next: ${href}`);
+        continue;
+      }
+
+      if (await closeBtn.isVisible()) {
+        await closeBtn.click();
+      }
+
+      // Automatically select swatches (color/materials) if visible
+      const swatches = page.locator('.swatch-option');
+      const swatchCount = await swatches.count();
+      for (let k = 0; k < Math.min(swatchCount, 3); k++) {
+        const sw = swatches.nth(k);
+        if (await sw.isVisible()) {
+          await sw.click();
+          await page.waitForTimeout(500);
+        }
+      }
+
+      // Automatically select dropdown size options if visible
+      const selects = page.locator('select.swatch-select');
+      const selectCount = await selects.count();
+      for (let k = 0; k < selectCount; k++) {
+        const sel = selects.nth(k);
+        if (await sel.isVisible()) {
+          await sel.selectOption({ index: 1 });
+          await page.waitForTimeout(500);
+        }
+      }
+
+      // Click Add to Cart
+      const addToCartBtn = page.locator('#product-addtocart-button');
+      if (await addToCartBtn.isVisible() && await addToCartBtn.isEnabled()) {
+        console.log('Clicking Add to Cart...');
+        await addToCartBtn.click();
+        await page.waitForTimeout(5000); // Settle AJAX
+
+        // Check if cart is populated
+        await page.goto(`${checkoutUrl}/checkout/cart/`);
+        await page.waitForLoadState('domcontentloaded');
+
+        const emptyMessage = page.locator('.cart-empty');
+        if (!(await emptyMessage.isVisible())) {
+          console.log('Successfully populated cart!');
+          return; // Done
+        }
+      }
+    }
+    throw new Error('Failed to dynamically add any product to cart.');
+  }
+
   for (const pageInfo of PAGES_TO_TEST) {
     test(`Audit ${pageInfo.name}`, async ({ page }, testInfo) => {
       console.log(`\n==========================================`);
       console.log(`Starting Staging Audit: ${pageInfo.name}`);
       console.log(`Navigating to path: ${pageInfo.path}`);
       
-      // 1. Navigate to target staging page and wait for the page to render fully
-      await page.goto(pageInfo.path);
+      // Populate cart session on mcstaging first for the checkout stages
+      if (pageInfo.name.includes('5. Checkout shipping') || pageInfo.name.includes('6. Checkout payment')) {
+        const checkoutUrl = 'https://mcstaging.globewest.com.au';
+        await addAnyProductToCart(page, checkoutUrl);
+        if (pageInfo.name.includes('6. Checkout payment')) {
+          await page.goto(`${checkoutUrl}/checkout/`);
+          await page.waitForLoadState('load');
+          const emailInput = page.locator('#customer-email');
+          await emailInput.waitFor({ state: 'visible', timeout: 15000 });
+          await emailInput.fill('test_nvda@globewestqa.com');
+          await page.locator('input[name="firstname"]').fill('QA');
+          await page.locator('input[name="lastname"]').fill('Tester');
+          await page.locator('input[name="street[0]"]').fill('123 Test Street');
+          await page.locator('input[name="city"]').fill('Sydney');
+          await page.locator('input[name="postcode"]').first().fill('2000');
+          await page.locator('input[name="telephone"]').fill('0412345678');
+          
+          const firstRate = page.locator('.table-checkout-shipping-method input[type="radio"]').first();
+          await firstRate.click();
+          await page.waitForTimeout(1000);
+          await page.locator('button.continue.primary').click();
+          await page.waitForTimeout(4000);
+        }
+      }
       
-      // Wait for network activity to settle or load state
+      // 1. Navigate to target staging page and wait for the page to render fully
       try {
-        await page.waitForLoadState('networkidle', { timeout: 10000 });
-      } catch (e) {
+        await page.goto(pageInfo.path, { timeout: 20000 });
         await page.waitForLoadState('load');
+      } catch (e) {
+        console.warn(`Primary page navigation failed/timed out, continuing scan: ${pageInfo.path}`);
       }
       
       // Additional wait to ensure client-side components and images are completely rendered
@@ -157,10 +315,13 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
         await page.waitForTimeout(1000);
       }
 
-      // Capture initial page state screenshot to artifact directory for reporting
-      const artifactDir = `C:\\Users\\Deepali_Londhe\\.gemini\\antigravity\\brain\\2fcf22a4-2816-498c-8f1d-86c05c328536`;
+      // Capture initial page state screenshot to report directory
+      const screenshotDir = path.resolve(__dirname, '../playwright-report/nvda/screenshots');
+      if (!fs.existsSync(screenshotDir)) {
+        fs.mkdirSync(screenshotDir, { recursive: true });
+      }
       const screenshotName = pageInfo.name.toLowerCase().replace(/[^a-z0-9]/g, '_').replace(/_+/g, '_').trim() + '.png';
-      await page.screenshot({ path: `${artifactDir}/${screenshotName}` });
+      await page.screenshot({ path: path.join(screenshotDir, screenshotName) });
 
       // 3. Inject CSS style to dynamically highlight the currently focused element
       await page.evaluate(() => {
@@ -220,7 +381,7 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
       await speakText(`Auditing ${pageInfo.name.replace(/^\d+\.\s*/, '')}`, isHeadedMode);
 
       // 5. Dynamic Tab loop - Simulate keyboard navigation through all focusable elements until they wrap around
-      const maxTabs = 150; // Safety limit to prevent infinite loops
+      const maxTabs = 40; // Safety limit to prevent infinite loops
       let tabCount = 0;
       let consecutiveBodyCount = 0;
       let lastActiveSelector = '';

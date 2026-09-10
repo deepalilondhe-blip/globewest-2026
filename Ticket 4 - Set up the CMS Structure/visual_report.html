@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket 4: Joined US vs AU Visual Parity & Defect Audit Report</title>
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #151b2b;
+      --border: #232d42;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --accent: #ff0055;
+      --accent-green: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-red: #ef4444;
+      --accent-cyan: #00d2ff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 30px 20px;
+    }
+    .container {
+      max-width: 1450px;
+      margin: 0 auto;
+    }
+    header {
+      background: linear-gradient(135deg, #1e2436 0%, #111625 100%);
+      padding: 32px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      margin-bottom: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-p1 { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid #ef4444; }
+    .badge-pass { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; }
+    .badge-info { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid #3b82f6; }
+    .badge-warn { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid #f59e0b; }
+    .badge-au { background: rgba(0, 210, 255, 0.2); color: #38bdf8; border: 1px solid #00d2ff; }
+    
+    h1 { font-size: 28px; margin: 12px 0; color: #fff; }
+    .subtitle { color: var(--text-muted); font-size: 15px; margin-bottom: 16px; }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .meta-item { font-size: 13px; }
+    .meta-label { color: var(--text-muted); display: block; margin-bottom: 3px; }
+    .meta-val { font-weight: 600; color: #fff; }
+
+    /* Filter Controls */
+    .filter-bar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+      align-items: center;
+      background: var(--card-bg);
+      padding: 14px 20px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    .filter-title { font-size: 14px; font-weight: 700; color: #fff; margin-right: 10px; }
+    .filter-btn {
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: #ff0055;
+      color: #fff;
+      border-color: #ff0055;
+    }
+    .filter-btn.btn-mismatch.active {
+      background: #ef4444;
+      border-color: #ef4444;
+    }
+    .filter-btn.btn-match.active {
+      background: #10b981;
+      border-color: #10b981;
+    }
+
+    /* Executive Comparison Table */
+    .table-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+      overflow-x: auto;
+    }
+    .table-container h2 { font-size: 20px; color: #fff; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      text-align: left;
+    }
+    th {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-muted);
+      padding: 12px 14px;
+      border-bottom: 2px solid var(--border);
+      font-weight: 700;
+    }
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:hover td { background: rgba(255,255,255,0.02); }
+    .status-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+    .status-defect { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid #ef4444; }
+    .status-warn { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid #f59e0b; }
+    .status-match { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; }
+    .status-info { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid #3b82f6; }
+
+    /* Master Poster Box */
+    .master-poster-box {
+      background: linear-gradient(180deg, #182033 0%, #101626 100%);
+      border: 2px solid #ef4444;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 35px;
+      box-shadow: 0 0 25px rgba(239, 68, 68, 0.15);
+    }
+    .master-poster-box h2 { font-size: 20px; color: #f87171; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .master-poster-box p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
+
+    /* Section Cards */
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      margin-bottom: 35px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .section-card.mismatch {
+      border-left: 5px solid #ef4444;
+    }
+    .section-card.match {
+      border-left: 5px solid #10b981;
+    }
+    .section-card.info {
+      border-left: 5px solid #3b82f6;
+    }
+
+    .card-header {
+      padding: 16px 24px;
+      background: rgba(255, 255, 255, 0.03);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .card-title { font-size: 18px; font-weight: 700; color: #fff; }
+    .card-location { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
+    .card-body { padding: 20px; }
+
+    .defect-callout {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      border-radius: 8px;
+      padding: 14px 18px;
+      color: #fca5a5;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    .defect-callout strong { color: #fff; }
+
+    .joined-img-wrapper {
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+      position: relative;
+    }
+    .joined-img-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .joined-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      padding: 0 4px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .joined-actions a {
+      color: #00d2ff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .joined-actions a:hover { text-decoration: underline; }
+
+    .toolbar {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 10px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-primary { background: #ff0055; color: #fff; }
+    .btn-secondary { background: rgba(255,255,255,0.08); color: #fff; border: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px;">
+      <div>
+        <span class="badge badge-p1">Ticket 4: CMS Structure</span>
+        <span class="badge badge-au" style="margin-left:8px;">Live AU Storefront Comparison</span>
+        <h1>Joined US vs AU Visual Parity & Defect Audit</h1>
+        <div class="subtitle">Headed Cross-Verification of All 9 CMS Blocks on <code>mcstaging2.globewest.com</code> vs Baseline <code>mcstaging2.globewest.com.au</code></div>
+      </div>
+      <div style="text-align:right;">
+        <span class="badge badge-pass">Headed Chromium Execution Verified</span>
+      </div>
+    </div>
+
+    <div class="meta-grid">
+      <div class="meta-item">
+        <span class="meta-label">US Storefront Tested</span>
+        <span class="meta-val"><a href="https://mcstaging2.globewest.com" target="_blank" style="color:#ff0055; text-decoration:none;">https://mcstaging2.globewest.com</a></span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">AU Baseline Reference</span>
+        <span class="meta-val"><a href="https://mcstaging2.globewest.com.au" target="_blank" style="color:#00d2ff; text-decoration:none;">https://mcstaging2.globewest.com.au</a></span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Comparison Format</span>
+        <span class="meta-val">Side-by-Side Joined Visual Graphics (2000px Res)</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Mismatches / Defects Found</span>
+        <span class="meta-val" style="color:#f87171;">4 Sections (2 Scope Leaks + 1 Awaiting Token + 1 Missing Copy)</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- FILTER CONTROLS -->
+  <div class="filter-bar">
+    <span class="filter-title">Filter View:</span>
+    <button class="filter-btn active" onclick="filterSections('all')">🔘 All 9 Sections</button>
+    <button class="filter-btn btn-mismatch" onclick="filterSections('mismatch')">🚨 Non-Matching / Defects Only (4)</button>
+    <button class="filter-btn btn-match" onclick="filterSections('match')">✅ 100% Parity Matches (4)</button>
+    <button class="filter-btn" onclick="filterSections('info')">ℹ️ Regional Differences (1)</button>
+  </div>
+
+  <!-- EXECUTIVE PARITY MATRIX TABLE -->
+  <div class="table-container">
+    <h2>
+      <span>📊 Complete 9-Section US vs AU Comparison Matrix</span>
+      <span style="font-size:12px; font-weight:normal; color:#94a3b8;">Click any row to jump to section</span>
+    </h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Component & CMS Identifier</th>
+          <th>US Storefront (mcstaging2.globewest.com)</th>
+          <th>AU Storefront (mcstaging2.globewest.com.au)</th>
+          <th>Parity Verdict</th>
+          <th>Required Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="cursor:pointer;" onclick="location.href='#sec-1'">
+          <td><strong>1</strong></td>
+          <td><strong>Hero Banner</strong><br><code style="color:#ff0055;">main-us-banner</code></td>
+          <td>CTA points to <code>https://www.globewest.com.au</code></td>
+          <td>CTA links stay within AU store</td>
+          <td><span class="status-badge status-defect">🚨 CRITICAL DEFECT</span></td>
+          <td>Change CTA href to relative path <code>/outdoor</code> or <code>/collections</code></td>
+        </tr>
+        <tr style="cursor:pointer;" onclick="location.href='#sec-2'">
+          <td><strong>2</strong></td>
+          <td><strong>Category Carousel</strong><br><code style="color:#ff0055;">home-us-category-carousel</code></td>
+          <td>14 cards link to <code>globewest.com.au/...</code></td>
+          <td>14 cards link to AU category paths</td>
+          <td><span class="status-badge status-defect">⚠️ P2 DEFECT</span></td>
+          <td>Update all 14 card hrefs to relative category paths (e.g. <code>/living-room</code>)</td>
+        </tr>
+        <tr style="cursor:pointer;" onclick="location.href='#sec-3'">
+          <td><strong>3</strong></td>
+          <td><strong>About Us Story</strong><br><code style="color:#34d399;">home-us-page-about-us</code></td>
+          <td>240 chars brand editorial text rendered</td>
+          <td>Identical copy & typography</td>
+          <td><span class="status-badge status-match">✅ 100% MATCH</span></td>
+          <td>None (Parity verified)</td>
+        </tr>
+        <tr style="cursor:pointer;" onclick="location.href='#sec-4'">
+          <td><strong>4</strong></td>
+          <td><strong>Find a Designer CTA</strong><br><code style="color:#34d399;">global-us-find-designer</code></td>
+          <td>Split banner CTA links to <code>find-designer-start</code></td>
+          <td>Identical booking intake behavior</td>
+          <td><span class="status-badge status-match">✅ 100% MATCH</span></td>
+          <td>None (Parity verified)</td>
+        </tr>
+        <tr style="cursor:pointer;" onclick="location.href='#sec-5'">
+          <td><strong>5</strong></td>
+          <td><strong>B2B Video Block</strong><br><code style="color:#34d399;">home-us-video-block-b2b</code></td>
+          <td>Embedded video player iframe operational</td>
+          <td>Identical video embed container</td>
+          <td><span class="status-badge status-match">✅ 100% MATCH</span></td>
+          <td>None (Parity verified)</td>
+        </tr>
+        <tr style="cursor:pointer;" onclick="location.href='#sec-6'">
+          <td><strong>6</strong></td>
+          <td><strong>Recent Articles Hub</strong><br><code style="color:#34d399;">homepage_us_recent_articles</code></td>
+          <td>21 blog journal cards loaded with images/links</td>
+          <td>Identical blog widget structure</td>
+          <td><span class="status-badge status-match">✅ 100% MATCH</span></td>
+          <td>None (Parity verified)</td>
+        </tr>
+        <tr style="cursor:pointer;" onclick="location.href='#sec-7'">
+          <td><strong>7</strong></td>
+          <td><strong>Instagram Feed</strong><br><code style="color:#fbbf24;">insta-us-block-home-page</code></td>
+          <td>DOM container exists; feed hidden (no JS crash)</td>
+          <td>Active 4-column live social photo grid</td>
+          <td><span class="status-badge status-warn">⚠️ NOT MATCHING</span></td>
+          <td>Developer note confirmed: Awaiting US Instagram social API token</td>
+        </tr>
+        <tr style="cursor:pointer;" onclick="location.href='#sec-8'">
+          <td><strong>8</strong></td>
+          <td><strong>Visit Showroom Promo</strong><br><code style="color:#60a5fa;">global-us-visit-showroom</code></td>
+          <td>CTA routes to <code>/how-to-buy/</code> (Trade Partner)</td>
+          <td>Routes to physical AU showrooms (Melb/Syd)</td>
+          <td><span class="status-badge status-info">ℹ️ REGIONAL DIFFERENCE</span></td>
+          <td>Intentional: US lacks physical showrooms; routes to online partners</td>
+        </tr>
+        <tr style="cursor:pointer;" onclick="location.href='#sec-9'">
+          <td><strong>9</strong></td>
+          <td><strong>SEO Rich Text Block</strong><br><code style="color:#fbbf24;">home-us-seo-text</code></td>
+          <td>Empty PageBuilder row above footer</td>
+          <td>3 full paragraphs of SEO brand copy</td>
+          <td><span class="status-badge status-warn">⚠️ NOT MATCHING</span></td>
+          <td>Marketing team must insert US-specific SEO copy into Magento Admin</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- MASTER POSTER -->
+  <div class="master-poster-box">
+    <h2>🚨 Master Side-by-Side Mismatches & Defects Poster</h2>
+    <p>Juxtaposition of all 4 non-matching items on the US storefront (Hero Banner leak, Category Carousel leak, missing Instagram feed, and empty SEO block):</p>
+    <div class="joined-img-wrapper">
+      <img src="screenshots/joined_comparisons/MASTER_US_VS_AU_MISMATCH_COMPARISON.png" alt="Master US vs AU Mismatch Comparison Graphic">
+    </div>
+    <div class="joined-actions">
+      <span>High-resolution 1648x2747 composite poster</span>
+      <a href="screenshots/joined_comparisons/MASTER_US_VS_AU_MISMATCH_COMPARISON.png" target="_blank">Open Full-Resolution Master Poster ↗</a>
+    </div>
+  </div>
+
+  <!-- HIGHLIGHTED WHAT IS MISSING POSTER -->
+  <div class="master-poster-box" style="border-color:#fbbf24; box-shadow:0 0 25px rgba(251, 191, 36, 0.2);">
+    <h2 style="color:#fbbf24;">🔍 Easy Recognition Guide: All Missing & Defective Content Highlighted in Neon</h2>
+    <p>Clear, bold neon red and yellow callout boxes showing exactly which content and link routing is missing on the US storefront:</p>
+    <div class="joined-img-wrapper">
+      <img src="screenshots/highlighted_missing/MASTER_ALL_MISSING_ITEMS_HIGHLIGHTED.png" alt="All Missing Items Highlighted Poster">
+    </div>
+    <div class="joined-actions">
+      <span style="color:#fbbf24; font-weight:700;">Prominently marked with ❌ MISSING ON US badges</span>
+      <a href="screenshots/highlighted_missing/MASTER_ALL_MISSING_ITEMS_HIGHLIGHTED.png" target="_blank">Open Full-Resolution Highlighted Poster ↗</a>
+    </div>
+  </div>
+
+  <!-- SECTION 1: HERO BANNER -->
+  <div class="section-card mismatch" id="sec-1">
+    <div class="card-header">
+      <div>
+        <div class="card-title">1. Hero Banner Carousel: <code>main-us-banner</code></div>
+        <div class="card-location">📍 Vertical Position: Top of page (181px)</div>
+      </div>
+      <span class="badge badge-p1">🚨 P1 Critical Defect</span>
+    </div>
+    <div class="card-body">
+      <div class="defect-callout">
+        🚨 <strong>P1 Australian Scope Leak Defect:</strong> Clicking the primary CTA button ("Explore Collections") directs users to <code>https://www.globewest.com.au</code> instead of remaining on the US storefront.
+      </div>
+      <div class="joined-img-wrapper" style="margin-bottom:15px;">
+        <img src="screenshots/highlighted_missing/HIGHLIGHTED_MISSING_3_HERO_BANNER_US_LINK.png" alt="Highlighted Missing Hero Banner US Link">
+      </div>
+      <div class="joined-actions" style="margin-bottom:20px;">
+        <span style="color:#fca5a5; font-weight:700;">🔍 Neon Red Highlight: Missing US destination URL on Explore Collections button</span>
+        <a href="screenshots/highlighted_missing/HIGHLIGHTED_MISSING_3_HERO_BANNER_US_LINK.png" target="_blank">Open Full Res Highlight Graphic ↗</a>
+      </div>
+      <div class="joined-img-wrapper">
+        <img src="screenshots/joined_comparisons/COMPARE_Section_1_Hero_Banner_MISMATCH.png" alt="Joined Hero Banner Comparison">
+      </div>
+      <div class="joined-actions">
+        <span>Side-by-Side: US (left) vs AU (right)</span>
+        <a href="screenshots/joined_comparisons/COMPARE_Section_1_Hero_Banner_MISMATCH.png" target="_blank">Open Full Resolution Image ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: CATEGORY CAROUSEL -->
+  <div class="section-card mismatch" id="sec-2">
+    <div class="card-header">
+      <div>
+        <div class="card-title">2. Category Carousel: <code>home-us-category-carousel</code></div>
+        <div class="card-location">📍 Vertical Position: Below Hero Banner (481px)</div>
+      </div>
+      <span class="badge badge-warn">⚠️ P2 Defect</span>
+    </div>
+    <div class="card-body">
+      <div class="defect-callout">
+        ⚠️ <strong>P2 Defect (Scope Leak):</strong> All 14 category cards (Living Room, Dining Room, Outdoor, Bedroom, etc.) link to hardcoded Australian URLs (e.g. <code>https://www.globewest.com.au/indoor/shop-by-room/living-room</code>).
+      </div>
+      <div class="joined-img-wrapper" style="margin-bottom:15px;">
+        <img src="screenshots/highlighted_missing/HIGHLIGHTED_MISSING_4_CATEGORY_CAROUSEL_US_LINKS.png" alt="Highlighted Missing Category Carousel US Routing">
+      </div>
+      <div class="joined-actions" style="margin-bottom:20px;">
+        <span style="color:#fde68a; font-weight:700;">🔍 Neon Highlight: Category cards missing US relative paths (.com.au leakage)</span>
+        <a href="screenshots/highlighted_missing/HIGHLIGHTED_MISSING_4_CATEGORY_CAROUSEL_US_LINKS.png" target="_blank">Open Full Res Highlight Graphic ↗</a>
+      </div>
+      <div class="joined-img-wrapper">
+        <img src="screenshots/joined_comparisons/COMPARE_Section_2_Category_Carousel_MISMATCH.png" alt="Joined Category Carousel Comparison">
+      </div>
+      <div class="joined-actions">
+        <span>Side-by-Side: US (left) vs AU (right)</span>
+        <a href="screenshots/joined_comparisons/COMPARE_Section_2_Category_Carousel_MISMATCH.png" target="_blank">Open Full Resolution Image ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: ABOUT US -->
+  <div class="section-card match" id="sec-3">
+    <div class="card-header">
+      <div>
+        <div class="card-title">3. About Us Brand Story: <code>home-us-page-about-us</code></div>
+        <div class="card-location">📍 Vertical Position: Editorial Narrative Block (4603px)</div>
+      </div>
+      <span class="badge badge-pass">✅ 100% Parity Match</span>
+    </div>
+    <div class="card-body">
+      <div class="joined-img-wrapper">
+        <img src="screenshots/joined_comparisons/COMPARE_Section_3_About_Us_MATCH.png" alt="Joined About Us Comparison">
+      </div>
+      <div class="joined-actions">
+        <span>Side-by-Side: US (left) vs AU (right)</span>
+        <a href="screenshots/joined_comparisons/COMPARE_Section_3_About_Us_MATCH.png" target="_blank">Open Full Resolution Image ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: FIND A DESIGNER -->
+  <div class="section-card match" id="sec-4">
+    <div class="card-header">
+      <div>
+        <div class="card-title">4. Find a Designer CTA: <code>global-us-find-designer</code></div>
+        <div class="card-location">📍 Vertical Position: Trade Engagement Block (4964px)</div>
+      </div>
+      <span class="badge badge-pass">✅ 100% Parity Match</span>
+    </div>
+    <div class="card-body">
+      <div class="joined-img-wrapper">
+        <img src="screenshots/joined_comparisons/COMPARE_Section_4_Find_Designer_MATCH.png" alt="Joined Find a Designer Comparison">
+      </div>
+      <div class="joined-actions">
+        <span>Side-by-Side: US (left) vs AU (right)</span>
+        <a href="screenshots/joined_comparisons/COMPARE_Section_4_Find_Designer_MATCH.png" target="_blank">Open Full Resolution Image ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: B2B VIDEO BLOCK -->
+  <div class="section-card match" id="sec-5">
+    <div class="card-header">
+      <div>
+        <div class="card-title">5. B2B Video Block & Player: <code>home-us-video-block-b2b</code></div>
+        <div class="card-location">📍 Vertical Position: Brand Video Showcase (5815px)</div>
+      </div>
+      <span class="badge badge-pass">✅ 100% Parity Match</span>
+    </div>
+    <div class="card-body">
+      <div class="joined-img-wrapper">
+        <img src="screenshots/joined_comparisons/COMPARE_Section_5_B2B_Video_MATCH.png" alt="Joined B2B Video Comparison">
+      </div>
+      <div class="joined-actions">
+        <span>Side-by-Side: US (left) vs AU (right)</span>
+        <a href="screenshots/joined_comparisons/COMPARE_Section_5_B2B_Video_MATCH.png" target="_blank">Open Full Resolution Image ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 6: RECENT ARTICLES -->
+  <div class="section-card match" id="sec-6">
+    <div class="card-header">
+      <div>
+        <div class="card-title">6. Content Hub / Recent Articles: <code>homepage_us_recent_articles</code></div>
+        <div class="card-location">📍 Vertical Position: Dynamic Blog Grid (7531px)</div>
+      </div>
+      <span class="badge badge-pass">✅ 100% Parity Match</span>
+    </div>
+    <div class="card-body">
+      <div class="joined-img-wrapper">
+        <img src="screenshots/joined_comparisons/COMPARE_Section_6_Recent_Articles_MATCH.png" alt="Joined Recent Articles Comparison">
+      </div>
+      <div class="joined-actions">
+        <span>Side-by-Side: US (left) vs AU (right)</span>
+        <a href="screenshots/joined_comparisons/COMPARE_Section_6_Recent_Articles_MATCH.png" target="_blank">Open Full Resolution Image ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 7: INSTAGRAM FEED BLOCK -->
+  <div class="section-card mismatch" id="sec-7">
+    <div class="card-header">
+      <div>
+        <div class="card-title">7. Instagram Social Feed: <code>insta-us-block-home-page</code></div>
+        <div class="card-location">📍 Vertical Position: Social Proof Block (5470px)</div>
+      </div>
+      <span class="badge badge-info">⚠️ Not Matching (Pending API Token)</span>
+    </div>
+    <div class="card-body">
+      <div class="defect-callout" style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.4); color: #93c5fd;">
+        ℹ️ <strong>Developer Note Confirmed:</strong> Feed is hidden on US awaiting API authorization. On AU, live social photos render. DOM container is present without JavaScript crashes.
+      </div>
+      <div class="joined-img-wrapper" style="margin-bottom:15px;">
+        <img src="screenshots/highlighted_missing/HIGHLIGHTED_MISSING_1_INSTAGRAM_FEED.png" alt="Highlighted Missing Instagram Feed Photos">
+      </div>
+      <div class="joined-actions" style="margin-bottom:20px;">
+        <span style="color:#93c5fd; font-weight:700;">🔍 Neon Red/Yellow Highlight: 0 photos rendered on US store (blank space) vs live grid on AU</span>
+        <a href="screenshots/highlighted_missing/HIGHLIGHTED_MISSING_1_INSTAGRAM_FEED.png" target="_blank">Open Full Res Highlight Graphic ↗</a>
+      </div>
+      <div class="joined-img-wrapper">
+        <img src="screenshots/joined_comparisons/COMPARE_Section_7_Instagram_Feed_MISMATCH.png" alt="Joined Instagram Feed Comparison">
+      </div>
+      <div class="joined-actions">
+        <span>Side-by-Side: US (left) vs AU (right)</span>
+        <a href="screenshots/joined_comparisons/COMPARE_Section_7_Instagram_Feed_MISMATCH.png" target="_blank">Open Full Resolution Image ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 8: VISIT SHOWROOM -->
+  <div class="section-card info" id="sec-8">
+    <div class="card-header">
+      <div>
+        <div class="card-title">8. Visit Showroom Promo: <code>global-us-visit-showroom</code></div>
+        <div class="card-location">📍 Vertical Position: Trade Partner Redirection Block</div>
+      </div>
+      <span class="badge badge-info">ℹ️ Regional Scope Difference</span>
+    </div>
+    <div class="card-body">
+      <div class="joined-img-wrapper">
+        <img src="screenshots/joined_comparisons/COMPARE_Section_8_Visit_Showroom_INFO.png" alt="Joined Visit Showroom Comparison">
+      </div>
+      <div class="joined-actions">
+        <span>Side-by-Side: US (left) vs AU (right)</span>
+        <a href="screenshots/joined_comparisons/COMPARE_Section_8_Visit_Showroom_INFO.png" target="_blank">Open Full Resolution Image ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 9: SEO TEXT BLOCK -->
+  <div class="section-card mismatch" id="sec-9">
+    <div class="card-header">
+      <div>
+        <div class="card-title">9. SEO Rich Text Content: <code>home-us-seo-text</code></div>
+        <div class="card-location">📍 Vertical Position: Directly Above Footer</div>
+      </div>
+      <span class="badge badge-warn">⚠️ Not Matching (Pending Copy)</span>
+    </div>
+    <div class="card-body">
+      <div class="defect-callout" style="background: rgba(245, 158, 11, 0.12); border-color: rgba(245, 158, 11, 0.4); color: #fde68a;">
+        ⚠️ <strong>Pending Marketing Copy:</strong> The PageBuilder container exists above the footer on the US storefront, but marketing copy has not yet been populated. AU storefront has 3 paragraphs of SEO keywords.
+      </div>
+      <div class="joined-img-wrapper" style="margin-bottom:15px;">
+        <img src="screenshots/highlighted_missing/HIGHLIGHTED_MISSING_2_SEO_TEXT.png" alt="Highlighted Missing SEO Copy">
+      </div>
+      <div class="joined-actions" style="margin-bottom:20px;">
+        <span style="color:#fde68a; font-weight:700;">🔍 Neon Highlight: 0 words of copy on US store vs 3 paragraphs on AU baseline</span>
+        <a href="screenshots/highlighted_missing/HIGHLIGHTED_MISSING_2_SEO_TEXT.png" target="_blank">Open Full Res Highlight Graphic ↗</a>
+      </div>
+      <div class="joined-img-wrapper">
+        <img src="screenshots/joined_comparisons/COMPARE_Section_9_SEO_Text_MISMATCH.png" alt="Joined SEO Text Comparison">
+      </div>
+      <div class="joined-actions">
+        <span>Side-by-Side: US (left) vs AU (right)</span>
+        <a href="screenshots/joined_comparisons/COMPARE_Section_9_SEO_Text_MISMATCH.png" target="_blank">Open Full Resolution Image ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FULL PAGE SIDE-BY-SIDE COMPARISON -->
+  <div class="section-card">
+    <div class="card-header">
+      <div class="card-title">📸 Full Page Side-by-Side Comparison (US vs AU)</div>
+      <span class="badge badge-pass">Full Height</span>
+    </div>
+    <div class="card-body">
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
+        <div>
+          <div style="background:#231520; border:1px solid #ff0055; padding:8px 12px; border-radius:6px; margin-bottom:8px; display:flex; justify-content:space-between;">
+            <span style="color:#ff5588; font-weight:700;">🇺🇸 US Storefront Full Page</span>
+            <a href="screenshots/TC-US-CMS-Storefront_Homepage_Full.png" target="_blank" style="color:#ff5588; font-size:11px;">Open Full Res ↗</a>
+          </div>
+          <div style="max-height: 650px; overflow-y: auto; border:1px solid var(--border); border-radius:8px;">
+            <img src="screenshots/TC-US-CMS-Storefront_Homepage_Full.png" alt="Full US Homepage Screenshot" style="width:100%;">
+          </div>
+        </div>
+        <div>
+          <div style="background:#102233; border:1px solid #00d2ff; padding:8px 12px; border-radius:6px; margin-bottom:8px; display:flex; justify-content:space-between;">
+            <span style="color:#00d2ff; font-weight:700;">🇦🇺 AU Storefront Baseline Full Page</span>
+            <a href="screenshots/au_comparison/AU_Storefront_Homepage_Full.png" target="_blank" style="color:#00d2ff; font-size:11px;">Open Full Res ↗</a>
+          </div>
+          <div style="max-height: 650px; overflow-y: auto; border:1px solid var(--border); border-radius:8px;">
+            <img src="screenshots/au_comparison/AU_Storefront_Homepage_Full.png" alt="Full AU Homepage Screenshot" style="width:100%;">
+          </div>
+        </div>
+      </div>
+      <div class="toolbar">
+        <a href="PERMANENT_QA_GUIDE_TICKET4.md" class="btn btn-secondary">📄 View Permanent QA Guide</a>
+        <a href="RUN_COMMANDS.md" class="btn btn-primary">💻 View Run Commands</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function filterSections(type) {
+    const btns = document.querySelectorAll('.filter-btn');
+    btns.forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+
+    const cards = document.querySelectorAll('.section-card');
+    cards.forEach(card => {
+      if (type === 'all') {
+        card.style.display = 'block';
+      } else if (type === 'mismatch') {
+        card.style.display = card.classList.contains('mismatch') ? 'block' : 'none';
+      } else if (type === 'match') {
+        card.style.display = card.classList.contains('match') ? 'block' : 'none';
+      } else if (type === 'info') {
+        card.style.display = card.classList.contains('info') ? 'block' : 'none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

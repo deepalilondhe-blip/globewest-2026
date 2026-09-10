@@ -1,0 +1,36 @@
+"Test Case ID","Ticket Reference","Sprint","Module / Area","Test Case Title","Priority","Test Type","Preconditions","Step-by-Step Test Procedure","Test Data / URLs","Expected Result","Automated Spec File","Environment","Status","QA Notes / Verification Remarks"
+"TC-US-THEME-01","Task #41801457 (Copy AU B2B theme for US storefront)","Sprint 1","Header & Navigation","Header & Megamenu Navigation Parity against AU B2B Theme","P1 (Critical)","UI Parity & Functional","US Staging storefront is accessible (mcstaging2.globewest.com)","1. Navigate to US Storefront Homepage (https://mcstaging2.globewest.com/)
+2. Inspect header logo rendering and link
+3. Verify main navigation bar and category dropdowns (Indoor, Outdoor, Homewares, etc.)
+4. Verify search input container and minicart trigger icon
+5. Compare styling against AU B2B theme","Base URL: https://mcstaging2.globewest.com","1. Header logo is visible and links to home.
+2. Main navigation bar renders all 9 top-level categories matching AU structure.
+3. Search input and minicart trigger are attached and styled properly.","tests/ticket1-us-theme-copy.spec.js","US Staging 2 (mcstaging2.globewest.com)","PASSED","Automated test passed in 3.4s. 18 top-level navigation elements verified."
+"TC-US-THEME-02","Task #41801457 (Copy AU B2B theme for US storefront)","Sprint 1","Footer & Branding","Footer Layout, Newsletter, and Copyright Branding Parity","P2 (High)","UI Parity & Brand Compliance","US Staging storefront is accessible","1. Open US Storefront Homepage
+2. Scroll to footer section
+3. Inspect footer link columns, newsletter subscription, and copyright notice
+4. Verify social media links and legal links","Base URL: https://mcstaging2.globewest.com","1. Footer container matches AU theme structure.
+2. Over 30 functional footer links present.
+3. Copyright text references GlobeWest branding cleanly.","tests/ticket1-us-theme-copy.spec.js","US Staging 2 (mcstaging2.globewest.com)","PASSED","Automated test passed. 37 footer links validated."
+"TC-US-THEME-03","Task #41801457 (Copy AU B2B theme for US storefront)","Sprint 1","PLP & Category Grid","Product Listing Page (PLP) Category Grid & Styling Parity","P1 (Critical)","Functional & Category Layout","US category URL is reachable (e.g. /indoor)","1. Navigate to US category page (https://mcstaging2.globewest.com/indoor)
+2. Inspect category title, breadcrumbs, and banner
+3. Inspect product grid layout and SearchSpring widgets
+4. Verify responsive grid columns","Category URL: https://mcstaging2.globewest.com/indoor","1. Category title (""Indoor Furniture"") and main content columns render properly.
+2. Theme typography and layout match AU standards.
+3. SearchSpring integration dependency flagged for product catalog rendering.","tests/ticket1-us-theme-copy.spec.js","US Staging 2 (mcstaging2.globewest.com)","PASSED","Automated test passed. Category title and layout container validated. SearchSpring blocker noted (Task #41801465)."
+"TC-US-THEME-04","Task #41801457 (Copy AU B2B theme for US storefront)","Sprint 1","PDP & Product Media","Product Detail Page (PDP) Layout & Gallery Markup Parity","P1 (Critical)","UI Parity & Component Structure","US Storefront product URL reachable","1. Navigate to US PDP product page
+2. Inspect product title, price container, gallery, and swatches
+3. Inspect Add to Cart button container and quantity selectors
+4. Compare layout against AU PDP","Product URL: https://mcstaging2.globewest.com/celine-dining-chair-loden-antique-brass-ch-celin-antique-brass","1. PDP components inherit AU B2B theme styling.
+2. Gallery placeholders and action containers conform to Magento standard markup.","tests/ticket1-us-theme-copy.spec.js","US Staging 2 (mcstaging2.globewest.com)","PASSED","Automated test passed. Theme headers/footers and PDP templates validated."
+"TC-US-THEME-05","Task #41801457 (Copy AU B2B theme for US storefront)","Sprint 1","Responsive & Breakpoints","Responsive Breakpoints Layout Validation (Desktop, Tablet, Mobile)","P1 (Critical)","Responsive Design & Layout Reflow","Playwright viewport emulation enabled","1. Test Desktop resolution: 1920x1080 (verify full menu visibility)
+2. Test Tablet resolution: 820x1180 iPad Air (verify fluid layout)
+3. Test Mobile resolution: 393x851 iPhone/Pixel (verify hamburger menu and single-column reflow)
+4. Verify absence of horizontal scrolling","Resolutions: 1920x1080, 820x1180, 393x851","1. Desktop displays full navigation bar.
+2. Mobile toggles hamburger navigation drawer cleanly.
+3. Zero horizontal scrolling detected on mobile (scrollWidth <= innerWidth).","tests/ticket1-us-theme-copy.spec.js","US Staging 2 (mcstaging2.globewest.com)","PASSED","Automated test passed. Mobile toggle visible, horizontal scroll = false."
+"TC-US-THEME-06","Task #41801457 (Copy AU B2B theme for US storefront)","Sprint 1","Accessibility (A11y)","Axe-Core WCAG 2.2 AA Parity Audit (Zero Introduced Regressions)","P2 (High)","Axe-Core & WCAG 2.2 AA Scan","Axe-core Playwright scanner configured with WCAG 2.2 AA rulesets","1. Open US Storefront Homepage
+2. Inject Axe-core scanner into DOM
+3. Execute audit targeting wcag2a, wcag2aa, and wcag22aa standards
+4. Filter results by impact (critical, serious, moderate)","Target Rules: wcag2a, wcag2aa, wcag22aa","1. Zero critical accessibility violations found on copied US theme.
+2. All Phase 1 accessibility fixes (contrast, focus indicators, aria labels) preserved.","tests/ticket1-us-theme-copy.spec.js","US Staging 2 (mcstaging2.globewest.com)","PASSED","Automated scan passed with 0 critical violations."

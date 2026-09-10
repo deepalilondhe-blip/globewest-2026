@@ -1,0 +1,62 @@
+{
+  "url": "https://mcstaging2.globewest.com/outdoor",
+  "scannedAt": "2026-09-08T10:26:40.991Z",
+  "viewport": "Desktop 1920x1080",
+  "counts": {
+    "critical": 0,
+    "serious": 1,
+    "moderate": 1,
+    "minor": 0,
+    "total": 2
+  },
+  "violations": [
+    {
+      "id": "heading-order",
+      "impact": "moderate",
+      "description": "Ensure the order of headings is semantically correct",
+      "help": "Heading levels should only increase by one",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/heading-order?application=playwright",
+      "nodes": 1,
+      "samples": [
+        {
+          "target": [
+            ".hide-mobile"
+          ],
+          "html": "<h3 class=\"filters-title hide-mobile\">\n                Filters            </h3>",
+          "failureSummary": "Fix any of the following:\n  Heading order invalid"
+        }
+      ]
+    },
+    {
+      "id": "link-name",
+      "impact": "serious",
+      "description": "Ensure links have discernible text",
+      "help": "Links must have discernible text",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/link-name?application=playwright",
+      "nodes": 4,
+      "samples": [
+        {
+          "target": [
+            ".facebook"
+          ],
+          "html": "<a class=\"facebook\" href=\"https://www.facebook.com/globewestfurniture/\" target=\"_blank\"></a>",
+          "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+        },
+        {
+          "target": [
+            ".pinterest"
+          ],
+          "html": "<a class=\"pinterest\" href=\"https://www.pinterest.com.au/globewest/\" target=\"_blank\"></a>",
+          "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+        },
+        {
+          "target": [
+            ".instagram"
+          ],
+          "html": "<a class=\"instagram\" href=\"https://www.instagram.com/globewest/\" target=\"_blank\"></a>",
+          "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+        }
+      ]
+    }
+  ]
+}

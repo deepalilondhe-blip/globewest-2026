@@ -47,17 +47,21 @@ Open your terminal in VS Code inside the "GlobeWest 2026" directory and run:
 --------------------------------------------------------------------------------
 
 * Playwright Interactive HTML Report (Videos, screenshots, and trace logs):
-  - Open File: "C:/GlobeWest 2026/playwright-report/index.html" in Chrome or Edge.
+  - View interactively: npm run report
+  - Or open file in browser: ./playwright-report/index.html (or ./playwright-report/<test-type>/index.html)
   
 * Zipped Report for sharing with PM/Developers:
-  - File: "C:/GlobeWest 2026/playwright-report.zip"
+  - File: ./playwright-report.zip
 
 * Lighthouse Scorecard Reports:
-  - Saved as: "C:/GlobeWest 2026/playwright-report/lighthouse-[page_name]-report.html"
+  - Saved as: ./playwright-report/lighthouse-[page_name]-report.html
+  - JSON Reports: ./Comparison before and After snapshout/
 
 * Excel Defect Remediation Log:
-  - File: "C:/GlobeWest 2026/docs/GlobeWest_Remediation_Log.xlsx"
+  - File: ./docs/GlobeWest_Remediation_Log.xlsx
 
 ================================================================================
-* Verfiy the performance score : 
--  node verify_scores.js
+* Verify the accessibility & performance scores: 
+  - npm run verify:scores (or: node verify_scores.js)
+  - Run all lighthouse audits + verify scores: npm run test:verify-all
+================================================================================

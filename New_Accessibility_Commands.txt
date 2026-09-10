@@ -1,0 +1,50 @@
+==================================================
+GLOBEWEST ACCESSIBILITY & UAT RUN COMMANDS
+==================================================
+
+1. Outdoor Voiced Reader (Today)
+./run_outdoor_test.sh
+npm run test:outdoor-nvda
+
+2. View HTML Report & Screenshots
+./show_report.sh
+npm run report
+
+3. US Outdoor Category A11y (GLW-007)
+npx playwright test tests/glw007-category-page-a11y.spec.js --project=desktop-chrome
+
+4. GLW-007 Functional vs Figma
+npx playwright test tests/glw007-figma-functional-verification.spec.js --project=desktop-chrome
+
+5. Ticket 1: US Theme Copy
+npm run test:ticket1
+
+6. Ticket 1: Figma vs Live PLP
+npx playwright test tests/ticket1-figma-vs-live-plp.spec.js --project=desktop-chrome
+
+7. Ticket 3: AU Regression Safeguards
+npm run test:ticket3
+
+8. Run Ticket 1 + Ticket 3 Together
+npm run test:tickets-all
+
+9. Figma US Design Comparison
+npx playwright test tests/figma-us-design-comparison.spec.js --project=desktop-chrome
+
+10. Storefront A11y Audit (All Pages)
+npm run test:accessibility
+
+11. Full NVDA Simulation (All Pages)
+npm run test:staging-nvda
+
+12. Lighthouse Audits
+npm run test:lighthouse
+
+13. Verify Scores Table
+npm run verify:scores
+
+14. Save & Push to GitHub
+git add .
+git commit -m "update accessibility tests"
+git push origin master
+==================================================
