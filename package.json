@@ -21,6 +21,10 @@
     "test:ticket4:headed": "playwright test tests/ticket4-us-cms-structure.spec.js --project=desktop-chrome --headed",
     "test:ticket4:admin": "playwright test tests/ticket4-us-cms-structure.spec.js -g \"TC-US-CMS-01|TC-US-CMS-02|TC-US-CMS-03\" --project=desktop-chrome --headed",
     "test:ticket4:functional": "playwright test tests/ticket4-us-cms-structure.spec.js -g \"TC-US-CMS-04-to-12\" --project=desktop-chrome --headed",
+    "test:plp": "playwright test tests/plp-us-vs-au-comparison.spec.js --project=desktop-chrome",
+    "test:plp:headed": "playwright test tests/plp-us-vs-au-comparison.spec.js --project=desktop-chrome --headed",
+    "test:plp:figma": "playwright test tests/plp-figma-verification.spec.js --project=desktop-chrome",
+    "test:plp:figma:headed": "playwright test tests/plp-figma-verification.spec.js --project=desktop-chrome --headed",
     "test:tickets-all": "playwright test tests/ticket1-us-theme-copy.spec.js tests/ticket2-us-store-scope-config.spec.js tests/ticket3-au-regression-safeguards.spec.js tests/ticket4-us-cms-structure.spec.js --project=desktop-chrome",
     "report": "playwright show-report --port 9325",
     "zip:report": "node -e \"const {execSync}=require('child_process');process.platform==='win32'?execSync('powershell.exe -Command \\\"Compress-Archive -Path playwright-report/* -DestinationPath playwright-report.zip -Force\\\"',{stdio:'inherit'}):execSync('zip -q -r playwright-report.zip playwright-report/ -x \\\"*/.*\\\"',{stdio:'inherit'})\""
