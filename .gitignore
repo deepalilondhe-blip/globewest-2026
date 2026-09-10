@@ -13,3 +13,4 @@ Thumbs.db
 *.log
 test-results/
 playwright-report/
+.figma-chrome-profile/
