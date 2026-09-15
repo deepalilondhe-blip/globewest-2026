@@ -19,10 +19,12 @@ We have reviewed each of your points in detail alongside the approved Figma desi
    • In Public / Guest browsing mode (logged out), pricing and stock are intentionally masked and unpriced across the catalog.
    • Once logged in with an authorized Trade Customer account (e.g., deepali.londhe@overdose.digital), all product cards dynamically display the dual pricing line (Wholesale Trade Price + MSRP, e.g., $1,094.50 • MSRP: $2,271.50) as well as the inventory status (• In Stock / ETA dates), exactly as designed.
 
-Please find the reference screenshots attached for your review:
-• 1_Figma_Card_Layout_White_Background_And_Spacing.png
-• 2_Figma_Compare_Checkbox_Regular_Font_Spec.png
-• 3_Verified_Staging_Regular_Font_And_Badges_Below_Photo.png
+Please find the reference screenshots attached and also uploaded to the Overdose Account Drive for easy access:
+• Figma Screenshot 1: 1_Figma_Card_Layout_White_Background_And_Spacing.png (Figma design showing white background & compare placement)
+• Figma Screenshot 2: 2_Figma_Compare_Checkbox_Regular_Font_Spec.png (Figma measurement & regular typography spec)
+• Verified Staging Screenshot 3: 3_Verified_Staging_Regular_Font_And_Badges_Below_Photo.png (Live US Staging confirming font-weight: 400, badges updated below photo, and trade pricing active)
+
+[Overdose Drive Folder Link: Insert Link Here]
 
 Thank you again for your valuable guidance and help in polishing the store experience. Please let us know if you would like us to review anything else!
 
