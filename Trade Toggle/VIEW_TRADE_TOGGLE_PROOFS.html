@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlobeWest QA — Trade Pricing Toggle Verification Gallery</title>
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --card-bg: #1e293b;
+      --border-color: #334155;
+      --accent-blue: #38bdf8;
+      --accent-green: #22c55e;
+      --accent-amber: #f59e0b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      padding: 2rem;
+    }
+    .header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .badge-pass { background: #064e3b; color: #4ade80; border: 1px solid #10b981; }
+    h1 { font-size: 1.85rem; color: #ffffff; margin-bottom: 0.5rem; }
+    .subtitle { color: var(--text-muted); font-size: 1rem; }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .meta-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .meta-card strong { display: block; color: var(--accent-blue); font-size: 0.85rem; text-transform: uppercase; margin-bottom: 0.25rem; }
+    .meta-card span { font-size: 0.95rem; color: var(--text-main); }
+    
+    .section { margin-bottom: 3rem; }
+    .section-title {
+      font-size: 1.35rem;
+      color: var(--accent-blue);
+      border-left: 4px solid var(--accent-blue);
+      padding-left: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .proof-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+    .proof-header {
+      padding: 1rem 1.25rem;
+      background: rgba(255,255,255,0.03);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .proof-header h3 { font-size: 1.1rem; color: #ffffff; }
+    .proof-header .status { font-weight: bold; font-size: 0.9rem; }
+    .status-pass { color: var(--accent-green); }
+    .proof-body { padding: 1rem; }
+    .proof-body img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      border: 1px solid var(--border-color);
+    }
+    .proof-desc {
+      padding: 1rem 1.25rem;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      background: rgba(0,0,0,0.2);
+      border-top: 1px solid var(--border-color);
+    }
+    .proof-desc ul { margin-left: 1.5rem; margin-top: 0.5rem; }
+
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .matrix-table th, .matrix-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.95rem;
+    }
+    .matrix-table th {
+      background: rgba(255,255,255,0.05);
+      color: var(--accent-blue);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <span class="badge badge-pass">QA Verification Passed</span>
+    <h1>GlobeWest US — Trade Pricing Toggle Verification</h1>
+    <p class="subtitle">Proof package and visual audit report for Developer Vinod Vankar's Trade Pricing Toggle Ticket</p>
+
+    <div class="meta-grid">
+      <div class="meta-card">
+        <strong>Ticket</strong>
+        <span>P-GLW-007 Globewest US Expansion Project > Trade Pricing Toggle</span>
+      </div>
+      <div class="meta-card">
+        <strong>Developer</strong>
+        <span>Vinod Vankar</span>
+      </div>
+      <div class="meta-card">
+        <strong>Tested URL</strong>
+        <span>https://mcstaging2.globewest.com</span>
+      </div>
+      <div class="meta-card">
+        <strong>Verified Account</strong>
+        <span>deepali.londhe@overdose.digital (B2B Trade Customer)</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Scenario Summary Table -->
+  <section class="section">
+    <h2 class="section-title">1. Scenario Verification Matrix</h2>
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th>Scenario / Requirement</th>
+          <th>Expected Behavior</th>
+          <th>Live US Staging Result</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. General Public / Logged Out</strong></td>
+          <td>No pricing shown; pricing toggle hidden</td>
+          <td>Toggle completely hidden; card pricing strictly masked ($0 / blank).</td>
+          <td><span class="status-pass">🟢 PASS</span></td>
+        </tr>
+        <tr>
+          <td><strong>2. Logged-in Trade Customer</strong></td>
+          <td>Trade pricing shown by default; toggle to suppress and show MSRP</td>
+          <td>Header shows <code>Trade ⌄</code> toggle button. Product cards display dual line: Trade Price + MSRP.</td>
+          <td><span class="status-pass">🟢 PASS</span></td>
+        </tr>
+        <tr>
+          <td><strong>3. Toggle Menu & State Switch</strong></td>
+          <td>Dropdown allows selecting between Trade and MSRP views</td>
+          <td>Clicking opens popover with <code>[ Trade ]</code> and <code>[ MSRP ]</code> buttons. Switching updates root class to <code>price-view-msrp</code> and suppresses wholesale price.</td>
+          <td><span class="status-pass">🟢 PASS</span></td>
+        </tr>
+        <tr>
+          <td><strong>4. Cart & Checkout Persistence</strong></td>
+          <td>Always reflect trade wholesale pricing regardless of toggle state</td>
+          <td>Cart line item persistently reflects wholesale Trade price ($3,520.00 vs $7,320.50 MSRP). Toggle is suppressed in checkout.</td>
+          <td><span class="status-pass">🟢 PASS</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Master Visual Audit Poster -->
+  <section class="section">
+    <h2 class="section-title">2. Master 4-Quadrant Visual Audit Poster</h2>
+    <div class="proof-container">
+      <div class="proof-header">
+        <h3>Master Summary: Guest vs. Trade vs. MSRP vs. Cart</h3>
+        <span class="status status-pass">Verified 100%</span>
+      </div>
+      <div class="proof-body">
+        <img src="proofs/00_MASTER_TRADE_TOGGLE_AUDIT_POSTER.png" alt="Master Trade Pricing Toggle Audit Poster">
+      </div>
+      <div class="proof-desc">
+        Full 4-quadrant verification poster capturing:
+        <ul>
+          <li><strong>Panel 1</strong>: Logged-out Guest State — Toggle suppressed, no pricing shown.</li>
+          <li><strong>Panel 2</strong>: Trade Customer Logged-in — Header utility toggle popover expanded showing Trade and MSRP options.</li>
+          <li><strong>Panel 3</strong>: Trade Default View — Dual pricing on cards ($1,094.50 Trade + MSRP: $2,271.50).</li>
+          <li><strong>Panel 4</strong>: Cart & Checkout — Wholesale Trade Pricing persistence ($3,520.00).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Close-Up Proofs -->
+  <section class="section">
+    <h2 class="section-title">3. Detailed Component Close-Up Proofs</h2>
+    
+    <!-- Proof 1 -->
+    <div class="proof-container">
+      <div class="proof-header">
+        <h3>Component Close-Up: Header Pricing Toggle Widget</h3>
+        <span class="status status-pass">PASS</span>
+      </div>
+      <div class="proof-body">
+        <img src="proofs/01_HEADER_TOGGLE_DROPDOWN_PROOF.png" alt="Header Toggle Close-up Proof">
+      </div>
+      <div class="proof-desc">
+        Demonstrates the closed state in the top-left utility bar (<code>Trade ⌄</code>) and the opened popover state containing <code>[ Trade ]</code> and <code>[ MSRP ]</code> options.
+      </div>
+    </div>
+
+    <!-- Proof 2 -->
+    <div class="proof-container">
+      <div class="proof-header">
+        <h3>Component Close-Up: Cart Wholesale Pricing Persistence</h3>
+        <span class="status status-pass">PASS</span>
+      </div>
+      <div class="proof-body">
+        <img src="proofs/02_CART_WHOLESALE_PERSISTENCE_PROOF.png" alt="Cart Pricing Close-up Proof">
+      </div>
+      <div class="proof-desc">
+        Confirms that the line item in cart bills at the wholesale Trade price of <strong>$3,520.00</strong>, while noting the retail RRP of <strong>$7,320.50 Inc. GST</strong>.
+      </div>
+    </div>
+  </section>
+
+  <!-- Raw Screenshots Gallery -->
+  <section class="section">
+    <h2 class="section-title">4. High-Resolution Full Page Screenshots</h2>
+    <div class="meta-grid">
+      <div class="meta-card">
+        <strong>01_GUEST_NO_PRICING.png</strong>
+        <span><a href="screenshots/01_GUEST_NO_PRICING.png" target="_blank" style="color:var(--accent-blue)">View Full Size &nearr;</a></span>
+      </div>
+      <div class="meta-card">
+        <strong>02_TRADE_DEFAULT_VIEW.png</strong>
+        <span><a href="screenshots/02_TRADE_DEFAULT_VIEW.png" target="_blank" style="color:var(--accent-blue)">View Full Size &nearr;</a></span>
+      </div>
+      <div class="meta-card">
+        <strong>03_TOGGLE_DROPDOWN_OPEN.png</strong>
+        <span><a href="screenshots/03_TOGGLE_DROPDOWN_OPEN.png" target="_blank" style="color:var(--accent-blue)">View Full Size &nearr;</a></span>
+      </div>
+      <div class="meta-card">
+        <strong>04_MSRP_VIEW_ACTIVE.png</strong>
+        <span><a href="screenshots/04_MSRP_VIEW_ACTIVE.png" target="_blank" style="color:var(--accent-blue)">View Full Size &nearr;</a></span>
+      </div>
+      <div class="meta-card">
+        <strong>06_CART_TRADE_PRICING.png</strong>
+        <span><a href="screenshots/06_CART_TRADE_PRICING.png" target="_blank" style="color:var(--accent-blue)">View Full Size &nearr;</a></span>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
