@@ -1,0 +1,144 @@
+================================================================================
+                    GLOBEWEST QA AUTOMATION — PAGEWISE RUN COMMANDS
+================================================================================
+Target Staging (US) : https://mcstaging2.globewest.com
+Baseline Live (AU)  : https://mcstaging2.globewest.com.au / www.globewest.com.au
+Execution Standard  : Headed Chrome mode (--headed --project=desktop-chrome)
+================================================================================
+
+--------------------------------------------------------------------------------
+1. PLP / CATEGORY PAGE (Ticket #41794520 / GLW-007)
+--------------------------------------------------------------------------------
+# A. Live Defect Proof Walkthrough (Compare 0px, Badges, Missing Price/Stock, NS Placeholders):
+npx playwright test "GlobeWest 2026/tests/plp-client-defects-proof.spec.js" --project=desktop-chrome --headed
+
+# B. Authenticated State PLP Audit (Customer Login + Category Verifications):
+npx playwright test "GlobeWest 2026/tests/plp-logged-in-audit.spec.js" --project=desktop-chrome --headed
+
+# C. US vs AU Cross-Storefront Comparison (Facet Counts, Infinite Scroll, Leaks):
+npx playwright test "GlobeWest 2026/tests/plp-us-vs-au-comparison.spec.js" --project=desktop-chrome --headed
+# (Or run shell script):
+bash "PLP page/run_plp_headed.sh"
+
+# D. Figma Spec Cross-Check (Node 2316-12739 'Show Filters' & Card Wishlist Hearts):
+npx playwright test "GlobeWest 2026/tests/plp-figma-verification.spec.js" --project=desktop-chrome --headed
+
+# E. Category Accessibility (Axe-Core WCAG 2.2 AA):
+npx playwright test "GlobeWest 2026/tests/glw007-category-page-a11y.spec.js" --project=desktop-chrome
+
+
+--------------------------------------------------------------------------------
+2. HEADER & MEGA MENU (Ticket 5 / Ticket #41801466)
+--------------------------------------------------------------------------------
+# A. Full Header & Mega Menu Parity Audit (All 9 Categories, 220+ Links, AU Leaks):
+npx playwright test "GlobeWest 2026/tests/ticket5-us-header-comparison.spec.js" --project=desktop-chrome --headed
+# (Or run shell script):
+bash "Ticket 5 - Header/run_header_headed.sh"
+
+# B. Regenerate Header Red/Green Comparison Images:
+python3 "Ticket 5 - Header/scripts/generate_header_comparison.py"
+
+
+--------------------------------------------------------------------------------
+3. FOOTER & LEGAL (Ticket #41794517)
+--------------------------------------------------------------------------------
+# A. Footer Storefront Parity Audit (AU Outlet Leaks, Newsletter, Help Centre):
+npx playwright test "GlobeWest 2026/tests/ticket-footer.spec.js" --project=desktop-chrome --headed
+
+# B. Regenerate Footer Red/Green Comparison Images:
+python3 "Footer/scripts/generate_footer_comparison.py"
+
+
+--------------------------------------------------------------------------------
+4. CART PAGE
+--------------------------------------------------------------------------------
+# A. Cart Page Audit (Free Shipping $2,500 Threshold, Freight Estimator, Order Notes):
+npx playwright test "GlobeWest 2026/tests/ticket-cart-page.spec.js" --project=desktop-chrome --headed
+
+# B. Regenerate Cart Red/Green Comparison Images:
+python3 "Cart Page/scripts/generate_cart_comparison.py"
+
+
+--------------------------------------------------------------------------------
+5. MINI-CART (DRAWER & SLIDE-OUT)
+--------------------------------------------------------------------------------
+# A. Mini-Cart Functional & Visual Audit:
+npx playwright test "GlobeWest 2026/tests/ticket-mini-cart.spec.js" --project=desktop-chrome --headed
+
+# B. Mini-Cart Auth Matrix (Guest User vs. Logged-In Customer Flow):
+npx playwright test "GlobeWest 2026/tests/ticket-mini-cart-auth-matrix.spec.js" --project=desktop-chrome --headed
+
+# C. Regenerate Mini-Cart Red/Green Comparison Images:
+python3 "Mini Cart/scripts/generate_minicart_comparison.py"
+
+
+--------------------------------------------------------------------------------
+6. CMS STRUCTURE & CONTENT (Ticket 4 / Task #41801460)
+--------------------------------------------------------------------------------
+# A. Full US CMS Structure Cross-Comparison:
+npx playwright test "GlobeWest 2026/tests/ticket4-us-cms-structure.spec.js" --project=desktop-chrome --headed
+# (Or run shell script):
+bash "Ticket 4 - Set up the CMS Structure/run_ticket4_test.sh"
+
+# B. Regenerate CMS Red/Green Comparison Images:
+python3 "Ticket 4 - Set up the CMS Structure/scripts/generate_cms_comparison.py"
+
+
+--------------------------------------------------------------------------------
+7. AU REGRESSION SAFEGUARDS (Ticket 3 / Task #41801462)
+--------------------------------------------------------------------------------
+# A. AU Storefront Invariance Test (Currency, Cookie Isolation, Domestic Postcodes):
+npx playwright test "GlobeWest 2026/tests/ticket3-au-regression-safeguards.spec.js" --project=desktop-chrome --headed
+
+
+--------------------------------------------------------------------------------
+8. US THEME COPY (Ticket 1 / Task #41801457)
+--------------------------------------------------------------------------------
+# A. US Theme Parity Verification against AU B2B Theme:
+npx playwright test "GlobeWest 2026/tests/ticket1-us-theme-copy.spec.js" --project=desktop-chrome --headed
+
+
+--------------------------------------------------------------------------------
+9. ACCESSIBILITY (WCAG 2.2 AA) & NVDA SCREEN READER
+--------------------------------------------------------------------------------
+# A. Outdoor Category Voiced Screen Reader Simulation:
+bash "run_outdoor_test.sh"
+
+# B. Full Storefront Axe-Core Scan (All Pages):
+npm --prefix "GlobeWest 2026" run test:accessibility
+
+# C. Staging NVDA Simulation:
+npm --prefix "GlobeWest 2026" run test:staging-nvda
+
+# D. Lighthouse Performance Audits:
+npm --prefix "GlobeWest 2026" run test:lighthouse
+
+
+--------------------------------------------------------------------------------
+10. REPORTS & RESULTS VIEWERS
+--------------------------------------------------------------------------------
+# Open Playwright HTML Report in Browser:
+npm --prefix "GlobeWest 2026" run report
+
+# Open Defect Image Galleries in Browser:
+# Header Gallery:
+xdg-open "Ticket 5 - Header/VIEW_DEFECT_IMAGES.html"
+# Footer Gallery:
+xdg-open "Footer/VIEW_DEFECT_IMAGES.html"
+# PLP Gallery:
+xdg-open "PLP page/plp_defect_gallery.html"
+--------------------------------------------------------------------------------
+11. TRADE PRICING TOGGLE (Vinod Vankar Ticket / GLW-007)
+--------------------------------------------------------------------------------
+# A. Full Functional & Matrix Audit (Guest vs. Trade Customer, MSRP Switch, Cart):
+npx playwright test "GlobeWest 2026/tests/ticket-trade-pricing-toggle-audit.spec.js" --project=desktop-chrome --headed
+
+# B. Trade Pricing Toggle Live Interactive Demonstration:
+npx playwright test "GlobeWest 2026/tests/demo-trade-pricing-toggle.spec.js" --project=desktop-chrome --headed
+
+# C. View Trade Pricing Verification Poster:
+xdg-open "TRADE_PRICING_TOGGLE_AUDIT_REPORT.png"
+
+
+================================================================================
+

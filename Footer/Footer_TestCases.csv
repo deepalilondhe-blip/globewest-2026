@@ -1,0 +1,52 @@
+Test Case ID,Section,Test Scenario,Test Steps,Expected Result (AU Baseline),Actual Result (US Staging),Status,Severity,Defect Linked,Comparison Screenshot
+TC_FOOTER_001,Customer Support Column,Verify 'Shop Outlet' link destination on US storefront,"1. Navigate to US Storefront footer
+2. Locate 'CUSTOMER SUPPORT' column
+3. Inspect 'Shop Outlet' anchor tag href
+4. Click 'Shop Outlet' link",Link should route to US outlet inventory or be hidden if no US outlet exists. Should NOT leak to domestic AU outlet.,Hardcoded to https://globewestoutlet.com.au/ (Australian Outlet store displaying AUD pricing).,FAIL,P1 - High,DEFECT 1: Shop Outlet AU Domain Leak,DEFECT_1_SHOP_OUTLET_AU_LEAK.png
+TC_FOOTER_002,Newsletter Subscription,Verify Newsletter 'Subscribe Now.' link target on US storefront,"1. Navigate to US Storefront footer
+2. Locate 'Subscribe' promo section in Column 1
+3. Inspect 'Subscribe Now.' link href","Link should route to US newsletter signup form/endpoint (e.g., /subscribe or US Klaviyo/Mailchimp integration).","Hardcoded to https://www.globewest.com.au/subscribe-to-our-database, leaking US user registrations to Australian database.",FAIL,P1 - High,DEFECT 2: Newsletter Subscribe AU Domain Leak,DEFECT_2_NEWSLETTER_SUBSCRIBE_AU_LEAK.png
+TC_FOOTER_003,Geographic Branding,Verify 'AUSTRALIAN OWNED & RUN' national logo presence on US storefront,"1. Navigate to US Storefront footer
+2. Inspect Column 1 bottom emblem under showroom booking
+3. Verify brand logo suitability for US domestic market",US storefront should display US-appropriate branding or omit domestic Australian national continent emblem.,Displays domestic Australian continent map outline and 'AUSTRALIAN OWNED & RUN' badge on US storefront.,FAIL,P2 - Medium,DEFECT 3: Australian Continent Emblem Leak,DEFECT_3_AUSTRALIAN_OWNED_BADGE_LEAK.png
+TC_FOOTER_004,Social Media Links,Verify Pinterest social media icon destination on US storefront,"1. Navigate to US Storefront footer
+2. Locate 'Connect with us' social media icon list
+3. Inspect Pinterest icon anchor tag href",Link should point to international or US Pinterest profile (https://www.pinterest.com/globewest/).,Points to regional Australian locale URL: https://www.pinterest.com.au/globewest/,FAIL,P2 - Medium,DEFECT 4: Pinterest AU Locale Leak,DEFECT_4_PINTEREST_AU_LOCALE_LEAK.png
+TC_FOOTER_005,Legal & Bottom Bar,Verify Copyright notice year accuracy across storefront footer,"1. Navigate to US Storefront bottom legal bar
+2. Inspect Copyright notice text string","Should display current year dynamically (e.g., © 2026 GlobeWest or © Current Year GlobeWest).",Hardcoded outdated year: '© 2023 GlobeWest'.,FAIL,P3 - Low,DEFECT 5: Outdated Copyright Year,DEFECT_5_OUTDATED_COPYRIGHT_2023.png
+TC_FOOTER_006,Legal & Bottom Bar,Verify US Privacy Rights & CCPA compliance link in footer,"1. Navigate to US Storefront bottom bar
+2. Check for required US state privacy disclosures (Do Not Sell My Info / CCPA)",US storefront must include CCPA / Do Not Sell or Share My Personal Information link for regulatory compliance.,Missing dedicated CCPA / California Consumer Privacy Act link; only standard AU Privacy Policy link is shown.,FAIL,P2 - Medium,DEFECT 5: Missing US CCPA Compliance Link,DEFECT_5_OUTDATED_COPYRIGHT_2023.png
+TC_FOOTER_007,Products Column,Verify Products navigation links routing on US storefront,"1. Inspect Products column links:
+   - In Stock (/in-stock)
+   - Indoor (/indoor)
+   - Living (/indoor/shop-by-room/living-room)
+   - Dining (/indoor/shop-by-room/dining-room-kitchen)
+   - Bedroom (/indoor/shop-by-room/bedroom)
+   - Outdoor (/outdoor)
+   - Office (/indoor/shop-by-room/home-office-study)
+   - Homewares (/homewares)
+   - Lighting (/homeware/lighting)
+   - Rugs (/homeware/homewares/rugs)",All product links resolve correctly to US staging domain without Australian scope or 404 errors.,All 10 product catalog links resolve properly to mcstaging2.globewest.com paths.,PASS,Informational,None (Verified Clean),N/A
+TC_FOOTER_008,Customer Support Column,Verify standard Customer Support links routing on US storefront,"1. Inspect links in Customer Support column:
+   - How to Buy (/how-to-buy)
+   - Showrooms (/contact)
+   - Trade & Wholesale (/help-centre/general/trade-registration)
+   - Project & Commercial (/help-centre)
+   - Find a Stockist (/locator)
+   - Find a Designer (/find-designer-start)
+   - Help Centre (/help-centre)
+   - After Sales (/help-centre/after-sales-enquires)
+   - Contact Us (/contact)
+   - Product Care (/product-care)",All support links resolve to valid US staging relative/absolute URLs.,All 10 core customer support links resolve to mcstaging2.globewest.com endpoints.,PASS,Informational,None (Verified Clean),N/A
+TC_FOOTER_009,Our Brand Column,Verify Our Brand links routing on US storefront,"1. Inspect links in Our Brand column:
+   - About Us (/about-us)
+   - Careers (/careers)
+   - Inspiration & Interviews (/blog)
+   - Video Library (/video-library)
+   - Lookbook Library (/lookbook-library)
+   - Press (/press)",All brand links resolve correctly to US staging domain.,All 6 brand links resolve properly to mcstaging2.globewest.com endpoints.,PASS,Informational,None (Verified Clean),N/A
+TC_FOOTER_010,Connect Column,Verify Showroom Booking CTA button destination on US storefront,"1. Locate 'Visit our Showrooms' block
+2. Inspect 'Book an Appointment' button href",Link should route to US showroom booking page (https://mcstaging2.globewest.com/online-booking).,Points to https://mcstaging2.globewest.com/online-booking as expected.,PASS,Informational,None (Verified Clean),N/A
+TC_FOOTER_011,Mobile Responsiveness,Verify collapsible accordion columns on mobile viewport (390x844),"1. Emulate iPhone 12/13/14 viewport (390x844)
+2. Navigate to footer
+3. Verify Products, Customer Support, Our Brand accordion headers toggle open/close",Accordion triggers expand and collapse links smoothly without text truncation or overflow.,"Collapsible triggers respond to touch/click, expanding column link menus cleanly.",PASS,Informational,None (Verified Clean),04_US_Footer_Mobile_390x844.png

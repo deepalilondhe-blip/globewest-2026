@@ -1,0 +1,16 @@
+# Ticket 5: US Storefront Header & Mega Menu Test Cases
+
+| TC ID | Category | Feature | Status | Severity | Expected Result | Actual Result |
+|---|---|---|:---:|:---:|---|---|
+| **TC-HEADER-01** | Top Utility Bar | Showroom Booking CTA | ✅ PASS | **P1 - High** | "Book Showroom Appointment" link is visible, pointing to /online_booking/ with zero Australian leakage. | Link is visible and correctly points to /online_booking/. |
+| **TC-HEADER-02** | Top Utility Bar | Find a Designer Service Link | ❌ FAIL | **P2 - Medium** | Service links "Find a designer" and "stockist" exist and link to US trade locator. | Links are missing or render an empty href="#" link on US storefront. |
+| **TC-HEADER-03** | Header Branding | GlobeWest Brand Logo | ✅ PASS | **P1 - High** | Logo links strictly to https://mcstaging2.globewest.com/ with no .com.au domain. | Logo correctly points to https://mcstaging2.globewest.com/. |
+| **TC-HEADER-04** | Header Search | Overdose Algolia Search Trigger | ✅ PASS | **P1 - High** | Search input triggers interactive modal overlay with instant product search results. | Search trigger renders and is functional. |
+| **TC-HEADER-05** | Header Utilities | Wishlist & Cart Icons | ✅ PASS | **P2 - Medium** | Wishlist and Mini Cart icons render with valid US store endpoints. | Both icons render properly and route internally. |
+| **TC-HEADER-06** | Navigation | Top-Level Menu Scope (9 Items) | ✅ PASS | **P1 - High** | All 9 categories render and link to US store paths. | All 9 categories render correctly. Homewares links to /homewares (HTTP 200 OK verified; /homeware is 404). Not a defect. |
+| **TC-HEADER-07** | Mega Menu | Indoor Submenu Multi-Level Drilldown | ✅ PASS | **P1 - High** | Mega menu expands smoothly into columns; subcategories become visible upon hover. | Mega menu expands and subcategories populate as expected. |
+| **TC-HEADER-08** | Mega Menu | Editorial Campaign Promo Banner | ❌ FAIL | **P2 - Medium** | Active US promotional campaign card renders with high-res imagery and US catalog CTA. | Renders unpopulated "GW Coming Soon" placeholder card with blank text. |
+| **TC-HEADER-09** | Scope Integrity | 🚨 Australian Outlet Links Leakage (5 Links) | ❌ FAIL | **P1 - High** | ZERO Australian domain links in US storefront navigation. | 🚨 CRITICAL DEFECT: 5 hardcoded Australian Outlet links detected in navigation (Indoor, Outdoor, Homewares, In Stock, Melbourne Outlet Store). |
+| **TC-HEADER-10** | Scope Integrity | 🚨 Melbourne Physical Outlet Store Link Leakage | ❌ FAIL | **P1 - High** | No Australian physical store links on US B2B storefront. | Offending link to https://globewestoutlet.com.au/pages/melbourne-outlet-store is hardcoded. |
+| **TC-HEADER-11** | Baseline Parity | AU Baseline 1:1 Comparative Audit | ✅ PASS | **P2 - Medium** | US Header matches AU layout, styling, and interaction patterns with US localization. | Structural layout matches AU, but identified 4 content/link defects. |
+| **TC-HEADER-12** | Responsive | Mobile Hamburger Drawer Navigation | ✅ PASS | **P1 - High** | Mobile drawer opens smoothly; accordions expand child items with zero horizontal page overflow. | Mobile drawer and accordions function as intended. |

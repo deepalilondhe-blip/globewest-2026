@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Page: Defect Comparison Gallery</title>
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --card-bg: #1e293b;
+      --border-color: #334155;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --red-defect: #ef4444;
+      --green-baseline: #22c55e;
+      --accent: #38bdf8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 24px;
+    }
+    .header-container {
+      max-width: 1400px;
+      margin: 0 auto 32px auto;
+      padding: 24px;
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+    .badge {
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-red { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid var(--red-defect); }
+    .badge-green { background: rgba(34, 197, 94, 0.2); color: #86efac; border: 1px solid var(--green-baseline); }
+    .badge-blue { background: rgba(56, 189, 248, 0.2); color: #7dd3fc; border: 1px solid var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .nav-btn {
+      background: #334155;
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .nav-btn:hover {
+      background: var(--accent);
+      color: #0f172a;
+    }
+
+    .gallery {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .card-header {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .card-body {
+      padding: 20px;
+    }
+    .image-wrapper {
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .image-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .image-wrapper:hover img {
+      transform: scale(1.01);
+    }
+    .description-box {
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: #0b1120;
+      border-radius: 8px;
+      font-size: 15px;
+      border-left: 4px solid var(--accent);
+    }
+    .file-path-box {
+      margin-top: 10px;
+      font-family: monospace;
+      font-size: 12px;
+      color: var(--text-muted);
+      background: #090d16;
+      padding: 8px 12px;
+      border-radius: 6px;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-container">
+    <h1>Cart Page & Purchasing Flow: Defect Comparison Gallery</h1>
+    <p style="color: var(--text-muted);">Side-by-side visual comparison between US Staging and AU Baseline.</p>
+    <div class="meta-bar">
+      <span class="badge badge-red">RED BORDER = US Storefront Defect (mcstaging2.globewest.com)</span>
+      <span class="badge badge-green">GREEN BORDER = AU Storefront Baseline (mcstaging2.globewest.com.au)</span>
+      <span class="badge badge-blue">Audit Verified: 4 Defects</span>
+    </div>
+    <div class="nav-links">
+      <a href="#combined" class="nav-btn">All In One Poster</a>
+      <a href="#defect-1" class="nav-btn">Defect 1 (Add to Cart Omitted)</a>
+      <a href="#defect-2" class="nav-btn">Defect 2 (Content Hub Trucks & AU Link)</a>
+      <a href="#defect-3" class="nav-btn">Defect 3 (Find Designer & Wishlist)</a>
+      <a href="#defect-4" class="nav-btn">Defect 4 (Australian Owned Badge)</a>
+    </div>
+  </div>
+
+  <div class="gallery">
+
+    <!-- ALL IN ONE COMBINED POSTER -->
+    <div class="card" id="combined">
+      <div class="card-header">
+        <div class="card-title">MASTER POSTER: All 4 Cart Page Defects Combined</div>
+        <span class="badge badge-blue">Full Defect Board</span>
+      </div>
+      <div class="card-body">
+        <div class="image-wrapper">
+          <a href="comparison/ONE_COMBINED_CART_DEFECTS_COMPARISON.png" target="_blank">
+            <img src="comparison/ONE_COMBINED_CART_DEFECTS_COMPARISON.png" alt="All Cart Defects Combined">
+          </a>
+        </div>
+        <div class="description-box">
+          Vertical side-by-side comparison board showing all 4 Cart Page and purchasing discrepancies. Click image to open in full size.
+        </div>
+        <div class="file-path-box">
+          File: <strong>comparison/ONE_COMBINED_CART_DEFECTS_COMPARISON.png</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEFECT 1 -->
+    <div class="card" id="defect-1">
+      <div class="card-header">
+        <div class="card-title">Defect 1: Add to Cart Button Suppressed on US Product Pages</div>
+        <span class="badge badge-red">P1 - High (Critical Blocker)</span>
+      </div>
+      <div class="card-body">
+        <div class="image-wrapper">
+          <a href="comparison/DEFECT_1_ADD_TO_CART_BUTTON_MISSING_ON_US.png" target="_blank">
+            <img src="comparison/DEFECT_1_ADD_TO_CART_BUTTON_MISSING_ON_US.png" alt="Defect 1 Add to Cart Button Missing">
+          </a>
+        </div>
+        <div class="description-box">
+          <strong>Defect:</strong> The 'Add to Cart' button is omitted on US product pages, preventing American customers from adding products to the cart.
+        </div>
+        <div class="file-path-box">
+          File: <strong>comparison/DEFECT_1_ADD_TO_CART_BUTTON_MISSING_ON_US.png</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEFECT 2 -->
+    <div class="card" id="defect-2">
+      <div class="card-header">
+        <div class="card-title">Defect 2: Broken Pixelated Truck Icons & AU Blog Link in Cart Content Hub</div>
+        <span class="badge badge-red">P1 - High Severity</span>
+      </div>
+      <div class="card-body">
+        <div class="image-wrapper">
+          <a href="comparison/DEFECT_2_CART_CONTENT_HUB_BROKEN_IMAGES_AND_AU_LINK.png" target="_blank">
+            <img src="comparison/DEFECT_2_CART_CONTENT_HUB_BROKEN_IMAGES_AND_AU_LINK.png" alt="Defect 2 Cart Content Hub">
+          </a>
+        </div>
+        <div class="description-box">
+          <strong>Defect:</strong> Cart content hub renders low-res pixelated truck icons and leaks users to Australian blog (<code>mcprod.globewest.com.au/blog</code>).
+        </div>
+        <div class="file-path-box">
+          File: <strong>comparison/DEFECT_2_CART_CONTENT_HUB_BROKEN_IMAGES_AND_AU_LINK.png</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEFECT 3 -->
+    <div class="card" id="defect-3">
+      <div class="card-header">
+        <div class="card-title">Defect 3: Top Bar "Find a Designer" & Wishlist Heart Icon Missing in Cart Header</div>
+        <span class="badge badge-red">P2 - Medium Severity</span>
+      </div>
+      <div class="card-body">
+        <div class="image-wrapper">
+          <a href="comparison/DEFECT_3_CART_HEADER_WISHLIST_AND_FIND_DESIGNER_MISSING.png" target="_blank">
+            <img src="comparison/DEFECT_3_CART_HEADER_WISHLIST_AND_FIND_DESIGNER_MISSING.png" alt="Defect 3 Cart Header Discrepancies">
+          </a>
+        </div>
+        <div class="description-box">
+          <strong>Defect:</strong> US Cart header omits 'Find a designer or stockist' service link and the Wishlist heart icon present on AU.
+        </div>
+        <div class="file-path-box">
+          File: <strong>comparison/DEFECT_3_CART_HEADER_WISHLIST_AND_FIND_DESIGNER_MISSING.png</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEFECT 4 -->
+    <div class="card" id="defect-4">
+      <div class="card-header">
+        <div class="card-title">Defect 4: 'Australian Owned & Run' Geographic Badge Leaking in US Footer</div>
+        <span class="badge badge-red">P2 - Medium Severity</span>
+      </div>
+      <div class="card-body">
+        <div class="image-wrapper">
+          <a href="comparison/DEFECT_4_AUSTRALIAN_OWNED_BADGE_LEAK_ON_US.png" target="_blank">
+            <img src="comparison/DEFECT_4_AUSTRALIAN_OWNED_BADGE_LEAK_ON_US.png" alt="Defect 4 Australian Owned Badge">
+          </a>
+        </div>
+        <div class="description-box">
+          <strong>Defect:</strong> Australian national business logo and continent outline badge are hardcoded into the US storefront footer.
+        </div>
+        <div class="file-path-box">
+          File: <strong>comparison/DEFECT_4_AUSTRALIAN_OWNED_BADGE_LEAK_ON_US.png</strong>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

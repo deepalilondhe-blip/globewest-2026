@@ -1,0 +1,38 @@
+Test Case ID,Category,Feature,Description,Preconditions,Execution Steps,Expected Result,Actual Result,Status,Severity,Visual Evidence
+TC-HEADER-01,Top Utility Bar,Showroom Booking CTA,"Verify ""Book Showroom Appointment"" link is present, functional, and routes correctly on the US Storefront top utility bar.","US Storefront (https://mcstaging2.globewest.com) is live and accessible.","1. Load US homepage.
+2. Inspect top utility bar.
+3. Locate ""Book Showroom Appointment"" link.
+4. Verify href and visibility.","""Book Showroom Appointment"" link is visible, pointing to /online_booking/ with zero Australian leakage.","Link is visible and correctly points to /online_booking/.",PASS,P1 - High,Section_Top_Bar_US.png
+TC-HEADER-02,Top Utility Bar,Find a Designer Service Link,"Verify ""Find a designer or stockist"" service links exist on US Storefront top utility bar in parity with AU baseline.","AU baseline displays ""Find a designer or stockist"" on top bar.","1. Load US homepage.
+2. Inspect top-left of utility bar.
+3. Verify presence of ""Find a designer or stockist"" links.","Service links ""Find a designer"" and ""stockist"" exist and link to US trade locator.","Links are missing or render an empty href=""#"" link on US storefront.",FAIL,P2 - Medium,DEFECT_Top_Bar_Find_Designer_Missing.png
+TC-HEADER-03,Header Branding,GlobeWest Brand Logo,"Verify GlobeWest SVG/PNG logo renders crisply, links to US homepage root, and has proper alt/aria tags.","Desktop viewport 1440x900.","1. Locate header logo container.
+2. Inspect href attribute.
+3. Verify image asset URL and dimension.","Logo links strictly to https://mcstaging2.globewest.com/ with no .com.au domain.","Logo correctly points to https://mcstaging2.globewest.com/.",PASS,P1 - High,Section_Header_Utilities_US.png
+TC-HEADER-04,Header Search,Overdose Algolia Search Trigger,"Verify Search trigger input opens the Algolia search autocomplete overlay without JavaScript errors.","Algolia search extension configured on staging.","1. Click into search trigger field.
+2. Verify search modal opens.
+3. Press Escape to close.","Search input triggers interactive modal overlay with instant product search results.","Search trigger renders and is functional.",PASS,P1 - High,Section_Header_Utilities_US.png
+TC-HEADER-05,Header Utilities,Wishlist & Cart Icons,"Verify Wishlist heart icon and Mini Cart bag icon are present in header utility cluster.","Standard Magento Luma/Overdose theme customer data module.","1. Inspect right-hand utility section.
+2. Verify Wishlist anchor.
+3. Verify Mini Cart anchor and item counter.","Wishlist and Mini Cart icons render with valid US store endpoints.","Both icons render properly and route internally.",PASS,P2 - Medium,Section_Header_Utilities_US.png
+TC-HEADER-06,Navigation,Top-Level Menu Scope (9 Items),"Verify all 9 top-level navigation categories are present, visible, and route to US URLs.","Desktop viewport 1440x900.","1. Inspect .navigation .level0 menu items.
+2. Assert 9 categories: Indoor, Outdoor, Homewares, In Stock, Customisation, Projects, Inspiration, Support, Contact.
+3. Check hrefs.","All 9 categories render and link to US store paths.","All 9 categories render correctly. Homewares links to /homewares (HTTP 200 OK verified; /homeware is 404). Not a defect.",PASS,P1 - High,Section_Top_Nav_Row_US.png
+TC-HEADER-07,Mega Menu,Indoor Submenu Multi-Level Drilldown,"Verify hovering Indoor expands mega menu; hovering Furniture reveals level-2 subcategories (Sofas, Dining, etc.).","Mega menu JS initialized.","1. Hover ""Indoor"" menu item.
+2. Hover ""Furniture"" subcategory.
+3. Assert child subcategories populate in column 2.","Mega menu expands smoothly into columns; subcategories become visible upon hover.","Mega menu expands and subcategories populate as expected.",PASS,P1 - High,Section_Mega_Menu_Indoor_US.png
+TC-HEADER-08,Mega Menu,Editorial Campaign Promo Banner,"Verify mega menu right column displays active editorial campaign card in parity with AU baseline.","AU baseline displays ""Out Now - Explore Collections 2025 Volume #02"".","1. Hover ""Indoor"" to open mega menu.
+2. Inspect rightmost promotional column.
+3. Verify promotional graphic and CTA.","Active US promotional campaign card renders with high-res imagery and US catalog CTA.","Renders unpopulated ""GW Coming Soon"" placeholder card with blank text.",FAIL,P2 - Medium,Section_Mega_Menu_Promo_US.png
+TC-HEADER-09,Scope Integrity,🚨 Australian Outlet Links Leakage (5 Links),"Audit all mega menu links for Australian domain leakage (.globewest.com.au / globewestoutlet.com.au).","Mega menu submenus opened.","1. Query all anchor href attributes in navigation.
+2. Regex scan for .globewest.com.au and globewestoutlet.com.au.
+3. Identify offending links.","ZERO Australian domain links in US storefront navigation.","🚨 CRITICAL DEFECT: 5 hardcoded Australian Outlet links detected in navigation (Indoor, Outdoor, Homewares, In Stock, Melbourne Outlet Store).",FAIL,P1 - High,DEFECT_Mega_Menu_Outlet_AU_Leak.png
+TC-HEADER-10,Scope Integrity,🚨 Melbourne Physical Outlet Store Link Leakage,"Verify navigation does not contain links to physical Australian retail store locations.","Mega menu submenus opened.","1. Scan navigation links for /pages/melbourne-outlet-store.
+2. Inspect link text and destination.","No Australian physical store links on US B2B storefront.","Offending link to https://globewestoutlet.com.au/pages/melbourne-outlet-store is hardcoded.",FAIL,P1 - High,DEFECT_Melbourne_Outlet_Store_Leak.png
+TC-HEADER-11,Baseline Parity,AU Baseline 1:1 Comparative Audit,"Perform side-by-side audit against AU Live Staging baseline to identify styling or structural deviations.","AU Staging (https://mcstaging2.globewest.com.au) live.","1. Load AU header.
+2. Capture baseline screenshots of top bar, logo, search, and mega menu.
+3. Compare layout dimensions and font styling.","US Header matches AU layout, styling, and interaction patterns with US localization.","Structural layout matches AU, but identified 4 content/link defects.",PASS,P2 - Medium,AU_Section_Mega_Menu_Indoor.png
+TC-HEADER-12,Responsive,Mobile Hamburger Drawer Navigation,"Verify mobile viewport (393x851) header collapses to hamburger icon, opens drawer, and accordions expand.","Mobile viewport 393x851 (Pixel 5).","1. Load US site in mobile viewport.
+2. Click hamburger button (.nav-toggle).
+3. Verify slide-out drawer.
+4. Click Indoor accordion to expand subcategories.","Mobile drawer opens smoothly; accordions expand child items with zero horizontal page overflow.","Mobile drawer and accordions function as intended.",PASS,P1 - High,Section_Mobile_Drawer_Open.png
