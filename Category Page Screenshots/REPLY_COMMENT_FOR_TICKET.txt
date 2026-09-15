@@ -1,32 +1,26 @@
-Subject: Re: US PLP Staging Updates & Feedback
-
 Hi Michelle,
 
-Thank you so much for the detailed feedback and for pointing out these design aspects. Noted on all points—we will ensure we are extra conscious and thorough in inspecting visual details, spacing, and element placement against Figma across all storefront tickets going forward.
+Thank you very much for the detailed feedback and for highlighting these design aspects. We truly appreciate your attention to detail.
 
-We have reviewed each of your points in detail alongside the approved Figma designs (`desktop/Category/Trade Pricing`) and the live US Staging site. Please find our updates below:
+We reviewed all points against the approved Figma designs and US Staging. Please find the updates below:
 
-1. Compare Checkbox:
-   • Spacing & Background Context: In the approved Figma designs, both the product card and the product photography share a seamless pure white background (#FFFFFF). Because there is no visible line or container boundary in Figma, there is no separate inset gap between the checkbox and the image in the design (as shown in attached Figma Screenshots 1 & 2). On Staging, the grey background of the temporary NetSuite placeholder cards ("GW Coming Soon") created an artificial edge contrast, making the checkbox appear flush against a border. On actual products with white photography, the alignment naturally matches Figma.
-   • Typography & Font Weight: We verified the font styling on US Staging, and the Compare text is set to regular weight (400), which directly corresponds to the regular font used in Figma (see attached Verified Screenshot 3). It is not bolded.
+1. Compare Checkbox
+The approved Figma uses a seamless white (#FFFFFF) background without a visible container boundary or inset gap. The grey background of the temporary “GW Coming Soon” placeholder cards on Staging created the appearance of an edge. With actual product imagery, the alignment matches Figma.
+We also verified that the “Compare” text uses regular font weight (400), consistent with Figma.
 
-2. New Tag & Badges:
-   • Placement Below Image: We completely accept this point—we missed this detail during our earlier retesting, and we really appreciate you catching it! Developer @VinodV has updated this on US Staging: the badges ([New], [Customisable]) have been moved out of the image container and now sit comfortably below the product image in the details section, directly above the product title.
-   • Pill Capsule Styling: The badges are now displayed in proper rounded pill capsule shapes with comfortable internal spacing, matching the Figma design specifications (see attached Verified Screenshot 3).
+2. New Tag & Badges
+We acknowledge this was missed during our earlier retesting. @VinodV has now corrected the placement, with [New] and [Customisable] badges positioned below the image and above the product title, as per Figma.
+The badges have also been updated to the required rounded pill styling.
 
-3. Pricing & Stock Messaging Across Products:
-   • For the US B2B storefront, wholesale pricing and live stock indicators are architected around the customer login state to protect trade margins.
-   • In Public / Guest browsing mode (logged out), pricing and stock are intentionally masked and unpriced across the catalog.
-   • Once logged in with an authorized Trade Customer account (e.g., deepali.londhe@overdose.digital), all product cards dynamically display the dual pricing line (Wholesale Trade Price + MSRP, e.g., $1,094.50 • MSRP: $2,271.50) as well as the inventory status (• In Stock / ETA dates), exactly as designed.
+3. Pricing & Stock
+For B2B, pricing and stock visibility is controlled by customer login/authorization.
+• Guests: Pricing and stock remain hidden.
+• Authorized Trade Customers: Wholesale Price, MSRP, and stock/ETA are displayed as designed.
 
-Please find the reference screenshots attached and also uploaded to the Overdose Account Drive for easy access:
-• Figma Screenshot 1: 1_Figma_Card_Layout_White_Background_And_Spacing.png (Figma design showing white background & compare placement)
-• Figma Screenshot 2: 2_Figma_Compare_Checkbox_Regular_Font_Spec.png (Figma measurement & regular typography spec)
-• Verified Staging Screenshot 3: 3_Verified_Staging_Regular_Font_And_Badges_Below_Photo.png (Live US Staging confirming font-weight: 400, badges updated below photo, and trade pricing active)
+Reference screenshots are attached and also available in the Overdose Account Drive:
+[Overdose Drive Folder](https://drive.google.com/drive/folders/1WNtZJ4x6yGN5Ym6Ft8cBQeUcDCnYkXdg)
 
-[Overdose Drive Folder Link: Insert Link Here]
-
-Thank you again for your valuable guidance and help in polishing the store experience. Please let us know if you would like us to review anything else!
+Thank you again for your valuable guidance. We’ll ensure we are more thorough with visual checks against Figma going forward.
 
 Warm regards,  
-Deepali
+Deepali Londhe
