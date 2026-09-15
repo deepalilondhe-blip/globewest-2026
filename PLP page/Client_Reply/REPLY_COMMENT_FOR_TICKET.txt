@@ -1,30 +1,20 @@
-Subject: Re: US PLP Staging Updates & Feedback
-
 Hi Michelle,
 
-Thank you so much for your feedback and for pointing out these design details. Noted on all points—I will ensure we strictly inspect computed CSS styling (typography weight, padding insets) and DOM structural placement against Figma across all storefront tickets going forward.
+Thank you for the feedback and for highlighting these design details! Noted on all points—we will be extra mindful of these visual details across all storefront pages going forward.
 
-We have cross-verified each of your points against the approved Figma designs (`desktop/Category/Trade Pricing`) and the live US Staging storefront. Please see our updates below:
+Here is a quick update on each point:
 
-1. Compare - does not match designs:
-   • 1.1 Typography / Font Weight: We inspected the live computed CSS styles via DevTools on US Staging. The `Compare` label is using `font-weight: 400` (regular weight from styles-m.min.css), which matches the regular font specified in Figma (see attached Screenshot 3). It is not bolded.
-   • 1.2 & 1.3 Spacing & Padding on Image: In the approved Figma designs, both the product card background and the product photography canvas share a seamless pure white background (#FFFFFF). Because there is no visible border or separation line in Figma, there is no separate inset gap between the checkbox and the image in the design (see attached Screenshots 1 & 2). On Staging, the grey background of the temporary NetSuite placeholder cards ("GW Coming Soon") created an artificial contrast, making the checkbox appear right against an edge. On actual live products with white backgrounds, this aligns naturally as intended in Figma.
+1. Compare Checkbox:
+   • Spacing & Background: In Figma, the card and image both share a seamless pure white background, so there is no visible border or edge separation in the design. On Staging, the grey placeholder boxes created artificial contrast, but the actual alignment matches Figma.
+   • Font: The text uses a regular (non-bold) font weight, matching the Figma design.
 
-2. New tag:
-   • 2.1 & 2.2 Placement below product image: We completely accept this point—we missed this detail during our earlier retesting, and thank you for flagging it! Developer @VinodV has now resolved this on US Staging: the badges ([New], [Customisable]) have been relocated into the product details container, comfortably positioned below the product photo and directly above the product title in proper pill capsule styling, exactly per the designs (see attached Screenshot 3).
-   • 2.3 Font & Spacing: The updated badge styling now follows Figma pill dimensions, internal padding, and font styles.
+2. New Tag / Badges:
+   • Placement & Styling: We accept that we missed this during our initial retesting—thank you for catching it! Developer @VinodV has updated this on Staging: badges are now placed below the product image in rounded pill shapes, as per the designs.
 
-3. Pricing & Stock messaging across products:
-   • As part of the US B2B storefront architecture, wholesale pricing and live inventory are restricted to authenticated Trade Customers to protect trade margins.
-   • In Public / Guest browsing mode (logged out), prices and inventory are deliberately masked/hidden.
-   • When logged in with an authorized Trade Customer account (e.g., `deepali.londhe@overdose.digital`), both the dual pricing line (Wholesale Trade Price + MSRP, e.g., $1,094.50 • MSRP: $2,271.50) and live stock availability (• In Stock (X) / ETA) render across all product cards as designed (see Screenshot 3).
+3. Pricing & Stock Messaging:
+   • This is controlled by login state for the B2B store. Wholesale pricing and stock are hidden for public guest browsing, but become fully visible once logged in with a Trade customer account.
 
-Please find the sequential reference screenshots attached:
-• 1_Figma_White_Background_Compare_Placement.png (Figma design showing pure white background and compare placement)
-• 2_Figma_Compare_Font_Weight_Regular.png (Figma measurement & regular typography)
-• 3_Live_DevTools_FontWeight400_Badges_Below_Photo_Fixed.png (Live DevTools confirming font-weight: 400, badges fixed below photo, and trade dual pricing rendered)
-
-Thank you again for your valuable guidance, and please let us know if you'd like us to review any other details!
+Reference screenshots are attached for your quick review. Please let us know if you need anything else!
 
 Warm regards,  
 Deepali
