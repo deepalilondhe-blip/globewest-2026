@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 # QA Defect Audit Report: Ticket 4 (US Storefront CMS Structure)
 
 | Document Metadata | Details |
@@ -14,14 +21,14 @@
 ## Executive Summary of Defects
 
 ```
-┌────┬─────────────────────────────┬──────────┬─────────────────────────────┬────────────────────────────────────────────────────────┐
-│ #  │ Component                   │ Severity │ Defect Type                 │ Key Impact                                             │
-├────┼─────────────────────────────┼──────────┼─────────────────────────────┼────────────────────────────────────────────────────────┤
-│ 01 │ Hero Banner Slider          │ P1 - High│ Australian Domain Leakage   │ Main CTA button navigates US visitors to AU website    │
-│ 02 │ Category Carousel           │ P2 - Med │ Australian Catalog Routing  │ All 14 category cards redirect buyers to AU catalog    │
-│ 03 │ Instagram Social Feed       │ P3 - Low │ Missing Images / Feed       │ Feed container renders completely blank (0 photos)     │
-│ 04 │ SEO Text Content Block      │ P3 - Low │ Missing Marketing Copy      │ Container is 100% empty (0 words of SEO text)          │
-└────┴─────────────────────────────┴──────────┴─────────────────────────────┴────────────────────────────────────────────────────────┘
+┌────┬─────────────────────────────┬──────────┬─────────────────────────────┬────────────────────────────────────────────────────────┬───────────────┐
+│ #  │ Component                   │ Severity │ Defect Type                 │ Key Impact                                             │ Status        │
+├────┼─────────────────────────────┼──────────┼─────────────────────────────┼────────────────────────────────────────────────────────┼───────────────┤
+│ 01 │ Hero Banner Slider          │ P1 - High│ Australian Domain Leakage   │ Main CTA button navigates US visitors to AU website    │ ✅ RESOLVED   │
+│ 02 │ Category Carousel           │ P2 - Med │ Australian Catalog Routing  │ All 14 category cards redirect buyers to AU catalog    │ ✅ RESOLVED   │
+│ 03 │ Instagram Social Feed       │ P3 - Low │ Missing Images / Feed       │ Feed container renders blank (Token pending)           │ ⚠️ KNOWN LIMIT│
+│ 04 │ SEO Text Content Block      │ P3 - Low │ Missing Marketing Copy      │ Container empty (Pending marketing copy population)    │ ℹ️ PENDING COPY│
+└────┴─────────────────────────────┴──────────┴─────────────────────────────┴────────────────────────────────────────────────────────┴───────────────┘
 ```
 
 ---
@@ -34,60 +41,44 @@ A unified comparison poster highlighting all 4 defects side-by-side:
 
 ---
 
-## 1. 🚨 Defect 1: Hero Banner CTA Leaks to Australian Store
+## 1. 🚨 Defect 1: Hero Banner CTA Leaks to Australian Store — [✅ RESOLVED]
+> **Regression Verification Status: RESOLVED & PASS** (Verified on `mcstaging2.globewest.com`)
+> - The primary CTA link now points to `https://mcstaging2.globewest.com/` (relative US domain).
+> - Live test confirmed clicking the CTA button stays on the US storefront with 0 Australian domain leakage.
 
 ![Hero Banner Link Defect Comparison](/home/deepali/.gemini/antigravity-ide/brain/35949052-5130-4815-b7ea-118ef98c2f2b/showing_vs_not_showing/SHOWING_VS_NOT_SHOWING_3_HERO_BANNER_LINK.png)
 
 ### Defect Details
 - **CMS Identifier:** `main-us-banner`
 - **Component:** Primary Hero Banner Slider (Top of page, ~181px)
-- **Defect Severity:** 🚨 **P1 — Critical (Scope Leakage)**
+- **Defect Severity:** 🚨 **P1 — Critical (Scope Leakage) -> [NOW RESOLVED]**
 
-### The Defect (Highlighted in Red):
-- On the **US Storefront** (`mcstaging2.globewest.com`), the primary call-to-action button **"Explore Collections"** contains a hardcoded link to the Australian website:
+### The Previous Defect (Highlighted in Red):
+- On the **US Storefront** (`mcstaging2.globewest.com`), the primary call-to-action button **"Explore Collections"** previously contained a hardcoded link to the Australian website:
   ```html
   <a href="https://www.globewest.com.au">Explore Collections</a>
   ```
 - On the **AU Baseline** (Green Box), the button stays within the local store.
 
-### Impact:
-- Any US customer clicking the prominent hero button is navigated **out of the US store into the Australian store**, breaking checkout, currency, and analytics.
-
-### Developer Fix:
-In Magento Admin (`Content > Elements > Blocks > main-us-banner`), change the button link to a relative US path:
-```diff
--<a href="https://www.globewest.com.au">Explore Collections</a>
-+<a href="/outdoor">Explore Collections</a>
-```
+### Resolution Verified:
+The button link was updated to stay within the US storefront (`https://mcstaging2.globewest.com/`). Playwright regression tests passed.
 
 ---
 
-## 2. ⚠️ Defect 2: Category Carousel Cards Link to Australian Catalog
+## 2. ⚠️ Defect 2: Category Carousel Cards Link to Australian Catalog — [✅ RESOLVED]
+> **Regression Verification Status: RESOLVED & PASS** (Verified on `mcstaging2.globewest.com`)
+> - All 14 category cards now route to US store URLs (e.g. `https://mcstaging2.globewest.com/outdoor`, `https://mcstaging2.globewest.com/indoor/shop-by-room/living-room`).
+> - Live automated click navigation verified successful browsing without AU redirection.
 
 ![Category Carousel Links Defect Comparison](/home/deepali/.gemini/antigravity-ide/brain/35949052-5130-4815-b7ea-118ef98c2f2b/showing_vs_not_showing/SHOWING_VS_NOT_SHOWING_4_CATEGORY_CAROUSEL_LINKS.png)
 
 ### Defect Details
 - **CMS Identifier:** `home-us-category-carousel`
 - **Component:** Category Navigation Carousel (~481px)
-- **Defect Severity:** ⚠️ **P2 — Major (Navigation Scope Leak)**
+- **Defect Severity:** ⚠️ **P2 — Major (Navigation Scope Leak) -> [NOW RESOLVED]**
 
-### The Defect (Highlighted in Red):
-- On the **US Storefront**, all 14 category cards ("Living Room", "Dining Room", "Bedroom Furniture", "Outdoor Furniture", etc.) link to hardcoded Australian URLs:
-  ```html
-  <a href="https://www.globewest.com.au/indoor/shop-by-room/living-room">Living Room</a>
-  <a href="https://www.globewest.com.au/indoor/shop-by-room/dining-room">Dining Room</a>
-  ```
-- On the **AU Baseline** (Green Box), all cards link to internal category paths.
-
-### Impact:
-- US shoppers attempting to browse categories are redirected to Australia where prices are in AUD and products reflect Australian warehouse inventory.
-
-### Developer Fix:
-In Magento Admin (`Content > Elements > Blocks > home-us-category-carousel`), update all 14 card hrefs to relative paths:
-```diff
--<a href="https://www.globewest.com.au/indoor/shop-by-room/living-room">
-+<a href="/living-room">
-```
+### Resolution Verified:
+All 14 category links were updated to US-relative paths. Regression automation verified 14 cards active with `US routing: true`.
 
 ---
 
