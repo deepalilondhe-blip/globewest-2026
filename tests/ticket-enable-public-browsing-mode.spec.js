@@ -156,9 +156,13 @@ test.describe('Sprint 1 Ticket: Enable Public Browsing Mode QA Verification', ()
 
     // 2. Check Price Box on PDP
     const priceBox = page.locator('.product-info-price, .price-box, [data-role="priceBox"]').first();
-    const priceText = await priceBox.innerText().catch(() => '');
+    const isPriceBoxVisible = await priceBox.isVisible({ timeout: 2000 }).catch(() => false);
+    let priceText = '';
+    if (isPriceBoxVisible) {
+      priceText = await priceBox.innerText({ timeout: 2000 }).catch(() => '');
+    }
     const hasPrice = priceText.includes('$');
-    console.log(`PDP Price Text: "${priceText.trim()}" (Contains '$': ${hasPrice})`);
+    console.log(`PDP Price Box Visible: ${isPriceBoxVisible} | Price Text: "${priceText.trim()}" (Contains '$': ${hasPrice})`);
     expect(hasPrice).toBe(false);
 
     // 3. Check Add to Cart button
@@ -173,7 +177,7 @@ test.describe('Sprint 1 Ticket: Enable Public Browsing Mode QA Verification', ()
     console.log(`Trade Registration/Login Prompt Visible: ${isTradePromptVisible}`);
 
     await annotateElement(productTitle, 'PASS: PRODUCT BROWSING UNRESTRICTED', '#00CC66', 500);
-    if (await priceBox.isVisible().catch(() => false)) {
+    if (isPriceBoxVisible) {
       await annotateElement(priceBox, 'PASS: PRICE CONTAINER MASKED', '#00CC66', 500);
     }
 
