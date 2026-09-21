@@ -1705,9 +1705,9 @@
     {
       "name": "Braintree Payments",
       "origins": [
-        "https://js.braintreegateway.com"
+        "https://r3.dotdigital-pages.com"
       ],
-      "category": "utility"
+      "isUnrecognized": true
     },
     {
       "name": "Other Google APIs/SDKs",
@@ -1767,8 +1767,8 @@
     "nodes": {
       "1-0-A": {
         "id": "",
-        "top": 8478,
-        "bottom": 8495,
+        "top": 8500,
+        "bottom": 8517,
         "left": 297,
         "right": 368,
         "width": 70,
@@ -1776,8 +1776,8 @@
       },
       "1-1-A": {
         "id": "",
-        "top": 8918,
-        "bottom": 8935,
+        "top": 8940,
+        "bottom": 8957,
         "left": 160,
         "right": 238,
         "width": 77,
@@ -1785,8 +1785,8 @@
       },
       "1-2-A": {
         "id": "",
-        "top": 8430,
-        "bottom": 8447,
+        "top": 8453,
+        "bottom": 8470,
         "left": 117,
         "right": 202,
         "width": 84,
@@ -1794,8 +1794,8 @@
       },
       "1-3-DIV": {
         "id": "",
-        "top": 8413,
-        "bottom": 8448,
+        "top": 8436,
+        "bottom": 8470,
         "left": 20,
         "right": 392,
         "width": 372,

@@ -1643,10 +1643,9 @@
       "category": "tag-manager"
     },
     {
-      "name": "Other Google APIs/SDKs",
-      "homepage": "https://developers.google.com/apis-explorer/#p/",
+      "name": "Braintree Payments",
       "origins": [
-        "https://www.google.com"
+        "https://js.braintreegateway.com"
       ],
       "category": "utility"
     },

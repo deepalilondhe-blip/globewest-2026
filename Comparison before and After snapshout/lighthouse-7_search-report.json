@@ -1789,6 +1789,13 @@
       "category": "marketing"
     },
     {
+      "name": "dotdigital-pages.com",
+      "origins": [
+        "https://r3.dotdigital-pages.com"
+      ],
+      "isUnrecognized": true
+    },
+    {
       "name": "New Relic",
       "homepage": "https://newrelic.com/",
       "origins": [
@@ -1834,14 +1841,6 @@
         "https://www.gstatic.com"
       ],
       "category": "cdn"
-    },
-    {
-      "name": "Google Analytics",
-      "homepage": "https://marketingplatform.google.com/about/analytics/",
-      "origins": [
-        "https://www.google-analytics.com"
-      ],
-      "category": "analytics"
     },
     {
       "name": "Google Fonts",

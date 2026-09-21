@@ -1778,13 +1778,6 @@
       "category": "tag-manager"
     },
     {
-      "name": "Braintree Payments",
-      "origins": [
-        "https://js.braintreegateway.com"
-      ],
-      "category": "utility"
-    },
-    {
       "name": "Other Google APIs/SDKs",
       "homepage": "https://developers.google.com/apis-explorer/#p/",
       "origins": [
@@ -1869,8 +1862,8 @@
       },
       "1-4-A": {
         "id": "",
-        "top": 7732,
-        "bottom": 7749,
+        "top": 7754,
+        "bottom": 7771,
         "left": 117,
         "right": 202,
         "width": 84,
@@ -1878,8 +1871,8 @@
       },
       "1-5-DIV": {
         "id": "",
-        "top": 7715,
-        "bottom": 7750,
+        "top": 7737,
+        "bottom": 7772,
         "left": 20,
         "right": 392,
         "width": 372,

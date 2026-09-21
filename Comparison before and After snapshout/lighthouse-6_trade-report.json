@@ -1731,15 +1731,6 @@
       "category": "social"
     },
     {
-      "name": "New Relic",
-      "homepage": "https://newrelic.com/",
-      "origins": [
-        "https://js-agent.newrelic.com",
-        "https://bam.nr-data.net"
-      ],
-      "category": "utility"
-    },
-    {
       "name": "Google Tag Manager",
       "homepage": "https://marketingplatform.google.com/about/tag-manager/",
       "origins": [

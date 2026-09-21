@@ -1,0 +1,135 @@
+====================================================
+ GlobeWest Staging 2 — 18-Step Critical Path
+ Run Commands File
+ Target URL : https://mcstaging2.globewest.com.au/
+ Test File  : tests/staging2-critical-path-nvda.spec.js
+ Last Updated: 29 July 2026
+====================================================
+
+ STEP 1: Open terminal and go to the project folder:
+   cd "C:\GlobeWest 2026"
+
+====================================================
+ RUN COMMANDS — COPY & PASTE INTO TERMINAL
+====================================================
+
+----------------------------------------------------
+ 1. NVDA SCREEN READER — All 18 Steps
+    (Headed + NVDA Speech + Video + Screenshots)
+    ★ USE THIS COMMAND FOR NVDA TESTING ★
+----------------------------------------------------
+npx playwright test tests/staging2-critical-path-nvda.spec.js --project=staging2-nvda-desktop --workers=1
+
+----------------------------------------------------
+ 2. DESKTOP CHROME — All 18 Steps
+    (Headed — watch in browser)
+----------------------------------------------------
+npx playwright test tests/staging2-critical-path-nvda.spec.js --project=desktop-chrome --headed --workers=1
+
+----------------------------------------------------
+ 3. DESKTOP CHROME — All 18 Steps
+    (Headless — background/CI mode)
+----------------------------------------------------
+npx playwright test tests/staging2-critical-path-nvda.spec.js --project=desktop-chrome --workers=1
+
+----------------------------------------------------
+ 4. MOBILE — iPhone 17 Pro — All 18 Steps
+    (Headed — watch in browser)
+----------------------------------------------------
+npx playwright test tests/staging2-critical-path-nvda.spec.js --project=mobile-iphone17pro --headed --workers=1
+
+----------------------------------------------------
+ 5. MOBILE — iPhone 17 Pro — All 18 Steps
+    (Headless — background/CI mode)
+----------------------------------------------------
+npx playwright test tests/staging2-critical-path-nvda.spec.js --project=mobile-iphone17pro --workers=1
+
+----------------------------------------------------
+ 6. BOTH DEVICES — Desktop + iPhone 17 Pro
+    (Headed — watch both run)
+----------------------------------------------------
+npx playwright test tests/staging2-critical-path-nvda.spec.js --project=desktop-chrome --project=mobile-iphone17pro --headed --workers=1
+
+----------------------------------------------------
+ 7. VIEW HTML REPORT (after any run above)
+    Opens interactive report with video + screenshots
+----------------------------------------------------
+npx playwright show-report
+
+====================================================
+ ALL 18 STEPS — What Each Step Tests
+====================================================
+
+  Step  1 | Navigate to the landing page          | PAGE: Homepage
+  Step  2 | Select Indoor from top menu           | PAGE: Indoor PLP
+  Step  3 | Select Black from colour filter       | PAGE: Indoor PLP (filtered)
+  Step  4 | Select the second product             | PAGE: Indoor PLP → PDP
+  Step  5 | View the product details              | PAGE: Product Detail Page (PDP)
+  Step  6 | Navigate product info via keyboard    | PAGE: Product Detail Page (PDP)
+  Step  7 | Add product to cart                   | PAGE: Product Detail Page (PDP)
+  Step  8 | Navigate to the cart                  | PAGE: Shopping Cart
+  Step  9 | Review cart contents                  | PAGE: Shopping Cart
+  Step 10 | Enter name your order + client name   | PAGE: Shopping Cart  ⚑ MANUAL
+  Step 11 | Activate Proceed to Checkout          | PAGE: Shopping Cart → Checkout
+  Step 12 | Review order details                  | PAGE: Checkout — Shipping Address
+  Step 13 | Proceed to next step (Shipping)       | PAGE: Checkout — Shipping Address
+  Step 14 | Review delivery details               | PAGE: Checkout — Delivery Methods
+  Step 15 | Proceed to next step (Reseller)       | PAGE: Checkout — Reseller Selection
+  Step 16 | Review summary details                | PAGE: Checkout — Review & Payment
+  Step 17 | Confirm the order                     | PAGE: Checkout — Review & Payment  ⚑ MANUAL
+  Step 18 | Review order confirmation             | PAGE: Order Confirmation (Success)  ⚑ MANUAL
+
+====================================================
+ ⚑ MANUAL CHECK PAGES — Need Human Tester
+====================================================
+
+  STEP 10 — PAGE: Shopping Cart
+  ─────────────────────────────
+  • Fields: "Name Your Order" + "Client Name"
+  • Why manual: These B2B fields only appear when
+    logged in as a B2B customer account.
+    A guest session does NOT show these fields.
+  • What to check with NVDA:
+    - Tab to "Name Your Order" field
+    - NVDA should say: "Name Your Order, edit"
+    - Type text — NVDA should echo each character
+    - Tab to "Client Name" field
+    - NVDA should say: "Client Name, edit"
+
+  STEP 17 — PAGE: Checkout — Review & Payment
+  ─────────────────────────────────────────────
+  • Button: "Place Order"
+  • Why manual: The Place Order button is DISABLED
+    until a Reseller is pre-assigned in Staging 2
+    database for postcode 3000.
+    Ask developer to configure this first.
+  • What to check with NVDA:
+    - Tab to Terms & Conditions checkbox
+    - NVDA should say: "Terms and conditions, checkbox, not checked"
+    - Press Space to check it
+    - NVDA should say: "checked"
+    - Tab to Place Order button
+    - NVDA should say: "Place Order, button"
+    - Press Space or Enter to activate
+
+  STEP 18 — PAGE: Order Confirmation (Success Page)
+  ──────────────────────────────────────────────────
+  • URL: /checkout/onepage/success/
+  • Why manual: Depends on Step 17 completion.
+  • What to check with NVDA:
+    - NVDA should announce page heading:
+      "Thank you for your purchase"
+    - Order number should be read aloud
+    - "Continue Shopping" link should be reachable
+
+====================================================
+ OUTPUT FILES (after running)
+====================================================
+
+  Screenshots (all 18): C:\GlobeWest 2026\screenshots\staging2\
+  Video recording     : C:\GlobeWest 2026\playwright-report\staging2-audit-*\
+  HTML Report         : run → npx playwright show-report
+  Excel Sheet         : C:\GlobeWest 2026\docs\GlobeWest_Staging2_Remediation.xlsx
+  Text Summary        : C:\GlobeWest 2026\docs\GlobeWest_Staging2_Test_Summary_*.txt
+
+====================================================

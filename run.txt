@@ -1,0 +1,16 @@
+LIVE PROJECT RUN COMMAND:
+
+1. Run Accessibility Scan (Production):
+npm run audit:production
+
+2. Run NVDA Voice Reader Audit (Production):
+npm run test:production-nvda
+
+3. Run Accessibility Scan (Production - iPhone 17 Pro) & Build HTML Dashboard:
+npm run audit:production:mobile
+
+4. Run Accessibility Scan (Production - iPhone 18 Pro):
+npx cross-env BASE_URL=https://www.globewest.com.au playwright test tests/production-accessibility.spec.js --project=mobile-iphone18pro --headed
+
+5. Open the visual dashboard / report after a test finishes:
+npx playwright show-report

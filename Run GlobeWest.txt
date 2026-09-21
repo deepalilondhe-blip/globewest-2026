@@ -4,7 +4,7 @@
 
 This document contains the exact commands to execute the active accessibility, 
 performance, and user journey test suites for the GlobeWest staging storefront
-(https://mcstaging2.globewest.com.au/).
+(https://mcstaging.globewest.com.au/).
 
 --------------------------------------------------------------------------------
 1. SETUP (First Time Only)
@@ -29,6 +29,10 @@ Open your terminal in VS Code inside the "GlobeWest 2026" directory and run:
     npx playwright test tests/staging-nvda.spec.js --project=desktop-chrome
   - Headed (Visual - Plays voice reader aloud):
     npx playwright test tests/staging-nvda.spec.js --project=desktop-chrome --headed
+  - Run My Account Page (Desktop View):
+    npx playwright test tests/staging-nvda.spec.js -g "7. My Account Dashboard" --project=desktop-chrome --headed
+  - Run My Account Page (Mobile View):
+    npx playwright test tests/staging-nvda.spec.js -g "7. My Account Dashboard" --project=mobile-safari-iphone --headed
 
 * Run the Core Functional Journeys (Cart flow, Mega menus, Login):
   - Headless (Background):
@@ -59,6 +63,16 @@ Open your terminal in VS Code inside the "GlobeWest 2026" directory and run:
 
 * Excel Defect Remediation Log:
   - File: ./docs/GlobeWest_Remediation_Log.xlsx
+
+--------------------------------------------------------------------------------
+4. RUNNING THE N8N AUTOMATION PIPELINE
+--------------------------------------------------------------------------------
+To start n8n and launch the scheduled daily QA pipeline, run:
+
+  $env:NODES_EXCLUDE="[]"; npx n8n start
+
+* Access n8n in your browser at: http://localhost:5678
+* Import/pasted workflow from: "C:/GlobeWest 2026/docs/n8n_qa_workflow.json"
 
 ================================================================================
 * Verify the accessibility & performance scores: 

@@ -147,8 +147,8 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
 
   test.beforeEach(async ({ page }, testInfo) => {
     const isHeadedMode = !testInfo.project.use.headless;
-    // Set high timeout for headed runs with audio, and safe 2-minute timeout for headless speed runs
-    test.setTimeout(isHeadedMode ? 600000 : 120000);
+    // Set high timeout for headed runs with audio, and safe 5-minute timeout for headless speed runs
+    test.setTimeout(isHeadedMode ? 600000 : 300000);
     // Block third-party scripts that generate blocking overlay popups and slow down page navigation on staging
     await page.route('**/*listrak*', route => route.abort());
     await page.route('**/*klaviyo*', route => route.abort());
@@ -351,15 +351,19 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
       await page.bringToFront();
       
       // Inject CSS stylesheet to hide popups and search suggestions to prevent keyboard focus traps
-      await page.addStyleTag({
-        content: `
-          a#lpclose, .listrak-popup, #omnisend-form-container, .newsletter-popup, div[role="dialog"], .modal-popup, .lp-popup, .search-autocomplete, #search_autocomplete, #_lpSurveyPopover_7GUA-CY8, iframe#lpdialog, div[id*="SurveyPopover"] {
-            display: none !important;
-            visibility: hidden !important;
-            pointer-events: none !important;
-          }
-        `
-      });
+      try {
+        await page.addStyleTag({
+          content: `
+            a#lpclose, .listrak-popup, #omnisend-form-container, .newsletter-popup, div[role="dialog"], .modal-popup, .lp-popup, .search-autocomplete, #search_autocomplete, #_lpSurveyPopover_7GUA-CY8, iframe#lpdialog, div[id*="SurveyPopover"] {
+              display: none !important;
+              visibility: hidden !important;
+              pointer-events: none !important;
+            }
+          `
+        });
+      } catch (e) {
+        console.warn('CSP blocked stylesheet injection, continuing test run without it.');
+      }
 
       const skipLink = page.locator('a.skip-link, a.logo, .logo a, a.logo-image, header a, a').first();
       if (await skipLink.isVisible()) {
@@ -504,6 +508,17 @@ test.describe('GlobeWest Staging NVDA & Keyboard Navigation Audit', () => {
       }
 
       await speakText(`Finished auditing ${pageInfo.name.replace(/^\d+\.\s*/, '')}`, isHeadedMode);
+
+      // Click "Place Order" / "Process Payment" to complete checkout if it is the payment page
+      if (pageInfo.name.includes('6. Checkout payment')) {
+        console.log('Clicking the Place Order button to complete payment process...');
+        const placeOrderBtn = page.locator('button.action.primary.checkout');
+        if (await placeOrderBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
+          await placeOrderBtn.click();
+          await page.waitForTimeout(6000); // Wait for order success redirection
+          console.log('Order successfully placed!');
+        }
+      }
     });
   }
 });

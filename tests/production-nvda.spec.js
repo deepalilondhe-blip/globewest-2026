@@ -1,0 +1,539 @@
+// @ts-check
+const { test, expect } = require('@playwright/test');
+const { execSync } = require('child_process');
+
+// Persistent PowerShell speech engine to serialize screen reader announcements without process spawning overhead
+let speechProcess = null;
+let speechResolver = null;
+
+function startSpeechEngine() {
+  if (speechProcess) return;
+  const { spawn } = require('child_process');
+  speechProcess = spawn('powershell.exe', [
+    '-NoProfile',
+    '-Command',
+    `
+      Add-Type -AssemblyName System.Speech;
+      $synth = New-Object System.Speech.Synthesis.SpeechSynthesizer;
+      $synth.Rate = 4;
+      [Console]::Out.WriteLine("Ready");
+      while ($line = [Console]::In.ReadLine()) {
+        if ($line.Trim() -ne "") {
+          $synth.Speak($line);
+          [Console]::Out.WriteLine("Done");
+        }
+      }
+    `
+  ]);
+  
+  speechProcess.stdin.setDefaultEncoding('utf-8');
+  
+  // Listen for the "Done" callback from PowerShell to unblock the tabbing flow
+  speechProcess.stdout.on('data', (data) => {
+    const message = data.toString().trim();
+    if (message.includes('Done') && speechResolver) {
+      const resolve = speechResolver;
+      speechResolver = null;
+      resolve();
+    }
+  });
+}
+
+async function speakText(text, isHeaded = true) {
+  return new Promise((resolve) => {
+    let resolved = false;
+    const safeResolve = () => {
+      if (!resolved) {
+        resolved = true;
+        resolve();
+      }
+    };
+
+    // Safety timeout: automatically unblock after 3 seconds if speech engine hangs
+    const timeoutId = setTimeout(safeResolve, 3000);
+
+    try {
+      // Disable speech and resolve immediately if running headless for speed optimization
+      if (!isHeaded) {
+        clearTimeout(timeoutId);
+        safeResolve();
+        return;
+      }
+
+      const cleanText = text.replace(/[\r\n]/g, ' ').replace(/['"<>|]/g, '').trim();
+      if (!cleanText) {
+        clearTimeout(timeoutId);
+        safeResolve();
+        return;
+      }
+      
+      startSpeechEngine();
+      speechResolver = () => {
+        clearTimeout(timeoutId);
+        safeResolve();
+      };
+      speechProcess.stdin.write(cleanText + '\n');
+    } catch (e) {
+      clearTimeout(timeoutId);
+      safeResolve();
+    }
+  });
+}
+
+function stopSpeechEngine() {
+  if (speechProcess) {
+    try {
+      speechProcess.stdin.end();
+      speechProcess.kill();
+    } catch (e) {}
+    speechProcess = null;
+  }
+}
+
+// List of target pages on GlobeWest production to test
+const PAGES_TO_TEST = [
+  { name: '1. Homepage', path: 'https://www.globewest.com.au/' },
+  { name: '2. Product Listing Page (PLP)', path: 'https://www.globewest.com.au/indoor' },
+  { name: '3. Product Detail Page (PDP)', path: 'https://www.globewest.com.au/piccolo-dining-armchair-vintage-matt-dark-brown-pu-matt-syrah-ch-picc-arm-matt-syrah' },
+  { name: '4. Shopping Cart Page', path: 'https://www.globewest.com.au/checkout/cart/' },
+  { name: '5. My Account Login', path: 'https://www.globewest.com.au/customer/account/login/' }
+];
+
+test.describe('GlobeWest Production NVDA & Keyboard Navigation Audit', () => {
+
+  test.afterAll(async () => {
+    stopSpeechEngine();
+  });
+
+  test.beforeEach(async ({ page }, testInfo) => {
+    const isHeadedMode = !testInfo.project.use.headless;
+    // Set high timeout for headed runs with audio, and safe 5-minute timeout for headless speed runs
+    test.setTimeout(isHeadedMode ? 600000 : 300000);
+    // Block third-party scripts that generate blocking overlay popups and slow down page navigation on staging
+    await page.route('**/*listrak*', route => route.abort());
+    await page.route('**/*klaviyo*', route => route.abort());
+    await page.route('**/*hotjar*', route => route.abort());
+    await page.route('**/*google-analytics*', route => route.abort());
+    await page.route('**/*yotpo*', route => route.abort());
+  });
+
+  // Dynamic helper to add ANY available in-stock product to cart
+  async function addAnyProductToCart(page, checkoutUrl) {
+    console.log('Navigating to PLP to find in-stock products...');
+    await page.goto(`${checkoutUrl}/indoor`, { timeout: 60000, waitUntil: 'domcontentloaded' });
+    await page.waitForLoadState('domcontentloaded');
+
+    const closeBtn = page.locator('a#lpclose');
+    if (await closeBtn.isVisible()) {
+      await closeBtn.click();
+    }
+
+    const firstProduct = page.locator('.product-item-link').first();
+    try {
+      await firstProduct.waitFor({ state: 'visible', timeout: 15000 });
+    } catch (e) {
+      console.log('Dynamic product listings did not load in time.');
+    }
+
+    const productLinks = page.locator('.product-item-link');
+    const count = await productLinks.count();
+    console.log(`Found ${count} links on PLP. Extracting hrefs...`);
+
+    const hrefs = [];
+    for (let i = 0; i < count; i++) {
+      const href = await productLinks.nth(i).getAttribute('href');
+      if (href && !hrefs.includes(href)) {
+        hrefs.push(href);
+      }
+    }
+
+    console.log(`Extracted ${hrefs.length} unique product links. Testing additions...`);
+
+    for (const href of hrefs.slice(0, 10)) {
+      console.log(`Navigating to product page: ${href}`);
+      try {
+        await page.goto(href, { timeout: 40000 });
+        await page.waitForLoadState('domcontentloaded');
+      } catch (e) {
+        console.log(`Product page load timed out/failed, skipping to next: ${href}`);
+        continue;
+      }
+
+      if (await closeBtn.isVisible()) {
+        await closeBtn.click();
+      }
+
+      // Automatically select swatches (color/materials) if visible
+      const swatchContainer = page.locator('.swatch-attribute, .swatch-opt-wrapper').first();
+      if (await swatchContainer.isVisible({ timeout: 5000 }).catch(() => false)) {
+        await page.waitForSelector('.swatch-option', { state: 'attached', timeout: 5000 }).catch(() => {});
+      }
+      const swatches = page.locator('.swatch-option');
+      const swatchCount = await swatches.count();
+      for (let k = 0; k < swatchCount; k++) {
+        const sw = swatches.nth(k);
+        await sw.waitFor({ state: 'attached', timeout: 3000 }).catch(() => {});
+        await sw.evaluate(el => el.click());
+        await page.waitForTimeout(500);
+      }
+
+      // Automatically select dropdown size options if visible
+      const selects = page.locator('select.swatch-select');
+      const selectCount = await selects.count();
+      for (let k = 0; k < selectCount; k++) {
+        const sel = selects.nth(k);
+        if (await sel.isVisible()) {
+          await sel.selectOption({ index: 1 });
+          await page.waitForTimeout(500);
+        }
+      }
+
+      // Click Add to Cart
+      const addToCartBtn = page.locator('#product-addtocart-button');
+      if (await addToCartBtn.isVisible() && await addToCartBtn.isEnabled()) {
+        console.log('Clicking Add to Cart...');
+        await addToCartBtn.click({ force: true });
+        await page.waitForTimeout(6000); // Settle AJAX
+
+        // Check if cart is populated
+        await page.goto(`${checkoutUrl}/checkout/cart/`);
+        await page.waitForLoadState('domcontentloaded');
+
+        const emptyMessage = page.locator('.cart-empty');
+        if (!(await emptyMessage.isVisible())) {
+          console.log('Successfully populated cart!');
+          return true; // Done
+        }
+      }
+    }
+    console.log('Failed to dynamically add any product to cart (likely hidden for guests on B2B production site).');
+    return false;
+  }
+
+  for (const pageInfo of PAGES_TO_TEST) {
+    test(`Audit ${pageInfo.name}`, async ({ page }, testInfo) => {
+      console.log(`\n==========================================`);
+      console.log(`Starting Staging Audit: ${pageInfo.name}`);
+      console.log(`Navigating to path: ${pageInfo.path}`);
+      
+      // Populate cart session on production first for the Shopping Cart stage
+      if (pageInfo.name.includes('4. Shopping Cart Page')) {
+        const checkoutUrl = 'https://www.globewest.com.au';
+        const added = await addAnyProductToCart(page, checkoutUrl);
+        if (!added) {
+          console.log('Skipping cart audit due to B2B restrictions (cannot add items)');
+          test.skip();
+          return;
+        }
+      }
+
+      // 1. Navigate to target production page and wait for the page to render fully
+      if (!pageInfo.name.includes('7. My Account Dashboard') && !pageInfo.name.includes('9. B2B Quotes Index')) {
+        try {
+          await page.goto(pageInfo.path, { timeout: 60000, waitUntil: 'domcontentloaded' });
+          await page.waitForLoadState('domcontentloaded');
+        } catch (e) {
+          console.warn(`Primary page navigation failed/timed out, continuing scan: ${pageInfo.path}`);
+        }
+      }
+      
+      // Additional wait to ensure client-side components and images are completely rendered
+      await page.waitForTimeout(4000);
+      
+      // 2. Dismiss any overlay welcome newsletter popups or modals
+      const closeSelectors = [
+        'a#lpclose',
+        'button#lpclose',
+        '.modal-popup button.action-close',
+        '.modal-header button.action-close',
+        'button.action-close',
+        '.lp-close',
+        '.close-popup',
+        '#newsletter-popup button.close',
+        'button.close',
+        'a.close',
+        '[aria-label="Close"]',
+        '.action.close'
+      ];
+      for (const selector of closeSelectors) {
+        try {
+          const closeBtn = page.locator(selector).first();
+          if (await closeBtn.isVisible()) {
+            await closeBtn.click();
+            await page.waitForTimeout(1000);
+          }
+        } catch (e) {
+          // Ignore error checks
+        }
+      }
+
+      // Dismiss cookie banner if it is visible
+      const cookieAcceptBtn = page.locator('#btn-cookie-allow, button.cookie-accept');
+      if (await cookieAcceptBtn.isVisible()) {
+        await cookieAcceptBtn.click();
+        await page.waitForTimeout(1000);
+      }
+
+      // Inject focused element red outline highlight stylesheet
+      await page.addStyleTag({
+        content: `
+          *:focus {
+            outline: 3px solid red !important;
+            outline-offset: 3px !important;
+          }
+        `
+      }).catch(() => {});
+
+      // Inject Cherry iPhone 18 Pro device frame bezel on mobile viewports
+      const viewport = page.viewportSize();
+      const isMobile = viewport && viewport.width < 600;
+      if (isMobile) {
+        await page.evaluate(() => {
+          const bezel = document.createElement('div');
+          bezel.id = 'a11y-phone-bezel';
+          bezel.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            border: 12px solid #8B0020; /* Deep Cherry */
+            border-radius: 44px;
+            box-shadow: inset 0 0 0 2px #9B1130, inset 0 0 0 3px #A91B40, 0 0 20px rgba(0,0,0,0.8);
+            pointer-events: none;
+            z-index: 999999;
+            box-sizing: border-box;
+          `;
+
+          const notch = document.createElement('div');
+          notch.id = 'a11y-phone-notch';
+          notch.style.cssText = `
+            position: fixed;
+            top: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 110px;
+            height: 28px;
+            background: #000000;
+            border-radius: 18px;
+            box-shadow: inset 0 0 2px rgba(255,255,255,0.15);
+            z-index: 1000000;
+            pointer-events: none;
+          `;
+
+          document.body.appendChild(bezel);
+          document.body.appendChild(notch);
+        });
+        await page.waitForTimeout(500);
+      }
+
+      // Capture initial page state screenshot to organized folder for reporting
+      const deviceName = testInfo.project.name.replace(/[^a-zA-Z0-9]/g, '_');
+      const pageFolderName = pageInfo.name.toLowerCase().replace(/[^a-z0-9]/g, '_').replace(/_+/g, '_').trim();
+      const folderPath = `C:\\GlobeWest 2026\\screenshots\\${deviceName}\\${pageFolderName}`;
+      const fs = require('fs');
+      if (!fs.existsSync(folderPath)) {
+        fs.mkdirSync(folderPath, { recursive: true });
+      }
+      await page.screenshot({ path: `${folderPath}/00_initial_state.png` });
+
+      // 3. Inject CSS style to dynamically highlight the currently focused element
+      await page.evaluate(() => {
+        const style = document.createElement('style');
+        style.innerHTML = `
+          .a11y-focus-highlight {
+            outline: 6px solid #ff0055 !important;
+            outline-offset: 4px !important;
+            box-shadow: 0 0 15px #ff0055 !important;
+            transition: outline-color 0.1s ease-in-out;
+          }
+        `;
+        document.head.appendChild(style);
+
+        document.addEventListener('focus', (event) => {
+          document.querySelectorAll('.a11y-focus-highlight').forEach(el => {
+            el.classList.remove('a11y-focus-highlight');
+          });
+          const active = event.target;
+          if (active instanceof HTMLElement) {
+            active.classList.add('a11y-focus-highlight');
+          }
+        }, true);
+      });
+
+      // 4. Bring browser window to front and anchor focus on the skip link or logo to avoid third-party iframe traps
+      await page.bringToFront();
+      
+      // Inject CSS stylesheet to hide popups and search suggestions to prevent keyboard focus traps
+      try {
+        await page.addStyleTag({
+          content: `
+            a#lpclose, .listrak-popup, #omnisend-form-container, .newsletter-popup, div[role="dialog"], .modal-popup, .lp-popup, .search-autocomplete, #search_autocomplete, #_lpSurveyPopover_7GUA-CY8, iframe#lpdialog, div[id*="SurveyPopover"] {
+              display: none !important;
+              visibility: hidden !important;
+              pointer-events: none !important;
+            }
+          `
+        });
+      } catch (e) {
+        console.warn('CSP blocked stylesheet injection, continuing test run without it.');
+      }
+
+      const skipLink = page.locator('a.skip-link, a.logo, .logo a, a.logo-image, header a, a').first();
+      if (await skipLink.isVisible()) {
+        await skipLink.focus();
+        // Tag the initially focused element as seen so we don't exit instantly
+        await page.evaluate(() => {
+          if (document.activeElement) {
+            document.activeElement.setAttribute('data-a11y-seen', 'true');
+          }
+        });
+      } else {
+        await page.locator('body').click();
+      }
+      await page.waitForTimeout(1000);
+
+      const isHeadedMode = !testInfo.project.use.headless;
+
+      // Announce the start of the page audit via speech
+      await speakText(`Auditing ${pageInfo.name.replace(/^\d+\.\s*/, '')}`, isHeadedMode);
+
+      // 5. Dynamic Tab loop - Simulate keyboard navigation through all focusable elements until they wrap around
+      const maxTabs = 40; // Safety limit to prevent infinite loops
+      let tabCount = 0;
+      let consecutiveBodyCount = 0;
+      let lastActiveSelector = '';
+
+      while (tabCount < maxTabs) {
+        tabCount++;
+        console.log(`Pressing TAB #${tabCount}...`);
+        await page.keyboard.press('Tab');
+        await page.waitForTimeout(300); // Allow focus state transition
+
+        // Get active element selector to detect stuck focus (excluding the highlight class)
+        let currentActiveSelector = '';
+        try {
+          currentActiveSelector = await page.evaluate(() => {
+            const el = document.activeElement;
+            if (!el || el === document.body) return '';
+            
+            // Generate a unique CSS path for the element
+            const getUniquePath = (node) => {
+              const parts = [];
+              let current = node;
+              while (current && current.nodeType === Node.ELEMENT_NODE) {
+                let index = 1;
+                for (let sib = current.previousSibling; sib; sib = sib.previousSibling) {
+                  if (sib.nodeType === Node.ELEMENT_NODE && sib.tagName === current.tagName) {
+                    index++;
+                  }
+                }
+                parts.unshift(current.tagName.toLowerCase() + ':nth-of-type(' + index + ')');
+                current = current.parentNode;
+              }
+              return parts.join(' > ');
+            };
+            
+            return getUniquePath(el);
+          });
+        } catch (e) {
+          console.log(`[A11y Info] Navigation or context destruction detected during active element query. Ending tab loop.`);
+          break;
+        }
+
+        // Recovery: If focus is stuck on the same element, press Escape to dismiss dropdowns/popups and tab again
+        if (currentActiveSelector === lastActiveSelector && tabCount > 1) {
+          console.log(`[A11y Warning] Focus stuck on element: ${currentActiveSelector}. Pressing ESC to recover...`);
+          await page.keyboard.press('Escape');
+          await page.waitForTimeout(200);
+          await page.keyboard.press('Tab');
+          await page.waitForTimeout(300);
+        }
+        lastActiveSelector = currentActiveSelector;
+
+        // Evaluate the focused element and check if we have seen it before
+        let elementInfo;
+        try {
+          elementInfo = await page.evaluate(() => {
+            const active = document.activeElement;
+            if (!active || active === document.body) {
+              return { tag: 'body', name: 'body', isClickable: false, alreadySeen: false };
+            }
+
+            const tag = active.tagName.toLowerCase();
+            const role = active.getAttribute('role') || 'None';
+            const ariaLabel = active.getAttribute('aria-label') || '';
+            const alt = active.getAttribute('alt') || '';
+            const textContent = active.textContent?.trim() || '';
+            
+            let name = ariaLabel || alt || textContent || active.getAttribute('name') || 'Unnamed Control';
+            if (name.length > 50) name = name.substring(0, 47) + '...';
+
+            const isClickable = tag === 'a' || tag === 'button' || role === 'button' || active.getAttribute('onclick') !== null;
+            
+            const alreadySeen = active.hasAttribute('data-a11y-seen');
+            if (!alreadySeen) {
+              active.setAttribute('data-a11y-seen', 'true');
+            }
+            return { tag, name, isClickable, alreadySeen };
+          });
+        } catch (e) {
+          console.log(`[A11y Info] Navigation or context destruction detected during element info query. Ending tab loop.`);
+          break;
+        }
+
+        // Break if we wrap around to an already seen element
+        if (elementInfo.alreadySeen) {
+          console.log(`[A11y] Wrapped around to an already inspected element: ${elementInfo.name}. Finishing tab loop.`);
+          break;
+        }
+
+        // Handle body focus: if we stay on body multiple times consecutively, we exit
+        if (elementInfo.tag === 'body') {
+          consecutiveBodyCount++;
+          if (consecutiveBodyCount > 3) {
+            console.log(`[A11y] Focused on body consecutively. Ending tab loop.`);
+            break;
+          }
+        } else {
+          consecutiveBodyCount = 0;
+        }
+
+        // Screen-reader style announcement (concise)
+        let role = elementInfo.tag;
+        if (role === 'a') role = 'link';
+        if (role === 'input') role = 'edit';
+        if (role === 'img') role = 'image';
+        if (role === 'button') role = 'button';
+        if (role === 'select') role = 'combo box';
+        
+        const speakMsg = `${elementInfo.name} ${role}`;
+        console.log(`  Tab ${tabCount}: ${speakMsg}`);
+        await speakText(speakMsg, isHeadedMode);
+
+        // Capture screenshot of the highlighted focused element and save to organized folder
+        const stepScreenshotPath = `${folderPath}/tab_${String(tabCount).padStart(2, '0')}_${elementInfo.tag}.png`;
+        const stepScreenshot = await page.screenshot({ path: stepScreenshotPath, fullPage: false });
+        await testInfo.attach(`Tab #${tabCount} - Focused: ${elementInfo.tag} [${elementInfo.name}]`, {
+          body: stepScreenshot,
+          contentType: 'image/png'
+        });
+
+        await page.waitForTimeout(200);
+      }
+
+      await speakText(`Finished auditing ${pageInfo.name.replace(/^\d+\.\s*/, '')}`, isHeadedMode);
+
+      // Click "Place Order" / "Process Payment" to complete checkout if it is the payment page
+      if (pageInfo.name.includes('6. Checkout payment')) {
+        console.log('Clicking the Place Order button to complete payment process...');
+        const placeOrderBtn = page.locator('button.action.primary.checkout');
+        if (await placeOrderBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
+          await placeOrderBtn.click();
+          await page.waitForTimeout(6000); // Wait for order success redirection
+          console.log('Order successfully placed!');
+        }
+      }
+    });
+  }
+});

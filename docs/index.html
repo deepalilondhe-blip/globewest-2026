@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobeWest QA Audits Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0b0f19;
+            --bg-panel: #111827;
+            --bg-card: #1f2937;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --primary: #3b82f6;
+            --border: #374151;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: var(--bg-panel);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 15px;
+        }
+
+        .links-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .dashboard-link {
+            display: block;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.2s ease;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dashboard-link::after {
+            content: '→';
+            position: absolute;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: var(--primary);
+            opacity: 0;
+            transition: all 0.2s ease;
+        }
+
+        .dashboard-link:hover {
+            border-color: var(--primary);
+            background-color: rgba(59, 130, 246, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .dashboard-link:hover::after {
+            opacity: 1;
+            right: 20px;
+        }
+
+        .link-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .link-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        
+        .badge-prod {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .badge-stage {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GlobeWest QA Audits</h1>
+        <p>Select a dashboard to view the latest accessibility audit results.</p>
+        
+        <div class="links-grid">
+            <a href="production_dashboard.html" class="dashboard-link">
+                <span class="badge-prod">LIVE SITE (WWW)</span>
+                <div class="link-title">Production Dashboard</div>
+                <div class="link-desc">Latest desktop audit results for the live production site.</div>
+            </a>
+            
+            <a href="staging_dashboard.html" class="dashboard-link">
+                <span class="badge-stage">STAGING (MCSTAGING2)</span>
+                <div class="link-title">Staging Dashboard</div>
+                <div class="link-desc">Latest audit results for the mcstaging2 environment.</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

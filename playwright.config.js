@@ -5,15 +5,16 @@ const { defineConfig, devices } = require('@playwright/test');
  * Playwright Configuration for GlobeWest 2026 Accessibility & Journey Automation
  * @see https://playwright.dev/docs/test-configuration
  */
-// Dynamically set output folder based on the running test spec to prevent reports being overwritten
+// Dynamically set output folder based on the running test spec with timestamps to prevent reports being deleted/overwritten
 const argvStr = process.argv.join(' ');
-let reportFolder = 'playwright-report/general';
+const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19); // Format: YYYY-MM-DDTHH-MM-SS
+let reportFolder = `playwright-report/general-${timestamp}`;
 if (argvStr.includes('accessibility.spec.js')) {
-  reportFolder = 'playwright-report/accessibility';
+  reportFolder = `playwright-report/accessibility-${timestamp}`;
 } else if (argvStr.includes('journeys.spec.js')) {
-  reportFolder = 'playwright-report/journeys';
+  reportFolder = `playwright-report/journeys-${timestamp}`;
 } else if (argvStr.includes('lighthouse.spec.js')) {
-  reportFolder = 'playwright-report/lighthouse';
+  reportFolder = `playwright-report/lighthouse-${timestamp}`;
 } else if (argvStr.includes('staging-nvda.spec.js')) {
   reportFolder = 'playwright-report/nvda';
 } else if (argvStr.includes('plp')) {
@@ -38,6 +39,8 @@ module.exports = defineConfig({
     screenshot: 'on',
     video: 'retain-on-failure',
     ignoreHTTPSErrors: true,
+    actionTimeout: 30000,
+    navigationTimeout: 60000,
   },
 
   projects: [
@@ -52,6 +55,25 @@ module.exports = defineConfig({
         }
       },
     },
+    // ── Staging 2 NVDA Desktop (Headed — video + speech + screenshot per step) ──
+    {
+      name: 'staging2-nvda-desktop',
+      use: {
+        ...devices['Desktop Chrome'],
+        channel: 'chrome',
+        headless: false,        // Headed = NVDA can see the screen
+        screenshot: 'on',
+        video: 'on',
+        trace: 'on',
+        viewport: { width: 1280, height: 900 },
+        launchOptions: {
+          args: [
+            '--force-renderer-accessibility',
+            '--start-maximized'
+          ]
+        }
+      },
+    },
     {
       name: 'desktop-safari',
       use: { ...devices['Desktop Safari'] },
@@ -61,12 +83,48 @@ module.exports = defineConfig({
     {
       name: 'mobile-safari-iphone',
       use: { 
-        ...devices['iPhone 14 Pro Max'],
+        ...devices['Pixel 5'],
+        userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1',
+        viewport: { width: 430, height: 932 },
+        deviceScaleFactor: 3,
+        hasTouch: true,
+        isMobile: true,
         launchOptions: {
           args: ['--window-size=430,932']
         }
       },
-      testMatch: /.*accessibility.spec.js/,
+      testMatch: /.*(accessibility|staging-nvda)\.spec\.js/,
+    },
+    {
+      name: 'mobile-iphone17pro',
+      use: {
+        // iPhone 17 Pro viewport: 393x852, device pixel ratio 3
+        // Base on Pixel 5 to run stably on Chromium under Windows
+        ...devices['Pixel 5'],
+        userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1',
+        viewport: { width: 393, height: 852 },
+        deviceScaleFactor: 3,
+        hasTouch: true,
+        isMobile: true,
+        launchOptions: {
+          args: ['--window-size=393,852']
+        }
+      },
+    },
+    {
+      name: 'mobile-iphone18pro',
+      use: {
+        // iPhone 18 Pro (Hypothetical) viewport assumption: 400x874, device pixel ratio 3
+        ...devices['Pixel 5'],
+        userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 19_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/19.0 Mobile/15E148 Safari/604.1',
+        viewport: { width: 400, height: 874 },
+        deviceScaleFactor: 3,
+        hasTouch: true,
+        isMobile: true,
+        launchOptions: {
+          args: ['--window-size=420,950']
+        }
+      },
     },
     {
       name: 'mobile-chrome-android',
@@ -77,7 +135,7 @@ module.exports = defineConfig({
           args: ['--window-size=393,851']
         }
       },
-      testMatch: /.*accessibility.spec.js/,
+      testMatch: /.*(accessibility|staging-nvda)\.spec\.js/,
     },
 
     /* 📋 Tablet Emulation */
