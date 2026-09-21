@@ -1,0 +1,32 @@
+{
+  "trigger": {
+    "x": 40,
+    "y": 5.5,
+    "width": 91.6875,
+    "height": 24
+  },
+  "popover": {
+    "x": 40,
+    "y": 35.5,
+    "width": 120,
+    "height": 91
+  },
+  "tradePrice": {
+    "x": 985,
+    "y": 723,
+    "width": 110.578125,
+    "height": 36
+  },
+  "msrpPrice": {
+    "x": 1023.578125,
+    "y": 771,
+    "width": 58.609375,
+    "height": 19
+  },
+  "priceContainer": {
+    "x": 985,
+    "y": 465,
+    "width": 400,
+    "height": 28
+  }
+}

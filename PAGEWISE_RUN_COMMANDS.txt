@@ -139,6 +139,34 @@ npx playwright test "GlobeWest 2026/tests/demo-trade-pricing-toggle.spec.js" --p
 # C. View Trade Pricing Verification Poster:
 xdg-open "TRADE_PRICING_TOGGLE_AUDIT_REPORT.png"
 
+--------------------------------------------------------------------------------
+12. SPRINT 1: ENABLE PUBLIC BROWSING MODE (Dual-Auth Matrix & SearchSpring)
+--------------------------------------------------------------------------------
+# A. Run Public Browsing Mode Verification Suite (Headless):
+npx playwright test "GlobeWest 2026/tests/ticket-enable-public-browsing-mode.spec.js" --project=desktop-chrome
+
+# B. Run Public Browsing Mode Verification Suite (Headed):
+npx playwright test "GlobeWest 2026/tests/ticket-enable-public-browsing-mode.spec.js" --project=desktop-chrome --headed
+
+# C. View Master Visual Audit Poster:
+xdg-open "Ticket - Enable Public Browsing Mode/evidence/MASTER_PUBLIC_BROWSING_AUDIT_POSTER.png"
+
+# D. View Full Senior QA Audit Report:
+xdg-open "Ticket - Enable Public Browsing Mode/TICKET_ENABLE_PUBLIC_BROWSING_QA_REPORT.md"
+
+--------------------------------------------------------------------------------
+13. PDP / PRODUCT DETAIL PAGE (P-GLW-007 / Developer: Vinod Vankar)
+--------------------------------------------------------------------------------
+# A. Full PDP Figma Fidelity & Functional Verification (Headed Chrome):
+npx playwright test "GlobeWest 2026/tests/ticket-pdp-page.spec.js" --project=desktop-chrome --headed
+
+# B. PDP Verification (Headless Mode):
+npx playwright test "GlobeWest 2026/tests/ticket-pdp-page.spec.js" --project=desktop-chrome
+
+# C. Regenerate PDP Side-by-Side Red/Green Comparison Images:
+python3 "PDP Page/scripts/generate_pdp_comparison.py"
+
+# D. Open PDP Defect Gallery in Browser:
+xdg-open "PDP Page/VIEW_DEFECT_IMAGES.html"
 
 ================================================================================
-

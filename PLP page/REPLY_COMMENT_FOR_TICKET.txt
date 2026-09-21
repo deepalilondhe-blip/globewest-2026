@@ -1,0 +1,27 @@
+Hi Michelle,
+
+Thank you very much for the detailed feedback and for highlighting these design aspects. We truly appreciate your attention to detail.
+
+We reviewed all points against the approved Figma designs and US Staging. Please find the updates below:
+
+1. Compare Checkbox
+• Spacing & Background: The approved Figma uses a seamless white (#FFFFFF) background without a visible container boundary or inset gap. The grey background of the temporary “GW Coming Soon” placeholder cards on Staging created the appearance of an edge. With actual product imagery, the alignment matches Figma.
+• Typography: We also verified that the “Compare” text uses regular font weight (400), consistent with Figma.
+• AU Website Comparison: On top of this, as an added precaution, we reviewed the live AU website where we noticed margin and padding on the product cards on PLP. Could you kindly confirm if you would like us to make it the same as the AU website, or keep it as per Figma?
+
+2. New Tag & Badges
+• Placement: We acknowledge this was missed during our earlier retesting. @VinodV has now corrected the placement, with [New] and [Customisable] badges positioned below the image and above the product title, as per Figma.
+• Styling: The badges have also been updated to the required rounded pill styling.
+
+3. Pricing & Stock
+For B2B, pricing and stock visibility is controlled by customer login/authorization:
+• Guests: Pricing and stock remain hidden.
+• Authorized Trade Customers: Wholesale Price, MSRP, and stock/ETA are displayed as designed.
+
+Reference screenshots are attached and also available in the Overdose Account Drive:
+[Overdose Drive Folder](https://drive.google.com/drive/folders/1WNtZJ4x6yGN5Ym6Ft8cBQeUcDCnYkXdg)
+
+Thank you again for your valuable guidance. We’ll ensure we are more thorough with visual checks against Figma going forward.
+
+Warm regards,  
+Deepali Londhe

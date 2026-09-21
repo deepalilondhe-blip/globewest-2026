@@ -14,3 +14,5 @@ Thumbs.db
 test-results/
 playwright-report/
 .figma-chrome-profile/
+__pycache__/
+*.pyc

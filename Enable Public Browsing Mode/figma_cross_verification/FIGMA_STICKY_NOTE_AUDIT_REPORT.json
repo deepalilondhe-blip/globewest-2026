@@ -1,0 +1,38 @@
+{
+  "loggedOutDesktop": {
+    "plp": {
+      "hasBecomeTrade": true,
+      "hasBookShowroom": true,
+      "pricesFoundOnPLP": 0
+    },
+    "pdp": {
+      "hasBecomeTrade": true,
+      "hasBookShowroom": true,
+      "pricesInMainCount": 0,
+      "addToCartPresent": false
+    }
+  },
+  "loggedOutMobile": {
+    "utilityBarExists": true,
+    "isUtilityVisible": true
+  },
+  "loggedInTradeDesktop": {
+    "becomeTradeRemoved": false,
+    "toggleFound": false,
+    "toggleText": "",
+    "priceText": "Be the first to review this product",
+    "hasTradeAndMSRP": false,
+    "addToCartVisible": true,
+    "qtyVisible": true
+  },
+  "loggedInMSRPDesktop": {
+    "htmlClass": "price-view-trade",
+    "priceText": "Be the first to review this product"
+  },
+  "loggedInMobile": {},
+  "checkoutAndAccount": {},
+  "stockAndDates": {
+    "stockText": "",
+    "etaText": "ETA 14/09/26\nPRODUCT QUANTITY\nADD TO CART\n "
+  }
+}

@@ -1,129 +1,132 @@
-# QA Defect Audit Report: Cart Page & Purchasing Flow (Match AU)
+# QA Verification & Defect Audit Report: Cart Page & Purchasing Flow
 
 | Document Metadata | Details |
 |---|---|
-| **Ticket Reference** | Cart Page - Parity & Scope Verification (Match AU) |
-| **Target Storefront (Tested)** | `https://mcstaging2.globewest.com` (US Storefront - RED) |
-| **Baseline Storefront (Reference)** | `https://mcstaging2.globewest.com.au` (AU Storefront - GREEN) |
-| **Execution Mode** | Headed Chromium with Live Element Highlighting & DOM Audit |
-| **Audit Focus** | **Cart Page (/checkout/cart/), Mini-Cart Drawer, Purchasing Action, Scope Leakage** |
-| **Total Defects Identified** | **4 Validated Defects** (1 Critical Purchasing Blocker, 1 Scope Leakage, 2 Parity Gaps) |
+| **Ticket Reference** | P-GLW-007 Globewest US Expansion Project / Front End Development: **Cart** (Match AU) |
+| **Tested Target Storefront** | `https://mcstaging2.globewest.com` (US Storefront) |
+| **Baseline Reference Storefront** | `https://mcstaging2.globewest.com.au` (AU Storefront) |
+| **Execution Standard** | **Headed Chrome Mode** (`--project=desktop-chrome --headed`) on `DISPLAY=:0` |
+| **Visual Highlighting Standard**| 🟢 **Simple Solid Green**: Verified Working Functionality / AU Parity<br>🔴 **Red Outline & Badge**: Confirmed Live Defects on US Staging |
+| **Authentication Matrix** | 1. **Public Browsing (Guest)**: Wholesale prices masked, cart CTA suppressed.<br>2. **Authenticated Trade Customer** (`deepali.londhe@overdose.digital`): Full purchasing & cart flow. |
+| **Audit Status** | **4 Features Verified Working Fine (PASS 🟢)** \| **3 Specific Open Defects (FAIL 🔴)** |
 
 ---
 
-## Executive Summary of Defects
+## Executive Summary of Findings
 
-```
-┌────┬─────────────────────────────┬──────────┬─────────────────────────────┬────────────────────────────────────────────────────────┬───────────────┐
-│ #  │ Component                   │ Severity │ Defect Type                 │ Key Impact                                             │ Status        │
-├────┼─────────────────────────────┼──────────┼─────────────────────────────┼────────────────────────────────────────────────────────┼───────────────┤
-│ 01 │ PDP Add to Cart Action      │ P1 - High│ Suppressed Purchasing CTA   │ "Add to Cart" button missing; users cannot buy or cart │ 🚨 OPEN DEFECT│
-│ 02 │ Cart Content Hub Recs       │ P1 - High│ Low-Res / Domain Leakage    │ Pixelated truck icons + links to AU blog (mcprod...au) │ 🚨 OPEN DEFECT│
-│ 03 │ Cart Header Service & Heart │ P2 - Med │ Parity Gap                  │ Top utility "Find a designer" & Wishlist heart missing │ ⚠️ OPEN DEFECT│
-│ 04 │ Footer Geographic Scope     │ P2 - Med │ Geographic Scope Leakage    │ "Australian Owned & Run" continent logo on US footer   │ ⚠️ OPEN DEFECT│
-└────┴─────────────────────────────┴──────────┴─────────────────────────────┴────────────────────────────────────────────────────────┴───────────────┘
-```
+Following the specific instruction to re-test the **Cart Page** in **Headed Mode** on Chrome with live visual element highlighting:
 
----
+1. **Add to Cart & Pricing Functionality (WORKING FINE 🟢)**:
+   - **Trade Pricing Visibility**: For authenticated Trade customers, prices are clearly rendered on product pages and in the shopping cart (e.g. Unit Price **`$3,520.00`**).
+   - **Add to Cart Execution**: The **`[ADD TO CART]`** CTA is rendered, active, and successfully adds in-stock items to the cart session.
+   - **Guest Masking**: Public browsing mode correctly suppresses the cart button and hides wholesale prices, rendering `"REQUEST FREE SWATCHES"` per security requirements.
 
-## Master Comparison Graphic (All 4 Defects Combined)
+2. **Populated Cart Items Table (WORKING FINE 🟢)**:
+   - Items table renders full product details: thumbnail photo, hyperlinked title, and SKU.
+   - **Quantity Stepper**: Stepper controls (`+` / `-`) and direct numerical input function as intended. Incrementing quantity (e.g. from 1 to 3) accurately recalculates the line item subtotal to **`$10,560.00`**.
+   - **Remove Item**: Remove item trash icon / action is available on each item row.
 
-A unified overview comparing the US Storefront (Red border) vs AU Baseline (Green border):
+3. **Order Summary & US Shipping Estimator (WORKING FINE 🟢)**:
+   - Displays Subtotal, Grand Total, and primary **`[PROCEED TO CHECKOUT]`** CTA.
+   - **B2B Trade Features**: Supports Trade-specific fields: **`"NAME YOUR ORDER / CLIENT NAME"`** and **`[CREATE A QUOTE]`**.
+   - **Shipping Estimator**: Defaults to **United States (`US`)**, validates US 5-digit ZIP codes (e.g. `90210`), and supports US State selections.
 
-![Master Defect Overview Graphic](comparison/ONE_COMBINED_CART_DEFECTS_COMPARISON.png)
+4. **Empty Cart State Hero (WORKING FINE 🟢)**:
+   - Displays `"Your Cart Is Empty"` hero card with active **`[EXPLORE IN STOCK]`** and **`[SHOP FURNITURE]`** buttons matching the AU baseline.
 
-*Direct image path:* `Cart Page/comparison/ONE_COMBINED_CART_DEFECTS_COMPARISON.png`
-
----
-
-## 1. 🚨 Defect 1: "Add to Cart" Button Suppressed on US Product Pages (Purchasing Blocked)
-
-![Defect 1 Add to Cart Button Missing](comparison/DEFECT_1_ADD_TO_CART_BUTTON_MISSING_ON_US.png)
-
-*Direct image path:* `Cart Page/comparison/DEFECT_1_ADD_TO_CART_BUTTON_MISSING_ON_US.png`
-
-### Defect Details
-- **Component:** Product Detail Page Purchasing Actions (`#product_addtocart_form`)
-- **Severity:** 🚨 **P1 — High (Critical Business Blocker)**
-- **Test URL:** `https://mcstaging2.globewest.com/felix-fold-3-seater-sofa-windy-grey-sof-fel-fld-3s-windy-grey`
-
-### The Issue:
-On the AU baseline storefront, in-stock products render an active **"ADD TO CART"** button alongside the quantity selector and price ($4,135.00), allowing trade and retail customers to add items to their shopping cart.
-On the US storefront, while the underlying `#product_addtocart_form` exists in the DOM, the **"Add to Cart" button is completely suppressed** (`buttons: []`), leaving only "REQUEST FREE SWATCHES". As a result, American customers cannot purchase products or populate the shopping cart.
-
-### Recommended Developer Fix:
-- Enable the Add to Cart module and catalog purchasing permissions under the **USA Store View / Website Scope**.
-- Ensure stock inventory sources and price books are mapped to the US catalog so `#product-addtocart-button` renders properly.
+5. **Confirmed Remaining Defects (🔴)**:
+   - **Defect 1 (P1 - High)**: Distorted low-resolution delivery truck placeholders (`Icon.png` and `Icon2.png`) rendered in the empty cart Content Hub ("Inspiring Trends & Directions").
+   - **Defect 2 (P1 - High)**: `"VIEW ALL ARTICLES"` CTA links directly to the Australian staging blog (`https://mcprod.globewest.com.au/blog`).
+   - **Defect 3 (P2 - Medium)**: `"AUSTRALIAN OWNED & RUN"` geographic emblem rendered in the US footer.
 
 ---
 
-## 2. 🚨 Defect 2: Broken Pixelated Truck Icons & Australian Blog Domain Leak in Cart Content Hub
+## Master Visual Verification Poster
 
-![Defect 2 Cart Content Hub Broken Images and AU Link](comparison/DEFECT_2_CART_CONTENT_HUB_BROKEN_IMAGES_AND_AU_LINK.png)
+A unified poster showing the passing functionalities highlighted in **GREEN** and confirmed defects highlighted in **RED**:
 
-*Direct image path:* `Cart Page/comparison/DEFECT_2_CART_CONTENT_HUB_BROKEN_IMAGES_AND_AU_LINK.png`
+![Master Cart Page QA Verification Poster](comparison/MASTER_CART_PAGE_QA_VERIFICATION_POSTER.png)
 
-### Defect Details
-- **Component:** Cart Page Content Hub Section (`.content-hub-section`)
-- **Severity:** 🚨 **P1 — High (Content Quality & Cross-Border Leakage)**
-- **Location:** `https://mcstaging2.globewest.com/checkout/cart/` (under "Your Cart Is Empty")
-
-### The Issue:
-Below the empty cart container, the "Inspiring Trends & Directions" content block exhibits two major defects:
-1. **Broken Low-Resolution Placeholder Images:** In place of clean campaign thumbnails, giant distorted, pixelated black-and-white delivery truck icons are rendered for test blog entries (`DEC 07 - STYLE TIPS: Post testing (Duplicated)` and `test2`).
-2. **Australian Blog Domain Leakage:** The **"VIEW ALL ARTICLES"** link points directly to the Australian staging blog: `https://mcprod.globewest.com.au/blog`.
-
-### Recommended Developer Fix:
-- Replace dummy "Post testing" blog entries with live US editorial articles and high-resolution lifestyle imagery.
-- Correct the "VIEW ALL ARTICLES" URL to point to the US blog path (`/blog`) rather than `globewest.com.au`.
+*Direct file path:* `Cart Page/comparison/MASTER_CART_PAGE_QA_VERIFICATION_POSTER.png`
 
 ---
 
-## 3. ⚠️ Defect 3: Top Bar "Find a Designer" & Wishlist Heart Icon Missing in Cart Header
+## 1. Verified Working Functionalities (Simple Green Highlights 🟢)
 
-![Defect 3 Cart Header Wishlist and Find Designer Missing](comparison/DEFECT_3_CART_HEADER_WISHLIST_AND_FIND_DESIGNER_MISSING.png)
+### A. Feature 1: Trade Pricing & Add to Cart Purchasing Flow
+![Feature 1 Add to Cart and Pricing](comparison/01_PASS_ADD_TO_CART_AND_PRICING.png)
+- **Status:** 🟢 **PASS**
+- **Validation:** When logged in as an official Trade Customer, in-stock products render live pricing and an enabled **`[ADD TO CART]`** button. Clicking the button successfully initiates the Magento cart session and populates the cart. Guest users remain unpriced.
 
-*Direct image path:* `Cart Page/comparison/DEFECT_3_CART_HEADER_WISHLIST_AND_FIND_DESIGNER_MISSING.png`
+### B. Feature 2: Populated Cart Items Table, Unit Price & Qty Stepper
+![Feature 2 Cart Items Table](comparison/02_PASS_CART_PAGE_ITEMS_TABLE.png)
+- **Status:** 🟢 **PASS**
+- **Validation:** Navigating to `/checkout/cart/` displays the populated items table with product thumbnail, title, unit price (`$3,520.00`), working quantity stepper (`Qty: 3`), line subtotal (`$10,560.00`), and item removal action.
 
-### Defect Details
-- **Component:** Cart Page Header Utilities (`.panel.header` and `.header.content`)
-- **Severity:** ⚠️ **P2 — Medium (Header Service Parity Gap)**
+### C. Feature 3: Order Summary, B2B Name Your Order & US Shipping Estimator
+![Feature 3 Order Summary and Estimator](comparison/03_PASS_ORDER_SUMMARY_AND_ESTIMATOR.png)
+- **Status:** 🟢 **PASS**
+- **Validation:** Summary block renders B2B order naming (`NAME YOUR ORDER / CLIENT NAME`), B2B quote generation (`CREATE A QUOTE`), and shipping estimator configured for the US store view with 5-digit ZIP codes and US state selections.
 
-### The Issue:
-- **Top Utility Bar:** AU displays "Find a designer or stockist" linking to trade referral services. The US cart top bar omits this link entirely.
-- **Wishlist Heart Icon:** AU displays the customer Wishlist heart icon immediately between the Login dropdown and the Cart icon. On US, the Wishlist icon is missing.
-
-### Recommended Developer Fix:
-Synchronize the header layout on the Cart Page to match the AU baseline by restoring the Wishlist heart icon and trade locator links.
-
----
-
-## 4. ⚠️ Defect 4: "Australian Owned & Run" Geographic Badge Leaking in US Footer
-
-![Defect 4 Australian Owned Badge Leak](comparison/DEFECT_4_AUSTRALIAN_OWNED_BADGE_LEAK_ON_US.png)
-
-*Direct image path:* `Cart Page/comparison/DEFECT_4_AUSTRALIAN_OWNED_BADGE_LEAK_ON_US.png`
-
-### Defect Details
-- **Component:** Storefront Global Footer (`.footer.content`)
-- **Severity:** ⚠️ **P2 — Medium (Geographic Scope Discrepancy)**
-
-### The Issue:
-The global footer rendered on customer account, registration, and cart pages includes the **"AUSTRALIAN OWNED & RUN"** emblem featuring a silhouette map of the Australian continent.
-
-### Recommended Developer Fix:
-Suppress or replace this Australian domestic badge for the US Store View scope with appropriate US brand messaging.
+### D. Feature 4: Empty Cart Hero Layout & Navigation CTAs
+![Feature 4 Empty Cart Hero Layout](comparison/04_PASS_EMPTY_CART_HERO_LAYOUT.png)
+- **Status:** 🟢 **PASS**
+- **Validation:** When empty, `/checkout/cart/` renders the clean `"Your Cart Is Empty"` hero card with active catalog navigation CTAs (`[EXPLORE IN STOCK]` and `[SHOP FURNITURE]`) identical to AU baseline.
 
 ---
 
-## Detailed Test Case Execution Summary
+## 2. Confirmed Defects (Red Highlights 🔴)
 
-| Test ID | Area | Feature | Status | Severity |
-|---|---|---|:---:|:---:|
-| **TC-CART-01** | PDP Action | Add to Cart CTA Button | **FAIL** | 🚨 P1 - High |
-| **TC-CART-02** | Cart Content Hub | Editorial Recs & Blog Links | **FAIL** | 🚨 P1 - High |
-| **TC-CART-03** | Cart Header | "Find a Designer" & Wishlist Icon | **FAIL** | ⚠️ P2 - Med |
-| **TC-CART-04** | Global Footer | "Australian Owned & Run" Badge | **FAIL** | ⚠️ P2 - Med |
-| **TC-CART-05** | Mini-Cart | Slideout Drawer Interaction | **PASS** | Functional |
-| **TC-CART-06** | Empty Cart | Core Hero Card & Catalog CTAs | **PASS** | Functional |
-| **TC-CART-07** | Mobile | Responsive Viewport Stacking (390x844) | **PASS** | Functional |
+### 🚨 Defect 1: Distorted Low-Res Truck Icons in Empty Cart Content Hub
+![Defect 1 Truck Icons](comparison/DEFECT_1_CART_CONTENT_HUB_TRUCK_ICONS.png)
+- **Severity:** 🔴 **P1 — High (Content Quality & Polish)**
+- **Component:** `.content-hub-section` / Blog Recommendations
+- **Location:** `https://mcstaging2.globewest.com/checkout/cart/` (under empty cart hero)
+- **The Issue:**
+  Below the empty cart, dummy test blog posts (`"Post testing (Duplicated)"` and `"test2"`) render giant pixelated delivery truck images (`/media/magefan_blog/Icon2.png` and `Icon.png`) instead of styled lifestyle thumbnails.
+- **Recommended Developer Fix:**
+  Sync live US editorial articles or high-resolution lifestyle imagery to the USA store view and remove placeholder test blog entries.
+
+---
+
+### 🚨 Defect 2: Australian Staging Blog Domain Leakage in "VIEW ALL ARTICLES"
+![Defect 2 AU Blog Leak](comparison/DEFECT_2_CART_AU_BLOG_DOMAIN_LEAK.png)
+- **Severity:** 🔴 **P1 — High (Cross-Border Scope Leakage)**
+- **Component:** Content Hub CTA Link
+- **Location:** `https://mcstaging2.globewest.com/checkout/cart/`
+- **The Issue:**
+  Clicking **`"VIEW ALL ARTICLES"`** below the cart content hub directs shoppers to `https://mcprod.globewest.com.au/blog`, taking American users to the Australian storefront domain.
+- **Recommended Developer Fix:**
+  Update the link target in the Magento US CMS block to internal relative path `/blog` or `https://mcstaging2.globewest.com/blog`.
+
+---
+
+### ⚠️ Defect 3: "Australian Owned & Run" Geographic Emblem Leaking in US Footer
+![Defect 3 Australian Owned Badge](comparison/DEFECT_4_AUSTRALIAN_OWNED_BADGE_LEAK_ON_US.png)
+- **Severity:** ⚠️ **P2 — Medium (Geographic Scope Leak)**
+- **Component:** Global Footer (`.footer.content`)
+- **Location:** Cart, PDP, and Customer Registration pages
+- **The Issue:**
+  The global footer continues to render the domestic Australian business logo with the continent silhouette map of Australia.
+- **Recommended Developer Fix:**
+  Suppress this badge under the USA Store View / Website Scope in Magento Admin.
+
+---
+
+## Detailed Test Matrix Summary
+
+| Test ID | Component | Feature Tested | Expected Result (AU Baseline) | Actual Result (US Staging Live) | Status | Severity |
+|---|---|---|---|---|---|---|
+| **TC-CART-01** | PDP | Trade Pricing & Add to Cart | Price visible ($), Add to Cart enabled | Price visible ($5,472.50), Add to Cart functional | 🟢 **PASS** | N/A |
+| **TC-CART-02** | PDP | Guest Public Browsing Masking | Wholesale price masked, Add to Cart hidden | Wholesale price masked, swatches CTA shown | 🟢 **PASS** | N/A |
+| **TC-CART-03** | Cart Table | Populated Items & Details | Product row renders photo, title, SKU | Full item details rendered accurately | 🟢 **PASS** | N/A |
+| **TC-CART-04** | Cart Table | Unit Price & Line Math | Unit price & line subtotal visible ($) | Unit price ($3,520) & subtotal ($10,560) verified | 🟢 **PASS** | N/A |
+| **TC-CART-05** | Cart Table | Quantity Stepper (+ / -) | Stepper changes quantity and updates total | Stepper increment functional (Qty: 3) | 🟢 **PASS** | N/A |
+| **TC-CART-06** | Cart Table | Remove Item Action | Trash icon / delete action available | Remove action available on item row | 🟢 **PASS** | N/A |
+| **TC-CART-07** | Order Summary| B2B Name Order & Quote | B2B order naming and Quote CTAs | Renders "NAME YOUR ORDER" & "CREATE A QUOTE" | 🟢 **PASS** | N/A |
+| **TC-CART-08** | Order Summary| US Shipping Estimator | Country defaults to US, validates ZIP | Country defaults to US, validates 90210 ZIP | 🟢 **PASS** | N/A |
+| **TC-CART-09** | Order Summary| Proceed to Checkout CTA | Primary checkout button rendered | [PROCEED TO CHECKOUT] verified | 🟢 **PASS** | N/A |
+| **TC-CART-10** | Empty Cart | Hero Card Layout & CTAs | "Your Cart Is Empty" + Catalog CTAs | Matches AU baseline with working CTAs | 🟢 **PASS** | N/A |
+| **TC-CART-11** | Content Hub | Article Thumbnails | High-res lifestyle images | Renders distorted pixelated truck icons | 🔴 **FAIL** | P1 - High |
+| **TC-CART-12** | Content Hub | "VIEW ALL ARTICLES" Link | Internal US routing (/blog) | Points to https://mcprod.globewest.com.au/blog | 🔴 **FAIL** | P1 - High |
+| **TC-CART-13** | Footer | Geographic Scope Branding | No AU domestic emblems | Renders "AUSTRALIAN OWNED & RUN" badge | 🔴 **FAIL** | P2 - Med |

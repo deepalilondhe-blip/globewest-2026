@@ -1,0 +1,38 @@
+{
+  "topBarText": "Become a Trade Customer\nBook Showroom Appointment",
+  "links": [
+    {
+      "text": "",
+      "href": "#",
+      "className": "select-company-link",
+      "visible": true,
+      "computedStyle": {
+        "display": "block",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "12px"
+      }
+    },
+    {
+      "text": "Become a Trade Customer",
+      "href": "https://mcstaging2.globewest.com/how-to-buy-trade",
+      "className": "header-top-link header-top-link-mobile-hidden",
+      "visible": true,
+      "computedStyle": {
+        "display": "inline",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "16px"
+      }
+    },
+    {
+      "text": "Book Showroom Appointment",
+      "href": "/online_booking/",
+      "className": "header-top-link",
+      "visible": true,
+      "computedStyle": {
+        "display": "inline",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "16px"
+      }
+    }
+  ]
+}

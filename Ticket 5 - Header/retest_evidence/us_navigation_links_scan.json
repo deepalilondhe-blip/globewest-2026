@@ -1,0 +1,78 @@
+{
+  "totalLinks": 14,
+  "auLeaks": [],
+  "outletLinks": [],
+  "melbourneLinks": [],
+  "allLinks": [
+    {
+      "text": "",
+      "href": "#",
+      "parentCategory": "Header/Utility"
+    },
+    {
+      "text": "Become a Trade Customer",
+      "href": "https://mcstaging2.globewest.com/how-to-buy-trade",
+      "parentCategory": "Header/Utility"
+    },
+    {
+      "text": "Book Showroom Appointment",
+      "href": "/online_booking/",
+      "parentCategory": "Header/Utility"
+    },
+    {
+      "text": "",
+      "href": "https://mcstaging2.globewest.com/",
+      "parentCategory": "Header/Utility"
+    },
+    {
+      "text": "My Cart",
+      "href": "https://mcstaging2.globewest.com/checkout/cart/",
+      "parentCategory": "Header/Utility"
+    },
+    {
+      "text": "Indoor",
+      "href": "https://mcstaging2.globewest.com/indoor",
+      "parentCategory": "Indoor"
+    },
+    {
+      "text": "Outdoor",
+      "href": "https://mcstaging2.globewest.com/outdoor",
+      "parentCategory": "Outdoor"
+    },
+    {
+      "text": "Homewares",
+      "href": "https://mcstaging2.globewest.com/homewares",
+      "parentCategory": "Homewares"
+    },
+    {
+      "text": "In Stock",
+      "href": "https://mcstaging2.globewest.com/in-stock",
+      "parentCategory": "In Stock"
+    },
+    {
+      "text": "Customisation",
+      "href": "https://mcstaging2.globewest.com/customisation",
+      "parentCategory": "Customisation"
+    },
+    {
+      "text": "Projects",
+      "href": "https://mcstaging2.globewest.com/project",
+      "parentCategory": "Projects"
+    },
+    {
+      "text": "Inspiration",
+      "href": "https://mcstaging2.globewest.com/blog",
+      "parentCategory": "Inspiration"
+    },
+    {
+      "text": "Support",
+      "href": "https://mcstaging2.globewest.com/help-centre",
+      "parentCategory": "Support"
+    },
+    {
+      "text": "Contact",
+      "href": "https://mcstaging2.globewest.com/contact",
+      "parentCategory": "Contact"
+    }
+  ]
+}

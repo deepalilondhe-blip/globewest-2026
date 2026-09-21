@@ -38,7 +38,10 @@ All scenarios outlined in Vinod Vankar's ticket update were verified through aut
 ## 3. Visual Audit Evidence Grid
 
 The 4-panel visual audit poster is saved at:
-`TRADE_PRICING_TOGGLE_AUDIT_REPORT.png`
+
+![Trade Pricing Toggle Audit Report](Trade_Pricing_Toggle_Screenshots/TRADE_PRICING_TOGGLE_AUDIT_REPORT.png)
+
+*(Also available in `Trade Toggle/proofs/00_MASTER_TRADE_TOGGLE_AUDIT_POSTER.png`)*
 
 ---
 

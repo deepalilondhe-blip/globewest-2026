@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDP Page Figma Fidelity & Defect Audit Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0f1117;
+      --card-bg: #181b24;
+      --border-dark: #272c3d;
+      --red-defect: #ef4444;
+      --green-pass: #10b981;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #3b82f6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      padding: 30px 20px;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 35px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid var(--border-dark);
+    }
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .badge-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+    .pill {
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .pill-green { background: rgba(16, 185, 129, 0.2); color: var(--green-pass); border: 1px solid var(--green-pass); }
+    .pill-red { background: rgba(239, 68, 68, 0.2); color: var(--red-defect); border: 1px solid var(--red-defect); }
+    .pill-blue { background: rgba(59, 130, 246, 0.2); color: var(--accent); border: 1px solid var(--accent); }
+
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
+      color: #fff;
+      margin: 40px 0 20px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--border-dark);
+      padding-bottom: 10px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-dark);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+    .card-pass { border-top: 4px solid var(--green-pass); }
+    .card-defect { border-top: 4px solid var(--red-defect); }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .card-desc {
+      color: var(--text-muted);
+      font-size: 13.5px;
+      margin-bottom: 14px;
+    }
+
+    .img-box {
+      background: #090a0f;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #232733;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 240px;
+    }
+    .img-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+      cursor: zoom-in;
+      transition: opacity 0.2s;
+    }
+    .img-box img:hover {
+      opacity: 0.92;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+    .card-footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .card-footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Modal */
+    #modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.94);
+      z-index: 999999;
+      justify-content: center;
+      align-items: center;
+      cursor: zoom-out;
+    }
+    #modal img {
+      max-width: 95%;
+      max-height: 95%;
+      border-radius: 6px;
+      box-shadow: 0 0 35px rgba(0,0,0,0.9);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>TICKET: Product Detail Page (PDP) Figma Fidelity Audit</h1>
+      <p style="color: var(--text-muted); margin-top: 6px;">
+        Live Storefront: <a href="https://mcstaging2.globewest.com/amari-oasis-large-planter-wheat-dec-amar-oas-plt-lg-wheat" target="_blank" style="color: var(--accent);">Amari Oasis Large Planter - Wheat</a> vs 
+        <a href="https://www.figma.com/design/oSBa3EMR3gol0vM1tXCdTk/Globewest-USA---External?node-id=2317-27241" target="_blank" style="color: var(--accent);">Figma PDP Design</a>
+      </p>
+      <div class="badge-bar">
+        <span class="pill pill-green">🟢 8 Verified Features (PASS)</span>
+        <span class="pill pill-red">🔴 3 Confirmed Defects (FAIL)</span>
+        <span class="pill pill-blue">📱 Desktop & Mobile Viewports</span>
+        <a href="PDP_TestCases.xlsx" style="text-decoration: none;"><span class="pill pill-blue" style="cursor: pointer;">📥 Download Excel Test Cases</span></a>
+        <a href="PDP_TestCases.csv" style="text-decoration: none;"><span class="pill pill-blue" style="cursor: pointer;">📥 Download CSV</span></a>
+      </div>
+    </header>
+
+    <!-- SECTION 1: CONFIRMED DEFECTS -->
+    <h2 class="section-title">🚨 Confirmed Defects vs Figma Specification (🔴 FAIL)</h2>
+    <div class="gallery-grid">
+      
+      <!-- Resolved Feature -->
+      <div class="card card-pass">
+        <div class="card-header">
+          <h3 class="card-title">RESOLVED: [ADD TO QUOTE] CTA Button Deployed</h3>
+          <span class="pill pill-green">🟢 DEPLOYED / VERIFIED</span>
+        </div>
+        <p class="card-desc">The developer deployed the secondary [ADD TO QUOTE] button directly underneath [Add to cart] in the action box. Re-tested & confirmed active for Trade customers.</p>
+        <div class="img-box">
+          <img src="screenshots/desktop/09_Desktop_AddToQuote_Button_PASS.png" alt="Add to Quote CTA Deployed" onclick="openModal(this.src)">
+        </div>
+        <div class="card-footer">
+          <span>09_Desktop_AddToQuote_Button_PASS.png</span>
+          <a href="screenshots/desktop/09_Desktop_AddToQuote_Button_PASS.png" target="_blank">Full View ↗</a>
+        </div>
+      </div>
+
+      <!-- Defect 1 -->
+      <div class="card card-defect">
+        <div class="card-header">
+          <h3 class="card-title">DEFECT 1: Unapproved Floating Social Share Widget</h3>
+          <span class="pill pill-red">P2 - Medium</span>
+        </div>
+        <p class="card-desc">Figma specifies a clean editorial layout with no floating social bars. Live staging renders a persistent floating red Pinterest and blue AddToAny widget in bottom-right corner.</p>
+        <div class="img-box">
+          <img src="screenshots/defects/DEFECT_01_FLOATING_SOCIAL_SHARE_WIDGET.png" alt="Floating Social Share Widget" onclick="openModal(this.src)">
+        </div>
+        <div class="card-footer">
+          <span>DEFECT_01_FLOATING_SOCIAL_SHARE_WIDGET.png</span>
+          <a href="screenshots/defects/DEFECT_01_FLOATING_SOCIAL_SHARE_WIDGET.png" target="_blank">Full View ↗</a>
+        </div>
+      </div>
+
+      <!-- Defect 2 -->
+      <div class="card card-defect">
+        <div class="card-header">
+          <h3 class="card-title">DEFECT 2: Missing California Proposition 65 Warning</h3>
+          <span class="pill pill-red">P1 - High</span>
+        </div>
+        <p class="card-desc">Figma mandates a California Prop 65 chemical disclosure box under warranty. Completely absent on the live US product detail page.</p>
+        <div class="img-box">
+          <img src="screenshots/defects/DEFECT_03_MISSING_CALIFORNIA_PROP65_WARNING.png" alt="Missing Prop 65 Warning" onclick="openModal(this.src)">
+        </div>
+        <div class="card-footer">
+          <span>DEFECT_03_MISSING_CALIFORNIA_PROP65_WARNING.png</span>
+          <a href="screenshots/defects/DEFECT_03_MISSING_CALIFORNIA_PROP65_WARNING.png" target="_blank">Full View ↗</a>
+        </div>
+      </div>
+
+      <!-- Defect 3 -->
+      <div class="card card-defect">
+        <div class="card-header">
+          <h3 class="card-title">DEFECT 3: Page Meta &lt;title&gt; Leaks "GlobeWest Australia"</h3>
+          <span class="pill pill-red">P1 - High</span>
+        </div>
+        <p class="card-desc">HTML &lt;title&gt; renders "Buy Amari Oasis Large Planter - Wheat online - GlobeWest Australia" on mcstaging2.globewest.com; violates US localization.</p>
+        <div class="img-box">
+          <img src="screenshots/defects/DEFECT_01_US_PDP_Meta_Title_Australia_Leak_RED.png" alt="Meta Title Australia Leak" onclick="openModal(this.src)">
+        </div>
+        <div class="card-footer">
+          <span>DEFECT_01_US_PDP_Meta_Title_Australia_Leak_RED.png</span>
+          <a href="screenshots/defects/DEFECT_01_US_PDP_Meta_Title_Australia_Leak_RED.png" target="_blank">Full View ↗</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SECTION 2: VERIFIED PASSES -->
+    <h2 class="section-title">🟢 Verified Passing Features Matching Figma (PASS)</h2>
+    <div class="gallery-grid">
+      
+      <!-- Pass 1 -->
+      <div class="card card-pass">
+        <div class="card-header">
+          <h3 class="card-title">PASS 1: Product Title Typography (IvyMode Serif)</h3>
+          <span class="pill pill-green">PASS</span>
+        </div>
+        <p class="card-desc">Title renders in IvyMode serif typeface (weight: 400 Regular), matching the Figma typography specification perfectly.</p>
+        <div class="img-box">
+          <img src="comparison/04_PASS_PRODUCT_TITLE_TYPOGRAPHY.png" alt="Title Typography" onclick="openModal(this.src)">
+        </div>
+        <div class="card-footer">
+          <span>04_PASS_PRODUCT_TITLE_TYPOGRAPHY.png</span>
+          <a href="comparison/04_PASS_PRODUCT_TITLE_TYPOGRAPHY.png" target="_blank">Full View ↗</a>
+        </div>
+      </div>
+
+      <!-- Pass 2 -->
+      <div class="card card-pass">
+        <div class="card-header">
+          <h3 class="card-title">PASS 2: Trade Dual Pricing (Trade Price + MSRP)</h3>
+          <span class="pill pill-green">PASS</span>
+        </div>
+        <p class="card-desc">Renders customer wholesale Trade Price ($434.50) alongside retail MSRP ($902.00), complying with Figma B2B pricing requirements.</p>
+        <div class="img-box">
+          <img src="comparison/05_PASS_TRADE_DUAL_PRICING.png" alt="Trade Dual Pricing" onclick="openModal(this.src)">
+        </div>
+        <div class="card-footer">
+          <span>05_PASS_TRADE_DUAL_PRICING.png</span>
+          <a href="comparison/05_PASS_TRADE_DUAL_PRICING.png" target="_blank">Full View ↗</a>
+        </div>
+      </div>
+
+      <!-- Pass 3 -->
+      <div class="card card-pass">
+        <div class="card-header">
+          <h3 class="card-title">PASS 3: Mobile Viewport Responsive Layout (390x844)</h3>
+          <span class="pill pill-green">PASS</span>
+        </div>
+        <p class="card-desc">Mobile PDP layout fits 390px mobile viewport cleanly without horizontal overflow, matching the Figma Mobile/product frame.</p>
+        <div class="img-box">
+          <img src="comparison/06_PASS_MOBILE_VIEW_COMPARISON.png" alt="Mobile PDP View" onclick="openModal(this.src)">
+        </div>
+        <div class="card-footer">
+          <span>06_PASS_MOBILE_VIEW_COMPARISON.png</span>
+          <a href="comparison/06_PASS_MOBILE_VIEW_COMPARISON.png" target="_blank">Full View ↗</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Image Zoom Modal -->
+  <div id="modal" onclick="closeModal()">
+    <img id="modalImg" src="" alt="Full view">
+  </div>
+
+  <script>
+    function openModal(src) {
+      document.getElementById('modalImg').src = src;
+      document.getElementById('modal').style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

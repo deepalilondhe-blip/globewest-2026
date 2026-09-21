@@ -1,47 +1,33 @@
-Test Case ID,Section,Test Scenario,Test Steps,Expected Result (AU Baseline),Actual Result (US Staging),Status,Severity,Defect Linked,Comparison Screenshot
-TC_MINICART_001,PDP / Mini Cart Activation,Verify 'Add to Cart' button availability on US product detail page to populate Mini Cart,"1. Navigate to US Storefront PDP (e.g. /base-2-seater-left-arm-sofa-oatmeal-light-oak-sof-ske-bas2s-lft-oat-lo)
-2. Select in-stock color/configuration
-3. Locate Add to Cart form container
-4. Attempt to add item to Cart to trigger Mini Cart drawer",Active 'ADD TO CART' button renders with quantity selector. Clicking adds item and automatically slides open the populated Mini Cart drawer.,"ADD TO CART button is completely suppressed (#product-addtocart-button count = 0), preventing users from purchasing or populating the Mini Cart drawer.",FAIL,P1 - High,DEFECT 1: Purchasing Blocked - Add to Cart Button Suppressed,DEFECT_1_PURCHASING_BLOCKED_MINICART_POPULATION.png
-TC_MINICART_002,Mini Cart Subtotal & Taxes,Verify subtotal and tax calculation display in Mini Cart drawer,"1. Inspect Mini Cart subtotal template (Magento_Checkout/template/minicart/subtotal.html)
-2. Check tax line label and knockout binding data
-3. Verify tax compliance with US storefront standards",AU displays Goods and Services Tax (GST: $440.00). US Storefront must either display 'Sales Tax' / 'Estimated Sales Tax' or 'Calculated at checkout'. Must NOT display Australian GST.,"Hardcodes Australian GST markup: <div class=""gst""><span class=""label"" data-bind=""i18n: 'GST'""></span><div class=""amount"" data-bind=""html: gst""></div></div> copied directly from AU theme.",FAIL,P1 - High,DEFECT 2: Australian GST Tax Leaking in US Mini Cart Subtotal Template,DEFECT_2_AUSTRALIAN_GST_TAX_LEAK_IN_MINICART.png
-TC_MINICART_003,Mini Cart Cross-Sell Recommendations,Verify cross-sell product links inside Mini Cart slide-out drawer ('You may also like'),"1. Open Mini Cart slide-out drawer with items
-2. Locate 'You may also like' recommendation block
-3. Inspect anchor tag href attributes for suggested items (e.g. Madrid Loft Ottoman)",Cross-sell links must resolve to US catalog URLs (https://mcstaging2.globewest.com/...),"Cross-sell links route to Australian staging domain: https://mcstaging.globewest.com.au/madrid-madrid-loft-copeland-olive, leaking US shoppers to AU store.",FAIL,P2 - Medium,DEFECT 3: Mini Cart Cross-Sell Recommendations Route to Australian Domain,DEFECT_3_CROSS_SELL_AU_DOMAIN_LEAK.png
-TC_MINICART_004,Header Utility / Mini Cart Trigger,Verify header utility bar icons next to Mini Cart bag trigger,"1. Navigate to US storefront header
-2. Inspect top-right utility area
-3. Compare icons against AU baseline",AU header features Wishlist heart icon with counter badge positioned directly adjacent to the Mini Cart icon.,"Wishlist heart icon is absent next to Mini Cart trigger icon in US header, creating feature parity gap.",FAIL,P2 - Medium,DEFECT 4: Wishlist Heart Icon Missing from Header Next to Mini Cart Trigger,DEFECT_4_MISSING_CART_UTILITY_IN_HEADER.png
-TC_MINICART_005,Mini Cart Drawer Opening,Verify clicking header Cart icon opens the Mini Cart slide-out drawer,"1. Navigate to US Storefront
-2. Click Mini Cart trigger (.action.showcart)
-3. Verify slide-out drawer transitions into viewport",Mini Cart drawer smoothly slides open from right side with overlay backdrop.,Mini Cart trigger functions properly and slides open the drawer (.block-minicart).,PASS,Informational,None (Verified Clean),01_US_PDP_With_Add_To_Cart_Area.png
-TC_MINICART_006,Mini Cart Empty State,Verify empty Mini Cart state messaging and layout,"1. Open Mini Cart when no items have been added
-2. Inspect empty cart title and description
-3. Verify 'Continue Shopping' / CTA buttons",Displays 'You have no items in your shopping cart.' message with clean drawer styling.,Empty cart state renders correctly with matching typography and clean close button.,PASS,Informational,None (Verified Clean),N/A
-TC_MINICART_007,Mini Cart Drawer Dismissal,Verify drawer close button and backdrop click dismiss functionality,"1. Open Mini Cart drawer
-2. Click close button (#btn-minicart-close)
-3. Re-open drawer and click outside on modal overlay backdrop",Drawer slides closed smoothly and returns focus to page.,Close button and backdrop dismiss events close the drawer smoothly.,PASS,Informational,None (Verified Clean),N/A
-TC_MINICART_008,Mini Cart Item Counter Badge,Verify item count counter badge updates on cart icon,"1. Inspect header cart icon markup
-2. Verify Knockout counter binding (.counter.qty)",Counter badge displays total quantity of items in cart and updates dynamically via customer-data.js.,Knockout binding structure exists and matches AU baseline.,PASS,Informational,None (Verified Clean),03_US_Minicart_Empty_State.png
-TC_MINICART_009,Mobile Mini Cart Drawer,Verify Mini Cart slide-out drawer responsiveness on mobile viewport (390x844),"1. Emulate mobile viewport (390x844)
-2. Tap cart icon in mobile sticky header
-3. Verify drawer width, scrollability, and touch dismiss",Drawer adapts to 100% or optimal mobile width with thumb-friendly buttons and scrolling items.,Mobile layout adapts cleanly without horizontal layout overflow.,PASS,Informational,None (Verified Clean),N/A
-TC_MINICART_010,Checkout CTA Navigation,Verify 'Proceed to Checkout' and 'View Cart' buttons destination,"1. Inspect primary action buttons in populated drawer
-2. Verify checkout button routes to US checkout (/checkout)
-3. Verify view cart button routes to US cart (/checkout/cart)",Checkout buttons route to US staging domain (/checkout and /checkout/cart).,Knockout configuration points to US checkout routes (window.checkout.checkoutUrl).,PASS,Informational,None (Verified Clean),02_AU_Minicart_Populated.png
-TC_MINICART_011,Auth Matrix: User Authentication,Verify customer login (Deepali Londhe / deepalilondhe.qa@gmail.com) on US and AU storefronts,"1. Navigate to /customer/account/login/
-2. Enter registered credentials (deepalilondhe.qa@gmail.com / Deepa@123)
-3. Submit login
-4. Verify customer dashboard redirect and header greeting","User is authenticated and greeted with 'Welcome, Deepali Londhe!' with active My Account menu.","Authentication succeeds; header displays 'Welcome, Deepali Londhe!' and user menu identical to AU.",PASS,Informational,None (Verified Clean),01_US_Customer_Logged_In_Account.png
-TC_MINICART_012,Auth Matrix: Header Wishlist Parity,Verify Wishlist heart icon availability next to Mini Cart trigger when customer is logged in,"1. Log in as Deepali Londhe
-2. Inspect header utility section next to Mini Cart trigger icon",Wishlist heart icon with item counter badge is rendered directly adjacent to the Mini Cart icon.,Wishlist heart icon remains MISSING on US header utility bar even when customer is fully authenticated.,FAIL,P2 - Medium,DEFECT 4: Wishlist Heart Icon Missing from Header Next to Mini Cart Trigger,DEFECT_AUTH_1_LOGGED_IN_HEADER_WISHLIST_MISSING.png
-TC_MINICART_013,Auth Matrix: PDP Add to Cart Status,Verify if logging in enables 'Add to Cart' button on US PDP to allow Mini Cart population,"1. Log in as Deepali Londhe
-2. Navigate to product detail page (/base-2-seater-left-arm-sofa-oatmeal-light-oak-sof-ske-bas2s-lft-oat-lo)
-3. Inspect Add to Cart form container","Add to Cart button renders and is clickable, automatically sliding open populated Mini Cart drawer.","Add to Cart button remains SUPPRESSED (#product-addtocart-button count = 0), proving defect is catalog stock scope, not auth-gate.",FAIL,P1 - High,DEFECT 1: Purchasing Blocked - Add to Cart Button Suppressed,DEFECT_AUTH_2_LOGGED_IN_ADD_TO_CART_SUPPRESSED.png
-TC_MINICART_014,Auth Matrix: Drawer Session Sync,Verify Mini Cart drawer customer-data synchronization and session persistence when logged in,"1. Log in as Deepali Londhe
-2. Click Mini Cart trigger (.action.showcart)
-3. Verify drawer opens and inspect customer-data session in local storage",Drawer opens and syncs cart items associated with Deepali Londhe's account.,"Drawer opens and connects to customer session, but remains empty due to PDP Add to Cart suppression.",FAIL,P1 - High,DEFECT 1: Purchasing Blocked - Add to Cart Button Suppressed,DEFECT_AUTH_3_LOGGED_IN_MINICART_DRAWER_PARITY.png
-TC_MINICART_015,Auth Matrix: Logged-in Tax Compliance,Verify tax calculations and GST line behavior for authenticated customer in Mini Cart,"1. Inspect subtotal knockout binding in logged-in state
-2. Check tax line label in Magento_Checkout/template/minicart/subtotal.html",AU renders statutory Australian GST ($440.00). US must show Sales Tax or omit line until checkout calculation.,"Hardcoded Australian GST markup (<div class=""gst""><span data-bind=""i18n: 'GST'"">) persists in template for logged-in users.",FAIL,P1 - High,DEFECT 2: Australian GST Tax Leaking in US Mini Cart Subtotal Template,DEFECT_2_AUSTRALIAN_GST_TAX_LEAK_IN_MINICART.png
-TC_MINICART_016,Auth Matrix: Checkout Progression,Verify 'Proceed to Checkout' progression from Mini Cart for logged-in customer,"1. From populated Mini Cart drawer, click 'Proceed to Checkout'
-2. Verify checkout step transition","Customer profile is recognized, bypassing guest email prompt and advancing directly to shipping address.",Cannot reach populated drawer checkout progression organically due to PDP Add to Cart suppression defect.,FAIL,P1 - High,DEFECT 1: Purchasing Blocked - Add to Cart Button Suppressed,DEFECT_1_PURCHASING_BLOCKED_MINICART_POPULATION.png
+Test Case ID,Viewport,Component,Test Scenario,Test Steps,Expected Result (AU Baseline),Actual Result (US Staging),Status,Severity,Evidence
+"TC_MINICART_001","Desktop (1440px)","Header Navigation","Verify Mini-Cart trigger presence and counter badge in desktop header","1. Open homepage on desktop
+2. Locate cart bag icon in header
+3. Verify counter badge display","Cart bag icon visible with dynamic counter badge","Cart bag icon visible with dynamic counter badge (e.g. 16 items)","PASS","N/A","01_Desktop_Header_Cart_Trigger_PASS.png"
+"TC_MINICART_002","Desktop (1440px)","Empty State Behavior","Verify clicking header cart trigger when cart has 0 items","1. Ensure cart is empty
+2. Click header cart trigger","Clicking empty cart trigger navigates directly to /checkout/cart/ with empty hero messaging","Navigates directly to /checkout/cart/ displaying empty cart hero; matches AU behavior","PASS","N/A","02_Desktop_Empty_Cart_Page_PASS.png"
+"TC_MINICART_003","Desktop (1440px)","PDP / Trade Add to Cart","Verify Trade Customer Add to Cart action and counter badge increment","1. Login as Trade customer
+2. Navigate to in-stock PDP
+3. Click [ADD TO CART]","Adds item to cart session and updates header counter","Item successfully added to cart; header counter badge updates dynamically","PASS","N/A","04_Desktop_Cart_Counter_Badge_PASS.png"
+"TC_MINICART_004","Desktop (1440px)","Populated Drawer","Verify populated Mini-Cart slideout drawer opens smoothly","1. Click header cart trigger with items in cart
+2. Inspect slideout animation and drawer overlay","Slideout drawer opens smoothly with dark backdrop","Populated drawer slides out cleanly displaying items list","PASS","N/A","05_Desktop_Populated_MiniCart_Drawer_PASS.png"
+"TC_MINICART_005","Desktop (1440px)","Item Row Details","Verify product card rendering inside Mini-Cart drawer","1. Inspect line item inside drawer
+2. Check thumbnail image, title, and SKU","Displays product thumbnail, hyperlinked title, and SKU","Renders crisp thumbnail, product title, and SKU details","PASS","N/A","06_Desktop_MiniCart_Item_Row_PASS.png"
+"TC_MINICART_006","Desktop (1440px)","Price Visibility","Verify unit price display in Mini-Cart drawer","1. Check price container next to line item
+2. Verify currency formatting","Unit price rendered with local currency symbol ($)","Unit price clearly visible with USD $ formatting ($5,500.00)","PASS","N/A","07_Desktop_MiniCart_Price_PASS.png"
+"TC_MINICART_007","Desktop (1440px)","Quantity & Delete","Verify quantity input and remove item (trash) action","1. Locate item quantity input
+2. Locate delete / trash action link","Quantity can be updated and trash icon removes item","Quantity input is editable; delete action link is present and operable","PASS","N/A","08_Desktop_MiniCart_Qty_PASS.png"
+"TC_MINICART_008","Desktop (1440px)","Subtotal Display","Verify subtotal calculation and scan for Australian GST leakage","1. Inspect subtotal block
+2. Verify text does not contain Australian GST","Renders subtotal without Australian GST markup on US store","Displays clean 'Subtotal $29,194.00'; no GST tax line present","PASS","N/A","10_Desktop_MiniCart_Subtotal_PASS.png"
+"TC_MINICART_009","Desktop (1440px)","Action CTAs","Verify [VIEW AND EDIT CART] and [PROCEED TO CHECKOUT] links","1. Inspect [VIEW AND EDIT CART] href
+2. Inspect [PROCEED TO CHECKOUT] button","Route to /checkout/cart/ and /checkout/ sequence","Links correctly targeted to US /checkout/cart/ and checkout routes","PASS","N/A","11_Desktop_MiniCart_ViewCart_CTA_PASS.png"
+"TC_MINICART_010","Mobile (390px)","Mobile Header Trigger","Verify mobile header cart trigger icon visibility and tapability","1. Set viewport to 390x844 (iPhone)
+2. Locate cart trigger in mobile header bar","Cart trigger visible and tapable on mobile","Cart trigger prominently visible and tapable on mobile header","PASS","N/A","02_Mobile_Header_Cart_Trigger_PASS.png"
+"TC_MINICART_011","Mobile (390px)","Mobile Drawer Responsiveness","Verify mobile slideout drawer width and viewport fit","1. Tap mobile cart trigger
+2. Measure drawer dimensions and check for overflow","Drawer fits within mobile viewport without horizontal scrolling","Drawer width is 335px on 390px viewport with clean 55px backdrop; zero overflow","PASS","N/A","03_Mobile_Drawer_Fit_PASS.png"
+"TC_MINICART_012","Mobile (390px)","Mobile Product Card","Verify mobile product item card layout inside drawer","1. Inspect mobile drawer product row
+2. Check thumbnail, title, price, and controls","Responsive stacked card layout suitable for mobile","Card renders cleanly with responsive image and stacked layout","PASS","N/A","05_Mobile_Item_Card_Layout_PASS.png"
+"TC_MINICART_013","Mobile (390px)","Mobile Checkout CTAs","Verify mobile [PROCEED TO CHECKOUT] button tapability","1. Inspect checkout button dimensions and position on mobile
+2. Verify touch usability","Easily tapable checkout button with comfortable height","Full-width checkout CTA button with comfortable touch target","PASS","N/A","07_Mobile_Checkout_CTA_PASS.png"
+"TC_MINICART_014","Global Header","Header Utility / Wishlist Icon","Verify Wishlist heart icon presence next to Mini-Cart trigger","1. Inspect header utility navigation
+2. Compare with AU baseline","AU displays Wishlist heart icon next to Mini-Cart trigger","Wishlist heart icon is missing next to Mini Cart trigger in US header (Parity gap)","FAIL","P2 - Medium","DEFECT_01_US_Header_Missing_Wishlist_Icon_RED.png"
+"TC_MINICART_015","Mobile (390px)","Accessibility / Touch Target","Verify mobile close button touch target size compliance with WCAG 2.2 AA","1. Inspect #btn-minicart-close bounding box on mobile
+2. Check against minimum 24x24px / 44x44px target","Close button has accessible touch target of at least 24x24px","Close button has narrow bounding height (16.5px x 1px) due to pseudo-element styling","FAIL","P2 - Medium","04_Mobile_Close_Button_TouchTarget_PASS.png"

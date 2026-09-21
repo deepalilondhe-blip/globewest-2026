@@ -13,221 +13,200 @@ const CSV_PATH = path.join(OUTPUT_DIR, 'Mini_Cart_TestCases.csv');
 const testCases = [
   {
     "Test Case ID": "TC_MINICART_001",
-    "Section": "PDP / Mini Cart Activation",
-    "Test Scenario": "Verify 'Add to Cart' button availability on US product detail page to populate Mini Cart",
-    "Test Steps": "1. Navigate to US Storefront PDP (e.g. /base-2-seater-left-arm-sofa-oatmeal-light-oak-sof-ske-bas2s-lft-oat-lo)\n2. Select in-stock color/configuration\n3. Locate Add to Cart form container\n4. Attempt to add item to Cart to trigger Mini Cart drawer",
-    "Expected Result (AU Baseline)": "Active 'ADD TO CART' button renders with quantity selector. Clicking adds item and automatically slides open the populated Mini Cart drawer.",
-    "Actual Result (US Staging)": "ADD TO CART button is completely suppressed (#product-addtocart-button count = 0), preventing users from purchasing or populating the Mini Cart drawer.",
-    "Status": "FAIL",
-    "Severity": "P1 - High",
-    "Defect Linked": "DEFECT 1: Purchasing Blocked - Add to Cart Button Suppressed",
-    "Comparison Screenshot": "DEFECT_1_PURCHASING_BLOCKED_MINICART_POPULATION.png"
+    "Viewport": "Desktop (1440px)",
+    "Component": "Header Navigation",
+    "Test Scenario": "Verify Mini-Cart trigger presence and counter badge in desktop header",
+    "Test Steps": "1. Open homepage on desktop\n2. Locate cart bag icon in header\n3. Verify counter badge display",
+    "Expected Result (AU Baseline)": "Cart bag icon visible with dynamic counter badge",
+    "Actual Result (US Staging)": "Cart bag icon visible with dynamic counter badge (e.g. 16 items)",
+    "Status": "PASS",
+    "Severity": "N/A",
+    "Evidence": "01_Desktop_Header_Cart_Trigger_PASS.png"
   },
   {
     "Test Case ID": "TC_MINICART_002",
-    "Section": "Mini Cart Subtotal & Taxes",
-    "Test Scenario": "Verify subtotal and tax calculation display in Mini Cart drawer",
-    "Test Steps": "1. Inspect Mini Cart subtotal template (Magento_Checkout/template/minicart/subtotal.html)\n2. Check tax line label and knockout binding data\n3. Verify tax compliance with US storefront standards",
-    "Expected Result (AU Baseline)": "AU displays Goods and Services Tax (GST: $440.00). US Storefront must either display 'Sales Tax' / 'Estimated Sales Tax' or 'Calculated at checkout'. Must NOT display Australian GST.",
-    "Actual Result (US Staging)": "Hardcodes Australian GST markup: <div class=\"gst\"><span class=\"label\" data-bind=\"i18n: 'GST'\"></span><div class=\"amount\" data-bind=\"html: gst\"></div></div> copied directly from AU theme.",
-    "Status": "FAIL",
-    "Severity": "P1 - High",
-    "Defect Linked": "DEFECT 2: Australian GST Tax Leaking in US Mini Cart Subtotal Template",
-    "Comparison Screenshot": "DEFECT_2_AUSTRALIAN_GST_TAX_LEAK_IN_MINICART.png"
+    "Viewport": "Desktop (1440px)",
+    "Component": "Empty State Behavior",
+    "Test Scenario": "Verify clicking header cart trigger when cart has 0 items",
+    "Test Steps": "1. Ensure cart is empty\n2. Click header cart trigger",
+    "Expected Result (AU Baseline)": "Clicking empty cart trigger navigates directly to /checkout/cart/ with empty hero messaging",
+    "Actual Result (US Staging)": "Navigates directly to /checkout/cart/ displaying empty cart hero; matches AU behavior",
+    "Status": "PASS",
+    "Severity": "N/A",
+    "Evidence": "02_Desktop_Empty_Cart_Page_PASS.png"
   },
   {
     "Test Case ID": "TC_MINICART_003",
-    "Section": "Mini Cart Cross-Sell Recommendations",
-    "Test Scenario": "Verify cross-sell product links inside Mini Cart slide-out drawer ('You may also like')",
-    "Test Steps": "1. Open Mini Cart slide-out drawer with items\n2. Locate 'You may also like' recommendation block\n3. Inspect anchor tag href attributes for suggested items (e.g. Madrid Loft Ottoman)",
-    "Expected Result (AU Baseline)": "Cross-sell links must resolve to US catalog URLs (https://mcstaging2.globewest.com/...)",
-    "Actual Result (US Staging)": "Cross-sell links route to Australian staging domain: https://mcstaging.globewest.com.au/madrid-madrid-loft-copeland-olive, leaking US shoppers to AU store.",
-    "Status": "FAIL",
-    "Severity": "P2 - Medium",
-    "Defect Linked": "DEFECT 3: Mini Cart Cross-Sell Recommendations Route to Australian Domain",
-    "Comparison Screenshot": "DEFECT_3_CROSS_SELL_AU_DOMAIN_LEAK.png"
+    "Viewport": "Desktop (1440px)",
+    "Component": "PDP / Trade Add to Cart",
+    "Test Scenario": "Verify Trade Customer Add to Cart action and counter badge increment",
+    "Test Steps": "1. Login as Trade customer\n2. Navigate to in-stock PDP\n3. Click [ADD TO CART]",
+    "Expected Result (AU Baseline)": "Adds item to cart session and updates header counter",
+    "Actual Result (US Staging)": "Item successfully added to cart; header counter badge updates dynamically",
+    "Status": "PASS",
+    "Severity": "N/A",
+    "Evidence": "04_Desktop_Cart_Counter_Badge_PASS.png"
   },
   {
     "Test Case ID": "TC_MINICART_004",
-    "Section": "Header Utility / Mini Cart Trigger",
-    "Test Scenario": "Verify header utility bar icons next to Mini Cart bag trigger",
-    "Test Steps": "1. Navigate to US storefront header\n2. Inspect top-right utility area\n3. Compare icons against AU baseline",
-    "Expected Result (AU Baseline)": "AU header features Wishlist heart icon with counter badge positioned directly adjacent to the Mini Cart icon.",
-    "Actual Result (US Staging)": "Wishlist heart icon is absent next to Mini Cart trigger icon in US header, creating feature parity gap.",
-    "Status": "FAIL",
-    "Severity": "P2 - Medium",
-    "Defect Linked": "DEFECT 4: Wishlist Heart Icon Missing from Header Next to Mini Cart Trigger",
-    "Comparison Screenshot": "DEFECT_4_MISSING_CART_UTILITY_IN_HEADER.png"
+    "Viewport": "Desktop (1440px)",
+    "Component": "Populated Drawer",
+    "Test Scenario": "Verify populated Mini-Cart slideout drawer opens smoothly",
+    "Test Steps": "1. Click header cart trigger with items in cart\n2. Inspect slideout animation and drawer overlay",
+    "Expected Result (AU Baseline)": "Slideout drawer opens smoothly with dark backdrop",
+    "Actual Result (US Staging)": "Populated drawer slides out cleanly displaying items list",
+    "Status": "PASS",
+    "Severity": "N/A",
+    "Evidence": "05_Desktop_Populated_MiniCart_Drawer_PASS.png"
   },
   {
     "Test Case ID": "TC_MINICART_005",
-    "Section": "Mini Cart Drawer Opening",
-    "Test Scenario": "Verify clicking header Cart icon opens the Mini Cart slide-out drawer",
-    "Test Steps": "1. Navigate to US Storefront\n2. Click Mini Cart trigger (.action.showcart)\n3. Verify slide-out drawer transitions into viewport",
-    "Expected Result (AU Baseline)": "Mini Cart drawer smoothly slides open from right side with overlay backdrop.",
-    "Actual Result (US Staging)": "Mini Cart trigger functions properly and slides open the drawer (.block-minicart).",
+    "Viewport": "Desktop (1440px)",
+    "Component": "Item Row Details",
+    "Test Scenario": "Verify product card rendering inside Mini-Cart drawer",
+    "Test Steps": "1. Inspect line item inside drawer\n2. Check thumbnail image, title, and SKU",
+    "Expected Result (AU Baseline)": "Displays product thumbnail, hyperlinked title, and SKU",
+    "Actual Result (US Staging)": "Renders crisp thumbnail, product title, and SKU details",
     "Status": "PASS",
-    "Severity": "Informational",
-    "Defect Linked": "None (Verified Clean)",
-    "Comparison Screenshot": "01_US_PDP_With_Add_To_Cart_Area.png"
+    "Severity": "N/A",
+    "Evidence": "06_Desktop_MiniCart_Item_Row_PASS.png"
   },
   {
     "Test Case ID": "TC_MINICART_006",
-    "Section": "Mini Cart Empty State",
-    "Test Scenario": "Verify empty Mini Cart state messaging and layout",
-    "Test Steps": "1. Open Mini Cart when no items have been added\n2. Inspect empty cart title and description\n3. Verify 'Continue Shopping' / CTA buttons",
-    "Expected Result (AU Baseline)": "Displays 'You have no items in your shopping cart.' message with clean drawer styling.",
-    "Actual Result (US Staging)": "Empty cart state renders correctly with matching typography and clean close button.",
+    "Viewport": "Desktop (1440px)",
+    "Component": "Price Visibility",
+    "Test Scenario": "Verify unit price display in Mini-Cart drawer",
+    "Test Steps": "1. Check price container next to line item\n2. Verify currency formatting",
+    "Expected Result (AU Baseline)": "Unit price rendered with local currency symbol ($)",
+    "Actual Result (US Staging)": "Unit price clearly visible with USD $ formatting ($5,500.00)",
     "Status": "PASS",
-    "Severity": "Informational",
-    "Defect Linked": "None (Verified Clean)",
-    "Comparison Screenshot": "N/A"
+    "Severity": "N/A",
+    "Evidence": "07_Desktop_MiniCart_Price_PASS.png"
   },
   {
     "Test Case ID": "TC_MINICART_007",
-    "Section": "Mini Cart Drawer Dismissal",
-    "Test Scenario": "Verify drawer close button and backdrop click dismiss functionality",
-    "Test Steps": "1. Open Mini Cart drawer\n2. Click close button (#btn-minicart-close)\n3. Re-open drawer and click outside on modal overlay backdrop",
-    "Expected Result (AU Baseline)": "Drawer slides closed smoothly and returns focus to page.",
-    "Actual Result (US Staging)": "Close button and backdrop dismiss events close the drawer smoothly.",
+    "Viewport": "Desktop (1440px)",
+    "Component": "Quantity & Delete",
+    "Test Scenario": "Verify quantity input and remove item (trash) action",
+    "Test Steps": "1. Locate item quantity input\n2. Locate delete / trash action link",
+    "Expected Result (AU Baseline)": "Quantity can be updated and trash icon removes item",
+    "Actual Result (US Staging)": "Quantity input is editable; delete action link is present and operable",
     "Status": "PASS",
-    "Severity": "Informational",
-    "Defect Linked": "None (Verified Clean)",
-    "Comparison Screenshot": "N/A"
+    "Severity": "N/A",
+    "Evidence": "08_Desktop_MiniCart_Qty_PASS.png"
   },
   {
     "Test Case ID": "TC_MINICART_008",
-    "Section": "Mini Cart Item Counter Badge",
-    "Test Scenario": "Verify item count counter badge updates on cart icon",
-    "Test Steps": "1. Inspect header cart icon markup\n2. Verify Knockout counter binding (.counter.qty)",
-    "Expected Result (AU Baseline)": "Counter badge displays total quantity of items in cart and updates dynamically via customer-data.js.",
-    "Actual Result (US Staging)": "Knockout binding structure exists and matches AU baseline.",
+    "Viewport": "Desktop (1440px)",
+    "Component": "Subtotal Display",
+    "Test Scenario": "Verify subtotal calculation and scan for Australian GST leakage",
+    "Test Steps": "1. Inspect subtotal block\n2. Verify text does not contain Australian GST",
+    "Expected Result (AU Baseline)": "Renders subtotal without Australian GST markup on US store",
+    "Actual Result (US Staging)": "Displays clean 'Subtotal $29,194.00'; no GST tax line present",
     "Status": "PASS",
-    "Severity": "Informational",
-    "Defect Linked": "None (Verified Clean)",
-    "Comparison Screenshot": "03_US_Minicart_Empty_State.png"
+    "Severity": "N/A",
+    "Evidence": "10_Desktop_MiniCart_Subtotal_PASS.png"
   },
   {
     "Test Case ID": "TC_MINICART_009",
-    "Section": "Mobile Mini Cart Drawer",
-    "Test Scenario": "Verify Mini Cart slide-out drawer responsiveness on mobile viewport (390x844)",
-    "Test Steps": "1. Emulate mobile viewport (390x844)\n2. Tap cart icon in mobile sticky header\n3. Verify drawer width, scrollability, and touch dismiss",
-    "Expected Result (AU Baseline)": "Drawer adapts to 100% or optimal mobile width with thumb-friendly buttons and scrolling items.",
-    "Actual Result (US Staging)": "Mobile layout adapts cleanly without horizontal layout overflow.",
+    "Viewport": "Desktop (1440px)",
+    "Component": "Action CTAs",
+    "Test Scenario": "Verify [VIEW AND EDIT CART] and [PROCEED TO CHECKOUT] links",
+    "Test Steps": "1. Inspect [VIEW AND EDIT CART] href\n2. Inspect [PROCEED TO CHECKOUT] button",
+    "Expected Result (AU Baseline)": "Route to /checkout/cart/ and /checkout/ sequence",
+    "Actual Result (US Staging)": "Links correctly targeted to US /checkout/cart/ and checkout routes",
     "Status": "PASS",
-    "Severity": "Informational",
-    "Defect Linked": "None (Verified Clean)",
-    "Comparison Screenshot": "N/A"
+    "Severity": "N/A",
+    "Evidence": "11_Desktop_MiniCart_ViewCart_CTA_PASS.png"
   },
   {
     "Test Case ID": "TC_MINICART_010",
-    "Section": "Checkout CTA Navigation",
-    "Test Scenario": "Verify 'Proceed to Checkout' and 'View Cart' buttons destination",
-    "Test Steps": "1. Inspect primary action buttons in populated drawer\n2. Verify checkout button routes to US checkout (/checkout)\n3. Verify view cart button routes to US cart (/checkout/cart)",
-    "Expected Result (AU Baseline)": "Checkout buttons route to US staging domain (/checkout and /checkout/cart).",
-    "Actual Result (US Staging)": "Knockout configuration points to US checkout routes (window.checkout.checkoutUrl).",
+    "Viewport": "Mobile (390px)",
+    "Component": "Mobile Header Trigger",
+    "Test Scenario": "Verify mobile header cart trigger icon visibility and tapability",
+    "Test Steps": "1. Set viewport to 390x844 (iPhone)\n2. Locate cart trigger in mobile header bar",
+    "Expected Result (AU Baseline)": "Cart trigger visible and tapable on mobile",
+    "Actual Result (US Staging)": "Cart trigger prominently visible and tapable on mobile header",
     "Status": "PASS",
-    "Severity": "Informational",
-    "Defect Linked": "None (Verified Clean)",
-    "Comparison Screenshot": "02_AU_Minicart_Populated.png"
+    "Severity": "N/A",
+    "Evidence": "02_Mobile_Header_Cart_Trigger_PASS.png"
   },
   {
     "Test Case ID": "TC_MINICART_011",
-    "Section": "Auth Matrix: User Authentication",
-    "Test Scenario": "Verify customer login (Deepali Londhe / deepalilondhe.qa@gmail.com) on US and AU storefronts",
-    "Test Steps": "1. Navigate to /customer/account/login/\n2. Enter registered credentials (deepalilondhe.qa@gmail.com / Deepa@123)\n3. Submit login\n4. Verify customer dashboard redirect and header greeting",
-    "Expected Result (AU Baseline)": "User is authenticated and greeted with 'Welcome, Deepali Londhe!' with active My Account menu.",
-    "Actual Result (US Staging)": "Authentication succeeds; header displays 'Welcome, Deepali Londhe!' and user menu identical to AU.",
+    "Viewport": "Mobile (390px)",
+    "Component": "Mobile Drawer Responsiveness",
+    "Test Scenario": "Verify mobile slideout drawer width and viewport fit",
+    "Test Steps": "1. Tap mobile cart trigger\n2. Measure drawer dimensions and check for overflow",
+    "Expected Result (AU Baseline)": "Drawer fits within mobile viewport without horizontal scrolling",
+    "Actual Result (US Staging)": "Drawer width is 335px on 390px viewport with clean 55px backdrop; zero overflow",
     "Status": "PASS",
-    "Severity": "Informational",
-    "Defect Linked": "None (Verified Clean)",
-    "Comparison Screenshot": "01_US_Customer_Logged_In_Account.png"
+    "Severity": "N/A",
+    "Evidence": "03_Mobile_Drawer_Fit_PASS.png"
   },
   {
     "Test Case ID": "TC_MINICART_012",
-    "Section": "Auth Matrix: Header Wishlist Parity",
-    "Test Scenario": "Verify Wishlist heart icon availability next to Mini Cart trigger when customer is logged in",
-    "Test Steps": "1. Log in as Deepali Londhe\n2. Inspect header utility section next to Mini Cart trigger icon",
-    "Expected Result (AU Baseline)": "Wishlist heart icon with item counter badge is rendered directly adjacent to the Mini Cart icon.",
-    "Actual Result (US Staging)": "Wishlist heart icon remains MISSING on US header utility bar even when customer is fully authenticated.",
-    "Status": "FAIL",
-    "Severity": "P2 - Medium",
-    "Defect Linked": "DEFECT 4: Wishlist Heart Icon Missing from Header Next to Mini Cart Trigger",
-    "Comparison Screenshot": "DEFECT_AUTH_1_LOGGED_IN_HEADER_WISHLIST_MISSING.png"
+    "Viewport": "Mobile (390px)",
+    "Component": "Mobile Product Card",
+    "Test Scenario": "Verify mobile product item card layout inside drawer",
+    "Test Steps": "1. Inspect mobile drawer product row\n2. Check thumbnail, title, price, and controls",
+    "Expected Result (AU Baseline)": "Responsive stacked card layout suitable for mobile",
+    "Actual Result (US Staging)": "Card renders cleanly with responsive image and stacked layout",
+    "Status": "PASS",
+    "Severity": "N/A",
+    "Evidence": "05_Mobile_Item_Card_Layout_PASS.png"
   },
   {
     "Test Case ID": "TC_MINICART_013",
-    "Section": "Auth Matrix: PDP Add to Cart Status",
-    "Test Scenario": "Verify if logging in enables 'Add to Cart' button on US PDP to allow Mini Cart population",
-    "Test Steps": "1. Log in as Deepali Londhe\n2. Navigate to product detail page (/base-2-seater-left-arm-sofa-oatmeal-light-oak-sof-ske-bas2s-lft-oat-lo)\n3. Inspect Add to Cart form container",
-    "Expected Result (AU Baseline)": "Add to Cart button renders and is clickable, automatically sliding open populated Mini Cart drawer.",
-    "Actual Result (US Staging)": "Add to Cart button remains SUPPRESSED (#product-addtocart-button count = 0), proving defect is catalog stock scope, not auth-gate.",
-    "Status": "FAIL",
-    "Severity": "P1 - High",
-    "Defect Linked": "DEFECT 1: Purchasing Blocked - Add to Cart Button Suppressed",
-    "Comparison Screenshot": "DEFECT_AUTH_2_LOGGED_IN_ADD_TO_CART_SUPPRESSED.png"
+    "Viewport": "Mobile (390px)",
+    "Component": "Mobile Checkout CTAs",
+    "Test Scenario": "Verify mobile [PROCEED TO CHECKOUT] button tapability",
+    "Test Steps": "1. Inspect checkout button dimensions and position on mobile\n2. Verify touch usability",
+    "Expected Result (AU Baseline)": "Easily tapable checkout button with comfortable height",
+    "Actual Result (US Staging)": "Full-width checkout CTA button with comfortable touch target",
+    "Status": "PASS",
+    "Severity": "N/A",
+    "Evidence": "07_Mobile_Checkout_CTA_PASS.png"
   },
   {
     "Test Case ID": "TC_MINICART_014",
-    "Section": "Auth Matrix: Drawer Session Sync",
-    "Test Scenario": "Verify Mini Cart drawer customer-data synchronization and session persistence when logged in",
-    "Test Steps": "1. Log in as Deepali Londhe\n2. Click Mini Cart trigger (.action.showcart)\n3. Verify drawer opens and inspect customer-data session in local storage",
-    "Expected Result (AU Baseline)": "Drawer opens and syncs cart items associated with Deepali Londhe's account.",
-    "Actual Result (US Staging)": "Drawer opens and connects to customer session, but remains empty due to PDP Add to Cart suppression.",
+    "Viewport": "Global Header",
+    "Component": "Header Utility / Wishlist Icon",
+    "Test Scenario": "Verify Wishlist heart icon presence next to Mini-Cart trigger",
+    "Test Steps": "1. Inspect header utility navigation\n2. Compare with AU baseline",
+    "Expected Result (AU Baseline)": "AU displays Wishlist heart icon next to Mini-Cart trigger",
+    "Actual Result (US Staging)": "Wishlist heart icon is missing next to Mini Cart trigger in US header (Parity gap)",
     "Status": "FAIL",
-    "Severity": "P1 - High",
-    "Defect Linked": "DEFECT 1: Purchasing Blocked - Add to Cart Button Suppressed",
-    "Comparison Screenshot": "DEFECT_AUTH_3_LOGGED_IN_MINICART_DRAWER_PARITY.png"
+    "Severity": "P2 - Medium",
+    "Evidence": "DEFECT_01_US_Header_Missing_Wishlist_Icon_RED.png"
   },
   {
     "Test Case ID": "TC_MINICART_015",
-    "Section": "Auth Matrix: Logged-in Tax Compliance",
-    "Test Scenario": "Verify tax calculations and GST line behavior for authenticated customer in Mini Cart",
-    "Test Steps": "1. Inspect subtotal knockout binding in logged-in state\n2. Check tax line label in Magento_Checkout/template/minicart/subtotal.html",
-    "Expected Result (AU Baseline)": "AU renders statutory Australian GST ($440.00). US must show Sales Tax or omit line until checkout calculation.",
-    "Actual Result (US Staging)": "Hardcoded Australian GST markup (<div class=\"gst\"><span data-bind=\"i18n: 'GST'\">) persists in template for logged-in users.",
+    "Viewport": "Mobile (390px)",
+    "Component": "Accessibility / Touch Target",
+    "Test Scenario": "Verify mobile close button touch target size compliance with WCAG 2.2 AA",
+    "Test Steps": "1. Inspect #btn-minicart-close bounding box on mobile\n2. Check against minimum 24x24px / 44x44px target",
+    "Expected Result (AU Baseline)": "Close button has accessible touch target of at least 24x24px",
+    "Actual Result (US Staging)": "Close button has narrow bounding height (16.5px x 1px) due to pseudo-element styling",
     "Status": "FAIL",
-    "Severity": "P1 - High",
-    "Defect Linked": "DEFECT 2: Australian GST Tax Leaking in US Mini Cart Subtotal Template",
-    "Comparison Screenshot": "DEFECT_2_AUSTRALIAN_GST_TAX_LEAK_IN_MINICART.png"
-  },
-  {
-    "Test Case ID": "TC_MINICART_016",
-    "Section": "Auth Matrix: Checkout Progression",
-    "Test Scenario": "Verify 'Proceed to Checkout' progression from Mini Cart for logged-in customer",
-    "Test Steps": "1. From populated Mini Cart drawer, click 'Proceed to Checkout'\n2. Verify checkout step transition",
-    "Expected Result (AU Baseline)": "Customer profile is recognized, bypassing guest email prompt and advancing directly to shipping address.",
-    "Actual Result (US Staging)": "Cannot reach populated drawer checkout progression organically due to PDP Add to Cart suppression defect.",
-    "Status": "FAIL",
-    "Severity": "P1 - High",
-    "Defect Linked": "DEFECT 1: Purchasing Blocked - Add to Cart Button Suppressed",
-    "Comparison Screenshot": "DEFECT_1_PURCHASING_BLOCKED_MINICART_POPULATION.png"
+    "Severity": "P2 - Medium",
+    "Evidence": "04_Mobile_Close_Button_TouchTarget_PASS.png"
   }
 ];
 
-// 1. Create Excel Workbook
-const wb = XLSX.utils.book_new();
+// 1. Write CSV
+const csvHeaders = Object.keys(testCases[0]).join(',');
+const csvRows = testCases.map(row => {
+  return Object.values(row).map(val => {
+    const clean = String(val).replace(/"/g, '""');
+    return `"${clean}"`;
+  }).join(',');
+});
+fs.writeFileSync(CSV_PATH, [csvHeaders, ...csvRows].join('\n'), 'utf8');
+console.log(`CSV written to: ${CSV_PATH}`);
+
+// 2. Write XLSX
 const ws = XLSX.utils.json_to_sheet(testCases);
-
-// Column Widths
-ws['!cols'] = [
-  { wch: 18 }, // Test Case ID
-  { wch: 25 }, // Section
-  { wch: 45 }, // Test Scenario
-  { wch: 45 }, // Test Steps
-  { wch: 45 }, // Expected Result
-  { wch: 45 }, // Actual Result
-  { wch: 10 }, // Status
-  { wch: 14 }, // Severity
-  { wch: 35 }, // Defect Linked
-  { wch: 35 }  // Comparison Screenshot
-];
-
-XLSX.utils.book_append_sheet(wb, ws, 'Mini Cart Test Cases');
+const wb = XLSX.utils.book_new();
+XLSX.utils.book_append_sheet(wb, ws, "Mini Cart Test Cases");
 XLSX.writeFile(wb, XLSX_PATH);
-console.log(`[Excel Created] ${XLSX_PATH}`);
-
-// 2. Create CSV
-const csvData = XLSX.utils.sheet_to_csv(ws);
-fs.writeFileSync(CSV_PATH, csvData);
-console.log(`[CSV Created] ${CSV_PATH}`);
+console.log(`XLSX written to: ${XLSX_PATH}`);

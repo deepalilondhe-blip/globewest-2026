@@ -1,0 +1,175 @@
+{
+  "socialLinks": [
+    {
+      "class": "facebook",
+      "href": "https://www.facebook.com/globewestfurniture/",
+      "ariaLabel": "Globewest Facebook - open in new window",
+      "title": null
+    },
+    {
+      "class": "pinterest",
+      "href": "https://www.pinterest.com.au/globewest/",
+      "ariaLabel": "Globewest Pinterest - open in new window",
+      "title": null
+    },
+    {
+      "class": "instagram",
+      "href": "https://www.instagram.com/globewest/",
+      "ariaLabel": "Globewest Instagram - open in new window",
+      "title": null
+    },
+    {
+      "class": "tiktok",
+      "href": "https://www.tiktok.com/@globewest",
+      "ariaLabel": "Globewest Tiktok - open in new window",
+      "title": null
+    }
+  ],
+  "newsletterText": "Subscribe\nBe the first to know about GlobeWest new collections, product launches and special offers. Subscribe Now.",
+  "newsletterLinks": [
+    {
+      "text": "Subscribe Now.",
+      "href": "https://mcstaging2.globewest.com/subscribe-to-our-database"
+    }
+  ],
+  "showroomText": "VISIT OUR SHOWROOMS\n\nPlease book an appointment to see the largest selection of our products. We look forward to seeing you!\n\nBOOK AN APPOINTMENT",
+  "showroomLinks": [
+    {
+      "text": "BOOK AN APPOINTMENT",
+      "href": "https://mcstaging2.globewest.com/online-booking"
+    }
+  ],
+  "designLogoImgs": [
+    {
+      "src": "https://mcstaging2.globewest.com/media/wysiwyg/design-logo-footer.png",
+      "alt": "",
+      "class": "pagebuilder-mobile-hidden"
+    },
+    {
+      "src": "https://mcstaging2.globewest.com/media/wysiwyg/design-logo-footer.png",
+      "alt": "",
+      "class": "pagebuilder-mobile-only"
+    }
+  ],
+  "columnLinks": [
+    {
+      "text": "In Stock",
+      "href": "https://mcstaging2.globewest.com/in-stock"
+    },
+    {
+      "text": "Indoor",
+      "href": "https://mcstaging2.globewest.com/indoor"
+    },
+    {
+      "text": "Living",
+      "href": "https://mcstaging2.globewest.com/indoor/shop-by-room/living-room"
+    },
+    {
+      "text": "Dining",
+      "href": "https://mcstaging2.globewest.com/indoor/shop-by-room/dining-room-kitchen"
+    },
+    {
+      "text": "Bedroom",
+      "href": "https://mcstaging2.globewest.com/indoor/shop-by-room/bedroom"
+    },
+    {
+      "text": "Outdoor Furniture",
+      "href": "https://mcstaging2.globewest.com/outdoor"
+    },
+    {
+      "text": "Office & Workspace",
+      "href": "https://mcstaging2.globewest.com/indoor/shop-by-room/home-office-study"
+    },
+    {
+      "text": "Homewares",
+      "href": "https://mcstaging2.globewest.com/homewares"
+    },
+    {
+      "text": "Lighting",
+      "href": "https://mcstaging2.globewest.com/homeware/lighting"
+    },
+    {
+      "text": "Rugs",
+      "href": "https://mcstaging2.globewest.com/homeware/homewares/rugs"
+    },
+    {
+      "text": "How to Buy",
+      "href": "https://mcstaging2.globewest.com/how-to-buy"
+    },
+    {
+      "text": "Showroom Locations",
+      "href": "https://mcstaging2.globewest.com/contact"
+    },
+    {
+      "text": "Trade & Wholesale",
+      "href": "https://mcstaging2.globewest.com/help-centre/general/trade-registration"
+    },
+    {
+      "text": "Project & Commercial",
+      "href": "https://mcstaging2.globewest.com/help-centre"
+    },
+    {
+      "text": "Find a Stockist",
+      "href": "https://mcstaging2.globewest.com/locator"
+    },
+    {
+      "text": "Find a Designer",
+      "href": "https://mcstaging2.globewest.com/find-designer-start"
+    },
+    {
+      "text": "Help Centre",
+      "href": "https://mcstaging2.globewest.com/help-centre"
+    },
+    {
+      "text": "After Sales Enquiries",
+      "href": "https://mcstaging2.globewest.com/help-centre/after-sales-enquires"
+    },
+    {
+      "text": "Contact Us",
+      "href": "https://mcstaging2.globewest.com/contact"
+    },
+    {
+      "text": "Product Care",
+      "href": "https://mcstaging2.globewest.com/product-care"
+    },
+    {
+      "text": "Shop Outlet",
+      "href": "https://globewestoutlet.com.au/"
+    },
+    {
+      "text": "About Us",
+      "href": "https://mcstaging2.globewest.com/about-us"
+    },
+    {
+      "text": "Careers",
+      "href": "https://mcstaging2.globewest.com/careers"
+    },
+    {
+      "text": "Inspiration & Interviews",
+      "href": "https://mcstaging2.globewest.com/blog"
+    },
+    {
+      "text": "Video Library",
+      "href": "https://mcstaging2.globewest.com/video-library"
+    },
+    {
+      "text": "Lookbook Library",
+      "href": "https://mcstaging2.globewest.com/lookbook-library"
+    },
+    {
+      "text": "Press",
+      "href": "https://mcstaging2.globewest.com/press"
+    }
+  ],
+  "bottomText": "© 2026 GlobeWest Privacy Policy Terms & Conditions",
+  "bottomHrefList": [
+    {
+      "text": "Privacy Policy",
+      "href": "https://mcstaging2.globewest.com/privacy-policy"
+    },
+    {
+      "text": "Terms & Conditions",
+      "href": "https://mcstaging2.globewest.com/terms-and-conditions-page"
+    }
+  ]
+}

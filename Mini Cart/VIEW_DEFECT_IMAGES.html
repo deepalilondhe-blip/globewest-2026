@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mini Cart Section Cross-Storefront Defect Comparison Audit (US vs AU)</title>
+  <title>Mini Cart QA Verification & Defect Gallery (Desktop & Mobile)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
       --card-bg: #181b24;
       --border-dark: #272c3d;
       --red-defect: #ef4444;
-      --green-baseline: #10b981;
+      --green-pass: #10b981;
       --text-main: #f3f4f6;
       --text-muted: #9ca3af;
       --accent: #3b82f6;
@@ -38,7 +38,7 @@
     }
     h1 {
       font-family: 'Outfit', sans-serif;
-      font-size: 30px;
+      font-size: 32px;
       font-weight: 700;
       letter-spacing: -0.5px;
       margin-bottom: 8px;
@@ -51,94 +51,128 @@
       margin-top: 15px;
     }
     .pill {
-      padding: 5px 14px;
+      padding: 6px 16px;
       border-radius: 20px;
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 0.3px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
+    .pill-green { background: rgba(16, 185, 129, 0.2); color: var(--green-pass); border: 1px solid var(--green-pass); }
     .pill-red { background: rgba(239, 68, 68, 0.2); color: var(--red-defect); border: 1px solid var(--red-defect); }
-    .pill-green { background: rgba(16, 185, 129, 0.2); color: var(--green-baseline); border: 1px solid var(--green-baseline); }
     .pill-blue { background: rgba(59, 130, 246, 0.2); color: var(--accent); border: 1px solid var(--accent); }
 
-    .defect-card {
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
+      color: #fff;
+      margin: 40px 0 20px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--border-dark);
+      padding-bottom: 10px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .card {
       background: var(--card-bg);
       border: 1px solid var(--border-dark);
       border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      transition: border-color 0.2s;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .defect-card:hover {
-      border-color: #3f465c;
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
     }
-    .defect-header {
+    .card-pass { border-top: 4px solid var(--green-pass); }
+    .card-defect { border-top: 4px solid var(--red-defect); }
+
+    .card-header {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
-      gap: 10px;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
     }
-    .defect-title {
+    .card-title {
       font-family: 'Outfit', sans-serif;
-      font-size: 20px;
-      font-weight: 700;
+      font-size: 17px;
+      font-weight: 600;
       color: #fff;
     }
-    .defect-desc {
+    .card-desc {
       color: var(--text-muted);
-      font-size: 14px;
-      margin-bottom: 18px;
+      font-size: 13.5px;
+      margin-bottom: 14px;
     }
-    .img-wrapper {
-      background: #090a0d;
+
+    .img-box {
+      background: #090a0f;
       border-radius: 8px;
       overflow: hidden;
+      border: 1px solid #232733;
+      margin-bottom: 14px;
       display: flex;
       justify-content: center;
       align-items: center;
-      border: 1px solid #232733;
+      min-height: 240px;
     }
-    .img-wrapper img {
-      max-width: 100%;
+    .img-box img {
+      width: 100%;
       height: auto;
       display: block;
       cursor: zoom-in;
-      transition: transform 0.2s;
+      transition: opacity 0.2s;
     }
-    .links-footer {
+    .img-box img:hover {
+      opacity: 0.92;
+    }
+
+    .card-footer {
       display: flex;
-      gap: 15px;
-      margin-top: 14px;
-      font-size: 13px;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12.5px;
+      color: var(--text-muted);
     }
-    .links-footer a {
+    .card-footer a {
       color: var(--accent);
       text-decoration: none;
       font-weight: 500;
     }
-    .links-footer a:hover {
+    .card-footer a:hover {
       text-decoration: underline;
     }
 
-    /* Modal for zoom */
+    /* Modal */
     #modal {
       display: none;
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.92);
-      z-index: 99999;
+      background: rgba(0,0,0,0.94);
+      z-index: 999999;
       justify-content: center;
       align-items: center;
       cursor: zoom-out;
     }
     #modal img {
-      max-width: 96%;
-      max-height: 96%;
+      max-width: 95%;
+      max-height: 95%;
       border-radius: 6px;
-      box-shadow: 0 0 30px rgba(0,0,0,0.8);
+      box-shadow: 0 0 35px rgba(0,0,0,0.9);
     }
   </style>
 </head>
@@ -146,176 +180,274 @@
 
   <div class="container">
     <header>
-      <h1>TICKET: Mini Cart Section Defect Comparison Audit</h1>
-      <p style="color: var(--text-muted); margin-top: 6px;">Target: https://mcstaging2.globewest.com (US - RED) vs Baseline: https://mcstaging2.globewest.com.au (AU - GREEN)</p>
+      <h1>TICKET: Mini Cart Section Parity & Responsive Audit</h1>
+      <p style="color: var(--text-muted); margin-top: 6px;">Target: https://mcstaging2.globewest.com (US) vs Baseline: https://mcstaging2.globewest.com.au (AU) | WCAG 2.2 AA</p>
       <div class="badge-bar">
-        <span class="pill pill-red">🔴 US Storefront = DEFECT</span>
-        <span class="pill pill-green">🟢 AU Storefront = BASELINE</span>
-        <span class="pill pill-blue">📋 4 Verified Defects</span>
+        <span class="pill pill-green">🟢 13 Verified Features (WORKING FINE)</span>
+        <span class="pill pill-red">🔴 2 Parity / Accessibility Defects</span>
+        <span class="pill pill-blue">📱 Desktop & Mobile Viewports</span>
         <a href="Mini_Cart_TestCases.xlsx" style="text-decoration: none;"><span class="pill pill-blue" style="cursor: pointer;">📥 Download Excel Test Cases</span></a>
         <a href="Mini_Cart_TestCases.csv" style="text-decoration: none;"><span class="pill pill-blue" style="cursor: pointer;">📥 Download CSV</span></a>
       </div>
     </header>
 
-    <!-- Master Poster -->
-    <div class="defect-card" style="border-color: #3b82f6;">
-      <div class="defect-header">
-        <h2 class="defect-title">🌟 MASTER COMBINED COMPARISON POSTER (ALL 4 DEFECTS)</h2>
-        <span class="pill pill-blue">High Resolution (1540x)</span>
+    <!-- SECTION 1: DESKTOP VIEWPORT -->
+    <h2 class="section-title">💻 Desktop Viewport (1440x900) — Verified Working Fine (🟢 PASS)</h2>
+    <div class="gallery-grid">
+      
+      <!-- Card 1 -->
+      <div class="card card-pass">
+        <div class="card-header">
+          <h3 class="card-title">Desktop Header Mini-Cart Trigger</h3>
+          <span class="pill pill-green">PASS</span>
+        </div>
+        <p class="card-desc">Cart bag icon prominently rendered in header with dynamic counter badge showing active items count.</p>
+        <div class="img-box">
+          <img src="screenshots/desktop/01_Desktop_Header_Cart_Trigger_PASS.png" alt="Header Cart Trigger" onclick="openModal(this.src)">
+        </div>
+        <div class="card-footer">
+          <span>01_Desktop_Header_Cart_Trigger_PASS.png</span>
+          <a href="screenshots/desktop/01_Desktop_Header_Cart_Trigger_PASS.png" target="_blank">Full View ↗</a>
+        </div>
       </div>
-      <p class="defect-desc">Unified vertical comparison sheet showing all 4 verified Mini Cart defects side-by-side with clear color coding.</p>
-      <div class="img-wrapper">
-        <img src="comparison/ONE_COMBINED_MINI_CART_DEFECTS_COMPARISON.png" alt="All Mini Cart Defects Combined" onclick="openModal(this.src)">
+
+      <!-- Card 2 -->
+      <div class="card card-pass">
+        <div class="card-header">
+          <h3 class="card-title">Empty Cart Header Click (AU Parity)</h3>
+          <span class="pill pill-green">PASS</span>
+        </div>
+        <p class="card-desc">Clicking cart trigger when empty navigates directly to /checkout/cart/ displaying empty cart layout (matches AU 100%).</p>
+        <div class="img-box">
+          <img src="screenshots/desktop/02_Desktop_Empty_Cart_Page_PASS.png" alt="Empty Cart Navigation" onclick="openModal(this.src)">
+        </div>
+        <div class="card-footer">
+          <span>02_Desktop_Empty_Cart_Page_PASS.png</span>
+          <a href="screenshots/desktop/02_Desktop_Empty_Cart_Page_PASS.png" target="_blank">Full View ↗</a>
+        </div>
       </div>
-      <div class="links-footer">
-        <a href="comparison/ONE_COMBINED_MINI_CART_DEFECTS_COMPARISON.png" target="_blank">Open Full Size in New Tab ↗</a>
+
+      <!-- Card 3 -->
+      <div class="card card-pass">
+        <div class="card-header">
+          <h3 class="card-title">Trade Add to Cart & Counter Update</h3>
+          <span class="pill pill-green">PASS</span>
+        </div>
+        <p class="card-desc">Trade customer clicks [ADD TO CART]; in-stock item is added and header badge increments dynamically.</p>
+        <div class="img-box">
+          <img src="screenshots/desktop/04_Desktop_Cart_Counter_Badge_PASS.png" alt="Cart Counter Badge" onclick="openModal(this.src)">
+        </div>
+        <div class="card-footer">
+          <span>04_Desktop_Cart_Counter_Badge_PASS.png</span>
+          <a href="screenshots/desktop/04_Desktop_Cart_Counter_Badge_PASS.png" target="_blank">Full View ↗</a>
+        </div>
       </div>
+
+      <!-- Card 4 -->
+      <div class="card card-pass">
+        <div class="card-header">
+          <h3 class="card-title">Populated Slideout Drawer Display</h3>
+          <span class="pill pill-green">PASS</span>
+        </div>
+        <p class="card-desc">Clicking cart trigger with items in session opens the slideout drawer with backdrop and items list.</p>
+        <div class="img-box">
+          <img src="screenshots/desktop/05_Desktop_Populated_MiniCart_Drawer_PASS.png" alt="Populated Drawer" onclick="openModal(this.src)">
+        </div>
+        <div class="card-footer">
+          <span>05_Desktop_Populated_MiniCart_Drawer_PASS.png</span>
+          <a href="screenshots/desktop/05_Desktop_Populated_MiniCart_Drawer_PASS.png" target="_blank">Full View ↗</a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="card card-pass">
+        <div class="card-header">
+          <h3 class="card-title">Item Row: Thumbnail, Title, SKU & Price</h3>
+          <span class="pill pill-green">PASS</span>
+        </div>
+        <p class="card-desc">Renders clear product thumbnail, hyperlinked title, variant SKU, and unit price in USD currency format.</p>
+        <div class="img-box">
+          <img src="screenshots/desktop/06_Desktop_MiniCart_Item_Row_PASS.png" alt="MiniCart Item Row" onclick="openModal(this.src)">
+        </div>
+        <div class="card-footer">
+          <span>06_Desktop_MiniCart_Item_Row_PASS.png</span>
+          <a href="screenshots/desktop/06_Desktop_MiniCart_Item_Row_PASS.png" target="_blank">Full View ↗</a>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="card card-pass">
+        <div class="card-header">
+          <h3 class="card-title">Subtotal Display (No GST Leak)</h3>
+          <span class="pill pill-green">PASS</span>
+        </div>
+        <p class="card-desc">Subtotal clearly rendered without Australian GST tax line leakage, complying with US storefront standards.</p>
+        <div class="img-box">
+          <img src="screenshots/desktop/10_Desktop_MiniCart_Subtotal_PASS.png" alt="MiniCart Subtotal" onclick="openModal(this.src)">
+        </div>
+        <div class="card-footer">
+          <span>10_Desktop_MiniCart_Subtotal_PASS.png</span>
+          <a href="screenshots/desktop/10_Desktop_MiniCart_Subtotal_PASS.png" target="_blank">Full View ↗</a>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="card card-pass">
+        <div class="card-header">
+          <h3 class="card-title">Action CTAs: View Cart & Checkout</h3>
+          <span class="pill pill-green">PASS</span>
+        </div>
+        <p class="card-desc">[VIEW AND EDIT CART] links to /checkout/cart/ and [PROCEED TO CHECKOUT] initiates checkout flow.</p>
+        <div class="img-box">
+          <img src="screenshots/desktop/11_Desktop_MiniCart_ViewCart_CTA_PASS.png" alt="MiniCart CTAs" onclick="openModal(this.src)">
+        </div>
+        <div class="card-footer">
+          <span>11_Desktop_MiniCart_ViewCart_CTA_PASS.png</span>
+          <a href="screenshots/desktop/11_Desktop_MiniCart_ViewCart_CTA_PASS.png" target="_blank">Full View ↗</a>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="card card-pass">
+        <div class="card-header">
+          <h3 class="card-title">Close Button ("X") Dismissal</h3>
+          <span class="pill pill-green">PASS</span>
+        </div>
+        <p class="card-desc">Clicking close button or backdrop dismisses the drawer smoothly without layout shift.</p>
+        <div class="img-box">
+          <img src="screenshots/desktop/13_Desktop_MiniCart_Close_Button_PASS.png" alt="Close Button" onclick="openModal(this.src)">
+        </div>
+        <div class="card-footer">
+          <span>13_Desktop_MiniCart_Close_Button_PASS.png</span>
+          <a href="screenshots/desktop/13_Desktop_MiniCart_Close_Button_PASS.png" target="_blank">Full View ↗</a>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Defect 1 -->
-    <div class="defect-card">
-      <div class="defect-header">
-        <h2 class="defect-title">DEFECT 1: Purchasing Blocked - "Add to Cart" Button Suppressed on US Product Pages</h2>
-        <span class="pill pill-red">P1 - High</span>
+    <!-- SECTION 2: MOBILE VIEWPORT -->
+    <h2 class="section-title">📱 Mobile Viewport (390x844 / iPhone) — Verified Working Fine (🟢 PASS)</h2>
+    <div class="gallery-grid">
+      
+      <!-- Mobile Card 1 -->
+      <div class="card card-pass">
+        <div class="card-header">
+          <h3 class="card-title">Mobile Header Trigger & Add to Cart</h3>
+          <span class="pill pill-green">PASS</span>
+        </div>
+        <p class="card-desc">Mobile header bag icon is clearly visible; [ADD TO CART] CTA renders responsively on mobile screen.</p>
+        <div class="img-box">
+          <img src="screenshots/mobile/02_Mobile_Header_Cart_Trigger_PASS.png" alt="Mobile Trigger" onclick="openModal(this.src)">
+        </div>
+        <div class="card-footer">
+          <span>02_Mobile_Header_Cart_Trigger_PASS.png</span>
+          <a href="screenshots/mobile/02_Mobile_Header_Cart_Trigger_PASS.png" target="_blank">Full View ↗</a>
+        </div>
       </div>
-      <p class="defect-desc"><strong>Defect:</strong> 'Add to Cart' button is completely suppressed on US product detail pages, preventing customers from adding products and populating the Mini Cart drawer.</p>
-      <div class="img-wrapper">
-        <img src="comparison/DEFECT_1_PURCHASING_BLOCKED_MINICART_POPULATION.png" alt="Defect 1 Purchasing Blocked" onclick="openModal(this.src)">
+
+      <!-- Mobile Card 2 -->
+      <div class="card card-pass">
+        <div class="card-header">
+          <h3 class="card-title">Mobile Drawer Fit (335px on 390px)</h3>
+          <span class="pill pill-green">PASS</span>
+        </div>
+        <p class="card-desc">Slideout drawer width is 335px on 390px mobile viewport, leaving 55px backdrop. No horizontal overflow.</p>
+        <div class="img-box">
+          <img src="screenshots/mobile/03_Mobile_Drawer_Fit_PASS.png" alt="Mobile Drawer Fit" onclick="openModal(this.src)">
+        </div>
+        <div class="card-footer">
+          <span>03_Mobile_Drawer_Fit_PASS.png</span>
+          <a href="screenshots/mobile/03_Mobile_Drawer_Fit_PASS.png" target="_blank">Full View ↗</a>
+        </div>
       </div>
-      <div class="links-footer">
-        <a href="comparison/DEFECT_1_PURCHASING_BLOCKED_MINICART_POPULATION.png" target="_blank">Open Full Size in New Tab ↗</a>
+
+      <!-- Mobile Card 3 -->
+      <div class="card card-pass">
+        <div class="card-header">
+          <h3 class="card-title">Mobile Product Card Layout</h3>
+          <span class="pill pill-green">PASS</span>
+        </div>
+        <p class="card-desc">Product card adapts responsively to mobile width with stacked image, title, price, and controls.</p>
+        <div class="img-box">
+          <img src="screenshots/mobile/05_Mobile_Item_Card_Layout_PASS.png" alt="Mobile Item Card" onclick="openModal(this.src)">
+        </div>
+        <div class="card-footer">
+          <span>05_Mobile_Item_Card_Layout_PASS.png</span>
+          <a href="screenshots/mobile/05_Mobile_Item_Card_Layout_PASS.png" target="_blank">Full View ↗</a>
+        </div>
       </div>
+
+      <!-- Mobile Card 4 -->
+      <div class="card card-pass">
+        <div class="card-header">
+          <h3 class="card-title">Mobile Subtotal & Checkout CTAs</h3>
+          <span class="pill pill-green">PASS</span>
+        </div>
+        <p class="card-desc">Prominent [CHECKOUT] button and subtotal display cleanly positioned for mobile touch interaction.</p>
+        <div class="img-box">
+          <img src="screenshots/mobile/07_Mobile_Checkout_CTA_PASS.png" alt="Mobile Checkout CTA" onclick="openModal(this.src)">
+        </div>
+        <div class="card-footer">
+          <span>07_Mobile_Checkout_CTA_PASS.png</span>
+          <a href="screenshots/mobile/07_Mobile_Checkout_CTA_PASS.png" target="_blank">Full View ↗</a>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Defect 2 -->
-    <div class="defect-card">
-      <div class="defect-header">
-        <h2 class="defect-title">DEFECT 2: Australian Tax 'GST' Hardcoded in US Mini Cart Subtotal Template</h2>
-        <span class="pill pill-red">P1 - High</span>
+    <!-- SECTION 3: DEFECTS & PARITY GAPS -->
+    <h2 class="section-title">🚨 Parity Gaps & Accessibility Recommendations (🔴 DEFECTS)</h2>
+    <div class="gallery-grid">
+      
+      <!-- Defect Card 1 -->
+      <div class="card card-defect">
+        <div class="card-header">
+          <h3 class="card-title">Header Wishlist Heart Icon Missing (Parity Gap)</h3>
+          <span class="pill pill-red">P2 - Medium</span>
+        </div>
+        <p class="card-desc">AU storefront features a Wishlist heart icon next to Mini Cart in header utility navigation. Absent from US header.</p>
+        <div class="img-box">
+          <img src="screenshots/defects/DEFECT_01_US_Header_Missing_Wishlist_Icon_RED.png" alt="Missing Wishlist Icon" onclick="openModal(this.src)">
+        </div>
+        <div class="card-footer">
+          <span>DEFECT_01_US_Header_Missing_Wishlist_Icon_RED.png</span>
+          <a href="screenshots/defects/DEFECT_01_US_Header_Missing_Wishlist_Icon_RED.png" target="_blank">Full View ↗</a>
+        </div>
       </div>
-      <p class="defect-desc"><strong>Defect:</strong> US Mini Cart subtotal template hardcodes Australian 'GST' tax line (&lt;div class="gst"&gt;&lt;span data-bind="i18n: 'GST'"&gt;), violating US tax compliance requirements.</p>
-      <div class="img-wrapper">
-        <img src="comparison/DEFECT_2_AUSTRALIAN_GST_TAX_LEAK_IN_MINICART.png" alt="Defect 2 GST Tax Leak" onclick="openModal(this.src)">
-      </div>
-      <div class="links-footer">
-        <a href="comparison/DEFECT_2_AUSTRALIAN_GST_TAX_LEAK_IN_MINICART.png" target="_blank">Open Full Size in New Tab ↗</a>
-      </div>
-    </div>
 
-    <!-- Defect 3 -->
-    <div class="defect-card">
-      <div class="defect-header">
-        <h2 class="defect-title">DEFECT 3: Mini Cart Cross-Sell Recommendations Route to Australian Domain</h2>
-        <span class="pill pill-red">P2 - Medium</span>
+      <!-- Defect Card 2 -->
+      <div class="card card-defect">
+        <div class="card-header">
+          <h3 class="card-title">Mobile Close Button Touch Target (WCAG 2.2 AA)</h3>
+          <span class="pill pill-red">P2 - Medium</span>
+        </div>
+        <p class="card-desc">Mobile close button ("X") has narrow bounding height (16.5px x 1px) due to pseudo-element styling. Needs 24x24px / 44x44px target.</p>
+        <div class="img-box">
+          <img src="screenshots/mobile/04_Mobile_Close_Button_TouchTarget_PASS.png" alt="Touch Target Size" onclick="openModal(this.src)">
+        </div>
+        <div class="card-footer">
+          <span>04_Mobile_Close_Button_TouchTarget_PASS.png</span>
+          <a href="screenshots/mobile/04_Mobile_Close_Button_TouchTarget_PASS.png" target="_blank">Full View ↗</a>
+        </div>
       </div>
-      <p class="defect-desc"><strong>Defect:</strong> Cross-sell recommendation cards inside the Mini Cart drawer link to Australian domain (https://mcstaging.globewest.com.au), leaking US buyers to the AU catalog.</p>
-      <div class="img-wrapper">
-        <img src="comparison/DEFECT_3_CROSS_SELL_AU_DOMAIN_LEAK.png" alt="Defect 3 Cross Sell AU Leak" onclick="openModal(this.src)">
-      </div>
-      <div class="links-footer">
-        <a href="comparison/DEFECT_3_CROSS_SELL_AU_DOMAIN_LEAK.png" target="_blank">Open Full Size in New Tab ↗</a>
-      </div>
-    </div>
 
-    <!-- Defect 4 -->
-    <div class="defect-card">
-      <div class="defect-header">
-        <h2 class="defect-title">DEFECT 4: Wishlist Heart Icon Missing from Header Next to Mini Cart Trigger</h2>
-        <span class="pill pill-red">P2 - Medium</span>
-      </div>
-      <p class="defect-desc"><strong>Defect:</strong> Wishlist heart icon is absent from the US header utility area next to the Mini Cart trigger icon, creating a feature parity gap with AU.</p>
-      <div class="img-wrapper">
-        <img src="comparison/DEFECT_4_MISSING_CART_UTILITY_IN_HEADER.png" alt="Defect 4 Wishlist Missing" onclick="openModal(this.src)">
-      </div>
-      <div class="links-footer">
-        <a href="comparison/DEFECT_4_MISSING_CART_UTILITY_IN_HEADER.png" target="_blank">Open Full Size in New Tab ↗</a>
-      </div>
-    </div>
-
-    <!-- SECTION DIVIDER -->
-    <div style="text-align: center; margin: 40px 0 25px 0;">
-      <h2 style="font-family: 'Outfit', sans-serif; font-size: 24px; color: #fff;">🔐 AUTH MATRIX: GUEST VS LOGGED IN (DEEPALI LONDHE)</h2>
-      <p style="color: var(--text-muted); font-size: 14px; margin-top: 5px;">Validation confirming defect persistence across guest and authenticated sessions (deepalilondhe.qa@gmail.com)</p>
-    </div>
-
-    <!-- Auth Matrix Master Poster -->
-    <div class="defect-card" style="border-color: #8b5cf6;">
-      <div class="defect-header">
-        <h2 class="defect-title">🌟 MASTER AUTH MATRIX COMBINED POSTER</h2>
-        <span class="pill pill-blue">High Resolution (1540x)</span>
-      </div>
-      <p class="defect-desc">Unified comparison poster demonstrating that all critical defects persist even after customer authentication.</p>
-      <div class="img-wrapper">
-        <img src="comparison/ONE_COMBINED_AUTH_MATRIX_DEFECTS_COMPARISON.png" alt="Auth Matrix Combined Poster" onclick="openModal(this.src)">
-      </div>
-      <div class="links-footer">
-        <a href="comparison/ONE_COMBINED_AUTH_MATRIX_DEFECTS_COMPARISON.png" target="_blank">Open Full Size in New Tab ↗</a>
-      </div>
-    </div>
-
-    <!-- Auth Matrix Card 1 -->
-    <div class="defect-card">
-      <div class="defect-header">
-        <h2 class="defect-title">AUTH MATRIX 1: Logged-in Header Utility Parity (Wishlist Missing)</h2>
-        <span class="pill pill-red">Defect Persists</span>
-      </div>
-      <p class="defect-desc"><strong>Matrix Finding:</strong> Even when logged in as Deepali Londhe, US header utility lacks the Wishlist heart icon next to the Mini Cart icon, whereas AU renders it cleanly.</p>
-      <div class="img-wrapper">
-        <img src="comparison/DEFECT_AUTH_1_LOGGED_IN_HEADER_WISHLIST_MISSING.png" alt="Logged-in Wishlist Missing" onclick="openModal(this.src)">
-      </div>
-      <div class="links-footer">
-        <a href="comparison/DEFECT_AUTH_1_LOGGED_IN_HEADER_WISHLIST_MISSING.png" target="_blank">Open Full Size in New Tab ↗</a>
-      </div>
-    </div>
-
-    <!-- Auth Matrix Card 2 -->
-    <div class="defect-card">
-      <div class="defect-header">
-        <h2 class="defect-title">AUTH MATRIX 2: Logged-in PDP Add to Cart Button Remains Suppressed</h2>
-        <span class="pill pill-red">Defect Persists</span>
-      </div>
-      <p class="defect-desc"><strong>Matrix Finding:</strong> Logging in as Deepali Londhe does NOT enable 'Add to Cart' on US PDPs; button remains suppressed, proving catalog stock scope issue rather than login-gate.</p>
-      <div class="img-wrapper">
-        <img src="comparison/DEFECT_AUTH_2_LOGGED_IN_ADD_TO_CART_SUPPRESSED.png" alt="Logged-in Add to Cart Suppressed" onclick="openModal(this.src)">
-      </div>
-      <div class="links-footer">
-        <a href="comparison/DEFECT_AUTH_2_LOGGED_IN_ADD_TO_CART_SUPPRESSED.png" target="_blank">Open Full Size in New Tab ↗</a>
-      </div>
-    </div>
-
-    <!-- Auth Matrix Card 3 -->
-    <div class="defect-card">
-      <div class="defect-header">
-        <h2 class="defect-title">AUTH MATRIX 3: Logged-in Mini Cart Drawer Population Blocked</h2>
-        <span class="pill pill-red">Defect Persists</span>
-      </div>
-      <p class="defect-desc"><strong>Matrix Finding:</strong> US logged-in customer drawer remains empty due to suppressed PDP Add to Cart button, while AU drawer syncs customer cart items with GST and checkout progression.</p>
-      <div class="img-wrapper">
-        <img src="comparison/DEFECT_AUTH_3_LOGGED_IN_MINICART_DRAWER_PARITY.png" alt="Logged-in Drawer Blocked" onclick="openModal(this.src)">
-      </div>
-      <div class="links-footer">
-        <a href="comparison/DEFECT_AUTH_3_LOGGED_IN_MINICART_DRAWER_PARITY.png" target="_blank">Open Full Size in New Tab ↗</a>
-      </div>
     </div>
 
   </div>
 
-  <!-- Zoom Modal -->
+  <!-- Image Zoom Modal -->
   <div id="modal" onclick="closeModal()">
-    <img id="modal-img" src="" alt="Enlarged Comparison View">
+    <img id="modalImg" src="" alt="Full view">
   </div>
 
   <script>
     function openModal(src) {
-      document.getElementById('modal-img').src = src;
+      document.getElementById('modalImg').src = src;
       document.getElementById('modal').style.display = 'flex';
     }
     function closeModal() {
       document.getElementById('modal').style.display = 'none';
     }
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModal();
-    });
   </script>
 </body>
 </html>

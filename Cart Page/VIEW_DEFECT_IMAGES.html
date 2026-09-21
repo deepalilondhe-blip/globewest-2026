@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +16,13 @@
       --green-baseline: #22c55e;
       --accent: #38bdf8;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background-color: var(--bg-dark);
@@ -23,6 +30,7 @@
       line-height: 1.6;
       padding: 24px;
     }
+
     .header-container {
       max-width: 1400px;
       margin: 0 auto 32px auto;
@@ -31,11 +39,13 @@
       border-radius: 12px;
       border: 1px solid var(--border-color);
     }
+
     h1 {
       font-size: 28px;
       margin-bottom: 12px;
       color: #fff;
     }
+
     .meta-bar {
       display: flex;
       flex-wrap: wrap;
@@ -43,6 +53,7 @@
       font-size: 14px;
       margin-top: 8px;
     }
+
     .badge {
       padding: 4px 10px;
       border-radius: 6px;
@@ -51,9 +62,24 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    .badge-red { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid var(--red-defect); }
-    .badge-green { background: rgba(34, 197, 94, 0.2); color: #86efac; border: 1px solid var(--green-baseline); }
-    .badge-blue { background: rgba(56, 189, 248, 0.2); color: #7dd3fc; border: 1px solid var(--accent); }
+
+    .badge-red {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid var(--red-defect);
+    }
+
+    .badge-green {
+      background: rgba(34, 197, 94, 0.2);
+      color: #86efac;
+      border: 1px solid var(--green-baseline);
+    }
+
+    .badge-blue {
+      background: rgba(56, 189, 248, 0.2);
+      color: #7dd3fc;
+      border: 1px solid var(--accent);
+    }
 
     .nav-links {
       display: flex;
@@ -61,6 +87,7 @@
       margin-top: 20px;
       flex-wrap: wrap;
     }
+
     .nav-btn {
       background: #334155;
       color: #fff;
@@ -71,6 +98,7 @@
       font-weight: 500;
       transition: all 0.2s;
     }
+
     .nav-btn:hover {
       background: var(--accent);
       color: #0f172a;
@@ -83,13 +111,15 @@
       flex-direction: column;
       gap: 32px;
     }
+
     .card {
       background: var(--card-bg);
       border-radius: 12px;
       border: 1px solid var(--border-color);
       overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
+
     .card-header {
       padding: 16px 24px;
       border-bottom: 1px solid var(--border-color);
@@ -99,14 +129,17 @@
       flex-wrap: wrap;
       gap: 12px;
     }
+
     .card-title {
       font-size: 18px;
       font-weight: 600;
       color: #fff;
     }
+
     .card-body {
       padding: 20px;
     }
+
     .image-wrapper {
       background: #000;
       border-radius: 8px;
@@ -116,15 +149,18 @@
       justify-content: center;
       align-items: center;
     }
+
     .image-wrapper img {
       width: 100%;
       height: auto;
       display: block;
       transition: transform 0.3s ease;
     }
+
     .image-wrapper:hover img {
       transform: scale(1.01);
     }
+
     .description-box {
       margin-top: 16px;
       padding: 14px 18px;
@@ -133,6 +169,7 @@
       font-size: 15px;
       border-left: 4px solid var(--accent);
     }
+
     .file-path-box {
       margin-top: 10px;
       font-family: monospace;
@@ -145,6 +182,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <div class="header-container">
@@ -179,7 +217,8 @@
           </a>
         </div>
         <div class="description-box">
-          Vertical side-by-side comparison board showing all 4 Cart Page and purchasing discrepancies. Click image to open in full size.
+          Vertical side-by-side comparison board showing all 4 Cart Page and purchasing discrepancies. Click image to
+          open in full size.
         </div>
         <div class="file-path-box">
           File: <strong>comparison/ONE_COMBINED_CART_DEFECTS_COMPARISON.png</strong>
@@ -196,11 +235,13 @@
       <div class="card-body">
         <div class="image-wrapper">
           <a href="comparison/DEFECT_1_ADD_TO_CART_BUTTON_MISSING_ON_US.png" target="_blank">
-            <img src="comparison/DEFECT_1_ADD_TO_CART_BUTTON_MISSING_ON_US.png" alt="Defect 1 Add to Cart Button Missing">
+            <img src="comparison/DEFECT_1_ADD_TO_CART_BUTTON_MISSING_ON_US.png"
+              alt="Defect 1 Add to Cart Button Missing">
           </a>
         </div>
         <div class="description-box">
-          <strong>Defect:</strong> The 'Add to Cart' button is omitted on US product pages, preventing American customers from adding products to the cart.
+          <strong>Defect:</strong> The 'Add to Cart' button is omitted on US product pages, preventing American
+          customers from adding products to the cart.
         </div>
         <div class="file-path-box">
           File: <strong>comparison/DEFECT_1_ADD_TO_CART_BUTTON_MISSING_ON_US.png</strong>
@@ -217,11 +258,13 @@
       <div class="card-body">
         <div class="image-wrapper">
           <a href="comparison/DEFECT_2_CART_CONTENT_HUB_BROKEN_IMAGES_AND_AU_LINK.png" target="_blank">
-            <img src="comparison/DEFECT_2_CART_CONTENT_HUB_BROKEN_IMAGES_AND_AU_LINK.png" alt="Defect 2 Cart Content Hub">
+            <img src="comparison/DEFECT_2_CART_CONTENT_HUB_BROKEN_IMAGES_AND_AU_LINK.png"
+              alt="Defect 2 Cart Content Hub">
           </a>
         </div>
         <div class="description-box">
-          <strong>Defect:</strong> Cart content hub renders low-res pixelated truck icons and leaks users to Australian blog (<code>mcprod.globewest.com.au/blog</code>).
+          <strong>Defect:</strong> Cart content hub renders low-res pixelated truck icons and leaks users to Australian
+          blog (<code>mcprod.globewest.com.au/blog</code>).
         </div>
         <div class="file-path-box">
           File: <strong>comparison/DEFECT_2_CART_CONTENT_HUB_BROKEN_IMAGES_AND_AU_LINK.png</strong>
@@ -238,11 +281,13 @@
       <div class="card-body">
         <div class="image-wrapper">
           <a href="comparison/DEFECT_3_CART_HEADER_WISHLIST_AND_FIND_DESIGNER_MISSING.png" target="_blank">
-            <img src="comparison/DEFECT_3_CART_HEADER_WISHLIST_AND_FIND_DESIGNER_MISSING.png" alt="Defect 3 Cart Header Discrepancies">
+            <img src="comparison/DEFECT_3_CART_HEADER_WISHLIST_AND_FIND_DESIGNER_MISSING.png"
+              alt="Defect 3 Cart Header Discrepancies">
           </a>
         </div>
         <div class="description-box">
-          <strong>Defect:</strong> US Cart header omits 'Find a designer or stockist' service link and the Wishlist heart icon present on AU.
+          <strong>Defect:</strong> US Cart header omits 'Find a designer or stockist' service link and the Wishlist
+          heart icon present on AU.
         </div>
         <div class="file-path-box">
           File: <strong>comparison/DEFECT_3_CART_HEADER_WISHLIST_AND_FIND_DESIGNER_MISSING.png</strong>
@@ -263,7 +308,8 @@
           </a>
         </div>
         <div class="description-box">
-          <strong>Defect:</strong> Australian national business logo and continent outline badge are hardcoded into the US storefront footer.
+          <strong>Defect:</strong> Australian national business logo and continent outline badge are hardcoded into the
+          US storefront footer.
         </div>
         <div class="file-path-box">
           File: <strong>comparison/DEFECT_4_AUSTRALIAN_OWNED_BADGE_LEAK_ON_US.png</strong>
@@ -274,4 +320,5 @@
   </div>
 
 </body>
+
 </html>

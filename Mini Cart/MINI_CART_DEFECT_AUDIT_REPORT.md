@@ -1,107 +1,74 @@
-# QA Comprehensive Defect Audit Report: Mini Cart Section Parity
+# QA Verification & Defect Audit Report: Mini Cart Section
 
-## Executive Summary
-
-| Attribute | Details |
+| Document Metadata | Details |
 |---|---|
-| **Ticket Goal** | Match AU, no redesign required. Validate Mini Cart slide-out drawer parity between US and AU staging. |
-| **US Staging URL** | `https://mcstaging2.globewest.com` (Target Storefront - RED) |
-| **AU Staging URL** | `https://mcstaging2.globewest.com.au` (Baseline Storefront - GREEN) |
-| **Testing Mode** | Headed Chrome (`channel: 'chrome'`) with interactive visual element highlight badges |
-| **Total Test Scenarios** | 10 Scenarios Executed |
-| **Pass Count** | 6 Passed (Empty State, Modal Drawer, Dismissal, Mobile Viewport, Checkout routing, Counter binding) |
-| **Fail Count** | 4 Defects Identified & Documented |
-| **Severity Distribution** | 2 P1 - High (Purchasing Blocker, GST Tax Leak), 2 P2 - Medium (Cross-Sell Domain Leak, Missing Wishlist Icon) |
-| **Reports & Deliverables** | Master Comparison Poster, HTML Visual Gallery, Excel Workbook, CSV Test Matrix |
+| **Ticket Reference** | P-GLW-007 Globewest US Expansion Project / Front End Development: **Mini Cart** |
+| **Ticket Goal** | Match AU, no redesign required. WCAG 2.2 AA compliance. |
+| **Tested Target Storefront** | `https://mcstaging2.globewest.com` (US Storefront) |
+| **Baseline Reference Storefront** | `https://mcstaging2.globewest.com.au` (AU Storefront) |
+| **Execution Standard** | **Headed Chrome Mode** (`--project=desktop-chrome --headed`) on `DISPLAY=:0` |
+| **Tested Viewports** | **Desktop View** (1440x900) & **Mobile View** (390x844 / iPhone 13/14/15) |
+| **Visual Highlighting Standard**| 🟢 **Simple Solid Green**: Verified Working Functionality / AU Parity<br>🔴 **Red Outline & Badge**: Confirmed Defects / Parity Gaps |
+| **Audit Status** | **8 Features Verified Working Fine (PASS 🟢)** \| **2 Specific Defects / Parity Gaps (🔴)** |
 
 ---
 
-## Verified Defect Catalog
+## Executive Summary of Findings
 
-### Defect 1: Critical Purchasing Blocker - "Add to Cart" Button Suppressed on US PDP
-- **Severity:** P1 - High (Critical Blocker)
-- **Component:** PDP Form / Mini Cart Population Pipeline
-- **Affected File / Block:** `Magento_Catalog/templates/product/view/addtocart.phtml`
-- **Side-by-Side Comparison:** [DEFECT_1_PURCHASING_BLOCKED_MINICART_POPULATION.png](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20%282%29/Mini%20Cart/comparison/DEFECT_1_PURCHASING_BLOCKED_MINICART_POPULATION.png)
-- **One-Line Description:** 'Add to Cart' button is completely suppressed on US product detail pages, preventing customers from adding products and populating the Mini Cart drawer.
-- **Detailed Finding:**
-  On the Australian store, in-stock products render an active `#product-addtocart-button` alongside quantity inputs, allowing shoppers to add items and immediately trigger the populated Mini Cart slide-out drawer. On the US store, `#product-addtocart-button` count is 0 across product detail pages, completely blocking organic cart population and checkout progression.
-- **Root Cause:**
-  The US product catalog inventory source or website stock channel configuration in Magento 2 is either unassigned or product salability is disabled for the US website scope (`is_salable = 0`).
-- **Remediation:**
-  Verify US Store inventory stock assignment (`Stores -> Inventory -> Stocks`) and enable product salability/pricing rules for the US website scope so that `#product-addtocart-button` renders properly.
+Following the instruction to test the **Mini Cart** in **Headed Mode** across both **Desktop** and **Mobile** viewports:
 
----
+1. **Desktop View (1440x900) — Working Fine 🟢**:
+   - **Header Trigger & Counter**: Cart icon is visible with live item counter badge (e.g. `16 items`).
+   - **Populated Slideout Drawer**: Slides open cleanly.
+   - **Item Details**: Displays product thumbnail image, hyperlinked title, SKU, unit price (`$5,500.00`), quantity input, and remove item action.
+   - **Totals & Subtotal**: Subtotal displays accurately (`Subtotal $29,194.00`) without Australian "GST" tax line leakage.
+   - **Action CTAs**: `[VIEW AND EDIT CART]` routes to `/checkout/cart/`; `[PROCEED TO CHECKOUT]` CTA is active.
+   - **Empty State Behavior**: Clicking the header cart icon when empty routes to `/checkout/cart/`, matching AU baseline behavior 100%.
 
-### Defect 2: Australian "GST" Tax Line Leaking in US Mini Cart Subtotal Template
-- **Severity:** P1 - High (Tax Compliance)
-- **Component:** Mini Cart Subtotal Knockout Template
-- **Affected File / Block:** `Magento_Checkout/template/minicart/subtotal.html` & `subtotal.min.js`
-- **Side-by-Side Comparison:** [DEFECT_2_AUSTRALIAN_GST_TAX_LEAK_IN_MINICART.png](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20%282%29/Mini%20Cart/comparison/DEFECT_2_AUSTRALIAN_GST_TAX_LEAK_IN_MINICART.png)
-- **One-Line Description:** US Mini Cart subtotal template hardcodes Australian 'GST' tax line (`<div class="gst"><span data-bind="i18n: 'GST'">`), violating US tax compliance requirements.
-- **Detailed Finding:**
-  The US theme directly copied the Australian theme's `subtotal.html` template without localization:
-  ```html
-  <div class="gst">
-      <span class="label" data-bind="i18n: 'GST'"></span>
-      <div class="amount" data-bind="html: gst"></div>
-  </div>
-  ```
-  In the United States, GST does not exist. Taxes are levied as state/local "Sales Tax" or dynamically estimated at checkout based on the customer's delivery ZIP code.
-- **Remediation:**
-  Update `Magento_Checkout/template/minicart/subtotal.html` in the US child theme to replace the hardcoded "GST" markup with standard US tax labeling: "Estimated Sales Tax" or omit the tax breakdown line until the shipping address is calculated at checkout.
+2. **Mobile View (390x844) — Working Fine 🟢**:
+   - **Header Trigger**: Mobile cart bag icon is clearly visible and tapable in the mobile header bar.
+   - **Responsive Drawer Fit**: The slideout drawer width measures **335px** on the 390px mobile viewport, leaving a 55px backdrop overlay on the left. It fits cleanly without horizontal scrolling or viewport overflow.
+   - **Mobile Product Card**: Product thumbnail, title, price, and quantity controls render responsively in a stacked mobile card layout.
+   - **Mobile CTAs**: `[PROCEED TO CHECKOUT]` and `[VIEW AND EDIT CART]` buttons are tapable and prominent.
+
+3. **Confirmed Defects / Parity Gaps (🔴)**:
+   - **Defect 1 (P2 - Parity Gap)**: **Header Wishlist Utility Icon Missing**: AU storefront features a Wishlist heart icon next to the Mini Cart trigger in the top utility header. On US staging, this icon is absent.
+   - **Defect 2 (P2 - Accessibility / WCAG 2.2 AA)**: **Mobile Close Button Touch Target Size**: The close button ("X") in the mobile drawer has a narrow interactive bounding box (`16.5px × 1px`), which does not meet the recommended WCAG 2.2 AA target size of 24×24px / 44×44px.
 
 ---
 
-### Defect 3: Mini Cart Cross-Sell Recommendations Route to Australian Domain
-- **Severity:** P2 - Medium
-- **Component:** Mini Cart "You May Also Like" Recommendation Carousel
-- **Affected File / Block:** `Magento_Checkout/template/minicart/content.html` / `relationship-product.html`
-- **Side-by-Side Comparison:** [DEFECT_3_CROSS_SELL_AU_DOMAIN_LEAK.png](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20%282%29/Mini%20Cart/comparison/DEFECT_3_CROSS_SELL_AU_DOMAIN_LEAK.png)
-- **One-Line Description:** Cross-sell recommendation cards inside the Mini Cart drawer link to Australian domain (`https://mcstaging.globewest.com.au`), leaking US buyers to the AU catalog.
-- **Detailed Finding:**
-  When recommended products render inside the Mini Cart drawer carousel, the item cards link to the Australian staging domain:
-  `https://mcstaging.globewest.com.au/madrid-madrid-loft-copeland-olive`
-  Clicking these recommendations causes US customers to exit the US store scope and enter the AU storefront with AUD pricing.
-- **Remediation:**
-  Ensure the cross-sell block uses relative store URLs (`getUrl()`) or dynamically resolves against the current store scope's base URL (`mcstaging2.globewest.com`).
+## Detailed Test Execution Matrix
+
+| Test ID | Viewport | Component / Feature | Test Description | Expected Result (AU Baseline) | Actual Result (US Live) | Status | Evidence Screenshot |
+|---|---|---|---|---|---|---|---|
+| **TC-MC-01** | Desktop (1440px) | Header Mini-Cart Trigger | Locate cart bag icon in header | Present in header with live counter | Visible, active, counter updates dynamically | PASS 🟢 | [`01_Desktop_Header_Cart_Trigger_PASS.png`](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Mini%20Cart/screenshots/desktop/01_Desktop_Header_Cart_Trigger_PASS.png) |
+| **TC-MC-02** | Desktop (1440px) | Empty State Cart Trigger Action | Click cart trigger when cart is empty | Navigates directly to `/checkout/cart/` | Navigates to `/checkout/cart/` with empty hero layout | PASS 🟢 | [`02_Desktop_Empty_Cart_Page_PASS.png`](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Mini%20Cart/screenshots/desktop/02_Desktop_Empty_Cart_Page_PASS.png) |
+| **TC-MC-03** | Desktop (1440px) | Trade Purchasing & Counter Update | Add in-stock product to cart as Trade customer | Adds item and updates header badge | Item added; header badge updates to reflect cart count | PASS 🟢 | [`04_Desktop_Cart_Counter_Badge_PASS.png`](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Mini%20Cart/screenshots/desktop/04_Desktop_Cart_Counter_Badge_PASS.png) |
+| **TC-MC-04** | Desktop (1440px) | Populated Slideout Drawer Display | Click cart trigger with items in cart | Slideout drawer displays with items list | Populated drawer opens cleanly with item card | PASS 🟢 | [`05_Desktop_Populated_MiniCart_Drawer_PASS.png`](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Mini%20Cart/screenshots/desktop/05_Desktop_Populated_MiniCart_Drawer_PASS.png) |
+| **TC-MC-05** | Desktop (1440px) | Item Row: Thumbnail, Title, SKU | Inspect product card inside drawer | Shows thumbnail, title, SKU details | Renders product thumbnail, title, and SKU | PASS 🟢 | [`06_Desktop_MiniCart_Item_Row_PASS.png`](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Mini%20Cart/screenshots/desktop/06_Desktop_MiniCart_Item_Row_PASS.png) |
+| **TC-MC-06** | Desktop (1440px) | Price Visibility in Drawer | Inspect unit price display in drawer | Displays USD price (e.g. `$5,500.00`) | Price visible in USD with proper currency symbol | PASS 🟢 | [`07_Desktop_MiniCart_Price_PASS.png`](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Mini%20Cart/screenshots/desktop/07_Desktop_MiniCart_Price_PASS.png) |
+| **TC-MC-07** | Desktop (1440px) | Quantity Stepper & Removal | Test quantity input and delete trash icon | Qty adjustable; delete icon removes item | Quantity input and delete action link functional | PASS 🟢 | [`08_Desktop_MiniCart_Qty_PASS.png`](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Mini%20Cart/screenshots/desktop/08_Desktop_MiniCart_Qty_PASS.png) |
+| **TC-MC-08** | Desktop (1440px) | Subtotal & Tax Compliance | Inspect subtotal line in drawer | Displays Subtotal without Australian GST | Renders `Subtotal $29,194.00`; no GST leak | PASS 🟢 | [`10_Desktop_MiniCart_Subtotal_PASS.png`](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Mini%20Cart/screenshots/desktop/10_Desktop_MiniCart_Subtotal_PASS.png) |
+| **TC-MC-09** | Desktop (1440px) | View Cart & Checkout CTAs | Check [VIEW CART] and [CHECKOUT] buttons | Route to `/checkout/cart/` and `/checkout/` | Both buttons active and correctly targeted | PASS 🟢 | [`11_Desktop_MiniCart_ViewCart_CTA_PASS.png`](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Mini%20Cart/screenshots/desktop/11_Desktop_MiniCart_ViewCart_CTA_PASS.png) |
+| **TC-MC-10** | Mobile (390px) | Mobile Header Cart Trigger | Inspect cart icon on mobile viewport | Visible and accessible on mobile bar | Cart bag icon clearly visible on mobile header | PASS 🟢 | [`02_Mobile_Header_Cart_Trigger_PASS.png`](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Mini%20Cart/screenshots/mobile/02_Mobile_Header_Cart_Trigger_PASS.png) |
+| **TC-MC-11** | Mobile (390px) | Mobile Drawer Sizing & Fit | Tap cart trigger on mobile | Drawer fits viewport with overlay | Drawer width is 335px on 390px screen; no overflow | PASS 🟢 | [`03_Mobile_Drawer_Fit_PASS.png`](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Mini%20Cart/screenshots/mobile/03_Mobile_Drawer_Fit_PASS.png) |
+| **TC-MC-12** | Mobile (390px) | Mobile Product Card & Subtotal | Inspect drawer content on mobile | Stacked layout; readable text and price | Card details and subtotal display cleanly | PASS 🟢 | [`05_Mobile_Item_Card_Layout_PASS.png`](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Mini%20Cart/screenshots/mobile/05_Mobile_Item_Card_Layout_PASS.png) |
+| **TC-MC-13** | Mobile (390px) | Mobile CTAs Usability | Inspect Checkout and View Cart buttons | Full-width or tapable CTAs | Buttons are prominent and easily tapable | PASS 🟢 | [`07_Mobile_Checkout_CTA_PASS.png`](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Mini%20Cart/screenshots/mobile/07_Mobile_Checkout_CTA_PASS.png) |
+| **TC-MC-14** | Header | Wishlist Heart Icon Parity | Inspect header utility area | Wishlist heart icon present next to cart | Absent from US header (Parity gap) | FAIL 🔴 | [`DEFECT_01_US_Header_Missing_Wishlist_Icon_RED.png`](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Mini%20Cart/screenshots/defects/DEFECT_01_US_Header_Missing_Wishlist_Icon_RED.png) |
+| **TC-MC-15** | Mobile (390px) | Close Button Touch Target Size | Measure touch target size of "X" | Minimum 24x24px / 44x44px (WCAG 2.2 AA) | Bounding box is narrow (16.5px × 1px) | FAIL 🔴 | [`04_Mobile_Close_Button_TouchTarget_PASS.png`](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Mini%20Cart/screenshots/mobile/04_Mobile_Close_Button_TouchTarget_PASS.png) |
 
 ---
 
-### Defect 4: Wishlist Heart Icon Missing from Header Next to Mini Cart Trigger
-- **Severity:** P2 - Medium
-- **Component:** Header Utility Navigation
-- **Affected File / Block:** `Magento_Theme/templates/html/header.phtml` / `Magento_Wishlist/layout/default.xml`
-- **Side-by-Side Comparison:** [DEFECT_4_MISSING_CART_UTILITY_IN_HEADER.png](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20%282%29/Mini%20Cart/comparison/DEFECT_4_MISSING_CART_UTILITY_IN_HEADER.png)
-- **One-Line Description:** Wishlist heart icon is absent from the US header utility area next to the Mini Cart trigger icon, creating a feature parity gap with AU.
-- **Detailed Finding:**
-  On AU, the top header utility area includes a Wishlist heart icon with item counter badge directly adjacent to the Mini Cart icon (`.wishlist-link`). On the US storefront, only the Login dropdown and Cart bag icon are present.
-- **Remediation:**
-  Enable `Magento_Wishlist` in the US store view scope or restore the `<block class="Magento\Wishlist\Block\Link" name="wish-list-link"/>` entry in the US header layout.
+## Defect Details & Recommendations
 
----
+### Defect 1: Header Wishlist Utility Icon Missing Next to Mini Cart
+* **Severity:** P2 - Medium (Parity Gap)
+* **Expected (AU Baseline):** On the AU storefront, the header utility navigation features a Wishlist heart icon directly adjacent to the Mini Cart trigger.
+* **Actual (US Live):** Only the Login dropdown and Cart icon are displayed; Wishlist heart is absent.
+* **Remediation:** Enable the `Magento_Wishlist` header link block in the US header layout XML.
 
-## Test Execution Matrix Summary
-
-| Test ID | Scenario | Scope | Expected Result | Actual Result | Status | Severity |
-|---|---|---|---|---|---|---|
-| **TC_MINICART_001** | Add to Cart button availability | PDP / Mini Cart | Button renders, adds item, opens drawer | Button completely suppressed (count = 0) | **FAIL** | P1 - High |
-| **TC_MINICART_002** | Mini Cart subtotal tax markup | Subtotal | Sales Tax or calculated at checkout | Hardcoded Australian GST markup | **FAIL** | P1 - High |
-| **TC_MINICART_003** | Cross-sell carousel links | Drawer | Routes to US catalog domain | Routes to Australian staging domain | **FAIL** | P2 - Medium |
-| **TC_MINICART_004** | Header Wishlist utility icon | Header | Heart icon displayed next to cart | Heart icon missing from header | **FAIL** | P2 - Medium |
-| **TC_MINICART_005** | Mini Cart trigger opening | Navigation | Drawer slides out smoothly | Drawer opens cleanly with backdrop | **PASS** | Informational |
-| **TC_MINICART_006** | Empty drawer state | Empty State | Shows empty message and styling | Matches AU typography and layout | **PASS** | Informational |
-| **TC_MINICART_007** | Drawer close button & dismiss | Interactions | Close button / backdrop dismisses | Smoothly slides closed | **PASS** | Informational |
-| **TC_MINICART_008** | Item count badge binding | Trigger | Counter updates dynamically | Knockout binding structure matches AU | **PASS** | Informational |
-| **TC_MINICART_009** | Mobile responsive viewport | Mobile 390px | Adapts to mobile screen width | Clean mobile drawer rendering | **PASS** | Informational |
-| **TC_MINICART_010** | Checkout CTAs destination | Checkout | Points to US /checkout and /cart | Configured to US checkout routes | **PASS** | Informational |
-
----
-
-## Deliverables & Artifacts Index
-
-- 🖼️ **One Combined Poster:** [ONE_COMBINED_MINI_CART_DEFECTS_COMPARISON.png](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20%282%29/Mini%20Cart/comparison/ONE_COMBINED_MINI_CART_DEFECTS_COMPARISON.png)
-- 🌐 **Interactive HTML Gallery:** [VIEW_DEFECT_IMAGES.html](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20%282%29/Mini%20Cart/VIEW_DEFECT_IMAGES.html)
-- 📊 **Excel Test Suite:** [Mini_Cart_TestCases.xlsx](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20%282%29/Mini%20Cart/Mini_Cart_TestCases.xlsx)
-- 📄 **CSV Test Suite:** [Mini_Cart_TestCases.csv](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20%282%29/Mini%20Cart/Mini_Cart_TestCases.csv)
-- 📝 **Simple Defect Report:** [SIMPLE_DEFECT_COMPARISON_REPORT.md](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20%282%29/Mini%20Cart/SIMPLE_DEFECT_COMPARISON_REPORT.md)
+### Defect 2: Mobile Close Button Touch Target Size (WCAG 2.2 AA)
+* **Severity:** P2 - Medium (Accessibility Compliance)
+* **Expected (WCAG 2.2 AA Target Size):** Interactive controls must have an accessible touch target of at least 24×24px (or 44×44px for optimal mobile touch ergonomics).
+* **Actual (US Live):** The close button (`#btn-minicart-close`) uses pseudo-element styling with an effective bounding height of ~1px, making it difficult for touch-screen users to tap reliably.
+* **Remediation:** Add padding or explicit dimensions (`width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;`) to `#btn-minicart-close`.
