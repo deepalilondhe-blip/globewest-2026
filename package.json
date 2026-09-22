@@ -30,6 +30,10 @@
     "test:plp:figma:headed": "playwright test tests/plp-figma-verification.spec.js --project=desktop-chrome --headed",
     "figma:open": "node scripts/open_figma_interactive.js",
     "figma:designs": "node scripts/navigate_to_figma_designs.js",
+    "test:homepage": "playwright test tests/ticket-homepage-audit.spec.js --project=desktop-chrome",
+    "test:homepage:headed": "playwright test tests/ticket-homepage-audit.spec.js --project=desktop-chrome --headed",
+    "figma:my-quotes": "node scripts/open_figma_my_quotes.js",
+    "retest:my-quotes": "node Sprint-3/Ticket_41794529_My_Account_Quotes/scripts/retest_my_quotes_live.js",
     "test:tickets-all": "playwright test tests/ticket1-us-theme-copy.spec.js tests/ticket2-us-store-scope-config.spec.js tests/ticket3-au-regression-safeguards.spec.js tests/ticket4-us-cms-structure.spec.js --project=desktop-chrome",
     "report": "playwright show-report --port 9325",
     "zip:report": "node -e \"const {execSync}=require('child_process');process.platform==='win32'?execSync('powershell.exe -Command \\\"Compress-Archive -Path playwright-report/* -DestinationPath playwright-report.zip -Force\\\"',{stdio:'inherit'}):execSync('zip -q -r playwright-report.zip playwright-report/ -x \\\"*/.*\\\"',{stdio:'inherit'})\""

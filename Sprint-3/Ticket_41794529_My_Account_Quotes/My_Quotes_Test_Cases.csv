@@ -1,0 +1,104 @@
+Test Case ID,Feature / Module,Auth Matrix,Test Scenario,Pre-Conditions,Test Steps,Expected Result (Figma Spec / Frame 622),Actual Result (mcstaging2 Live),Status,Severity / Defect Summary
+"TC-QUOTES-01","Authentication & Access","Trade Customer (Logged In)","Verify Access to My Quotes Portal for Authenticated Trade Customer","User holds an active Trade Customer account (deepali.londhe@overdose.digital) on mcstaging2.globewest.com","Step 1: Navigate to customer account login page (/customer/account/login/)
+
+Step 2: Enter valid Trade Customer email and password
+
+Step 3: Click ""Sign In"" button
+
+Step 4: Navigate directly to the My Quotes URL (/gw_quotes/quote/index/)
+
+Step 5: Verify page renders successfully with HTTP 200 OK and ""My Quotes"" page title","Trade Customer successfully accesses the My Quotes portal.
+
+The authenticated header, left-hand My Account navigation sidebar, and Quotes table container render cleanly.","Page loads successfully with HTTP 200 for authenticated trade customer.
+
+Header, left navigation menu, and table container are displayed as expected.","PASS","None. Core route access verified."
+"TC-QUOTES-02","Filter Tabs - Default State","Trade Customer (Logged In)","Verify Default Active Status Filter Tab is ""ALL"" (Frame 622 Rule 1)","User accesses /gw_quotes/quote/index/ in a clean authenticated session","Step 1: Navigate to /gw_quotes/quote/index/
+
+Step 2: Locate the quote status filter tabs (ALL, OPEN, CONVERTED, EXPIRED) below the page title
+
+Step 3: Observe which filter tab is selected and highlighted by default on initial load","Per Frame 622 explicit rule: ""Tabs that filter table view of quotes shown based on quote status. Default to 'all'"".
+
+The ""ALL"" tab must be active by default with solid dark background (#1E1E1E) and white text.","The live staging build erroneously selects the ""OPEN"" tab by default.
+
+The ""ALL"" tab is inactive and unselected.","FAIL","HIGH - Direct business logic violation of Frame 622."
+"TC-QUOTES-03","Filter Tabs - Micro-UI Styling","Trade Customer (Logged In)","Verify Segmented Control Pill Styling for Filter Tabs","Quotes dashboard rendered at desktop resolution (1440x900)","Step 1: Inspect computed CSS styles of the status filter tabs container
+
+Step 2: Verify container border-radius, internal padding, and active/inactive state styling
+
+Step 3: Compare styling against Figma artboard desktop/my_account/02_My Quotes","Filter tabs must render as a unified segmented control with 4px border-radius.
+
+Inactive tabs have subtle grey borders (#CCCCCC); Active tab has solid dark fill (#1E1E1E) and white text (#FFFFFF).","Tabs render as unstyled plain text links with a standard browser underline on the active tab.
+
+No segmented pill container styling is present.","FAIL","MEDIUM - Visual design fidelity and micro-UI defect."
+"TC-QUOTES-04","Table Columns - Action Dropdown","Trade Customer (Logged In)","Verify Consolidated ""Actions"" Dropdown & Removal of Separate ""DETAILS"" Column","Quotes table loaded on desktop viewport","Step 1: Inspect the table header row and data columns
+
+Step 2: Count the total number of columns rendered
+
+Step 3: Check action buttons and links available per row","Per Frame 622 Rule 3: ""Actions housed under dropdown for both mobile + desktop as per other table functionality"".
+
+Table must contain strictly 8 columns. All row actions must be consolidated inside a single ""Actions"" dropdown button. There must be NO separate ""DETAILS"" column.","Table displays 9 columns, including a redundant unstyled ""DETAILS"" column preceding ""ACTIONS"".","FAIL","HIGH - DOM structural placement and column mismatch."
+"TC-QUOTES-05","Table Headers - Column Naming","Trade Customer (Logged In)","Verify Table Column Header Wording Parity (EXP. DATE, ORDER NAME)","Quotes table header row visible","Step 1: Read the text labels of all table header cells
+
+Step 2: Compare exact copy against the approved Figma specification:
+- Column 2 expected: EXP. DATE
+- Column 4 expected: ORDER NAME","Column 2 must display ""EXP. DATE"" (abbreviated).
+
+Column 4 must display ""ORDER NAME"".","Column 2 displays full word ""EXPIRY DATE"".
+
+Column 4 displays ""QUOTE NAME"".","FAIL","LOW - Copy and label discrepancy with approved design."
+"TC-QUOTES-06","Date Formatting - US Locale","Trade Customer (Logged In)","Verify Quote Expiry Dates Enforce US Standard Format (MM/DD/YYYY)","Trade customer account with active quote records available","Step 1: Locate quote date values in the table
+
+Step 2: Check date sequence to confirm month precedes day (e.g. 01/24/2026, not 24/01/2026)","Per Frame 622 explicit rule: ""Ensure dates displayed are in USA format"".
+
+All quote dates must strictly display in standard US format (MM/DD/YYYY).","Pending quote record population on staging.
+
+The codebase baseline must enforce US locale formatting rather than Australian DD/MM/YYYY.","PENDING DATA","HIGH - Critical locale and format requirement."
+"TC-QUOTES-07","Search Component - Layout","Trade Customer (Logged In)","Verify Search Bar Inline Horizontal Placement Beside Filter Tabs","Desktop viewport loaded at 1440x900","Step 1: Locate the quote search input box
+
+Step 2: Inspect horizontal alignment with the status filter tabs
+
+Step 3: Verify placeholder text ""Search"" and magnifying glass icon","The search bar is right-aligned on the SAME horizontal row directly beside the filter tabs.","The search bar sits in a detached position above the table right, breaking inline row alignment with the filter tabs.","FAIL","MEDIUM - Layout alignment discrepancy."
+"TC-QUOTES-08","FAQ Block - Module Presence","Trade Customer (Logged In)","Verify Presence of Dedicated FAQ Accordion Section Below Table (Frame 622 Block 2)","Quotes dashboard loaded on desktop or mobile viewport","Step 1: Scroll below the Quotes table grid
+
+Step 2: Check for presence of ""Frequently Asked Questions"" heading and accordion items","Per Frame 622 explicit specification:
+""New block utilised throughout the My Account Experience. Each FAQ block will have specific questions related to the page it is on. Admin ability to change content. Ability to add up to 8 FAQs.""","The FAQ Accordion section is 100% MISSING on live staging.
+
+The area below the table is completely empty white space followed directly by the footer.","FAIL","CRITICAL - Entire core module omitted from page."
+"TC-QUOTES-09","FAQ Block - Accordion Behavior","Trade Customer (Logged In)","Verify Accordions Closed by Default & Single Expansion Behavior (Frame 622 Block 2)","FAQ Accordion block rendered on page","Step 1: Observe default accordion state upon page load
+
+Step 2: Click Accordion item 1 to expand
+
+Step 3: Click Accordion item 2 to expand
+
+Step 4: Verify Accordion item 1 automatically collapses","Per Frame 622 rules:
+1. ""All accordions closed by default""
+2. ""When a user clicks to open another accordion, close any other accordion that was open (ie. only one open at a time)""","BLOCKED: Cannot execute test because the entire FAQ component is absent from the DOM.","BLOCKED","HIGH - Dependent on FAQ block development."
+"TC-QUOTES-10","Support Block - Contact Sales","Trade Customer (Logged In)","Verify Presence of ""Need help? Contact our sales team"" Block (Frame 622 Block 3)","Quotes dashboard scrolled toward bottom of main content area","Step 1: Scroll below the FAQ section
+
+Step 2: Check for presence of ""Need help? Contact our sales team"" content block
+
+Step 3: Verify support contact details and order changes disclaimer","Per Frame 622: ""NEED HELP BLOCK: Content Block / Admin ability to change content.""
+
+Renders dedicated support box with US contact phone, email, and order submission guidelines.","The Support / Contact Sales block is 100% MISSING on live staging.","FAIL","CRITICAL - Missing content block module."
+"TC-QUOTES-11","Sidebar Navigation - Count Badges","Trade Customer (Logged In)","Verify Numerical Count Badges in My Account Left Navigation","Desktop view at 1440px with left navigation visible","Step 1: Inspect left-hand sidebar menu items under ""MY ACCOUNT""
+
+Step 2: Check for numerical count badges next to Quotes, Holds, and Orders","Sidebar navigation items feature pill count badges (e.g. Quotes [723], Holds [3], Orders [3]).","No count badges are rendered in the left navigation sidebar on live staging.","FAIL","MEDIUM - Navigation micro-UI defect."
+"TC-QUOTES-12","Mobile Viewport - Layout & Alerts","Trade Customer (Logged In)","Verify Mobile Viewport Layout Parity & Custom Empty State (390x844)","Mobile browser viewport (iPhone 14/15 390x844)","Step 1: Load /gw_quotes/quote/index/ on mobile viewport
+
+Step 2: Inspect Quotes dropdown selector, title, subtitle, and search input
+
+Step 3: Inspect empty state alert container styling","Clean mobile presentation matching mobile/my_account/02_my_quotes artboard.
+
+Styled segmented tabs, full-width search, and brand-styled empty state.","Renders raw Magento default blue alert box (""Table is empty!"") with light blue background.
+
+Tabs are unstyled plain text.","FAIL","HIGH - Mobile responsive styling defect."
+"TC-QUOTES-13","Storefront Footer - Scope Leak","Trade Customer (Logged In)","Verify Scope Isolation & Absence of Australian Kangaroo Badge in Footer","US Storefront /gw_quotes/quote/index/ scrolled to footer","Step 1: Scroll down to storefront footer
+
+Step 2: Inspect trust badges, certifications, and copyright copy","US Storefront footer must strictly exclude Australian Kangaroo owned badge and Australian business entity references.","Displays Australian Kangaroo silhouette logo and ""AUSTRALIAN OWNED & RUN"" badge in storefront footer.","FAIL","HIGH - Australian scope leak onto US storefront."
+"TC-QUOTES-14","Grid Administration - Pagination","Trade Customer (Logged In)","Verify Admin Ability to Set Quotes Grid Items Per Page (Frame 622 Rule 4)","Magento Admin panel access / Storefront grid with quotes populated","Step 1: Inspect table pagination and items per page controls
+
+Step 2: Verify configurable page sizes (e.g. 10, 20, 50)","Per Frame 622: ""Admin to be able to set how many orders are in the table grid view"".
+
+Configurable pagination limits available.","Currently empty grid on staging.
+
+Backend admin configuration to be verified during full integration testing.","PENDING DATA","LOW - Backend admin configuration check."
