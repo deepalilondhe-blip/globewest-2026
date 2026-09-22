@@ -30,6 +30,7 @@ if (!fs.existsSync(REPORT_DIR)) {
 
   const browser = await chromium.launch({
     headless: true,
+    channel: 'chrome',
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
 
