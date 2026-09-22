@@ -57,3 +57,20 @@ Every ticket touching pricing, catalog, header, cart, or account MUST be tested 
     1. A single-line defect summary.
     2. Expected (Figma / AU) vs Actual (US Staging Live).
     3. Clear, annotated side-by-side Red/Green comparison image.
+
+---
+
+## 6. 📄 Dedicated `<Page Name> runcommand.txt` Standard (Mandatory for Every Ticket)
+For every ticket moving forward, always create a dedicated `.txt` file named `<Page Name> runcommand.txt` inside that ticket's directory.
+The file format MUST strictly contain only the following 4 items with ZERO extra text, fluff, or commentary:
+
+```text
+Ticket Name: <Ticket # - Ticket Name>
+Page Name: <Page Name> (<URL>)
+
+Run command for Desktop View:
+<exact terminal command for desktop view>
+
+Run command for Mobile View:
+<exact terminal command for mobile view>
+```
