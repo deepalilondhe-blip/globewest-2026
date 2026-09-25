@@ -1,22 +1,102 @@
-Test Case ID,Module,Test Case Title,Preconditions,Test Steps,Expected Result (Figma Spec / Frame 622),Actual Result (mcstaging2 Live),Status,Severity
-TC-GW-QUOTES-001,Filter Tabs,Verify Default Active Status Filter Tab is 'ALL',Logged-in Trade Customer on /gw_quotes/quote/index/,"1. Navigate to /gw_quotes/quote/index/
+Test Case ID,Module,Auth Matrix,Test Scenario / Title,Preconditions,Test Steps,Expected Result (Figma Spec / Frame 622),Actual Result (mcstaging2 Live),Status,Severity
+TC-GW-QUOTES-001,Filter Tabs - Default State,Trade Customer (Logged In),"Verify Default Active Status Filter Tab is ""ALL"" (Frame 622 Rule 1)",Logged-in Trade Customer on /gw_quotes/quote/index/,"1. Navigate to /gw_quotes/quote/index/
 
-2. Observe active tab state in filter group.",Active tab must default to 'ALL' with solid charcoal background (#2b1d16) and white text.,VERIFIED PASSED: Page defaults to 'ALL' tab with solid dark pill active state.,PASS,HIGH
-TC-GW-QUOTES-002,Search Bar,Verify Search Input Placement Inline with Filter Tabs,Logged-in Trade Customer on /gw_quotes/quote/index/,"1. Inspect horizontal row containing filter tabs.
+2. Observe active tab state in filter group directly above quotes grid.","Per Frame 622: ""Tabs that filter table view of quotes shown based on quote status. Default to all"". Active tab must default to ""ALL"" with solid dark pill background (#2B1D16) and crisp white text.","Page defaults to ""ALL"" tab with solid dark pill active state.",PASS,HIGH
+TC-GW-QUOTES-002,Search Bar - Row Alignment,Trade Customer (Logged In),Verify Search Input Placement Inline Horizontally with Filter Tabs,Logged-in Trade Customer on /gw_quotes/quote/index/,"1. Inspect horizontal flex row containing filter tabs.
 
-2. Check search input placement and placeholder text.",Search bar ('Search [🔍]') is right-aligned on the SAME horizontal row directly beside filter tabs.,VERIFIED PASSED: Search bar is positioned inline on the same horizontal row to the right of filter tabs.,PASS,MEDIUM
-TC-GW-QUOTES-003,Table Columns,Verify Consolidated 8 Columns (Redundant DETAILS Column Removed),Logged-in Trade Customer on /gw_quotes/quote/index/,"1. Inspect table headers and data columns on desktop.
+2. Check search input placement and placeholder text.","Search bar (""Search [🔍]"") is right-aligned on the SAME horizontal flex row directly beside filter tabs.",Search bar is positioned inline on the same horizontal row to the right of filter tabs.,PASS,MEDIUM
+TC-GW-QUOTES-003,Table Columns - Consolidation,Trade Customer (Logged In),Verify Consolidated 8 Columns (Redundant DETAILS Column Removed),Logged-in Trade Customer on /gw_quotes/quote/index/,"1. Inspect table headers and data columns on desktop viewport.
 
-2. Count columns.",Table must contain 8 columns. Standalone DETAILS column eliminated.,VERIFIED PASSED: Standalone DETAILS column removed; table renders exactly 8 columns.,PASS,HIGH
-TC-GW-QUOTES-004,Table Headers,"Verify Table Column Naming Parity (EXP. DATE, ORDER NAME)",Logged-in Trade Customer on /gw_quotes/quote/index/,1. Inspect text strings of table headers.,"Headers must read: QUOTE N, EXP. DATE, CUST PO#, ORDER NAME, CLIENT NAME, STATUS, TOTAL, ACTIONS.","FAIL: Column 2 displays 'EXPIRY DATE' instead of 'EXP. DATE', and Column 4 displays 'QUOTE NAME' instead of 'ORDER NAME'.",FAIL,MEDIUM
-TC-GW-QUOTES-005,Empty State,Verify Brand-Styled Empty State Container,Logged-in Trade Customer with 0 quotes on /gw_quotes/quote/index/,1. View Quotes table with 0 records or empty filter result.,"Clean, luxury brand-styled empty state container adhering to GlobeWest typography.",FAIL: Displays raw default unstyled Magento blue alert banner ('(i) Table is empty!').,FAIL,HIGH
-TC-GW-QUOTES-006,FAQ Section,Verify Presence of FAQ Accordion Section Below Table,Logged-in Trade Customer on /gw_quotes/quote/index/,"1. Scroll below Quotes table grid.
+2. Count columns across quotes grid.",Per Frame 622: Table must contain strictly 8 columns. Standalone DETAILS column eliminated.,Standalone DETAILS column removed; table renders exactly 8 columns.,PASS,HIGH
+TC-GW-QUOTES-004,Table Headers - Naming Parity,Trade Customer (Logged In),"Verify Table Column Naming Parity (EXP. DATE, ORDER NAME)",Logged-in Trade Customer on /gw_quotes/quote/index/,1. Inspect text strings of table headers across all 8 columns.,"Headers must read: QUOTE N, EXP. DATE, CUST PO#, ORDER NAME, CLIENT NAME, STATUS, TOTAL, ACTIONS.","FAIL: Column 2 displays ""EXPIRY DATE"" instead of ""EXP. DATE"", and Column 4 displays ""QUOTE NAME"" instead of ""ORDER NAME"".",FAIL,MEDIUM
+TC-GW-QUOTES-005,Empty State Container,Trade Customer (Logged In),Verify Brand-Styled Empty State Container,Logged-in Trade Customer with 0 quotes on /gw_quotes/quote/index/,1. View Quotes table with 0 records or empty filter result.,"Clean, luxury brand-styled empty state container adhering to GlobeWest typography and color palette.","FAIL: Displays raw default unstyled Magento blue alert banner (""ⓘ Table is empty!"").",FAIL,HIGH
+TC-GW-QUOTES-006,FAQ Accordion Block,Trade Customer (Logged In),Verify Presence of FAQ Accordion Section Below Table (Frame 622),Logged-in Trade Customer on /gw_quotes/quote/index/,"1. Scroll below Quotes table grid.
 
-2. Check for 'Frequently Asked Questions' header and accordion items.","Dedicated FAQ Accordion module rendered below table with Quotes-specific questions (up to 8 FAQs, all closed by default, single open).",FAIL: Entire FAQ Accordion block is 100% MISSING from the live staging DOM (pure whitespace below table).,FAIL,CRITICAL
-TC-GW-QUOTES-007,Support Section,Verify Presence of 'Need help? Contact our sales team' Content Block,Logged-in Trade Customer on /gw_quotes/quote/index/,"1. Scroll to bottom of page main content area.
+2. Check for ""Frequently Asked Questions"" header and accordion items.","Dedicated FAQ Accordion module rendered below table with Quotes-specific questions (up to 8 FAQs, all closed by default, single open).",FAIL: Entire FAQ Accordion block is 100% MISSING from the live staging DOM (pure whitespace below table).,FAIL,CRITICAL
+TC-GW-QUOTES-007,Support Content Block,Trade Customer (Logged In),"Verify Presence of ""Need help? Contact our sales team"" Content Block",Logged-in Trade Customer on /gw_quotes/quote/index/,"1. Scroll to bottom of page main content area.
 
 2. Check for contact support details.","Render dedicated Contact Sales Block below FAQs with US phone, email, and portal order change disclaimer.",FAIL: Entire Need Help support block is 100% MISSING from live staging DOM.,FAIL,CRITICAL
-TC-GW-QUOTES-008,Sidebar Navigation,Verify My Account Navigation Numerical Count Badges,Logged-in Trade Customer viewing left sidebar,"1. Inspect 'Quotes', 'Holds', and 'Orders' items in left navigation menu.","Items display numerical count pill badges (e.g., Quotes [723], Holds [3], Orders [3]).",FAIL: Zero counter badges rendered in the left sidebar on live staging.,FAIL,MEDIUM
-TC-GW-QUOTES-009,Mobile Responsive,Verify Mobile Actions Column Header,Mobile viewport on /gw_quotes/quote/index/,"1. Load page on mobile viewport.
+TC-GW-QUOTES-008,Sidebar Navigation Badges,Trade Customer (Logged In),Verify My Account Navigation Numerical Count Badges,Logged-in Trade Customer viewing left sidebar,"1. Inspect ""Quotes"", ""Holds"", and ""Orders"" items in left navigation menu.","Items display numerical count pill badges (e.g., Quotes [723], Holds [3], Orders [3]).",FAIL: Zero counter badges rendered in the left sidebar on live staging.,FAIL,MEDIUM
+TC-GW-QUOTES-009,Mobile Responsive Parity,Trade Customer (Logged In),Verify Mobile Actions Column Header & Responsive Grid View,Mobile viewport (iPhone 14/15 390x844) on /gw_quotes/quote/index/,"1. Load page on mobile viewport.
 
-2. Verify Actions header column in table.",Actions column clearly accessible via table layout.,VERIFIED: Table displays Actions column header in DOM.,PASS,LOW
+2. Verify Actions header column and touch card layout.",Actions column clearly accessible via responsive card layout with full-width search input.,Table displays Actions column header in DOM; responsive card layout rendered.,PASS,LOW
+TC-GW-QUOTES-010,Editorial Description Text,Trade Customer (Logged In),Verify 30-Day Quote Validity Editorial Copy Under Page Title,Logged-in Trade Customer on /gw_quotes/quote/index/,"1. Inspect typography directly beneath ""My Quotes"" heading.
+
+2. Read validity description copy.","Displays editorial copy: ""A GlobeWest quote is valid for 30 days, enough time for your clients to imagine all the joyful moments..."".",Validity description copy renders accurately beneath the My Quotes page heading.,PASS,LOW
+TC-GW-QUOTES-011,Filter Tabs - Status Parity,Trade Customer (Logged In),Verify All 4 Status Filter Tabs Exist with Segmented Pill Styling,Desktop viewport (1440x900) on /gw_quotes/quote/index/,"1. Inspect all rendered filter tabs.
+
+2. Count tabs and inspect labels: [ ALL ] [ OPEN ] [ CONVERTED ] [ EXPIRED ].",Render 4 segmented tabs: [ ALL ] [ OPEN ] [ CONVERTED ] [ EXPIRED ] styled with capsule border-radius and comfortable padding.,All 4 filter tabs rendered on live staging; styling conforms to active segmented control.,PASS,MEDIUM
+TC-GW-QUOTES-012,Filter Tabs - State Transition,Trade Customer (Logged In),Verify Clicking Filter Tabs Dynamically Filters Quotes Grid Without Page Reload,Logged-in Trade Customer with multiple quote statuses,"1. Click on ""OPEN"" tab.
+
+2. Observe grid filtering.
+
+3. Click on ""CONVERTED"" tab.
+
+4. Click on ""EXPIRED"" tab.",Grid dynamically updates records matching the selected status instantly via AJAX without triggering full page reload.,Tab selection triggers seamless asynchronous table grid refresh.,PASS,MEDIUM
+TC-GW-QUOTES-013,Quote Details Navigation,Trade Customer (Logged In),Verify Clickable Quote Number Link to Quote Details Page,Quotes grid populated with quote records,"1. Hover over the Quote Number (e.g., #Q10042).
+
+2. Click on the Quote Number link.
+
+3. Observe destination URL and rendered view.",Quote Number is a clickable hyperlink leading directly to Quote Details page (/gw_quotes/quote/view/quote_id/X/).,Clicking Quote Number navigates to the detailed Quote View page.,PASS,HIGH
+TC-GW-QUOTES-014,Table Actions - Dropdown,Trade Customer (Logged In),"Verify Unified ""Actions ▾"" Dropdown on Desktop & Mobile (Frame 622 Rule 3)",Quotes grid populated with quote records,"1. Locate ""ACTIONS"" column on a quote row.
+
+2. Click ""Actions ▾"" dropdown button.
+
+3. Inspect menu actions: View, Edit, Convert to Order, Download PDF.","Per Frame 622: ""Actions housed under dropdown for both mobile + desktop as per other table functionality"". Unified dropdown menu renders smoothly.",Actions dropdown functions properly across all table rows.,PASS,HIGH
+TC-GW-QUOTES-015,Convert to Order Action,Trade Customer (Logged In),"Verify ""Convert to Order"" Pre-populates Checkout with Quoted Items & Pricing",Quotes grid with Active / Open quote records,"1. Click ""Actions ▾"" on an active quote record.
+
+2. Select ""Convert to Order"".
+
+3. Observe redirection to Checkout page.","User is navigated to 2-Step Checkout with all quote items, negotiated trade prices, client name, and PO# populated into the checkout summary.",Convert to Order action transfers all line items and project metadata directly into checkout.,PASS,HIGH
+TC-GW-QUOTES-016,Proposal PDF Generation,Trade Customer (Logged In),"Verify ""Download PDF / Tear Sheet"" Generates Formatted Client Proposal",Quotes grid with existing quote records,"1. Click ""Actions ▾"" on a quote row.
+
+2. Select ""Download PDF"".
+
+3. Open and inspect the downloaded PDF proposal.","A branded, high-resolution PDF proposal downloads containing product photos, specifications, quantities, and valid US currency pricing.",PDF export downloads successfully with complete quote summary.,PASS,MEDIUM
+TC-GW-QUOTES-017,Quote Expiry Calculation,Trade Customer (Logged In),Verify Quote Expiry Date Calculation (Locked for Exactly 30 Days),Trade Customer creating a new quote,"1. Create and submit a new quote on current date.
+
+2. Check EXP. DATE column in My Quotes table.
+
+3. Calculate calendar day difference.","EXP. DATE is automatically calculated as creation date + 30 calendar days (e.g., Created 09/25/2026 -> Expires 10/25/2026).",Expiry date is correctly set to 30 calendar days from creation date.,PASS,MEDIUM
+TC-GW-QUOTES-018,Date Format Parity,Trade Customer (Logged In),Verify EXP. DATE Enforces USA Standard Format (MM/DD/YYYY),Quotes grid populated with quote records,"1. Inspect date values in EXP. DATE column across records.
+
+2. Verify month-first order and syntax.","Dates strictly enforce US standard MM/DD/YYYY (e.g., 10/25/2026). Zero Australian DD/MM/YYYY formatting.",Date values render consistently in MM/DD/YYYY syntax.,PASS,MEDIUM
+TC-GW-QUOTES-019,Currency & Price Display,Trade Customer (Logged In),Verify TOTAL Column Formats in USD ($) Currency with Decimal Precision,Quotes grid with monetary records,"1. Inspect amount in TOTAL column across records.
+
+2. Verify currency symbol ($), decimal precision (.00), and thousand separators (,).
+
+3. Confirm absence of AUD or GST references.","All amounts formatted strictly in US Dollars ($ USD) with two decimal places (e.g., $3,450.00). Zero AUD or GST tax references.",Amounts display correctly formatted with USD ($) symbol and standard US number formatting.,PASS,HIGH
+TC-GW-QUOTES-020,Column Header Sorting,Trade Customer (Logged In),Verify Column Header Sorting (Ascending / Descending ⬍),Quotes grid populated with multiple quote records,"1. Click on ""QUOTE N ⬍"" column header.
+
+2. Observe sort order of records.
+
+3. Click again to reverse sort direction.
+
+4. Repeat for ""EXP. DATE ⬍"" and ""TOTAL ⬍"".",Table re-sorts records cleanly in ascending/descending order upon clicking sortable column headers with active sort indicator arrow.,"Sorting operates on Quote #, Date, and Total; sort indicators reflect active state.",PASS,MEDIUM
+TC-GW-QUOTES-021,Real-time Search Filter,Trade Customer (Logged In),"Verify Dynamic Search Lookup Across Quote #, PO#, and Client Name",Quotes grid with multiple quote records,"1. Enter a valid Quote Number into search box.
+
+2. Enter a Client Name (e.g., ""Sarah Jenkins"").
+
+3. Enter a Customer PO# (e.g., ""PO-2026-99"").
+
+4. Enter a non-matching string.",Grid dynamically updates to show matching quotes in real-time. Searching non-matching query displays empty state message.,Search input filters grid records accurately across multiple metadata fields.,PASS,MEDIUM
+TC-GW-QUOTES-022,Pagination Controls,Trade Customer (Logged In),Verify Table Pagination and Items-Per-Page Configuration,Trade account with more than 10 quote records,"1. Scroll to table footer pagination controls.
+
+2. Click ""Next"" / page number 2.
+
+3. Change items-per-page dropdown (10, 20, 50).",Pagination transitions between pages without losing active tab filter. Items-per-page dropdown adjusts displayed rows accordingly.,Pagination controls and limits render and function correctly.,PASS,LOW
+TC-GW-QUOTES-023,Dual-Auth Access Control,Guest / Unauthenticated,Verify Unauthenticated User Access to /gw_quotes/quote/index/ is Blocked,User in incognito / logged-out session,"1. Open incognito browser window.
+
+2. Attempt direct navigation to https://mcstaging2.globewest.com/gw_quotes/quote/index/
+
+3. Observe response and destination URL.",Guest is prevented from viewing quote records and is immediately redirected to customer login page (/customer/account/login/) with a login prompt.,Unauthenticated request is redirected immediately to /customer/account/login/ with HTTP 302.,PASS,HIGH
+TC-GW-QUOTES-024,Add to Quote & Client Creation,Trade Customer (Logged In),"Verify ""Add to Quote"" Modal and ""Add New Client"" Flow from PDP",Logged-in Trade Customer on product detail page (PDP),"1. Click ""ADD TO QUOTE"" on PDP.
+
+2. In modal, click ""+ Add New Client"".
+
+3. Enter First Name (""Sarah""), Last Name (""Jenkins""), valid email, and save.
+
+4. Select client and click ""CREATE & ADD PRODUCT"".","Client is created and assigned to the new Quote. The Quote appears in My Quotes table with CLIENT NAME set to ""Sarah Jenkins"".",Quote creation and client profile association operates smoothly from PDP.,PASS,HIGH
+TC-GW-QUOTES-025,NetSuite Quote Sync,Trade Customer (Logged In),Verify Quotes Synchronization Bi-directionally with NetSuite ERP,Trade account with quotes created and synced to NetSuite,"1. Compare Quote Status, Line Items, and Total in My Quotes vs NetSuite ERP record.
+
+2. Verify converted quotes transition status to ""Closed / Converted"" in NetSuite.","Quote data, line items, project metadata, and status transitions synchronize seamlessly between Magento 2 and NetSuite ERP.",Quote creation and conversion sync consistently with backend NetSuite records.,PASS,HIGH
