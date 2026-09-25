@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket #41794530: My Account - Orders — QA Visual Defect Gallery</title>
+  <style>
+    :root {
+      --bg: #121212;
+      --card-bg: #1e1e1e;
+      --border: #333333;
+      --text: #f0f0f0;
+      --text-muted: #aaaaaa;
+      --accent-red: #ff4d4d;
+      --accent-green: #4caf50;
+      --accent-gold: #c5a059;
+      --badge-red-bg: rgba(255, 77, 77, 0.15);
+      --badge-green-bg: rgba(76, 175, 80, 0.15);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 30px 20px;
+    }
+    .header {
+      max-width: 1400px;
+      margin: 0 auto 30px auto;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 25px;
+    }
+    .header h1 {
+      font-size: 28px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+    .header .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+    .meta-item { display: flex; align-items: center; gap: 6px; }
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .badge-red { background: var(--badge-red-bg); color: var(--accent-red); border: 1px solid var(--accent-red); }
+    .badge-green { background: var(--badge-green-bg); color: var(--accent-green); border: 1px solid var(--accent-green); }
+    .badge-gold { background: rgba(197, 160, 89, 0.15); color: var(--accent-gold); border: 1px solid var(--accent-gold); }
+
+    .nav-bar {
+      max-width: 1400px;
+      margin: 0 auto 25px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--card-bg);
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .filter-group { display: flex; gap: 10px; }
+    .filter-btn {
+      background: #2a2a2a;
+      border: 1px solid #444;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: #3b82f6;
+      border-color: #3b82f6;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .defect-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s;
+    }
+    .defect-card:hover {
+      border-color: #555;
+    }
+    .card-header {
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background: #252525;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card-body {
+      padding: 20px;
+    }
+    .comparison-img-wrapper {
+      position: relative;
+      background: #000;
+      border-radius: 6px;
+      border: 1px solid #333;
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+    .comparison-img-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .card-desc {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #ccc;
+      line-height: 1.6;
+      background: #181818;
+      padding: 12px 16px;
+      border-radius: 6px;
+      border-left: 3px solid #3b82f6;
+    }
+    .card-desc strong { color: #fff; }
+
+    /* Modal for zoom */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      cursor: zoom-out;
+    }
+    .modal img {
+      max-width: 95vw;
+      max-height: 95vh;
+      border-radius: 6px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.8);
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Ticket #41794530: My Account - Orders</h1>
+    <div class="meta">
+      <div class="meta-item"><span>Project:</span> <strong style="color: #fff;">P-GLW-007 Globewest US Expansion</strong></div>
+      <div class="meta-item"><span>Phase:</span> <span class="badge badge-gold">Pre-Development Baseline Verification</span></div>
+      <div class="meta-item"><span>Target URL:</span> <a href="https://mcstaging2.globewest.com/gw_orders/order/index/" target="_blank" style="color: #60a5fa;">mcstaging2.globewest.com/gw_orders/order/index/</a></div>
+      <div class="meta-item"><span>Figma Spec:</span> <a href="https://www.figma.com/design/oSBa3EMR3goI0vM1tXCdTk/Globewest-USA---External?node-id=2581-64348&t=UHKXdUurQ7e08vqM-0" target="_blank" style="color: #60a5fa;">Node 2581-64348 (Frame 624)</a></div>
+      <div class="meta-item"><span>QA Lead:</span> <strong style="color: #fff;">Deepali Londhe</strong></div>
+    </div>
+  </div>
+
+  <div class="nav-bar">
+    <div class="filter-group">
+      <button class="filter-btn active" onclick="filterPasses('all')">All Passes (7)</button>
+      <button class="filter-btn" onclick="filterPasses('critical')">Critical (1)</button>
+      <button class="filter-btn" onclick="filterPasses('high')">High Severity (4)</button>
+      <button class="filter-btn" onclick="filterPasses('medium')">Medium (2)</button>
+    </div>
+    <div style="font-size: 13px; color: var(--text-muted);">
+      Click any image to expand full size
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- PASS 01 -->
+    <div class="defect-card" data-severity="high">
+      <div class="card-header">
+        <div class="card-title">
+          <span class="badge badge-red">High</span>
+          <span>Pass 01: Default Active Filter Tab (Frame 624: Default to 'AWAITING PAYMENT')</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="comparison-img-wrapper" onclick="openModal(this)">
+          <img src="comparison/COMPARISON_PASS_01_DEFAULT_ACTIVE_TAB.png" alt="Pass 01 Comparison">
+        </div>
+        <div class="card-desc">
+          <strong>Defect Analysis:</strong> Frame 624 mandates: <em>"Tabs that filter table view of orders shown based on status. Default to 'awaiting payment'"</em>. Live staging incorrectly defaults to the <strong>`OPEN`</strong> tab with plain text underline. Furthermore, the live environment only renders <code>ALL</code>, <code>OPEN</code>, <code>CLOSED</code>, completely missing <code>PENDING SHIPMENT</code> and <code>DISPATCHED</code>.
+        </div>
+      </div>
+    </div>
+
+    <!-- PASS 02 -->
+    <div class="defect-card" data-severity="high">
+      <div class="card-header">
+        <div class="card-title">
+          <span class="badge badge-red">High</span>
+          <span>Pass 02: Table Columns (6 Columns vs 10 Columns) & Unified Actions Dropdown</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="comparison-img-wrapper" onclick="openModal(this)">
+          <img src="comparison/COMPARISON_PASS_02_TABLE_COLUMNS_AND_ACTIONS.png" alt="Pass 02 Comparison">
+        </div>
+        <div class="card-desc">
+          <strong>Defect Analysis:</strong> Frame 624 requires a <em>"Reduction of columns shown"</em> (strictly 6: Order, Date, Status, Total, Balance, Actions ▾). Live staging renders 10 columns including redundant <code>Cust po#</code>, <code>Order name</code>, <code>Client Name</code>, and a separate unstyled <code>DETAILS</code> link instead of housing all actions under the unified dropdown.
+        </div>
+      </div>
+    </div>
+
+    <!-- PASS 03 (PASSED) -->
+    <div class="defect-card" data-severity="passed">
+      <div class="card-header">
+        <div class="card-title">
+          <span class="badge badge-green">Passed</span>
+          <span>Pass 03: Search Input Row Alignment (Inline with Tabs)</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="comparison-img-wrapper" onclick="openModal(this)">
+          <img src="comparison/COMPARISON_PASS_03_SEARCH_BAR_ALIGNMENT.png" alt="Pass 03 Comparison">
+        </div>
+        <div class="card-desc" style="border-left-color: #4caf50;">
+          <strong>Status: PASSED ✅:</strong> Search input is now successfully aligned horizontally on the <strong>same row</strong> beside the filter tabs, satisfying the Figma layout requirement.
+        </div>
+      </div>
+    </div>
+
+    <!-- PASS 04 -->
+    <div class="defect-card" data-severity="critical">
+      <div class="card-header">
+        <div class="card-title">
+          <span class="badge badge-red">Critical</span>
+          <span>Pass 04: FAQ Accordion Multi-Open Violation (Frame 624: Only One Open at a Time)</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="comparison-img-wrapper" onclick="openModal(this)">
+          <img src="comparison/COMPARISON_PASS_04_MISSING_FAQ_BLOCK.png" alt="Pass 04 Comparison">
+        </div>
+        <div class="card-desc">
+          <strong>Defect Analysis:</strong> The FAQ Accordion section is now deployed on the page. However, Frame 624 explicitly mandates: <em>"When a user clicks to open another accordion, close any other accordion that was open (ie. only one open at a time)"</em>. In live staging, clicking FAQ #2 leaves FAQ #1 open—both items remain expanded simultaneously.
+        </div>
+      </div>
+    </div>
+
+    <!-- PASS 05 -->
+    <div class="defect-card" data-severity="high">
+      <div class="card-header">
+        <div class="card-title">
+          <span class="badge badge-red">High</span>
+          <span>Pass 05: Support Block Line Collision Glitch & Leaking AU Phone/Email</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="comparison-img-wrapper" onclick="openModal(this)">
+          <img src="comparison/COMPARISON_PASS_05_SUPPORT_BLOCK_SCOPE_LEAK.png" alt="Pass 05 Comparison">
+        </div>
+        <div class="card-desc">
+          <strong>Defect Analysis:</strong> In the "Need to change an order?" support content block on desktop view, a horizontal rule line visibly strikes through the text <code>To change a submitted order, please contact our Sales Administration team on:</code>. Additionally, it displays Australian contact details (<code>P: +613 9518 1600</code> and <code>E: sales@globewest.com.au</code>) instead of US domestic details.
+        </div>
+      </div>
+    </div>
+
+    <!-- PASS 06 -->
+    <div class="defect-card" data-severity="medium">
+      <div class="card-header">
+        <div class="card-title">
+          <span class="badge badge-gold">Medium</span>
+          <span>Pass 06: Left Navigation Sidebar Numerical Count Badges</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="comparison-img-wrapper" onclick="openModal(this)">
+          <img src="comparison/COMPARISON_PASS_06_SIDEBAR_COUNT_BADGES.png" alt="Pass 06 Comparison">
+        </div>
+        <div class="card-desc">
+          <strong>Defect Analysis:</strong> Figma specification includes high-contrast blue numerical count badges beside <code>Quotes [723]</code>, <code>Holds [3]</code>, and <code>Orders [3]</code>. The live staging navigation renders zero badges.
+        </div>
+      </div>
+    </div>
+
+    <!-- PASS 07 -->
+    <div class="defect-card" data-severity="high">
+      <div class="card-header">
+        <div class="card-title">
+          <span class="badge badge-red">High</span>
+          <span>Pass 07: Mobile Viewport Parity & Raw Alert Box ('Table is empty!')</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="comparison-img-wrapper" onclick="openModal(this)">
+          <img src="comparison/COMPARISON_PASS_07_MOBILE_RESPONSIVE_PARITY.png" alt="Pass 07 Comparison">
+        </div>
+        <div class="card-desc">
+          <strong>Defect Analysis:</strong> On mobile screens (390×844 / 375×812), the live staging renders an unstyled default Magento blue alert box (<code>ⓘ Table is empty!</code>) and stacked search inputs rather than brand-aligned mobile components and unified action dropdowns.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <img id="modalImg" src="" alt="Full view">
+  </div>
+
+  <script>
+    function openModal(wrapper) {
+      const img = wrapper.querySelector('img');
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImg');
+      modalImg.src = img.src;
+      modal.style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('imageModal').style.display = 'none';
+    }
+    function filterPasses(severity) {
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      const cards = document.querySelectorAll('.defect-card');
+      cards.forEach(card => {
+        if (severity === 'all' || card.getAttribute('data-severity') === severity) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

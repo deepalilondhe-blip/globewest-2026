@@ -10,48 +10,31 @@
 
 Hi Team,
 
-I have completed a comprehensive **Pre-Development / Work-in-Progress Verification Audit** for the **My Account - Quotes** module (`/gw_quotes/quote/index/`), cross-referencing the live staging build on `mcstaging2` against the approved **Figma Desktop & Mobile Artboards** and the **Frame 622 Specification Annotations**.
+Following the recent frontend deployment on `mcstaging2.globewest.com/gw_quotes/quote/index/`, I have conducted a re-test and regression verification against the approved Figma specifications (Node 2581-64235 / Frame 622).
 
-Below is the summary of items to be addressed during the current frontend development sprint:
-
----
-
-### 1. Acceptance Criteria & Gap Analysis (Figma Frame 622 Traceability)
-
-| Component | Frame 622 Specification | Current Live Staging Actual (`mcstaging2`) | Severity |
-| :--- | :--- | :--- | :---: |
-| **Filter Tabs** | *"Tabs that filter table view of quotes shown based on quote status. Default to 'all'"* | Currently defaults to **`OPEN`** tab with plain text underline. | **HIGH** |
-| **Filter Tabs Styling** | Segmented pill container (`[ ALL ] [ OPEN ] [ CONVERTED ] [ EXPIRED ]`) with solid dark fill (`#1E1E1E`) on active tab | Unstyled plain text links with basic text-decoration underline. | **MEDIUM** |
-| **Table Columns** | 8 Columns (`QUOTE N`, `EXP. DATE`, `CUST PO#`, `ORDER NAME`, `CLIENT NAME`, `STATUS`, `TOTAL`, `ACTIONS`) | 9 Columns rendered. Contains an extra redundant **`DETAILS`** column and full word `EXPIRY DATE`. | **HIGH** |
-| **Actions CTAs** | *"Actions housed under dropdown for both mobile + desktop as per other table functionality"* | Actions split across `DETAILS` and `ACTIONS` columns instead of single `Actions` dropdown. | **HIGH** |
-| **Search Bar Placement** | Pinned inline on the **same horizontal row** alongside the filter tabs | Pushed to a disconnected upper position above table right. | **MEDIUM** |
-| **FAQ Accordion Block** | *"New block utilised throughout the My Account Experience... Up to 8 FAQs. All accordions closed by default. Only one open at a time."* | **100% MISSING** from live staging. Blank whitespace below table. | **CRITICAL** |
-| **Need Help Block** | *"Need Help Block: Content Block / Admin ability to change content"* | **100% MISSING** from live staging. | **CRITICAL** |
-| **Sidebar Count Badges** | Numerical count pill badges (e.g. `Quotes [723]`, `Holds [3]`, `Orders [3]`) | Left account navigation renders no count badges. | **MEDIUM** |
-| **Mobile Empty State** | Brand-styled empty state and mobile table parity | Displays raw Magento default blue alert box (`Table is empty!`). | **HIGH** |
-| **Footer Scope Leak** | US Storefront clean footer isolation | Displays Australian Kangaroo logo and `"AUSTRALIAN OWNED & RUN"` copy. | **HIGH** |
+### ✅ Deployed & Verified Passed:
+1. **Default Filter Tab**: Now correctly defaults to **`ALL`** with solid dark pill active styling (`#2b1d16`).
+2. **Search Bar Row Alignment**: Search bar is placed inline on the same horizontal row beside the filter tabs.
+3. **Table Column Consolidation**: The redundant standalone `DETAILS` column has been eliminated; the table now renders 8 columns.
 
 ---
 
-### 2. Deliverables & Evidence Generated
+### 🔴 Remaining Defects Requiring Remediation:
 
-- **Interactive Visual Defect Gallery**: `VIEW_DEFECT_IMAGES.html` (Complete side-by-side comparison cards with modal image zoom).
-- **Test Case Matrices**:
-  - `My_Quotes_Test_Cases.xlsx` (Formal 14-point QA execution matrix with custom column widths).
-  - `My_Quotes_Test_Cases.csv` (Clean machine-readable CSV with formatted step spacing).
-- **Side-by-Side Comparison Passes**:
-  - `Pass 01`: Default Active Tab (`ALL` vs `OPEN`).
-  - `Pass 02`: Table Columns & Consolidated Actions Dropdown.
-  - `Pass 03`: Search Bar Row Alignment.
-  - `Pass 04`: Missing FAQ Accordion Block.
-  - `Pass 05`: Missing Need Help Block.
-  - `Pass 06`: Sidebar Count Badges.
-  - `Pass 07`: Mobile Responsive Parity.
-  - `Pass 08`: Australian Kangaroo Footer Badge Scope Leak.
+| Defect # | Component | Approved Figma Spec | Current Live Staging (`mcstaging2`) | Severity |
+| :---: | :--- | :--- | :--- | :---: |
+| **01** | **Table Header Copy** | Columns labeled **`EXP. DATE`** and **`ORDER NAME`** | Displays Magento defaults: **`EXPIRY DATE`** and **`QUOTE NAME`** | **MEDIUM** |
+| **02** | **Empty State Alert** | Branded luxury empty state styling | Raw unstyled default Magento blue alert banner (`ⓘ Table is empty!`) | **HIGH** |
+| **03** | **FAQ Accordion Block** | Dedicated *"Frequently Asked Questions"* accordion block below table (up to 8 items, single open) | **100% MISSING** from DOM (blank whitespace below table) | **CRITICAL** |
+| **04** | **Need Help Support Block** | Dedicated support content block below FAQs with sales hotline & email | **100% MISSING** from DOM | **CRITICAL** |
+| **05** | **Sidebar Count Badges** | Blue numerical count badges beside `Quotes [723]`, `Holds [3]`, `Orders [3]` | Left navigation sidebar renders plain links with zero badges | **MEDIUM** |
 
-All comparison captures follow the QA visual standard with solid RED (`#FF0000`) boxes outlining defects and GREEN (`#2E7D32`) borders framing approved Figma specifications.
+---
 
-Once the frontend team deploys these changes to `mcstaging2`, QA will immediately execute regression testing.
+### 📁 Verification Assets:
+* Visual Defect Gallery: `VIEW_DEFECT_IMAGES.html` (interactive side-by-side comparison cards with full-screen zoom).
+* Detailed Defect Log: `LIVE_TESTING_REAL_DEFECTS_REPORT.md`.
+* 14-Scenario Test Suite: `My_Quotes_Test_Cases.xlsx` & `My_Quotes_Test_Cases.csv`.
 
 Thank you,  
 **Deepali Londhe**  

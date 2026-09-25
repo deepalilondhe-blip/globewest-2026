@@ -1,0 +1,48 @@
+{
+  "pageHeading": "My Orders",
+  "description": "N/A",
+  "tabs": [
+    {
+      "text": "ALL",
+      "classes": "account-listing-ui__filters__filter",
+      "isActive": false
+    },
+    {
+      "text": "OPEN",
+      "classes": "account-listing-ui__filters__filter is-active",
+      "isActive": false
+    }
+  ],
+  "filterElements": [
+    {
+      "text": "All",
+      "classes": "account-listing-ui__filters__filter"
+    },
+    {
+      "text": "Open",
+      "classes": "account-listing-ui__filters__filter is-active"
+    },
+    {
+      "text": "Closed",
+      "classes": "account-listing-ui__filters__filter"
+    }
+  ],
+  "ths": [
+    "Order",
+    "Date",
+    "Cust po#",
+    "Order name",
+    "Client Name",
+    "Status",
+    "Total",
+    "Balance",
+    "Actions"
+  ],
+  "rowCount": 1,
+  "emptyAlert": "None",
+  "searchParentClass": "",
+  "hasFAQ": true,
+  "hasNeedHelp": false,
+  "sidebarBadges": 0,
+  "hasAusBadge": false
+}

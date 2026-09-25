@@ -1,0 +1,198 @@
+{
+  "timestamp": "2026-09-23T12:10:36.502Z",
+  "ticket": "Ticket #41794529: My Account - Quotes",
+  "stagingUrl": "https://mcstaging2.globewest.com/gw_quotes/quote/index/",
+  "tabsAudit": {
+    "activeTab": "ALL",
+    "tabsDetected": [
+      {
+        "text": "QUOTES",
+        "classes": "current",
+        "parentClasses": "nav item current item--counter",
+        "isActive": false
+      },
+      {
+        "text": "HOLDS",
+        "classes": "",
+        "parentClasses": "nav item item--counter",
+        "isActive": false
+      },
+      {
+        "text": "ORDERS",
+        "classes": "",
+        "parentClasses": "nav item item--counter",
+        "isActive": false
+      },
+      {
+        "text": "INVOICES",
+        "classes": "",
+        "parentClasses": "nav item item--counter",
+        "isActive": false
+      },
+      {
+        "text": "INVOICES REQUIRING PAYMENT",
+        "classes": "",
+        "parentClasses": "nav item item--counter",
+        "isActive": false
+      },
+      {
+        "text": "AFTER SALES & CLAIMS",
+        "classes": "",
+        "parentClasses": "nav item",
+        "isActive": false
+      },
+      {
+        "text": "ACCOUNT DETAILS",
+        "classes": "",
+        "parentClasses": "nav item",
+        "isActive": false
+      },
+      {
+        "text": "CLIENTS DETAILS",
+        "classes": "",
+        "parentClasses": "nav item",
+        "isActive": false
+      },
+      {
+        "text": "REFERRED QUOTES",
+        "classes": "",
+        "parentClasses": "nav item item--counter",
+        "isActive": false
+      },
+      {
+        "text": "REFERRED BOARDS",
+        "classes": "",
+        "parentClasses": "nav item item--counter",
+        "isActive": false
+      },
+      {
+        "text": "COMPANY DETAILS",
+        "classes": "",
+        "parentClasses": "nav item",
+        "isActive": false
+      },
+      {
+        "text": "ADDRESSES",
+        "classes": "",
+        "parentClasses": "nav item",
+        "isActive": false
+      },
+      {
+        "text": "SHOWROOM BOOKINGS",
+        "classes": "",
+        "parentClasses": "nav item",
+        "isActive": false
+      },
+      {
+        "text": "EMAIL PREFERENCES",
+        "classes": "",
+        "parentClasses": "nav item",
+        "isActive": false
+      },
+      {
+        "text": "SUBMIT HELP FORM",
+        "classes": "",
+        "parentClasses": "nav item",
+        "isActive": false
+      },
+      {
+        "text": "HELP CENTRE",
+        "classes": "",
+        "parentClasses": "nav item",
+        "isActive": false
+      },
+      {
+        "text": "ALL",
+        "classes": "account-listing-ui__filters__filter is-active",
+        "parentClasses": "account-listing-ui__filters__wrapper",
+        "isActive": true
+      },
+      {
+        "text": "OPEN",
+        "classes": "account-listing-ui__filters__filter",
+        "parentClasses": "account-listing-ui__filters__wrapper",
+        "isActive": false
+      },
+      {
+        "text": "CONVERTED",
+        "classes": "account-listing-ui__filters__filter",
+        "parentClasses": "account-listing-ui__filters__wrapper",
+        "isActive": false
+      },
+      {
+        "text": "EXPIRED",
+        "classes": "account-listing-ui__filters__filter",
+        "parentClasses": "account-listing-ui__filters__wrapper",
+        "isActive": false
+      }
+    ]
+  },
+  "tableAudit": {
+    "headers": [
+      "QUOTE N",
+      "EXPIRY DATE",
+      "CUST PO#",
+      "QUOTE NAME",
+      "CLIENT NAME",
+      "STATUS",
+      "TOTAL",
+      "ACTIONS"
+    ],
+    "columnCount": 8,
+    "hasExpDate": false,
+    "hasExpiryDate": true,
+    "hasOrderName": false,
+    "hasQuoteName": true,
+    "rowCount": 1
+  },
+  "faqAudit": {
+    "hasHeading": true,
+    "faqCount": 2,
+    "faqTitles": [
+      {
+        "text": "Frequently asked question content goes here",
+        "tagName": "H3",
+        "ariaExpanded": "false",
+        "isActive": false
+      },
+      {
+        "text": "Frequently asked question content goes here",
+        "tagName": "H3",
+        "ariaExpanded": "false",
+        "isActive": false
+      }
+    ]
+  },
+  "sidebarBadges": [
+    {
+      "linkText": "Quotes",
+      "hasBadge": false,
+      "badgeText": "NONE"
+    },
+    {
+      "linkText": "Holds",
+      "hasBadge": false,
+      "badgeText": "NONE"
+    },
+    {
+      "linkText": "Orders",
+      "hasBadge": false,
+      "badgeText": "NONE"
+    },
+    {
+      "linkText": "Invoices",
+      "hasBadge": false,
+      "badgeText": "NONE"
+    },
+    {
+      "linkText": "Invoices Requiring Payment",
+      "hasBadge": false,
+      "badgeText": "NONE"
+    },
+    {
+      "linkText": "Referred Quotes",
+      "hasBadge": false,
+      "badgeText": "NONE"
+    }
+  ]
+}

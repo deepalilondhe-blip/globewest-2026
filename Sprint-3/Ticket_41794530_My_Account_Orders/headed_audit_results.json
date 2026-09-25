@@ -1,0 +1,214 @@
+{
+  "timestamp": "2026-09-23T11:17:26.827Z",
+  "ticket": "Ticket #41794530: My Account - Orders",
+  "stagingUrl": "https://mcstaging2.globewest.com/gw_orders/order/index/",
+  "figmaNode": "Node 2581-64348 (Frame 624)",
+  "tabsAudit": {
+    "activeTab": "OPEN",
+    "tabsDetected": [
+      {
+        "text": "QUOTES",
+        "classes": "",
+        "parentClasses": "nav item item--counter",
+        "isActive": false
+      },
+      {
+        "text": "HOLDS",
+        "classes": "",
+        "parentClasses": "nav item item--counter",
+        "isActive": false
+      },
+      {
+        "text": "ORDERS",
+        "classes": "current",
+        "parentClasses": "nav item current item--counter",
+        "isActive": false
+      },
+      {
+        "text": "INVOICES",
+        "classes": "",
+        "parentClasses": "nav item item--counter",
+        "isActive": false
+      },
+      {
+        "text": "INVOICES REQUIRING PAYMENT",
+        "classes": "",
+        "parentClasses": "nav item item--counter",
+        "isActive": false
+      },
+      {
+        "text": "AFTER SALES & CLAIMS",
+        "classes": "",
+        "parentClasses": "nav item",
+        "isActive": false
+      },
+      {
+        "text": "ACCOUNT DETAILS",
+        "classes": "",
+        "parentClasses": "nav item",
+        "isActive": false
+      },
+      {
+        "text": "CLIENTS DETAILS",
+        "classes": "",
+        "parentClasses": "nav item",
+        "isActive": false
+      },
+      {
+        "text": "REFERRED QUOTES",
+        "classes": "",
+        "parentClasses": "nav item item--counter",
+        "isActive": false
+      },
+      {
+        "text": "REFERRED BOARDS",
+        "classes": "",
+        "parentClasses": "nav item item--counter",
+        "isActive": false
+      },
+      {
+        "text": "COMPANY DETAILS",
+        "classes": "",
+        "parentClasses": "nav item",
+        "isActive": false
+      },
+      {
+        "text": "ADDRESSES",
+        "classes": "",
+        "parentClasses": "nav item",
+        "isActive": false
+      },
+      {
+        "text": "SHOWROOM BOOKINGS",
+        "classes": "",
+        "parentClasses": "nav item",
+        "isActive": false
+      },
+      {
+        "text": "EMAIL PREFERENCES",
+        "classes": "",
+        "parentClasses": "nav item",
+        "isActive": false
+      },
+      {
+        "text": "SUBMIT HELP FORM",
+        "classes": "",
+        "parentClasses": "nav item",
+        "isActive": false
+      },
+      {
+        "text": "HELP CENTRE",
+        "classes": "",
+        "parentClasses": "nav item",
+        "isActive": false
+      },
+      {
+        "text": "ALL",
+        "classes": "account-listing-ui__filters__filter",
+        "parentClasses": "account-listing-ui__filters__wrapper",
+        "isActive": false
+      },
+      {
+        "text": "OPEN",
+        "classes": "account-listing-ui__filters__filter is-active",
+        "parentClasses": "account-listing-ui__filters__wrapper",
+        "isActive": true
+      },
+      {
+        "text": "CLOSED",
+        "classes": "account-listing-ui__filters__filter",
+        "parentClasses": "account-listing-ui__filters__wrapper",
+        "isActive": false
+      }
+    ],
+    "frame624Compliant": false
+  },
+  "tableAudit": {
+    "headers": [
+      "ORDER",
+      "DATE",
+      "CUST PO#",
+      "ORDER NAME",
+      "CLIENT NAME",
+      "STATUS",
+      "TOTAL",
+      "BALANCE",
+      "ACTIONS"
+    ],
+    "columnCount": 9,
+    "frame624Compliant": false,
+    "rowCount": 1,
+    "sampleRow": {
+      "rowIndex": 1,
+      "orderNumberText": "Table is empty!",
+      "hasOrderLink": false,
+      "orderLinkHref": "NONE",
+      "dateText": "N/A",
+      "statusText": "N/A",
+      "totalText": "N/A",
+      "balanceText": "N/A",
+      "hasActionsDropdown": false,
+      "cellCount": 1,
+      "allCells": [
+        "Table is empty!"
+      ]
+    }
+  },
+  "faqAudit": {
+    "hasHeading": true,
+    "faqCount": 2,
+    "faqTitles": [
+      {
+        "text": "Frequently asked question content goes here",
+        "tagName": "H3",
+        "className": "",
+        "ariaExpanded": "false",
+        "isActive": false
+      },
+      {
+        "text": "Frequently asked question content goes here",
+        "tagName": "H3",
+        "className": "",
+        "ariaExpanded": "false",
+        "isActive": false
+      }
+    ]
+  },
+  "supportAudit": {
+    "tag": "DIV",
+    "className": "columns",
+    "text": "MY DASHBOARD\nMY ACCOUNT\nQuotes\nHolds\nOrders\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details\nGLOBEWEST REFERRALS\nMY COMPANY\nBOOKINGS\nHELP CENTRE\nLOGOUT\nMy Orders\nOrders in the system, past and present. Thanks for creating your space with us.\nALL\nOPEN\nCLOSED\nORDER\n\t\nDATE\n\t\nCUST PO#\n\t\nORDER NAME\n\t\nCLIENT NAME\n\t\nSTATUS\n\t\nTOTAL\n\t\nBALANCE\n\tACTIONS\n\nTable is empty!\nFrequently Asked Questions\nFrequently asked question content goes here\nFrequently asked question content goes here\nNeed to change an order?\nTo change a submitted order, please contact our Sales Administration team on:\nP: +613 9518 1600\nE: sales@globewest.com.au\nOrder changes made after submission cannot be made via this portal."
+  },
+  "sidebarBadges": [
+    {
+      "linkText": "Quotes",
+      "hasBadge": false,
+      "badgeText": "NONE"
+    },
+    {
+      "linkText": "Holds",
+      "hasBadge": false,
+      "badgeText": "NONE"
+    },
+    {
+      "linkText": "Orders",
+      "hasBadge": false,
+      "badgeText": "NONE"
+    },
+    {
+      "linkText": "Invoices",
+      "hasBadge": false,
+      "badgeText": "NONE"
+    },
+    {
+      "linkText": "Invoices Requiring Payment",
+      "hasBadge": false,
+      "badgeText": "NONE"
+    },
+    {
+      "linkText": "Referred Quotes",
+      "hasBadge": false,
+      "badgeText": "NONE"
+    }
+  ]
+}

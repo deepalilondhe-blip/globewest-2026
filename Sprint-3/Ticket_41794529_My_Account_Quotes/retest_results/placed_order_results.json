@@ -1,0 +1,68 @@
+{
+  "timestamp": "2026-09-24T08:44:35.871Z",
+  "orderPo": "PO-GW-402333",
+  "orderSuccessUrl": "https://mcstaging2.globewest.com/gw_quotes/quote/index/",
+  "orderSuccessText": "Checkout ORDER DETAILS DELIVERY DETAILS SUMMARY NEED ASSISTANCE Payment Information Summary  Order details  MY DETAILS  EDIT Name: Deepali Londhe Phone Number: 0395181600 Email Address: deepali.londhe@overdose.digital Ref Number: PO-GW-402333  Delivery method  DELIVERY  EDIT Address: Unit 2, 20-22 Parsons Avenue,,, Springvale, Victoria, 3171  SHIPMENT  EDIT Ship all my items together $95  DELIVERY DATE  EDIT I would like delivery as soon as items are available Apply Discount Code I confirm that ",
+  "sidebarOrders": [
+    {
+      "text": "Quotes",
+      "badge": "MY ACCOUNT",
+      "hasBadge": true
+    },
+    {
+      "text": "Quotes",
+      "badge": "NONE",
+      "hasBadge": false
+    },
+    {
+      "text": "Holds",
+      "badge": "NONE",
+      "hasBadge": false
+    },
+    {
+      "text": "Orders",
+      "badge": "NONE",
+      "hasBadge": false
+    },
+    {
+      "text": "Referred Quotes",
+      "badge": "NONE",
+      "hasBadge": false
+    }
+  ],
+  "ordersTable": {
+    "rowCount": 1,
+    "rows": [
+      [
+        "Table is empty!"
+      ]
+    ]
+  },
+  "sidebarQuotes": [
+    {
+      "text": "Quotes",
+      "badge": "MY ACCOUNT",
+      "hasBadge": true
+    },
+    {
+      "text": "Quotes",
+      "badge": "NONE",
+      "hasBadge": false
+    },
+    {
+      "text": "Holds",
+      "badge": "NONE",
+      "hasBadge": false
+    },
+    {
+      "text": "Orders",
+      "badge": "NONE",
+      "hasBadge": false
+    },
+    {
+      "text": "Referred Quotes",
+      "badge": "NONE",
+      "hasBadge": false
+    }
+  ]
+}

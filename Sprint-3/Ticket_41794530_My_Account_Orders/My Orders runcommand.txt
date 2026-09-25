@@ -1,0 +1,8 @@
+Ticket Name: #41794530 - My Account - Orders
+Page Name: My Orders (https://mcstaging2.globewest.com/gw_orders/order/index/)
+
+Run command for Desktop View:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794530_My_Account_Orders/scripts/capture_live_desktop.js"
+
+Run command for Mobile View:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794530_My_Account_Orders/scripts/capture_live_mobile.js"

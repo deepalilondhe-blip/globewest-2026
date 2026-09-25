@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ticket #41794529: My Account - Quotes — QA Defect Gallery</title>
+  <title>Ticket #41794529: My Account - Quotes — Real Live Defect Gallery</title>
   <style>
     :root {
       --bg: #121212;
@@ -59,278 +59,231 @@
     .badge-green { background: var(--badge-green-bg); color: var(--accent-green); border: 1px solid var(--accent-green); }
     .badge-gold { background: rgba(197, 160, 89, 0.15); color: var(--accent-gold); border: 1px solid var(--accent-gold); }
 
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
+    .nav-bar {
       max-width: 1400px;
-      margin: 0 auto 30px auto;
-    }
-    .summary-card {
+      margin: 0 auto 25px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       background: var(--card-bg);
-      border: 1px solid var(--border);
-      padding: 16px 20px;
+      padding: 12px 20px;
       border-radius: 8px;
+      border: 1px solid var(--border);
     }
-    .summary-card .num {
-      font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-    .summary-card .lbl {
+    .filter-group { display: flex; gap: 10px; }
+    .filter-btn {
+      background: #2a2a2a;
+      border: 1px solid #444;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 6px;
       font-size: 13px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: #3b82f6;
+      border-color: #3b82f6;
     }
 
     .container {
       max-width: 1400px;
       margin: 0 auto;
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr;
       gap: 30px;
     }
+
     .defect-card {
       background: var(--card-bg);
-      border: 1px solid var(--border);
       border-radius: 10px;
+      border: 1px solid var(--border);
       overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s;
+    }
+    .defect-card:hover {
+      border-color: #555;
     }
     .card-header {
-      padding: 18px 24px;
-      background: #181818;
-      border-bottom: 1px solid var(--border);
+      padding: 16px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
+      border-bottom: 1px solid var(--border);
+      background: #252525;
     }
     .card-title {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 600;
-      color: #ffffff;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
     .card-body {
-      padding: 20px 24px;
+      padding: 20px;
     }
-    .image-wrapper {
-      width: 100%;
-      background: #0d0d0d;
+    .comparison-img-wrapper {
+      position: relative;
+      background: #000;
       border-radius: 6px;
+      border: 1px solid #333;
       overflow: hidden;
-      border: 1px solid #2a2a2a;
       cursor: zoom-in;
     }
-    .image-wrapper img {
+    .comparison-img-wrapper img {
       width: 100%;
       height: auto;
       display: block;
-      transition: transform 0.2s ease;
     }
     .card-desc {
       margin-top: 15px;
       font-size: 14px;
-      color: #cccccc;
+      color: #ccc;
       line-height: 1.6;
-      background: #151515;
+      background: #181818;
       padding: 12px 16px;
       border-radius: 6px;
-      border-left: 3px solid var(--accent-red);
+      border-left: 3px solid #3b82f6;
     }
-    .spec-quote {
-      margin-top: 8px;
-      font-size: 13px;
-      color: var(--accent-gold);
-      font-style: italic;
-    }
+    .card-desc strong { color: #fff; }
 
-    /* Modal for Image Zoom */
+    /* Modal for zoom */
     .modal {
       display: none;
       position: fixed;
-      z-index: 9999;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.92);
+      z-index: 1000;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
       justify-content: center;
       align-items: center;
-      cursor: zoom-out;
       padding: 20px;
+      cursor: zoom-out;
     }
-    .modal.active { display: flex; }
     .modal img {
-      max-width: 95%;
-      max-height: 95%;
-      object-fit: contain;
-      border-radius: 4px;
+      max-width: 95vw;
+      max-height: 95vh;
+      border-radius: 6px;
       box-shadow: 0 0 30px rgba(0,0,0,0.8);
+      object-fit: contain;
     }
   </style>
 </head>
 <body>
 
   <div class="header">
-    <h1>Ticket #41794529: My Account - Quotes — QA Pre-Dev Verification Gallery</h1>
+    <h1>Ticket #41794529: My Account - Quotes — Real Live Defect Registry</h1>
     <div class="meta">
-      <div class="meta-item"><strong>Task:</strong> <a href="https://overdose.eu.teamwork.com/app/tasks/41794529" target="_blank" style="color: #64b5f6; text-decoration: none;">Teamwork #41794529</a></div>
-      <div class="meta-item"><strong>Target URL:</strong> <code>https://mcstaging2.globewest.com/gw_quotes/quote/index/</code></div>
-      <div class="meta-item"><strong>Figma Spec:</strong> <a href="https://www.figma.com/design/oSBa3EMR3goI0vM1tXCdTk/Globewest-USA---External?node-id=2581-64235" target="_blank" style="color: #64b5f6; text-decoration: none;">Node 2581-64235 (Frame 622)</a></div>
-      <div class="meta-item"><strong>Audited By:</strong> Deepali Londhe (@DeepaliL)</div>
-      <div class="meta-item"><span class="badge badge-gold">Pre-Dev Verification Baseline</span></div>
+      <div class="meta-item"><span>Project:</span> <strong style="color: #fff;">P-GLW-007 Globewest US Expansion</strong></div>
+      <div class="meta-item"><span>Status:</span> <span class="badge badge-green">Default Tab & Search Deployed</span></div>
+      <div class="meta-item"><span>Target URL:</span> <a href="https://mcstaging2.globewest.com/gw_quotes/quote/index/" target="_blank" style="color: #60a5fa;">mcstaging2.globewest.com/gw_quotes/quote/index/</a></div>
+      <div class="meta-item"><span>Figma Spec:</span> <a href="https://www.figma.com/design/oSBa3EMR3goI0vM1tXCdTk/Globewest-USA---External?node-id=2581-64235&t=SCzEabH2QK3XzI6G-0" target="_blank" style="color: #60a5fa;">Node 2581-64235 (Frame 622)</a></div>
+      <div class="meta-item"><span>QA Lead:</span> <strong style="color: #fff;">Deepali Londhe</strong></div>
     </div>
   </div>
 
-  <div class="summary-grid">
-    <div class="summary-card">
-      <div class="num" style="color: var(--accent-red);">8</div>
-      <div class="lbl">Comparison Passes Audited</div>
+  <div class="nav-bar">
+    <div class="filter-group">
+      <button class="filter-btn active" onclick="filterPasses('all')">All Remaining Defects (5)</button>
+      <button class="filter-btn" onclick="filterPasses('critical')">Critical (2)</button>
+      <button class="filter-btn" onclick="filterPasses('high')">High (1)</button>
+      <button class="filter-btn" onclick="filterPasses('medium')">Medium (2)</button>
     </div>
-    <div class="summary-card">
-      <div class="num" style="color: #ff5252;">3</div>
-      <div class="lbl">Critical Missing Modules</div>
-    </div>
-    <div class="summary-card">
-      <div class="num" style="color: #ffa726;">4</div>
-      <div class="lbl">Micro-UI / Layout Defects</div>
-    </div>
-    <div class="summary-card">
-      <div class="num" style="color: #ab47bc;">1</div>
-      <div class="lbl">Storefront Scope Leak</div>
+    <div style="font-size: 13px; color: var(--text-muted);">
+      Click any image to zoom full screen
     </div>
   </div>
 
   <div class="container">
 
-    <!-- Pass 01 -->
-    <div class="defect-card">
+    <!-- DEFECT 01 -->
+    <div class="defect-card" data-severity="medium">
       <div class="card-header">
-        <div class="card-title">Pass 01: Default Active Filter Tab (Frame 622 Rule 1: Default to "all")</div>
-        <span class="badge badge-red">High Severity Defect</span>
+        <div class="card-title">
+          <span class="badge badge-gold">Medium</span>
+          <span>Defect 01: Table Header Copy Mismatches (EXP. DATE & ORDER NAME)</span>
+        </div>
       </div>
       <div class="card-body">
-        <div class="image-wrapper" onclick="openModal(this.querySelector('img').src)">
-          <img src="comparison/COMPARISON_PASS_01_DEFAULT_ACTIVE_TAB.png" alt="Pass 01: Default Active Tab">
+        <div class="comparison-img-wrapper" onclick="openModal(this)">
+          <img src="comparison/COMPARISON_01_HEADER_COPY_MISMATCH.png" alt="Defect 01 Comparison">
         </div>
         <div class="card-desc">
-          <strong>Defect Analysis:</strong> Live Staging currently defaults to the <code>OPEN</code> tab upon page load. Frame 622 explicitly states: <em>"Tabs that filter table view of quotes shown based on quote status. Default to 'all'"</em>. Furthermore, Figma designs active tabs as solid dark capsule/pills, whereas live staging uses plain unstyled text with a basic underline.
-          <div class="spec-quote">Figma Rule (Frame 622): "Tabs that filter table view of quotes shown based on quote status. Default to 'all'"</div>
+          <strong>Defect Analysis:</strong> Approved Frame 622 specification explicitly mandates column headers: <code>EXP. DATE</code> and <code>ORDER NAME</code>. Live staging displays <code>EXPIRY DATE</code> and <code>QUOTE NAME</code>.
         </div>
       </div>
     </div>
 
-    <!-- Pass 02 -->
-    <div class="defect-card">
+    <!-- DEFECT 02 -->
+    <div class="defect-card" data-severity="high">
       <div class="card-header">
-        <div class="card-title">Pass 02: Table Columns & Consolidated Actions Dropdown (Frame 622 Rule 3)</div>
-        <span class="badge badge-red">High Severity Defect</span>
+        <div class="card-title">
+          <span class="badge badge-red">High</span>
+          <span>Defect 02: Raw Magento Blue Alert Box ('Table is empty!')</span>
+        </div>
       </div>
       <div class="card-body">
-        <div class="image-wrapper" onclick="openModal(this.querySelector('img').src)">
-          <img src="comparison/COMPARISON_PASS_02_TABLE_COLUMNS_AND_ACTIONS.png" alt="Pass 02: Table Columns">
+        <div class="comparison-img-wrapper" onclick="openModal(this)">
+          <img src="comparison/COMPARISON_02_RAW_MAGENTO_EMPTY_ALERT.png" alt="Defect 02 Comparison">
         </div>
         <div class="card-desc">
-          <strong>Defect Analysis:</strong> Live desktop table renders 9 columns with an unstyled redundant <code>DETAILS</code> column in addition to <code>ACTIONS</code>. Figma consolidates all row interactions strictly under a single <code>Actions ∨</code> dropdown. Also, header copy should read <code>EXP. DATE</code> (abbreviated) instead of full <code>EXPIRY DATE</code>.
-          <div class="spec-quote">Figma Rule (Frame 622): "Actions housed under dropdown for both mobile + desktop as per other table functionality"</div>
+          <strong>Defect Analysis:</strong> When an account contains zero quote records, live staging renders the raw default Magento blue notification box (<code>ⓘ Table is empty!</code>) rather than a brand-aligned luxury empty state container.
         </div>
       </div>
     </div>
 
-    <!-- Pass 03 -->
-    <div class="defect-card">
+    <!-- DEFECT 03 -->
+    <div class="defect-card" data-severity="critical">
       <div class="card-header">
-        <div class="card-title">Pass 03: Search Bar Row Alignment vs Filter Tabs</div>
-        <span class="badge badge-gold">Medium Severity Defect</span>
+        <div class="card-title">
+          <span class="badge badge-red">Critical</span>
+          <span>Defect 03: Missing Self-Service FAQ Accordion Block (Frame 622)</span>
+        </div>
       </div>
       <div class="card-body">
-        <div class="image-wrapper" onclick="openModal(this.querySelector('img').src)">
-          <img src="comparison/COMPARISON_PASS_03_SEARCH_BAR_ALIGNMENT.png" alt="Pass 03: Search Bar Alignment">
+        <div class="comparison-img-wrapper" onclick="openModal(this)">
+          <img src="comparison/COMPARISON_03_MISSING_FAQ_ACCORDION_BLOCK.png" alt="Defect 03 Comparison">
         </div>
         <div class="card-desc">
-          <strong>Defect Analysis:</strong> In the approved Figma desktop artboard, the Search input (<code>Search [🔍]</code>) is right-aligned on the <strong>same horizontal row</strong> directly alongside the filter tabs. On live staging, the search bar is pushed onto a disconnected upper position above the table right.
+          <strong>Defect Analysis:</strong> Frame 622 specifies a dedicated <em>"Frequently Asked Questions"</em> accordion block below the quotes table (supporting up to 8 FAQs, all closed by default, single open constraint). This entire component is <strong>100% MISSING</strong> from the live staging DOM (pure whitespace below table).
         </div>
       </div>
     </div>
 
-    <!-- Pass 04 -->
-    <div class="defect-card">
+    <!-- DEFECT 04 -->
+    <div class="defect-card" data-severity="critical">
       <div class="card-header">
-        <div class="card-title">Pass 04: Missing FAQ Accordion Block (Frame 622 Block 2)</div>
-        <span class="badge badge-red">Critical Defect (Missing Module)</span>
+        <div class="card-title">
+          <span class="badge badge-red">Critical</span>
+          <span>Defect 04: Missing 'Need Help? Contact Our Sales Team' Support Block</span>
+        </div>
       </div>
       <div class="card-body">
-        <div class="image-wrapper" onclick="openModal(this.querySelector('img').src)">
-          <img src="comparison/COMPARISON_PASS_04_MISSING_FAQ_BLOCK.png" alt="Pass 04: Missing FAQ Block">
+        <div class="comparison-img-wrapper" onclick="openModal(this)">
+          <img src="comparison/COMPARISON_04_MISSING_NEED_HELP_SUPPORT_BLOCK.png" alt="Defect 04 Comparison">
         </div>
         <div class="card-desc">
-          <strong>Defect Analysis:</strong> Frame 622 mandates a dedicated FAQ Accordion section directly below the Quotes table. This component is <strong>100% MISSING</strong> from the live staging page; after the table there is blank empty space followed directly by the footer.
-          <div class="spec-quote">Figma Rule (Frame 622): "New block utilised throughout the My Account Experience. Each FAQ block will have specific questions related to the page it is on. Admin ability to change content. Ability to add up to 8 FAQs. All accordions closed by default. Only one open at a time."</div>
+          <strong>Defect Analysis:</strong> Frame 622 mandates a dedicated support content block positioned directly below the FAQs featuring US sales hotline, US email, and order modification disclaimers. This component is <strong>100% MISSING</strong> from the live staging DOM.
         </div>
       </div>
     </div>
 
-    <!-- Pass 05 -->
-    <div class="defect-card">
+    <!-- DEFECT 05 -->
+    <div class="defect-card" data-severity="medium">
       <div class="card-header">
-        <div class="card-title">Pass 05: Missing 'Need help? Contact our sales team' Block (Frame 622 Block 3)</div>
-        <span class="badge badge-red">Critical Defect (Missing Module)</span>
+        <div class="card-title">
+          <span class="badge badge-gold">Medium</span>
+          <span>Defect 05: Left Navigation Sidebar Missing Numerical Count Badges</span>
+        </div>
       </div>
       <div class="card-body">
-        <div class="image-wrapper" onclick="openModal(this.querySelector('img').src)">
-          <img src="comparison/COMPARISON_PASS_05_MISSING_NEED_HELP_BLOCK.png" alt="Pass 05: Missing Need Help Block">
+        <div class="comparison-img-wrapper" onclick="openModal(this)">
+          <img src="comparison/COMPARISON_05_MISSING_SIDEBAR_COUNT_BADGES.png" alt="Defect 05 Comparison">
         </div>
         <div class="card-desc">
-          <strong>Defect Analysis:</strong> Below the FAQ section, Figma specifies a dedicated Support/Contact Sales content block with customer support phone, email, and order submission guidelines. This block is completely missing from live staging.
-          <div class="spec-quote">Figma Rule (Frame 622): "NEED HELP BLOCK: Content Block / Admin ability to change content."</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Pass 06 -->
-    <div class="defect-card">
-      <div class="card-header">
-        <div class="card-title">Pass 06: My Account Left Sidebar Count Badges</div>
-        <span class="badge badge-gold">Medium Severity Defect</span>
-      </div>
-      <div class="card-body">
-        <div class="image-wrapper" onclick="openModal(this.querySelector('img').src)">
-          <img src="comparison/COMPARISON_PASS_06_SIDEBAR_COUNT_BADGES.png" alt="Pass 06: Sidebar Badges">
-        </div>
-        <div class="card-desc">
-          <strong>Defect Analysis:</strong> Figma artboard specifies numerical pill counter badges next to My Account menu items (e.g., <code>Quotes [723]</code>, <code>Holds [3]</code>, <code>Orders [3]</code>). Live staging navigation currently lacks count badge integration.
-        </div>
-      </div>
-    </div>
-
-    <!-- Pass 07 -->
-    <div class="defect-card">
-      <div class="card-header">
-        <div class="card-title">Pass 07: Mobile Responsive Layout & Table Parity (390px Viewport)</div>
-        <span class="badge badge-red">High Severity Defect</span>
-      </div>
-      <div class="card-body">
-        <div class="image-wrapper" onclick="openModal(this.querySelector('img').src)">
-          <img src="comparison/COMPARISON_PASS_07_MOBILE_RESPONSIVE_PARITY.png" alt="Pass 07: Mobile Parity">
-        </div>
-        <div class="card-desc">
-          <strong>Defect Analysis:</strong> Mobile viewport on live staging renders an intrusive default Magento alert banner (<code>ⓘ Table is empty!</code> with light blue background) and raw unstyled tabs. Frame 622 FAQ and Need Help blocks are omitted on mobile as well.
-        </div>
-      </div>
-    </div>
-
-    <!-- Pass 08 -->
-    <div class="defect-card">
-      <div class="card-header">
-        <div class="card-title">Pass 08: Storefront Footer Scope Leak (Australian Kangaroo Logo)</div>
-        <span class="badge badge-red">Scope Leak Defect</span>
-      </div>
-      <div class="card-body">
-        <div class="image-wrapper" onclick="openModal(this.querySelector('img').src)">
-          <img src="comparison/COMPARISON_PASS_08_FOOTER_SCOPE_LEAK.png" alt="Pass 08: Scope Leak">
-        </div>
-        <div class="card-desc">
-          <strong>Defect Analysis:</strong> The storefront footer on <code>mcstaging2.globewest.com</code> continues to display the Australian Kangaroo silhouette logo and <strong>"AUSTRALIAN OWNED & RUN"</strong> badge on the US storefront build.
+          <strong>Defect Analysis:</strong> Figma specification includes high-contrast blue numerical count badges beside <code>Quotes [723]</code>, <code>Holds [3]</code>, and <code>Orders [3]</code>. The live staging navigation renders zero badges.
         </div>
       </div>
     </div>
@@ -338,21 +291,32 @@
   </div>
 
   <div id="imageModal" class="modal" onclick="closeModal()">
-    <img id="modalImg" src="" alt="Enlarged View">
+    <img id="modalImg" src="" alt="Full view">
   </div>
 
   <script>
-    function openModal(src) {
-      document.getElementById('modalImg').src = src;
-      document.getElementById('imageModal').classList.add('active');
+    function openModal(wrapper) {
+      const img = wrapper.querySelector('img');
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImg');
+      modalImg.src = img.src;
+      modal.style.display = 'flex';
     }
     function closeModal() {
-      document.getElementById('imageModal').classList.remove('active');
+      document.getElementById('imageModal').style.display = 'none';
     }
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeModal();
-    });
+    function filterPasses(severity) {
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      const cards = document.querySelectorAll('.defect-card');
+      cards.forEach(card => {
+        if (severity === 'all' || card.getAttribute('data-severity') === severity) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
   </script>
-
 </body>
 </html>

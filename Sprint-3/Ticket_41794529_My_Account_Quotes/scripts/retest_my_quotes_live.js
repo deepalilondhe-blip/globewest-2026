@@ -122,9 +122,11 @@ if (!fs.existsSync(REPORT_DIR)) {
 
     // Test 4: FAQ Block Presence
     const faqExists = await page.evaluate(() => {
-      const headings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, div')).map(e => e.textContent.trim().toLowerCase());
+      const main = document.querySelector('.page-main, #maincontent, .column.main');
+      if (!main) return false;
+      const headings = Array.from(main.querySelectorAll('h1, h2, h3, h4, h5, strong, div')).map(e => e.textContent.trim().toLowerCase());
       const hasHeading = headings.some(h => h.includes('frequently asked questions') || h === 'faqs');
-      const hasAccordion = document.querySelectorAll('.faq-accordion, .accordion, [data-role="collapsible"]').length > 0;
+      const hasAccordion = main.querySelectorAll('.faq-accordion, .block-faq, .accordion').length > 0;
       return hasHeading || hasAccordion;
     });
     results.push({

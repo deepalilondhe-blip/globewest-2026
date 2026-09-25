@@ -1,0 +1,114 @@
+{
+  "timestamp": "2026-09-24T05:31:48.289Z",
+  "ticket": "Ticket #41794529: My Account - Quotes",
+  "verifiedDefects": [
+    {
+      "id": "DEFECT_01_COLUMN_HEADERS",
+      "status": "VALID 🔴",
+      "description": "Column 2 specifies \"EXP. DATE\" in Figma but renders as \"EXPIRY DATE\" on live staging. Column 4 specifies \"ORDER NAME\" in Figma but renders as \"QUOTE NAME\" on live staging.",
+      "figmaCol2": "EXP. DATE",
+      "liveCol2": "EXPIRY DATE",
+      "figmaCol4": "ORDER NAME",
+      "liveCol4": "QUOTE NAME"
+    },
+    {
+      "id": "DEFECT_02_FAQ_ACCORDION",
+      "status": "VALID 🔴",
+      "description": "FAQ accordion fails to close previous accordion when another is clicked. Both items remain open simultaneously, violating Figma Frame 622/624 explicit rule."
+    },
+    {
+      "id": "DEFECT_03_SIDEBAR_BADGES",
+      "status": "CONDITIONAL / NS SYNC",
+      "description": "Blue numerical count badges in the left sidebar are conditionally rendered or dependent on synced NetSuite orders/quotes. If zero, element is not rendered."
+    }
+  ],
+  "sidebarBefore": [
+    {
+      "text": "Quotes",
+      "badge": "MY ACCOUNT"
+    },
+    {
+      "text": "Quotes",
+      "badge": "NONE"
+    },
+    {
+      "text": "Holds",
+      "badge": "NONE"
+    },
+    {
+      "text": "Orders",
+      "badge": "NONE"
+    },
+    {
+      "text": "Referred Quotes",
+      "badge": "NONE"
+    }
+  ],
+  "sidebarAfterQuotes": [
+    {
+      "linkText": "Quotes",
+      "hasBadge": true,
+      "badgeText": "MY ACCOUNT",
+      "badgeHtml": "<button class=\"js-account-list-tab-toggle account-list__toggle\">My Account</button>"
+    },
+    {
+      "linkText": "Quotes",
+      "hasBadge": false,
+      "badgeText": "NONE",
+      "badgeHtml": "NONE"
+    },
+    {
+      "linkText": "Holds",
+      "hasBadge": false,
+      "badgeText": "NONE",
+      "badgeHtml": "NONE"
+    },
+    {
+      "linkText": "Orders",
+      "hasBadge": false,
+      "badgeText": "NONE",
+      "badgeHtml": "NONE"
+    },
+    {
+      "linkText": "Referred Quotes",
+      "hasBadge": false,
+      "badgeText": "NONE",
+      "badgeHtml": "NONE"
+    }
+  ],
+  "sidebarOrders": [
+    {
+      "linkText": "Quotes",
+      "hasBadge": true,
+      "badgeText": "MY ACCOUNT"
+    },
+    {
+      "linkText": "Quotes",
+      "hasBadge": false,
+      "badgeText": "NONE"
+    },
+    {
+      "linkText": "Holds",
+      "hasBadge": false,
+      "badgeText": "NONE"
+    },
+    {
+      "linkText": "Orders",
+      "hasBadge": false,
+      "badgeText": "NONE"
+    },
+    {
+      "linkText": "Referred Quotes",
+      "hasBadge": false,
+      "badgeText": "NONE"
+    }
+  ],
+  "tableRowsAfter": {
+    "count": 1,
+    "rows": [
+      [
+        "Table is empty!"
+      ]
+    ]
+  }
+}

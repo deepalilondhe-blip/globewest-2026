@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-09-24T05:44:51.184Z",
+  "checkoutCompleted": true,
+  "sidebarOrders": [
+    {
+      "text": "Quotes",
+      "badge": "MY ACCOUNT",
+      "html": "<li class=\"account-list__item account-list__item--has-children account-list__item--opened\"><button class=\"js-account-list-tab-toggle account-list__toggle\">My Account</button><ul class=\"js-account-list-tab account-list__tab\"><li class=\"nav item item--counter\">\n    <a href=\"https://mcstaging2.globewest.com/gw_quotes/quote/index/\">\n        <span class=\"item__label\">Quotes</span>\n            </a>\n</li>\n<li class=\"nav item item--counter\">\n    <a href=\"https://mcstaging2.globewest.com/gw_orders/hold/index/\">\n        <span class=\"item__label\">Holds</span>\n            </a>\n</li>\n<li class=\"nav item current item--counter\">\n    <a href=\"https://mcstaging2.globewest.com/gw_orders/order/index/\" class=\"current\">\n        <span class=\"item__label\">Orders</span>\n            </a>\n</li>\n<li class=\"nav item item--counter\">\n    <a href=\"https://mcstaging2.globewest.com/gw_sales/invoice/index/\">\n        <span class=\"item__label\">Invoices</span>\n            </a>\n</li>\n<li class=\"nav item item--counter\">\n    <a href=\"https://mcstaging2.globewest.com/gw_sales/invoice_requiring/index/\">\n        <span class=\"item__label\">Invoices Requiring Payment</span>\n            </a>\n</li>\n<li class=\"nav item\"><a href=\"https://mcstaging2.globewest.com/gw_sales/claim/\">After Sales &amp; Claims</a></li><li class=\"nav item\"><a href=\"https://mcstaging2.globewest.com/customer/account/edit/\">Account Details</a></li></ul></li>"
+    },
+    {
+      "text": "Quotes",
+      "badge": "NONE",
+      "html": "<li class=\"nav item item--counter\">\n    <a href=\"https://mcstaging2.globewest.com/gw_quotes/quote/index/\">\n        <span class=\"item__label\">Quotes</span>\n            </a>\n</li>"
+    },
+    {
+      "text": "Holds",
+      "badge": "NONE",
+      "html": "<li class=\"nav item item--counter\">\n    <a href=\"https://mcstaging2.globewest.com/gw_orders/hold/index/\">\n        <span class=\"item__label\">Holds</span>\n            </a>\n</li>"
+    },
+    {
+      "text": "Orders",
+      "badge": "NONE",
+      "html": "<li class=\"nav item current item--counter\">\n    <a href=\"https://mcstaging2.globewest.com/gw_orders/order/index/\" class=\"current\">\n        <span class=\"item__label\">Orders</span>\n            </a>\n</li>"
+    },
+    {
+      "text": "Referred Quotes",
+      "badge": "NONE",
+      "html": "<li class=\"nav item item--counter\">\n    <a href=\"https://mcstaging2.globewest.com/gw_quotes/quote_referred/index/\">\n        <span class=\"item__label\">Referred Quotes</span>\n            </a>\n</li>"
+    }
+  ],
+  "ordersTableData": {
+    "count": 1,
+    "rows": [
+      [
+        "Table is empty!"
+      ]
+    ]
+  },
+  "sidebarQuotes": [
+    {
+      "text": "Quotes",
+      "badge": "MY ACCOUNT",
+      "html": "<li class=\"account-list__item account-list__item--has-children account-list__item--opened\"><button class=\"js-account-list-tab-toggle account-list__toggle\">My Account</button><ul class=\"js-account-list-tab account-list__tab\"><li class=\"nav item current item--counter\">\n    <a href=\"https://mcstaging2.globewest.com/gw_quotes/quote/index/\" class=\"current\">\n        <span class=\"item__label\">Quotes</span>\n            </a>\n</li>\n<li class=\"nav item item--counter\">\n    <a href=\"https://mcstaging2.globewest.com/gw_orders/hold/index/\">\n        <span class=\"item__label\">Holds</span>\n            </a>\n</li>\n<li class=\"nav item item--counter\">\n    <a href=\"https://mcstaging2.globewest.com/gw_orders/order/index/\">\n        <span class=\"item__label\">Orders</span>\n            </a>\n</li>\n<li class=\"nav item item--counter\">\n    <a href=\"https://mcstaging2.globewest.com/gw_sales/invoice/index/\">\n        <span class=\"item__label\">Invoices</span>\n            </a>\n</li>\n<li class=\"nav item item--counter\">\n    <a href=\"https://mcstaging2.globewest.com/gw_sales/invoice_requiring/index/\">\n        <span class=\"item__label\">Invoices Requiring Payment</span>\n            </a>\n</li>\n<li class=\"nav item\"><a href=\"https://mcstaging2.globewest.com/gw_sales/claim/\">After Sales &amp; Claims</a></li><li class=\"nav item\"><a href=\"https://mcstaging2.globewest.com/customer/account/edit/\">Account Details</a></li></ul></li>"
+    },
+    {
+      "text": "Quotes",
+      "badge": "NONE",
+      "html": "<li class=\"nav item current item--counter\">\n    <a href=\"https://mcstaging2.globewest.com/gw_quotes/quote/index/\" class=\"current\">\n        <span class=\"item__label\">Quotes</span>\n            </a>\n</li>"
+    },
+    {
+      "text": "Holds",
+      "badge": "NONE",
+      "html": "<li class=\"nav item item--counter\">\n    <a href=\"https://mcstaging2.globewest.com/gw_orders/hold/index/\">\n        <span class=\"item__label\">Holds</span>\n            </a>\n</li>"
+    },
+    {
+      "text": "Orders",
+      "badge": "NONE",
+      "html": "<li class=\"nav item item--counter\">\n    <a href=\"https://mcstaging2.globewest.com/gw_orders/order/index/\">\n        <span class=\"item__label\">Orders</span>\n            </a>\n</li>"
+    },
+    {
+      "text": "Referred Quotes",
+      "badge": "NONE",
+      "html": "<li class=\"nav item item--counter\">\n    <a href=\"https://mcstaging2.globewest.com/gw_quotes/quote_referred/index/\">\n        <span class=\"item__label\">Referred Quotes</span>\n            </a>\n</li>"
+    }
+  ],
+  "quotesTableData": {
+    "count": 1,
+    "rows": [
+      [
+        "Table is empty!"
+      ]
+    ]
+  }
+}
