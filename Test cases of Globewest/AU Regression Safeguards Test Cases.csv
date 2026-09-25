@@ -1,0 +1,12 @@
+Test ID,Test Title,Priority,Type,Status
+TC-AU-SAFE-01,"Currency & GST Invariance on PDP, PLP, and Cart",P1 (Critical),Localization,PASSED
+TC-AU-SAFE-02,Multi-Store Session & Cookie Isolation,P1 (Critical),Security,PASSED
+TC-AU-SAFE-03,AU Domestic Shipping & Postcode Estimator,P1 (Critical),Freight,PASSED
+TC-AU-SAFE-04,Multi-Store Domain Routing & Canonical Scope,P2 (High),SEO,PASSED
+TC-AU-SAFE-05,B2B Trade Portal & ABN Validation Safeguard,P2 (High),B2B,PASSED
+TC-AU-SAFE-06,WCAG 2.2 AA Accessibility Regression Gate,P2 (High),Accessibility,PASSED
+TC-AU-SAFE-07,AU Warehouse Stock & ETA Lead Time Scoping,P2 (High),Inventory,PENDING
+TC-AU-SAFE-08,Multi-Store Checkout Payment Gateway Scoping,P1 (Critical),Checkout,PENDING
+TC-AU-SAFE-09,AU Header Utility Links Verification,P2 (High),Functional,PASSED
+TC-AU-SAFE-10,AU Footer ABN & Copyright Verification,P2 (High),Localization,PASSED
+TC-AU-SAFE-11,Search Navigation & Fallback Scoping,P2 (High),Search,PASSED

@@ -1,0 +1,14 @@
+Test Case ID,Test Case Name,Ticket,Priority,Category,Automation Spec,Status
+TC-US-CMS-01,Verify CMS Home Page Assignment in Magento Admin Store Configuration,Ticket 4: Set up the CMS Structure,P1 (Critical),Store Configuration – Default Pages,ticket4-us-cms-structure.spec.js,READY FOR EXECUTION
+TC-US-CMS-02,"Verify CMS Page ""Home page - US"" (home-us) in Content > Pages",Ticket 4: Set up the CMS Structure,P1 (Critical),CMS Page Verification,ticket4-us-cms-structure.spec.js,READY FOR EXECUTION
+TC-US-CMS-03,Verify All 9 CMS Blocks Exist & Enabled in Content > Blocks,Ticket 4: Set up the CMS Structure,P1 (Critical),CMS Blocks Verification,ticket4-us-cms-structure.spec.js,READY FOR EXECUTION
+TC-US-CMS-04,US Storefront: Hero Banner Block (main-us-banner) Rendering,Ticket 4: Set up the CMS Structure,P1 (Critical),Storefront – Hero Banner,ticket4-us-cms-structure.spec.js,READY FOR EXECUTION
+TC-US-CMS-05,US Storefront: B2B Video Block (home-us-video-block-b2b) Rendering,Ticket 4: Set up the CMS Structure,P2 (High),Storefront – Video Section,ticket4-us-cms-structure.spec.js,READY FOR EXECUTION
+TC-US-CMS-06,US Storefront: Category Carousel Block (home-us-category-carousel) Rendering,Ticket 4: Set up the CMS Structure,P1 (Critical),Storefront – Category Carousel,ticket4-us-cms-structure.spec.js,READY FOR EXECUTION
+TC-US-CMS-07,US Storefront: Visit Showroom Block (global-us-visit-showroom) Rendering,Ticket 4: Set up the CMS Structure,P2 (High),Storefront – Showroom Promo,ticket4-us-cms-structure.spec.js,READY FOR EXECUTION
+TC-US-CMS-08,US Storefront: Recent Articles Block (homepage_us_recent_articles) Rendering,Ticket 4: Set up the CMS Structure,P2 (High),Storefront – Editorial / Blog,ticket4-us-cms-structure.spec.js,READY FOR EXECUTION
+TC-US-CMS-09,US Storefront: Instagram Feed Block (insta-us-block-home-page) Known Limitation & Fallback Audit,Ticket 4: Set up the CMS Structure,P2 (High),Storefront – Social Widget,ticket4-us-cms-structure.spec.js,READY FOR EXECUTION
+TC-US-CMS-10,US Storefront: About Us Brand Story Block (home-us-page-about-us) Rendering,Ticket 4: Set up the CMS Structure,P2 (High),Storefront – Brand Content,ticket4-us-cms-structure.spec.js,READY FOR EXECUTION
+TC-US-CMS-11,US Storefront: Find a Designer CTA Block (global-us-find-designer) Rendering,Ticket 4: Set up the CMS Structure,P2 (High),Storefront – Trade CTA,ticket4-us-cms-structure.spec.js,READY FOR EXECUTION
+TC-US-CMS-12,US Storefront: SEO Text Block (home-us-seo-text) Rendering,Ticket 4: Set up the CMS Structure,P3 (Medium),Storefront – SEO Content,ticket4-us-cms-structure.spec.js,READY FOR EXECUTION
+TC-US-CMS-13,US Storefront: Responsive Layout Integrity & Zero AU Scope Leakage,Ticket 4: Set up the CMS Structure,P1 (Critical),Storefront – Cross-Device & Scope,ticket4-us-cms-structure.spec.js,READY FOR EXECUTION

@@ -1,0 +1,50 @@
+Test Case ID,Viewport,Component,Test Scenario,Test Steps,Expected Result (AU Baseline),Actual Result (US Staging),Status,Severity
+TC_MINICART_001,Desktop (1440px),Header Navigation,Verify Mini-Cart trigger presence and counter badge in desktop header,"1. Open homepage on desktop
+
+2. Locate cart bag icon in header
+
+3. Verify counter badge display",Cart bag icon visible with dynamic counter badge,Cart bag icon visible with dynamic counter badge (e.g. 16 items),PASS,N/A
+TC_MINICART_002,Desktop (1440px),Empty State Behavior,Verify clicking header cart trigger when cart has 0 items,"1. Ensure cart is empty
+
+2. Click header cart trigger",Clicking empty cart trigger navigates directly to /checkout/cart/ with empty hero messaging,Navigates directly to /checkout/cart/ displaying empty cart hero; matches AU behavior,PASS,N/A
+TC_MINICART_003,Desktop (1440px),PDP / Trade Add to Cart,Verify Trade Customer Add to Cart action and counter badge increment,"1. Login as Trade customer
+
+2. Navigate to in-stock PDP
+
+3. Click [ADD TO CART]",Adds item to cart session and updates header counter,Item successfully added to cart; header counter badge updates dynamically,PASS,N/A
+TC_MINICART_004,Desktop (1440px),Populated Drawer,Verify populated Mini-Cart slideout drawer opens smoothly,"1. Click header cart trigger with items in cart
+
+2. Inspect slideout animation and drawer overlay",Slideout drawer opens smoothly with dark backdrop,Populated drawer slides out cleanly displaying items list,PASS,N/A
+TC_MINICART_005,Desktop (1440px),Item Row Details,Verify product card rendering inside Mini-Cart drawer,"1. Inspect line item inside drawer
+
+2. Check thumbnail image, title, and SKU","Displays product thumbnail, hyperlinked title, and SKU","Renders crisp thumbnail, product title, and SKU details",PASS,N/A
+TC_MINICART_006,Desktop (1440px),Price Visibility,Verify unit price display in Mini-Cart drawer,"1. Check price container next to line item
+
+2. Verify currency formatting",Unit price rendered with local currency symbol ($),"Unit price clearly visible with USD $ formatting ($5,500.00)",PASS,N/A
+TC_MINICART_007,Desktop (1440px),Quantity & Delete,Verify quantity input and remove item (trash) action,"1. Locate item quantity input
+
+2. Locate delete / trash action link",Quantity can be updated and trash icon removes item,Quantity input is editable; delete action link is present and operable,PASS,N/A
+TC_MINICART_008,Desktop (1440px),Subtotal Display,Verify subtotal calculation and scan for Australian GST leakage,"1. Inspect subtotal block
+
+2. Verify text does not contain Australian GST",Renders subtotal without Australian GST markup on US store,"Displays clean 'Subtotal $29,194.00'; no GST tax line present",PASS,N/A
+TC_MINICART_009,Desktop (1440px),Action CTAs,Verify [VIEW AND EDIT CART] and [PROCEED TO CHECKOUT] links,"1. Inspect [VIEW AND EDIT CART] href
+
+2. Inspect [PROCEED TO CHECKOUT] button",Route to /checkout/cart/ and /checkout/ sequence,Links correctly targeted to US /checkout/cart/ and checkout routes,PASS,N/A
+TC_MINICART_010,Mobile (390px),Mobile Header Trigger,Verify mobile header cart trigger icon visibility and tapability,"1. Set viewport to 390x844 (iPhone)
+
+2. Locate cart trigger in mobile header bar",Cart trigger visible and tapable on mobile,Cart trigger prominently visible and tapable on mobile header,PASS,N/A
+TC_MINICART_011,Mobile (390px),Mobile Drawer Responsiveness,Verify mobile slideout drawer width and viewport fit,"1. Tap mobile cart trigger
+
+2. Measure drawer dimensions and check for overflow",Drawer fits within mobile viewport without horizontal scrolling,Drawer width is 335px on 390px viewport with clean 55px backdrop; zero overflow,PASS,N/A
+TC_MINICART_012,Mobile (390px),Mobile Product Card,Verify mobile product item card layout inside drawer,"1. Inspect mobile drawer product row
+
+2. Check thumbnail, title, price, and controls",Responsive stacked card layout suitable for mobile,Card renders cleanly with responsive image and stacked layout,PASS,N/A
+TC_MINICART_013,Mobile (390px),Mobile Checkout CTAs,Verify mobile [PROCEED TO CHECKOUT] button tapability,"1. Inspect checkout button dimensions and position on mobile
+
+2. Verify touch usability",Easily tapable checkout button with comfortable height,Full-width checkout CTA button with comfortable touch target,PASS,N/A
+TC_MINICART_014,Global Header,Header Utility / Wishlist Icon,Verify Wishlist heart icon presence next to Mini-Cart trigger,"1. Inspect header utility navigation
+
+2. Compare with AU baseline",AU displays Wishlist heart icon next to Mini-Cart trigger,Wishlist heart icon is missing next to Mini Cart trigger in US header (Parity gap),FAIL,P2 - Medium
+TC_MINICART_015,Mobile (390px),Accessibility / Touch Target,Verify mobile close button touch target size compliance with WCAG 2.2 AA,"1. Inspect #btn-minicart-close bounding box on mobile
+
+2. Check against minimum 24x24px / 44x44px target",Close button has accessible touch target of at least 24x24px,Close button has narrow bounding height (16.5px x 1px) due to pseudo-element styling,FAIL,P2 - Medium

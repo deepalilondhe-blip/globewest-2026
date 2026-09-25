@@ -1,0 +1,22 @@
+Test Case ID,Module,Test Case Title,Preconditions,Test Steps,Expected Result (Figma Spec / Frame 622),Actual Result (mcstaging2 Live),Status,Severity
+TC-GW-QUOTES-001,Filter Tabs,Verify Default Active Status Filter Tab is 'ALL',Logged-in Trade Customer on /gw_quotes/quote/index/,"1. Navigate to /gw_quotes/quote/index/
+
+2. Observe active tab state in filter group.",Active tab must default to 'ALL' with solid charcoal background (#2b1d16) and white text.,VERIFIED PASSED: Page defaults to 'ALL' tab with solid dark pill active state.,PASS,HIGH
+TC-GW-QUOTES-002,Search Bar,Verify Search Input Placement Inline with Filter Tabs,Logged-in Trade Customer on /gw_quotes/quote/index/,"1. Inspect horizontal row containing filter tabs.
+
+2. Check search input placement and placeholder text.",Search bar ('Search [🔍]') is right-aligned on the SAME horizontal row directly beside filter tabs.,VERIFIED PASSED: Search bar is positioned inline on the same horizontal row to the right of filter tabs.,PASS,MEDIUM
+TC-GW-QUOTES-003,Table Columns,Verify Consolidated 8 Columns (Redundant DETAILS Column Removed),Logged-in Trade Customer on /gw_quotes/quote/index/,"1. Inspect table headers and data columns on desktop.
+
+2. Count columns.",Table must contain 8 columns. Standalone DETAILS column eliminated.,VERIFIED PASSED: Standalone DETAILS column removed; table renders exactly 8 columns.,PASS,HIGH
+TC-GW-QUOTES-004,Table Headers,"Verify Table Column Naming Parity (EXP. DATE, ORDER NAME)",Logged-in Trade Customer on /gw_quotes/quote/index/,1. Inspect text strings of table headers.,"Headers must read: QUOTE N, EXP. DATE, CUST PO#, ORDER NAME, CLIENT NAME, STATUS, TOTAL, ACTIONS.","FAIL: Column 2 displays 'EXPIRY DATE' instead of 'EXP. DATE', and Column 4 displays 'QUOTE NAME' instead of 'ORDER NAME'.",FAIL,MEDIUM
+TC-GW-QUOTES-005,Empty State,Verify Brand-Styled Empty State Container,Logged-in Trade Customer with 0 quotes on /gw_quotes/quote/index/,1. View Quotes table with 0 records or empty filter result.,"Clean, luxury brand-styled empty state container adhering to GlobeWest typography.",FAIL: Displays raw default unstyled Magento blue alert banner ('(i) Table is empty!').,FAIL,HIGH
+TC-GW-QUOTES-006,FAQ Section,Verify Presence of FAQ Accordion Section Below Table,Logged-in Trade Customer on /gw_quotes/quote/index/,"1. Scroll below Quotes table grid.
+
+2. Check for 'Frequently Asked Questions' header and accordion items.","Dedicated FAQ Accordion module rendered below table with Quotes-specific questions (up to 8 FAQs, all closed by default, single open).",FAIL: Entire FAQ Accordion block is 100% MISSING from the live staging DOM (pure whitespace below table).,FAIL,CRITICAL
+TC-GW-QUOTES-007,Support Section,Verify Presence of 'Need help? Contact our sales team' Content Block,Logged-in Trade Customer on /gw_quotes/quote/index/,"1. Scroll to bottom of page main content area.
+
+2. Check for contact support details.","Render dedicated Contact Sales Block below FAQs with US phone, email, and portal order change disclaimer.",FAIL: Entire Need Help support block is 100% MISSING from live staging DOM.,FAIL,CRITICAL
+TC-GW-QUOTES-008,Sidebar Navigation,Verify My Account Navigation Numerical Count Badges,Logged-in Trade Customer viewing left sidebar,"1. Inspect 'Quotes', 'Holds', and 'Orders' items in left navigation menu.","Items display numerical count pill badges (e.g., Quotes [723], Holds [3], Orders [3]).",FAIL: Zero counter badges rendered in the left sidebar on live staging.,FAIL,MEDIUM
+TC-GW-QUOTES-009,Mobile Responsive,Verify Mobile Actions Column Header,Mobile viewport on /gw_quotes/quote/index/,"1. Load page on mobile viewport.
+
+2. Verify Actions header column in table.",Actions column clearly accessible via table layout.,VERIFIED: Table displays Actions column header in DOM.,PASS,LOW

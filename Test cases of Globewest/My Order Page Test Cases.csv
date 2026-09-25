@@ -1,0 +1,62 @@
+Test Case ID,Module,Auth Matrix,Test Scenario / Title,Preconditions,Test Steps,Expected Result (Figma Spec / Frame 624),Actual Result (mcstaging2 Live),Status,Severity
+TC-GW-ORDERS-001,Authentication & Access,Trade Customer (Logged In),Verify Access to My Orders Portal for Authenticated Trade Customer,User holds an active Trade Customer account (deepali.londhe@overdose.digital) on mcstaging2.globewest.com,"1. Navigate to customer login page (/customer/account/login/)
+
+2. Enter valid Trade Customer credentials
+
+3. Click 'Sign In'
+
+4. Navigate to My Orders URL (/gw_orders/order/index/)","Trade Customer successfully accesses My Orders portal. Header, left navigation sidebar, and Orders table container render cleanly with HTTP 200.",Page loads successfully with HTTP 200 for authenticated trade customer. Left navigation and table container are displayed.,PASS,LOW (Core Route Verified)
+TC-GW-ORDERS-002,Filter Tabs - Default State,Trade Customer (Logged In),Verify Default Active Status Filter Tab is 'AWAITING PAYMENT' (Frame 624 Rule 1),Logged-in Trade Customer accessing clean session on /gw_orders/order/index/,"1. Navigate to /gw_orders/order/index/
+
+2. Locate the status filter tabs directly above the orders grid
+
+3. Inspect which tab is highlighted and active by default",Per Frame 624: 'Tabs that filter table view of orders shown based on status. Default to awaiting payment'. Active tab must default to 'AWAITING PAYMENT' with solid dark pill styling (#2B1D16).,Page erroneously defaults to the 'OPEN' tab with a plain text underline. 'AWAITING PAYMENT' tab is missing.,FAIL,HIGH
+TC-GW-ORDERS-003,Filter Tabs - Status Parity,Trade Customer (Logged In),Verify All 4 Status Filter Tabs Exist with Segmented Pill Styling,Desktop viewport (1440x900) on /gw_orders/order/index/,"1. Inspect all rendered filter tabs.
+
+2. Count tabs and inspect labels.
+
+3. Inspect computed CSS styles (border-radius, padding, background).",Render 4 segmented tabs: [ AWAITING PAYMENT ] [ PENDING SHIPMENT ] [ DISPATCHED ] [ CLOSED ]. Pills have capsule shape and active dark fill.,"Only renders 3 tabs: 'ALL', 'OPEN', 'CLOSED'. Tabs are unstyled plain text links. Missing 'PENDING SHIPMENT' and 'DISPATCHED'.",FAIL,HIGH
+TC-GW-ORDERS-004,Table Columns - Consolidation,Trade Customer (Logged In),Verify Strict 6-Column Layout (Frame 624 Rule 2),Logged-in Trade Customer on /gw_orders/order/index/,"1. Inspect table headers on desktop viewport.
+
+2. Count number of columns.
+
+3. Verify column header labels.","Per Frame 624: 'Reduction of columns shown'. Exactly 6 columns: ORDER ⬍, DATE ⬍, STATUS ⬍, TOTAL ⬍, BALANCE ⬍, ACTIONS.","Live staging displays 10 columns: Order, Date, Cust po#, Order name, Client Name, Status, Total, Balance, Details, Actions.",FAIL,HIGH
+TC-GW-ORDERS-005,Table Actions - Elimination of DETAILS,Trade Customer (Logged In),Verify Elimination of Standalone DETAILS Column & Redundant Columns,Logged-in Trade Customer on /gw_orders/order/index/,"1. Verify whether a separate 'DETAILS' header/column exists.
+
+2. Verify presence of 'Cust po#', 'Order name', 'Client Name'.","No standalone 'DETAILS' column. No 'Cust po#', 'Order name', or 'Client Name' columns in default grid.","Redundant unstyled 'DETAILS' column is rendered alongside separate 'ACTIONS' column, plus 3 redundant metadata columns.",FAIL,HIGH
+TC-GW-ORDERS-006,Order Details Navigation,Trade Customer (Logged In),Verify Clickable Order Number Link to Order Details Page (Frame 624 Rule 4),Orders grid populated with order records,"1. Hover over the Order Number (e.g., #CH03021).
+
+2. Click on the Order Number link.
+
+3. Observe destination URL and rendered view.",Per Frame 624: 'Order number to be linked + clickable to the order details page'. Clicking order # navigates to /gw_orders/order/view/order_id/X/.,Must verify clickable hyperlink presence once test data / dev build is deployed.,TO VERIFY (Awaiting Data),HIGH
+TC-GW-ORDERS-007,Table Actions - Dropdown,Trade Customer (Logged In),Verify Unified 'Actions ▾' Dropdown on Desktop & Mobile (Frame 624 Rule 3),Orders grid populated with order records,"1. Locate 'ACTIONS' column on each row.
+
+2. Click 'Actions ▾' dropdown button.
+
+3. Verify menu options (View Order, Reorder, Print Invoice).",Per Frame 624: 'Actions housed under dropdown for both mobile + desktop as per other table functionality'. Clean consolidated dropdown on every row.,Actions are split across separate Details text and raw Actions column with no unified dropdown.,FAIL,HIGH
+TC-GW-ORDERS-008,Date Formatting,Trade Customer (Logged In),Verify Dates Enforce USA Standard Format (MM/DD/YYYY),Orders grid populated with order records,"1. Inspect dates displayed in DATE column.
+
+2. Verify calendar date syntax and month-first order.","Per Frame 624: 'Ensure dates displayed are in USA format'. E.g., 01/24/2026 (MM/DD/YYYY).",Awaiting live order records; ensure US locale date pipe is applied in Knockout / PHTML template.,MONITOR (Awaiting Data),MEDIUM
+TC-GW-ORDERS-009,Search Component,Trade Customer (Logged In),Verify Search Input Placed Inline Horizontally with Filter Tabs,Logged-in Trade Customer on /gw_orders/order/index/,"1. Inspect horizontal row above orders grid.
+
+2. Check position of search bar relative to filter tabs.",Search bar ('Search [🔍]') is right-aligned on the exact same horizontal flex row alongside status filter tabs.,"Search bar floats in a detached row above the table, breaking inline row parity.",FAIL,MEDIUM
+TC-GW-ORDERS-010,FAQ Accordion Block,Trade Customer (Logged In),Verify Presence of Dedicated FAQ Accordion Block Below Table (Frame 624),Logged-in Trade Customer on /gw_orders/order/index/,"1. Scroll down below the Orders table grid.
+
+2. Check for 'Frequently Asked Questions' section header and accordion items.",Per Frame 624: Dedicated 'Frequently Asked Questions' block rendered below table with orders-specific questions (up to 8 FAQs).,FAQ component is 100% MISSING from live staging DOM. Direct transition from table to raw support text.,CRITICAL FAIL (Missing Module),CRITICAL
+TC-GW-ORDERS-011,FAQ Accordion Block,Trade Customer (Logged In),"Verify FAQ Accordion Interaction Rules (Closed by Default, Single Open)",FAQ Accordion component rendered,"1. Verify initial accordion state upon page load.
+
+2. Click accordion 1 to expand.
+
+3. Click accordion 2 to expand.","Per Frame 624: 'All accordions closed by default. When a user clicks to open another accordion, close any other accordion that was open (ie. only one open at a time)'.",BLOCKED: Entire FAQ component is missing from DOM.,BLOCKED (Missing Module),HIGH
+TC-GW-ORDERS-012,Support Content Block,Trade Customer (Logged In),Verify 'Need to Change an Order?' Support Block US Scope Isolation,Logged-in Trade Customer on /gw_orders/order/index/,"1. Scroll to the support section below FAQs.
+
+2. Inspect phone number and email address.",Displays US toll-free customer support hotline and US domain email link (sales@globewest.com). Zero Australian phone or domain leaks.,Displays Australian phone '+613 9518 1600 #3' and email 'sales@globewest.com.au'.,FAIL,HIGH
+TC-GW-ORDERS-013,Sidebar Navigation,Trade Customer (Logged In),"Verify Left Account Navigation Counter Badges (Orders, Quotes, Holds)",Trade Customer viewing left sidebar menu,"1. Inspect 'Orders', 'Quotes', and 'Holds' menu items.
+
+2. Verify presence and styling of numerical count badges.","Menu items display high-contrast blue capsule count badges: Quotes [723], Holds [3], Orders [3].",Zero numerical count badges rendered in sidebar navigation on live staging.,FAIL,MEDIUM
+TC-GW-ORDERS-014,Mobile Responsive Parity,Trade Customer (Logged In),"Verify Mobile Viewport Layout, Empty State & Touch Parity (390x844)",Mobile viewport (iPhone 14/15 390x844) on /gw_orders/order/index/,"1. Load page on mobile viewport.
+
+2. Observe search bar, filter tabs, table card layout, and empty state.","Clean mobile layout with touch-friendly tabs, full-width search, responsive cards with unified 'Actions ▾' dropdown, and branded empty state.",Displays default unstyled Magento blue alert box ('ⓘ Table is empty!') and stacked search above plain text links.,FAIL,HIGH
+TC-GW-ORDERS-015,Storefront Footer,Public / Trade,Verify US Storefront Footer Suppresses Australian Kangaroo Branding,View storefront footer on /gw_orders/order/index/,"1. Scroll down to bottom footer.
+
+2. Inspect trust badges and branding logos.",US Storefront must strictly suppress Australian Kangaroo logo and 'AUSTRALIAN OWNED & RUN' copy.,Displays Australian Kangaroo silhouette logo and 'AUSTRALIAN OWNED & RUN' badge.,FAIL,HIGH

@@ -1,0 +1,55 @@
+Test Case ID,Category,Test Description,Scope / URL,Preconditions,Test Steps,Expected Result,Severity,Status
+TC-PLP-01,Navigation & Title,"Verify US Storefront PLP Page Title, H1 Tag, and Breadcrumbs",https://mcstaging2.globewest.com/indoor,US Storefront is deployed and accessible.,"1. Navigate to US PLP (/indoor).
+
+2. Verify HTTP status is 200.
+
+3. Check <title> and <h1>.page-title.
+
+4. Check breadcrumb links.",Page loads with HTTP 200. Title and H1 match Indoor category. Breadcrumbs keep user on US domain with zero AU leakage.,P1,PASSED
+TC-PLP-02,Category Hero Banner,Verify Category Banner & Editorial Description Parity with AU,https://mcstaging2.globewest.com/indoor,Category banner configured in Magento Admin.,"1. Observe category header and top banner image.
+
+2. Cross-check against AU baseline (/indoor).
+
+3. Verify text and imagery render cleanly.",Banner renders consistently with AU baseline. All CTA links remain within US domain.,P2,PASSED
+TC-PLP-03,Filter Navigation,Verify Layered Navigation / Searchspring Filter Facets,https://mcstaging2.globewest.com/indoor,Searchspring or Native layered navigation enabled.,"1. Locate filter sidebar or toolbar.
+
+2. Inspect facet categories (Subcategory, Material, Color, Price, In-Stock).
+
+3. Compare facet options against AU baseline.",Facets are displayed and interactive. Filter counts match active US product catalog.,P2,PASSED
+TC-PLP-04,Sorting Controls,Verify PLP Sort Dropdown Functionality,https://mcstaging2.globewest.com/indoor,Product listing is populated.,"1. Locate Sort By dropdown.
+
+2. Inspect available options (Featured, Newest, Price Low-High, Price High-Low).
+
+3. Select an option and observe re-ordering.",Sort options exist and reorder products seamlessly without full page errors.,P2,PASSED
+TC-PLP-05,Product Grid Routing,Verify Product Cards Anchor Routing (Zero Australian Scope Leaks),https://mcstaging2.globewest.com/indoor,Products are visible on the grid.,"1. Query all visible product card links (.product-item-link, a.product-item-photo).
+
+2. Inspect href attributes.
+
+3. Assert zero links contain .globewest.com.au.",All product links route to US store (mcstaging2.globewest.com) or relative paths. Zero links redirect to Australian domain.,P1,PASSED
+TC-PLP-06,Pricing & Currency,Verify Product Card Pricing & Currency Symbols ($ USD),https://mcstaging2.globewest.com/indoor,Price display configured for US store view.,"1. Inspect product price elements (.price-box, .price).
+
+2. Verify currency formatting.
+
+3. Ensure no AUD currency text appears.",Prices display with standard $ symbol corresponding to USD currency. No Australian Dollar labels.,P2,PASSED
+TC-PLP-07,Product Swatches,Verify Color & Material Swatches on Product Cards,https://mcstaging2.globewest.com/indoor,Configurable products with swatches present.,"1. Locate product cards with swatches (.swatch-option).
+
+2. Hover/click a swatch option.
+
+3. Observe image/label update.","Swatches render correctly, are clickable, and update card image preview.",P3,PASSED
+TC-PLP-08,Pagination & Scrolling,Verify Pagination Controls or Infinite Scroll Load-More,https://mcstaging2.globewest.com/indoor,Catalog contains multiple pages of products.,"1. Scroll to the bottom of the product grid.
+
+2. Observe pagination numbers or Load More button.
+
+3. Verify navigation to Page
+
+2.","Pagination or Load More functions properly, appending/loading subsequent products.",P2,PASSED
+TC-PLP-09,SEO Content,Verify Bottom Category SEO Editorial Text Block,https://mcstaging2.globewest.com/indoor,Category content configured.,"1. Scroll to the area above the footer.
+
+2. Check for category editorial/SEO description.
+
+3. Cross-check against AU baseline.",Category editorial copy is populated with keyword-rich marketing text.,P3,PASSED
+TC-PLP-10,Visual Parity,"Verify Full-Page Responsive Visual Comparison (Desktop, Tablet, Mobile)",https://mcstaging2.globewest.com/indoor,"Desktop, tablet, and mobile viewports.","1. Capture full-page screenshots of US PLP and AU PLP.
+
+2. Generate side-by-side Red/Green comparison images.
+
+3. Verify layout alignment.",US PLP maintains visual consistency with AU baseline with proper responsive wrapping.,P2,PASSED

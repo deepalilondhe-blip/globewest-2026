@@ -1,0 +1,36 @@
+Test Case ID,Section,Viewport,Test Scenario,Test Steps,Expected Result (Figma Spec),Actual Result (US Staging Live),Status,Severity
+TC_PDP_001,Page Meta / SEO,Global,Verify HTML Page <title> and geographic branding for US Storefront,"1. Open PDP URL on US Storefront (mcstaging
+
+2.globewest.com)
+
+2. Inspect document.title in head element",Page title reflects US Storefront scope (e.g. 'Buy Amari Oasis Large Planter - Wheat online - GlobeWest USA'),Page <title> leaks Australian branding: 'Buy Amari Oasis Large Planter - Wheat online - GlobeWest Australia',FAIL,P1 - High
+TC_PDP_002,Regulatory Compliance,Desktop (1440px),Verify presence of mandatory California Proposition 65 warning,"1. Navigate to US PDP product information column
+
+2. Inspect for California Prop 65 warning block",Explicit warning box: 'Warning: This product can expose you to chemicals including Di(2-ethylhexyl)phthalate (DEHP)... www.P65Warnings.ca.gov',California Proposition 65 warning block is completely missing from the US product detail page,FAIL,P1 - High
+TC_PDP_003,Purchasing & Actions,Desktop (1440px),Verify secondary [ADD TO QUOTE] CTA button availability,"1. Authenticate as Trade customer
+
+2. Inspect action buttons in .box-tocart container underneath [ADD TO CART]",Secondary full-width or outlined button: [ADD TO QUOTE] rendered underneath [Add to cart],[ADD TO QUOTE] CTA button deployed by developer and verified present directly below [ADD TO CART] (Minor UI note: leading chevron present),PASS,N/A
+TC_PDP_004,Typography & Title,Desktop (1440px),Verify product title typography against Figma specification (IvyMode 400),"1. Inspect .page-title computed styles
+
+2. Verify font-family and font-weight","Font: IvyMode, Weight: 400 Regular, Serif styling","Computed font-family: 'IvyMode, ""Times New Roman"", Georgia, serif', font-weight: 400; matches Figma spec",PASS,N/A
+TC_PDP_005,Trade Dual Pricing,Desktop (1440px),Verify dual pricing display for authenticated Trade customers,"1. Log in as Trade customer
+
+2. Inspect .price-box on PDP",Displays customer Trade price ($) with MSRP displayed underneath / alongside,Renders dual pricing: '$434.50 MSRP: $902.00' matching Figma requirements,PASS,N/A
+TC_PDP_006,Guest Pricing Masking,Desktop (1440px),Verify wholesale price masking and Add to Cart suppression for unauthenticated guests,"1. Open PDP in unauthenticated guest session
+
+2. Inspect price box and purchasing CTAs",Wholesale prices hidden; Add to Cart suppressed; [REQUEST FREE SWATCHES] CTA shown,Wholesale pricing is strictly masked; Add to Cart button is suppressed conforming to B2B rules,PASS,N/A
+TC_PDP_007,Primary Purchasing CTA,Desktop (1440px),Verify primary [ADD TO CART] button availability for Trade customers,"1. Log in as Trade customer
+
+2. Locate #product-addtocart-button",Prominent solid rectangular [Add to cart] button active,"[ADD TO CART] CTA button is rendered, active, and clickable",PASS,N/A
+TC_PDP_008,Header Pricing Toggle,Desktop (1440px),Verify header utility bar Trade Pricing Toggle integration,"1. Inspect header utility bar on PDP
+
+2. Verify presence of Trade vs MSRP pricing toggle",Dropdown/toggle allowing switching between Trade and MSRP views,Active Trade pricing toggle rendered in header utility bar,PASS,N/A
+TC_PDP_009,Product Metadata,Desktop (1440px),"Verify SKU, breadcrumbs, and gallery media rendering","1. Inspect breadcrumb trail
+
+2. Inspect SKU attribute and image gallery","Accurate breadcrumbs, SKU line, and high-res gallery images","Breadcrumbs visible, SKU clearly displayed ('DEC-AMAR-OAS-PLT-LG-WHEAT'), gallery functional",PASS,N/A
+TC_PDP_010,Mobile Responsiveness,Mobile (390px),Verify mobile PDP viewport adaptation and touch layout (390x844),"1. Emulate mobile screen (iPhone 14/15 390x844)
+
+2. Inspect visual hierarchy, image scaling, and action buttons",Mobile layout matches Mobile/product/Trade Pricing - ETA frame without horizontal overflow,Responsive mobile layout cleanly rendered; gallery fits screen width; readable typography,PASS,N/A
+TC_PDP_011,Documentation & Warranty,Desktop (1440px),Verify warranty and brochure links,"1. Inspect product info lower section
+
+2. Verify warranty policy links",Warranty reference ('24 month structural warranty') and download brochure link,Warranty policy link present in product specifications,PASS,N/A

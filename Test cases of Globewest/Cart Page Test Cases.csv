@@ -1,0 +1,51 @@
+Test ID,Component,Feature,Pre-conditions,Test Steps,Expected Result (AU Baseline),Actual Result (US Storefront),Status,Severity,Notes / Impact
+TC-CART-01,Product Detail Page (PDP),Trade Customer Pricing & Add to Cart Action,Logged in as Trade Customer (deepali.londhe@overdose.digital),"1. Navigate to in-stock product PDP (e.g. Artifact Small Floor Sculpture)
+
+2. Verify trade unit price visibility
+
+3. Check for active [ADD TO CART] button
+
+4. Click [ADD TO CART]",Trade price ($) is rendered and [ADD TO CART] button adds product to cart session,"Trade price ($5,472.50) is visible and [ADD TO CART] button successfully adds item to shopping cart",PASS,N/A,Purchasing flow is fully functional for approved trade accounts
+TC-CART-02,Product Detail Page (PDP),Guest Public Browsing Masking,Logged-out guest session,"1. Open product PDP as guest
+
+2. Inspect price box and purchasing actions",Wholesale price is strictly masked; Add to Cart button is suppressed; swatches CTA shown,Trade wholesale price is masked and Add to Cart is suppressed with [REQUEST FREE SWATCHES] CTA,PASS,N/A,Public browsing dual-auth security matrix verified
+TC-CART-03,Cart Page Table,Populated Cart Items & Product Details,Authenticated Trade customer with items in cart,"1. Navigate to /checkout/cart/
+
+2. Inspect product row, thumbnail image, title, and SKU","Item row renders clear thumbnail, hyperlinked title, and variant details","Product row renders thumbnail image, title ('Artifact Small Floor Sculpture'), and SKU details",PASS,N/A,Cart items table renders correctly
+TC-CART-04,Cart Page Table,Unit Price & Line Item Subtotal Calculation,Cart contains 1 or more items,"1. Inspect unit price column
+
+2. Inspect subtotal calculation (Price x Qty)",Unit price and accurate line subtotal rendered in local currency,"Unit price ($3,520.00) and line subtotal ($10,560.00 for Qty 3) clearly rendered with USD $ currency symbol",PASS,N/A,Line item pricing math verified
+TC-CART-05,Cart Page Table,Quantity Stepper Controls (+ / - / input),Cart populated with product item,"1. Locate quantity controls
+
+2. Click stepper increment (+) or modify input
+
+3. Verify cart updates",Quantity increases and cart recalculates subtotal,"Quantity stepper functional; incrementing from 1 to 3 accurately updates line subtotal to $10,560.00",PASS,N/A,Quantity stepper verified
+TC-CART-06,Cart Page Table,Remove Item Action (Trash Icon),Cart populated with product item,"1. Locate trash can / delete icon on item row
+
+2. Verify delete action presence",Delete action available to remove item from cart,Trash can / remove action link present on each line item row,PASS,N/A,Item removal action verified
+TC-CART-07,Cart Page Order Summary,B2B Name Your Order & Create Quote,Logged-in Trade customer cart view,"1. Inspect right-hand summary column
+
+2. Check for B2B Trade fields: [NAME YOUR ORDER] and [CREATE A QUOTE]",B2B order naming input and Quote generation CTA rendered for trade accounts,Renders [NAME YOUR ORDER] / [CLIENT NAME] input and [CREATE A QUOTE] button in cart summary block,PASS,N/A,B2B Trade features verified
+TC-CART-08,Cart Page Order Summary,US Shipping and Tax Estimator,Cart summary block,"1. Expand 'Estimate Shipping and Tax'
+
+2. Inspect Country dropdown default
+
+3. Inspect State dropdown and ZIP input",Country defaults to United States ('US'); US State dropdown and 5-digit ZIP code supported,Country selector defaults to 'US'; accepts 5-digit US ZIP code (e.g. 90210); validates US addresses,PASS,N/A,US shipping estimator verified
+TC-CART-09,Cart Page Order Summary,Proceed to Checkout Primary CTA,Cart populated with product item,"1. Locate primary checkout CTA button
+
+2. Verify button label and styling",Prominent [PROCEED TO CHECKOUT] primary button rendered,[PROCEED TO CHECKOUT] button rendered prominently at bottom and top of cart container,PASS,N/A,Checkout entry CTA verified
+TC-CART-10,Empty Cart State,Core Messaging & Catalog CTAs,Visit /checkout/cart/ with empty cart,"1. Open /checkout/cart/ with empty cart
+
+2. Inspect hero messaging and buttons",'Your Cart Is Empty' with [EXPLORE IN STOCK] and [SHOP FURNITURE] buttons,Matches AU baseline layout with working [EXPLORE IN STOCK] and [SHOP FURNITURE] buttons,PASS,N/A,Empty cart hero layout matches AU
+TC-CART-11,Cart Page Content Hub,Distorted Low-Res Delivery Truck Placeholders,Empty cart state (/checkout/cart/),"1. Scroll down to 'Inspiring Trends & Directions'
+
+2. Inspect article cards and thumbnails",Clean high-resolution editorial campaign thumbnails,Renders broken pixelated delivery truck placeholder icons ('Icon.png' & 'Icon2.png') for 'Post testing' test blogs,FAIL,P1 - High (Content Defect),Distorted test placeholders degrade storefront credibility
+TC-CART-12,Cart Page Content Hub,Australian Blog Domain Leakage,Empty cart state (/checkout/cart/),"1. Scroll down to 'Inspiring Trends & Directions'
+
+2. Inspect [VIEW ALL ARTICLES] hyperlink URL",Internal US blog routing (/blog),Points directly to Australian production staging blog: https://mcprod.globewest.com.au/blog,FAIL,P1 - High (Scope Leak),American shoppers redirected across international boundaries
+TC-CART-13,Global Storefront Footer,Australian Geographic Scope Emblem,Cart page footer,"1. Scroll to global footer on Cart page
+
+2. Inspect geographic ownership branding",Appropriate US market branding without Australian domestic badges,Renders 'AUSTRALIAN OWNED & RUN' emblem featuring silhouette map of Australia,FAIL,P2 - Medium (Scope Leak),Australian domestic marketing leak on US storefront
+TC-CART-14,Cart Page Header,Top Utility Bar Parity & Wishlist Heart,Cart page header,"1. Inspect brown top utility bar
+
+2. Inspect header icons next to cart",Displays 'Find a designer or stockist' link and Wishlist heart icon,'Find a designer' link and Wishlist heart icon omitted from US cart header view,FAIL,P2 - Medium (Parity Gap),Parity gap against AU baseline storefront
