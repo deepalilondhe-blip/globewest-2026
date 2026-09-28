@@ -1,26 +1,19 @@
 {
   "pageHeading": "My Orders",
   "description": "N/A",
-  "tabs": [
-    {
-      "text": "ALL",
-      "classes": "account-listing-ui__filters__filter",
-      "isActive": false
-    },
-    {
-      "text": "OPEN",
-      "classes": "account-listing-ui__filters__filter is-active",
-      "isActive": false
-    }
-  ],
+  "tabs": [],
   "filterElements": [
     {
-      "text": "All",
+      "text": "Awaiting Payment",
+      "classes": "account-listing-ui__filters__filter is-active"
+    },
+    {
+      "text": "Pending Shipment",
       "classes": "account-listing-ui__filters__filter"
     },
     {
-      "text": "Open",
-      "classes": "account-listing-ui__filters__filter is-active"
+      "text": "Dispatched",
+      "classes": "account-listing-ui__filters__filter"
     },
     {
       "text": "Closed",
@@ -30,9 +23,6 @@
   "ths": [
     "Order",
     "Date",
-    "Cust po#",
-    "Order name",
-    "Client Name",
     "Status",
     "Total",
     "Balance",

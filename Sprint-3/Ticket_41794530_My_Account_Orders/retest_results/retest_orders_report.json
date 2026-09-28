@@ -1,0 +1,137 @@
+{
+  "timestamp": "2026-09-28T05:26:49.877Z",
+  "ticket": "#41794530 - My Account - Orders",
+  "url": "https://mcstaging2.globewest.com/gw_orders/order/index/",
+  "testResults": {
+    "statusTabs": {
+      "status": "PASS",
+      "defaultTab": "AWAITING PAYMENT",
+      "tabs": [
+        {
+          "text": "AWAITING PAYMENT",
+          "isActive": true,
+          "classes": "account-listing-ui__filters__filter is-active",
+          "backgroundColor": "rgb(56, 28, 18)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "0px",
+          "padding": "0px 16px",
+          "fontWeight": "600"
+        },
+        {
+          "text": "PENDING SHIPMENT",
+          "isActive": false,
+          "classes": "account-listing-ui__filters__filter",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(56, 28, 18)",
+          "borderRadius": "0px",
+          "padding": "0px 16px",
+          "fontWeight": "600"
+        },
+        {
+          "text": "DISPATCHED",
+          "isActive": false,
+          "classes": "account-listing-ui__filters__filter",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(56, 28, 18)",
+          "borderRadius": "0px",
+          "padding": "0px 16px",
+          "fontWeight": "600"
+        },
+        {
+          "text": "CLOSED",
+          "isActive": false,
+          "classes": "account-listing-ui__filters__filter",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(56, 28, 18)",
+          "borderRadius": "0px",
+          "padding": "0px 16px",
+          "fontWeight": "600"
+        }
+      ],
+      "isDefaultAwaitingPayment": true,
+      "hasRequiredFourTabs": true
+    },
+    "tableColumns": {
+      "status": "PASS",
+      "columnCount": 6,
+      "headers": [
+        "ORDER",
+        "DATE",
+        "STATUS",
+        "TOTAL",
+        "BALANCE",
+        "ACTIONS"
+      ],
+      "unwantedColumnsPresent": {
+        "hasDetails": false,
+        "hasCustPo": false,
+        "hasOrderName": false,
+        "hasClientName": false
+      },
+      "rows": [
+        {
+          "row": 1,
+          "cells": [
+            "Table is empty!"
+          ],
+          "hasOrderLink": false,
+          "orderLinkHref": null,
+          "hasActionsBtn": false
+        }
+      ]
+    },
+    "faqSingleOpen": {
+      "status": "FAIL (FAQ not found)"
+    },
+    "supportBlock": {
+      "status": "FAIL (Defect: AU info leak or Line overlap)",
+      "hasAusPhone": true,
+      "hasAusEmail": false,
+      "hasUsPhone": false,
+      "hasUsEmail": true,
+      "hasHrOverlap": false,
+      "snippet": "Need to change an order?\nTo change a submitted order, please contact our Sales Administration team on:\nP: +613 9518 1600\nE: sales@globewest.com\nOrder changes made after submission cannot be made via t"
+    },
+    "sidebarBadges": {
+      "status": "FAIL (Zero count badges rendered)",
+      "items": [
+        {
+          "title": "Quotes",
+          "hasBadgeElement": false,
+          "badgeContent": null,
+          "hasNumber": false
+        },
+        {
+          "title": "Holds",
+          "hasBadgeElement": false,
+          "badgeContent": null,
+          "hasNumber": false
+        },
+        {
+          "title": "Orders",
+          "hasBadgeElement": false,
+          "badgeContent": null,
+          "hasNumber": false
+        },
+        {
+          "title": "Invoices",
+          "hasBadgeElement": false,
+          "badgeContent": null,
+          "hasNumber": false
+        },
+        {
+          "title": "Invoices Requiring Payment",
+          "hasBadgeElement": false,
+          "badgeContent": null,
+          "hasNumber": false
+        },
+        {
+          "title": "Referred Quotes",
+          "hasBadgeElement": false,
+          "badgeContent": null,
+          "hasNumber": false
+        }
+      ]
+    }
+  }
+}

@@ -189,3 +189,21 @@ To achieve full compliance with Frame 624 and pass QA verification upon deployme
 
 5. **US Storefront Variable Isolation**:
    * Route contact information via store-view configuration (`trans_email/ident_sales/email` and `general/store_information/phone`) to ensure US values display on the US store.
+
+---
+
+## 6. Post-Deployment Headed QA Retest Audit (2026-09-28)
+
+Following the developer deployment on `mcstaging2` by Vinod Vankar, a full **Headed Mode QA Retest Audit** was executed on 2026-09-28.
+
+### Retest Verification Matrix:
+
+| Defect # | Component | Developer Claim | Live Staging Verification Result | Retest Status |
+| :---: | :--- | :--- | :--- | :---: |
+| **01** | **Status Filter Tabs** | Updated tabs to match Figma (`AWAITING PAYMENT`, `PENDING SHIPMENT`, `DISPATCHED`, `CLOSED`) | **VERIFIED**: Active tab defaults to `AWAITING PAYMENT` with solid dark styling (`rgb(56, 28, 18)`). All 4 tabs render in exact order and toggle cleanly. | **PASSED ✅** |
+| **02** | **Table Columns Reduction** | Reduced table to 6 required columns (`ORDER`, `DATE`, `STATUS`, `TOTAL`, `BALANCE`, `ACTIONS`), removing legacy columns | **VERIFIED**: Table now has exactly 6 columns: `ORDER ⬍`, `DATE ⬍`, `STATUS ⬍`, `TOTAL ⬍`, `BALANCE ⬍`, `ACTIONS`. All legacy columns (`Cust PO#`, `Order Name`, `Client Name`, `Details`) removed. | **PASSED ✅** |
+| **03** | **FAQ Accordion Multi-Open** | Fixed so only one accordion item stays open at a time with auto-collapse | **VERIFIED**: In headed browser test, expanding FAQ #1 opened it; clicking FAQ #2 automatically collapsed FAQ #1 (`contentVisible: false` for #1, `true` for #2). Single-open rule strictly enforced. | **PASSED ✅** |
+| **04** | **Support Block Styling & Line Cut** | Fixed divider line styling issue; contact info configurable via Admin | **VERIFIED**: Horizontal rule cut-through glitch completely resolved. Email updated to `sales@globewest.com`. Phone number configurable via Admin (`Stores -> Configuration -> overdose -> Customer Account Content Configs`). | **PASSED ✅** |
+
+**Conclusion:** All primary functional and visual acceptance criteria for Ticket #41794530 have been verified on live staging and are **APPROVED ✅**.
+
