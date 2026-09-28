@@ -1,0 +1,57 @@
+{
+  "pageTitle": "My Holds",
+  "subtitleText": "*Delivery and installation can be selected or changed at checkout. Final price will be calculated at checkout.",
+  "subtitleSpellingHasFavourite": false,
+  "subtitleSpellingHasFavorite": false,
+  "filterTabs": [
+    {
+      "text": "ACTIVE",
+      "isActive": true,
+      "styles": {
+        "background": "rgb(56, 28, 18)",
+        "color": "rgb(255, 255, 255)",
+        "borderRadius": "0px",
+        "padding": "0px 16px"
+      }
+    },
+    {
+      "text": "INACTIVE",
+      "isActive": false,
+      "styles": {
+        "background": "rgb(255, 255, 255)",
+        "color": "rgb(56, 28, 18)",
+        "borderRadius": "0px",
+        "padding": "0px 16px"
+      }
+    }
+  ],
+  "search": {
+    "present": true,
+    "yAlignedWithTabs": false
+  },
+  "headers": [
+    "HOLD",
+    "EXP. DATE",
+    "CUST P0#",
+    "ORDER NAME",
+    "CLIENT NAME",
+    "STATUS",
+    "TOTAL",
+    "ACTIONS"
+  ],
+  "columnCount": 8,
+  "hasActionsColumn": true,
+  "hasCustPoTypo": true,
+  "tabToggleWorking": true,
+  "faqCount": 0,
+  "faqInitialClosed": true,
+  "supportText": "Need help? Contact our sales team\nP: +613 9518 1600\nsales@globewest.com\nOrder changes made after submission cannot be made via this portal.",
+  "supportHasAuPhone": true,
+  "mobileHeaders": [
+    "HOLD",
+    "DATE",
+    "STATUS",
+    "TOTAL",
+    "ACTIONS"
+  ]
+}

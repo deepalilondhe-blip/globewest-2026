@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-09-28T06:12:49.499Z",
+  "ticket": "#41794528 - My Account - Holds",
+  "url": "https://mcstaging2.globewest.com/gw_orders/hold/index/",
+  "figmaNode": "2581-64185 (Frame 621)",
+  "results": {
+    "tabs": {
+      "detected": [
+        {
+          "text": "ACTIVE",
+          "isActive": true,
+          "classes": "account-listing-ui__filters__filter is-active",
+          "bg": "rgb(56, 28, 18)",
+          "color": "rgb(255, 255, 255)",
+          "padding": "0px 16px",
+          "borderRadius": "0px",
+          "fontWeight": "600"
+        },
+        {
+          "text": "INACTIVE",
+          "isActive": false,
+          "classes": "account-listing-ui__filters__filter",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(56, 28, 18)",
+          "padding": "0px 16px",
+          "borderRadius": "0px",
+          "fontWeight": "600"
+        }
+      ],
+      "activeTab": "ACTIVE",
+      "hasActive": true,
+      "hasInactive": true
+    },
+    "table": {
+      "headers": [
+        "HOLD",
+        "EXP. DATE",
+        "CUST P0#",
+        "ORDER NAME",
+        "CLIENT NAME",
+        "STATUS",
+        "TOTAL",
+        "ACTIONS"
+      ],
+      "columnCount": 8,
+      "hasCustP0Typo": true,
+      "hasActionsColumn": true,
+      "rows": [
+        {
+          "row": 1,
+          "holdId": "Table is empty!",
+          "hasLink": false,
+          "linkHref": null,
+          "cells": [
+            "Table is empty!"
+          ],
+          "hasActionsBtn": false
+        }
+      ]
+    },
+    "faq": {
+      "present": false
+    },
+    "supportBlock": {
+      "hasHelpHeading": true,
+      "hasAusPhone": true,
+      "hasAusEmail": false,
+      "hasUkSpelling": true,
+      "containerText": "Need help? Contact our sales team\nP: +613 9518 1600\nsales@globewest.com\nOrder changes made after submission cannot be made via this portal."
+    }
+  }
+}

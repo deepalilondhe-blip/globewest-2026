@@ -1,0 +1,27 @@
+tc_id,module,test_title,preconditions,test_steps,expected_result,actual_result,status,severity,compliance
+TC-HOLDS-01,Authentication & Access,Direct URL Access as Logged-Out Guest,User is not logged in,"1. Navigate directly to /gw_orders/hold/index/
+2. Observe redirection and page behavior",User is redirected to Customer Login page (/customer/account/login/) with session notice,Redirects to customer login page with notice,PASS,High,AGENTS.md Rule 3 Dual-Auth
+TC-HOLDS-02,Authentication & Access,Authenticated Trade Customer Access,User logged in with Trade Customer credentials,"1. Login with trade account
+2. Navigate to /gw_orders/hold/index/","My Holds dashboard loads with breadcrumbs, left account navigation, and table container",My Holds dashboard loads successfully for Trade account,PASS,High,Frame 621
+TC-HOLDS-03,Status Filter Tabs,Default Active Filter Tab (ACTIVE),User on My Holds page,"1. Inspect default filter tabs on initial load
+2. Check active class and computed styles","Filter tabs display 'ACTIVE' and 'INACTIVE'. 'ACTIVE' tab is selected by default with dark brown solid pill styling (#2B1D16 / rgb(56, 28, 18)) and white text","Renders 'ACTIVE' (is-active, dark background, white text) and 'INACTIVE'",PASS,High,Frame 621 Rule 1
+TC-HOLDS-04,Status Filter Tabs,Tab Switching State Transition,User on My Holds page,"1. Click 'INACTIVE' tab
+2. Verify table updates and active tab changes to 'INACTIVE'
+3. Click back to 'ACTIVE'",Active styling switches cleanly between ACTIVE and INACTIVE tabs; table records filter accordingly,Tab toggles cleanly between ACTIVE and INACTIVE,PASS,Medium,Frame 621
+TC-HOLDS-05,Search Component,Horizontal Inline Search Alignment,User on My Holds page,"1. Inspect positioning of search input relative to filter tabs
+2. Check placeholder and search icon",Search input sits horizontally on the same row adjacent to filter tabs with magnifying glass icon,Search input is aligned inline on the same horizontal row beside filter tabs,PASS,Medium,Figma Artboard
+TC-HOLDS-06,Table Architecture,Column Reduction & Redundant Actions Column,User on My Holds page desktop view,"1. Inspect table headers on desktop view
+2. Count columns and check for standalone Actions column","Table displays 7 columns (HOLD, EXP. DATE, CUST PO#, ORDER NAME, CLIENT NAME, STATUS, TOTAL). Per Frame 621, if only view action exists, hide separate Actions column and make Hold # clickable",Table displays 8 columns including a redundant 'ACTIONS' column,FAIL,High,Frame 621 Rule 2 & 4
+TC-HOLDS-07,Table Architecture,Header Label Typo ('CUST P0#' zero vs letter O),User on My Holds page desktop view,"1. Inspect column 3 header text in DOM
+2. Check character representation",Header label displays 'CUST PO#' with capital letter 'O',Header label displays 'CUST P0#' with number zero '0' instead of capital letter 'O',FAIL,Medium,Figma Spec
+TC-HOLDS-08,Editorial & Content,Sub-heading Feature Description Copy,User on My Holds page,"1. Read sub-heading description copy below 'My Holds' title
+2. Verify presence and feature introduction",Displays feature intro copy below title ('A product hold reserves your favourite items for 2 business days.') consistent with Figma layout,Introductory copy is present and accurately describes product hold behavior,PASS,Low,Frame 621 / Layout Spec
+TC-HOLDS-09,FAQ Module,FAQ Accordion Presence & Default Closed State,User on My Holds page,"1. Scroll down to Frequently Asked Questions section
+2. Inspect initial visibility of answers",FAQ section is present below table; all accordion items are closed by default,FAQ section is present; all accordions are closed on page load,PASS,Medium,Frame 621 FAQ Spec
+TC-HOLDS-10,FAQ Module,FAQ Accordion Single-Open Auto-Collapse Rule,User on My Holds page,"1. Click FAQ item 1 to expand
+2. Click FAQ item 2
+3. Verify whether FAQ item 1 collapses automatically",Only one accordion remains open at a time; expanding item 2 automatically collapses item 1,Expanding item 2 automatically collapsed item 1 (single-open rule strictly enforced),PASS,High,Frame 621 FAQ Spec
+TC-HOLDS-11,Customer Support Block,Support Block Layout & Design Matching,User on My Holds page,"1. Inspect 'Need help? Contact our sales team' block below FAQs
+2. Verify contact phone, email, and layout against Figma Frame 621","Support block displays 'Need help? Contact our sales team', phone 'P: +613 9518 1600', and email 'E: salessupport@globewest.com.au' matching Figma Frame 621 mockup text",Matches Figma Frame 621 design mockup identically; configurable via Magento CMS static block for future US contact updates,PASS,Low,Frame 621 Figma Spec
+TC-HOLDS-12,Mobile Responsive View,Mobile Viewport (390x844) Layout & Table Display,Mobile viewport 390x844 (iPhone 14/15/16),"1. Load /gw_orders/hold/index/ in mobile viewport
+2. Inspect filter tabs, search bar, table columns, and accordions","Layout stacks cleanly without horizontal overflow; table shows essential mobile columns (HOLD, DATE, STATUS, TOTAL, ACTIONS)",Mobile layout stacks cleanly; table displays 5 columns with horizontal scroll and responsive card view,PASS,High,Mobile Artboard

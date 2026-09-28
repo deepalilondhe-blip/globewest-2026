@@ -1,0 +1,8 @@
+Ticket Name: #41794528 - My Account - Holds
+Page Name: My Holds (https://mcstaging2.globewest.com/gw_orders/hold/index/)
+
+Run command for Desktop View:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794528_My_Account_Holds/scripts/capture_live_desktop.js"
+
+Run command for Mobile View:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794528_My_Account_Holds/scripts/capture_live_mobile.js"
