@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket #41794541: Blog Index Page Verification</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --red: #ef4444;
+      --green: #22c55e;
+      --accent: #38bdf8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px;
+    }
+    .header {
+      max-width: 1400px;
+      margin: 0 auto 32px auto;
+      padding: 24px;
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    h1 { font-size: 26px; margin-bottom: 8px; color: #fff; }
+    .meta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+    .badge {
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .badge-green { background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid var(--green); }
+    .badge-red { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid var(--red); }
+    .badge-blue { background: rgba(56, 189, 248, 0.15); color: #7dd3fc; border: 1px solid var(--accent); }
+    
+    .gallery {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .card-header {
+      padding: 16px 24px;
+      background: #182234;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-title { font-size: 18px; font-weight: 700; color: #fff; }
+    .image-box {
+      padding: 20px;
+      background: #090e17;
+      text-align: center;
+    }
+    .image-box img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #1f293d;
+    }
+    .notes-box {
+      padding: 16px 24px;
+      background: #131c2e;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      color: #cbd5e1;
+    }
+    .notes-box strong { color: #fff; }
+    .defect-tag { color: var(--red); font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Ticket #41794541: Blog Index Page Verification</h1>
+    <p style="color: var(--muted);">Live Staging Verification (US vs AU Baseline) in Headed Mode</p>
+    <div class="meta">
+      <span class="badge badge-green">🟢 Green = Approved AU Baseline (Live)</span>
+      <span class="badge badge-red">🔴 Red = US Live Staging Target</span>
+      <span class="badge badge-blue">Directive: Match AU (No Redesign)</span>
+    </div>
+  </div>
+
+  <div class="gallery">
+
+    <!-- DESKTOP -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">1. Desktop Viewport (1440 × 900) Comparison</div>
+        <span class="badge badge-blue">Desktop Audit</span>
+      </div>
+      <div class="image-box">
+        <img src="comparison/01_BLOG_INDEX_DESKTOP_COMPARISON.png" alt="Desktop Blog Index Comparison">
+      </div>
+      <div class="notes-box">
+        <strong>Key Audit Findings (Desktop):</strong><br>
+        • <span class="defect-tag">Hero Header Banner:</span> US Staging uses a dark brown background (#381c12) whereas AU Live uses light beige (#cdc1ab).<br>
+        • <span class="defect-tag">Category Filter Tabs:</span> US Staging includes "THE BLOCK" (Australian TV program tag) which is AU-specific scope.<br>
+        • <span class="defect-tag">Grid Article Placeholders:</span> Lower grid article cards on US Staging render blurred placeholder / default images pending catalog sync.
+      </div>
+    </div>
+
+    <!-- MOBILE -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">2. Mobile Viewport (iPhone 390 × 844) Comparison</div>
+        <span class="badge badge-blue">Mobile Responsive Audit</span>
+      </div>
+      <div class="image-box">
+        <img src="comparison/02_BLOG_INDEX_MOBILE_COMPARISON.png" alt="Mobile Blog Index Comparison">
+      </div>
+      <div class="notes-box">
+        <strong>Key Audit Findings (Mobile):</strong><br>
+        • <span class="defect-tag">Responsive Header:</span> Mobile news title background and text sizing scale correctly into single-column layout.<br>
+        • <span class="defect-tag">Utility Bar:</span> US Mobile renders top "Book Showroom" utility bar strip.<br>
+        • <span class="defect-tag">Category Tabs Scrolling:</span> Filter tabs scroll horizontally without breaking screen boundaries.
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
