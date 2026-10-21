@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ticket #41794537 - Login, Create an Account, Password Verification</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f1117; color: #e1e4ea; margin: 0; padding: 24px; }
+    .header { background: #1a1d27; padding: 24px; border-radius: 12px; margin-bottom: 24px; border: 1px solid #2d3139; }
+    h1 { margin: 0 0 8px 0; font-size: 24px; color: #fff; }
+    p { margin: 4px 0; color: #9da5b4; font-size: 14px; }
+    .nav-tabs { display: flex; gap: 12px; margin-bottom: 24px; }
+    .tab-btn { background: #2d3139; color: #fff; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+    .tab-btn.active { background: #2563eb; }
+    .comparison-card { background: #1a1d27; border-radius: 12px; overflow: hidden; margin-bottom: 32px; border: 1px solid #2d3139; }
+    .card-header { padding: 16px 20px; background: #242936; border-bottom: 1px solid #2d3139; display: flex; justify-content: space-between; align-items: center; }
+    .card-title { font-size: 16px; font-weight: 700; color: #fff; }
+    .card-desc { font-size: 13px; color: #9da5b4; }
+    .image-container { padding: 16px; background: #12151d; text-align: center; }
+    .image-container img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid #2d3139; box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+    .notes-box { padding: 16px 20px; background: #1e2330; font-size: 13px; line-height: 1.6; border-top: 1px solid #2d3139; }
+    .badge-diff { color: #f59e0b; font-weight: 600; }
+    .badge-pass { color: #10b981; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Ticket #41794537: Login, Create an Account, Password Verification</h1>
+    <p><strong>Storefronts Tested:</strong> Live AU (<code>https://www.globewest.com.au</code>) vs US Staging (<code>https://mcstaging2.globewest.com</code>)</p>
+    <p><strong>Developer Instruction:</strong> "Match AU, no redesign required. These pages don't require any specific setup in the admin — they're handled the same way as on the AU site."</p>
+  </div>
+
+  <h2>Desktop Comparisons (1440 × 900)</h2>
+
+  <div class="comparison-card">
+    <div class="card-header">
+      <div class="card-title">1. Customer Login Page (Desktop)</div>
+      <div class="card-desc">AU Live Baseline vs US Staging</div>
+    </div>
+    <div class="image-container">
+      <img src="screenshots/comparisons/COMP_DESKTOP_01_login_page.png" alt="Login Desktop Comparison">
+    </div>
+    <div class="notes-box">
+      <strong>Verification Observations:</strong><br>
+      • Header welcome title, dual-column structure (Login on left, Create Account CTA on right) match AU Live.<br>
+      • <span class="badge-diff">Difference:</span> AU Live has <code>[x] Remember Me</code> checkbox below the password field. US Staging does not render the "Remember Me" checkbox.
+    </div>
+  </div>
+
+  <div class="comparison-card">
+    <div class="card-header">
+      <div class="card-title">2. Create An Account Page (Desktop)</div>
+      <div class="card-desc">AU Live Baseline vs US Staging</div>
+    </div>
+    <div class="image-container">
+      <img src="screenshots/comparisons/COMP_DESKTOP_02_create_account_page.png" alt="Create Account Desktop Comparison">
+    </div>
+    <div class="notes-box">
+      <strong>Verification Observations:</strong><br>
+      • Form fields (Title, First Name, Last Name, Email, Password, Confirm Password, Referral Code) match AU Live.<br>
+      • <span class="badge-diff">Difference:</span> AU Live displays a 2-column layout with a large lifestyle interior photography banner on the right side. On US Staging, the form is 1-column and the right lifestyle image is missing.
+    </div>
+  </div>
+
+  <div class="comparison-card">
+    <div class="card-header">
+      <div class="card-title">3. Forgot Your Password Page (Desktop)</div>
+      <div class="card-desc">AU Live Baseline vs US Staging</div>
+    </div>
+    <div class="image-container">
+      <img src="screenshots/comparisons/COMP_DESKTOP_03_forgot_password_page.png" alt="Forgot Password Desktop Comparison">
+    </div>
+    <div class="notes-box">
+      <strong>Verification Observations:</strong><br>
+      • Form title, email input, "RESET PASSWORD" button, and "&larr; RETURN BACK TO LOGIN" link match AU Live.<br>
+      • <span class="badge-diff">Difference:</span> Lifestyle banner photo on the right renders with smaller height / cropped on US Staging compared to AU Live.
+    </div>
+  </div>
+
+  <h2>Mobile Comparisons (iPhone 390 × 844)</h2>
+
+  <div class="comparison-card">
+    <div class="card-header">
+      <div class="card-title">1. Customer Login Page (Mobile)</div>
+      <div class="card-desc">AU Live Baseline vs US Staging</div>
+    </div>
+    <div class="image-container">
+      <img src="screenshots/comparisons/COMP_MOBILE_01_login_page.png" alt="Login Mobile Comparison">
+    </div>
+  </div>
+
+  <div class="comparison-card">
+    <div class="card-header">
+      <div class="card-title">2. Create An Account Page (Mobile)</div>
+      <div class="card-desc">AU Live Baseline vs US Staging</div>
+    </div>
+    <div class="image-container">
+      <img src="screenshots/comparisons/COMP_MOBILE_02_create_account_page.png" alt="Create Account Mobile Comparison">
+    </div>
+  </div>
+
+  <div class="comparison-card">
+    <div class="card-header">
+      <div class="card-title">3. Forgot Your Password Page (Mobile)</div>
+      <div class="card-desc">AU Live Baseline vs US Staging</div>
+    </div>
+    <div class="image-container">
+      <img src="screenshots/comparisons/COMP_MOBILE_03_forgot_password_page.png" alt="Forgot Password Mobile Comparison">
+    </div>
+  </div>
+</body>
+</html>

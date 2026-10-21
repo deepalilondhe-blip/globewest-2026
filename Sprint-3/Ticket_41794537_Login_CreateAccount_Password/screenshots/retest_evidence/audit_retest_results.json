@@ -1,0 +1,253 @@
+{
+  "item1_title_dropdown": {
+    "us": {
+      "found": true,
+      "tagName": "select",
+      "id": "prefix",
+      "name": "prefix",
+      "isSelect": true,
+      "options": [
+        {
+          "value": "",
+          "text": ""
+        },
+        {
+          "value": "Mr",
+          "text": "Mr"
+        },
+        {
+          "value": "Ms",
+          "text": "Ms"
+        },
+        {
+          "value": "Mrs",
+          "text": "Mrs"
+        },
+        {
+          "value": "Miss",
+          "text": "Miss"
+        },
+        {
+          "value": "Dr",
+          "text": "Dr"
+        }
+      ],
+      "computedStyles": {
+        "fontSize": "14px",
+        "height": "48px",
+        "border": "1px solid rgb(56, 28, 18)"
+      }
+    }
+  },
+  "item2_title_validation": {
+    "us": {
+      "prefixId": "prefix",
+      "errorFound": false,
+      "errorText": null,
+      "errorClass": null,
+      "errorDisplay": null,
+      "fieldClasses": "field field-name-prefix required"
+    }
+  },
+  "item3_remember_me": {
+    "us": {
+      "checkboxFound": true,
+      "cbDetails": {
+        "id": "remember-me-box",
+        "visible": true,
+        "computedStyles": {
+          "display": "block",
+          "visibility": "visible"
+        }
+      },
+      "allCheckboxes": [
+        {
+          "id": "remember_meMr86IUZM5V",
+          "name": "persistent_remember_me",
+          "checked": true,
+          "visible": true,
+          "label": "Remember Me"
+        }
+      ],
+      "bodyTextHasRemember": true,
+      "emailFontSize": "14px",
+      "passFontSize": "14px"
+    },
+    "au": {
+      "allCheckboxes": [
+        {
+          "id": "remember_meO9PvtUiof1",
+          "name": "persistent_remember_me",
+          "visible": true,
+          "label": "Remember Me"
+        }
+      ],
+      "emailFontSize": "14px",
+      "passFontSize": "14px"
+    }
+  },
+  "item4_recaptcha": {
+    "usCreate": {
+      "hasRecaptchaEl": false,
+      "hasDisclaimerText": true,
+      "scripts": []
+    },
+    "usLogin": {
+      "hasEl": true,
+      "hasText": true
+    },
+    "auLogin": {
+      "hasEl": true,
+      "hasText": true
+    }
+  },
+  "item5_password_focus": {
+    "elementInspection": {
+      "found": true,
+      "pwdId": "password",
+      "pwdType": "password",
+      "rect": {
+        "x": 96,
+        "y": 546.5,
+        "width": 564,
+        "height": 48
+      },
+      "elAtPointTag": "INPUT",
+      "elAtPointId": "password",
+      "elAtPointClass": "input-text",
+      "isClickIntercepted": false,
+      "tabIndex": 0,
+      "autocomplete": "off",
+      "pointerEvents": "auto"
+    },
+    "activeElementAfterClick": {
+      "id": "password",
+      "tagName": "INPUT"
+    }
+  },
+  "item6_ios_zoom_font_size": {
+    "usCreate": [
+      {
+        "id": "searchspring-customer-email",
+        "name": "searchspring-customer-email",
+        "type": "hidden",
+        "tagName": "input",
+        "fontSize": "13.3333px"
+      },
+      {
+        "id": "",
+        "name": "",
+        "type": "text",
+        "tagName": "input",
+        "fontSize": "13px"
+      },
+      {
+        "id": "",
+        "name": "form_key",
+        "type": "hidden",
+        "tagName": "input",
+        "fontSize": "13.3333px"
+      },
+      {
+        "id": "",
+        "name": "form_key",
+        "type": "hidden",
+        "tagName": "input",
+        "fontSize": "13.3333px"
+      },
+      {
+        "id": "",
+        "name": "success_url",
+        "type": "hidden",
+        "tagName": "input",
+        "fontSize": "13.3333px"
+      },
+      {
+        "id": "",
+        "name": "error_url",
+        "type": "hidden",
+        "tagName": "input",
+        "fontSize": "13.3333px"
+      },
+      {
+        "id": "prefix",
+        "name": "prefix",
+        "type": "select-one",
+        "tagName": "select",
+        "fontSize": "14px"
+      },
+      {
+        "id": "firstname",
+        "name": "firstname",
+        "type": "text",
+        "tagName": "input",
+        "fontSize": "14px"
+      },
+      {
+        "id": "lastname",
+        "name": "lastname",
+        "type": "text",
+        "tagName": "input",
+        "fontSize": "14px"
+      },
+      {
+        "id": "email_address",
+        "name": "email",
+        "type": "email",
+        "tagName": "input",
+        "fontSize": "14px"
+      },
+      {
+        "id": "password",
+        "name": "password",
+        "type": "password",
+        "tagName": "input",
+        "fontSize": "14px"
+      },
+      {
+        "id": "password-confirmation",
+        "name": "password_confirmation",
+        "type": "password",
+        "tagName": "input",
+        "fontSize": "14px"
+      },
+      {
+        "id": "referral-code",
+        "name": "referral_code",
+        "type": "text",
+        "tagName": "input",
+        "fontSize": "14px"
+      },
+      {
+        "id": "is_subscribed",
+        "name": "is_subscribed",
+        "type": "checkbox",
+        "tagName": "input",
+        "fontSize": "13.3333px"
+      },
+      {
+        "id": "location",
+        "name": "gw_location",
+        "type": "hidden",
+        "tagName": "input",
+        "fontSize": "13.3333px"
+      }
+    ],
+    "usViewportMeta": "width=device-width, initial-scale=1"
+  },
+  "item7_forgot_password_submission": {
+    "details": {
+      "emailFound": true,
+      "emailFontSize": "14px",
+      "submitBtnFound": true,
+      "submitBtnText": "Sign In",
+      "hasRecaptcha": true,
+      "hasDisclaimer": true
+    },
+    "auDetails": {
+      "emailFontSize": "14px",
+      "hasRecaptcha": true,
+      "hasDisclaimer": true
+    }
+  }
+}
