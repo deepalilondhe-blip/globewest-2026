@@ -1,0 +1,106 @@
+{
+  "ticket": "#41794534 - Mega menu",
+  "timestamp": "2026-09-30T04:38:21.900Z",
+  "usBaseUrl": "https://mcstaging2.globewest.com",
+  "auBaseUrl": "https://mcstaging2.globewest.com.au",
+  "categories": {
+    "Indoor": {
+      "found": true,
+      "hasSubmenu": true,
+      "totalLinks": 66,
+      "linksCount": 66,
+      "auLeaks": [
+        {
+          "text": "",
+          "href": "https://globewestoutlet.com.au/collections/indoor",
+          "isAULink": true
+        }
+      ],
+      "promoText": "",
+      "promoImgSrc": "NONE"
+    },
+    "Outdoor": {
+      "found": true,
+      "hasSubmenu": true,
+      "totalLinks": 30,
+      "linksCount": 30,
+      "auLeaks": [
+        {
+          "text": "",
+          "href": "https://globewestoutlet.com.au/collections/outdoor",
+          "isAULink": true
+        }
+      ],
+      "promoText": "",
+      "promoImgSrc": "NONE"
+    },
+    "Homewares": {
+      "found": true,
+      "hasSubmenu": true,
+      "totalLinks": 13,
+      "linksCount": 13,
+      "auLeaks": [
+        {
+          "text": "Outlet",
+          "href": "https://globewestoutlet.com.au/collections/homewares",
+          "isAULink": true
+        }
+      ],
+      "promoText": "",
+      "promoImgSrc": "NONE"
+    },
+    "In Stock": {
+      "found": true,
+      "hasSubmenu": true,
+      "totalLinks": 36,
+      "linksCount": 36,
+      "auLeaks": [],
+      "promoText": "",
+      "promoImgSrc": "NONE"
+    },
+    "Customisation": {
+      "found": true,
+      "hasSubmenu": true,
+      "totalLinks": 2,
+      "linksCount": 2,
+      "auLeaks": [],
+      "promoText": "",
+      "promoImgSrc": "NONE"
+    },
+    "Projects": {
+      "found": true,
+      "hasSubmenu": true,
+      "totalLinks": 18,
+      "linksCount": 18,
+      "auLeaks": [],
+      "promoText": "",
+      "promoImgSrc": "NONE"
+    },
+    "Inspiration": {
+      "found": true,
+      "hasSubmenu": true,
+      "totalLinks": 15,
+      "linksCount": 15,
+      "auLeaks": [],
+      "promoText": "",
+      "promoImgSrc": "NONE"
+    }
+  },
+  "leaksDetected": [
+    {
+      "text": "",
+      "href": "https://globewestoutlet.com.au/collections/indoor",
+      "isAULink": true
+    },
+    {
+      "text": "",
+      "href": "https://globewestoutlet.com.au/collections/outdoor",
+      "isAULink": true
+    },
+    {
+      "text": "Outlet",
+      "href": "https://globewestoutlet.com.au/collections/homewares",
+      "isAULink": true
+    }
+  ]
+}

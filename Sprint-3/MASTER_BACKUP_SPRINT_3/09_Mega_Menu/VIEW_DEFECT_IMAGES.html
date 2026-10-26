@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket #41794534: Mega Menu Defect Proof Gallery</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --red: #ef4444;
+      --accent: #38bdf8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 32px 24px;
+    }
+    header {
+      max-width: 1400px;
+      margin: 0 auto 36px auto;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 9999px;
+      margin-right: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .badge-ticket { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); }
+    .badge-defect { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
+    h1 { font-size: 28px; font-weight: 800; margin: 12px 0 8px 0; }
+    .subtitle { color: var(--text-muted); font-size: 14px; }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .defect-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .defect-header {
+      padding: 16px 24px;
+      background: rgba(15, 23, 42, 0.7);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .defect-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .defect-url {
+      font-family: monospace;
+      font-size: 13px;
+      color: #f87171;
+      background: rgba(239, 68, 68, 0.1);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    .defect-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      padding: 24px;
+      align-items: start;
+    }
+    .view-pane {
+      background: #0b0f19;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .view-title {
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      background: #111827;
+      display: flex;
+      justify-content: space-between;
+    }
+    .view-pane img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .desktop-pane img {
+      max-height: 520px;
+      object-fit: contain;
+      background: #000;
+    }
+    .mobile-pane img {
+      max-height: 520px;
+      object-fit: contain;
+      background: #000;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <span class="badge badge-ticket">Ticket #41794534</span>
+      <span class="badge badge-defect">Defect Proof Gallery</span>
+    </div>
+    <h1>Mega Menu Australian URL Leaks — Visual Proof Gallery</h1>
+    <p class="subtitle">Direct live captures on US Staging (<code>https://mcstaging2.globewest.com</code>). Defective menu items and bottom destination URL highlighted with clean red square outline only.</p>
+  </header>
+
+  <main class="container">
+
+    <!-- Defect 1: Indoor -->
+    <div class="defect-card">
+      <div class="defect-header">
+        <span class="defect-title">1. Indoor Category &gt; Outlet</span>
+        <span class="defect-url">https://globewestoutlet.com.au/collections/indoor</span>
+      </div>
+      <div class="defect-grid">
+        <div class="view-pane desktop-pane">
+          <div class="view-title"><span>Desktop View (1440×900)</span><span>DESKTOP_DEFECT_1_INDOOR_OUTLET.png</span></div>
+          <a href="DEFECT_SCREENSHOTS/DESKTOP_DEFECT_1_INDOOR_OUTLET.png" target="_blank">
+            <img src="DEFECT_SCREENSHOTS/DESKTOP_DEFECT_1_INDOOR_OUTLET.png" alt="Desktop Defect 1: Indoor Outlet">
+          </a>
+        </div>
+        <div class="view-pane mobile-pane">
+          <div class="view-title"><span>Mobile View (390×844)</span><span>MOBILE_DEFECT_1_INDOOR_OUTLET.png</span></div>
+          <a href="DEFECT_SCREENSHOTS/MOBILE_DEFECT_1_INDOOR_OUTLET.png" target="_blank">
+            <img src="DEFECT_SCREENSHOTS/MOBILE_DEFECT_1_INDOOR_OUTLET.png" alt="Mobile Defect 1: Indoor Outlet">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Defect 2: Outdoor -->
+    <div class="defect-card">
+      <div class="defect-header">
+        <span class="defect-title">2. Outdoor Category &gt; Outlet</span>
+        <span class="defect-url">https://globewestoutlet.com.au/collections/outdoor</span>
+      </div>
+      <div class="defect-grid">
+        <div class="view-pane desktop-pane">
+          <div class="view-title"><span>Desktop View (1440×900)</span><span>DESKTOP_DEFECT_2_OUTDOOR_OUTLET.png</span></div>
+          <a href="DEFECT_SCREENSHOTS/DESKTOP_DEFECT_2_OUTDOOR_OUTLET.png" target="_blank">
+            <img src="DEFECT_SCREENSHOTS/DESKTOP_DEFECT_2_OUTDOOR_OUTLET.png" alt="Desktop Defect 2: Outdoor Outlet">
+          </a>
+        </div>
+        <div class="view-pane mobile-pane">
+          <div class="view-title"><span>Mobile View (390×844)</span><span>MOBILE_DEFECT_2_OUTDOOR_OUTLET.png</span></div>
+          <a href="DEFECT_SCREENSHOTS/MOBILE_DEFECT_2_OUTDOOR_OUTLET.png" target="_blank">
+            <img src="DEFECT_SCREENSHOTS/MOBILE_DEFECT_2_OUTDOOR_OUTLET.png" alt="Mobile Defect 2: Outdoor Outlet">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Defect 3: Homewares -->
+    <div class="defect-card">
+      <div class="defect-header">
+        <span class="defect-title">3. Homewares Category &gt; Outlet</span>
+        <span class="defect-url">https://globewestoutlet.com.au/collections/homewares</span>
+      </div>
+      <div class="defect-grid">
+        <div class="view-pane desktop-pane">
+          <div class="view-title"><span>Desktop View (1440×900)</span><span>DESKTOP_DEFECT_3_HOMEWARES_OUTLET.png</span></div>
+          <a href="DEFECT_SCREENSHOTS/DESKTOP_DEFECT_3_HOMEWARES_OUTLET.png" target="_blank">
+            <img src="DEFECT_SCREENSHOTS/DESKTOP_DEFECT_3_HOMEWARES_OUTLET.png" alt="Desktop Defect 3: Homewares Outlet">
+          </a>
+        </div>
+        <div class="view-pane mobile-pane">
+          <div class="view-title"><span>Mobile View (390×844)</span><span>MOBILE_DEFECT_3_HOMEWARES_OUTLET.png</span></div>
+          <a href="DEFECT_SCREENSHOTS/MOBILE_DEFECT_3_HOMEWARES_OUTLET.png" target="_blank">
+            <img src="DEFECT_SCREENSHOTS/MOBILE_DEFECT_3_HOMEWARES_OUTLET.png" alt="Mobile Defect 3: Homewares Outlet">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Defect 4: Support -->
+    <div class="defect-card">
+      <div class="defect-header">
+        <span class="defect-title">4. Support Category &gt; Melbourne Outlet &amp; Online Outlet</span>
+        <span class="defect-url">https://globewestoutlet.com.au/pages/melbourne-outlet-store</span>
+      </div>
+      <div class="defect-grid">
+        <div class="view-pane desktop-pane">
+          <div class="view-title"><span>Desktop View (1440×900)</span><span>DESKTOP_DEFECT_4_SUPPORT_OUTLET.png</span></div>
+          <a href="DEFECT_SCREENSHOTS/DESKTOP_DEFECT_4_SUPPORT_OUTLET.png" target="_blank">
+            <img src="DEFECT_SCREENSHOTS/DESKTOP_DEFECT_4_SUPPORT_OUTLET.png" alt="Desktop Defect 4: Support Outlet">
+          </a>
+        </div>
+        <div class="view-pane mobile-pane">
+          <div class="view-title"><span>Mobile View (390×844)</span><span>MOBILE_DEFECT_4_SUPPORT_OUTLET.png</span></div>
+          <a href="DEFECT_SCREENSHOTS/MOBILE_DEFECT_4_SUPPORT_OUTLET.png" target="_blank">
+            <img src="DEFECT_SCREENSHOTS/MOBILE_DEFECT_4_SUPPORT_OUTLET.png" alt="Mobile Defect 4: Support Outlet">
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>

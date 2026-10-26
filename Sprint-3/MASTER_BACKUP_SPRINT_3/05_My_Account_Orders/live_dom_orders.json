@@ -1,0 +1,38 @@
+{
+  "pageHeading": "My Orders",
+  "description": "N/A",
+  "tabs": [],
+  "filterElements": [
+    {
+      "text": "Awaiting Payment",
+      "classes": "account-listing-ui__filters__filter is-active"
+    },
+    {
+      "text": "Pending Shipment",
+      "classes": "account-listing-ui__filters__filter"
+    },
+    {
+      "text": "Dispatched",
+      "classes": "account-listing-ui__filters__filter"
+    },
+    {
+      "text": "Closed",
+      "classes": "account-listing-ui__filters__filter"
+    }
+  ],
+  "ths": [
+    "Order",
+    "Date",
+    "Status",
+    "Total",
+    "Balance",
+    "Actions"
+  ],
+  "rowCount": 1,
+  "emptyAlert": "None",
+  "searchParentClass": "",
+  "hasFAQ": true,
+  "hasNeedHelp": false,
+  "sidebarBadges": 0,
+  "hasAusBadge": false
+}

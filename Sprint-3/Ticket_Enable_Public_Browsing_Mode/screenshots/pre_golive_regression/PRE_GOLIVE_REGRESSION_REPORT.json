@@ -1,0 +1,38 @@
+[
+  {
+    "test": "Direct Cart URL Access",
+    "expected": "Empty cart / Checkout button suppressed",
+    "actual": "BLOCKED & SECURED",
+    "status": "PASS"
+  },
+  {
+    "test": "Category /outdoor Price Masking",
+    "expected": "0 prices, 0 Add to Cart buttons",
+    "actual": "Prices leaked: 0, Cart buttons: 0",
+    "status": "PASS"
+  },
+  {
+    "test": "Category /homewares Price Masking",
+    "expected": "0 prices, 0 Add to Cart buttons",
+    "actual": "Prices leaked: 0, Cart buttons: 0",
+    "status": "PASS"
+  },
+  {
+    "test": "Category /in-stock Price Masking",
+    "expected": "0 prices, 0 Add to Cart buttons",
+    "actual": "Prices leaked: 0, Cart buttons: 0",
+    "status": "PASS"
+  },
+  {
+    "test": "Mobile Viewport Price Masking",
+    "expected": "0 prices, toggle hidden",
+    "actual": "Prices leaked: 0, Toggle visible: false",
+    "status": "PASS"
+  },
+  {
+    "test": "SearchSpring Catalog Search (?q=sofa)",
+    "expected": "Products returned matching search keyword",
+    "actual": "0 PRODUCTS RETURNED (SEARCH BROKEN)",
+    "status": "DEFECT (P1 BLOCKER)"
+  }
+]

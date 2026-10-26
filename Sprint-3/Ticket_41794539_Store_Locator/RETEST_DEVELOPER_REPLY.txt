@@ -1,0 +1,28 @@
+Hi @vinod,
+
+Thank you for the quick turnaround and updates!
+
+Here are the verification results from my re-test on the US Store Locator (https://mcstaging2.globewest.com/locator):
+
+🟢 1. Search Label Update (Verified & Fixed):
+- The label has been updated from "SEARCH BY POSTCODE" to "SEARCH BY ZIP CODE" across both Desktop and Mobile views.
+
+🟢 2. Search by Store Name (Verified & Working):
+- Verified that searching by name (e.g., "Los Angeles") works as expected: the map smoothly zooms into West Hollywood / Los Angeles and renders the stockist card ("GlobeWest US Test Stockist – Los Angeles", 8687 Melrose Ave, CA 90069).
+
+🟡 3. US ZIP Code Search Mapping (Acknowledged):
+- Understood and noted that @MohamedB is investigating mapping the US stockist data to US ZIP codes so the ZIP code search functions properly for US customers.
+
+🔴 4. New Observation — Broken Stockist Logo Image:
+- On the rendered "GlobeWest US Test Stockist – Los Angeles" card, the logo image is currently broken (returns 404). The image source points to `https://mcstaging2.globewest.com/media/globewest/stockist/1/` without an image file.
+
+Remaining Open Editorial Items:
+1. Intro copy still refers to Australia ("some of Australia's finest furniture...").
+2. Body text still uses Australian spelling ("to finalise your order").
+3. Footer still renders the Australian Kangaroo trust mark ("AUSTRALIAN OWNED & RUN").
+
+Please refer to the attached visual verification proof:
+- VERIFIED_ZIPCODE_LABEL_AND_NAME_SEARCH.png
+
+Thank you,
+Deepali

@@ -1,0 +1,19 @@
+{
+  "pdpTradePricing": {
+    "rootClass": "price-view-trade",
+    "triggerText": "Trade",
+    "priceHtml": "<span class=\"normal-price\">\n    <span class=\"price-container price-final_price tax weee\">\n    \n    <span id=\"product-price-1184017\" data-price-amount=\"638.000001\" data-price-label=\"\" data-price-type=\"finalPrice\" class=\"price-wrapper \"><span class=\"price\">$638.00</span></span>\n\n    \n    \n            <meta content=\"638.000001\">\n        <meta content=\"USD\">\n    </span>\n</span>\n\n\n    <span class=\"rrp-price sly-rrp-price\">\n        <span class=\"rrp-price__label rrp-price__label--lead\">MSRP:</span>\n        <span class=\"price-container price-final_price tax weee\">\n    \n    <span id=\"old-price-1184017\" data-price-amount=\"701.800001\" data-price-label=\"\" data-price-type=\"oldPrice\" class=\"price-wrapper \"><span class=\"price\">$701.80</span></span>\n\n    \n    \n    </span>\n        <span class=\"rrp-price__label rrp-price__label--trail\">MSRP</span>\n    </span>\n\n",
+    "priceText": "$638.00\nMSRP:\n$701.80"
+  },
+  "pdpMsrpPricing": {
+    "rootClass": "price-view-msrp",
+    "triggerText": "MSRP",
+    "priceText": "$701.80\nMSRP"
+  },
+  "searchResultsTrade": {
+    "triggerText": "",
+    "rootClass": "",
+    "priceSnippet": ""
+  },
+  "timestamp": "2026-10-13T09:09:31.691Z"
+}

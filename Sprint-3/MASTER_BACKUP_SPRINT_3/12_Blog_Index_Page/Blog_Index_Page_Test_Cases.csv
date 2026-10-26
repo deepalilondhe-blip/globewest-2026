@@ -1,0 +1,111 @@
+Test ID,Feature / Module,Auth Matrix,Test Scenario,Pre-Conditions,Test Steps,Expected Result (AU / Spec),Actual Result (US Live),Status,Severity
+"TC-BIP-01","Dual-Auth Matrix","Guest (Logged Out)","Verify Public / Guest Browsing State (Wholesale Pricing Masked & Registration CTAs)","User is unauthenticated / incognito session on US Staging (https://mcstaging2.globewest.com/blog)","1. Open US Blog Index Page URL while logged out.
+2. Inspect top utility header bar.
+3. Verify wholesale trade pricing is strictly hidden.
+4. Verify presence of ""Become a Trade Customer"" and ""Book Showroom"" CTAs.","Blog index loads cleanly in guest mode. Wholesale trade prices are completely masked across header and mini-cart. Registration CTAs active.","Guest browsing verified. Wholesale pricing remains hidden across all header elements. Trade registration CTAs render correctly.","PASS","P1 - High"
+"TC-BIP-02","Dual-Auth Matrix","Trade Customer (Logged In)","Verify Authenticated US Trade Account Access & Account Header Details","US Staging login URL (https://mcstaging2.globewest.com/customer/account/login/)","1. Log into US Staging with Trade credentials (deepali.londhe@overdose.digital / Deep@123).
+2. Navigate to Blog Index URL (/blog).
+3. Assert company identification banner and account state.","Trade user is authenticated and header renders ""Company: Alert Loans Pty Ltd"" alongside ""Sign Out"" and My Account navigation.","Trade user successfully authenticated. Header displays active company details (""Alert Loans Pty Ltd"") with zero session drops.","PASS","P1 - High"
+"TC-BIP-03","Dual-Auth Matrix","Trade Customer (Logged In)","Verify Header Pricing Toggle Mode Switcher (Trade Mode vs MSRP Mode)","Authenticated US Trade session on US Blog Index Page","1. Locate header pricing toggle dropdown.
+2. Verify presence of ""Trade ⌵"" and ""MSRP ⌵"" options.
+3. Toggle between Trade Mode and MSRP Mode and observe header state.","Pricing toggle dropdown allows switching between Trade Mode and MSRP Mode seamlessly across the blog index page.","Trade pricing toggle functions correctly in header. Mode selection toggles smoothly without page reload or styling glitches.","PASS","P2 - Medium"
+"TC-BIP-04","Dual-Auth Matrix","Trade Customer (Logged In)","Verify AU Baseline Authenticated Session Parity Check","AU Staging (https://mcstaging2.globewest.com.au/customer/account/login/)","1. Log into AU Staging baseline with AU Trade account (deepalilondhe576@gmail.com / Deep@123).
+2. Access AU blog index baseline (/blog).
+3. Cross-verify header components and layout parity against US storefront.","AU authenticated baseline renders corresponding trade navigation and acts as benchmark for layout and feature parity.","AU baseline authenticated successfully. Core navigation and layout parity verified.","PASS","P2 - Medium"
+"TC-BIP-05","Hero Featured Banner","All Users","Verify Hero Title Block Background Color Fidelity (.blog-category-banner__left)","Desktop Viewport 1440x900 on US Blog Index Page","1. Inspect left title panel of hero banner (.blog-category-banner__left).
+2. Check window.getComputedStyle().backgroundColor.
+3. Compare against AU Live baseline color.","The left title block displaying ""News"" has a light sand/beige background (rgb(208, 193, 164) / #cdc1ab).","DEFECT: Background renders as dark chocolate brown (rgb(56, 28, 18) / #381c12), breaking approved color harmony.","FAIL","P2 - Medium"
+"TC-BIP-06","Hero Featured Banner","All Users","Verify Hero Banner ""READ MORE"" Primary CTA Link & Domain Scope Isolation","Hero banner visible on US Blog Index Page","1. Inspect ""READ MORE"" button link inside .blog-category-banner__info.
+2. Check target href attribute.
+3. Click button and verify destination URL domain.","CTA button navigates internally to US catalog / blog path (e.g. https://mcstaging2.globewest.com/blog/...) without Australian domain leakage.","DEFECT: ""READ MORE"" button is hardcoded to Australian production domain: https://mcprod.globewest.com.au/blog/style-tips/design-directions-2023. Critical AU leakage.","FAIL","P1 - High"
+"TC-BIP-07","Hero Featured Banner","All Users","Verify Hero Featured Photography Scaling & Dimensions (.blog-category-banner__right)","Desktop Viewport 1440x900","1. Inspect right lifestyle image panel of hero banner.
+2. Verify background-image URL and natural resolution.
+3. Check object-fit / background-size cover scaling.","Hero image displays high-resolution lifestyle photography (2100x940) scaled with background-size: cover without distortion.","Right panel renders high-resolution lifestyle imagery (2100x940 Felix-Loop) with background-size: cover.","PASS","P2 - Medium"
+"TC-BIP-08","Hero Featured Banner","All Users","Verify Hero Editorial Heading & Subtitle Typography","Hero banner in view","1. Inspect ""News"" title and accompanying subtitle text.
+2. Verify font-family, font-weight, font-size, and line-height.
+3. Check contrast against background container.","Typography matches editorial style with clean serif/sans-serif hierarchy and comfortable margins.","Typography renders cleanly; however, the dark brown background alters the approved visual contrast.","PASS (Typography structure only)","P2 - Medium"
+"TC-BIP-09","Category Filter Toolbar","All Users","Verify Category Filter Toolbar Swiper Carousel Container & Arrow Controls","Desktop Viewport 1440x900, scroll to filter toolbar","1. Locate .blog-filter__list swiper container.
+2. Inspect swiper navigation buttons (.swiper-button-prev, .swiper-button-next).
+3. Click next arrow to scroll through category pills horizontally.","Filter toolbar provides smooth horizontal swiper navigation with interactive prev/next arrows for overflow pills.","Swiper container initialized properly with smooth horizontal sliding and responsive arrow controls.","PASS","P2 - Medium"
+"TC-BIP-10","Category Filter Toolbar","All Users","Verify Category Filter Active State Pill Styling (""ALL ARTICLES"")","Blog Index Page loaded at default root URL (/blog)","1. Inspect ""ALL ARTICLES"" pill element (.blog-filter__item.active).
+2. Check active background color, text color, and border styling.
+3. Verify only one category pill has the active state.","""ALL ARTICLES"" pill has prominent active highlight styling, distinguishing it from inactive filter pills.","""ALL ARTICLES"" pill renders with .active class and distinct visual highlight.","PASS","P3 - Low"
+"TC-BIP-11","Category Filter Toolbar","All Users","Verify Australian Scope Leaks in Category Filter Tags (AU TV & Holidays)","Inspect all category pills inside .blog-filter__list","1. Read all category pill text values.
+2. Check for Australian-specific TV shows, events, or local holiday closure tags.
+3. Compare against AU Live baseline categories.","Categories include relevant editorial topics: ALL ARTICLES, STYLE TIPS, STOCKIST IN PROFILE, HOME TOUR, GALLERIES, PROJECTS, DESIGNER IN PROFILE, WOMEN IN DESIGN.","DEFECT: US filter toolbar renders Australian-specific tags: ""THE BLOCK"" (AU TV show), ""HOLIDAY CLOSURE"", and ""TRADE EVENTS"". Unsanitized AU content.","FAIL","P2 - Medium"
+"TC-BIP-12","Category Filter Toolbar","All Users","Verify Category Taxonomy Nomenclature Parity (""GALLERIES"" vs ""GALLERY"")","Inspect gallery category pill","1. Compare category naming between AU Live and US Staging.
+2. Verify singular vs plural naming convention.","Category is named ""GALLERIES"" matching AU editorial standard.","US Staging renders singular ""GALLERY"" instead of ""GALLERIES"". Minor naming inconsistency.","FAIL","P3 - Low"
+"TC-BIP-13","Category Filter Toolbar","All Users","Verify Category Filtering Interaction & AJAX / URL Route Update","Click ""STYLE TIPS"" category pill","1. Click ""STYLE TIPS"" filter pill.
+2. Observe page transition and URL update.
+3. Verify article grid updates to display only posts tagged with ""STYLE TIPS"".","Page updates to show filtered posts; active pill changes to ""STYLE TIPS""; URL updates to /blog/style-tips.","Category filter navigates to /blog/style-tips and filters article cards accordingly.","PASS","P2 - Medium"
+"TC-BIP-14","Category Filter Toolbar","All Users","Verify Horizontal Touch Swiping on Mobile for Filter Pills","Mobile Viewport 390x844 with touch emulation","1. Perform horizontal drag / swipe gesture across category filter bar.
+2. Verify swiper track responds smoothly without page stutter.
+3. Ensure tapping a category does not require double tap.","Swiper moves fluidly with touch momentum; snap points align neatly; single tap triggers category filter.","Touch swiping functions smoothly on mobile viewport.","PASS","P2 - Medium"
+"TC-BIP-15","Article Grid Layout","All Users","Verify Article Grid Column Structure on Desktop (3-Column Layout)","Desktop Viewport 1440x900","1. Inspect article cards grid container.
+2. Verify 3 cards per row alignment.
+3. Check grid gap / margin spacing between cards.","Article cards render in a symmetrical 3-column grid with uniform row gutters (~30px–40px).","Article grid renders in 3 columns per row matching AU layout.","PASS","P2 - Medium"
+"TC-BIP-16","Article Grid Layout","All Users","Verify Article Card Thumbnail Image Asset Integrity & Aspect Ratio","Inspect all 12 cards on page 1","1. Inspect card <img> elements.
+2. Measure naturalWidth vs clientWidth and computed aspect-ratio (~840x900 / 0.93).
+3. Check image sharpness and object-fit.","All cards render high-resolution photography without distortion, broken image icons, or 0px height collapse.","Article thumbnails render with valid images (e.g. natural dimensions 840x900). Zero 0px height collapse on index page.","PASS","P1 - High"
+"TC-BIP-17","Article Grid Layout","All Users","Verify Zero NetSuite Placeholder Media Assets (/placeholder/default/)","Automated scan across all image elements on page","1. Query all <img> elements on the page.
+2. Inspect src attributes for ""/placeholder/default/"" or ""Coming Soon"".
+3. Flag any catalog placeholder images.","Zero placeholder images present across all 12 post cards.","Zero NetSuite placeholder images detected. All thumbnails link to actual article media assets.","PASS","P1 - High"
+"TC-BIP-18","Article Grid Layout","All Users","Verify Article Card Headline Typography & Multi-Line Clamping","Inspect article card titles in grid","1. Inspect card title typography (font-family, size 18px–20px, line-height).
+2. Verify titles wrap neatly across 2–3 lines without clipping or overlapping metadata.
+3. Check text alignment (left-aligned).","Headlines wrap cleanly with consistent line-height and uniform margin above/below.","Titles wrap neatly with consistent typography matching AU baseline.","PASS","P2 - Medium"
+"TC-BIP-19","Article Grid Layout","All Users","Verify Article Title Sanitation & Duplication Artifacts (Post #1)","Inspect Post #1 on US Staging Blog Index","1. Locate Post #1 headline.
+2. Check for staging duplication suffixes like ""(Duplicated)"".
+3. Compare against AU Live Post: ""Stockist in Profile | IKOS Home"".","Post headline reads cleanly: ""Stockist in Profile | IKOS Home"".","DEFECT: Post #1 displays ""Stockist in Profile | IKOS Home (Duplicated) (Duplicated)"". Polluted editorial staging content.","FAIL","P2 - Medium"
+"TC-BIP-20","Article Grid Layout","All Users","Verify Dummy / Staging Test Post Removal (Post #2)","Inspect Post #2 on US Staging Blog Index","1. Locate Post #2 headline and image.
+2. Check for developer placeholder or test post copy.","All visible posts are genuine brand articles with professional editorial headlines.","DEFECT: Post #2 is a dummy test post titled ""Post testing"" with placeholder banner42.jpg. Staging pollution.","FAIL","P2 - Medium"
+"TC-BIP-21","Article Grid Layout","All Users","Verify Article Card Category Tag Pill Styling","Inspect category labels above card titles","1. Inspect category tag (e.g. ""STOCKIST IN PROFILE"", ""STYLE TIPS"").
+2. Verify uppercase styling, font-size (11px–12px), letter-spacing, and color.
+3. Click category link and verify category archive navigation.","Category pill renders in uppercase muted text, linking to respective category archive.","Category labels render with proper uppercase styling and link to category archives.","PASS","P3 - Low"
+"TC-BIP-22","Article Grid Layout","All Users","Verify Article Card Publishing Date Format Standardization","Inspect date element rendered beside category","1. Inspect date text (e.g. ""OCT 02"", ""AUG 27"").
+2. Verify month abbreviation and day number formatting.
+3. Verify separation dot or spacing between date and category.","Date renders standardized in uppercase (e.g. ""OCT 02"") beside category pill.","Date formatting renders consistently across all cards.","PASS","P3 - Low"
+"TC-BIP-23","Article Grid Layout","All Users","Verify Article Card ""Read more"" Text CTA Link & Hover States","Inspect bottom of article card","1. Locate ""Read more"" link at bottom of each card.
+2. Hover mouse over link and observe underline / color change.
+3. Verify cursor pointer feedback.","""Read more"" link has distinct styling, clear hover feedback, and points to the article template URL.","""Read more"" links render and respond properly to mouse hover.","PASS","P3 - Low"
+"TC-BIP-24","Article Grid Layout","All Users","Verify Article Card Click-Through Navigation to Target Article Template","Click on card image, title, and ""Read more"" link of Post #1","1. Click on thumbnail image and title.
+2. Verify browser navigates to article template page.
+3. Confirm zero redirection to Australian domain.","Clicking card navigates directly to corresponding US staging blog article without 404 or redirect error.","Card navigates internally to /blog/stockist-in-profile/stockist-in-profile-%7C-ikos-home-duplicated.","PASS","P2 - Medium"
+"TC-BIP-25","Pagination Section","All Users","Verify Pagination Total Article Counter Accuracy (AU Baseline Glitch Analysis)","Scroll to bottom pagination toolbar on AU Live (https://www.globewest.com.au/blog)","1. Inspect toolbar-amount text.
+2. Read total article count displayed.
+3. Inspect pager page numbers and verify total available pages.","Total article count should match the actual number of published articles and pages (e.g. 15 pages * 12 = 180 articles).","CONFIRMED AU GLITCH: AU Baseline shows ""Viewed 12 out of 231 articles"" with only 15 pages (180 articles). Pages 16-20 return 0 articles. Wrong total count calculation in Magefan collection.","FAIL (AU Baseline Glitch Highlighted)","P2 - Medium"
+"TC-BIP-26","Pagination Section","All Users","Verify US Staging Pagination Truncation Defect (""Viewed 12 out of 72 articles"")","Scroll to bottom pagination toolbar on US Staging (https://mcstaging2.globewest.com/blog)","1. Inspect toolbar-amount text on US Staging.
+2. Inspect pager buttons (pages rendered).
+3. Compare total articles (72) divided by 12 (expected: 6 pages) against rendered pages (1, 2).","Pager should provide clickable navigation buttons for all 6 pages (1, 2, 3, 4, 5, 6) or ellipses (1, 2, 3 ... 6).","DEFECT: US Staging displays ""Viewed 12 out of 72 articles"" but the pager ONLY renders buttons for [ 1 ] and [ 2 ]. Pages 3, 4, 5, 6 are completely truncated and unreachable via pager buttons.","FAIL","P1 - High"
+"TC-BIP-27","Pagination Section","All Users","Verify Direct URL Access for Truncated Pages (/blog?p=3)","Navigate directly to https://mcstaging2.globewest.com/blog?p=3","1. Open browser address bar and append ""?p=3"".
+2. Verify if page loads 12 valid blog post cards.
+3. Confirm whether backend possesses the articles despite missing pagination button.","If articles exist, page loads 12 posts; pager should reflect current page 3.","Page 3 successfully loads with 12 real blog post cards. Confirms posts exist in DB, but Magento frontend pager template fails to render page links past page 2.","FAIL","P1 - High"
+"TC-BIP-28","Pagination Section","All Users","Verify ""View 12 | 24 | All"" Grid Density Switcher Functionality","Inspect left toolbar controls (""View 12 | 24 | All"")","1. Locate density switcher links on left of pagination bar.
+2. Click ""24"" and observe article grid reload.
+3. Click ""All"" and verify full catalog loading.","Clicking ""24"" reloads grid with 24 posts; clicking ""All"" displays all posts with lazy loading.","""View 12 | 24 | All"" controls render; switching to 24 updates grid density.","PASS","P3 - Low"
+"TC-BIP-29","Pagination Section","All Users","Verify Next / Previous Pagination Arrow Navigation Controls","Pagination bar on Page 1 and Page 2","1. On Page 1, verify left arrow is disabled/hidden and right arrow ("">"") is active.
+2. Click "">"" and verify navigation to Page 2.
+3. On Page 2, verify left arrow (""<"") is visible and navigates back to Page 1.","Previous/Next arrows provide sequential navigation between pages with disabled states on edge pages.","Next arrow navigates to Page 2. On Page 2, previous arrow returns to Page 1.","PASS","P2 - Medium"
+"TC-BIP-30","Pagination Section","All Users","Verify Active Page Number Pill Styling (.current / active state)","Pagination bar in view","1. Inspect active page button (e.g. Page 1 on /blog).
+2. Verify border, background color, and text contrast.
+3. Verify inactive page buttons have distinct outline/hover styling.","Active page number is clearly highlighted with solid border/background matching brand guidelines.","Active page number renders with .current class and dark border styling.","PASS","P3 - Low"
+"TC-BIP-31","Responsive Layout","All Users","Verify Desktop Viewport (1440x900) Max-Width Container & Alignment","Desktop Viewport 1440x900 and 1920x1080","1. Load US Blog Index Page on large viewports.
+2. Verify max-width container constraints (centered with side gutters).
+3. Check header, category filter, 3-column grid, and pagination alignment.","Page maintains centered container without stretching excessively on ultra-wide screens.","Desktop layout aligns cleanly with uniform margins and centered container.","PASS","P2 - Medium"
+"TC-BIP-32","Responsive Layout","All Users","Verify Tablet Viewport (768x1024 - iPad) 2-Column Grid Transformation","Tablet Viewport 768x1024 Portrait","1. Resize viewport to 768px width.
+2. Observe article cards grid layout.
+3. Verify transition from 3-column to 2-column grid layout.","Grid smoothly transforms to 2 columns per row; images scale proportionally without horizontal overflow.","Tablet grid adapts cleanly to 2 columns per row with zero horizontal scrollbars.","PASS","P2 - Medium"
+"TC-BIP-33","Responsive Layout","All Users","Verify Mobile Viewport (390x844 - iPhone) Single-Column Stacking","Mobile Viewport 390x844 with touch emulation","1. Load US Blog Index Page on mobile viewport.
+2. Verify hero banner stacks vertically (title then image).
+3. Verify article cards stack in a single column (1 card per row).","Hero banner collapses cleanly; cards stack in single column; tap targets meet minimum 44x44px guidelines.","Mobile layout stacks properly in single column; card thumbnails scale to 100% container width.","PASS","P1 - High"
+"TC-BIP-34","Responsive Layout","All Users","Verify Mobile Zero Horizontal Overflow (scrollWidth == clientWidth)","Mobile Viewport 390x844","1. Measure document.documentElement.scrollWidth vs clientWidth.
+2. Attempt horizontal dragging across body.
+3. Confirm zero horizontal scrollbar or unintended layout spill.","scrollWidth equals clientWidth (390px); zero horizontal scrolling allowed.","Verified scrollWidth: 390px, clientWidth: 390px. Zero horizontal overflow detected.","PASS","P1 - High"
+"TC-BIP-35","Responsive Layout","All Users","Verify Mobile Category Filter Swiper Track Responsiveness","Mobile Viewport 390x844","1. Inspect category filter bar on mobile screen.
+2. Swipe horizontally across categories.
+3. Ensure active pill is visible without being obscured by screen edges.","Filter bar enables fluid touch dragging across all category pills on mobile.","Swiper touch interactions function smoothly on mobile device view.","PASS","P2 - Medium"
+"TC-BIP-36","Global Header","All Users","Verify Header Wishlist Heart Icon Presence (Comparison with AU)","Desktop Viewport 1440x900","1. Inspect global header utility icons on right side (Search, Account, Wishlist, Cart).
+2. Look for Wishlist heart icon (♡) beside mini-cart bag.
+3. Compare against AU Live header.","Heart icon (♡) is displayed between search/account and shopping bag icon.","DEFECT: Only Account and Cart icons render; Wishlist heart trigger is absent from US staging header.","FAIL","P3 - Low"
+"TC-BIP-37","SEO & Meta Header","All Users","Verify HTML Page <title>, Meta Description & Canonical Link Tag","HTML <head> inspection on US Blog Index Page","1. Inspect document.title and meta name=""description"".
+2. Inspect link rel=""canonical"" href attribute.
+3. Verify canonical resolves to US staging domain (https://mcstaging2.globewest.com/blog).","Document title displays ""Blog - GlobeWest USA"" or ""Blog""; canonical link points to US domain without AU leakage.","Document title displays ""Blog""; canonical tag resolves internally to US domain.","PASS","P2 - Medium"

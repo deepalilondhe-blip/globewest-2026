@@ -1,0 +1,93 @@
+{
+  "headerInfo": {
+    "h1": "My Quotes",
+    "paragraphs": [
+      "*Delivery and installation can be selected or changed at checkout. Final price will be calculated at checkout.",
+      "P: +613 9518 1600 #3",
+      "E: sales@globewest.com.",
+      "Order changes made after submission cannot be made via this portal.",
+      "Please book an appointment to see the largest selection of our products. We look forward to seeing you!"
+    ]
+  },
+  "tabResults": [
+    {
+      "tab": "ALL",
+      "visible": false
+    },
+    {
+      "tab": "OPEN",
+      "visible": true,
+      "activeClass": "account-listing-ui__filters__filter is-active"
+    },
+    {
+      "tab": "CONVERTED",
+      "visible": true,
+      "activeClass": "account-listing-ui__filters__filter is-active"
+    },
+    {
+      "tab": "EXPIRED",
+      "visible": true,
+      "activeClass": "account-listing-ui__filters__filter is-active"
+    }
+  ],
+  "search": {
+    "searchVisible": false,
+    "searchPlaceholder": "NOT_FOUND"
+  },
+  "tableHeaders": [
+    {
+      "text": "QUOTE N",
+      "hasSort": true
+    },
+    {
+      "text": "EXPIRY DATE",
+      "hasSort": true
+    },
+    {
+      "text": "CUST PO#",
+      "hasSort": true
+    },
+    {
+      "text": "QUOTE NAME",
+      "hasSort": true
+    },
+    {
+      "text": "CLIENT NAME",
+      "hasSort": true
+    },
+    {
+      "text": "STATUS",
+      "hasSort": true
+    },
+    {
+      "text": "TOTAL",
+      "hasSort": true
+    },
+    {
+      "text": "ACTIONS",
+      "hasSort": false
+    }
+  ],
+  "faqData": [
+    {
+      "title": "Frequently asked question content goes here",
+      "expanded": "false"
+    },
+    {
+      "title": "Frequently asked question content goes here",
+      "expanded": "false"
+    }
+  ],
+  "helpSection": [
+    {
+      "tag": "DIV",
+      "text": "Need help? Contact our sales team  P: +613 9518 1600 #3  E: sales@globewest.com.  Order changes made after submission cannot be made via this portal.",
+      "parentText": "Need help? Contact our sales team  P: +613 9518 1600 #3  E: sales@globewest.com.  Order changes made after submission cannot be made via this portal."
+    },
+    {
+      "tag": "STRONG",
+      "text": "Need help? Contact our sales team",
+      "parentText": "Need help? Contact our sales team  P: +613 9518 1600 #3  E: sales@globewest.com.  Order changes made after submission cannot be made via this portal."
+    }
+  ]
+}

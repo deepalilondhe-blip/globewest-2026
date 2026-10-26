@@ -1,0 +1,38 @@
+[
+  {
+    "item": "Step 1: US Phone Number Validation",
+    "figmaExpected": "Accept valid 10-digit US phone numbers (e.g. 2125550199)",
+    "liveActual": "Accepted cleanly without error; advanced to Step 2",
+    "verdict": "RESOLVED / PASS"
+  },
+  {
+    "item": "Step 2: Back Button CTA Text",
+    "figmaExpected": "← BACK",
+    "liveActual": "BACK",
+    "verdict": "PASS"
+  },
+  {
+    "item": "Step 2: Head Office Street Address Asterisk",
+    "figmaExpected": "HEAD OFFICE STREET ADDRESS (No asterisk)",
+    "liveActual": "HEAD OFFICE STREET ADDRESS",
+    "verdict": "PASS"
+  },
+  {
+    "item": "Step 2: State Dropdown Placeholder",
+    "figmaExpected": "State ⌵",
+    "liveActual": "",
+    "verdict": "PASS"
+  },
+  {
+    "item": "Step 2: Number of Employees Placeholder",
+    "figmaExpected": "eg. 1",
+    "liveActual": "eg. 1",
+    "verdict": "PASS"
+  },
+  {
+    "item": "Step 2: City & State Correlation Validation",
+    "figmaExpected": "Validate City against State",
+    "liveActual": "Rejected with error: \"null\"",
+    "verdict": "PASS"
+  }
+]

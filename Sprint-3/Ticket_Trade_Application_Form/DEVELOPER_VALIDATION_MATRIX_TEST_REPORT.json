@@ -1,0 +1,32 @@
+{
+  "Scenario 1: US - New Email + Empty EIN": {
+    "expected": "Allow",
+    "actual": "Allow",
+    "pass": true
+  },
+  "Scenario 2: US - Same Email + Same EIN (Duplicate Check)": {
+    "expected": "Disallow (Step 2 popup or error)",
+    "actual": "Allowed (Step 3 reached)",
+    "pass": false
+  },
+  "Scenario 3: US - Same Email + Different EIN": {
+    "expected": "Allow",
+    "actual": "Allow",
+    "pass": true
+  },
+  "Scenario 4: US - Same Email + Empty EIN": {
+    "expected": "Allow",
+    "actual": "Allow",
+    "pass": true
+  },
+  "Scenario 5: US - Invalid EIN Format": {
+    "expected": "Disallow",
+    "actual": "Allowed (Unexpected)",
+    "pass": false
+  },
+  "Scenario 6: AU - New Email + Empty ABN (ABN Required)": {
+    "expected": "Disallow (ABN required)",
+    "actual": "Blocked: \"This is a required field.\"",
+    "pass": true
+  }
+}

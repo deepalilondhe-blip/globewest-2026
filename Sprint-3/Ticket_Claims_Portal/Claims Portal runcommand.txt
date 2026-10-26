@@ -1,0 +1,8 @@
+Ticket Name: Claims Portal
+Page Name: Claims Portal (https://mcstaging2.globewest.com/claims)
+
+Run command for Desktop View:
+npx playwright test tests/claims-portal.spec.js --project=chromium --headed
+
+Run command for Mobile View:
+npx playwright test tests/claims-portal.spec.js --project=mobile --headed

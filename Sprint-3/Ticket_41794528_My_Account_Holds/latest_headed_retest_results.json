@@ -1,0 +1,756 @@
+{
+  "timestamp": "2026-10-01T05:02:57.142Z",
+  "testedUrl": "https://mcstaging2.globewest.com/gw_orders/hold/index/",
+  "user": "deepali.londhe@overdose.digital",
+  "desktop": {
+    "holdCount": {
+      "holdsSidebar": {
+        "fullText": "MY ACCOUNT Quotes 10 Holds 5 Orders 8 Invoices Invoices Requiring Payment After Sales & Claims Account Details",
+        "hasBadge": true,
+        "badgeText": "MY ACCOUNT"
+      },
+      "titleText": "My Holds\nA product hold reserves your favourite items for 2 business days.",
+      "filterTabs": [
+        "ACTIVE",
+        "INACTIVE"
+      ],
+      "allCounts": [
+        {
+          "parent": "Company: Alert Loans Pty Lty \nBook Showroom Appointment\nMy Account\nMy Cart\nIndoor\nOutdoor\nHomewares\nIn Stock\nCustomisation\nProjects\nInspiration\nSupport\nContact\nMY DASHBOARD\nMY ACCOUNT\nQuotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details\nGLOBEWEST REFERRALS\nMY COMPANY\nBOOKINGS\nHELP CENTRE\nLOGOUT\nMy Holds\nA product hold reserves your favourite items for 2 business days.\nACTIVE\nINACTIVE\nHOLD\n\t\nEXP. DATE\n\t\nCUST P0#\n\t\nORDER NAME\n\t\nCLIENT NAME\n\t\nSTATUS\n\t\nTOTAL\n\tACTIONS\n175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions\n\n172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions\n\n169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions\n\n\nYour hold is almost due to expire. Please confirm the order today to prevent your products being released\n3 Items\nFrequently Asked Questions\nFrequently asked question content goes here\nFrequently asked question content goes here\nNeed help? Contact our sales team\nP: +613 9518 1600\nsales@globewest.com\nOrder changes made after submission cannot be made via this portal.\nCONNECT WITH US\n \n \n \nSubscribe\nBe the first to know about GlobeWest new collections, product launches and special offers. Subscribe Now.\nThis site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.\nVISIT OUR SHOWROOMS\n\nPlease book an appointment to see the largest selection of our products. We look forward to seeing you!\n\nBOOK AN APPOINTMENT\nPRODUCTS\nIn Stock\nIndoor\nLiving\nDining\nBedroom\nOutdoor Furniture\nOffice & Workspace\nHomewares\nLighting\nRugs\nCUSTOMER SUPPORT\nHow to Buy\nShowroom Locations\nTrade & Wholesale\nProject & Commercial\nFind a Stockist\nFind a Designer\nHelp Centre\nAfter Sales Enquiries\nContact Us\nProduct Care\nShop Outlet\nOUR BRAND\nAbout Us\nCareers\nInspiration & Interviews\nVideo Library\nLookbook Library\nPress\n© 2026 GlobeWest Privacy Policy Terms & Conditions",
+          "text": "Company: Alert Loans Pty Lty \nBook Showroom Appointment\nMy Account\nMy Cart\nIndoor\nOutdoor\nHomewares\nIn Stock\nCustomisation\nProjects\nInspiration\nSupport\nContact\nMY DASHBOARD\nMY ACCOUNT\nQuotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details\nGLOBEWEST REFERRALS\nMY COMPANY\nBOOKINGS\nHELP CENTRE\nLOGOUT\nMy Holds\nA product hold reserves your favourite items for 2 business days.\nACTIVE\nINACTIVE\nHOLD\n\t\nEXP. DATE\n\t\nCUST P0#\n\t\nORDER NAME\n\t\nCLIENT NAME\n\t\nSTATUS\n\t\nTOTAL\n\tACTIONS\n175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions\n\n172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions\n\n169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions\n\n\nYour hold is almost due to expire. Please confirm the order today to prevent your products being released\n3 Items\nFrequently Asked Questions\nFrequently asked question content goes here\nFrequently asked question content goes here\nNeed help? Contact our sales team\nP: +613 9518 1600\nsales@globewest.com\nOrder changes made after submission cannot be made via this portal.\nCONNECT WITH US\n \n \n \nSubscribe\nBe the first to know about GlobeWest new collections, product launches and special offers. Subscribe Now.\nThis site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.\nVISIT OUR SHOWROOMS\n\nPlease book an appointment to see the largest selection of our products. We look forward to seeing you!\n\nBOOK AN APPOINTMENT\nPRODUCTS\nIn Stock\nIndoor\nLiving\nDining\nBedroom\nOutdoor Furniture\nOffice & Workspace\nHomewares\nLighting\nRugs\nCUSTOMER SUPPORT\nHow to Buy\nShowroom Locations\nTrade & Wholesale\nProject & Commercial\nFind a Stockist\nFind a Designer\nHelp Centre\nAfter Sales Enquiries\nContact Us\nProduct Care\nShop Outlet\nOUR BRAND\nAbout Us\nCareers\nInspiration & Interviews\nVideo Library\nLookbook Library\nPress\n© 2026 GlobeWest Privacy Policy Terms & Conditions",
+          "className": "account netsuite_order-hold-index page-layout-2columns-left side-cart"
+        },
+        {
+          "parent": "My Account",
+          "text": "My Account",
+          "className": "js-account-dropdown-menu-trigger action od-auth-popup__link"
+        },
+        {
+          "parent": "My Orders\n            \n\n\n    \n        My Quotes\n                    10\n            \n\n\n    \n        My Holds\n                    5\n            \n\n\n    \n        Showroom Bookings\n            \n\n\n    \n\n\n    \n        Logout",
+          "text": "My Orders\n            \n\n\n    \n        My Quotes\n                    10\n            \n\n\n    \n        My Holds\n                    5\n            \n\n\n    \n        Showroom Bookings\n            \n\n\n    \n\n\n    \n        Logout",
+          "className": "js-account-dropdown-menu account-dropdown-menu ui-dialog-content ui-widget-content"
+        },
+        {
+          "parent": "My Orders\n            \n\n\n    \n        My Quotes\n                    10\n            \n\n\n    \n        My Holds\n                    5\n            \n\n\n    \n        Showroom Bookings\n            \n\n\n    \n\n\n    \n        Logout",
+          "text": "My Orders\n            \n\n\n    \n        My Quotes\n                    10\n            \n\n\n    \n        My Holds\n                    5\n            \n\n\n    \n        Showroom Bookings\n            \n\n\n    \n\n\n    \n        Logout",
+          "className": "block account-dropdown"
+        },
+        {
+          "parent": "My Orders\n            \n\n\n    \n        My Quotes\n                    10\n            \n\n\n    \n        My Holds\n                    5\n            \n\n\n    \n        Showroom Bookings\n            \n\n\n    \n\n\n    \n        Logout",
+          "text": "",
+          "className": "title account-dropdown-title"
+        },
+        {
+          "parent": "My Orders\n            \n\n\n    \n        My Quotes\n                    10\n            \n\n\n    \n        My Holds\n                    5\n            \n\n\n    \n        Showroom Bookings\n            \n\n\n    \n\n\n    \n        Logout",
+          "text": "My Orders\n            \n\n\n    \n        My Quotes\n                    10\n            \n\n\n    \n        My Holds\n                    5\n            \n\n\n    \n        Showroom Bookings\n            \n\n\n    \n\n\n    \n        Logout",
+          "className": "content account-dropdown-content"
+        },
+        {
+          "parent": "My Orders\n            \n\n\n    \n        My Quotes\n                    10\n            \n\n\n    \n        My Holds\n                    5\n            \n\n\n    \n        Showroom Bookings\n            \n\n\n    \n\n\n    \n        Logout",
+          "text": "My Orders",
+          "className": "nav item item--counter item--orders"
+        },
+        {
+          "parent": "My Orders\n            \n\n\n    \n        My Quotes\n                    10\n            \n\n\n    \n        My Holds\n                    5\n            \n\n\n    \n        Showroom Bookings\n            \n\n\n    \n\n\n    \n        Logout",
+          "text": "My Quotes\n                    10",
+          "className": "nav item item--counter item--quotes"
+        },
+        {
+          "parent": "My Quotes\n                    10",
+          "text": "10",
+          "className": "quotes item__counter"
+        },
+        {
+          "parent": "My Orders\n            \n\n\n    \n        My Quotes\n                    10\n            \n\n\n    \n        My Holds\n                    5\n            \n\n\n    \n        Showroom Bookings\n            \n\n\n    \n\n\n    \n        Logout",
+          "text": "My Holds\n                    5",
+          "className": "nav item current item--counter item--holds"
+        },
+        {
+          "parent": "My Holds\n                    5",
+          "text": "5",
+          "className": "holds item__counter"
+        },
+        {
+          "parent": "My Cart",
+          "text": "0",
+          "className": "counter qty empty"
+        },
+        {
+          "parent": "0",
+          "text": "0",
+          "className": "counter-number"
+        },
+        {
+          "parent": "0",
+          "text": "",
+          "className": "counter-label"
+        },
+        {
+          "parent": "MY DASHBOARD\nMY ACCOUNT\nQuotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details\nGLOBEWEST REFERRALS\nMY COMPANY\nBOOKINGS\nHELP CENTRE\nLOGOUT",
+          "text": "MY DASHBOARD\nMY ACCOUNT\nQuotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details\nGLOBEWEST REFERRALS\nMY COMPANY\nBOOKINGS\nHELP CENTRE\nLOGOUT",
+          "className": "account-nav"
+        },
+        {
+          "parent": "MY DASHBOARD\nMY ACCOUNT\nQuotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details\nGLOBEWEST REFERRALS\nMY COMPANY\nBOOKINGS\nHELP CENTRE\nLOGOUT",
+          "text": "Holds",
+          "className": "js-account-nav-toggle account-nav__btn"
+        },
+        {
+          "parent": "MY DASHBOARD\nMY ACCOUNT\nQuotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details\nGLOBEWEST REFERRALS\nMY COMPANY\nBOOKINGS\nHELP CENTRE\nLOGOUT",
+          "text": "MY DASHBOARD\nMY ACCOUNT\nQuotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details\nGLOBEWEST REFERRALS\nMY COMPANY\nBOOKINGS\nHELP CENTRE\nLOGOUT",
+          "className": "js-account-nav account-nav__content"
+        },
+        {
+          "parent": "MY DASHBOARD\nMY ACCOUNT\nQuotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details\nGLOBEWEST REFERRALS\nMY COMPANY\nBOOKINGS\nHELP CENTRE\nLOGOUT",
+          "text": "MY DASHBOARD\nMY ACCOUNT\nQuotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details\nGLOBEWEST REFERRALS\nMY COMPANY\nBOOKINGS\nHELP CENTRE\nLOGOUT",
+          "className": "account-list"
+        },
+        {
+          "parent": "MY DASHBOARD\nMY ACCOUNT\nQuotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details\nGLOBEWEST REFERRALS\nMY COMPANY\nBOOKINGS\nHELP CENTRE\nLOGOUT",
+          "text": "MY ACCOUNT\nQuotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details",
+          "className": "account-list__item account-list__item--has-children account-list__item--opened"
+        },
+        {
+          "parent": "MY ACCOUNT\nQuotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details",
+          "text": "MY ACCOUNT",
+          "className": "js-account-list-tab-toggle account-list__toggle"
+        },
+        {
+          "parent": "MY ACCOUNT\nQuotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details",
+          "text": "Quotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details",
+          "className": "js-account-list-tab account-list__tab"
+        },
+        {
+          "parent": "Quotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details",
+          "text": "Quotes\n10",
+          "className": "nav item item--counter"
+        },
+        {
+          "parent": "Quotes\n10",
+          "text": "10",
+          "className": "item__counter"
+        },
+        {
+          "parent": "Quotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details",
+          "text": "Holds\n5",
+          "className": "nav item current item--counter"
+        },
+        {
+          "parent": "Holds\n5",
+          "text": "5",
+          "className": "item__counter"
+        },
+        {
+          "parent": "Quotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details",
+          "text": "Orders\n8",
+          "className": "nav item item--counter"
+        },
+        {
+          "parent": "Orders\n8",
+          "text": "8",
+          "className": "item__counter"
+        },
+        {
+          "parent": "Quotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details",
+          "text": "Invoices",
+          "className": "nav item item--counter"
+        },
+        {
+          "parent": "Quotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details",
+          "text": "Invoices Requiring Payment",
+          "className": "nav item item--counter"
+        },
+        {
+          "parent": "MY DASHBOARD\nMY ACCOUNT\nQuotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details\nGLOBEWEST REFERRALS\nMY COMPANY\nBOOKINGS\nHELP CENTRE\nLOGOUT",
+          "text": "GLOBEWEST REFERRALS",
+          "className": "account-list__item account-list__item--has-children"
+        },
+        {
+          "parent": "GLOBEWEST REFERRALS",
+          "text": "GLOBEWEST REFERRALS",
+          "className": "js-account-list-tab-toggle account-list__toggle"
+        },
+        {
+          "parent": "GLOBEWEST REFERRALS",
+          "text": "Clients Details\n    \n        Referred Quotes\n                    1\n            \n\n\n    \n        Referred Boards",
+          "className": "js-account-list-tab account-list__tab"
+        },
+        {
+          "parent": "Clients Details\n    \n        Referred Quotes\n                    1\n            \n\n\n    \n        Referred Boards",
+          "text": "Referred Quotes\n                    1",
+          "className": "nav item item--counter"
+        },
+        {
+          "parent": "Referred Quotes\n                    1",
+          "text": "1",
+          "className": "item__counter"
+        },
+        {
+          "parent": "Clients Details\n    \n        Referred Quotes\n                    1\n            \n\n\n    \n        Referred Boards",
+          "text": "Referred Boards",
+          "className": "nav item item--counter"
+        },
+        {
+          "parent": "MY DASHBOARD\nMY ACCOUNT\nQuotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details\nGLOBEWEST REFERRALS\nMY COMPANY\nBOOKINGS\nHELP CENTRE\nLOGOUT",
+          "text": "MY COMPANY",
+          "className": "account-list__item account-list__item--has-children"
+        },
+        {
+          "parent": "MY COMPANY",
+          "text": "MY COMPANY",
+          "className": "js-account-list-tab-toggle account-list__toggle"
+        },
+        {
+          "parent": "MY COMPANY",
+          "text": "Company DetailsAddresses",
+          "className": "js-account-list-tab account-list__tab"
+        },
+        {
+          "parent": "MY DASHBOARD\nMY ACCOUNT\nQuotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details\nGLOBEWEST REFERRALS\nMY COMPANY\nBOOKINGS\nHELP CENTRE\nLOGOUT",
+          "text": "BOOKINGS",
+          "className": "account-list__item account-list__item--has-children"
+        },
+        {
+          "parent": "BOOKINGS",
+          "text": "BOOKINGS",
+          "className": "js-account-list-tab-toggle account-list__toggle"
+        },
+        {
+          "parent": "BOOKINGS",
+          "text": "Showroom Bookings",
+          "className": "js-account-list-tab account-list__tab"
+        },
+        {
+          "parent": "MY DASHBOARD\nMY ACCOUNT\nQuotes\n10\nHolds\n5\nOrders\n8\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details\nGLOBEWEST REFERRALS\nMY COMPANY\nBOOKINGS\nHELP CENTRE\nLOGOUT",
+          "text": "HELP CENTRE",
+          "className": "account-list__item account-list__item--has-children"
+        },
+        {
+          "parent": "HELP CENTRE",
+          "text": "HELP CENTRE",
+          "className": "js-account-list-tab-toggle account-list__toggle"
+        },
+        {
+          "parent": "HELP CENTRE",
+          "text": "Email PreferencesSubmit Help FormHelp Centre",
+          "className": "js-account-list-tab account-list__tab"
+        },
+        {
+          "parent": "My Holds\nA product hold reserves your favourite items for 2 business days.\nACTIVE\nINACTIVE\nHOLD\n\t\nEXP. DATE\n\t\nCUST P0#\n\t\nORDER NAME\n\t\nCLIENT NAME\n\t\nSTATUS\n\t\nTOTAL\n\tACTIONS\n175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions\n\n172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions\n\n169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions\n\n\nYour hold is almost due to expire. Please confirm the order today to prevent your products being released\n3 Items\nFrequently Asked Questions\nFrequently asked question content goes here\nFrequently asked question content goes here\nNeed help? Contact our sales team\nP: +613 9518 1600\nsales@globewest.com\nOrder changes made after submission cannot be made via this portal.",
+          "text": "ACTIVE\nINACTIVE\nHOLD\n\t\nEXP. DATE\n\t\nCUST P0#\n\t\nORDER NAME\n\t\nCLIENT NAME\n\t\nSTATUS\n\t\nTOTAL\n\tACTIONS\n175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions\n\n172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions\n\n169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions\n\n\nYour hold is almost due to expire. Please confirm the order today to prevent your products being released\n3 Items",
+          "className": "account-listing-table"
+        },
+        {
+          "parent": "ACTIVE\nINACTIVE\nHOLD\n\t\nEXP. DATE\n\t\nCUST P0#\n\t\nORDER NAME\n\t\nCLIENT NAME\n\t\nSTATUS\n\t\nTOTAL\n\tACTIONS\n175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions\n\n172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions\n\n169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions\n\n\nYour hold is almost due to expire. Please confirm the order today to prevent your products being released\n3 Items",
+          "text": "ACTIVE\nINACTIVE\nHOLD\n\t\nEXP. DATE\n\t\nCUST P0#\n\t\nORDER NAME\n\t\nCLIENT NAME\n\t\nSTATUS\n\t\nTOTAL\n\tACTIONS\n175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions\n\n172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions\n\n169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions\n\n\nYour hold is almost due to expire. Please confirm the order today to prevent your products being released\n3 Items",
+          "className": "account-listing-ui"
+        },
+        {
+          "parent": "ACTIVE\nINACTIVE\nHOLD\n\t\nEXP. DATE\n\t\nCUST P0#\n\t\nORDER NAME\n\t\nCLIENT NAME\n\t\nSTATUS\n\t\nTOTAL\n\tACTIONS\n175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions\n\n172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions\n\n169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions\n\n\nYour hold is almost due to expire. Please confirm the order today to prevent your products being released\n3 Items",
+          "text": "ACTIVE\nINACTIVE",
+          "className": "account-listing-ui__filters"
+        },
+        {
+          "parent": "ACTIVE\nINACTIVE",
+          "text": "ACTIVE\nINACTIVE",
+          "className": "account-listing-ui__filters__wrapper"
+        },
+        {
+          "parent": "ACTIVE\nINACTIVE",
+          "text": "ACTIVE",
+          "className": "account-listing-ui__filters__filter is-active"
+        },
+        {
+          "parent": "ACTIVE\nINACTIVE",
+          "text": "INACTIVE",
+          "className": "account-listing-ui__filters__filter"
+        },
+        {
+          "parent": "ACTIVE\nINACTIVE\nHOLD\n\t\nEXP. DATE\n\t\nCUST P0#\n\t\nORDER NAME\n\t\nCLIENT NAME\n\t\nSTATUS\n\t\nTOTAL\n\tACTIONS\n175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions\n\n172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions\n\n169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions\n\n\nYour hold is almost due to expire. Please confirm the order today to prevent your products being released\n3 Items",
+          "text": "",
+          "className": "account-listing-ui__search"
+        },
+        {
+          "parent": "ACTIVE\nINACTIVE\nHOLD\n\t\nEXP. DATE\n\t\nCUST P0#\n\t\nORDER NAME\n\t\nCLIENT NAME\n\t\nSTATUS\n\t\nTOTAL\n\tACTIONS\n175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions\n\n172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions\n\n169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions\n\n\nYour hold is almost due to expire. Please confirm the order today to prevent your products being released\n3 Items",
+          "text": "HOLD\n\t\nEXP. DATE\n\t\nCUST P0#\n\t\nORDER NAME\n\t\nCLIENT NAME\n\t\nSTATUS\n\t\nTOTAL\n\tACTIONS\n175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions\n\n172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions\n\n169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions\n\n\nYour hold is almost due to expire. Please confirm the order today to prevent your products being released",
+          "className": "account-listing-ui__table has-sort"
+        },
+        {
+          "parent": "HOLD",
+          "text": "HOLD",
+          "className": "account-listing-ui__table__sort account-listing-ui-sort"
+        },
+        {
+          "parent": "HOLD",
+          "text": "HOLD",
+          "className": "account-listing-ui-sort__label"
+        },
+        {
+          "parent": "HOLD",
+          "text": "",
+          "className": "account-listing-ui-sort__arrows is-desc"
+        },
+        {
+          "parent": "EXP. DATE",
+          "text": "EXP. DATE",
+          "className": "account-listing-ui__table__sort account-listing-ui-sort"
+        },
+        {
+          "parent": "EXP. DATE",
+          "text": "EXP. DATE",
+          "className": "account-listing-ui-sort__label"
+        },
+        {
+          "parent": "EXP. DATE",
+          "text": "",
+          "className": "account-listing-ui-sort__arrows is-selected is-desc"
+        },
+        {
+          "parent": "CUST P0#",
+          "text": "CUST P0#",
+          "className": "account-listing-ui__table__sort account-listing-ui-sort"
+        },
+        {
+          "parent": "CUST P0#",
+          "text": "CUST P0#",
+          "className": "account-listing-ui-sort__label"
+        },
+        {
+          "parent": "CUST P0#",
+          "text": "",
+          "className": "account-listing-ui-sort__arrows is-desc"
+        },
+        {
+          "parent": "ORDER NAME",
+          "text": "ORDER NAME",
+          "className": "account-listing-ui__table__sort account-listing-ui-sort"
+        },
+        {
+          "parent": "ORDER NAME",
+          "text": "ORDER NAME",
+          "className": "account-listing-ui-sort__label"
+        },
+        {
+          "parent": "ORDER NAME",
+          "text": "",
+          "className": "account-listing-ui-sort__arrows is-desc"
+        },
+        {
+          "parent": "CLIENT NAME",
+          "text": "CLIENT NAME",
+          "className": "account-listing-ui__table__sort account-listing-ui-sort"
+        },
+        {
+          "parent": "CLIENT NAME",
+          "text": "CLIENT NAME",
+          "className": "account-listing-ui-sort__label"
+        },
+        {
+          "parent": "CLIENT NAME",
+          "text": "",
+          "className": "account-listing-ui-sort__arrows is-desc"
+        },
+        {
+          "parent": "STATUS",
+          "text": "STATUS",
+          "className": "account-listing-ui__table__sort account-listing-ui-sort"
+        },
+        {
+          "parent": "STATUS",
+          "text": "STATUS",
+          "className": "account-listing-ui-sort__label"
+        },
+        {
+          "parent": "STATUS",
+          "text": "",
+          "className": "account-listing-ui-sort__arrows is-desc"
+        },
+        {
+          "parent": "TOTAL",
+          "text": "TOTAL",
+          "className": "account-listing-ui__table__sort account-listing-ui-sort"
+        },
+        {
+          "parent": "TOTAL",
+          "text": "TOTAL",
+          "className": "account-listing-ui-sort__label"
+        },
+        {
+          "parent": "TOTAL",
+          "text": "",
+          "className": "account-listing-ui-sort__arrows is-desc"
+        },
+        {
+          "parent": "175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions\n\n172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions\n\n169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions\n\n\nYour hold is almost due to expire. Please confirm the order today to prevent your products being released",
+          "text": "175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions",
+          "className": "account-listing-ui__table__row"
+        },
+        {
+          "parent": "175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions",
+          "text": "175",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--order"
+        },
+        {
+          "parent": "175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions",
+          "text": "14/10/26",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--expiry_date"
+        },
+        {
+          "parent": "175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions",
+          "text": "PO-4518",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--cust_po"
+        },
+        {
+          "parent": "175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions",
+          "text": "Coastal Cafe Refresh",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--order_name"
+        },
+        {
+          "parent": "175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions",
+          "text": "Olivia Chen",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--client_name"
+        },
+        {
+          "parent": "175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions",
+          "text": "Active",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--status"
+        },
+        {
+          "parent": "175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions",
+          "text": "$2,451.00",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--total"
+        },
+        {
+          "parent": "175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions",
+          "text": "Actions",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--actions"
+        },
+        {
+          "parent": "Actions",
+          "text": "Actions",
+          "className": "account-listing-ui__table__actions-toggle"
+        },
+        {
+          "parent": "Actions",
+          "text": "View\n                \n            \n                \n                \n                    Modify/ Confirm",
+          "className": "account-listing-ui__table__actions-popover"
+        },
+        {
+          "parent": "View\n                \n            \n                \n                \n                    Modify/ Confirm",
+          "text": "View",
+          "className": "account-listing-ui__table__actions-popover__item"
+        },
+        {
+          "parent": "View\n                \n            \n                \n                \n                    Modify/ Confirm",
+          "text": "Modify/ Confirm",
+          "className": "account-listing-ui__table__actions-popover__item"
+        },
+        {
+          "parent": "175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions\n\n172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions\n\n169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions\n\n\nYour hold is almost due to expire. Please confirm the order today to prevent your products being released",
+          "text": "172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions",
+          "className": "account-listing-ui__table__row"
+        },
+        {
+          "parent": "172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions",
+          "text": "172",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--order"
+        },
+        {
+          "parent": "172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions",
+          "text": "07/10/26",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--expiry_date"
+        },
+        {
+          "parent": "172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions",
+          "text": "PO-4517",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--cust_po"
+        },
+        {
+          "parent": "172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions",
+          "text": "Harbour View Apartment",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--order_name"
+        },
+        {
+          "parent": "172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions",
+          "text": "James Morgan",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--client_name"
+        },
+        {
+          "parent": "172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions",
+          "text": "Active",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--status"
+        },
+        {
+          "parent": "172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions",
+          "text": "$12,920.99",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--total"
+        },
+        {
+          "parent": "172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions",
+          "text": "Actions",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--actions"
+        },
+        {
+          "parent": "Actions",
+          "text": "Actions",
+          "className": "account-listing-ui__table__actions-toggle"
+        },
+        {
+          "parent": "Actions",
+          "text": "View\n                \n            \n                \n                \n                    Modify/ Confirm",
+          "className": "account-listing-ui__table__actions-popover"
+        },
+        {
+          "parent": "View\n                \n            \n                \n                \n                    Modify/ Confirm",
+          "text": "View",
+          "className": "account-listing-ui__table__actions-popover__item"
+        },
+        {
+          "parent": "View\n                \n            \n                \n                \n                    Modify/ Confirm",
+          "text": "Modify/ Confirm",
+          "className": "account-listing-ui__table__actions-popover__item"
+        },
+        {
+          "parent": "175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions\n\n172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions\n\n169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions\n\n\nYour hold is almost due to expire. Please confirm the order today to prevent your products being released",
+          "text": "169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions",
+          "className": "account-listing-ui__table__row account-listing-ui__table__row--has-warning"
+        },
+        {
+          "parent": "169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions",
+          "text": "169",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--order"
+        },
+        {
+          "parent": "169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions",
+          "text": "02/10/26",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--expiry_date"
+        },
+        {
+          "parent": "169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions",
+          "text": "PO-4516",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--cust_po"
+        },
+        {
+          "parent": "169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions",
+          "text": "Bondi Residence Fit-out",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--order_name"
+        },
+        {
+          "parent": "169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions",
+          "text": "Sophie Tucker",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--client_name"
+        },
+        {
+          "parent": "169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions",
+          "text": "Active",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--status"
+        },
+        {
+          "parent": "169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions",
+          "text": "$15,296.00",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--total"
+        },
+        {
+          "parent": "169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions",
+          "text": "Actions",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--actions"
+        },
+        {
+          "parent": "Actions",
+          "text": "Actions",
+          "className": "account-listing-ui__table__actions-toggle"
+        },
+        {
+          "parent": "Actions",
+          "text": "View\n                \n            \n                \n                \n                    Modify/ Confirm",
+          "className": "account-listing-ui__table__actions-popover"
+        },
+        {
+          "parent": "View\n                \n            \n                \n                \n                    Modify/ Confirm",
+          "text": "View",
+          "className": "account-listing-ui__table__actions-popover__item"
+        },
+        {
+          "parent": "View\n                \n            \n                \n                \n                    Modify/ Confirm",
+          "text": "Modify/ Confirm",
+          "className": "account-listing-ui__table__actions-popover__item"
+        },
+        {
+          "parent": "Your hold is almost due to expire. Please confirm the order today to prevent your products being released",
+          "text": "Your hold is almost due to expire. Please confirm the order today to prevent your products being released",
+          "className": "account-listing-ui__table__cell account-listing-ui__table__cell--warning"
+        },
+        {
+          "parent": "ACTIVE\nINACTIVE\nHOLD\n\t\nEXP. DATE\n\t\nCUST P0#\n\t\nORDER NAME\n\t\nCLIENT NAME\n\t\nSTATUS\n\t\nTOTAL\n\tACTIONS\n175\t14/10/26\tPO-4518\tCoastal Cafe Refresh\tOlivia Chen\tActive\t$2,451.00\t\nActions\n\n172\t07/10/26\tPO-4517\tHarbour View Apartment\tJames Morgan\tActive\t$12,920.99\t\nActions\n\n169\t02/10/26\tPO-4516\tBondi Residence Fit-out\tSophie Tucker\tActive\t$15,296.00\t\nActions\n\n\nYour hold is almost due to expire. Please confirm the order today to prevent your products being released\n3 Items",
+          "text": "3 Items",
+          "className": "account-listing-ui__amount"
+        },
+        {
+          "parent": "",
+          "text": "",
+          "className": "grecaptcha-badge"
+        },
+        {
+          "parent": "",
+          "text": "",
+          "className": "grecaptcha-badge"
+        },
+        {
+          "parent": "",
+          "text": "",
+          "className": "grecaptcha-badge"
+        }
+      ],
+      "sidebarItems": [
+        {
+          "fullText": "MY ACCOUNT Quotes 10 Holds 5 Orders 8 Invoices Invoices Requiring Payment After Sales & Claims Account Details",
+          "hasBadge": true,
+          "badgeText": "MY ACCOUNT"
+        },
+        {
+          "fullText": "Quotes 10",
+          "hasBadge": true,
+          "badgeText": "10"
+        },
+        {
+          "fullText": "Quotes 10",
+          "hasBadge": true,
+          "badgeText": "10"
+        },
+        {
+          "fullText": "Holds 5",
+          "hasBadge": true,
+          "badgeText": "5"
+        },
+        {
+          "fullText": "Holds 5",
+          "hasBadge": true,
+          "badgeText": "5"
+        },
+        {
+          "fullText": "Orders 8",
+          "hasBadge": true,
+          "badgeText": "8"
+        },
+        {
+          "fullText": "Orders 8",
+          "hasBadge": true,
+          "badgeText": "8"
+        },
+        {
+          "fullText": "Invoices",
+          "hasBadge": false,
+          "badgeText": null
+        },
+        {
+          "fullText": "Invoices",
+          "hasBadge": false,
+          "badgeText": null
+        },
+        {
+          "fullText": "Invoices Requiring Payment",
+          "hasBadge": false,
+          "badgeText": null
+        },
+        {
+          "fullText": "Invoices Requiring Payment",
+          "hasBadge": false,
+          "badgeText": null
+        },
+        {
+          "fullText": "Referred Quotes 1",
+          "hasBadge": true,
+          "badgeText": "1"
+        },
+        {
+          "fullText": "Referred Quotes 1",
+          "hasBadge": true,
+          "badgeText": "1"
+        }
+      ]
+    },
+    "table": {
+      "columnCount": 8,
+      "headers": [
+        "HOLD",
+        "EXP. DATE",
+        "CUST P0#",
+        "ORDER NAME",
+        "CLIENT NAME",
+        "STATUS",
+        "TOTAL",
+        "ACTIONS"
+      ],
+      "hasActions": true,
+      "hasCustP0": true,
+      "rowCount": 4,
+      "rows": [
+        [
+          "175",
+          "14/10/26",
+          "PO-4518",
+          "Coastal Cafe Refresh",
+          "Olivia Chen",
+          "Active",
+          "$2,451.00",
+          "Actions"
+        ],
+        [
+          "172",
+          "07/10/26",
+          "PO-4517",
+          "Harbour View Apartment",
+          "James Morgan",
+          "Active",
+          "$12,920.99",
+          "Actions"
+        ],
+        [
+          "169",
+          "02/10/26",
+          "PO-4516",
+          "Bondi Residence Fit-out",
+          "Sophie Tucker",
+          "Active",
+          "$15,296.00",
+          "Actions"
+        ],
+        [
+          "Your hold is almost due to expire. Please confirm the order today to prevent your products being released"
+        ]
+      ],
+      "emptyMessage": "0"
+    },
+    "tabs": [
+      {
+        "text": "ACTIVE",
+        "isActive": true,
+        "bgColor": "rgb(56, 28, 18)",
+        "color": "rgb(255, 255, 255)",
+        "fontWeight": "600",
+        "borderRadius": "0px",
+        "padding": "0px 16px"
+      },
+      {
+        "text": "INACTIVE",
+        "isActive": false,
+        "bgColor": "rgb(255, 255, 255)",
+        "color": "rgb(56, 28, 18)",
+        "fontWeight": "600",
+        "borderRadius": "0px",
+        "padding": "0px 16px"
+      }
+    ]
+  },
+  "mobile": {
+    "selectText": "",
+    "mobileHeaders": [
+      "HOLD",
+      "DATE",
+      "STATUS",
+      "TOTAL",
+      ""
+    ],
+    "hasActions": false
+  }
+}

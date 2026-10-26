@@ -1,0 +1,234 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+
+<aside role="dialog" class="modal-popup faq-modal
+               modal-slide
+               _inner-scroll" aria-labelledby="modal-title-5" aria-describedby="modal-content-5" data-role="modal" data-type="popup" tabindex="0">
+    <div data-role="focusable-start" tabindex="0"></div>
+    <div class="modal-inner-wrap" data-role="focusable-scope">
+        <header class="modal-header">
+            
+            <h1 id="modal-title-5" class="modal-title" data-role="title">
+                
+                    Frequently Asked Questions
+                
+
+                
+            </h1>
+            
+            <button class="action-close" data-role="closeBtn" type="button">
+                <span>Close</span>
+            </button>
+        </header>
+        <div id="modal-content-5" class="modal-content" data-role="content"><div class="faq-modal__wrapper" style="">
+    <div class="faq-modal__content mage-accordion-disabled">
+        <div class="policy">
+            <div data-content-type="html" data-appearance="default" data-element="main" data-decoded="true" role="tablist"><div data-role="collapsible" role="tab" data-collapsible="true" aria-selected="false" aria-expanded="false">
+<div data-role="trigger">
+<h6 tabindex="0">I’ve placed an order online, what happens now?</h6>
+</div>
+</div>
+<div data-role="content">
+<p role="tabpanel" aria-hidden="true" style="display: none;">Once the order has been paid for, an email will come through with confirmation. Back in our office, the team will be selecting the product for you, booking the delivery with our freight and installation partners if necessary and ensuring the products arrive to you beautifully. We will email you delivery estimated times, and communicate if anything changes.</p>
+</div>
+<div data-role="collapsible" role="tab" data-collapsible="true" aria-selected="false" aria-expanded="false">
+<div data-role="trigger">
+<h6 tabindex="0">Can I collect from your Melbourne Warehouse?</h6>
+</div>
+</div>
+<div data-role="content">
+<p role="tabpanel" aria-hidden="true" style="display: none;">Yes, you can request to collect from our Springvale warehouse. We do require 24 hours’ notification prior to collection to allow the warehouse time to pick the order. It is important that payment has been made and confirmation thereof forwarded to the Finance Team and your Sales Administration Team as they need to instruct warehouse to pick the order and have it ready for your collection.
+Our warehouse is open between 8.30am &amp; 4.30pm Monday – Friday
+Proof of payment is required prior to collection, please present your Order Confirmation(s) at the warehouse office: Unit 2, 20-22 Parsons Avenue, Springvale as this reference will assist them in identifying which order(s) are to be collected.</p>
+</div>
+<div data-role="collapsible" role="tab" data-collapsible="true" aria-selected="false" aria-expanded="false">
+<div data-role="trigger">
+<h6 tabindex="0">How do I check stock availability?</h6>
+</div>
+</div>
+<div data-role="content">
+<p role="tabpanel" aria-hidden="true" style="display: none;">Stock Status is now visible online on each product page. You can search by in-stock product by filtering by “in stock”. Please note this is the next shipment if you are to place a new order, if you have already placed an order the ETA may be different. If the stock status says Enquire for ETA please contact our Sales Admin Team (03) 9518 1600.</p>
+</div>
+<div data-role="collapsible" role="tab" data-collapsible="true" aria-selected="false" aria-expanded="false">
+<div data-role="trigger">
+<h6 tabindex="0">How do I care for my pieces/ do you have care instructions?</h6>
+</div>
+</div>
+<div data-role="content">
+<p role="tabpanel" aria-hidden="true" style="display: none;">We do. Please refer to the product care instructions page on our website here. We always recommend that you speak with your Designer or Retailer when specifying to ensure the products selected are suitable for your specific environment, as well as discussing the level of maintenance that will be needed to keep your products looking their best. Please note that the product filter on the website in relation to seating capacity is there as a guide. Please reach out to our team when matching dining table chairs with dining tables.</p>
+</div></div>        </div>
+        <div class="assistance">
+            <div data-content-type="html" data-appearance="default" data-element="main" data-decoded="true"><h3>We’d love to help you!</h3>
+<p>Please contact us on the details below with any questions or queries.</p>
+<ul>
+	<li class="phone"><a href="tel:03 9518 1600">03 9518 1600</a></li>
+	<li class="mail"><a href="mailto:user@mcstaging.globewest.com.au">user@mcstaging.globewest.com.au</a></li>
+	<li class="livechat"><a href="#" class="open-live-chat">Talk to our experts on live chat</a></li>
+</ul>
+
+</div>        </div>
+    </div>
+</div></div>
+        
+    </div>
+    <div data-role="focusable-end" tabindex="0"></div>
+</aside><!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+
+<aside role="dialog" class="modal-popup 
+               modal-slide cart-quote-success-modal
+               " aria-describedby="modal-content-21" data-role="modal" data-type="popup" tabindex="0">
+    <div data-role="focusable-start" tabindex="0"></div>
+    <div class="modal-inner-wrap" data-role="focusable-scope">
+        <header class="modal-header">
+            
+            <button class="action-close" data-role="closeBtn" type="button">
+                <span>Close</span>
+            </button>
+        </header>
+        <div id="modal-content-21" class="modal-content" data-role="content"><div class="success-quote-cart-popup" data-bind="afterRender: initQuoteCartModal, visible: isSuccessResponse" style="display: none;">
+    <div class="left">
+        <div class="spinner"><i class="od-icon-success-filled"></i></div>
+        <div class="desription">
+
+            <!-- ko if: (titleProductName && productName && !isModularProduct)--><!-- /ko -->
+
+            <!-- ko if: (isModularProduct && productName) --><!-- /ko -->
+
+            <!-- ko if: groupedProductPieces --><!-- /ko -->
+
+            <!-- ko if: (isModularProduct && modularItems.length > 0) --><!-- /ko -->
+
+            <!-- ko if: (successAddToCart && !isModularProduct)--><!-- /ko -->
+
+            <!-- ko if: (successAddToQuote)--><!-- /ko -->
+
+            <!-- ko if: (successAddToHold)--><!-- /ko -->
+
+            <!-- ko if: (successAddToQuoteForCart)--><!-- /ko -->
+        </div>
+    </div>
+
+    <div class="right">
+        <!-- ko if: (successAddToCart)--><!-- /ko -->
+
+        <!-- ko if: (successAddToQuote || successAddToQuoteForCart)--><!-- /ko -->
+    </div>
+</div></div>
+        
+    </div>
+    <div data-role="focusable-end" tabindex="0"></div>
+</aside><!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+
+<aside role="dialog" class="modal-popup netsuite-add-to-quote-modal modal-slide _show" aria-describedby="modal-content-24" data-role="modal" data-type="popup" tabindex="0" style="z-index: 902;">
+    <div data-role="focusable-start" tabindex="0"></div>
+    <div class="modal-inner-wrap" data-role="focusable-scope">
+        <header class="modal-header">
+            
+            <button class="action-close" data-role="closeBtn" type="button">
+                <span>Close</span>
+            </button>
+        </header>
+        <div id="modal-content-24" class="modal-content" data-role="content"><div class="modal-inner" data-bind="visible: modalVisible, afterRender: initModal" style="">
+    <!-- ko if: backBtnVisible --><!-- /ko -->
+    <h5 class="section-title" data-bind="text: title">Create a quote</h5>
+    <!-- ko if: (firstChoiceVisible)--><!-- /ko -->
+
+    <!-- ko if: (proceedAddToQuoteVisible)--><!-- /ko -->
+
+    <!-- ko if: (proceedAddToHoldVisible)--><!-- /ko -->
+
+    <!-- ko if: (proceedAddToExistingQuoteVisible)--><!-- /ko -->
+
+    <!-- ko if: (proceedAddToNewQuoteVisible)-->
+        <div class="data-section">
+            <!-- ko if: (choiceClientVisible)-->
+                <div class="field js-select2-parent">
+                    <label data-bind="i18n: 'Client Name'" class="label">Client Name</label>
+                    <select data-bind="options: clientsList,
+                                       attr: {search_placeholder: $t('Search by name')},
+                                       optionsText: 'full_name',
+                                       value: selectedClient,
+                                       afterRender: initSelect2,
+                                       optionsCaption: 'Select Client'" search_placeholder="Search by name" data-select2-id="2" tabindex="-1" class="select2-hidden-accessible" aria-hidden="true"><option value="" data-select2-id="4">Select Client</option></select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="3" style="width: 410px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-f7cy-container"><span class="select2-selection__rendered" id="select2-f7cy-container" role="textbox" aria-readonly="true" title="Select Client">Select Client</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                </div>
+            <!-- /ko -->
+
+            <button class="add-client-action" data-bind="click: proceedToCreateClient, visible: choiceClientVisible">
+                <span data-bind="i18n: 'Add another client'">Add another client</span>
+            </button>
+
+            <!-- ko if: (createClientVisible)--><!-- /ko -->
+
+            <!-- ko if: (choiceClientVisible)-->
+                <div class="field">
+                    <label data-bind="i18n: 'Quote name'" class="label">Quote name</label>
+                    <input type="text" data-bind="textInput: newQuoteName">
+                </div>
+                <button class="action primary add-product disabled" data-bind="click: createQuoteAndAddProduct,
+                                   css: {'disabled': !newQuoteName}">
+                    <span data-bind="i18n: 'Create &amp; Add product'">Create &amp; Add product</span>
+                </button>
+            <!-- /ko -->
+        </div>
+    <!-- /ko -->
+</div></div>
+        
+    </div>
+    <div data-role="focusable-end" tabindex="0"></div>
+</aside><!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+
+<aside role="dialog" class="modal-popup modal-slide requisition-popup add_to_requisition_popup
+               
+               " aria-labelledby="modal-title-25" aria-describedby="modal-content-25" data-role="modal" data-type="popup" tabindex="0">
+    <div data-role="focusable-start" tabindex="0"></div>
+    <div class="modal-inner-wrap" data-role="focusable-scope">
+        <header class="modal-header">
+            
+            <h1 id="modal-title-25" class="modal-title" data-role="title">
+                
+                    New Board
+                
+
+                
+                <span class="modal-subtitle" data-role="subTitle">
+                    &lt;style&gt;#html-body [data-pb-style=XY2SEGH]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll}&lt;/style&gt;&lt;div data-content-type="row" data-appearance="contained" id="" data-element="main"&gt;&lt;div data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="inner" data-pb-style="XY2SEGH"&gt;&lt;div data-content-type="text" data-appearance="default" data-element="main"&gt;&lt;p&gt;Create a new board full of inspiring concepts ready to share.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+                </span>
+                
+            </h1>
+            
+            <button class="action-close" data-role="closeBtn" type="button">
+                <span>Close</span>
+            </button>
+        </header>
+        <div id="modal-content-25" class="modal-content" data-role="content"><div data-bind="css: modalClass, hasFocus: focused" class="modal-component">
+    <!-- ko if: state() || $data.modal --><!-- /ko -->
+</div></div>
+        
+        <footer class="modal-footer">
+            
+            <button class="action primary confirm" type="button" data-role="action"><span>Save</span></button>
+            
+        </footer>
+        
+    </div>
+    <div data-role="focusable-end" tabindex="0"></div>
+</aside><div class="modals-overlay" style="z-index: 901;"></div>

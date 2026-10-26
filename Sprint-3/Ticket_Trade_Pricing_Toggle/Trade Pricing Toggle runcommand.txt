@@ -1,0 +1,8 @@
+Ticket Name: Trade Pricing Toggle
+Page Name: Trade Pricing Toggle (https://mcstaging2.globewest.com/indoor)
+
+Run command for Desktop View:
+npx playwright test tests/ticket-trade-pricing-toggle-audit.spec.js --project=chromium --headed
+
+Run command for Mobile View:
+npx playwright test tests/ticket-trade-pricing-toggle-audit.spec.js --project=mobile --headed

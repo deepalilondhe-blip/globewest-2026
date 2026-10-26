@@ -1,0 +1,48 @@
+Test ID,Feature / Category,Test Scenario,Pre-Conditions,Test Steps,Expected Result,Actual Result,Status,Severity
+"TC-AU-01","Dual-Auth Matrix","Verify Authenticated Logged-In Sessions on Both US and AU Storefronts","US Staging (https://mcstaging2.globewest.com/) & AU Staging (https://mcstaging2.globewest.com.au/)","1. Log into US Staging with Trade Customer (deepali.londhe@overdose.digital).
+2. Log into AU Staging with Customer (deepalilondhe576@gmail.com).
+3. Navigate to /about-us on both environments.
+4. Verify Header account status.","US shows ""Company: Alert Loans Pty Ltd"" and ""My Account ⌵"". AU shows customer ""My Account ⌵"". Both render authenticated CMS views.","Both storefronts verified under authenticated state; header displays logged-in account details.","PASS","P1 - High"
+"TC-AU-02","Hero Banner","Verify Hero Banner Photography, Headline & Sub-Headline Parity","Desktop Viewport 1440x900","1. Navigate to /about-us on US Staging.
+2. Inspect Hero banner image (230420_About-Us_Hugo-Marla_2880x1200.jpg).
+3. Inspect H2 title and H3 subhead typography against AU baseline.","Hero image renders full-width (1440x600 container); H2 title displays ""About Us"" (45px / 400); H3 subhead displays ""Our Business"" (18px / 400); zero placeholders.","Hero container is exactly 1440x600px; typography matches AU baseline (staging ""About Us test"" cleaned up to ""About Us"").","PASS","P1 - High"
+"TC-AU-03","Our Vision Section","Verify Our Vision Heading, Paragraph Copy & Computed Typography","Desktop Viewport 1440x900","1. Scroll to ""Our Vision"" section.
+2. Inspect H2 font size, weight, color.
+3. Inspect 3 narrative paragraphs.
+4. Measure container height and padding.","Container is 1440x353px; H2 is 30px / 400 / #381c12; paragraph copy is 18px / 300 / #381c12; copy matches AU baseline word-for-word.","Computed styles match AU baseline to the exact pixel (1440x353px container, font 30px / 18px).","PASS","P2 - Medium"
+"TC-AU-04","Our Business / Founders","Verify Alan & Stephen Mendel Story, Layout & High-Res Photography","Desktop Viewport 1440x900","1. Scroll to ""Our Business"" section.
+2. Inspect Founders photograph (221018_Alan-Stephen_2500x1200.jpg).
+3. Inspect two-column layout and story paragraphs.
+4. Verify naturalWidth and naturalHeight.","Founders photograph renders natural dimensions 2500x1200px without distortion; two-column grid renders cleanly; container height is 938px.","Matches AU baseline: container is 1440x938px; image is high-res (2500x1200); copy is 15px / 300.","PASS","P1 - High"
+"TC-AU-05","Design Diversity Grid","Verify 5 Collection Cards (Contemporary, Modern, Classic, Eclectic, Retreat)","Desktop Viewport 1440x900","1. Scroll to ""Design Diversity"" section.
+2. Verify 5-column collection grid.
+3. Inspect dimensions and imagery for all 5 cards.
+4. Assert natural dimensions of 460x620px for all 5 images.","All 5 cards render in a horizontal row; each card is 287x389px; all images load high-res (460x620px); zero placeholders.","All 5 cards render with exact 287x389px dimensions; all 5 images load natural 460x620px; zero placeholders.","PASS","P1 - High"
+"TC-AU-06","Quote Section","Verify Stephen Mendel Quote Formatting, Font Style & Contrast","Desktop Viewport 1440x900","1. Scroll to Stephen Mendel quote block.
+2. Inspect font family, font-size, font-style (italic), and text color.
+3. Check background padding and alignment.","Quote displays centered italic text (15px / 300 / #381c12); container height is 173px; proper contrast and spacing.","Computed styles match AU baseline: 15px / 300 italic / #381c12, 173px height.","PASS","P2 - Medium"
+"TC-AU-07","Brand Video Banner","Verify ""Our Brand"" Video Section & Elba Landscape Photography","Desktop Viewport 1440x900","1. Scroll to ""Our Brand"" video section.
+2. Inspect video banner image (Elba_Landscape_1920_x_1000.jpg).
+3. Inspect ""Our Brand"" H3 overlay typography.","Video banner displays full-width high-res image (1920x1000 natural); H3 overlay text renders 30px / 400 in white (#ffffff).","Image loads natural 1920x1000; typography is 30px / 400 white; matches AU baseline.","PASS","P2 - Medium"
+"TC-AU-08","Our Approach Section","Verify 6 Core Principles Typography & Markup Character Cleanup","Desktop Viewport 1440x900","1. Scroll to ""Our Approach"" section.
+2. Inspect H2 (30px / 400), intro copy (18px / 300).
+3. Audit 6 bullet principles.
+4. Check for stray markup characters.","All 6 principles render cleanly (18px / 300 / #381c12); container is 1440x424px; stray ""<"" characters found in AU baseline source code are removed.","Container is 1440x424px; copy is clean without stray ""<"" characters; 100% parity with AU content.","PASS","P1 - High"
+"TC-AU-09","Our Team Section","Verify Team Photograph Display & Container Dimensions","Desktop Viewport 1440x900","1. Scroll to team photo block (.our-approach).
+2. Inspect team photograph (221208_Our-Team-RT_1920x921.jpg).
+3. Assert natural dimensions and aspect ratio.","Team photo renders high-res 1920x921 natural size; container height is 728px; zero placeholder or broken images.","Image loads natural 1920x921; container height is 728px; matches AU baseline.","PASS","P2 - Medium"
+"TC-AU-10","Careers Section & CTAs","Verify Careers Description & Both CTA Button Dimensions and Routing","Desktop Viewport 1440x900","1. Scroll to bottom Careers block.
+2. Inspect H2 (""Careers"") and paragraph copy.
+3. Measure dimensions and typography of ""VIEW CAREERS PAGE"" and ""REGISTER YOUR INTEREST"" buttons.
+4. Inspect destination links.","Container is 1440x265px; both buttons are exactly 304x50px with 14px / 500 typography; ""VIEW CAREERS PAGE"" links to /careers-landing; ""REGISTER YOUR INTEREST"" links to mailto:careers@globewest.com.au.","Container is 1440x265px; both buttons measure 304x50px with font 14px / 500; links and styles match AU baseline.","PASS","P1 - High"
+"TC-AU-11","Mobile Responsiveness","Verify Mobile Viewport Layout Collapse (390x844 iPhone 14)","Mobile Viewport 390x844","1. Load /about-us in 390x844 mobile viewport.
+2. Verify Hero banner collapse (390x412px).
+3. Verify Vision (390x384px) and Business (390x878px).
+4. Verify Design Diversity cards stack (332x467px).
+5. Verify Careers buttons expand to mobile touch targets (350x50px).","All sections collapse into single-column responsive flow; zero horizontal scroll; touch targets exceed 44px min height; imagery scales cleanly.","All container dimensions match AU mobile baseline to the pixel; buttons expand to 350x50px; zero horizontal overflow.","PASS","P1 - High"
+"TC-AU-12","Tablet Responsiveness","Verify Tablet Viewport Section Heights Parity (768x1024 iPad)","Tablet Viewport 768x1024","1. Load /about-us in 768x1024 tablet viewport on US Staging.
+2. Extract heights of all 10 sections.
+3. Compare section heights against AU baseline.","Section heights match AU baseline across all 10 blocks (Hero: 811px, Vision: 296px, Business: 1080px, Diversity: 153px/670px, Approach: 414px, Team: 780px, Careers: 306px).","100% exact match across all 10 sections with 0px variance.","PASS","P2 - Medium"
+"TC-AU-13","Asset & Catalog Integrity","Verify Zero Placeholder Images & Real CDN Asset Delivery","Desktop & Mobile Viewports","1. Query all img elements in .page-main.
+2. Assert no image src contains /placeholder/default/ or placeholder strings.
+3. Assert all images have naturalWidth > 0 and naturalHeight > 0.","100% of images are authentic production assets from wysiwyg/about-us/ directory; zero NetSuite or Magento default placeholders.","All 10+ images verified as authentic high-resolution assets with complete natural dimensions; zero placeholders.","PASS","P1 - High"

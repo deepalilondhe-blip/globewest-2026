@@ -1,0 +1,8 @@
+Ticket Name: #41794527 - My Account Dropdown
+Page Name: My Account Dropdown (https://mcstaging2.globewest.com/customer/account/)
+
+Run command for Desktop View:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_My_Account_Dropdown/scripts/inspect_account_dropdown.js"
+
+Run command for Mobile View:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_My_Account_Dropdown/scripts/capture_mobile_dropdown.js"

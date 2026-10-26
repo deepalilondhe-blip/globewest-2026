@@ -1,0 +1,8 @@
+Ticket Name: #41794542 - Blog Article Template
+Page Name: Blog Article Template (https://mcstaging2.globewest.com/blog/stockist-in-profile/stockist-in-profile-%7C-ikos-home-duplicated)
+
+Run command for Desktop View:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794542_Blog_Article_Template/scripts/run_desktop_live_comparison.js"
+
+Run command for Mobile View:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794542_Blog_Article_Template/scripts/run_mobile_live_comparison.js"

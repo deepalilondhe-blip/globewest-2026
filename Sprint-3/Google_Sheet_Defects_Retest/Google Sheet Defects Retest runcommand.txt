@@ -1,0 +1,8 @@
+Ticket Name: Internal QA Master Sheet - 50 Defects Retest
+Page Name: GlobeWest Customer Account (https://mcstaging2.globewest.com/customer/account/)
+
+Run command for Desktop View:
+node "Sprint-3/Google_Sheet_Defects_Retest/scripts/execute_master_retest_headed.js"
+
+Run command for Mobile View:
+node -e "const { chromium } = require('./GlobeWest 2026/node_modules/playwright'); (async () => { const b = await chromium.launch({ channel: 'chrome', headless: false }); const p = await b.newPage({ viewport: { width: 375, height: 812 } }); await p.goto('https://mcstaging2.globewest.com/customer/account/login/'); await p.fill('#email', 'deepali.londhe@overdose.digital'); await p.fill('#pass', 'Deep@123'); await p.click('#send2'); await p.waitForTimeout(4000); await p.screenshot({ path: 'Sprint-3/Google_Sheet_Defects_Retest/screenshots/MOBILE_VIEW_LIVE.png', fullPage: true }); await b.close(); })();"

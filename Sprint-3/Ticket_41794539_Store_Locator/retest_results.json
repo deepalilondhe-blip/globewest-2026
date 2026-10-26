@@ -1,0 +1,82 @@
+{
+  "timestamp": "2026-10-13T06:06:47.311Z",
+  "testSuite": [
+    {
+      "id": "TC-GW-LOC-003",
+      "name": "Search Postcode Placeholder Localization",
+      "expected": "US ZIP format \"Eg. 90210\"",
+      "actual": "Renders \"Eg. 90210\" on Desktop & Mobile",
+      "status": "✅ PASS (FIXED)"
+    },
+    {
+      "id": "TC-GW-LOC-010",
+      "name": "CMS Block Heading Suffix Removal (\"- us\")",
+      "expected": "\"How to Buy with a Stockist\"",
+      "actual": "Suffix \"- us\" removed cleanly",
+      "status": "✅ PASS (FIXED)"
+    },
+    {
+      "id": "TC-GW-LOC-013",
+      "name": "Document HTML <title> Tag Implementation",
+      "expected": "Non-empty page title",
+      "actual": "\"Find a Stockist & Showroom | GlobeWest\"",
+      "status": "✅ PASS (FIXED)"
+    },
+    {
+      "id": "TC-GW-LOC-021",
+      "name": "WCAG 2.2 AA Document Title Compliance (2.4.2)",
+      "expected": "Non-empty document title in DOM",
+      "actual": "Title present: \"Find a Stockist & Showroom | GlobeWest\"",
+      "status": "✅ PASS (FIXED)"
+    },
+    {
+      "id": "TC-GW-LOC-002",
+      "name": "Interactive Google Maps API Authorization",
+      "expected": "Google Maps renders without Referer error",
+      "actual": "Blocked by RefererNotAllowedMapError",
+      "status": "🔴 FAIL (P0 BLOCKER STILL OPEN)"
+    },
+    {
+      "id": "TC-GW-LOC-008",
+      "name": "Intro Paragraph Copy Localization",
+      "expected": "US-localized copy (no Australia reference)",
+      "actual": "Still references \"Australia's finest furniture\"",
+      "status": "🔴 FAIL (STILL OPEN)"
+    },
+    {
+      "id": "TC-GW-LOC-011",
+      "name": "American English Spelling Standards",
+      "expected": "\"finalize\" instead of \"finalise\"",
+      "actual": "Still uses Australian spelling \"finalise\"",
+      "status": "🔴 FAIL (STILL OPEN)"
+    },
+    {
+      "id": "TC-GW-LOC-020",
+      "name": "Secondary Help Text Duplication",
+      "expected": "Disclaimer text rendered exactly once",
+      "actual": "Rendered once",
+      "status": "✅ PASS"
+    }
+  ],
+  "desktopResults": {
+    "title": "Find a Stockist & Showroom | GlobeWest",
+    "hasEg90210": true,
+    "hasEg3000": false,
+    "hasCleanStockistHeading": true,
+    "hasUsSuffix": false,
+    "hasAustraliaLeak": true,
+    "hasFinalise": true,
+    "hasFinalize": false,
+    "dupCount": 1,
+    "hasGmError": true,
+    "mapPresent": true
+  },
+  "mobileResults": {
+    "hasEg90210": true,
+    "hasCleanStockistHeading": true,
+    "hasUsSuffix": false
+  },
+  "consoleErrors": [
+    "Google Maps JavaScript API error: RefererNotAllowedMapError\nhttps://developers.google.com/maps/documentation/javascript/error-messages#referer-not-allowed-map-error\nYour site URL to be authorized: https://mcstaging2.globewest.com/locator"
+  ]
+}

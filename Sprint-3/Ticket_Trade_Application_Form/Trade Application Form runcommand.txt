@@ -1,0 +1,8 @@
+Ticket Name: Trade Application Form
+Page Name: Trade Application Form (https://mcstaging2.globewest.com/gwcustomer/trade/create)
+
+Run command for Desktop View:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_Trade_Application_Form/scripts/run_desktop_live_comparison.js"
+
+Run command for Mobile View:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_Trade_Application_Form/scripts/run_mobile_live_comparison.js"

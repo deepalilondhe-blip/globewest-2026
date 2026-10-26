@@ -1,0 +1,79 @@
+{
+  "timestamp": "2026-10-12T05:56:36.947Z",
+  "ticket": "#41794539 - Store Locator",
+  "device": "iPhone 17 Pro (402x874 @3x) + Desktop (1440x900)",
+  "us": {
+    "desktop": {
+      "title": "",
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "FIND A STOCKIST"
+        },
+        {
+          "tag": "H2",
+          "text": "How to Buy with a Stockist - us"
+        },
+        {
+          "tag": "H2",
+          "text": "CONNECT WITH US"
+        },
+        {
+          "tag": "H2",
+          "text": "Subscribe"
+        },
+        {
+          "tag": "H3",
+          "text": "VISIT OUR SHOWROOMS"
+        },
+        {
+          "tag": "H3",
+          "text": "PRODUCTS"
+        },
+        {
+          "tag": "H3",
+          "text": "CUSTOMER SUPPORT"
+        },
+        {
+          "tag": "H3",
+          "text": "OUR BRAND"
+        }
+      ],
+      "cmsBlocks": [
+        {
+          "class": "find-designer-trade-customer",
+          "id": "",
+          "text": "How to Buy with a Stockist - us\n\nGlobeWest is stocked at some of Australia's finest furniture and home decor retailers. Stockists display select GlobeWest products in-store and can order any item from the collection for you.\n\nYou’re also welcome at GlobeWest trade showrooms. Consultants will connect"
+        },
+        {
+          "class": "",
+          "id": "",
+          "text": ""
+        }
+      ],
+      "placeholder": "Eg.3000",
+      "gmAuthFailure": false,
+      "gmErrorText": "",
+      "hasTradeToggle": false,
+      "tradeToggleText": "",
+      "accountGreeting": "",
+      "footerBadgeAustralian": false,
+      "containsAustraliasFinest": true,
+      "containsFinalise": true,
+      "containsFinalize": false,
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 422 ()",
+        "[{\"Track.Title\":[\"'Title' must not be empty.\"]}] {pageType: 0, url: https://mcstaging2.globewest.com/locator, title: }"
+      ]
+    }
+  },
+  "au": {
+    "desktop": {
+      "title": "",
+      "h1": "FIND A STOCKIST",
+      "stockistInfoBlock": true,
+      "cmsText": "FIND A STOCKIST\n\nGlobeWest is stocked at some of Australia's finest furniture and home decor retailers. Stockists display select GlobeWest products in-store and can order any item from the collection for you.\n\nSEARCH BY POSTCODE\nUSE CURRENT LOCATION\nSEARCH BY STORE NAME\n\nToo far from one of our stockists? You can still shop online, just select from our list of retailers at checkout.",
+      "mapCanvasExists": true
+    }
+  }
+}

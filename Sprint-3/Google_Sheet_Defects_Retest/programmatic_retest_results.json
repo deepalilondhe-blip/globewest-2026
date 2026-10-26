@@ -1,0 +1,322 @@
+{
+  "DE#01": {
+    "valid": true,
+    "fixed": true,
+    "detail": "All 5 table sort arrows share identical top baseline alignment.",
+    "data": [
+      {
+        "top": 612,
+        "height": 18,
+        "text": "ORDER"
+      },
+      {
+        "top": 612,
+        "height": 18,
+        "text": "DATE"
+      },
+      {
+        "top": 612,
+        "height": 18,
+        "text": "STATUS"
+      },
+      {
+        "top": 612,
+        "height": 18,
+        "text": "TOTAL"
+      },
+      {
+        "top": 612,
+        "height": 18,
+        "text": "BALANCE"
+      }
+    ]
+  },
+  "DE#02": {
+    "valid": true,
+    "fixed": true,
+    "detail": "All column labels are left-aligned per Figma.",
+    "data": [
+      {
+        "text": "ORDER",
+        "align": "left"
+      },
+      {
+        "text": "DATE",
+        "align": "left"
+      },
+      {
+        "text": "STATUS",
+        "align": "left"
+      },
+      {
+        "text": "TOTAL",
+        "align": "left"
+      },
+      {
+        "text": "BALANCE",
+        "align": "left"
+      },
+      {
+        "text": "ACTIONS",
+        "align": "left"
+      }
+    ]
+  },
+  "DE#03": {
+    "valid": "N/A",
+    "fixed": "SKIPPED",
+    "detail": "SKIPPED per user directive: Awaiting client response (\"we need to explain this to clients\")."
+  },
+  "DE#04": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Text and button are aligned in the same row per Figma."
+  },
+  "DE#05": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Descriptive copy present on booking section."
+  },
+  "DE#06": {
+    "valid": "N/A",
+    "fixed": "SKIPPED",
+    "detail": "SKIPPED per user directive: Awaiting client response (\"We have already commented on this for the client.\")."
+  },
+  "DE#07": {
+    "valid": "N/A",
+    "fixed": "SKIPPED",
+    "detail": "SKIPPED per user directive: Awaiting client response (\"It is depends on the cient.\")."
+  },
+  "DE#08": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Quote columns conform to Figma: [QUOTE N, EXP. DATE, CUST PO#, QUOTE NAME, CLIENT NAME, STATUS, TOTAL, ACTIONS]",
+    "data": [
+      "QUOTE N",
+      "EXP. DATE",
+      "CUST PO#",
+      "QUOTE NAME",
+      "CLIENT NAME",
+      "STATUS",
+      "TOTAL",
+      "ACTIONS"
+    ]
+  },
+  "DE#09": {
+    "valid": true,
+    "fixed": false,
+    "detail": "Pagination component missing or styled as default."
+  },
+  "DE#10": {
+    "valid": true,
+    "fixed": false,
+    "detail": "Quote Listing FAQs count: 29 (Limit: 8)"
+  },
+  "DE#11": {
+    "valid": "N/A",
+    "fixed": "SKIPPED",
+    "detail": "SKIPPED per user directive: Awaiting client response (\"We have already commented on this for the client.\")."
+  },
+  "DE#13": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Informational quote copy present."
+  },
+  "DE#14": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Label and value pairs exhibit 12-16px margin spacing."
+  },
+  "DE#15": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Card container padding matches Figma 24px inset."
+  },
+  "DE#16": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Stock status rendered beside quote items."
+  },
+  "DE#17": {
+    "valid": true,
+    "fixed": false,
+    "detail": "Summary section missing."
+  },
+  "DE#18": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Shipping information present on quote detail."
+  },
+  "DE#19": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Default redundant Magento sections removed."
+  },
+  "DE#20": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Action buttons aligned in horizontal flex row."
+  },
+  "DE#21": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Quote Detail FAQ count: 1 (Limit: 8)"
+  },
+  "DE#22": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Extra non-Figma boilerplate copy removed."
+  },
+  "DE#23": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Buttons conform to standard Figma 44px height."
+  },
+  "DE#24": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Key-value pair spacing verified."
+  },
+  "DE#25": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Layout aligns cleanly with quote modify grid."
+  },
+  "DE#26": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Label and value vertical separation verified."
+  },
+  "DE#27": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Order action buttons have identical dimensions and text center aligned."
+  },
+  "DE#28": {
+    "valid": true,
+    "fixed": false,
+    "detail": "Sort arrows small or low contrast.",
+    "data": [
+      12,
+      12,
+      12,
+      12,
+      12
+    ]
+  },
+  "DE#29": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Order Listing FAQs: 1 (Constraint: <= 8)"
+  },
+  "DE#30": {
+    "valid": true,
+    "fixed": false,
+    "detail": "Typo \"POY\" still found on page."
+  },
+  "DE#31": {
+    "valid": "N/A",
+    "fixed": "SKIPPED",
+    "detail": "SKIPPED per user directive: Awaiting client response (\"Need to Discuss with client\")."
+  },
+  "DE#32": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Order details label-to-value margin conforms to Figma spec."
+  },
+  "DE#33": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Address card displays phone number formatted at bottom of address."
+  },
+  "DE#34": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Australian tax labels removed for US storefront."
+  },
+  "DE#35": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Separator divider border and font styling properly applied."
+  },
+  "DE#36": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Typography and alignment matched with Figma tokens."
+  },
+  "DE#40": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Account dropdown spacing verified."
+  },
+  "DE#41": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Hold table sort arrows present with high visibility."
+  },
+  "DE#42": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Hold Listing FAQs: 1 (Constraint: <= 8)"
+  },
+  "DE#44": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Hold detail spacing matched with Figma tokens."
+  },
+  "DE#45": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Section layout alignment conforms to grid."
+  },
+  "DE#46": {
+    "valid": true,
+    "fixed": true,
+    "detail": "FAQ section present under hold details."
+  },
+  "DE#47": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Typography and alignment matched with Figma."
+  },
+  "DE#48": {
+    "valid": "N/A",
+    "fixed": "SKIPPED",
+    "detail": "SKIPPED per user directive: Awaiting client response (\"Need to discuss with client\")."
+  },
+  "DE#49": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Shipping amount rendered in summary totals."
+  },
+  "DE#50": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Spacing between label and text verified."
+  },
+  "DE#12": {
+    "valid": true,
+    "fixed": true,
+    "detail": "All desktop entries render cleanly in responsive card layout."
+  },
+  "DE#37": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Label to value spacing maintains clear separation on mobile."
+  },
+  "DE#38": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Summary section adapts to single-column card layout."
+  },
+  "DE#39": {
+    "valid": true,
+    "fixed": true,
+    "detail": "FAQ title and table spacing conforms to mobile tokens."
+  },
+  "DE#43": {
+    "valid": true,
+    "fixed": true,
+    "detail": "Hold listing column sequence conforms to mobile layout."
+  }
+}

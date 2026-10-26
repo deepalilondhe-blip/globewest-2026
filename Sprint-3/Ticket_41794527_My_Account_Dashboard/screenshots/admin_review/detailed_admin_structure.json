@@ -1,0 +1,677 @@
+{
+  "configTabs": {
+    "titles": [
+      "OVERDOSE",
+      "SEARCHSPRING",
+      "REACH DIGITAL",
+      "MAGESIDE",
+      "GENERAL",
+      "DATAFEEDWATCH",
+      "MAGEFAN EXTENSIONS",
+      "OVERDOSE THEME",
+      "SECURITY",
+      "CATALOG",
+      "AHEADWORKS EXTENSIONS",
+      "LIVECHAT",
+      "CUSTOMERS",
+      "SALES",
+      "YOTPO",
+      "MARKETING AUTOMATION",
+      "MAGEPLAZA EXTENSIONS",
+      "DOTDIGITAL",
+      "MAGEME EXTENSIONS",
+      "MIRASVIT EXTENSIONS",
+      "ADOBE SERVICES",
+      "SERVICES",
+      "ALGOLIA SEARCH",
+      "ADVANCED",
+      "XTENTO EXTENSIONS"
+    ],
+    "links": [
+      {
+        "text": "Deploy Configuration",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/overdose_safeproduction/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Delivery Methods",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/gw_delivery_rates/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Magento Optimizer",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/od_optimizer/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Navigation Modern",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/overdose_navigation/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Product Banners",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/overdose_product_banner/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Cms Content",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/cms_content/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "General Configs",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/od_general_config/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Admin Notification",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/admin_notification/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Physical Swatches Notification",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/physical_swatches_notification/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Price Toggle",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/gw_price_toggle/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Compare products popup",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/compare_products/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Product Back In Stock",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/product_back_in_stock/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Gated Lookbook",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/lookbook/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Customer Account Content Configs",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/gw_customer_account/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Netsuite Connector",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/gw_netsuite_connector/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Email Preferences",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/gw_email_preferences/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Configurable and Modular Products Builder",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/gw_product_builder/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Custom Terms & Conditions",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/od_terms_and_conditions/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Serverside Ecommerce Tracking",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/od_ecommercetracking/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Netsuite Credit",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/gw_netsuite_company_credit/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Netsuite Lead Source For Coupon",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/gw_netsuite_lead_source_for_coupon/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Company",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/od_company/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Swagger",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/gw_swagger/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Wishlist and Boards",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/wishlist_and_boards/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Company Designer",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/od_company_designer/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Find Designer",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/od_find_designer/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Page Builder",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/od_page_builder/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Stockist Locator",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/od_stockist_locator/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Resource Permissions",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/od_resource_permissions/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Brochures & Manuals",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/gw_brochures_manuals/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Product Attachments",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/gw_products_attachments/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Popular Configuration",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/gw_popular_configuration/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Booking Service",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/gw_online_booking/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Searchspring",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/serchspring/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Better Indexers",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/reachdigital_indexers/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Subscribe At Checkout",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/mageside_subscribeatcheckout/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "General",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/general/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Contacts",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/contact/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "B2B Features",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/btob/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Web",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/web/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Currency Setup",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/currency/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Store Email Addresses",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/trans_email/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Reports",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/reports/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Content Management",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/cms/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "New Relic Reporting",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/newrelicreporting/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Advanced Reporting",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/analytics/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "General",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/dfw_connector/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Blog",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/mfblog/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Admin User Guide",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/mfadminuserguide/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "WYSIWYG Advanced",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/mfwysiwygadvanced/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Extensions & Notifications",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/mfextension/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Header",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/od_theme_header/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Catalog",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/od_theme_catalog/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Customer Cabinet",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/od_theme_cabinet/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Infinite Scroll",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/od_infinitescroll/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Checkout",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/od_theme_checkout/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Google Maps",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/od_theme_google/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Notification",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/od_theme_notification/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Newsletter",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/od_newsletter/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Google reCAPTCHA Storefront",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/recaptcha_frontend/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Content Security Policy (CSP)",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/csp/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "2FA",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/twofactorauth/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Content Security Policy",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/od_csp/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Security.txt",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/magento_securitytxt_securitytxt/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Google reCAPTCHA Admin Panel",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/recaptcha_backend/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Catalog",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/catalog/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Inventory",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/cataloginventory/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Visual Merchandiser",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/visualmerchandiser/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "XML Sitemap",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/sitemap/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "RSS Feeds",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/rss/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Email to a Friend",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/sendfriend/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "SearchSpring",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/searchspring/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Layered Navigation",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/aw_layerednav/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Coupon Code Generator",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/aw_coupongenerator/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Settings",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/lc_block_config/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Login as Customer",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/login_as_customer/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Newsletter",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/newsletter/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Customer Configuration",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/customer/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Company Configuration",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/company/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Requisition Lists",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/requisitionlist/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Wish List",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/wishlist/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Invitations",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/magento_invitation/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Reward Points",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/magento_reward/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Promotions",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/promo/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Gift Registry",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/magento_giftregistry/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Persistent Shopping Cart",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/persistent/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Client Configuration",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/client/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Netsuite B2B Configuration",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/netsuite_b2b/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Stockist Configuration",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/stockist/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Sales",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/sales/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Sales Emails",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/sales_email/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Quotes",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/quote/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "PDF Print-outs",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/sales_pdf/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Tax",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/tax/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Checkout",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/checkout/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Shipping Settings",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/shipping/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Multishipping Settings",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/multishipping/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Shipping Methods",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/carriers/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Google API",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/google/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Payment Methods",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/payment/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "3D Secure",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/three_d_secure/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Gift Cards",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/giftcard/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Yotpo configuration",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/yotpo_core/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Configuration",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/email_marketing/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Social Share",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/mpsocialshare/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "SMTP",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/smtp/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Information",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/mageplaza/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Accounts",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/connector_api_credentials/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Chat Settings",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/chat_api_credentials/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Data Mapping",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/connector_data_mapping/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Sync Settings",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/sync_settings/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Abandoned Carts",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/abandoned_carts/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Automation",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/connector_automation/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Dynamic Content",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/connector_dynamic_content/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Transactional Emails",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/transactional_emails/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Transactional SMS",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/transactional_sms/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Marketing Consent",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/connector_consent/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Configuration",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/connector_configuration/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Developer",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/connector_developer_settings/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Information & Licenses",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/mageme/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "WebForms",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/webforms/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Knowledge Base",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/kb/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "SEO general settings",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/seo/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Rich snippets and Opengraph",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/seo_markup/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "SEO Templates and rewrites",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/seo_content/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Cross-links",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/seoautolink/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Extended sitemap",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/seositemap/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "SEO AI helper",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/seo_ai/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "SEO audit",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/seo_audit/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Developer",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/mst_core/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Adobe I/O Events",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/adobe_io_events/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Admin UI SDK",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/admin_ui_sdk/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Webhooks",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/commerce_webhooks/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "AddressFinder",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/addressfinder/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Timify API",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/timifyapi/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Magento Web API",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/webapi/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Commerce Services Connector",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/services_connector/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "OAuth",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/oauth/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Credentials and Basic Setup",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/algoliasearch_credentials/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Autocomplete Menu",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/algoliasearch_autocomplete/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "InstantSearch Results Page",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/algoliasearch_instant/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Products",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/algoliasearch_products/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Categories",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/algoliasearch_categories/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Recommend Products Settings",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/algoliasearch_recommend/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Images",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/algoliasearch_images/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Indexing Queue / Cron",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/algoliasearch_queue/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Click & Conversion Analytics",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/algoliasearch_cc_analytics/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Personalization",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/algoliasearch_personalization/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Google Analytics",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/algoliasearch_analytics/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Advanced",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/algoliasearch_advanced/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Advanced Algolia indices settings",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/algoliasearch_extra_settings/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Admin",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/admin/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Webapi Logs",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/webapi_logs/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "System",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/system/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "General Configuration",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/xtcore/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "XTENTO Extension Store",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/xtstore/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      },
+      {
+        "text": "Product Feed Export Module",
+        "href": "https://mcstaging2.globewest.com.au/godmode/admin/system_config/edit/section/productexport/key/c5abca628bdcd4874db450928f520d1307fbecf79a6351cda01bc2603a04eb38/"
+      }
+    ]
+  },
+  "cmsGridRows": [
+    {
+      "id": "",
+      "title": "All in Column",
+      "identifier": "All in Column",
+      "storeView": "",
+      "status": "All in Column\n            \n EnabledDisabled"
+    },
+    {
+      "id": "",
+      "title": "All in Column",
+      "identifier": "All in Column",
+      "storeView": "",
+      "status": "All in Column\n            \n EnabledDisabled"
+    }
+  ]
+}

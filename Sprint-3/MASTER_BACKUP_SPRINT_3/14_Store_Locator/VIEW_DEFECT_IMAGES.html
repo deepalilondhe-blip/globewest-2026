@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlobeWest Store Locator - Senior QA Visual Audit & Defect Gallery</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #3b82f6;
+      --red: #ef4444;
+      --green: #10b981;
+      --gold: #f59e0b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 30px 20px;
+    }
+
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 30px;
+    }
+
+    .badge-bar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-ticket { background: #3b82f6; color: white; }
+    .badge-p0 { background: var(--red); color: white; }
+    .badge-wcag { background: #8b5cf6; color: white; }
+    .badge-figma { background: #10b981; color: white; }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .meta-subtitle {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .metric-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .metric-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    .gallery-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      margin-top: 30px;
+    }
+
+    .defect-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .defect-header {
+      padding: 16px 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .defect-title {
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .defect-body {
+      padding: 20px;
+    }
+
+    .defect-image-container {
+      position: relative;
+      cursor: zoom-in;
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .defect-image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+
+    .defect-image-container:hover img {
+      opacity: 0.95;
+    }
+
+    .defect-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .meta-box {
+      padding: 12px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+
+    .meta-actual {
+      background: rgba(239, 68, 68, 0.1);
+      border-left: 4px solid var(--red);
+    }
+
+    .meta-expected {
+      background: rgba(16, 185, 129, 0.1);
+      border-left: 4px solid var(--green);
+    }
+
+    .meta-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+    }
+
+    .meta-actual .meta-title { color: var(--red); }
+    .meta-expected .meta-title { color: var(--green); }
+
+    /* Modal for enlarged image view */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      overflow: auto;
+      padding: 40px 20px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal.active { display: flex; }
+
+    .modal-content {
+      max-width: 95vw;
+      max-height: 90vh;
+      border-radius: 8px;
+      border: 2px solid var(--border);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px; right: 30px;
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge-bar">
+        <span class="badge badge-ticket">Task #41794539</span>
+        <span class="badge badge-p0">🔴 P0 Blocker: Google Maps API</span>
+        <span class="badge badge-wcag">WCAG 2.2 AA Audit</span>
+        <span class="badge badge-figma">Baseline: AU Storefront & Figma</span>
+      </div>
+      <h1>GlobeWest Store Locator — Senior QA Visual Audit & Defect Proof</h1>
+      <p class="meta-subtitle">
+        Target Live URL: <a href="https://mcstaging2.globewest.com/locator" target="_blank" style="color: #60a5fa;">https://mcstaging2.globewest.com/locator</a> | 
+        Baseline: <a href="https://www.globewest.com.au/locator" target="_blank" style="color: #60a5fa;">https://www.globewest.com.au/locator</a> | 
+        Design Spec: <a href="https://www.figma.com/design/oSBa3EMR3goI0vM1tXCdTk/Globewest-USA---External" target="_blank" style="color: #60a5fa;">Globewest USA External</a>
+      </p>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-value" style="color: #ef4444;">1</div>
+          <div class="metric-label">P0 Critical Blocker</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value" style="color: #f59e0b;">4</div>
+          <div class="metric-label">P1 High Severity</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value" style="color: #60a5fa;">3</div>
+          <div class="metric-label">P2 Medium Defects</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value" style="color: #8b5cf6;">2</div>
+          <div class="metric-label">WCAG 2.2 AA Violations</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value" style="color: #10b981;">17</div>
+          <div class="metric-label">Test Cases Passed</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="gallery-grid">
+
+      <!-- DEFECT 01 -->
+      <div class="defect-card">
+        <div class="defect-header">
+          <div class="defect-title">
+            <span style="color: var(--red);">🔴 Pass 01</span>
+            <span>Interactive Google Maps Canvas Integrity & API Key Referrer Authorization</span>
+          </div>
+          <span class="badge badge-p0">P0 - Critical Blocker</span>
+        </div>
+        <div class="defect-body">
+          <div class="defect-image-container" onclick="openModal('comparison/COMPARISON_01_GOOGLE_MAPS_CANVAS.png')">
+            <img src="comparison/COMPARISON_01_GOOGLE_MAPS_CANVAS.png" alt="Google Maps API Defect">
+          </div>
+          <div class="defect-meta">
+            <div class="meta-box meta-actual">
+              <div class="meta-title">Actual Result (US Staging Live)</div>
+              <div>Interactive map fails completely with alert: <em>"Oops! Something went wrong. This page didn't load Google Maps correctly."</em> Console reports <code>RefererNotAllowedMapError</code> because <code>mcstaging2.globewest.com</code> is not authorized on the Google Cloud API key.</div>
+            </div>
+            <div class="meta-box meta-expected">
+              <div class="meta-title">Expected Result (AU Baseline / Figma)</div>
+              <div>Interactive Google Map must load properly with custom location pins, cluster markers, zoom/pan controls, and location-based recentering.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEFECT 02 -->
+      <div class="defect-card">
+        <div class="defect-header">
+          <div class="defect-title">
+            <span style="color: var(--red);">🔴 Pass 02</span>
+            <span>Search Controls Localization: Australian Postcode (Eg.3000) Leak</span>
+          </div>
+          <span class="badge" style="background: var(--gold); color: black;">P1 - High</span>
+        </div>
+        <div class="defect-body">
+          <div class="defect-image-container" onclick="openModal('comparison/COMPARISON_02_POSTCODE_PLACEHOLDER.png')">
+            <img src="comparison/COMPARISON_02_POSTCODE_PLACEHOLDER.png" alt="Postcode Placeholder Defect">
+          </div>
+          <div class="defect-meta">
+            <div class="meta-box meta-actual">
+              <div class="meta-title">Actual Result (US Staging Live)</div>
+              <div>Input placeholder is hardcoded to Melbourne, Victoria Australian postcode <code>"Eg.3000"</code> on the US storefront. Confuses US trade clients.</div>
+            </div>
+            <div class="meta-box meta-expected">
+              <div class="meta-title">Expected Result (AU Baseline / Figma)</div>
+              <div>Input placeholder must guide US users with a 5-digit ZIP code (e.g. <code>"Eg. 90210"</code> or <code>"Eg. 78701"</code>) and label <code>"SEARCH BY ZIP CODE"</code>.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEFECT 03 -->
+      <div class="defect-card">
+        <div class="defect-header">
+          <div class="defect-title">
+            <span style="color: var(--red);">🔴 Pass 03</span>
+            <span>Primary Intro Copy Leak: Regional Australia Marketing Copy</span>
+          </div>
+          <span class="badge" style="background: var(--gold); color: black;">P1 - High</span>
+        </div>
+        <div class="defect-body">
+          <div class="defect-image-container" onclick="openModal('comparison/COMPARISON_03_AU_COPY_LEAK.png')">
+            <img src="comparison/COMPARISON_03_AU_COPY_LEAK.png" alt="AU Copy Leak Defect">
+          </div>
+          <div class="defect-meta">
+            <div class="meta-box meta-actual">
+              <div class="meta-title">Actual Result (US Staging Live)</div>
+              <div>Intro paragraph leaks Australian regional copy verbatim: <em>"GlobeWest is stocked at some of Australia's finest furniture and home decor retailers."</em></div>
+            </div>
+            <div class="meta-box meta-expected">
+              <div class="meta-title">Expected Result (AU Baseline / Figma)</div>
+              <div>Copy must be localized for the US market or reference confirmed US Trade showroom locations (LA & Austin) per ticket scope.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEFECT 04 -->
+      <div class="defect-card">
+        <div class="defect-header">
+          <div class="defect-title">
+            <span style="color: var(--red);">🔴 Pass 04</span>
+            <span>Editorial CMS Section Heading Title Wrap Defect ('- us' Leak)</span>
+          </div>
+          <span class="badge" style="background: var(--gold); color: black;">P1 - High</span>
+        </div>
+        <div class="defect-body">
+          <div class="defect-image-container" onclick="openModal('comparison/COMPARISON_04_EDITORIAL_HEADING_WRAP.png')">
+            <img src="comparison/COMPARISON_04_EDITORIAL_HEADING_WRAP.png" alt="Editorial Heading Wrap Defect">
+          </div>
+          <div class="defect-meta">
+            <div class="meta-box meta-actual">
+              <div class="meta-title">Actual Result (US Staging Live)</div>
+              <div>Editorial card heading renders <em>"How to Buy with a Stockist - us"</em> with awkward hyphenation and internal Magento store code <code>"- us"</code> wrapped to a second line.</div>
+            </div>
+            <div class="meta-box meta-expected">
+              <div class="meta-title">Expected Result (AU Baseline / Figma)</div>
+              <div>Heading must render cleanly as <em>"How to Buy with a Stockist"</em> without internal CMS identifiers leaking.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEFECT 05 -->
+      <div class="defect-card">
+        <div class="defect-header">
+          <div class="defect-title">
+            <span style="color: var(--red);">🔴 Pass 05</span>
+            <span>Editorial Body Text Regional Spelling Leak ('finalise' vs 'finalize')</span>
+          </div>
+          <span class="badge" style="background: #3b82f6; color: white;">P2 - Medium</span>
+        </div>
+        <div class="defect-body">
+          <div class="defect-image-container" onclick="openModal('comparison/COMPARISON_05_EDITORIAL_BODY_SPELLING.png')">
+            <img src="comparison/COMPARISON_05_EDITORIAL_BODY_SPELLING.png" alt="Editorial Spelling Defect">
+          </div>
+          <div class="defect-meta">
+            <div class="meta-box meta-actual">
+              <div class="meta-title">Actual Result (US Staging Live)</div>
+              <div>Body text uses Australian English spelling <em>"finalise your order"</em> with 's' and references Australian trade showrooms.</div>
+            </div>
+            <div class="meta-box meta-expected">
+              <div class="meta-title">Expected Result (AU Baseline / Figma)</div>
+              <div>Editorial copy must adhere to American English standards (<em>"finalize your order"</em> with 'z') and reflect US trade showroom appointment workflows.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEFECT 06 -->
+      <div class="defect-card">
+        <div class="defect-header">
+          <div class="defect-title">
+            <span style="color: var(--red);">🔴 Pass 06</span>
+            <span>Storefront Footer Australian Kangaroo Trust Badge Leak</span>
+          </div>
+          <span class="badge" style="background: #3b82f6; color: white;">P2 - Medium</span>
+        </div>
+        <div class="defect-body">
+          <div class="defect-image-container" onclick="openModal('comparison/COMPARISON_06_FOOTER_KANGAROO_BADGE.png')">
+            <img src="comparison/COMPARISON_06_FOOTER_KANGAROO_BADGE.png" alt="Footer Kangaroo Badge Defect">
+          </div>
+          <div class="defect-meta">
+            <div class="meta-box meta-actual">
+              <div class="meta-title">Actual Result (US Staging Live)</div>
+              <div>US storefront footer renders the Australian Kangaroo trust badge <em>"AUSTRALIAN OWNED & RUN"</em> with AU map silhouette.</div>
+            </div>
+            <div class="meta-box meta-expected">
+              <div class="meta-title">Expected Result (AU Baseline / Figma)</div>
+              <div>US storefront footer must suppress domestic Australian trust badges per approved Figma US Global Footer design specs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEFECT 07 -->
+      <div class="defect-card">
+        <div class="defect-header">
+          <div class="defect-title">
+            <span style="color: var(--red);">🔴 Pass 07</span>
+            <span>Mobile Responsive Viewport Layout Stacking Overview</span>
+          </div>
+          <span class="badge" style="background: var(--gold); color: black;">P1 - High</span>
+        </div>
+        <div class="defect-body">
+          <div class="defect-image-container" onclick="openModal('comparison/COMPARISON_07_MOBILE_RESPONSIVE_OVERVIEW.png')">
+            <img src="comparison/COMPARISON_07_MOBILE_RESPONSIVE_OVERVIEW.png" alt="Mobile Responsive Defect">
+          </div>
+          <div class="defect-meta">
+            <div class="meta-box meta-actual">
+              <div class="meta-title">Actual Result (US Mobile Live)</div>
+              <div>Mobile viewport displays broken map canvas, hardcoded AU postcodes, duplicate help text paragraphs, and awkward heading wrap.</div>
+            </div>
+            <div class="meta-box meta-expected">
+              <div class="meta-title">Expected Result (AU Baseline / Figma)</div>
+              <div>Single-column responsive flow with functioning interactive mobile touch map, localized ZIP code inputs, and clean editorial presentation.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEFECT 08 - REAL IPHONE 17 PRO DUAL-AUTH COMPARISON -->
+      <div class="defect-card">
+        <div class="defect-header">
+          <div class="defect-title">
+            <span style="color: var(--accent);">📱 Pass 08</span>
+            <span>Real iPhone 17 Pro Hardware Viewport - Authenticated Dual-Storefront Comparison</span>
+          </div>
+          <span class="badge" style="background: #8b5cf6; color: white;">iPhone 17 Pro Retina 3x</span>
+        </div>
+        <div class="defect-body">
+          <div class="defect-image-container" onclick="openModal('comparison/COMPARISON_08_IPHONE17PRO_DUAL_AUTH_STORE_LOCATOR.png')">
+            <img src="comparison/COMPARISON_08_IPHONE17PRO_DUAL_AUTH_STORE_LOCATOR.png" alt="iPhone 17 Pro Dual-Auth Comparison">
+          </div>
+          <div class="defect-meta">
+            <div class="meta-box meta-actual">
+              <div class="meta-title">Actual Result (US Live on iPhone 17 Pro - 402x874 @3x)</div>
+              <div>Rendered inside authentic iPhone 17 Pro hardware frame. Shows persistent US Trade authenticated header, but displays broken Google Maps grey canvas, hardcoded Australian <code>"Eg. 3000"</code> postcode input, and awkward CMS block line-break wrapping.</div>
+            </div>
+            <div class="meta-box meta-expected">
+              <div class="meta-title">Expected Result (AU Baseline Live on iPhone 17 Pro)</div>
+              <div>Interactive mobile touch-enabled map, responsive search inputs, clean editorial layout, and full mobile safari compatibility.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEFECT 09 - IPHONE 17 PRO MAP SECTION -->
+      <div class="defect-card">
+        <div class="defect-header">
+          <div class="defect-title">
+            <span style="color: var(--red);">🔴 Pass 09</span>
+            <span>iPhone 17 Pro Real Mobile Map Canvas Failure (RefererNotAllowedMapError)</span>
+          </div>
+          <span class="badge" style="background: var(--red); color: white;">P0 - Blocker</span>
+        </div>
+        <div class="defect-body">
+          <div class="defect-image-container" onclick="openModal('comparison/COMPARISON_09_IPHONE17PRO_MAP_AND_CMS_DEFECTS.png')">
+            <img src="comparison/COMPARISON_09_IPHONE17PRO_MAP_AND_CMS_DEFECTS.png" alt="iPhone 17 Pro Map Failure">
+          </div>
+          <div class="defect-meta">
+            <div class="meta-box meta-actual">
+              <div class="meta-title">Actual Result (US iPhone 17 Pro Live)</div>
+              <div>Google Maps JavaScript API fails to load map tiles, showing blank grey placeholder. Console throws <code>RefererNotAllowedMapError</code> on live mobile device.</div>
+            </div>
+            <div class="meta-box meta-expected">
+              <div class="meta-title">Expected Result (AU Baseline on iPhone 17 Pro)</div>
+              <div>Interactive mobile map with pan/zoom touch gestures and interactive store pins.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEFECT 10 - CMS BLOCK AUDIT: stockist_info -->
+      <div class="defect-card">
+        <div class="defect-header">
+          <div class="defect-title">
+            <span style="color: var(--gold);">⚠️ Pass 10</span>
+            <span>CMS Block Audit: [Stockist][US] How to Buy with a Stockist (identifier: stockist_info)</span>
+          </div>
+          <span class="badge" style="background: var(--gold); color: black;">P1 - Content Leak</span>
+        </div>
+        <div class="defect-body">
+          <div class="defect-image-container" onclick="openModal('comparison/COMPARISON_10_CMS_BLOCK_STOCKIST_INFO_DEFECT.png')">
+            <img src="comparison/COMPARISON_10_CMS_BLOCK_STOCKIST_INFO_DEFECT.png" alt="CMS Block Audit stockist_info">
+          </div>
+          <div class="defect-meta">
+            <div class="meta-box meta-actual">
+              <div class="meta-title">Actual Result (US Live CMS Block: stockist_info)</div>
+              <div>
+                <strong>1. Title Leak & Line Wrap:</strong> Heading renders <code>"How to Buy with a Stockist - us"</code>; on mobile it breaks into <code>"- us"</code> on line 2.<br>
+                <strong>2. Copy Leak:</strong> Paragraph 1 says <em>"GlobeWest is stocked at some of Australia's finest furniture and home decor retailers."</em><br>
+                <strong>3. Spelling Defect:</strong> Paragraph 2 uses Australian spelling <em>"to finalise your order"</em> instead of US <em>"finalize"</em>.
+              </div>
+            </div>
+            <div class="meta-box meta-expected">
+              <div class="meta-title">Expected Result (Vinod Vankar Request / Content Spec)</div>
+              <div>Heading must be cleanly titled <code>"How to Buy with a Stockist"</code> without internal store suffixes. Body copy must be localized for US market without references to Australia. Spelling must adhere to American English (<code>"finalize"</code>).</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Zoom Modal -->
+  <div class="modal" id="imageModal" onclick="closeModal()">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+
+  <script>
+    function openModal(src) {
+      document.getElementById('modalImg').src = src;
+      document.getElementById('imageModal').classList.add('active');
+    }
+    function closeModal() {
+      document.getElementById('imageModal').classList.remove('active');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,471 @@
+{
+  "suite": "Individual Mega Menu Verification (Mobile 390x844)",
+  "timestamp": "2026-09-30T04:58:47.940Z",
+  "testedUrl": "https://mcstaging2.globewest.com",
+  "tradeAccount": "deepali.londhe@overdose.digital",
+  "categories": {
+    "Indoor": {
+      "found": true,
+      "totalLinks": 80,
+      "linksSample": [
+        {
+          "text": "Indoor",
+          "href": "https://mcstaging2.globewest.com/indoor"
+        },
+        {
+          "text": "Indoor",
+          "href": "https://mcstaging2.globewest.com/indoor"
+        },
+        {
+          "text": "Furniture",
+          "href": "https://mcstaging2.globewest.com/indoor/furniture"
+        },
+        {
+          "text": "Furniture",
+          "href": "https://mcstaging2.globewest.com/indoor/furniture"
+        },
+        {
+          "text": "Sofas",
+          "href": "https://mcstaging2.globewest.com/indoor/furniture/sofas"
+        },
+        {
+          "text": "Sofas",
+          "href": "https://mcstaging2.globewest.com/indoor/furniture/sofas"
+        },
+        {
+          "text": "1 Seater Sofas",
+          "href": "https://mcstaging2.globewest.com/indoor/furniture/sofas/1-seater-sofas"
+        },
+        {
+          "text": "2 Seater Sofas",
+          "href": "https://mcstaging2.globewest.com/indoor/furniture/sofas/2-seater-sofas"
+        },
+        {
+          "text": "3 Seater Sofas",
+          "href": "https://mcstaging2.globewest.com/indoor/furniture/sofas/3-seater-sofas"
+        },
+        {
+          "text": "4 Seater Sofas",
+          "href": "https://mcstaging2.globewest.com/indoor/furniture/sofas/4-seater-sofas"
+        }
+      ],
+      "auLeaks": [
+        {
+          "text": "Outlet",
+          "href": "https://globewestoutlet.com.au/collections/indoor"
+        }
+      ],
+      "hasAULeaks": true,
+      "screenshot": "mobile_megamenu_indoor.png"
+    },
+    "Outdoor": {
+      "found": true,
+      "totalLinks": 37,
+      "linksSample": [
+        {
+          "text": "Outdoor",
+          "href": "https://mcstaging2.globewest.com/outdoor"
+        },
+        {
+          "text": "Outdoor",
+          "href": "https://mcstaging2.globewest.com/outdoor"
+        },
+        {
+          "text": "Furniture",
+          "href": "https://mcstaging2.globewest.com/outdoor/furniture"
+        },
+        {
+          "text": "Furniture",
+          "href": "https://mcstaging2.globewest.com/outdoor/furniture"
+        },
+        {
+          "text": "Sofas",
+          "href": "https://mcstaging2.globewest.com/outdoor/furniture/sofas"
+        },
+        {
+          "text": "Sofas",
+          "href": "https://mcstaging2.globewest.com/outdoor/furniture/sofas"
+        },
+        {
+          "text": "1 Seater Sofas",
+          "href": "https://mcstaging2.globewest.com/outdoor/furniture/sofas/1-seater-sofas"
+        },
+        {
+          "text": "2 Seater Sofas",
+          "href": "https://mcstaging2.globewest.com/outdoor/furniture/sofas/2-seater-sofas"
+        },
+        {
+          "text": "3 Seater Sofas",
+          "href": "https://mcstaging2.globewest.com/outdoor/furniture/sofas/3-seater-sofas"
+        },
+        {
+          "text": "Modular Sofas",
+          "href": "https://mcstaging2.globewest.com/outdoor/furniture/sofas/modular-sofas"
+        }
+      ],
+      "auLeaks": [
+        {
+          "text": "Outlet",
+          "href": "https://globewestoutlet.com.au/collections/outdoor"
+        }
+      ],
+      "hasAULeaks": true,
+      "screenshot": "mobile_megamenu_outdoor.png"
+    },
+    "Homewares": {
+      "found": true,
+      "totalLinks": 18,
+      "linksSample": [
+        {
+          "text": "Homewares",
+          "href": "https://mcstaging2.globewest.com/homewares"
+        },
+        {
+          "text": "Homewares",
+          "href": "https://mcstaging2.globewest.com/homewares"
+        },
+        {
+          "text": "Homewares",
+          "href": "https://mcstaging2.globewest.com/homeware/homewares"
+        },
+        {
+          "text": "Homewares",
+          "href": "https://mcstaging2.globewest.com/homeware/homewares"
+        },
+        {
+          "text": "Rugs",
+          "href": "https://mcstaging2.globewest.com/homewares/homewares/rugs"
+        },
+        {
+          "text": "Mirrors & Wall Decor",
+          "href": "https://mcstaging2.globewest.com/homewares/homewares/wall-decor-mirrors"
+        },
+        {
+          "text": "Cushions & Throws",
+          "href": "https://mcstaging2.globewest.com/homewares/homewares/cushions-throws"
+        },
+        {
+          "text": "Decorative Accents",
+          "href": "https://mcstaging2.globewest.com/homewares/homewares/decorative-accents"
+        },
+        {
+          "text": "Shop all",
+          "href": "https://mcstaging2.globewest.com/homeware/homewares"
+        },
+        {
+          "text": "Lighting",
+          "href": "https://mcstaging2.globewest.com/homewares/lighting"
+        }
+      ],
+      "auLeaks": [
+        {
+          "text": "Outlet",
+          "href": "https://globewestoutlet.com.au/collections/homewares"
+        }
+      ],
+      "hasAULeaks": true,
+      "screenshot": "mobile_megamenu_homewares.png"
+    },
+    "In Stock": {
+      "found": true,
+      "totalLinks": 41,
+      "linksSample": [
+        {
+          "text": "In Stock",
+          "href": "https://mcstaging2.globewest.com/in-stock"
+        },
+        {
+          "text": "In Stock",
+          "href": "https://mcstaging2.globewest.com/in-stock"
+        },
+        {
+          "text": "Indoor",
+          "href": "https://mcstaging2.globewest.com/in-stock/indoor"
+        },
+        {
+          "text": "Indoor",
+          "href": "https://mcstaging2.globewest.com/in-stock/indoor"
+        },
+        {
+          "text": "Sofas",
+          "href": "https://mcstaging2.globewest.com/in-stock/indoor/sofas"
+        },
+        {
+          "text": "Daybeds",
+          "href": "https://mcstaging2.globewest.com/in-stock/indoor/daybeds"
+        },
+        {
+          "text": "Dining Tables",
+          "href": "https://mcstaging2.globewest.com/in-stock/indoor/dining-tables"
+        },
+        {
+          "text": "Barstools & Chairs",
+          "href": "https://mcstaging2.globewest.com/in-stock/indoor/barstools-chairs"
+        },
+        {
+          "text": "Coffee Tables",
+          "href": "https://mcstaging2.globewest.com/in-stock/indoor/coffee-tables"
+        },
+        {
+          "text": "Side Tables",
+          "href": "https://mcstaging2.globewest.com/in-stock/indoor/side-tables"
+        }
+      ],
+      "auLeaks": [],
+      "hasAULeaks": false,
+      "screenshot": "mobile_megamenu_in_stock.png"
+    },
+    "Customisation": {
+      "found": true,
+      "totalLinks": 5,
+      "linksSample": [
+        {
+          "text": "Customisation",
+          "href": "https://mcstaging2.globewest.com/customisation"
+        },
+        {
+          "text": "Customisation",
+          "href": "https://mcstaging2.globewest.com/customisation"
+        },
+        {
+          "text": "Customisable Furniture",
+          "href": "https://mcstaging2.globewest.com/customisation/customisable-furniture"
+        },
+        {
+          "text": "Customisable Sofas",
+          "href": "https://mcstaging2.globewest.com/customisation/customisable-sofas"
+        },
+        {
+          "text": "Shop all",
+          "href": "https://mcstaging2.globewest.com/customisation"
+        }
+      ],
+      "auLeaks": [],
+      "hasAULeaks": false,
+      "screenshot": "mobile_megamenu_customisation.png"
+    },
+    "Projects": {
+      "found": true,
+      "totalLinks": 23,
+      "linksSample": [
+        {
+          "text": "Projects",
+          "href": "https://mcstaging2.globewest.com/project"
+        },
+        {
+          "text": "Projects",
+          "href": "https://mcstaging2.globewest.com/project"
+        },
+        {
+          "text": "General",
+          "href": "https://mcstaging2.globewest.com/project"
+        },
+        {
+          "text": "General",
+          "href": "https://mcstaging2.globewest.com/project"
+        },
+        {
+          "text": "About GlobeWest Project",
+          "href": "https://mcstaging2.globewest.com/project"
+        },
+        {
+          "text": "Our Difference",
+          "href": "https://mcstaging2.globewest.com/project#case_studies"
+        },
+        {
+          "text": "Our Process",
+          "href": "https://mcstaging2.globewest.com/project#process"
+        },
+        {
+          "text": "Customer Benefits",
+          "href": "https://mcstaging2.globewest.com/project#benefits"
+        },
+        {
+          "text": "Experience",
+          "href": "https://mcstaging2.globewest.com/project#case_studies"
+        },
+        {
+          "text": "Experience",
+          "href": "https://mcstaging2.globewest.com/project#case_studies"
+        }
+      ],
+      "auLeaks": [],
+      "hasAULeaks": false,
+      "screenshot": "mobile_megamenu_projects.png"
+    },
+    "Inspiration": {
+      "found": true,
+      "totalLinks": 20,
+      "linksSample": [
+        {
+          "text": "Inspiration",
+          "href": "https://mcstaging2.globewest.com/blog"
+        },
+        {
+          "text": "Inspiration",
+          "href": "https://mcstaging2.globewest.com/blog"
+        },
+        {
+          "text": "Blog & Ideas",
+          "href": "https://mcstaging2.globewest.com/blog"
+        },
+        {
+          "text": "Blog & Ideas",
+          "href": "https://mcstaging2.globewest.com/blog"
+        },
+        {
+          "text": "Style Tips",
+          "href": "https://mcstaging2.globewest.com/blog?blog_filter=1&category_id%5B0%5D=3"
+        },
+        {
+          "text": "Interviews",
+          "href": "https://mcstaging2.globewest.com/blog/blog-ideas/interviews"
+        },
+        {
+          "text": "Home Tours",
+          "href": "https://mcstaging2.globewest.com/blog?blog_filter=1&category_id%5B0%5D=61"
+        },
+        {
+          "text": "Designer in Profile",
+          "href": "https://mcstaging2.globewest.com/blog?blog_filter=1&category_id%5B0%5D=71"
+        },
+        {
+          "text": "Stockist in Profile",
+          "href": "https://mcstaging2.globewest.com/blog?blog_filter=1&category_id%5B0%5D=9"
+        },
+        {
+          "text": "Project in Focus",
+          "href": "https://mcstaging2.globewest.com/blog?blog_filter=1&category_id%5B0%5D=65"
+        }
+      ],
+      "auLeaks": [],
+      "hasAULeaks": false,
+      "screenshot": "mobile_megamenu_inspiration.png"
+    },
+    "Support": {
+      "found": true,
+      "totalLinks": 24,
+      "linksSample": [
+        {
+          "text": "Support",
+          "href": "https://mcstaging2.globewest.com/help-centre"
+        },
+        {
+          "text": "Support",
+          "href": "https://mcstaging2.globewest.com/help-centre"
+        },
+        {
+          "text": "Trade",
+          "href": "https://mcstaging2.globewest.com/how-to-buy-trade"
+        },
+        {
+          "text": "Trade",
+          "href": "https://mcstaging2.globewest.com/how-to-buy-trade"
+        },
+        {
+          "text": "Apply for Trade Account",
+          "href": "https://mcstaging2.globewest.com/gwcustomer/trade/create"
+        },
+        {
+          "text": "Trade Benefits",
+          "href": "https://mcstaging2.globewest.com/how-to-buy-trade#benefits"
+        },
+        {
+          "text": "Project Specifier",
+          "href": "https://mcstaging2.globewest.com/projects-landing"
+        },
+        {
+          "text": "General Public",
+          "href": "https://mcstaging2.globewest.com/how-to-buy-gp"
+        },
+        {
+          "text": "General Public",
+          "href": "https://mcstaging2.globewest.com/how-to-buy-gp"
+        },
+        {
+          "text": "Find a Designer",
+          "href": "https://mcstaging2.globewest.com/find-designer-start"
+        }
+      ],
+      "auLeaks": [
+        {
+          "text": "Shop Online Outlet",
+          "href": "https://globewestoutlet.com.au/"
+        },
+        {
+          "text": "Visit Melbourne Outlet",
+          "href": "https://globewestoutlet.com.au/pages/melbourne-outlet-store"
+        }
+      ],
+      "hasAULeaks": true,
+      "screenshot": "mobile_megamenu_support.png"
+    },
+    "Contact": {
+      "found": true,
+      "totalLinks": 10,
+      "linksSample": [
+        {
+          "text": "Contact",
+          "href": "https://mcstaging2.globewest.com/contact"
+        },
+        {
+          "text": "Contact",
+          "href": "https://mcstaging2.globewest.com/contact"
+        },
+        {
+          "text": "Contact Us",
+          "href": "https://mcstaging2.globewest.com/contact"
+        },
+        {
+          "text": "Showroom Locations",
+          "href": "https://mcstaging2.globewest.com/contact"
+        },
+        {
+          "text": "About Us",
+          "href": "https://mcstaging2.globewest.com/about-us"
+        },
+        {
+          "text": "About Us",
+          "href": "https://mcstaging2.globewest.com/about-us"
+        },
+        {
+          "text": "subcategory lvl 1-2",
+          "href": "https://mcstaging2.globewest.com/contact-category/about-us/subcategory-lvl-1-2"
+        },
+        {
+          "text": "Press Enquiries",
+          "href": "https://mcstaging2.globewest.com/press"
+        },
+        {
+          "text": "Careers",
+          "href": "https://mcstaging2.globewest.com/careers"
+        },
+        {
+          "text": "Book Showroom Appointment",
+          "href": "https://mcstaging2.globewest.com/online-booking"
+        }
+      ],
+      "auLeaks": [],
+      "hasAULeaks": false,
+      "screenshot": "mobile_megamenu_contact.png"
+    }
+  },
+  "summary": {
+    "totalCategoriesAudited": 9,
+    "totalLinksAudited": 258,
+    "totalAULeaks": 5,
+    "passedCategories": [
+      "In Stock",
+      "Customisation",
+      "Projects",
+      "Inspiration",
+      "Contact"
+    ],
+    "defectiveCategories": [
+      "Indoor",
+      "Outdoor",
+      "Homewares",
+      "Support"
+    ]
+  }
+}

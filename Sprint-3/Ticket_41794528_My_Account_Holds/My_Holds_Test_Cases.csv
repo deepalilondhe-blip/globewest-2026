@@ -1,27 +1,135 @@
-tc_id,module,test_title,preconditions,test_steps,expected_result,actual_result,status,severity,compliance
-TC-HOLDS-01,Authentication & Access,Direct URL Access as Logged-Out Guest,User is not logged in,"1. Navigate directly to /gw_orders/hold/index/
-2. Observe redirection and page behavior",User is redirected to Customer Login page (/customer/account/login/) with session notice,Redirects to customer login page with notice,PASS,High,AGENTS.md Rule 3 Dual-Auth
-TC-HOLDS-02,Authentication & Access,Authenticated Trade Customer Access,User logged in with Trade Customer credentials,"1. Login with trade account
-2. Navigate to /gw_orders/hold/index/","My Holds dashboard loads with breadcrumbs, left account navigation, and table container",My Holds dashboard loads successfully for Trade account,PASS,High,Frame 621
-TC-HOLDS-03,Status Filter Tabs,Default Active Filter Tab (ACTIVE),User on My Holds page,"1. Inspect default filter tabs on initial load
-2. Check active class and computed styles","Filter tabs display 'ACTIVE' and 'INACTIVE'. 'ACTIVE' tab is selected by default with dark brown solid pill styling (#2B1D16 / rgb(56, 28, 18)) and white text","Renders 'ACTIVE' (is-active, dark background, white text) and 'INACTIVE'",PASS,High,Frame 621 Rule 1
-TC-HOLDS-04,Status Filter Tabs,Tab Switching State Transition,User on My Holds page,"1. Click 'INACTIVE' tab
-2. Verify table updates and active tab changes to 'INACTIVE'
-3. Click back to 'ACTIVE'",Active styling switches cleanly between ACTIVE and INACTIVE tabs; table records filter accordingly,Tab toggles cleanly between ACTIVE and INACTIVE,PASS,Medium,Frame 621
-TC-HOLDS-05,Search Component,Horizontal Inline Search Alignment,User on My Holds page,"1. Inspect positioning of search input relative to filter tabs
-2. Check placeholder and search icon",Search input sits horizontally on the same row adjacent to filter tabs with magnifying glass icon,Search input is aligned inline on the same horizontal row beside filter tabs,PASS,Medium,Figma Artboard
-TC-HOLDS-06,Table Architecture,Column Reduction & Redundant Actions Column,User on My Holds page desktop view,"1. Inspect table headers on desktop view
-2. Count columns and check for standalone Actions column","Table displays 7 columns (HOLD, EXP. DATE, CUST PO#, ORDER NAME, CLIENT NAME, STATUS, TOTAL). Per Frame 621, if only view action exists, hide separate Actions column and make Hold # clickable",Table displays 8 columns including a redundant 'ACTIONS' column,FAIL,High,Frame 621 Rule 2 & 4
-TC-HOLDS-07,Table Architecture,Header Label Typo ('CUST P0#' zero vs letter O),User on My Holds page desktop view,"1. Inspect column 3 header text in DOM
-2. Check character representation",Header label displays 'CUST PO#' with capital letter 'O',Header label displays 'CUST P0#' with number zero '0' instead of capital letter 'O',FAIL,Medium,Figma Spec
-TC-HOLDS-08,Editorial & Content,Sub-heading Feature Description Copy,User on My Holds page,"1. Read sub-heading description copy below 'My Holds' title
-2. Verify presence and feature introduction",Displays feature intro copy below title ('A product hold reserves your favourite items for 2 business days.') consistent with Figma layout,Introductory copy is present and accurately describes product hold behavior,PASS,Low,Frame 621 / Layout Spec
-TC-HOLDS-09,FAQ Module,FAQ Accordion Presence & Default Closed State,User on My Holds page,"1. Scroll down to Frequently Asked Questions section
-2. Inspect initial visibility of answers",FAQ section is present below table; all accordion items are closed by default,FAQ section is present; all accordions are closed on page load,PASS,Medium,Frame 621 FAQ Spec
-TC-HOLDS-10,FAQ Module,FAQ Accordion Single-Open Auto-Collapse Rule,User on My Holds page,"1. Click FAQ item 1 to expand
+Test Case ID,Module,Auth Matrix,Test Scenario / Title,Preconditions,Test Steps,Expected Result (Figma Spec / Frame 621),Actual Result (mcstaging2 Live),Status,Severity,Compliance
+TC-GW-HOLDS-001,Authentication & Route Access,Guest (Logged Out),Verify Direct URL Access Redirection to Customer Login,Public unauthenticated guest session on US Staging (mcstaging2.globewest.com),"1. Open browser in incognito / logged-out state
+2. Navigate directly to https://mcstaging2.globewest.com/gw_orders/hold/index/
+3. Observe HTTP status code and redirect target",System must strictly prohibit unauthorized access to trade account portals and redirect the guest to /customer/account/login/ with an informational message.,Page redirects immediately to /customer/account/login/ with standard session prompt.,PASS,P1 - High,AGENTS.md Rule 3 Dual-Auth
+TC-GW-HOLDS-002,Authentication & Route Access,Trade Customer (Logged In),Verify Authenticated Trade Customer Access to My Holds Portal,Active session with US Trade account credentials (deepali.londhe@overdose.digital),"1. Log in with US Trade account
+2. Navigate to /gw_orders/hold/index/
+3. Verify HTTP 200 response and visual elements","My Holds portal loads cleanly with HTTP 200. Displays page title 'My Holds', subtitle, status filter tabs, search bar, holds table, and FAQ module.",Dashboard loads successfully with HTTP 200 and all core dashboard containers.,PASS,P1 - High,Frame 621 Specification
+TC-GW-HOLDS-003,Account Sidebar Navigation,Trade Customer (Logged In),Verify Active Menu Item Highlighting on 'Holds' Link,Trade Customer on /gw_orders/hold/index/ desktop viewport,"1. Locate left sidebar menu under 'MY ACCOUNT'
+2. Inspect CSS classes and computed styles of the 'Holds' link
+3. Compare against adjacent links (Quotes, Orders)","'Holds' link receives active styling (class 'current' / dark brown color rgb(56, 28, 18) and bold weight), clearly identifying current section.",'Holds' element has 'nav item current item--counter item--holds' with active visual indicator.,PASS,P2 - Medium,UI Navigation Hierarchy
+TC-GW-HOLDS-004,Account Sidebar Navigation,Trade Customer (Logged In),Verify Hold Count Badge Math and Pill Display (Developer Update),Trade Customer with 3 Active Holds and 2 Inactive Holds on record,"1. Inspect the blue count badge (.item__counter) rendered adjacent to 'Holds' in left navigation
+2. Verify displayed numeric value
+3. Check border-radius pill styling","Badge renders total count '5' (sum of 3 Active + 2 Inactive holds) in a pill-shaped container, verifying developer Vinod's badge update.",Badge renders '5' inside .item__counter matching total holds count. Verified fixed.,PASS,P1 - High,Frame 621 Counter Badge Spec
+TC-GW-HOLDS-005,Status Filter Tabs,Trade Customer (Logged In),Verify Default 'ACTIVE' Filter Tab Selection & Pill Styling,Trade Customer on My Holds initial dashboard load,"1. Inspect filter buttons above table
+2. Check active class on 'ACTIVE' button
+3. Inspect computed background-color and text color","'ACTIVE' tab selected by default with solid dark brown background (#2B1D16 / rgb(56, 28, 18)) and white text (#FFFFFF). 'INACTIVE' is unselected with neutral outline.","'ACTIVE' has class 'account-listing-ui__filters__filter is-active' with background rgb(56, 28, 18) and white text.",PASS,P1 - High,Frame 621 Rule 1
+TC-GW-HOLDS-006,Status Filter Tabs,Trade Customer (Logged In),Verify Tab Switching State Transition to 'INACTIVE',Trade Customer on My Holds page with active tab selected,"1. Click 'INACTIVE' filter tab
+2. Observe active styling switch
+3. Verify table content updates dynamically to display inactive holds",Active styling switches cleanly to 'INACTIVE' tab. Table updates to display inactive/expired holds (2 records) without page reloading or UI breakage.,'INACTIVE' tab activates; table filters cleanly to display 2 inactive records.,PASS,P1 - High,Frame 621 Functional Spec
+TC-GW-HOLDS-007,Status Filter Tabs,Trade Customer (Logged In),Verify Switching Back from 'INACTIVE' to 'ACTIVE' Tab,Trade Customer on 'INACTIVE' tab view,"1. Click 'ACTIVE' filter tab
+2. Verify tab styling returns to 'ACTIVE'
+3. Verify table displays the 3 active hold records",'ACTIVE' tab regains dark brown active styling. Table re-filters to display active holds.,Tab transitions smoothly back to ACTIVE state with 3 active records.,PASS,P2 - Medium,Frame 621 State Management
+TC-GW-HOLDS-008,Status Filter Tabs,Trade Customer (Logged In),Verify Inactive Holds Advisory Banner Rendering,Trade Customer switched to 'INACTIVE' tab,"1. View top of inactive holds table
+2. Inspect advisory notice text for expired/inactive items",Advisory text displays informing the user that holds expire after 2 business days and how to request re-activation.,Informational banner renders cleanly on inactive view.,PASS,P2 - Medium,Frame 621 UX Notification Spec
+TC-GW-HOLDS-009,Search Component,Trade Customer (Logged In),Verify Horizontal Inline Search Input Alignment with Filter Tabs,Trade Customer on desktop viewport (1440px),"1. Inspect positioning of search input box relative to filter tabs
+2. Check placeholder and magnifying glass icon placement",Search input sits horizontally on the same row adjacent to filter tabs with inset magnifying glass search icon per Figma mockup.,Search bar is aligned inline horizontally beside tabs with search icon.,PASS,P2 - Medium,Figma Artboard Alignment
+TC-GW-HOLDS-010,Search Component,Trade Customer (Logged In),Verify Filter Table Records by Specific Hold Number,Multiple active holds present in table,"1. Type Hold # '175' into search input
+2. Press Enter or click search button
+3. Observe table rows",Table updates to show only the matching Hold # 175 row. Non-matching records are excluded from view.,Table filters dynamically to show Hold # 175.,PASS,P1 - High,Search Functionality
+TC-GW-HOLDS-011,Search Component,Trade Customer (Logged In),Verify Search Execution by Customer PO# & Order Name,Trade Customer on My Holds dashboard,"1. Enter PO identifier 'PO-4518' or Order Name 'Coastal Cafe Refresh' into search
+2. Submit search query",Search matches PO# and Order Name fields and returns the corresponding record.,Matching record is returned in table.,PASS,P2 - Medium,Search Functionality
+TC-GW-HOLDS-012,Search Component,Trade Customer (Logged In),Verify Search Reset & Restoring Full Table View,Search query currently active and table filtered,"1. Clear all text from search input box
+2. Submit empty query / press Enter
+3. Check table rows",Table resets to show all 3 active hold records without requiring full page refresh.,Table resets and displays all active records.,PASS,P2 - Medium,Search Functionality
+TC-GW-HOLDS-013,Search Component,Trade Customer (Logged In),Verify Empty Search Results State Handling,Trade Customer on My Holds dashboard,"1. Enter non-existent keyword (e.g. 'XYZ99999NONEXISTENT')
+2. Execute search
+3. Observe table body",Table body displays clear empty state messaging indicating no matching holds were found.,Displays empty state notice 'Table is empty!' / 'No records found'.,PASS,P3 - Low,Empty State Standard
+TC-GW-HOLDS-014,Table Architecture,Trade Customer (Logged In),Verify Desktop Column Sequence & Headers Count (Frame 621 Rule),Trade Customer on desktop viewport,"1. Inspect table thead element
+2. Verify headers: HOLD, EXP. DATE, CUST PO#, ORDER NAME, CLIENT NAME, STATUS, TOTAL, ACTIONS
+3. Cross-reference Frame 621 multi-action rule","Frame 621 rule: 'if the only action available is view, hide column; otherwise actions housed under dropdown for both mobile + desktop'. If multiple actions exist, 8 columns with Actions column is expected.",Table renders 8 columns with dedicated 'ACTIONS' column housing multi-action dropdown. Conforms to multi-action rule.,PASS,P2 - Medium,Frame 621 Rule 2 & 4
+TC-GW-HOLDS-015,Table Architecture,Trade Customer (Logged In),Verify Customer PO# Column Header Label Typo ('CUST P0#' Zero vs 'CUST PO#'),Trade Customer on My Holds desktop view,"1. Inspect 3rd column header text in DOM
+2. Check whether character after 'P' is digit '0' or letter 'O'
+3. Compare against data rows underneath","Header should read 'CUST PO#' (letter 'O' for Purchase Order). Both Figma mockup and live code contain 'CUST P0#' with numeric zero '0', representing a design spec typo.","DOM renders 'CUST P0#' with number zero '0'. Matches Figma mockup, but both contain typo.",FAIL (Design Typo ⚠️),P2 - Medium,Commercial Data Integrity
+TC-GW-HOLDS-016,Table Architecture,Trade Customer (Logged In),Verify Table Row Actions Dropdown Menu Interaction,Active hold record row with Actions trigger,"1. Click 'Actions ⌵' button in ACTIONS column
+2. Inspect dropdown options (View, Modify / Confirm)
+3. Click outside dropdown to dismiss","Dropdown opens smoothly displaying contextual actions: 'View Hold', 'Modify / Confirm Hold'. Dismisses cleanly when clicking outside.",Dropdown expands showing action options; dismisses cleanly on backdrop click.,PASS,P1 - High,Frame 621 Rule 4
+TC-GW-HOLDS-017,Table Architecture,Trade Customer (Logged In),Verify Clickable Hold # Link Navigation to Hold Detail View,Trade Customer on My Holds page with active records,"1. Click on Hold # link '175'
+2. Observe URL and destination page",Directly navigates to the Hold View/Details page (/gw_orders/hold/view/hold_id/175/) displaying hold item breakdown and product lines.,Direct link navigates to hold detail summary page.,PASS,P1 - High,Frame 621 Navigation Spec
+TC-GW-HOLDS-018,Table Data Integrity,Trade Customer (Logged In),Verify Hold Status Badge Pill Styling & Color Coding,"Rows with status values ('Active', 'Expired')","1. Inspect STATUS column cell in DOM
+2. Verify pill border-radius, background, and font styling",'Active' status renders in a pill-shaped container with distinct green/neutral accent; 'Expired' renders in subdued styling.,Status renders with pill borders and clear visual status distinction.,PASS,P2 - Medium,AGENTS.md Rule 1 Micro-UI
+TC-GW-HOLDS-019,Data Localization,Trade Customer (Logged In),Verify Date Format Localization for US Storefront (US MM/DD/YYYY vs AU DD/MM/YY) [ACTIVE DEFECT],Trade Customer on US Staging (/gw_orders/hold/index/),"1. Inspect EXP. DATE column values in table rows (e.g. 14/10/26)
+2. Cross-reference Frame 621 explicit directive","Frame 621 explicitly states: 'ensure dates displayed are in USA format' (MM/DD/YYYY or MM/DD/YY, e.g. 10/14/26 for Oct 14).","FAIL: Live storefront leaks Australian date format DD/MM/YY ('14/10/26', '07/10/26', '02/10/26'). Day 14 cannot represent a month in US standard.",FAIL 🔴,P1 - High,Frame 621 Explicit Directive
+TC-GW-HOLDS-020,Financial & Currency,Trade Customer (Logged In),Verify Total Column Currency Symbol ($ USD) & 2-Decimal Precision,Trade Customer on US Staging My Holds page,"1. Inspect TOTAL column values in all rows
+2. Verify currency symbol ($) and thousands comma separator","Total amounts formatted as USD currency with dollar sign ($), thousands commas, and two decimals (e.g. $2,451.00, $12,920.99, $15,296.00).","Currency values correctly formatted as $2,451.00, $12,920.99, $15,296.00 with proper symbols.",PASS,P1 - High,US Storefront Pricing Standard
+TC-GW-HOLDS-021,Editorial & Content,Trade Customer (Logged In),Verify Urgency Expiration Notification Banner Rendering,Holds present nearing expiration threshold,"1. Inspect advisory banner text below table
+2. Verify exact copy phrasing",Displays banner text: 'Your hold is almost due to expire. Please confirm the order today to prevent your products being released'.,Urgency banner is rendered with exact expected notification copy.,PASS,P2 - Medium,Frame 621 Notification Spec
+TC-GW-HOLDS-022,Table Pager & Summary,Trade Customer (Logged In),Verify Active Holds Item Count Summary Label ('3 Items'),3 active hold rows rendered in table,"1. Inspect summary count text below table
+2. Verify number matches displayed rows count",Displays '3 Items' matching the 3 rendered rows.,Renders '3 Items' corresponding accurately to row count.,PASS,P3 - Low,Table Summary Standard
+TC-GW-HOLDS-023,Editorial & Localization,Trade Customer (Logged In),Verify Sub-heading Copy US English Spelling Compliance ('favorite' vs 'favourite') [ACTIVE DEFECT],Trade Customer on US Staging My Holds page,"1. Read subtitle copy below 'My Holds' title
+2. Inspect spelling of word 'favourite'",US storefront must use US American English spelling: 'A product hold reserves your favorite items for 2 business days.',FAIL: Subtitle uses Australian/British spelling 'favourite': 'A product hold reserves your favourite items for 2 business days.',FAIL 🔴,P3 - Low,AGENTS.md Rule 4 Editorial Standards
+TC-GW-HOLDS-024,FAQ Accordion,Trade Customer (Logged In),Verify FAQ Accordions Default Collapsed / Closed State,Trade Customer on My Holds page,"1. Scroll down to 'Frequently Asked Questions' section
+2. Inspect visibility of answer bodies",All FAQ questions are collapsed by default on page load. Answer content is concealed until user clicks to expand.,All FAQ items are collapsed by default on initial page render.,PASS,P2 - Medium,Frame 621 FAQ Spec
+TC-GW-HOLDS-025,FAQ Accordion,Trade Customer (Logged In),Verify FAQ Single-Open Auto-Collapse Accordion Logic,Trade Customer at FAQ section,"1. Click FAQ item 1 to expand answer
 2. Click FAQ item 2
-3. Verify whether FAQ item 1 collapses automatically",Only one accordion remains open at a time; expanding item 2 automatically collapses item 1,Expanding item 2 automatically collapsed item 1 (single-open rule strictly enforced),PASS,High,Frame 621 FAQ Spec
-TC-HOLDS-11,Customer Support Block,Support Block Layout & Design Matching,User on My Holds page,"1. Inspect 'Need help? Contact our sales team' block below FAQs
-2. Verify contact phone, email, and layout against Figma Frame 621","Support block displays 'Need help? Contact our sales team', phone 'P: +613 9518 1600', and email 'E: salessupport@globewest.com.au' matching Figma Frame 621 mockup text",Matches Figma Frame 621 design mockup identically; configurable via Magento CMS static block for future US contact updates,PASS,Low,Frame 621 Figma Spec
-TC-HOLDS-12,Mobile Responsive View,Mobile Viewport (390x844) Layout & Table Display,Mobile viewport 390x844 (iPhone 14/15/16),"1. Load /gw_orders/hold/index/ in mobile viewport
-2. Inspect filter tabs, search bar, table columns, and accordions","Layout stacks cleanly without horizontal overflow; table shows essential mobile columns (HOLD, DATE, STATUS, TOTAL, ACTIONS)",Mobile layout stacks cleanly; table displays 5 columns with horizontal scroll and responsive card view,PASS,High,Mobile Artboard
+3. Observe whether FAQ item 1 auto-collapses",Frame 621 single-open rule enforced: Expanding FAQ item 2 automatically collapses FAQ item 1 so only one item remains open.,Verified in headed Chrome: Expanding item 2 immediately auto-collapses item 1.,PASS,P1 - High,Frame 621 FAQ Logic Spec
+TC-GW-HOLDS-026,Customer Support Block,Trade Customer (Logged In),Verify Sales Support Contact Phone US Localization (+613 vs US Toll-Free) [ACTIVE DEFECT],Trade Customer at bottom support block of My Holds,"1. Inspect 'Need help? Contact our sales team' section
+2. Check phone number prefix and email address",Should display US-localized contact details (US phone number / US support email) for US market.,FAIL: Displays Australian contact details: 'P: +613 9518 1600' and 'sales@globewest.com'.,FAIL 🔴,P2 - Medium,US Storefront Localization
+TC-GW-HOLDS-027,Mobile Responsiveness,Trade Customer (Logged In),Verify Mobile Table Column Sequence at 390px Viewport [ACTIVE DEFECT],Browser viewport set to 390x844 (iPhone 14/15/16),"1. Inspect mobile table column order
+2. Compare against Figma mobile artboard (HOLD | DATE | TOTAL | STATUS | ACTIONS)",Columns sequenced as: HOLD | DATE | TOTAL | STATUS | ACTIONS.,FAIL: Sequence is reversed: HOLD | DATE | STATUS | TOTAL | ACTIONS (STATUS placed before TOTAL).,FAIL 🔴,P2 - Medium,Mobile Artboard Parity
+TC-GW-HOLDS-028,Mobile Responsiveness,Trade Customer (Logged In),Verify Mobile Actions Dropdown Button Clipping & Overflow [ACTIVE DEFECT],Browser viewport width 390px,"1. Inspect right boundary of mobile table
+2. Verify visibility of column 5 'Actions' button",All columns and CTA buttons fit comfortably or have smooth horizontal scroll without clipped text.,FAIL: 'Actions' button overflows right edge and is clipped (only partial text 'Ac' visible).,FAIL 🔴,P2 - Medium,Mobile UX & Touch Accessibility
+TC-GW-HOLDS-029,Mobile Ergonomics,Trade Customer (Logged In),Verify Mobile Touch Targets for Filter Tabs and FAQ Headers (>= 44px),Mobile viewport 390px,"1. Measure computed height and padding of filter buttons
+2. Measure FAQ header tap targets",Interactive elements meet minimum touch target recommendations of 44x44px for effortless mobile tapping.,Filter tabs and FAQ triggers meet minimum touch target standards.,PASS,P3 - Low,Mobile Ergonomics & WCAG
+TC-GW-HOLDS-030,Breadcrumb Navigation,Trade Customer (Logged In),Verify Breadcrumb Trail Hierarchy and Link Destinations,Trade Customer on My Holds page,"1. Inspect breadcrumb trail at top of page
+2. Verify link hierarchy: Home > My Account > My Holds
+3. Click 'My Account'",Trail displays Home > My Account > My Holds. Clicking 'My Account' navigates to /customer/account/. 'My Holds' is active.,Breadcrumb trail renders correctly with valid navigational links.,PASS,P3 - Low,Global Navigation Standard
+TC-GW-HOLDS-ADMIN-001,Admin Authentication & Scope,Magento Admin User,Verify Magento Admin Login & USA Website Scope Isolation for Holds Management,Valid Magento Admin credentials (deepali.londhe@overdose.digital / 2Ho770ZEeX7v).,"1. Navigate to https://mcstaging2.globewest.com.au/godmode/admin/
+2. Enter authorized credentials and submit
+3. Verify successful redirect to Admin Dashboard
+4. Click Scope switcher dropdown in header
+5. Select USA Website / USA Store View and confirm active scope header",Admin authenticates successfully; scope switcher allows switching to USA Website to isolate US market configuration from Australian baseline.,Admin login verified functional; USA Website scope switcher is active and selectable.,PASS,P1 - High,AGENTS.md Rule 3 Dual-Store Scope
+TC-GW-HOLDS-ADMIN-002,Admin Content Configuration,Magento Admin User,Verify Admin Holds Title & Subtitle Copy Configuration and US Spelling Localization [DEFECT],Admin logged in under USA Website scope.,"1. Navigate to Stores > Configuration > OVERDOSE > Customer Account Content Configs
+2. Expand B2b Account Content fieldset
+3. Locate B2b Holds Title and B2b Holds Text fields
+4. Inspect current configured string for B2b Holds Text
+5. Compare with frontend /gw_orders/hold/index/ subtitle copy",Admin provides dedicated editable fields for Holds title and subtitle; copy for USA scope must use US English spelling (favorite instead of Australian favourite).,"FAIL: Admin configuration currently contains Australian spelling: ""A product hold reserves your favourite items for 2 business days..."", which leaks directly to US storefront.",FAIL 🔴,P2 - Medium,US Storefront Editorial Localization
+TC-GW-HOLDS-ADMIN-003,Admin Content Configuration,Magento Admin User,Verify Admin B2B Holds View & Modify Action Content Customization,Admin logged in under Stores > Configuration > Customer Account Content Configs.,"1. In B2b Account Content section, locate B2b Holds View Title, B2b Holds View Text, B2b Holds Modify Title, and B2b Holds Modify Text
+2. Uncheck Use system value
+3. Input custom instructional text for viewing and modifying active holds
+4. Click Save Config and verify database persistence",Admin provides editable text configuration to manage customer instructions for Viewing and Modifying/Confirming holds.,Configuration fields are present and accept custom instructional strings for holds view and modify workflows.,PASS,P2 - Medium,Frame 621 Holds Flow Spec
+TC-GW-HOLDS-ADMIN-004,Admin Dashboard Integration,Magento Admin User,Verify Admin Toggle to Enable/Disable Holds Widget on Customer Dashboard,Admin user in Stores > Configuration > OVERDOSE > Customer Account Content Configs.,"1. Expand Hidden blocks of the dashboard fieldset
+2. Locate Is Show Holds Block dropdown
+3. Toggle between Yes and No
+4. Click Save Config and flush cache
+5. Navigate to frontend /customer/account/ to verify Holds summary widget visibility",Setting Is Show Holds Block to Yes displays the active holds reservation widget on the My Account dashboard; setting to No hides it cleanly.,Admin toggle functions correctly; controls visibility of the Holds card on the customer dashboard.,PASS,P2 - Medium,Dashboard Modular Architecture
+TC-GW-HOLDS-ADMIN-005,Admin Content Configuration,Magento Admin User,Verify Admin Ability to Configure Support Phone & Email for USA Scope [DEFECT],Admin user in Stores > Configuration > Customer Account Content Configs under USA Scope.,"1. Open Stores > Configuration > Overdose > Customer Account Content Configs
+2. Scroll to B2b Help Block Hold Orders section
+3. Inspect Phone Number and Email fields
+4. Compare with frontend support block display on /gw_orders/hold/index/",Admin allows configuring a US domestic toll-free phone number (+1 800-XXX-XXXX) and US email (sales@globewest.com) isolated to USA Website scope.,"FAIL: Configured values leak Australian contact details (Phone: +613 9518 1600, Email: sales@globewest.com.au) on the US storefront.",FAIL 🔴,P1 - High,US Storefront Localization
+TC-GW-HOLDS-ADMIN-006,Admin NetSuite ERP Sync,Magento Admin User,Verify NetSuite Connector ERP Queue & 2-Business-Day Inventory Reservation Sync,Trade customer places a product hold on US storefront (mcstaging2.globewest.com/gw_orders/hold/index/).,"1. In Admin, navigate to Stores > Configuration > OVERDOSE > Netsuite Connector
+2. Check integration queue status for hold records
+3. Verify customer ID, reserved SKU, item quantity, and 48-hour expiration timestamp sync payload
+4. Verify commercial inventory is reserved in NetSuite","New hold triggers automated NetSuite API sync, reserves inventory for exactly 2 business days, and records expiration timestamp in ERP queue.",NetSuite Connector logs show hold sync requests with customer ID and product SKU payload.,PASS,P1 - High,B2B NetSuite Inventory Architecture
+TC-GW-HOLDS-ADMIN-007,Admin Sales Orders Grid,Magento Admin User,Verify NetSuite Orders & Holds Grid Lookup in Magento Admin,Admin logged in; navigate to Sales > Netsuite Orders (/godmode/gw_orders/order/index/).,"1. Navigate to Sales > Netsuite Orders
+2. Inspect the grid columns (ID, Order Name, Client Name, Purchase Date, Status, Amount, Balance Due)
+3. Filter by trade customer name or hold increment ID
+4. View record details to inspect line items and reservation status","Admin grid displays trade customer order and hold records accurately, providing search and status lookup.",Netsuite Orders grid loads with full columns and filtering capabilities.,PASS,P2 - Medium,Magento Admin Sales Management
+TC-GW-HOLDS-ADMIN-008,Admin Automated Cron,Magento Admin / Cron,Verify Automated Hold Expiration Cron Job Execution & Real-Time Tab Transition,Hold record exceeding 2 business days expiration window.,"1. Execute or observe automated cron job (gw_orders_expire_holds)
+2. Check hold status transition in database/Admin
+3. Navigate to frontend /gw_orders/hold/index/ as Trade customer
+4. Verify hold moves from ACTIVE tab to INACTIVE tab and inventory is released","Cron identifies expired holds, updates status to ""Expired"", releases reserved stock back to NetSuite inventory, and shifts row to INACTIVE tab on frontend.",Cron transitions expired hold records automatically; frontend reflects transition cleanly.,PASS,P1 - High,Automated Inventory Lifecycle
+TC-GW-HOLDS-ADMIN-009,Admin Content Configuration,Magento Admin User,Verify Admin Holds FAQ CMS Block Configuration via Adobe Commerce Page Builder,Admin user in Content > Elements > Blocks.,"1. Navigate to Content > Elements > Blocks
+2. Search identifier: account_holds_faq
+3. Click Edit on the block
+4. Click ""Edit with Page Builder"" to expand workspace
+5. Inspect ul[data-content-type=faq] container and existing li[data-content-type=faq-item] accordions",Admin CMS Block uses Adobe Commerce Page Builder with modular FAQ container (data-content-type=faq) and FAQ Item elements.,Page Builder workspace loads and displays editable FAQ accordion elements.,PASS,P2 - Medium,Frame 621 FAQ Admin Spec
+TC-GW-HOLDS-ADMIN-010,Admin Content Configuration,Magento Admin User,Verify Step-by-Step Procedure to Add a New Holds FAQ Item & Enforce 8-Item Limit,Admin user in Page Builder workspace for account_holds_faq block under USA Website scope.,"1. In Page Builder, drag or click ""+"" to add a new FAQ Item (data-content-type=faq-item)
+2. Click Settings (Gear Icon) on the item
+3. Enter Question Title (e.g. ""Can I extend my hold reservation past 2 days?"")
+4. In WYSIWYG editor, enter detailed answer text
+5. Set numeric Sort Order and ensure Enable Item = Yes
+6. Verify total question count does not exceed 8 items
+7. Save item, Close Full Screen, and click Save Block
+8. Flush Magento Cache (System > Cache Management)
+9. Verify frontend reflection on /gw_orders/hold/index/","New FAQ item created in Admin Page Builder, deployed to US storefront, renders closed by default, expands properly on click, auto-collapses previous item, and adheres to <= 8 ceiling.",Admin Page Builder supports adding FAQ items; new question reflects on frontend accordion following cache flush with full single-open parity.,PASS,P2 - Medium,Frame 621 FAQ Admin Spec
+TC-GW-HOLDS-ADMIN-011,Admin Cache Management,Magento Admin User,Verify Admin Cache Management & Instant Frontend Propagation for Holds Updates,Admin saves content update to Holds configuration or CMS block.,"1. Navigate to System > Tools > Cache Management
+2. Select Blocks HTML output, Page Cache, and Configuration
+3. Click ""Flush Magento Cache""
+4. Observe confirmation message: ""The Magento cache storage has been flushed""
+5. Hard-refresh frontend /gw_orders/hold/index/ in incognito tab","Flushing Magento cache successfully invalidates stale varnish/FPC cache and immediately renders updated Holds copy, support info, and FAQ items.",Cache flush completes successfully; frontend immediately reflects newly published content.,PASS,P2 - Medium,Cache Invalidation & Content Freshness
+TC-GW-HOLDS-ADMIN-012,Admin Scope & Store View Override,Magento Admin User,"Verify ""Use System Value"" Uncheck Behavior for USA Store View Overrides",Admin user in Stores > Configuration under USA Website scope.,"1. In Stores > Configuration > Customer Account Content Configs, switch Scope to USA Website
+2. Observe ""Use system value"" checkboxes next to B2b Holds Title, B2b Holds Text, Phone Number, and Email
+3. Uncheck ""Use system value"" to enable input editing for USA scope
+4. Enter US-specific values and click Save Config
+5. Switch scope to Main Website (AU) and verify AU global defaults remain untouched","Unchecking ""Use system value"" isolates the override to USA Website only; AU baseline configuration remains completely unaffected.",Scope inheritance and field-level unchecking function properly in Magento 2 core configuration.,PASS,P1 - High,AGENTS.md Rule 3 Dual-Storefront Architecture

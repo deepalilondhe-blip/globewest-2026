@@ -1,0 +1,143 @@
+{
+  "timestamp": "2026-10-01T11:22:38.282Z",
+  "ticket": "#41794538 - Static Pages: Terms, Privacy, Contact, FAQ, 404",
+  "pages": {
+    "404": {
+      "au": {
+        "title": "404 Not Found",
+        "h1": [],
+        "h2": [
+          "Page not available.",
+          "CONNECT WITH US",
+          "Subscribe"
+        ],
+        "bodyLength": 683
+      },
+      "us": {
+        "title": "[US] 404 Not Found",
+        "h1": [],
+        "h2": [
+          "Page not available.",
+          "CONNECT WITH US",
+          "Subscribe"
+        ],
+        "bodyLength": 687
+      }
+    },
+    "terms": {
+      "au": {
+        "title": "Terms & Conditions",
+        "h1": [],
+        "h2": [
+          "What we collect",
+          "What we do with the information we gather",
+          "Security",
+          "How we use cookies",
+          "Links to other websites",
+          "Controlling your personal information",
+          "List of cookies we collect",
+          "Terms & Conditions",
+          "CONNECT WITH US",
+          "Subscribe"
+        ],
+        "bodyLength": 65468
+      },
+      "us": {
+        "title": "Terms and Conditions",
+        "h1": [
+          "Terms and Conditions"
+        ],
+        "h2": [
+          "Connect with us",
+          "Subscribe"
+        ],
+        "bodyLength": 44049
+      }
+    },
+    "privacy": {
+      "au": {
+        "title": "Privacy Policy",
+        "h1": [],
+        "h2": [
+          "What we collect",
+          "What we do with the information we gather",
+          "Security",
+          "How we use cookies",
+          "Links to other websites",
+          "Controlling your personal information",
+          "List of cookies we collect",
+          "CONNECT WITH US",
+          "Subscribe"
+        ],
+        "bodyLength": 24693
+      },
+      "us": {
+        "title": "Privacy Policy",
+        "h1": [],
+        "h2": [
+          "What we collect",
+          "What we do with the information we gather",
+          "Security",
+          "How we use cookies",
+          "Links to other websites",
+          "Controlling your personal information",
+          "List of cookies we collect",
+          "CONNECT WITH US",
+          "Subscribe"
+        ],
+        "bodyLength": 24707
+      }
+    },
+    "contact": {
+      "au": {
+        "title": "Title Staging",
+        "h1": [],
+        "h2": [
+          "Contact Us",
+          "Online enquiry",
+          "Showroom locations",
+          "Melbourne Head Office & Warehouse",
+          "Melbourne Outlet",
+          "CONNECT WITH US",
+          "Subscribe"
+        ],
+        "bodyLength": 2668
+      },
+      "us": {
+        "title": "Contact Us | GlobeWest",
+        "h1": [],
+        "h2": [
+          "Contact Us",
+          "Our Showrooms",
+          "Online enquiry",
+          "CONNECT WITH US",
+          "Subscribe"
+        ],
+        "bodyLength": 2981
+      }
+    },
+    "faq": {
+      "au": {
+        "title": "Help centre",
+        "h1": [],
+        "h2": [
+          "Help Centre",
+          "CONNECT WITH US",
+          "Subscribe"
+        ],
+        "bodyLength": 1072
+      },
+      "us": {
+        "title": "",
+        "h1": [
+          "GlobeWest Help Centre"
+        ],
+        "h2": [
+          "CONNECT WITH US",
+          "Subscribe"
+        ],
+        "bodyLength": 867
+      }
+    }
+  }
+}

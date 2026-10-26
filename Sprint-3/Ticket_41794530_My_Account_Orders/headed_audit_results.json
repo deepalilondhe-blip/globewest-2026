@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-09-25T11:00:29.056Z",
+  "timestamp": "2026-09-29T08:20:20.843Z",
   "ticket": "Ticket #41794530: My Account - Orders",
   "stagingUrl": "https://mcstaging2.globewest.com/gw_orders/order/index/",
   "figmaNode": "Node 2581-64348 (Frame 624)",
   "tabsAudit": {
-    "activeTab": "OPEN",
+    "activeTab": "AWAITING PAYMENT",
     "tabsDetected": [
       {
         "text": "QUOTES",
@@ -103,16 +103,22 @@
         "isActive": false
       },
       {
-        "text": "ALL",
+        "text": "AWAITING PAYMENT",
+        "classes": "account-listing-ui__filters__filter is-active",
+        "parentClasses": "account-listing-ui__filters__wrapper",
+        "isActive": true
+      },
+      {
+        "text": "PENDING SHIPMENT",
         "classes": "account-listing-ui__filters__filter",
         "parentClasses": "account-listing-ui__filters__wrapper",
         "isActive": false
       },
       {
-        "text": "OPEN",
-        "classes": "account-listing-ui__filters__filter is-active",
+        "text": "DISPATCHED",
+        "classes": "account-listing-ui__filters__filter",
         "parentClasses": "account-listing-ui__filters__wrapper",
-        "isActive": true
+        "isActive": false
       },
       {
         "text": "CLOSED",
@@ -121,22 +127,19 @@
         "isActive": false
       }
     ],
-    "frame624Compliant": false
+    "frame624Compliant": true
   },
   "tableAudit": {
     "headers": [
       "ORDER",
       "DATE",
-      "CUST PO#",
-      "ORDER NAME",
-      "CLIENT NAME",
       "STATUS",
       "TOTAL",
       "BALANCE",
       "ACTIONS"
     ],
-    "columnCount": 9,
-    "frame624Compliant": false,
+    "columnCount": 6,
+    "frame624Compliant": true,
     "rowCount": 1,
     "sampleRow": {
       "rowIndex": 1,
@@ -177,7 +180,7 @@
   "supportAudit": {
     "tag": "DIV",
     "className": "columns",
-    "text": "MY DASHBOARD\nMY ACCOUNT\nQuotes\nHolds\nOrders\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details\nGLOBEWEST REFERRALS\nMY COMPANY\nBOOKINGS\nHELP CENTRE\nLOGOUT\nMy Orders\nOrders in the system, past and present. Thanks for creating your space with us.\nALL\nOPEN\nCLOSED\nORDER\n\t\nDATE\n\t\nCUST PO#\n\t\nORDER NAME\n\t\nCLIENT NAME\n\t\nSTATUS\n\t\nTOTAL\n\t\nBALANCE\n\tACTIONS\n\nTable is empty!\nFrequently Asked Questions\nFrequently asked question content goes here\nFrequently asked question content goes here\nNeed to change an order?\nTo change a submitted order, please contact our Sales Administration team on:\nP: +613 9518 1600\nE: sales@globewest.com.au\nOrder changes made after submission cannot be made via this portal."
+    "text": "MY DASHBOARD\nMY ACCOUNT\nQuotes\nHolds\nOrders\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details\nGLOBEWEST REFERRALS\nMY COMPANY\nBOOKINGS\nHELP CENTRE\nLOGOUT\nMy Orders\nOrders in the system, past and present. Thanks for creating your space with us.\nAWAITING PAYMENT\nPENDING SHIPMENT\nDISPATCHED\nCLOSED\nORDER\n\t\nDATE\n\t\nSTATUS\n\t\nTOTAL\n\t\nBALANCE\n\tACTIONS\n\nTable is empty!\nFrequently Asked Questions\nFrequently asked question content goes here\nFrequently asked question content goes here\nNeed to change an order?\nTo change a submitted order, please contact our Sales Administration team on:\nP: +613 9518 1600\nE: sales@globewest.com\nOrder changes made after submission cannot be made via this portal."
   },
   "sidebarBadges": [
     {

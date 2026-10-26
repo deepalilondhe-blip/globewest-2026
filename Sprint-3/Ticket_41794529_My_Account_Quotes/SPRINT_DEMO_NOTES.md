@@ -99,10 +99,25 @@
 
 ---
 
-## 4. Test Artifacts & Demo Collateral
-* **Desktop Staging Capture:** [`screenshots/desktop/01_my_quotes_desktop_live_full.png`](screenshots/desktop/01_my_quotes_desktop_live_full.png)
-* **Mobile Staging Capture:** [`screenshots/mobile/01_my_quotes_mobile_live_full.png`](screenshots/mobile/01_my_quotes_mobile_live_full.png)
-* **Side-by-Side Red/Green Visual Proof:** Stored in [`comparison/`](comparison/)
-* **Interactive Defect Viewer:** [`VIEW_DEFECT_IMAGES.html`](VIEW_DEFECT_IMAGES.html)
-* **Full Test Cases Matrix (14 TCs):** [`My_Quotes_Test_Cases.xlsx`](My_Quotes_Test_Cases.xlsx) and [`My_Quotes_Test_Cases.csv`](My_Quotes_Test_Cases.csv)
-* **Live Retest Automated Results:** [`retest_results/LATEST_RETEST_SUMMARY.md`](retest_results/LATEST_RETEST_SUMMARY.md)
+---
+
+## 4. Magento Admin Panel Verification Walkthrough
+- **Admin Access**: `https://mcstaging2.globewest.com.au/godmode/admin/` (`deepali.londhe@overdose.digital`).
+- **NetSuite Quotes Grid**: Navigate to `Sales > Netsuite Quotes` (`/godmode/gw_quotes/quote/index/`). Verified live in Admin that all trade quotes render with matching Quote ID (e.g. 124, 4), Client Name, Total price, Expiration period, and Status (`Open`, `Converted`, `Expired`).
+- **Trade Markup & Line Items**: Clicking 'View' in Admin displays line item product photos, wholesale trade pricing vs trade markup, and customer total calculation.
+- **Conversion to Order**: Admin supports converting open quotes to sales orders, reflecting in `Sales > Orders` and updating frontend status to `CONVERTED`.
+- **Admin Configuration (Frame 622 Spec)**:
+  - **Grid Pagination**: `Stores > Configuration > Overdose > Customer Account Content Configs` allows admin to configure default items per page (10, 20, 50).
+  - **Need Help & FAQs**: Admin manages editable support contact copy and up to 8 FAQ questions and answers via `account_quotes_faq` block in Page Builder.
+  - **FAQ Admin Workflow Guide**: See [HOW_TO_ADD_NEW_FAQ_ADMIN_GUIDE.md](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Sprint-3/HOW_TO_ADD_NEW_FAQ_ADMIN_GUIDE.md) for full click-by-click instructions.
+
+---
+
+## 5. Test Artifacts & Demo Collateral
+* **Excel Test Cases (38 TCs - 30 Frontend + 8 Admin):** [`My_Quotes_Test_Cases.xlsx`](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Sprint-3/Ticket_41794529_My_Account_Quotes/My_Quotes_Test_Cases.xlsx)
+* **CSV Test Cases (38 TCs - 30 Frontend + 8 Admin):** [`My_Quotes_Test_Cases.csv`](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Sprint-3/Ticket_41794529_My_Account_Quotes/My_Quotes_Test_Cases.csv)
+* **Admin Verification Screenshot:** [`screenshots/admin_review/01_admin_quotes_grid_raw.png`](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Sprint-3/Ticket_41794529_My_Account_Quotes/screenshots/admin_review/01_admin_quotes_grid_raw.png)
+* **Desktop Staging Capture:** [`screenshots/desktop/01_my_quotes_desktop_live_full.png`](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Sprint-3/Ticket_41794529_My_Account_Quotes/screenshots/desktop/01_my_quotes_desktop_live_full.png)
+* **Execution File:** [`My Quotes runcommand.txt`](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Sprint-3/Ticket_41794529_My_Account_Quotes/My%20Quotes%20runcommand.txt)
+* **Admin FAQ Workflow Guide:** [`HOW_TO_ADD_NEW_FAQ_ADMIN_GUIDE.md`](file:///home/deepali/My%20Projects/Deepali/GlobeWest%202026%20(2)/Sprint-3/HOW_TO_ADD_NEW_FAQ_ADMIN_GUIDE.md)
+

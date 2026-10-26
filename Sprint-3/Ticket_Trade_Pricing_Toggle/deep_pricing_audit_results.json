@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-10-13T09:57:22.586Z",
+  "plpCardsAnalysis": [],
+  "pdpConfigurableAnalysis": {
+    "tradeMode": {
+      "fullText": "$638.00 | MSRP: | $701.80",
+      "prices": [
+        "$638.00",
+        "$701.80"
+      ],
+      "oldPrice": "",
+      "specialPrice": "",
+      "msrpText": "MSRP:\n$701.80"
+    },
+    "msrpMode": {
+      "fullText": "$701.80 | MSRP",
+      "prices": [
+        "$638.00",
+        "$701.80"
+      ]
+    }
+  },
+  "pdpSimpleAnalysis": {},
+  "miniCartAnalysis": {
+    "isVisible": true,
+    "items": [],
+    "subtotal": ""
+  },
+  "cartPageAnalysis": {
+    "rows": [],
+    "subtotalTotal": "",
+    "grandTotal": "",
+    "toggleState": "MSRP"
+  },
+  "swatchInteractionAnalysis": {},
+  "potentialDefects": [
+    "PLP Card \"Pearce Marble 2 Drawer Nightstand - Matt Ocean Marble - Bone\" has placeholder image!",
+    "PLP Card \"Arturo Timber Leg Accent Chair - Paloma - Chestnut\" has placeholder image!",
+    "PLP Card \"Arturo Timber Leg Accent Chair - Greige Stripe - Natural Mindi\" has placeholder image!",
+    "PLP Card \"Carvara Abstract Nightstand - New Oak\" has placeholder image!",
+    "PLP Card \"Carvara Abstract Nightstand - Mocha Oak\" has placeholder image!",
+    "PLP Card \"Nido Marble Nightstand - Matt Natural Travertine - Sunwash\" has placeholder image!",
+    "PLP Card \"Tate Sideboard - Satin Oak\" has placeholder image!",
+    "PLP Card \"Nido Desk - Porcelain\" has placeholder image!",
+    "PLP Card \"Cleo Dining Table - Putty\" has placeholder image!",
+    "PLP Card \"Magnus Console Table - Tobacco Ash\" has placeholder image!",
+    "PLP Card \"Leon Frame Marble Coffee Table - Matt Ocean Marble - Tobacco Ash\" has placeholder image!",
+    "PLP Card \"Faye Nightstand - Porcini - Matt Natural Travertine\" has placeholder image!",
+    "PLP Card \"Pearce Marble 2 Drawer Nightstand - Matt Ocean Marble - Bone\" appears to leak wholesale trade price in MSRP mode! Raw: $701.80 | MSRP",
+    "PLP Card \"Arturo Timber Leg Accent Chair - Paloma - Chestnut\" appears to leak wholesale trade price in MSRP mode! Raw: $568.70 | MSRP",
+    "PLP Card \"Arturo Timber Leg Accent Chair - Greige Stripe - Natural Mindi\" appears to leak wholesale trade price in MSRP mode! Raw: $708.40 | MSRP",
+    "PLP Card \"Carvara Abstract Nightstand - New Oak\" appears to leak wholesale trade price in MSRP mode! Raw: $575.30 | MSRP",
+    "PLP Card \"Carvara Abstract Nightstand - Mocha Oak\" appears to leak wholesale trade price in MSRP mode! Raw: $575.30 | MSRP",
+    "PLP Card \"Nido Marble Nightstand - Matt Natural Travertine - Sunwash\" appears to leak wholesale trade price in MSRP mode! Raw: $786.50 | MSRP",
+    "PLP Card \"Tate Sideboard - Satin Oak\" appears to leak wholesale trade price in MSRP mode! Raw: $508.20 | MSRP",
+    "PLP Card \"Nido Desk - Porcelain\" appears to leak wholesale trade price in MSRP mode! Raw: $1,458.60 | MSRP",
+    "PLP Card \"Cleo Dining Table - Putty\" appears to leak wholesale trade price in MSRP mode! Raw: $592.90 | MSRP",
+    "PLP Card \"Magnus Console Table - Tobacco Ash\" appears to leak wholesale trade price in MSRP mode! Raw: $363.00 | MSRP",
+    "PLP Card \"Leon Frame Marble Coffee Table - Matt Ocean Marble - Tobacco Ash\" appears to leak wholesale trade price in MSRP mode! Raw: $514.80 | MSRP",
+    "PLP Card \"Faye Nightstand - Porcini - Matt Natural Travertine\" appears to leak wholesale trade price in MSRP mode! Raw: $660.00 | MSRP"
+  ]
+}

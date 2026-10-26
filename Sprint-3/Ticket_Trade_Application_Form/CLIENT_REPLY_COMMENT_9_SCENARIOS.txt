@@ -1,0 +1,39 @@
+Hello @MichelleM ,
+
+Hope you are doing well.
+
+We have thoroughly verified and completed testing for all the Trade Application validation scenarios on the Staging2 site as requested. Everything is working as expected.
+
+Please find the detailed test results along with video evidence for each scenario below:
+
+1. New Email and New EIN => Working fine
+Evidence: https://prnt.sc/S2GbeQlUZPgw
+
+2. New email, EIN/ABN empty => Allow
+Evidence: https://www.awesomescreenshot.com/video/57577969?key=e0ab39e72ac2b1c415b0fec1adeae992
+
+3. Same email + same EIN/ABN as an existing application => Disallow (showing popup)
+Evidence: https://www.awesomescreenshot.com/video/57578206?key=9517cbe567b6650ac306f3667ac681c5
+
+4. Same email + different EIN/ABN => Allow
+Evidence: https://www.awesomescreenshot.com/video/57578582?key=c9493e06f2613cdbae8c54337b67e346
+
+5. Same email + empty EIN/ABN => Allow
+Evidence: https://www.awesomescreenshot.com/video/57578849?key=f6ce4a27b1244eb6f807a700456c549d
+
+6. Different email + same EIN/ABN => Allow
+Evidence: https://www.awesomescreenshot.com/video/57578988?key=493a4392f15734d8330b64d4c4e012a0
+
+7. Same Email + Same EIN => Disallow
+Evidence: https://www.awesomescreenshot.com/video/57579222?key=9ec16b9f7cc1dd1bd8bf78a2f25a43bb
+
+8. Invalid EIN/ABN format => Disallow (working perfectly)
+Evidence: https://www.awesomescreenshot.com/video/57579400?key=d7909036b0c953dc5da15a914749b637
+
+9. When the duplicate is caught => Showing error popup on Step 2
+Evidence: https://www.awesomescreenshot.com/video/57579684?key=c3d87b87d87e14a7e2b1ad7fcc607a2f
+
+Please review and let us know if everything looks good from your end or if any further checks are needed.
+
+Thank you,
+Deepali

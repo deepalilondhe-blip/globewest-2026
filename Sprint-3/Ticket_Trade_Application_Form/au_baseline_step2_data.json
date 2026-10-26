@@ -1,0 +1,106 @@
+[
+  {
+    "label": "Email Address",
+    "id": "od-auth-popup-email",
+    "name": "username",
+    "placeholder": "Email Address"
+  },
+  {
+    "label": "Password",
+    "id": "od-auth-popup-password",
+    "name": "password",
+    "placeholder": "Password"
+  },
+  {
+    "label": "BUSINESS NAME",
+    "id": "business_name",
+    "name": "business_name",
+    "placeholder": "Business Name"
+  },
+  {
+    "label": "ABN",
+    "id": "abn",
+    "name": "abn",
+    "placeholder": "ABN"
+  },
+  {
+    "label": "ENTITY NAME",
+    "id": "entity_name",
+    "name": "entity_name",
+    "placeholder": "Enter entity name if different to the business name entered above"
+  },
+  {
+    "label": "HEAD OFFICE STREET ADDRESS",
+    "id": "head_office_street_address",
+    "name": "head_office_street_address",
+    "placeholder": "Street Address"
+  },
+  {
+    "label": "SUBURB",
+    "id": "suburb",
+    "name": "suburb",
+    "placeholder": "Suburb"
+  },
+  {
+    "label": "STATE",
+    "id": "state",
+    "name": "state"
+  },
+  {
+    "label": "POSTCODE",
+    "id": "postcode",
+    "name": "postcode",
+    "placeholder": "Postcode"
+  },
+  {
+    "label": "NUMBER OF EMPLOYEES",
+    "id": "number_of_employees",
+    "name": "number_of_employees",
+    "placeholder": "Number of employees"
+  },
+  {
+    "label": "PRIMARY BUSINESS TYPE",
+    "id": "primary_business_type",
+    "name": "primary_business_type"
+  },
+  {
+    "label": "Yes",
+    "id": "commercial-projects-yes",
+    "name": "work_on_commercial_projects",
+    "placeholder": ""
+  },
+  {
+    "label": "No",
+    "id": "commercial-projects-no",
+    "name": "work_on_commercial_projects",
+    "placeholder": ""
+  },
+  {
+    "label": "Under 10k",
+    "id": "yearly-spend-10",
+    "name": "average_spend_on_furniture",
+    "placeholder": ""
+  },
+  {
+    "label": "10k-30k",
+    "id": "yearly-spend-10-30",
+    "name": "average_spend_on_furniture",
+    "placeholder": ""
+  },
+  {
+    "label": "30k +",
+    "id": "yearly-spend-30",
+    "name": "average_spend_on_furniture",
+    "placeholder": ""
+  },
+  {
+    "label": "ADDITIONAL SERVICES",
+    "id": "additional_services",
+    "name": "additional_services"
+  },
+  {
+    "label": "Colour:",
+    "id": "size-select",
+    "name": "size"
+  }
+]

@@ -1,0 +1,286 @@
+{
+  "timestamp": "2026-10-01T08:44:11.597Z",
+  "ticket": "#41794540 - About Us",
+  "auBaseline": {
+    "url": "https://mcstaging2.globewest.com.au/about-us",
+    "data": {
+      "title": "About Us update",
+      "h1": [],
+      "h2": [
+        "About Us test",
+        "Our Vision",
+        "Our Business",
+        "Design Diversity",
+        "Our Approach",
+        "Careers",
+        "CONNECT WITH US",
+        "Subscribe"
+      ],
+      "h3": [
+        "Our Business",
+        "Our Brand",
+        "VISIT OUR SHOWROOMS",
+        "PRODUCTS",
+        "CUSTOMER SUPPORT",
+        "OUR BRAND"
+      ],
+      "images": [
+        {
+          "src": "https://globewest.com.au/media/wysiwyg/about-us/230420_About-Us_Hugo-Marla_2880x1200.jpg",
+          "alt": "",
+          "naturalWidth": 1920,
+          "naturalHeight": 800,
+          "isPlaceholder": false
+        },
+        {
+          "src": "https://globewest.com.au/media/wysiwyg/about-us/230420_About-Us_Hugo-Marla_375x396.jpg",
+          "alt": "",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "isPlaceholder": false
+        },
+        {
+          "src": "https://globewest.com.au/media/wysiwyg/221018_Alan-Stephen_2500x1200.jpg",
+          "alt": "",
+          "naturalWidth": 2500,
+          "naturalHeight": 1200,
+          "isPlaceholder": false
+        },
+        {
+          "src": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIiA/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgd2lkdGg9Ijc1MCIKICAgICBoZWlnaHQ9Ijc1MCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPgogICAgPGRlZnM+CjwvZGVmcz4KICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIDEgMTAwIDEwMCkiIGlkPSIxNzk2N2ExYy1lODM4LTQwY2ItYTk3Zi03MjQyMjhlMDk5MGMiPgo8cmVjdAogICAgc3R5bGU9InN0cm9rZTogbm9uZTsgc3Ryb2tlLXdpZHRoOiAxOyBzdHJva2UtZGFzaGFycmF5OiBub25lOyBzdHJva2UtbGluZWNhcDogYnV0dDsgc3Ryb2tlLWRhc2hvZmZzZXQ6IDA7IHN0cm9rZS1saW5lam9pbjogbWl0ZXI7IHN0cm9rZS1taXRlcmxpbWl0OiA0OyBmaWxsOiByZ2IoMjU1LDI1NSwyNTUpOyBmaWxsLW9wYWNpdHk6IDA7IGZpbGwtcnVsZTogbm9uemVybzsgb3BhY2l0eTogMTsiCiAgICB2ZWN0b3ItZWZmZWN0PSJub24tc2NhbGluZy1zdHJva2UiIHg9Ii0xMDAiIHk9Ii0xMDAiIHJ4PSIwIiByeT0iMCIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiLz4KPC9nPgogICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoSW5maW5pdHkgTmFOIE5hTiBJbmZpbml0eSAwIDApIiBpZD0iODllMDYxZjYtNmE4Ny00NmQyLWExNDItODA1YWE0MDNhNmNlIj4KPC9nPgo8L3N2Zz4K",
+          "alt": "",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "isPlaceholder": false
+        },
+        {
+          "src": "https://globewest.com.au/media/wysiwyg/about-us/221018_Contemporary_460x620.jpg",
+          "alt": "",
+          "naturalWidth": 460,
+          "naturalHeight": 620,
+          "isPlaceholder": false
+        },
+        {
+          "src": "https://globewest.com.au/media/wysiwyg/about-us/221018_Modern_460x620.jpg",
+          "alt": "",
+          "naturalWidth": 460,
+          "naturalHeight": 620,
+          "isPlaceholder": false
+        },
+        {
+          "src": "https://globewest.com.au/media/wysiwyg/about-us/221018_Classic-460x620.jpg",
+          "alt": "",
+          "naturalWidth": 460,
+          "naturalHeight": 620,
+          "isPlaceholder": false
+        },
+        {
+          "src": "https://globewest.com.au/media/wysiwyg/about-us/221018_Eclectic_460x620.jpg",
+          "alt": "",
+          "naturalWidth": 460,
+          "naturalHeight": 620,
+          "isPlaceholder": false
+        },
+        {
+          "src": "https://globewest.com.au/media/wysiwyg/about-us/221018_Retreat_460x620.jpg",
+          "alt": "",
+          "naturalWidth": 460,
+          "naturalHeight": 620,
+          "isPlaceholder": false
+        },
+        {
+          "src": "https://globewest.com.au/media/wysiwyg/about-us/230420_About-Us_Video_2500x1200.jpg",
+          "alt": "",
+          "naturalWidth": 1920,
+          "naturalHeight": 921,
+          "isPlaceholder": false
+        },
+        {
+          "src": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIiA/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgd2lkdGg9IjMzNSIKICAgICBoZWlnaHQ9IjMzNSIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPgogICAgPGRlZnM+CjwvZGVmcz4KICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIDEgMTAwIDEwMCkiIGlkPSIxNzk2N2ExYy1lODM4LTQwY2ItYTk3Zi03MjQyMjhlMDk5MGMiPgo8cmVjdAogICAgc3R5bGU9InN0cm9rZTogbm9uZTsgc3Ryb2tlLXdpZHRoOiAxOyBzdHJva2UtZGFzaGFycmF5OiBub25lOyBzdHJva2UtbGluZWNhcDogYnV0dDsgc3Ryb2tlLWRhc2hvZmZzZXQ6IDA7IHN0cm9rZS1saW5lam9pbjogbWl0ZXI7IHN0cm9rZS1taXRlcmxpbWl0OiA0OyBmaWxsOiByZ2IoMjU1LDI1NSwyNTUpOyBmaWxsLW9wYWNpdHk6IDA7IGZpbGwtcnVsZTogbm9uemVybzsgb3BhY2l0eTogMTsiCiAgICB2ZWN0b3ItZWZmZWN0PSJub24tc2NhbGluZy1zdHJva2UiIHg9Ii0xMDAiIHk9Ii0xMDAiIHJ4PSIwIiByeT0iMCIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiLz4KPC9nPgogICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoSW5maW5pdHkgTmFOIE5hTiBJbmZpbml0eSAwIDApIiBpZD0iODllMDYxZjYtNmE4Ny00NmQyLWExNDItODA1YWE0MDNhNmNlIj4KPC9nPgo8L3N2Zz4K",
+          "alt": "",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "isPlaceholder": false
+        },
+        {
+          "src": "https://globewest.com.au/media/wysiwyg/221208_Our-Team-RT_1920x921.jpg",
+          "alt": "",
+          "naturalWidth": 1920,
+          "naturalHeight": 921,
+          "isPlaceholder": false
+        },
+        {
+          "src": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIiA/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgd2lkdGg9IjMzNSIKICAgICBoZWlnaHQ9IjMzNSIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPgogICAgPGRlZnM+CjwvZGVmcz4KICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIDEgMTAwIDEwMCkiIGlkPSIxNzk2N2ExYy1lODM4LTQwY2ItYTk3Zi03MjQyMjhlMDk5MGMiPgo8cmVjdAogICAgc3R5bGU9InN0cm9rZTogbm9uZTsgc3Ryb2tlLXdpZHRoOiAxOyBzdHJva2UtZGFzaGFycmF5OiBub25lOyBzdHJva2UtbGluZWNhcDogYnV0dDsgc3Ryb2tlLWRhc2hvZmZzZXQ6IDA7IHN0cm9rZS1saW5lam9pbjogbWl0ZXI7IHN0cm9rZS1taXRlcmxpbWl0OiA0OyBmaWxsOiByZ2IoMjU1LDI1NSwyNTUpOyBmaWxsLW9wYWNpdHk6IDA7IGZpbGwtcnVsZTogbm9uemVybzsgb3BhY2l0eTogMTsiCiAgICB2ZWN0b3ItZWZmZWN0PSJub24tc2NhbGluZy1zdHJva2UiIHg9Ii0xMDAiIHk9Ii0xMDAiIHJ4PSIwIiByeT0iMCIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiLz4KPC9nPgogICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoSW5maW5pdHkgTmFOIE5hTiBJbmZpbml0eSAwIDApIiBpZD0iODllMDYxZjYtNmE4Ny00NmQyLWExNDItODA1YWE0MDNhNmNlIj4KPC9nPgo8L3N2Zz4K",
+          "alt": "",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "isPlaceholder": false
+        }
+      ],
+      "bodyClasses": "cms-about-us page-layout-1column cms-page-view page-layout-cms-full-width yotpo-yotpo-is-enabled side-cart",
+      "mainTextSnippet": "About Us test\nOur Business\nOur Vision\n\nDesigned for designers, GlobeWest is an Australian owned and run company with offices and showrooms based in multiple cities across Australia.\n\nInspired by creating beautiful design that transforms the everyday, forming connection, comfort and joy in Australian homes and businesses.\n\nA labour of love, an in-house dedicated design team develop and curate diverse collections of furniture and homewares catering to Australian residential and commercial spaces.\n"
+    }
+  },
+  "usTarget": {
+    "url": "https://mcstaging2.globewest.com/about-us",
+    "data": {
+      "title": "About Us",
+      "h1": [],
+      "h2": [
+        "About Us",
+        "Our Vision",
+        "Our Business",
+        "Design Diversity",
+        "Our Approach",
+        "Careers",
+        "CONNECT WITH US",
+        "Subscribe"
+      ],
+      "h3": [
+        "Our Business",
+        "Our Brand",
+        "VISIT OUR SHOWROOMS",
+        "PRODUCTS",
+        "CUSTOMER SUPPORT",
+        "OUR BRAND"
+      ],
+      "images": [
+        {
+          "src": "https://mcstaging2.globewest.com/media/wysiwyg/about-us/230420_About-Us_Hugo-Marla_2880x1200.jpg",
+          "alt": "",
+          "naturalWidth": 1920,
+          "naturalHeight": 800,
+          "isPlaceholder": false
+        },
+        {
+          "src": "https://mcstaging2.globewest.com/media/wysiwyg/about-us/230420_About-Us_Hugo-Marla_375x396.jpg",
+          "alt": "",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "isPlaceholder": false
+        },
+        {
+          "src": "https://mcstaging2.globewest.com/media/wysiwyg/221018_Alan-Stephen_2500x1200.jpg",
+          "alt": "",
+          "naturalWidth": 2500,
+          "naturalHeight": 1200,
+          "isPlaceholder": false
+        },
+        {
+          "src": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIiA/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgd2lkdGg9Ijc1MCIKICAgICBoZWlnaHQ9Ijc1MCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPgogICAgPGRlZnM+CjwvZGVmcz4KICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIDEgMTAwIDEwMCkiIGlkPSIxNzk2N2ExYy1lODM4LTQwY2ItYTk3Zi03MjQyMjhlMDk5MGMiPgo8cmVjdAogICAgc3R5bGU9InN0cm9rZTogbm9uZTsgc3Ryb2tlLXdpZHRoOiAxOyBzdHJva2UtZGFzaGFycmF5OiBub25lOyBzdHJva2UtbGluZWNhcDogYnV0dDsgc3Ryb2tlLWRhc2hvZmZzZXQ6IDA7IHN0cm9rZS1saW5lam9pbjogbWl0ZXI7IHN0cm9rZS1taXRlcmxpbWl0OiA0OyBmaWxsOiByZ2IoMjU1LDI1NSwyNTUpOyBmaWxsLW9wYWNpdHk6IDA7IGZpbGwtcnVsZTogbm9uemVybzsgb3BhY2l0eTogMTsiCiAgICB2ZWN0b3ItZWZmZWN0PSJub24tc2NhbGluZy1zdHJva2UiIHg9Ii0xMDAiIHk9Ii0xMDAiIHJ4PSIwIiByeT0iMCIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiLz4KPC9nPgogICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoSW5maW5pdHkgTmFOIE5hTiBJbmZpbml0eSAwIDApIiBpZD0iODllMDYxZjYtNmE4Ny00NmQyLWExNDItODA1YWE0MDNhNmNlIj4KPC9nPgo8L3N2Zz4K",
+          "alt": "",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "isPlaceholder": false
+        },
+        {
+          "src": "https://mcstaging2.globewest.com/media/wysiwyg/about-us/221018_Contemporary_460x620.jpg",
+          "alt": "",
+          "naturalWidth": 460,
+          "naturalHeight": 620,
+          "isPlaceholder": false
+        },
+        {
+          "src": "https://mcstaging2.globewest.com/media/wysiwyg/about-us/221018_Modern_460x620.jpg",
+          "alt": "",
+          "naturalWidth": 460,
+          "naturalHeight": 620,
+          "isPlaceholder": false
+        },
+        {
+          "src": "https://mcstaging2.globewest.com/media/wysiwyg/about-us/221018_Classic-460x620.jpg",
+          "alt": "",
+          "naturalWidth": 460,
+          "naturalHeight": 620,
+          "isPlaceholder": false
+        },
+        {
+          "src": "https://mcstaging2.globewest.com/media/wysiwyg/about-us/221018_Eclectic_460x620.jpg",
+          "alt": "",
+          "naturalWidth": 460,
+          "naturalHeight": 620,
+          "isPlaceholder": false
+        },
+        {
+          "src": "https://mcstaging2.globewest.com/media/wysiwyg/about-us/221018_Retreat_460x620.jpg",
+          "alt": "",
+          "naturalWidth": 460,
+          "naturalHeight": 620,
+          "isPlaceholder": false
+        },
+        {
+          "src": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIiA/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgd2lkdGg9IjE5MjAiCiAgICAgaGVpZ2h0PSIxMDAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CiAgICA8ZGVmcz4KPC9kZWZzPgogICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgMSAxMDAgMTAwKSIgaWQ9IjE3OTY3YTFjLWU4MzgtNDBjYi1hOTdmLTcyNDIyOGUwOTkwYyI+CjxyZWN0CiAgICBzdHlsZT0ic3Ryb2tlOiBub25lOyBzdHJva2Utd2lkdGg6IDE7IHN0cm9rZS1kYXNoYXJyYXk6IG5vbmU7IHN0cm9rZS1saW5lY2FwOiBidXR0OyBzdHJva2UtZGFzaG9mZnNldDogMDsgc3Ryb2tlLWxpbmVqb2luOiBtaXRlcjsgc3Ryb2tlLW1pdGVybGltaXQ6IDQ7IGZpbGw6IHJnYigyNTUsMjU1LDI1NSk7IGZpbGwtb3BhY2l0eTogMDsgZmlsbC1ydWxlOiBub256ZXJvOyBvcGFjaXR5OiAxOyIKICAgIHZlY3Rvci1lZmZlY3Q9Im5vbi1zY2FsaW5nLXN0cm9rZSIgeD0iLTEwMCIgeT0iLTEwMCIgcng9IjAiIHJ5PSIwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIvPgo8L2c+CiAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeChJbmZpbml0eSBOYU4gTmFOIEluZmluaXR5IDAgMCkiIGlkPSI4OWUwNjFmNi02YTg3LTQ2ZDItYTE0Mi04MDVhYTQwM2E2Y2UiPgo8L2c+Cjwvc3ZnPgo=",
+          "alt": "",
+          "naturalWidth": 1920,
+          "naturalHeight": 1000,
+          "isPlaceholder": false
+        },
+        {
+          "src": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIiA/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgd2lkdGg9IjMzNSIKICAgICBoZWlnaHQ9IjMzNSIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPgogICAgPGRlZnM+CjwvZGVmcz4KICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIDEgMTAwIDEwMCkiIGlkPSIxNzk2N2ExYy1lODM4LTQwY2ItYTk3Zi03MjQyMjhlMDk5MGMiPgo8cmVjdAogICAgc3R5bGU9InN0cm9rZTogbm9uZTsgc3Ryb2tlLXdpZHRoOiAxOyBzdHJva2UtZGFzaGFycmF5OiBub25lOyBzdHJva2UtbGluZWNhcDogYnV0dDsgc3Ryb2tlLWRhc2hvZmZzZXQ6IDA7IHN0cm9rZS1saW5lam9pbjogbWl0ZXI7IHN0cm9rZS1taXRlcmxpbWl0OiA0OyBmaWxsOiByZ2IoMjU1LDI1NSwyNTUpOyBmaWxsLW9wYWNpdHk6IDA7IGZpbGwtcnVsZTogbm9uemVybzsgb3BhY2l0eTogMTsiCiAgICB2ZWN0b3ItZWZmZWN0PSJub24tc2NhbGluZy1zdHJva2UiIHg9Ii0xMDAiIHk9Ii0xMDAiIHJ4PSIwIiByeT0iMCIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiLz4KPC9nPgogICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoSW5maW5pdHkgTmFOIE5hTiBJbmZpbml0eSAwIDApIiBpZD0iODllMDYxZjYtNmE4Ny00NmQyLWExNDItODA1YWE0MDNhNmNlIj4KPC9nPgo8L3N2Zz4K",
+          "alt": "",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "isPlaceholder": false
+        },
+        {
+          "src": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIiA/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgd2lkdGg9IjEyNzYiCiAgICAgaGVpZ2h0PSI2MTgiIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KICAgIDxkZWZzPgo8L2RlZnM+CiAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxIDAgMCAxIDEwMCAxMDApIiBpZD0iMTc5NjdhMWMtZTgzOC00MGNiLWE5N2YtNzI0MjI4ZTA5OTBjIj4KPHJlY3QKICAgIHN0eWxlPSJzdHJva2U6IG5vbmU7IHN0cm9rZS13aWR0aDogMTsgc3Ryb2tlLWRhc2hhcnJheTogbm9uZTsgc3Ryb2tlLWxpbmVjYXA6IGJ1dHQ7IHN0cm9rZS1kYXNob2Zmc2V0OiAwOyBzdHJva2UtbGluZWpvaW46IG1pdGVyOyBzdHJva2UtbWl0ZXJsaW1pdDogNDsgZmlsbDogcmdiKDI1NSwyNTUsMjU1KTsgZmlsbC1vcGFjaXR5OiAwOyBmaWxsLXJ1bGU6IG5vbnplcm87IG9wYWNpdHk6IDE7IgogICAgdmVjdG9yLWVmZmVjdD0ibm9uLXNjYWxpbmctc3Ryb2tlIiB4PSItMTAwIiB5PSItMTAwIiByeD0iMCIgcnk9IjAiIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIi8+CjwvZz4KICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KEluZmluaXR5IE5hTiBOYU4gSW5maW5pdHkgMCAwKSIgaWQ9Ijg5ZTA2MWY2LTZhODctNDZkMi1hMTQyLTgwNWFhNDAzYTZjZSI+CjwvZz4KPC9zdmc+Cg==",
+          "alt": "",
+          "naturalWidth": 1276,
+          "naturalHeight": 618,
+          "isPlaceholder": false
+        },
+        {
+          "src": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIiA/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgd2lkdGg9IjMzNSIKICAgICBoZWlnaHQ9IjMzNSIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPgogICAgPGRlZnM+CjwvZGVmcz4KICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIDEgMTAwIDEwMCkiIGlkPSIxNzk2N2ExYy1lODM4LTQwY2ItYTk3Zi03MjQyMjhlMDk5MGMiPgo8cmVjdAogICAgc3R5bGU9InN0cm9rZTogbm9uZTsgc3Ryb2tlLXdpZHRoOiAxOyBzdHJva2UtZGFzaGFycmF5OiBub25lOyBzdHJva2UtbGluZWNhcDogYnV0dDsgc3Ryb2tlLWRhc2hvZmZzZXQ6IDA7IHN0cm9rZS1saW5lam9pbjogbWl0ZXI7IHN0cm9rZS1taXRlcmxpbWl0OiA0OyBmaWxsOiByZ2IoMjU1LDI1NSwyNTUpOyBmaWxsLW9wYWNpdHk6IDA7IGZpbGwtcnVsZTogbm9uemVybzsgb3BhY2l0eTogMTsiCiAgICB2ZWN0b3ItZWZmZWN0PSJub24tc2NhbGluZy1zdHJva2UiIHg9Ii0xMDAiIHk9Ii0xMDAiIHJ4PSIwIiByeT0iMCIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiLz4KPC9nPgogICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoSW5maW5pdHkgTmFOIE5hTiBJbmZpbml0eSAwIDApIiBpZD0iODllMDYxZjYtNmE4Ny00NmQyLWExNDItODA1YWE0MDNhNmNlIj4KPC9nPgo8L3N2Zz4K",
+          "alt": "",
+          "naturalWidth": 0,
+          "naturalHeight": 0,
+          "isPlaceholder": false
+        }
+      ],
+      "links": [
+        {
+          "text": "",
+          "href": "",
+          "isAuLeak": false
+        },
+        {
+          "text": "Contemporary",
+          "href": "#",
+          "isAuLeak": false
+        },
+        {
+          "text": "Modern",
+          "href": "#",
+          "isAuLeak": false
+        },
+        {
+          "text": "Classic",
+          "href": "#",
+          "isAuLeak": false
+        },
+        {
+          "text": "Eclectic",
+          "href": "#",
+          "isAuLeak": false
+        },
+        {
+          "text": "Retreat",
+          "href": "#",
+          "isAuLeak": false
+        },
+        {
+          "text": "VIEW CAREERS PAGE",
+          "href": "/careers-landing",
+          "isAuLeak": false
+        },
+        {
+          "text": "REGISTER YOUR INTEREST",
+          "href": "mailto:careers@globewest.com.au",
+          "isAuLeak": true
+        }
+      ],
+      "bodyClasses": "cms-about-us page-layout-1column cms-page-view page-layout-cms-full-width side-cart",
+      "mainTextSnippet": "About Us\nOur Business\nOur Vision\n\nDesigned for designers, GlobeWest is an Australian owned and run company with offices and showrooms based in multiple cities across Australia.\n\nInspired by creating beautiful design that transforms the everyday, forming connection, comfort and joy in Australian homes and businesses.\n\nA labour of love, an in-house dedicated design team develop and curate diverse collections of furniture and homewares catering to Australian residential and commercial spaces.\n\nOur "
+    }
+  }
+}

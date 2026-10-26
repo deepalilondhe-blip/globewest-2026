@@ -1,0 +1,8 @@
+Ticket Name: #41794527 - My Account - Dashboard
+Page Name: My Account - Dashboard (https://mcstaging2.globewest.com/customer/account/)
+
+Run command for Desktop View:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794527_My_Account_Dashboard/scripts/run_headed_dashboard_desktop_audit.js"
+
+Run command for Mobile View:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794527_My_Account_Dashboard/scripts/run_headed_dashboard_mobile_audit.js"

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlobeWest Static Pages - Real Format Comparison (AU Baseline vs US Staging)</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --accent: #2563eb;
+      --au-tag: #15803d;
+      --us-tag: #1d4ed8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      padding: 30px 20px;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+    header {
+      background: var(--card-bg);
+      padding: 24px 30px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    header h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    header p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    .badge-bar {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .badge-green { background: #dcfce7; color: #166534; }
+    .badge-blue { background: #dbeafe; color: #1e40af; }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; }
+
+    .nav-controls {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .tab-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 9px 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      color: var(--text-main);
+      transition: all 0.2s;
+    }
+    .tab-btn:hover { background: #f1f5f9; }
+    .tab-btn.active {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+
+    .comparison-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+    .card-header {
+      padding: 16px 20px;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .card-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .card-body {
+      padding: 16px;
+      background: #fafafa;
+      text-align: center;
+      overflow-x: auto;
+    }
+    .card-body img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Static Pages: Terms, Privacy, Contact, FAQ, 404 — Visual Comparison</h1>
+    <p>Ticket #41794538 | Authenticated Dual-Storefront Audit (AU Baseline vs US Staging Target)</p>
+    <div class="badge-bar">
+      <span class="badge badge-green">🟢 AU Baseline: mcstaging2.globewest.com.au (Logged In)</span>
+      <span class="badge badge-blue">🔵 US Staging: mcstaging2.globewest.com (Logged In Trade)</span>
+      <span class="badge badge-purple">🎯 Authentic Real View (Zero Color Tinting)</span>
+    </div>
+  </header>
+
+  <div class="nav-controls">
+    <div class="tab-group" id="page-tabs">
+      <button class="tab-btn active" onclick="filterPage('all', this)">All Pages</button>
+      <button class="tab-btn" onclick="filterPage('terms', this)">Terms & Conditions</button>
+      <button class="tab-btn" onclick="filterPage('privacy', this)">Privacy Policy</button>
+      <button class="tab-btn" onclick="filterPage('contact', this)">Contact Us</button>
+      <button class="tab-btn" onclick="filterPage('faq', this)">Help Centre / FAQ</button>
+      <button class="tab-btn" onclick="filterPage('404', this)">404 Page</button>
+    </div>
+
+    <div class="tab-group" id="viewport-tabs">
+      <button class="tab-btn active" onclick="filterViewport('all-vp', this)">All Views</button>
+      <button class="tab-btn" onclick="filterViewport('desktop', this)">Desktop Only</button>
+      <button class="tab-btn" onclick="filterViewport('mobile', this)">Mobile Only</button>
+    </div>
+  </div>
+
+  <div class="comparison-grid">
+
+    <!-- 1. Terms Desktop -->
+    <div class="card" data-page="terms" data-vp="desktop">
+      <div class="card-header">
+        <div class="card-title">1. Terms & Conditions — Desktop Viewport (1440×900)</div>
+        <div class="card-meta">AU Baseline vs US Staging | Authenticated Mode</div>
+      </div>
+      <div class="card-body">
+        <img src="REAL_COMPARISONS/Terms_and_Conditions_Desktop_Comparison.png" alt="Terms Desktop Comparison">
+      </div>
+    </div>
+
+    <!-- 1. Terms Mobile -->
+    <div class="card" data-page="terms" data-vp="mobile">
+      <div class="card-header">
+        <div class="card-title">1. Terms & Conditions — Mobile Viewport (390×844)</div>
+        <div class="card-meta">AU Baseline vs US Staging | iPhone 14/15 Responsive</div>
+      </div>
+      <div class="card-body">
+        <img src="REAL_COMPARISONS/Terms_and_Conditions_Mobile_Comparison.png" alt="Terms Mobile Comparison">
+      </div>
+    </div>
+
+    <!-- 2. Privacy Desktop -->
+    <div class="card" data-page="privacy" data-vp="desktop">
+      <div class="card-header">
+        <div class="card-title">2. Privacy Policy — Desktop Viewport (1440×900)</div>
+        <div class="card-meta">AU Baseline vs US Staging | Authenticated Mode</div>
+      </div>
+      <div class="card-body">
+        <img src="REAL_COMPARISONS/Privacy_Policy_Desktop_Comparison.png" alt="Privacy Desktop Comparison">
+      </div>
+    </div>
+
+    <!-- 2. Privacy Mobile -->
+    <div class="card" data-page="privacy" data-vp="mobile">
+      <div class="card-header">
+        <div class="card-title">2. Privacy Policy — Mobile Viewport (390×844)</div>
+        <div class="card-meta">AU Baseline vs US Staging | iPhone 14/15 Responsive</div>
+      </div>
+      <div class="card-body">
+        <img src="REAL_COMPARISONS/Privacy_Policy_Mobile_Comparison.png" alt="Privacy Mobile Comparison">
+      </div>
+    </div>
+
+    <!-- 3. Contact Desktop -->
+    <div class="card" data-page="contact" data-vp="desktop">
+      <div class="card-header">
+        <div class="card-title">3. Contact Us — Desktop Viewport (1440×900)</div>
+        <div class="card-meta">AU Baseline vs US Staging | Authenticated Mode</div>
+      </div>
+      <div class="card-body">
+        <img src="REAL_COMPARISONS/Contact_Us_Desktop_Comparison.png" alt="Contact Desktop Comparison">
+      </div>
+    </div>
+
+    <!-- 3. Contact Mobile -->
+    <div class="card" data-page="contact" data-vp="mobile">
+      <div class="card-header">
+        <div class="card-title">3. Contact Us — Mobile Viewport (390×844)</div>
+        <div class="card-meta">AU Baseline vs US Staging | iPhone 14/15 Responsive</div>
+      </div>
+      <div class="card-body">
+        <img src="REAL_COMPARISONS/Contact_Us_Mobile_Comparison.png" alt="Contact Mobile Comparison">
+      </div>
+    </div>
+
+    <!-- 4. FAQ Desktop -->
+    <div class="card" data-page="faq" data-vp="desktop">
+      <div class="card-header">
+        <div class="card-title">4. Help Centre / FAQ — Desktop Viewport (1440×900)</div>
+        <div class="card-meta">AU Baseline vs US Staging | Authenticated Mode</div>
+      </div>
+      <div class="card-body">
+        <img src="REAL_COMPARISONS/Help_Centre_FAQ_Desktop_Comparison.png" alt="Help Centre FAQ Desktop Comparison">
+      </div>
+    </div>
+
+    <!-- 4. FAQ Mobile -->
+    <div class="card" data-page="faq" data-vp="mobile">
+      <div class="card-header">
+        <div class="card-title">4. Help Centre / FAQ — Mobile Viewport (390×844)</div>
+        <div class="card-meta">AU Baseline vs US Staging | iPhone 14/15 Responsive</div>
+      </div>
+      <div class="card-body">
+        <img src="REAL_COMPARISONS/Help_Centre_FAQ_Mobile_Comparison.png" alt="Help Centre FAQ Mobile Comparison">
+      </div>
+    </div>
+
+    <!-- 5. 404 Desktop -->
+    <div class="card" data-page="404" data-vp="desktop">
+      <div class="card-header">
+        <div class="card-title">5. 404 Page Not Found — Desktop Viewport (1440×900)</div>
+        <div class="card-meta">AU Baseline vs US Staging | Authenticated Mode</div>
+      </div>
+      <div class="card-body">
+        <img src="REAL_COMPARISONS/404_Page_Not_Found_Desktop_Comparison.png" alt="404 Desktop Comparison">
+      </div>
+    </div>
+
+    <!-- 5. 404 Mobile -->
+    <div class="card" data-page="404" data-vp="mobile">
+      <div class="card-header">
+        <div class="card-title">5. 404 Page Not Found — Mobile Viewport (390×844)</div>
+        <div class="card-meta">AU Baseline vs US Staging | iPhone 14/15 Responsive</div>
+      </div>
+      <div class="card-body">
+        <img src="REAL_COMPARISONS/404_Page_Not_Found_Mobile_Comparison.png" alt="404 Mobile Comparison">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  let activePage = 'all';
+  let activeVp = 'all-vp';
+
+  function applyFilters() {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+      const pageMatch = (activePage === 'all' || card.getAttribute('data-page') === activePage);
+      const vpMatch = (activeVp === 'all-vp' || card.getAttribute('data-vp') === activeVp);
+      card.style.display = (pageMatch && vpMatch) ? 'block' : 'none';
+    });
+  }
+
+  function filterPage(page, btn) {
+    activePage = page;
+    document.querySelectorAll('#page-tabs .tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilters();
+  }
+
+  function filterViewport(vp, btn) {
+    activeVp = vp;
+    document.querySelectorAll('#viewport-tabs .tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilters();
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+{
+  "title": "Trade application - Step 1",
+  "url": "https://mcstaging2.globewest.com/gwcustomer/trade/create",
+  "h1": "Trade application",
+  "headings": [
+    {
+      "tag": "H1",
+      "text": "Trade application",
+      "className": "gwcustomer-title"
+    },
+    {
+      "tag": "H2",
+      "text": "Contact Details",
+      "className": "gwcustomer-subtitle"
+    },
+    {
+      "tag": "DIV",
+      "text": "TITLE\nMr\nMs\nMrs\nMiss\nDr\nMs",
+      "className": "field title required width-20"
+    },
+    {
+      "tag": "H2",
+      "text": "CONNECT WITH US",
+      "className": "social-links-footer-heading"
+    },
+    {
+      "tag": "H2",
+      "text": "Subscribe",
+      "className": "newsletter-custom__title"
+    },
+    {
+      "tag": "H3",
+      "text": "VISIT OUR SHOWROOMS",
+      "className": ""
+    },
+    {
+      "tag": "H3",
+      "text": "PRODUCTS",
+      "className": ""
+    },
+    {
+      "tag": "H3",
+      "text": "CUSTOMER SUPPORT",
+      "className": ""
+    },
+    {
+      "tag": "H3",
+      "text": "OUR BRAND",
+      "className": ""
+    }
+  ],
+  "fields": [
+    {
+      "label": "Email Address",
+      "tag": "INPUT",
+      "id": "od-auth-popup-email",
+      "name": "username",
+      "placeholder": "Email Address",
+      "type": "email"
+    },
+    {
+      "label": "Password",
+      "tag": "INPUT",
+      "id": "od-auth-popup-password",
+      "name": "password",
+      "placeholder": "Password",
+      "type": "password"
+    },
+    {
+      "label": "TITLE",
+      "tag": "SELECT",
+      "id": "title",
+      "name": "title",
+      "type": "select-one"
+    },
+    {
+      "label": "FIRST NAME",
+      "tag": "INPUT",
+      "id": "first_name",
+      "name": "first_name",
+      "placeholder": "First name",
+      "type": "text"
+    },
+    {
+      "label": "LAST NAME",
+      "tag": "INPUT",
+      "id": "last_name",
+      "name": "last_name",
+      "placeholder": "Last Name",
+      "type": "text"
+    },
+    {
+      "label": "EMAIL",
+      "tag": "INPUT",
+      "id": "email",
+      "name": "email",
+      "placeholder": "Email",
+      "type": "email"
+    },
+    {
+      "label": "MOBILE",
+      "tag": "INPUT",
+      "id": "mobile_phone",
+      "name": "mobile_phone",
+      "placeholder": "Mobile",
+      "type": "text"
+    },
+    {
+      "label": "PHONE",
+      "tag": "INPUT",
+      "id": "phone",
+      "name": "phone",
+      "placeholder": "Phone",
+      "type": "text"
+    },
+    {
+      "label": "Yes, subscribe me to GlobeWest marketing communications. We'll keep in touch by email while your application is underway, with updates relevant to your application. Once approved, you'll also receive SMS updates and exclusive trade content such as event invitations, product news, and trade offers tailored to your account type.",
+      "tag": "INPUT",
+      "id": "subscription",
+      "name": "subscription",
+      "placeholder": "",
+      "type": "checkbox"
+    },
+    {
+      "label": "Colour:",
+      "tag": "SELECT",
+      "id": "size-select",
+      "name": "size",
+      "type": "select-one"
+    }
+  ]
+}

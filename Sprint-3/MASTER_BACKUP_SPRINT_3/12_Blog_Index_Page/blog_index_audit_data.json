@@ -1,0 +1,130 @@
+{
+  "timestamp": "2026-10-06T07:01:21.320Z",
+  "au": {
+    "title": "Blog",
+    "url": "https://www.globewest.com.au/blog",
+    "pagination": {
+      "amountText": "Viewed 12 out of 231 articles",
+      "rawPagerText": "Viewed 12 out of 231 articles\n1\n2\n3\n...\n15",
+      "pageItems": [
+        "",
+        "1",
+        "1",
+        "2",
+        "2",
+        "3",
+        "3",
+        "...",
+        "...",
+        "15",
+        "15",
+        ""
+      ]
+    },
+    "categories": [],
+    "posts": {
+      "totalCardsOnPage": 12,
+      "sample": [
+        {
+          "title": "Designer in Profile | Studio Yugen",
+          "imgSrc": "https://www.globewest.com.au/media/magefan_blog/Studio_Yugen_Blog_Hero_840x900.jpg",
+          "naturalWidth": 840,
+          "naturalHeight": 900
+        },
+        {
+          "title": "On Location | Mt Martha",
+          "imgSrc": "https://www.globewest.com.au/media/magefan_blog/DSCF0870-HDR_840x900.jpg",
+          "naturalWidth": 840,
+          "naturalHeight": 900
+        },
+        {
+          "title": "Lilypad Palm Beach Project",
+          "imgSrc": "https://www.globewest.com.au/media/magefan_blog/LilypadxGlobewest-LL-277_840x900.jpg",
+          "naturalWidth": 840,
+          "naturalHeight": 900
+        },
+        {
+          "title": "Project in Focus I Property Styling",
+          "imgSrc": "https://www.globewest.com.au/media/magefan_blog/Bungalow_Home_840x900jpg.jpg",
+          "naturalWidth": 840,
+          "naturalHeight": 900
+        },
+        {
+          "title": "Outdoor Collections 2027 Gallery",
+          "imgSrc": "https://www.globewest.com.au/media/magefan_blog/Outdoor_Gallery_840x900.jpg",
+          "naturalWidth": 840,
+          "naturalHeight": 900
+        }
+      ]
+    },
+    "hero": {
+      "exists": false,
+      "text": "",
+      "bgColor": "",
+      "color": ""
+    }
+  },
+  "us": {
+    "title": "Blog",
+    "url": "https://mcstaging2.globewest.com/blog",
+    "pagination": {
+      "amountText": "Viewed 12 out of 72 articles",
+      "rawPagerText": "Viewed 12 out of 72 articles\n1\n2",
+      "pageItems": [
+        "",
+        "1",
+        "1",
+        "2",
+        "2",
+        ""
+      ]
+    },
+    "categories": [],
+    "posts": {
+      "totalCardsOnPage": 12,
+      "sample": [
+        {
+          "title": "Stockist in Profile | IKOS Home (Duplicated) (Duplicated)",
+          "imgSrc": "https://mcstaging2.globewest.com/media/magefan_blog/Homewares-Banner_840x900.jpg",
+          "naturalWidth": 840,
+          "naturalHeight": 900
+        },
+        {
+          "title": "Post testing",
+          "imgSrc": "https://mcstaging2.globewest.com/media/magefan_blog/banner42.jpg",
+          "naturalWidth": 1100,
+          "naturalHeight": 1100
+        },
+        {
+          "title": "Indoor Collections 2023 Gallery",
+          "imgSrc": "https://mcstaging2.globewest.com/media/magefan_blog/new_blog-banner2.jpg",
+          "naturalWidth": 840,
+          "naturalHeight": 900
+        },
+        {
+          "title": "Occasional Chair Gallery",
+          "imgSrc": "https://mcstaging2.globewest.com/media/magefan_blog/Occasional_chair_gallery_Blog_new_banner_occasional_chairs_840x900.jpg",
+          "naturalWidth": 840,
+          "naturalHeight": 900
+        },
+        {
+          "title": "Project in Focus | Multi-Residential Developments",
+          "imgSrc": "https://mcstaging2.globewest.com/media/magefan_blog/hero2_1.jpg",
+          "naturalWidth": 840,
+          "naturalHeight": 900
+        }
+      ]
+    },
+    "hero": {
+      "exists": false,
+      "text": "",
+      "bgColor": "",
+      "color": ""
+    },
+    "mobileOverflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "hasHorizontalScroll": false
+    }
+  }
+}

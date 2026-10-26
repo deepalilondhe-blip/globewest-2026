@@ -1,0 +1,71 @@
+================================================================================
+TICKET #41794529: MY ACCOUNT - QUOTES — QA RUN COMMANDS
+================================================================================
+Target Live URL : https://mcstaging2.globewest.com/gw_quotes/quote/index/
+Figma Spec Node : https://www.figma.com/design/oSBa3EMR3goI0vM1tXCdTk/Globewest-USA---External?node-id=2581-64235
+QA Lead         : Deepali Londhe (@DeepaliL)
+Ticket Ref      : Teamwork #41794529 (P-GLW-007 Globewest US Expansion)
+================================================================================
+
+All commands below are tested and ready to run directly from the workspace terminal:
+Directory: /home/deepali/My Projects/Deepali/GlobeWest 2026 (2)
+
+--------------------------------------------------------------------------------
+1. OPEN FIGMA DESIGNS (1-Click Pre-Authenticated Session — No Login Prompt)
+--------------------------------------------------------------------------------
+# Opens Chrome directly to My Quotes, Frame 622, Frame 623, and Desktop/Mobile artboards:
+NODE_PATH="GlobeWest 2026/node_modules" node "GlobeWest 2026/scripts/open_figma_my_quotes.js"
+
+# Or if you are inside the "GlobeWest 2026" directory:
+# npm run figma:my-quotes
+
+--------------------------------------------------------------------------------
+2. LIVE RETESTING SUITE (Run Immediately Once Developer Deploys Changes)
+--------------------------------------------------------------------------------
+# Automatically logs in as Trade Customer, runs automated assertions on all 14 test cases,
+# captures fresh live screenshots, and writes retest_results/LATEST_RETEST_SUMMARY.md:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794529_My_Account_Quotes/scripts/retest_my_quotes_live.js"
+
+# Or if you are inside the "GlobeWest 2026" directory:
+# npm run retest:my-quotes
+
+--------------------------------------------------------------------------------
+3. INSPECT & CAPTURE LIVE STAGING (Desktop Viewport 1440x900)
+--------------------------------------------------------------------------------
+# Launches Chrome, logs in as Trade Customer, navigates to /gw_quotes/quote/index/,
+# and captures full-page live desktop screenshots:
+NODE_PATH="GlobeWest 2026/node_modules" node "GlobeWest 2026/scripts/inspect_live_my_quotes.js"
+
+--------------------------------------------------------------------------------
+4. INSPECT & CAPTURE LIVE MOBILE (Mobile Viewport 390x844 iPhone)
+--------------------------------------------------------------------------------
+# Captures mobile live staging layout, mobile empty state alert, and table area:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794529_My_Account_Quotes/scripts/capture_live_mobile.js"
+
+--------------------------------------------------------------------------------
+5. REGENERATE SIDE-BY-SIDE RED/GREEN COMPARISON DEFECT PASSES (Passes 01-08)
+--------------------------------------------------------------------------------
+# Generates side-by-side comparison images with solid red defect boxes (#FF0000)
+# and green Figma specification frames (#2E7D32) into comparison/ folder:
+python3 "Sprint-3/Ticket_41794529_My_Account_Quotes/scripts/generate_quotes_comparisons.py"
+
+--------------------------------------------------------------------------------
+6. REGENERATE EXCEL (.XLSX) AND CSV (.CSV) TEST CASES MATRIX
+--------------------------------------------------------------------------------
+# Generates 14-point test cases matrix with custom column widths, multi-line paragraph
+# spacing, and strictly excluded Visual Evidence column:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794529_My_Account_Quotes/scripts/generate_perfect_quotes_testcases.js"
+
+--------------------------------------------------------------------------------
+7. VIEW INTERACTIVE DEFECT GALLERY IN BROWSER
+--------------------------------------------------------------------------------
+# Opens the interactive defect viewer with modal zoom and live vs Figma comparisons:
+xdg-open "Sprint-3/Ticket_41794529_My_Account_Quotes/VIEW_DEFECT_IMAGES.html"
+
+--------------------------------------------------------------------------------
+8. OPEN FULL QA AUDIT REPORT
+--------------------------------------------------------------------------------
+# Opens the comprehensive QA pre-development audit report:
+xdg-open "Sprint-3/Ticket_41794529_My_Account_Quotes/QA_AUDIT_REPORT.md"
+
+================================================================================

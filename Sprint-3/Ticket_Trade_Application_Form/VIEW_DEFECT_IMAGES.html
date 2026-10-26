@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlobeWest Trade Application Form - Visual QA Audit & Defect Gallery</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #d97706;
+      --red: #ef4444;
+      --green: #10b981;
+      --gold: #fbbf24;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 30px 20px;
+    }
+
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 30px;
+    }
+
+    .badge-bar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-ticket { background: #3b82f6; color: white; }
+    .badge-critical { background: var(--red); color: white; }
+    .badge-status { background: #8b5cf6; color: white; }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .metric-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+    }
+
+    .metric-val {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .metric-lbl {
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-btn:hover { background: #334155; }
+    .tab-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+      font-weight: 600;
+    }
+
+    .gallery-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .item-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    }
+
+    .item-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .item-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .item-desc {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .item-pills {
+      display: flex;
+      gap: 8px;
+    }
+
+    .pill-red {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .pill-green {
+      background: rgba(16, 185, 129, 0.2);
+      color: #6ee7b7;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .item-media {
+      padding: 20px;
+      background: #090d16;
+      text-align: center;
+    }
+
+    .item-media img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      cursor: zoom-in;
+      transition: transform 0.2s;
+    }
+
+    .item-media img:hover {
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    }
+
+    .defect-list {
+      padding: 20px 24px;
+      background: #162032;
+      border-top: 1px solid var(--border);
+    }
+
+    .defect-list h4 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .defect-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .defect-table th, .defect-table td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .defect-table th {
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .defect-table tr:last-child td { border-bottom: none; }
+
+    /* Modal for zoom */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      cursor: zoom-out;
+    }
+
+    .modal img {
+      max-width: 95vw;
+      max-height: 95vh;
+      border-radius: 8px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.9);
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="badge-bar">
+        <span class="badge badge-ticket">Sprint 3 Ticket</span>
+        <span class="badge badge-critical">1 Critical Blocker</span>
+        <span class="badge badge-status">Figma Node 3226-21024 / 21130</span>
+      </div>
+      <h1>Trade Application Form - Design & Functional QA Audit</h1>
+      <p class="subtitle">Side-by-Side Comparison of Approved Figma Design Specs vs Live US Staging (mcstaging2.globewest.com)</p>
+    </header>
+
+    <!-- Metrics -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-val" style="color: var(--red);">1 CRITICAL</div>
+        <div class="metric-lbl">Blocker: US Phone Regex AU Enforcement</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val" style="color: var(--gold);">6 UI / COPY</div>
+        <div class="metric-lbl">Discrepancies on Step 2 (Business Details)</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val" style="color: var(--green);">100% PARITY</div>
+        <div class="metric-lbl">EIN* Field Parity (Node 3226-21364)</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val" style="color: #60a5fa;">18 CASES</div>
+        <div class="metric-lbl">Exported to Excel (.xlsx) & CSV (.csv)</div>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="filter-tabs">
+      <button class="tab-btn active" onclick="filterGallery('all')">All Comparisons (4)</button>
+      <button class="tab-btn" onclick="filterGallery('desktop')">Desktop Step 2 (Figma vs Live)</button>
+      <button class="tab-btn" onclick="filterGallery('mobile')">Mobile Step 2 (390px)</button>
+      <button class="tab-btn" onclick="filterGallery('blocker')">Critical Phone Blocker</button>
+      <button class="tab-btn" onclick="filterGallery('leaks')">Storefront Leaks</button>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="gallery-grid">
+
+      <!-- Item 1: Desktop Step 2 -->
+      <div class="item-card" data-category="desktop">
+        <div class="item-header">
+          <div>
+            <div class="item-title">Pass 01: Desktop Step 2 (Business Details) - Figma vs Live Staging</div>
+            <div class="item-desc">Comprehensive layout, typography, input placeholder, and label audit against Figma Artboard Node 3226-21024.</div>
+          </div>
+          <div class="item-pills">
+            <span class="pill-green">🟢 Figma Spec Node 3226-21024</span>
+            <span class="pill-red">🔴 6 Discrepancies Flagged</span>
+          </div>
+        </div>
+        <div class="item-media">
+          <img src="comparison/COMPARISON_01_DESKTOP_FIGMA_VS_LIVE_STEP2.png" alt="Desktop Step 2 Comparison" onclick="openModal(this.src)">
+        </div>
+        <div class="defect-list">
+          <h4>Itemized Figma Discrepancy Breakdown</h4>
+          <table class="defect-table">
+            <thead>
+              <tr>
+                <th>Element</th>
+                <th>Expected (Figma Spec)</th>
+                <th>Actual (mcstaging2 Live)</th>
+                <th>Severity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Back Navigation CTA</strong></td>
+                <td><code>← BACK</code></td>
+                <td><code>← GO BACK</code></td>
+                <td><span class="pill-red">Medium</span></td>
+              </tr>
+              <tr>
+                <td><strong>Street Address Asterisk</strong></td>
+                <td><code>HEAD OFFICE STREET ADDRESS</code> (No Asterisk)</td>
+                <td><code>HEAD OFFICE STREET ADDRESS*</code> (Mandatory *)</td>
+                <td><span class="pill-red">Medium</span></td>
+              </tr>
+              <tr>
+                <td><strong>State Dropdown Placeholder</strong></td>
+                <td><code>State ⌵</code></td>
+                <td><code>Please select ⌵</code></td>
+                <td><span class="pill-red">Medium</span></td>
+              </tr>
+              <tr>
+                <td><strong>Employees Placeholder</strong></td>
+                <td><code>eg. 1</code></td>
+                <td><code>Number of employees</code></td>
+                <td><span class="pill-red">Low</span></td>
+              </tr>
+              <tr>
+                <td><strong>Yearly Spend Asterisk</strong></td>
+                <td><code>WHAT IS YOUR AVERAGE YEARLY SPEND ON FURNITURE?</code> (No *)</td>
+                <td><code>WHAT IS YOUR AVERAGE YEARLY SPEND ON FURNITURE?*</code> (With *)</td>
+                <td><span class="pill-red">Low</span></td>
+              </tr>
+              <tr>
+                <td><strong>Sign In Link Casing</strong></td>
+                <td><code>Already have an account? Sign In</code></td>
+                <td><code>Already have an Account? Sign in</code></td>
+                <td><span class="pill-red">Low</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Item 2: Mobile Step 2 -->
+      <div class="item-card" data-category="mobile">
+        <div class="item-header">
+          <div>
+            <div class="item-title">Pass 02: Mobile Step 2 (Business Details) - Figma Mobile vs Live (390px)</div>
+            <div class="item-desc">Mobile responsive single-column form stacking and copy fidelity against Figma Artboard Node 3226-21130.</div>
+          </div>
+          <div class="item-pills">
+            <span class="pill-green">🟢 Figma Spec Node 3226-21130</span>
+            <span class="pill-red">🔴 5 Mobile Discrepancies</span>
+          </div>
+        </div>
+        <div class="item-media">
+          <img src="comparison/COMPARISON_02_MOBILE_FIGMA_VS_LIVE_STEP2.png" alt="Mobile Step 2 Comparison" onclick="openModal(this.src)">
+        </div>
+        <div class="defect-list">
+          <h4>Mobile Layout & Copy Parity Notes</h4>
+          <table class="defect-table">
+            <thead>
+              <tr>
+                <th>Element</th>
+                <th>Expected (Figma Mobile)</th>
+                <th>Actual (mcstaging2 Live)</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Responsive Stacking</strong></td>
+                <td>Single column stacked inputs</td>
+                <td>Inputs stack cleanly without overflow</td>
+                <td><span class="pill-green">PASS</span></td>
+              </tr>
+              <tr>
+                <td><strong>Back Button Text</strong></td>
+                <td><code>← BACK</code></td>
+                <td><code>← GO BACK</code></td>
+                <td><span class="pill-red">FAIL</span></td>
+              </tr>
+              <tr>
+                <td><strong>State Placeholder</strong></td>
+                <td><code>State ⌵</code></td>
+                <td><code>Please select ⌵</code></td>
+                <td><span class="pill-red">FAIL</span></td>
+              </tr>
+              <tr>
+                <td><strong>Employees Placeholder</strong></td>
+                <td><code>eg. 1</code></td>
+                <td><code>Number of employees</code></td>
+                <td><span class="pill-red">FAIL</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Item 3: Critical Phone Blocker -->
+      <div class="item-card" data-category="blocker">
+        <div class="item-header">
+          <div>
+            <div class="item-title">Pass 03: Critical Blocker - US Phone Validation Regex Rejection</div>
+            <div class="item-desc">Entering standard 10-digit US phone numbers (e.g. 212 555 0199) triggers Australian regex validation error.</div>
+          </div>
+          <div class="item-pills">
+            <span class="pill-red">🚨 CRITICAL BLOCKER</span>
+          </div>
+        </div>
+        <div class="item-media">
+          <img src="comparison/COMPARISON_03_CRITICAL_US_PHONE_VALIDATION_DEFECT.png" alt="Phone Validation Blocker" onclick="openModal(this.src)">
+        </div>
+        <div class="defect-list">
+          <h4>Technical Root Cause Analysis</h4>
+          <p style="color: #cbd5e1; font-size: 14px; margin-bottom: 8px;">
+            The US storefront (<code>mcstaging2.globewest.com</code>) still runs the Australian Magento validation rule:
+            <code>data-validate="{'validate-phone-number': true}"</code> which regex-checks for <code>04XX XXX XXX</code> or <code>+61</code>.
+          </p>
+          <p style="color: #ef4444; font-size: 14px; font-weight: 600;">
+            Impact: US trade applicants are completely blocked from completing Step 1 using legitimate US telephone numbers.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 4: Storefront Leaks -->
+      <div class="item-card" data-category="leaks">
+        <div class="item-header">
+          <div>
+            <div class="item-title">Pass 04: Catalog, Brand & Asset Leakages on US Storefront</div>
+            <div class="item-desc">Audit of navigation bar spelling and global footer branding against AU baseline.</div>
+          </div>
+          <div class="item-pills">
+            <span class="pill-red">🔴 Localization Leak</span>
+          </div>
+        </div>
+        <div class="item-media">
+          <img src="comparison/COMPARISON_04_STOREFRONT_LEAKAGES_NAV_FOOTER.png" alt="Storefront Leaks" onclick="openModal(this.src)">
+        </div>
+        <div class="defect-list">
+          <h4>Storefront Localization Discrepancies</h4>
+          <table class="defect-table">
+            <thead>
+              <tr>
+                <th>Area</th>
+                <th>Expected (US Storefront)</th>
+                <th>Actual (mcstaging2 Live)</th>
+                <th>Severity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Header Navigation</strong></td>
+                <td>Projects / Customization</td>
+                <td><code>Customisation</code> (AU/UK spelling)</td>
+                <td><span class="pill-red">Medium</span></td>
+              </tr>
+              <tr>
+                <td><strong>Header Wishlist</strong></td>
+                <td>Wishlist Heart icon (🤍) present</td>
+                <td>Wishlist icon is missing</td>
+                <td><span class="pill-red">Medium</span></td>
+              </tr>
+              <tr>
+                <td><strong>Footer Brand Badge</strong></td>
+                <td>Removed on US Storefront</td>
+                <td><code>AUSTRALIAN OWNED & RUN</code> badge displayed</td>
+                <td><span class="pill-red">High</span></td>
+              </tr>
+              <tr>
+                <td><strong>Footer Support Links</strong></td>
+                <td>US customer support links</td>
+                <td><code>Shop Outlet</code> AU link displayed</td>
+                <td><span class="pill-red">Medium</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      GlobeWest US Staging QA Audit Suite &bull; Sprint 3 Ticket Trade Application Form &bull; Generated October 2026
+    </footer>
+  </div>
+
+  <!-- Zoom Modal -->
+  <div class="modal" id="imageModal" onclick="closeModal()">
+    <img id="modalImg" src="" alt="Enlarged Comparison">
+  </div>
+
+  <script>
+    function filterGallery(cat) {
+      const tabs = document.querySelectorAll('.tab-btn');
+      tabs.forEach(t => t.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const cards = document.querySelectorAll('.item-card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-category') === cat) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function openModal(src) {
+      const modal = document.getElementById('imageModal');
+      const img = document.getElementById('modalImg');
+      img.src = src;
+      modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('imageModal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

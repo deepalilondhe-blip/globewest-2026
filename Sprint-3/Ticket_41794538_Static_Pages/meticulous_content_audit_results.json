@@ -1,0 +1,4980 @@
+{
+  "timestamp": "2026-10-02T07:55:12.679Z",
+  "pages": {
+    "404": {
+      "name": "404 Page Not Found",
+      "desktop": {
+        "us": {
+          "title": "[US] 404 Not Found",
+          "rawTextLength": 200,
+          "headings": [
+            {
+              "tag": "H2",
+              "text": "Page not available.",
+              "fontSize": "28px",
+              "fontWeight": "400"
+            }
+          ],
+          "paragraphsCount": 1,
+          "sampleParagraphs": [
+            {
+              "tag": "P",
+              "text": "This page may no longer be available, or you may need to log in to view it.\nPlease log in to access trade-only content, pricing and collections.",
+              "fontSize": "15px"
+            }
+          ],
+          "linksCount": 7,
+          "links": [
+            {
+              "text": "log in",
+              "href": "https://www.globewest.com.au/customer/account/login/"
+            },
+            {
+              "text": "EXPLORE MORE PRODUCTS",
+              "href": "https://mcstaging2.globewest.com/indoor"
+            },
+            {
+              "text": "LOG IN",
+              "href": "https://mcstaging2.globewest.com/customer/account/login/"
+            },
+            {
+              "text": "Shop Womens",
+              "href": "#"
+            },
+            {
+              "text": "Shop Mens",
+              "href": "#"
+            },
+            {
+              "text": "Return Home",
+              "href": "#"
+            },
+            {
+              "text": "Shop Kids",
+              "href": "#"
+            }
+          ],
+          "forms": [],
+          "buttons": []
+        },
+        "au_live": {
+          "title": "404 Not Found",
+          "rawTextLength": 200,
+          "headings": [
+            {
+              "tag": "H2",
+              "text": "Page not available.",
+              "fontSize": "28px",
+              "fontWeight": "400"
+            }
+          ],
+          "paragraphsCount": 1,
+          "sampleParagraphs": [
+            {
+              "tag": "P",
+              "text": "This page may no longer be available, or you may need to log in to view it.\nPlease log in to access trade-only content, pricing and collections.",
+              "fontSize": "15px"
+            }
+          ],
+          "linksCount": 4,
+          "links": [
+            {
+              "text": "log in",
+              "href": "https://www.globewest.com.au/customer/account/login/"
+            },
+            {
+              "text": "HOME",
+              "href": "https://www.globewest.com.au"
+            },
+            {
+              "text": "EXPLORE MORE PRODUCTS",
+              "href": "indoor"
+            },
+            {
+              "text": "LOG IN",
+              "href": "https://www.globewest.com.au/customer/account/login/"
+            }
+          ],
+          "forms": [],
+          "buttons": []
+        }
+      },
+      "mobile": {
+        "us": {
+          "title": "[US] 404 Not Found",
+          "rawTextLength": 200,
+          "headings": [
+            {
+              "tag": "H2",
+              "text": "Page not available.",
+              "fontSize": "26px",
+              "fontWeight": "400"
+            }
+          ],
+          "paragraphsCount": 1,
+          "sampleParagraphs": [
+            {
+              "tag": "P",
+              "text": "This page may no longer be available, or you may need to log in to view it.\nPlease log in to access trade-only content, pricing and collections.",
+              "fontSize": "15px"
+            }
+          ],
+          "linksCount": 7,
+          "links": [
+            {
+              "text": "log in",
+              "href": "https://www.globewest.com.au/customer/account/login/"
+            },
+            {
+              "text": "EXPLORE MORE PRODUCTS",
+              "href": "https://mcstaging2.globewest.com/indoor"
+            },
+            {
+              "text": "LOG IN",
+              "href": "https://mcstaging2.globewest.com/customer/account/login/"
+            },
+            {
+              "text": "Shop Womens",
+              "href": "#"
+            },
+            {
+              "text": "Shop Mens",
+              "href": "#"
+            },
+            {
+              "text": "Return Home",
+              "href": "#"
+            },
+            {
+              "text": "Shop Kids",
+              "href": "#"
+            }
+          ],
+          "forms": [],
+          "buttons": [],
+          "scrollWidth": 390,
+          "hasOverflow": false
+        },
+        "au_live": {
+          "title": "404 Not Found",
+          "rawTextLength": 200,
+          "headings": [
+            {
+              "tag": "H2",
+              "text": "Page not available.",
+              "fontSize": "26px",
+              "fontWeight": "400"
+            }
+          ],
+          "paragraphsCount": 1,
+          "sampleParagraphs": [
+            {
+              "tag": "P",
+              "text": "This page may no longer be available, or you may need to log in to view it.\nPlease log in to access trade-only content, pricing and collections.",
+              "fontSize": "15px"
+            }
+          ],
+          "linksCount": 4,
+          "links": [
+            {
+              "text": "log in",
+              "href": "https://www.globewest.com.au/customer/account/login/"
+            },
+            {
+              "text": "HOME",
+              "href": "https://www.globewest.com.au"
+            },
+            {
+              "text": "EXPLORE MORE PRODUCTS",
+              "href": "indoor"
+            },
+            {
+              "text": "LOG IN",
+              "href": "https://www.globewest.com.au/customer/account/login/"
+            }
+          ],
+          "forms": [],
+          "buttons": [],
+          "scrollWidth": 390,
+          "hasOverflow": false
+        }
+      }
+    },
+    "privacy": {
+      "name": "Privacy Policy",
+      "desktop": {
+        "us": {
+          "title": "Privacy Policy",
+          "rawTextLength": 24218,
+          "headings": [
+            {
+              "tag": "H2",
+              "text": "What we collect",
+              "fontSize": "28px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "What we do with the information we gather",
+              "fontSize": "28px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "Security",
+              "fontSize": "28px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "How we use cookies",
+              "fontSize": "28px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "Links to other websites",
+              "fontSize": "28px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "Controlling your personal information",
+              "fontSize": "28px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "List of cookies we collect",
+              "fontSize": "28px",
+              "fontWeight": "400"
+            }
+          ],
+          "paragraphsCount": 128,
+          "sampleParagraphs": [
+            {
+              "tag": "P",
+              "text": "This privacy policy sets out how this website (hereafter \"the Store\") uses and protects any information that\n        you give the Store while using this website. The Store is committed to ensuring that your privacy is protected.\n        Should we ask you to provide certain information by which you can be identified when using this website, then\n        you can be assured that it will only be used in accordance with this privacy statement. The Store may change\n        this policy from time to time by updating this page. You should check this page from time to time to ensure\n        that you are happy with any changes.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "We may collect the following information:",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "name",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "LI",
+              "text": "contact information including email address",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "LI",
+              "text": "demographic information such as postcode, preferences and interests",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "LI",
+              "text": "other information relevant to customer surveys and/or offers",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "For the exhaustive list of cookies we collect see the List of cookies we collect section.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "We require this information to understand your needs and provide you with a better service,\n        and in particular for the following reasons:",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "Internal record keeping.",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "LI",
+              "text": "We may use the information to improve our products and services.",
+              "fontSize": "14px"
+            }
+          ],
+          "linksCount": 1,
+          "links": [
+            {
+              "text": "List of cookies we collect",
+              "href": "#list"
+            }
+          ],
+          "forms": [],
+          "buttons": []
+        },
+        "au_live": {
+          "title": "Our Privacy Policy | GlobeWest",
+          "rawTextLength": 24218,
+          "headings": [
+            {
+              "tag": "H2",
+              "text": "What we collect",
+              "fontSize": "28px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "What we do with the information we gather",
+              "fontSize": "28px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "Security",
+              "fontSize": "28px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "How we use cookies",
+              "fontSize": "28px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "Links to other websites",
+              "fontSize": "28px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "Controlling your personal information",
+              "fontSize": "28px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "List of cookies we collect",
+              "fontSize": "28px",
+              "fontWeight": "400"
+            }
+          ],
+          "paragraphsCount": 128,
+          "sampleParagraphs": [
+            {
+              "tag": "P",
+              "text": "This privacy policy sets out how this website (hereafter \"the Store\") uses and protects any information that\n        you give the Store while using this website. The Store is committed to ensuring that your privacy is protected.\n        Should we ask you to provide certain information by which you can be identified when using this website, then\n        you can be assured that it will only be used in accordance with this privacy statement. The Store may change\n        this policy from time to time by updating this page. You should check this page from time to time to ensure\n        that you are happy with any changes.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "We may collect the following information:",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "name",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "LI",
+              "text": "contact information including email address",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "LI",
+              "text": "demographic information such as postcode, preferences and interests",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "LI",
+              "text": "other information relevant to customer surveys and/or offers",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "For the exhaustive list of cookies we collect see the List of cookies we collect section.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "We require this information to understand your needs and provide you with a better service,\n        and in particular for the following reasons:",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "Internal record keeping.",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "LI",
+              "text": "We may use the information to improve our products and services.",
+              "fontSize": "14px"
+            }
+          ],
+          "linksCount": 1,
+          "links": [
+            {
+              "text": "List of cookies we collect",
+              "href": "#list"
+            }
+          ],
+          "forms": [],
+          "buttons": []
+        }
+      },
+      "mobile": {
+        "us": {
+          "title": "Privacy Policy",
+          "rawTextLength": 24218,
+          "headings": [
+            {
+              "tag": "H2",
+              "text": "What we collect",
+              "fontSize": "26px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "What we do with the information we gather",
+              "fontSize": "26px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "Security",
+              "fontSize": "26px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "How we use cookies",
+              "fontSize": "26px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "Links to other websites",
+              "fontSize": "26px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "Controlling your personal information",
+              "fontSize": "26px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "List of cookies we collect",
+              "fontSize": "26px",
+              "fontWeight": "400"
+            }
+          ],
+          "paragraphsCount": 128,
+          "sampleParagraphs": [
+            {
+              "tag": "P",
+              "text": "This privacy policy sets out how this website (hereafter \"the Store\") uses and protects any information that\n        you give the Store while using this website. The Store is committed to ensuring that your privacy is protected.\n        Should we ask you to provide certain information by which you can be identified when using this website, then\n        you can be assured that it will only be used in accordance with this privacy statement. The Store may change\n        this policy from time to time by updating this page. You should check this page from time to time to ensure\n        that you are happy with any changes.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "We may collect the following information:",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "name",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "LI",
+              "text": "contact information including email address",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "LI",
+              "text": "demographic information such as postcode, preferences and interests",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "LI",
+              "text": "other information relevant to customer surveys and/or offers",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "For the exhaustive list of cookies we collect see the List of cookies we collect section.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "We require this information to understand your needs and provide you with a better service,\n        and in particular for the following reasons:",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "Internal record keeping.",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "LI",
+              "text": "We may use the information to improve our products and services.",
+              "fontSize": "14px"
+            }
+          ],
+          "linksCount": 1,
+          "links": [
+            {
+              "text": "List of cookies we collect",
+              "href": "#list"
+            }
+          ],
+          "forms": [],
+          "buttons": [],
+          "scrollWidth": 390,
+          "hasOverflow": false
+        },
+        "au_live": {
+          "title": "Our Privacy Policy | GlobeWest",
+          "rawTextLength": 24218,
+          "headings": [
+            {
+              "tag": "H2",
+              "text": "What we collect",
+              "fontSize": "26px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "What we do with the information we gather",
+              "fontSize": "26px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "Security",
+              "fontSize": "26px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "How we use cookies",
+              "fontSize": "26px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "Links to other websites",
+              "fontSize": "26px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "Controlling your personal information",
+              "fontSize": "26px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "List of cookies we collect",
+              "fontSize": "26px",
+              "fontWeight": "400"
+            }
+          ],
+          "paragraphsCount": 128,
+          "sampleParagraphs": [
+            {
+              "tag": "P",
+              "text": "This privacy policy sets out how this website (hereafter \"the Store\") uses and protects any information that\n        you give the Store while using this website. The Store is committed to ensuring that your privacy is protected.\n        Should we ask you to provide certain information by which you can be identified when using this website, then\n        you can be assured that it will only be used in accordance with this privacy statement. The Store may change\n        this policy from time to time by updating this page. You should check this page from time to time to ensure\n        that you are happy with any changes.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "We may collect the following information:",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "name",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "LI",
+              "text": "contact information including email address",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "LI",
+              "text": "demographic information such as postcode, preferences and interests",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "LI",
+              "text": "other information relevant to customer surveys and/or offers",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "For the exhaustive list of cookies we collect see the List of cookies we collect section.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "We require this information to understand your needs and provide you with a better service,\n        and in particular for the following reasons:",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "Internal record keeping.",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "LI",
+              "text": "We may use the information to improve our products and services.",
+              "fontSize": "14px"
+            }
+          ],
+          "linksCount": 1,
+          "links": [
+            {
+              "text": "List of cookies we collect",
+              "href": "#list"
+            }
+          ],
+          "forms": [],
+          "buttons": [],
+          "scrollWidth": 390,
+          "hasOverflow": false
+        }
+      }
+    },
+    "terms": {
+      "name": "Terms & Conditions",
+      "desktop": {
+        "us": {
+          "title": "Terms and Conditions",
+          "rawTextLength": 43976,
+          "headings": [
+            {
+              "tag": "H1",
+              "text": "Terms and Conditions",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "1.1. Who we are",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.2. Application of these Terms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.3. Different terms apply to Retail Customers",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.4. Changes to these Terms and interpretation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "2.1. Trade applications",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "2.2. Trade Customer Benefits",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "2.3. Credit Terms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.1. Your account",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.2. Trade Resellers",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.1. Orders",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.2. Orders made on our Website",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.3. Orders made via phone/email or at our Showrooms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.4. Contract formation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.5. Cancellation of an order",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.1. Collection by you or your nominated carrier",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.2. Delivery",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.3. Delay in delivery",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.4. Inspection",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.1. Storage",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.2. Installation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.3. Property damage",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "7.1. Risk and title",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "7.2. Variation and specification",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "7.3 Custom Goods",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "8.1. Prices",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "8.2. Payment",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "8.3. Taxes",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.1. Defective Goods",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.2. Custom Goods, incorrect orders and change of mind returns",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.3. Process of returns",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.1. 24-month Structural Warranty",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.2. Exclusions and limitations",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.3. Australian Consumer Law",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "11.1. Liability",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "11.2. Resupply of Goods",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "11.3. Indemnity",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.1. Assignment",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.2. Force majeure",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.3. Jurisdiction and governing law",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.4. No waiver",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.5. Severability",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.6. Survival of terms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.7. Termination by us",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.1. Who we are",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.2. Application of these Terms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.3. Different terms apply to Trade Customers and Sales from\n              Outlet",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.4. Changes to these Terms and interpretation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "2.1. Your account",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "2.2. No purchase for resale",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.1. Orders made on our Website",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.2. Orders made at our Showrooms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.3. Contract formation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.4. Cancellation of an order",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.1. Collection by you or your nominated carrier",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.2. Delivery",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.3. Delay in delivery",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.4. Inspection",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.1. Storage",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.2. Installation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.3. Property damage",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.1. Risk and title",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.2. Variation and specification",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.3. Custom Goods",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "7.1. Prices",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "7.2. Payment",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.1. Defective Goods",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.2. Custom Goods, incorrect orders and change of mind returns",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.3. Process of returns",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.1. 24-month Structural Warranty",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.2. Exclusions and limitations",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.3. Australian Consumer Law",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "11.1. Liability",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "11.2. Indemnity",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.1. Assignment",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.2. Force majeure",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.3. Jurisdiction and governing law",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.4. No waiver",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.5. Severability",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.6. Survival of terms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.7. Termination by us",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "paragraphsCount": 331,
+          "sampleParagraphs": [
+            {
+              "tag": "P",
+              "text": "Last updated: 10/03/2026",
+              "fontSize": "10px"
+            },
+            {
+              "tag": "P",
+              "text": "We are GlobeWest Pty Ltd, a company incorporated and registered in Victoria, Australia with company number ACN 674 872 621 (we, our, us, GlobeWest). We are the supplier of the Goods offered on https://www.globewest.com/ and any subdomains, all related top-level domains, mobile sites, apps, APIs and widgets (Website) and at our Showrooms.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(a) These Terms will apply to and govern your purchases of the Goods from us, including from the Website or the Showrooms in your capacity as a Trade Customer, together with any other terms and conditions which may be notified to you at the time of placing your order (for example, special offer terms and conditions). Please read these Terms carefully before ordering any Goods from us.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(b) Our Privacy Policy, which sets out: (a) how we collect, use, disclose, and hold any personal information we collect from you, or that you provide to us; and (b) information about the use of cookies, will also apply to your use of the Website. By purchasing the Goods and/or using our Website, you consent to such use and you warrant that all information provided by you is accurate.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(a) If you are a Retail Customer, these Terms do NOT apply to your purchase. Your relationship with GlobeWest will be governed by the General Terms and Conditions. For the avoidance of doubt, if these Terms apply, then the GlobeWest General Terms and Conditions are expressly excluded.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(b) To the extent permitted by law, these Terms also exclude any terms which are implied by law, trade custom, practice or course of dealing.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(a) If you object to any of our Terms your sole option is to not proceed with the purchase of the Goods from us.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(b) We reserve the right to change these Terms. Any changes to these Terms will be effective on the date they are published on our Website. If you disagree with the revised Terms, you may elect to not proceed with the purchase of Goods. If you do not do so before the date the revised Terms become effective, your continued access to our Website or order of our Goods from us (including via our Website or at our Showrooms) will constitute acceptance of the revised Terms.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(a) To become a GlobeWest Trade Customer, you must submit a trade application form for approval by us. Trade applications are granted solely based on your business trading name and ABN provided in the application.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(b) You must notify us in writing of any changes to your business trading name, ABN or other business details. We may terminate your Trade Customer account and cease supply of the Goods to you if you fail to notify us in accordance with this clause.",
+              "fontSize": "15px"
+            }
+          ],
+          "linksCount": 19,
+          "links": [
+            {
+              "text": "https://www.globewest.com/",
+              "href": "https://mcstaging2.globewest.com/"
+            },
+            {
+              "text": "General Terms and Conditions",
+              "href": "https://mcstaging2.globewest.com/terms-and-conditions-page#generalpublic"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "www.globewest.com.au/product-care",
+              "href": "https://mcstaging2.globewest.com/product-care"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "Product Care",
+              "href": "https://mcstaging2.globewest.com/product-care"
+            },
+            {
+              "text": "https://globewestoutlet.com/",
+              "href": "https://mcstaging2.globewest.com/"
+            },
+            {
+              "text": "https://www.globewest.com/",
+              "href": "https://mcstaging2.globewest.com/"
+            },
+            {
+              "text": "Trade Customers Terms and Conditions",
+              "href": "https://mcstaging2.globewest.com/terms-and-conditions-page"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "Product Care",
+              "href": "https://mcstaging2.globewest.com/product-care"
+            },
+            {
+              "text": "https://globewestoutlet.com/",
+              "href": "https://mcstaging2.globewest.com/"
+            },
+            {
+              "text": "START LIVE CHAT NOW",
+              "href": "#"
+            },
+            {
+              "text": "HELP CENTRE",
+              "href": "https://mcstaging2.globewest.com/help-centre"
+            },
+            {
+              "text": "Terms and Conditions.",
+              "href": "https://mcstaging2.globewest.com/terms-and-conditions-page-before-march-2026"
+            },
+            {
+              "text": "SEND FEEDBACK",
+              "href": "https://mcstaging2.globewest.com/contact#online_enquiry"
+            }
+          ],
+          "forms": [],
+          "buttons": [
+            {
+              "text": "Trade Customers"
+            },
+            {
+              "text": "General Public"
+            },
+            {
+              "text": "1. Introduction",
+              "disabled": false
+            },
+            {
+              "text": "2. Trade Account",
+              "disabled": false
+            },
+            {
+              "text": "3. Your obligations",
+              "disabled": false
+            },
+            {
+              "text": "4. Orders",
+              "disabled": false
+            },
+            {
+              "text": "5. Collection and delivery",
+              "disabled": false
+            },
+            {
+              "text": "6. Storage and installation",
+              "disabled": false
+            },
+            {
+              "text": "7. Goods",
+              "disabled": false
+            },
+            {
+              "text": "8. Prices and payment",
+              "disabled": false
+            },
+            {
+              "text": "9. Returns and refunds",
+              "disabled": false
+            },
+            {
+              "text": "10. Warranty and exclusions",
+              "disabled": false
+            },
+            {
+              "text": "11. Liability and indemnity",
+              "disabled": false
+            },
+            {
+              "text": "12. PPSA – security interests",
+              "disabled": false
+            },
+            {
+              "text": "13. Intellectual Property",
+              "disabled": false
+            },
+            {
+              "text": "14. Promotions",
+              "disabled": false
+            },
+            {
+              "text": "15. General",
+              "disabled": false
+            },
+            {
+              "text": "16. Definitions",
+              "disabled": false
+            },
+            {
+              "text": "1. Introduction",
+              "disabled": false
+            },
+            {
+              "text": "2. Your obligations",
+              "disabled": false
+            },
+            {
+              "text": "3. Orders",
+              "disabled": false
+            },
+            {
+              "text": "4. Collection and delivery",
+              "disabled": false
+            },
+            {
+              "text": "5. Storage and installation",
+              "disabled": false
+            },
+            {
+              "text": "6. Goods",
+              "disabled": false
+            },
+            {
+              "text": "7. Prices and payment",
+              "disabled": false
+            },
+            {
+              "text": "8. Supporting Local Program",
+              "disabled": false
+            },
+            {
+              "text": "9. Returns and refunds",
+              "disabled": false
+            },
+            {
+              "text": "10. Warranty and exclusions",
+              "disabled": false
+            },
+            {
+              "text": "11. Liability and indemnity",
+              "disabled": false
+            },
+            {
+              "text": "12. Intellectual Property",
+              "disabled": false
+            },
+            {
+              "text": "13. Promotions",
+              "disabled": false
+            },
+            {
+              "text": "14. General",
+              "disabled": false
+            },
+            {
+              "text": "15. Definitions",
+              "disabled": false
+            }
+          ]
+        },
+        "au_live": {
+          "title": "Terms & Conditions Information | GlobeWest",
+          "rawTextLength": 43982,
+          "headings": [
+            {
+              "tag": "H1",
+              "text": "Terms and Conditions",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "1.1. Who we are",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.2. Application of these Terms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.3. Different terms apply to Retail Customers",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.4. Changes to these Terms and interpretation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "2.1. Trade applications",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "2.2. Trade Customer Benefits",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "2.3. Credit Terms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.1. Your account",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.2. Trade Resellers",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.1. Orders",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.2. Orders made on our Website",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.3. Orders made via phone/email or at our Showrooms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.4. Contract formation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.5. Cancellation of an order",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.1. Collection by you or your nominated carrier",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.2. Delivery",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.3. Delay in delivery",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.4. Inspection",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.1. Storage",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.2. Installation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.3. Property damage",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "7.1. Risk and title",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "7.2. Variation and specification",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "7.3 Custom Goods",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "8.1. Prices",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "8.2. Payment",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "8.3. Taxes",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.1. Defective Goods",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.2. Custom Goods, incorrect orders and change of mind returns",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.3. Process of returns",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.1. 24-month Structural Warranty",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.2. Exclusions and limitations",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.3. Australian Consumer Law",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "11.1. Liability",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "11.2. Resupply of Goods",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "11.3. Indemnity",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.1. Assignment",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.2. Force majeure",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.3. Jurisdiction and governing law",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.4. No waiver",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.5. Severability",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.6. Survival of terms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.7. Termination by us",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.1. Who we are",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.2. Application of these Terms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.3. Different terms apply to Trade Customers and Sales from Outlet",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.4. Changes to these Terms and interpretation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "2.1. Your account",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "2.2. No purchase for resale",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.1. Orders made on our Website",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.2. Orders made at our Showrooms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.3. Contract formation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.4. Cancellation of an order",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.1. Collection by you or your nominated carrier",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.2. Delivery",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.3. Delay in delivery",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.4. Inspection",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.1. Storage",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.2. Installation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.3. Property damage",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.1. Risk and title",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.2. Variation and specification",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.3. Custom Goods",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "7.1. Prices",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "7.2. Payment",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.1. Defective Goods",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.2. Custom Goods, incorrect orders and change of mind returns",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.3. Process of returns",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.1. 24-month Structural Warranty",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.2. Exclusions and limitations",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.3. Australian Consumer Law",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "11.1. Liability",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "11.2. Indemnity",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.1. Assignment",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.2. Force majeure",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.3. Jurisdiction and governing law",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.4. No waiver",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.5. Severability",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.6. Survival of terms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.7. Termination by us",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "paragraphsCount": 331,
+          "sampleParagraphs": [
+            {
+              "tag": "P",
+              "text": "Last updated: 10/03/2026",
+              "fontSize": "10px"
+            },
+            {
+              "tag": "P",
+              "text": "We are GlobeWest Pty Ltd, a company incorporated and registered in Victoria, Australia with company number ACN 674 872 621 (we, our, us, GlobeWest). We are the supplier of the Goods offered on https://www.globewest.com.au/ and any subdomains, all related top-level domains, mobile sites, apps, APIs and widgets (Website) and at our Showrooms.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(a) These Terms will apply to and govern your purchases of the Goods from us, including from the Website or the Showrooms in your capacity as a Trade Customer, together with any other terms and conditions which may be notified to you at the time of placing your order (for example, special offer terms and conditions). Please read these Terms carefully before ordering any Goods from us.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(b) Our Privacy Policy, which sets out: (a) how we collect, use, disclose, and hold any personal information we collect from you, or that you provide to us; and (b) information about the use of cookies, will also apply to your use of the Website. By purchasing the Goods and/or using our Website, you consent to such use and you warrant that all information provided by you is accurate.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(a) If you are a Retail Customer, these Terms do NOT apply to your purchase. Your relationship with GlobeWest will be governed by the General Terms and Conditions. For the avoidance of doubt, if these Terms apply, then the GlobeWest General Terms and Conditions are expressly excluded.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(b) To the extent permitted by law, these Terms also exclude any terms which are implied by law, trade custom, practice or course of dealing.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(a) If you object to any of our Terms your sole option is to not proceed with the purchase of the Goods from us.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(b) We reserve the right to change these Terms. Any changes to these Terms will be effective on the date they are published on our Website. If you disagree with the revised Terms, you may elect to not proceed with the purchase of Goods. If you do not do so before the date the revised Terms become effective, your continued access to our Website or order of our Goods from us (including via our Website or at our Showrooms) will constitute acceptance of the revised Terms.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(a) To become a GlobeWest Trade Customer, you must submit a trade application form for approval by us. Trade applications are granted solely based on your business trading name and ABN provided in the application.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(b) You must notify us in writing of any changes to your business trading name, ABN or other business details. We may terminate your Trade Customer account and cease supply of the Goods to you if you fail to notify us in accordance with this clause.",
+              "fontSize": "15px"
+            }
+          ],
+          "linksCount": 19,
+          "links": [
+            {
+              "text": "https://www.globewest.com.au/",
+              "href": "https://www.globewest.com.au/"
+            },
+            {
+              "text": "General Terms and Conditions",
+              "href": "https://www.globewest.com.au/terms-and-conditions-page#generalpublic"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "www.globewest.com.au/product-care",
+              "href": "https://www.globewest.com.au/product-care"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "Product Care",
+              "href": "https://www.globewest.com.au/product-care"
+            },
+            {
+              "text": "https://globewestoutlet.com.au/",
+              "href": "https://globewestoutlet.com.au/"
+            },
+            {
+              "text": "https://www.globewest.com.au/",
+              "href": "https://www.globewest.com.au/"
+            },
+            {
+              "text": "Trade Customers Terms and\n                                Conditions",
+              "href": "https://www.globewest.com.au/terms-and-conditions-page"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "Product Care",
+              "href": "https://www.globewest.com.au/product-care"
+            },
+            {
+              "text": "https://globewestoutlet.com.au/",
+              "href": "https://globewestoutlet.com.au/"
+            },
+            {
+              "text": "START LIVE CHAT NOW",
+              "href": "#"
+            },
+            {
+              "text": "HELP CENTRE",
+              "href": "https://www.globewest.com.au/help-centre"
+            },
+            {
+              "text": "Terms and Conditions.",
+              "href": "https://www.globewest.com.au/terms-and-conditions-page-before-march-2026"
+            },
+            {
+              "text": "SEND FEEDBACK",
+              "href": "https://www.globewest.com.au/contact#online_enquiry"
+            }
+          ],
+          "forms": [],
+          "buttons": [
+            {
+              "text": "Trade Customers"
+            },
+            {
+              "text": "General Public"
+            },
+            {
+              "text": "1. Introduction",
+              "disabled": false
+            },
+            {
+              "text": "2. Trade Account",
+              "disabled": false
+            },
+            {
+              "text": "3. Your obligations",
+              "disabled": false
+            },
+            {
+              "text": "4. Orders",
+              "disabled": false
+            },
+            {
+              "text": "5. Collection and delivery",
+              "disabled": false
+            },
+            {
+              "text": "6. Storage and installation",
+              "disabled": false
+            },
+            {
+              "text": "7. Goods",
+              "disabled": false
+            },
+            {
+              "text": "8. Prices and payment",
+              "disabled": false
+            },
+            {
+              "text": "9. Returns and refunds",
+              "disabled": false
+            },
+            {
+              "text": "10. Warranty and exclusions",
+              "disabled": false
+            },
+            {
+              "text": "11. Liability and indemnity",
+              "disabled": false
+            },
+            {
+              "text": "12. PPSA – security interests",
+              "disabled": false
+            },
+            {
+              "text": "13. Intellectual Property",
+              "disabled": false
+            },
+            {
+              "text": "14. Promotions",
+              "disabled": false
+            },
+            {
+              "text": "15. General",
+              "disabled": false
+            },
+            {
+              "text": "16. Definitions",
+              "disabled": false
+            },
+            {
+              "text": "1. Introduction",
+              "disabled": false
+            },
+            {
+              "text": "2. Your obligations",
+              "disabled": false
+            },
+            {
+              "text": "3. Orders",
+              "disabled": false
+            },
+            {
+              "text": "4. Collection and delivery",
+              "disabled": false
+            },
+            {
+              "text": "5. Storage and installation",
+              "disabled": false
+            },
+            {
+              "text": "6. Goods",
+              "disabled": false
+            },
+            {
+              "text": "7. Prices and payment",
+              "disabled": false
+            },
+            {
+              "text": "8. Supporting Local Program",
+              "disabled": false
+            },
+            {
+              "text": "9. Returns and refunds",
+              "disabled": false
+            },
+            {
+              "text": "10. Warranty and exclusions",
+              "disabled": false
+            },
+            {
+              "text": "11. Liability and indemnity",
+              "disabled": false
+            },
+            {
+              "text": "12. Intellectual Property",
+              "disabled": false
+            },
+            {
+              "text": "13. Promotions",
+              "disabled": false
+            },
+            {
+              "text": "14. General",
+              "disabled": false
+            },
+            {
+              "text": "15. Definitions",
+              "disabled": false
+            }
+          ]
+        }
+      },
+      "mobile": {
+        "us": {
+          "title": "Terms and Conditions",
+          "rawTextLength": 43976,
+          "headings": [
+            {
+              "tag": "H1",
+              "text": "Terms and Conditions",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "1.1. Who we are",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.2. Application of these Terms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.3. Different terms apply to Retail Customers",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.4. Changes to these Terms and interpretation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "2.1. Trade applications",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "2.2. Trade Customer Benefits",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "2.3. Credit Terms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.1. Your account",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.2. Trade Resellers",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.1. Orders",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.2. Orders made on our Website",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.3. Orders made via phone/email or at our Showrooms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.4. Contract formation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.5. Cancellation of an order",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.1. Collection by you or your nominated carrier",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.2. Delivery",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.3. Delay in delivery",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.4. Inspection",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.1. Storage",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.2. Installation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.3. Property damage",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "7.1. Risk and title",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "7.2. Variation and specification",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "7.3 Custom Goods",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "8.1. Prices",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "8.2. Payment",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "8.3. Taxes",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.1. Defective Goods",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.2. Custom Goods, incorrect orders and change of mind returns",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.3. Process of returns",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.1. 24-month Structural Warranty",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.2. Exclusions and limitations",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.3. Australian Consumer Law",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "11.1. Liability",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "11.2. Resupply of Goods",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "11.3. Indemnity",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.1. Assignment",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.2. Force majeure",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.3. Jurisdiction and governing law",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.4. No waiver",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.5. Severability",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.6. Survival of terms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.7. Termination by us",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.1. Who we are",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.2. Application of these Terms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.3. Different terms apply to Trade Customers and Sales from\n              Outlet",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.4. Changes to these Terms and interpretation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "2.1. Your account",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "2.2. No purchase for resale",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.1. Orders made on our Website",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.2. Orders made at our Showrooms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.3. Contract formation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.4. Cancellation of an order",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.1. Collection by you or your nominated carrier",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.2. Delivery",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.3. Delay in delivery",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.4. Inspection",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.1. Storage",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.2. Installation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.3. Property damage",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.1. Risk and title",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.2. Variation and specification",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.3. Custom Goods",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "7.1. Prices",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "7.2. Payment",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.1. Defective Goods",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.2. Custom Goods, incorrect orders and change of mind returns",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.3. Process of returns",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.1. 24-month Structural Warranty",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.2. Exclusions and limitations",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.3. Australian Consumer Law",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "11.1. Liability",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "11.2. Indemnity",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.1. Assignment",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.2. Force majeure",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.3. Jurisdiction and governing law",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.4. No waiver",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.5. Severability",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.6. Survival of terms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.7. Termination by us",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "paragraphsCount": 331,
+          "sampleParagraphs": [
+            {
+              "tag": "P",
+              "text": "Last updated: 10/03/2026",
+              "fontSize": "10px"
+            },
+            {
+              "tag": "P",
+              "text": "We are GlobeWest Pty Ltd, a company incorporated and registered in Victoria, Australia with company number ACN 674 872 621 (we, our, us, GlobeWest). We are the supplier of the Goods offered on https://www.globewest.com/ and any subdomains, all related top-level domains, mobile sites, apps, APIs and widgets (Website) and at our Showrooms.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(a) These Terms will apply to and govern your purchases of the Goods from us, including from the Website or the Showrooms in your capacity as a Trade Customer, together with any other terms and conditions which may be notified to you at the time of placing your order (for example, special offer terms and conditions). Please read these Terms carefully before ordering any Goods from us.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(b) Our Privacy Policy, which sets out: (a) how we collect, use, disclose, and hold any personal information we collect from you, or that you provide to us; and (b) information about the use of cookies, will also apply to your use of the Website. By purchasing the Goods and/or using our Website, you consent to such use and you warrant that all information provided by you is accurate.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(a) If you are a Retail Customer, these Terms do NOT apply to your purchase. Your relationship with GlobeWest will be governed by the General Terms and Conditions. For the avoidance of doubt, if these Terms apply, then the GlobeWest General Terms and Conditions are expressly excluded.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(b) To the extent permitted by law, these Terms also exclude any terms which are implied by law, trade custom, practice or course of dealing.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(a) If you object to any of our Terms your sole option is to not proceed with the purchase of the Goods from us.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(b) We reserve the right to change these Terms. Any changes to these Terms will be effective on the date they are published on our Website. If you disagree with the revised Terms, you may elect to not proceed with the purchase of Goods. If you do not do so before the date the revised Terms become effective, your continued access to our Website or order of our Goods from us (including via our Website or at our Showrooms) will constitute acceptance of the revised Terms.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(a) To become a GlobeWest Trade Customer, you must submit a trade application form for approval by us. Trade applications are granted solely based on your business trading name and ABN provided in the application.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(b) You must notify us in writing of any changes to your business trading name, ABN or other business details. We may terminate your Trade Customer account and cease supply of the Goods to you if you fail to notify us in accordance with this clause.",
+              "fontSize": "15px"
+            }
+          ],
+          "linksCount": 19,
+          "links": [
+            {
+              "text": "https://www.globewest.com/",
+              "href": "https://mcstaging2.globewest.com/"
+            },
+            {
+              "text": "General Terms and Conditions",
+              "href": "https://mcstaging2.globewest.com/terms-and-conditions-page#generalpublic"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "www.globewest.com.au/product-care",
+              "href": "https://mcstaging2.globewest.com/product-care"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "Product Care",
+              "href": "https://mcstaging2.globewest.com/product-care"
+            },
+            {
+              "text": "https://globewestoutlet.com/",
+              "href": "https://mcstaging2.globewest.com/"
+            },
+            {
+              "text": "https://www.globewest.com/",
+              "href": "https://mcstaging2.globewest.com/"
+            },
+            {
+              "text": "Trade Customers Terms and Conditions",
+              "href": "https://mcstaging2.globewest.com/terms-and-conditions-page"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "Product Care",
+              "href": "https://mcstaging2.globewest.com/product-care"
+            },
+            {
+              "text": "https://globewestoutlet.com/",
+              "href": "https://mcstaging2.globewest.com/"
+            },
+            {
+              "text": "START LIVE CHAT NOW",
+              "href": "#"
+            },
+            {
+              "text": "HELP CENTRE",
+              "href": "https://mcstaging2.globewest.com/help-centre"
+            },
+            {
+              "text": "Terms and Conditions.",
+              "href": "https://mcstaging2.globewest.com/terms-and-conditions-page-before-march-2026"
+            },
+            {
+              "text": "SEND FEEDBACK",
+              "href": "https://mcstaging2.globewest.com/contact#online_enquiry"
+            }
+          ],
+          "forms": [],
+          "buttons": [
+            {
+              "text": "Trade Customers"
+            },
+            {
+              "text": "General Public"
+            },
+            {
+              "text": "1. Introduction",
+              "disabled": false
+            },
+            {
+              "text": "2. Trade Account",
+              "disabled": false
+            },
+            {
+              "text": "3. Your obligations",
+              "disabled": false
+            },
+            {
+              "text": "4. Orders",
+              "disabled": false
+            },
+            {
+              "text": "5. Collection and delivery",
+              "disabled": false
+            },
+            {
+              "text": "6. Storage and installation",
+              "disabled": false
+            },
+            {
+              "text": "7. Goods",
+              "disabled": false
+            },
+            {
+              "text": "8. Prices and payment",
+              "disabled": false
+            },
+            {
+              "text": "9. Returns and refunds",
+              "disabled": false
+            },
+            {
+              "text": "10. Warranty and exclusions",
+              "disabled": false
+            },
+            {
+              "text": "11. Liability and indemnity",
+              "disabled": false
+            },
+            {
+              "text": "12. PPSA – security interests",
+              "disabled": false
+            },
+            {
+              "text": "13. Intellectual Property",
+              "disabled": false
+            },
+            {
+              "text": "14. Promotions",
+              "disabled": false
+            },
+            {
+              "text": "15. General",
+              "disabled": false
+            },
+            {
+              "text": "16. Definitions",
+              "disabled": false
+            },
+            {
+              "text": "1. Introduction",
+              "disabled": false
+            },
+            {
+              "text": "2. Your obligations",
+              "disabled": false
+            },
+            {
+              "text": "3. Orders",
+              "disabled": false
+            },
+            {
+              "text": "4. Collection and delivery",
+              "disabled": false
+            },
+            {
+              "text": "5. Storage and installation",
+              "disabled": false
+            },
+            {
+              "text": "6. Goods",
+              "disabled": false
+            },
+            {
+              "text": "7. Prices and payment",
+              "disabled": false
+            },
+            {
+              "text": "8. Supporting Local Program",
+              "disabled": false
+            },
+            {
+              "text": "9. Returns and refunds",
+              "disabled": false
+            },
+            {
+              "text": "10. Warranty and exclusions",
+              "disabled": false
+            },
+            {
+              "text": "11. Liability and indemnity",
+              "disabled": false
+            },
+            {
+              "text": "12. Intellectual Property",
+              "disabled": false
+            },
+            {
+              "text": "13. Promotions",
+              "disabled": false
+            },
+            {
+              "text": "14. General",
+              "disabled": false
+            },
+            {
+              "text": "15. Definitions",
+              "disabled": false
+            }
+          ],
+          "scrollWidth": 390,
+          "hasOverflow": false
+        },
+        "au_live": {
+          "title": "Terms & Conditions Information | GlobeWest",
+          "rawTextLength": 43982,
+          "headings": [
+            {
+              "tag": "H1",
+              "text": "Terms and Conditions",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "1.1. Who we are",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.2. Application of these Terms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.3. Different terms apply to Retail Customers",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.4. Changes to these Terms and interpretation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "2.1. Trade applications",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "2.2. Trade Customer Benefits",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "2.3. Credit Terms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.1. Your account",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.2. Trade Resellers",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.1. Orders",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.2. Orders made on our Website",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.3. Orders made via phone/email or at our Showrooms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.4. Contract formation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.5. Cancellation of an order",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.1. Collection by you or your nominated carrier",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.2. Delivery",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.3. Delay in delivery",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.4. Inspection",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.1. Storage",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.2. Installation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.3. Property damage",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "7.1. Risk and title",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "7.2. Variation and specification",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "7.3 Custom Goods",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "8.1. Prices",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "8.2. Payment",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "8.3. Taxes",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.1. Defective Goods",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.2. Custom Goods, incorrect orders and change of mind returns",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.3. Process of returns",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.1. 24-month Structural Warranty",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.2. Exclusions and limitations",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.3. Australian Consumer Law",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "11.1. Liability",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "11.2. Resupply of Goods",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "11.3. Indemnity",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.1. Assignment",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.2. Force majeure",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.3. Jurisdiction and governing law",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.4. No waiver",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.5. Severability",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.6. Survival of terms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "15.7. Termination by us",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.1. Who we are",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.2. Application of these Terms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.3. Different terms apply to Trade Customers and Sales from Outlet",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "1.4. Changes to these Terms and interpretation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "2.1. Your account",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "2.2. No purchase for resale",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.1. Orders made on our Website",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.2. Orders made at our Showrooms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.3. Contract formation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "3.4. Cancellation of an order",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.1. Collection by you or your nominated carrier",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.2. Delivery",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.3. Delay in delivery",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "4.4. Inspection",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.1. Storage",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.2. Installation",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "5.3. Property damage",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.1. Risk and title",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.2. Variation and specification",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "6.3. Custom Goods",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "7.1. Prices",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "7.2. Payment",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.1. Defective Goods",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.2. Custom Goods, incorrect orders and change of mind returns",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "9.3. Process of returns",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.1. 24-month Structural Warranty",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.2. Exclusions and limitations",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "10.3. Australian Consumer Law",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "11.1. Liability",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "11.2. Indemnity",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.1. Assignment",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.2. Force majeure",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.3. Jurisdiction and governing law",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.4. No waiver",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.5. Severability",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.6. Survival of terms",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            },
+            {
+              "tag": "H3",
+              "text": "14.7. Termination by us",
+              "fontSize": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "paragraphsCount": 331,
+          "sampleParagraphs": [
+            {
+              "tag": "P",
+              "text": "Last updated: 10/03/2026",
+              "fontSize": "10px"
+            },
+            {
+              "tag": "P",
+              "text": "We are GlobeWest Pty Ltd, a company incorporated and registered in Victoria, Australia with company number ACN 674 872 621 (we, our, us, GlobeWest). We are the supplier of the Goods offered on https://www.globewest.com.au/ and any subdomains, all related top-level domains, mobile sites, apps, APIs and widgets (Website) and at our Showrooms.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(a) These Terms will apply to and govern your purchases of the Goods from us, including from the Website or the Showrooms in your capacity as a Trade Customer, together with any other terms and conditions which may be notified to you at the time of placing your order (for example, special offer terms and conditions). Please read these Terms carefully before ordering any Goods from us.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(b) Our Privacy Policy, which sets out: (a) how we collect, use, disclose, and hold any personal information we collect from you, or that you provide to us; and (b) information about the use of cookies, will also apply to your use of the Website. By purchasing the Goods and/or using our Website, you consent to such use and you warrant that all information provided by you is accurate.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(a) If you are a Retail Customer, these Terms do NOT apply to your purchase. Your relationship with GlobeWest will be governed by the General Terms and Conditions. For the avoidance of doubt, if these Terms apply, then the GlobeWest General Terms and Conditions are expressly excluded.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(b) To the extent permitted by law, these Terms also exclude any terms which are implied by law, trade custom, practice or course of dealing.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(a) If you object to any of our Terms your sole option is to not proceed with the purchase of the Goods from us.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(b) We reserve the right to change these Terms. Any changes to these Terms will be effective on the date they are published on our Website. If you disagree with the revised Terms, you may elect to not proceed with the purchase of Goods. If you do not do so before the date the revised Terms become effective, your continued access to our Website or order of our Goods from us (including via our Website or at our Showrooms) will constitute acceptance of the revised Terms.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(a) To become a GlobeWest Trade Customer, you must submit a trade application form for approval by us. Trade applications are granted solely based on your business trading name and ABN provided in the application.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "(b) You must notify us in writing of any changes to your business trading name, ABN or other business details. We may terminate your Trade Customer account and cease supply of the Goods to you if you fail to notify us in accordance with this clause.",
+              "fontSize": "15px"
+            }
+          ],
+          "linksCount": 19,
+          "links": [
+            {
+              "text": "https://www.globewest.com.au/",
+              "href": "https://www.globewest.com.au/"
+            },
+            {
+              "text": "General Terms and Conditions",
+              "href": "https://www.globewest.com.au/terms-and-conditions-page#generalpublic"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "www.globewest.com.au/product-care",
+              "href": "https://www.globewest.com.au/product-care"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "Product Care",
+              "href": "https://www.globewest.com.au/product-care"
+            },
+            {
+              "text": "https://globewestoutlet.com.au/",
+              "href": "https://globewestoutlet.com.au/"
+            },
+            {
+              "text": "https://www.globewest.com.au/",
+              "href": "https://www.globewest.com.au/"
+            },
+            {
+              "text": "Trade Customers Terms and\n                                Conditions",
+              "href": "https://www.globewest.com.au/terms-and-conditions-page"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "claims@globewest.com.au",
+              "href": "mailto:claims@globewest.com.au"
+            },
+            {
+              "text": "Product Care",
+              "href": "https://www.globewest.com.au/product-care"
+            },
+            {
+              "text": "https://globewestoutlet.com.au/",
+              "href": "https://globewestoutlet.com.au/"
+            },
+            {
+              "text": "START LIVE CHAT NOW",
+              "href": "#"
+            },
+            {
+              "text": "HELP CENTRE",
+              "href": "https://www.globewest.com.au/help-centre"
+            },
+            {
+              "text": "Terms and Conditions.",
+              "href": "https://www.globewest.com.au/terms-and-conditions-page-before-march-2026"
+            },
+            {
+              "text": "SEND FEEDBACK",
+              "href": "https://www.globewest.com.au/contact#online_enquiry"
+            }
+          ],
+          "forms": [],
+          "buttons": [
+            {
+              "text": "Trade Customers"
+            },
+            {
+              "text": "General Public"
+            },
+            {
+              "text": "1. Introduction",
+              "disabled": false
+            },
+            {
+              "text": "2. Trade Account",
+              "disabled": false
+            },
+            {
+              "text": "3. Your obligations",
+              "disabled": false
+            },
+            {
+              "text": "4. Orders",
+              "disabled": false
+            },
+            {
+              "text": "5. Collection and delivery",
+              "disabled": false
+            },
+            {
+              "text": "6. Storage and installation",
+              "disabled": false
+            },
+            {
+              "text": "7. Goods",
+              "disabled": false
+            },
+            {
+              "text": "8. Prices and payment",
+              "disabled": false
+            },
+            {
+              "text": "9. Returns and refunds",
+              "disabled": false
+            },
+            {
+              "text": "10. Warranty and exclusions",
+              "disabled": false
+            },
+            {
+              "text": "11. Liability and indemnity",
+              "disabled": false
+            },
+            {
+              "text": "12. PPSA – security interests",
+              "disabled": false
+            },
+            {
+              "text": "13. Intellectual Property",
+              "disabled": false
+            },
+            {
+              "text": "14. Promotions",
+              "disabled": false
+            },
+            {
+              "text": "15. General",
+              "disabled": false
+            },
+            {
+              "text": "16. Definitions",
+              "disabled": false
+            },
+            {
+              "text": "1. Introduction",
+              "disabled": false
+            },
+            {
+              "text": "2. Your obligations",
+              "disabled": false
+            },
+            {
+              "text": "3. Orders",
+              "disabled": false
+            },
+            {
+              "text": "4. Collection and delivery",
+              "disabled": false
+            },
+            {
+              "text": "5. Storage and installation",
+              "disabled": false
+            },
+            {
+              "text": "6. Goods",
+              "disabled": false
+            },
+            {
+              "text": "7. Prices and payment",
+              "disabled": false
+            },
+            {
+              "text": "8. Supporting Local Program",
+              "disabled": false
+            },
+            {
+              "text": "9. Returns and refunds",
+              "disabled": false
+            },
+            {
+              "text": "10. Warranty and exclusions",
+              "disabled": false
+            },
+            {
+              "text": "11. Liability and indemnity",
+              "disabled": false
+            },
+            {
+              "text": "12. Intellectual Property",
+              "disabled": false
+            },
+            {
+              "text": "13. Promotions",
+              "disabled": false
+            },
+            {
+              "text": "14. General",
+              "disabled": false
+            },
+            {
+              "text": "15. Definitions",
+              "disabled": false
+            }
+          ],
+          "scrollWidth": 390,
+          "hasOverflow": false
+        }
+      }
+    },
+    "contact": {
+      "name": "Contact Us",
+      "desktop": {
+        "us": {
+          "title": "Contact Us | GlobeWest",
+          "rawTextLength": 2494,
+          "headings": [
+            {
+              "tag": "H2",
+              "text": "Contact Us",
+              "fontSize": "55px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "We’d love to help you test",
+              "fontSize": "18px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H4",
+              "text": "Come visit us",
+              "fontSize": "16px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "Our Showrooms",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "Melbourne Head Office",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "Melbourne Warehouse",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "Outlet",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "International Enquiries",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "Online enquiry",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            }
+          ],
+          "paragraphsCount": 32,
+          "sampleParagraphs": [
+            {
+              "tag": "LI",
+              "text": "GlobeWest Melbourne\n\n(03) 9518 1600\nmelbourne@globewest.com.au\n20-22 Parsons Ave, Springvale, VIC, 3171\nMORE INFO",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "GlobeWest Melbourne",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "GlobeWest Sydney\n\n(02) 8338 8977\nsydney@globewest.com.au\nUnit B3/35-39 Bourke Rd, Alexandria, NSW, 2015\nMORE INFO",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "GlobeWest Sydney",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "GlobeWest Brisbane\n\n(07) 3254 4415\nbrisbane@globewest.com.au\n102 Arthur St, Fortitude Valley, QLD, 4006\nMORE INFO",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "GlobeWest Brisbane",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "GlobeWest Perth\n\n(08) 9381 0000\nperth@globewest.com.au\n239 Hay St, Subiaco, WA, 6008\nMORE INFO",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "GlobeWest Perth",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "Seven 18 Trading Co, Adelaide\n\n(08) 8362 6576\nsales@seven18.com.au\n18 Chapel St, Norwood, SA, 5067\nMORE INFO",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "Seven 18 Trading Co, Adelaide",
+              "fontSize": "15px"
+            }
+          ],
+          "linksCount": 30,
+          "links": [
+            {
+              "text": "(03) 9518 1600",
+              "href": "tel:(03)%209518%201600"
+            },
+            {
+              "text": "melbourne@globewest.com.au",
+              "href": "mailto:melbourne@globewest.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "showroom/globewest-melbourne"
+            },
+            {
+              "text": "(02) 8338 8977",
+              "href": "tel:(02)%208338%208977"
+            },
+            {
+              "text": "sydney@globewest.com.au",
+              "href": "mailto:sydney@globewest.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "showroom/globewest-sydney"
+            },
+            {
+              "text": "(07) 3254 4415",
+              "href": "tel:(07)%203254%204415"
+            },
+            {
+              "text": "brisbane@globewest.com.au",
+              "href": "mailto:brisbane@globewest.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "showroom/globewest-brisbane"
+            },
+            {
+              "text": "(08) 9381 0000",
+              "href": "tel:(08)%209381%200000"
+            },
+            {
+              "text": "perth@globewest.com.au",
+              "href": "mailto:perth@globewest.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "showroom/globewest-perth"
+            },
+            {
+              "text": "(08) 8362 6576",
+              "href": "tel:(08)%208362%206576"
+            },
+            {
+              "text": "sales@seven18.com.au",
+              "href": "mailto:sales@seven18.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "showroom/seven-18-trading"
+            },
+            {
+              "text": "03 9518 1600",
+              "href": "tel:03%209518%201600"
+            },
+            {
+              "text": "melbourne@globewest.com",
+              "href": "mailto:melbourne@globewest.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "www.globewest.com.au/showroom/globewest-melbourne"
+            },
+            {
+              "text": "03 9518 1681",
+              "href": "tel:03%209518%201681"
+            },
+            {
+              "text": "melbourne@globewest.com",
+              "href": "mailto:melbourne@globewest.com.au"
+            }
+          ],
+          "forms": [
+            {
+              "id": "contact-form",
+              "inputs": [
+                {
+                  "name": "name",
+                  "type": "text",
+                  "placeholder": "Your Name",
+                  "required": false
+                },
+                {
+                  "name": "email",
+                  "type": "email",
+                  "placeholder": "Email address",
+                  "required": false
+                },
+                {
+                  "name": "telephone",
+                  "type": "number",
+                  "placeholder": "Contact number",
+                  "required": false
+                },
+                {
+                  "name": "suburb",
+                  "type": "text",
+                  "placeholder": "Suburb or postcode",
+                  "required": false
+                },
+                {
+                  "name": "type_id",
+                  "type": "select-one",
+                  "placeholder": "",
+                  "required": false
+                },
+                {
+                  "name": "comment",
+                  "type": "textarea",
+                  "placeholder": "Enter message here",
+                  "required": false
+                },
+                {
+                  "name": "custom_terms",
+                  "type": "checkbox",
+                  "placeholder": "",
+                  "required": false
+                },
+                {
+                  "name": "g-recaptcha-response",
+                  "type": "textarea",
+                  "placeholder": "",
+                  "required": false
+                },
+                {
+                  "name": "hideit",
+                  "type": "hidden",
+                  "placeholder": "",
+                  "required": false
+                },
+                {
+                  "name": "token",
+                  "type": "text",
+                  "placeholder": "",
+                  "required": false
+                }
+              ]
+            }
+          ],
+          "buttons": [
+            {
+              "text": "SEND EMAIL",
+              "disabled": false
+            }
+          ]
+        },
+        "au_live": {
+          "title": "Contact Us | GlobeWest",
+          "rawTextLength": 2575,
+          "headings": [
+            {
+              "tag": "H2",
+              "text": "Contact Us",
+              "fontSize": "55px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "We’d love to help you",
+              "fontSize": "18px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H4",
+              "text": "Come visit us",
+              "fontSize": "16px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "Our Showrooms",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "Melbourne Head Office",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "Melbourne Warehouse",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "GlobeWest Outlet",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "International Enquiries",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "Online Enquiry",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            }
+          ],
+          "paragraphsCount": 32,
+          "sampleParagraphs": [
+            {
+              "tag": "LI",
+              "text": "GlobeWest Melbourne\n\n(03) 9518 1600 (select option 3)\nmelbourne@globewest.com.au\n20-22 Parsons Ave, Springvale, VIC, 3171\nMORE INFO",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "GlobeWest Melbourne",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "GlobeWest Sydney\n\n(02) 8338 8977\nsydney@globewest.com.au\nUnit B3/35-39 Bourke Rd, Alexandria, NSW, 2015 (Enter from 42 Maddox St)\nMORE INFO",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "GlobeWest Sydney",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "GlobeWest Brisbane\n\n(07) 3254 4415\nbrisbane@globewest.com.au\n102 Arthur St, Fortitude Valley, QLD, 4006\nMORE INFO",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "GlobeWest Brisbane",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "GlobeWest Perth\n\n(08) 6187 3320\nperth@globewest.com.au\n239 Hay Street, Subiaco, WA, 6008\nMORE INFO",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "GlobeWest Perth",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "Seven 18 Trading Co, Adelaide\n\n(08) 8362 6576\nsales@seven18.com.au\n18 Chapel St, Norwood, SA, 5067\nMORE INFO",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "Seven 18 Trading Co, Adelaide",
+              "fontSize": "15px"
+            }
+          ],
+          "linksCount": 31,
+          "links": [
+            {
+              "text": "(03) 9518 1600 (select option 3)",
+              "href": "tel:(03)%209518%201600%20(select%20option%203)%20"
+            },
+            {
+              "text": "melbourne@globewest.com.au",
+              "href": "mailto:melbourne@globewest.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "showroom/globewest-melbourne"
+            },
+            {
+              "text": "(02) 8338 8977",
+              "href": "tel:(02)%208338%208977"
+            },
+            {
+              "text": "sydney@globewest.com.au",
+              "href": "mailto:sydney@globewest.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "showroom/globewest-sydney"
+            },
+            {
+              "text": "(07) 3254 4415",
+              "href": "tel:(07)%203254%204415"
+            },
+            {
+              "text": "brisbane@globewest.com.au",
+              "href": "mailto:brisbane@globewest.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "showroom/globewest-brisbane"
+            },
+            {
+              "text": "(08) 6187 3320",
+              "href": "tel:(08)%206187%203320"
+            },
+            {
+              "text": "perth@globewest.com.au",
+              "href": "mailto:perth@globewest.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "showroom/globewest-perth"
+            },
+            {
+              "text": "(08) 8362 6576",
+              "href": "tel:(08)%208362%206576"
+            },
+            {
+              "text": "sales@seven18.com.au",
+              "href": "mailto:sales@seven18.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "showroom/seven-18-trading"
+            },
+            {
+              "text": "03 9518 1600",
+              "href": "tel:03%209518%201600"
+            },
+            {
+              "text": "melbourne@globewest.com.au",
+              "href": "mailto:melbourne@globewest.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "/showroom/globewest-melbourne"
+            },
+            {
+              "text": "03 9518 1681",
+              "href": "tel:03%209518%201681"
+            },
+            {
+              "text": "melbourne@globewest.com.au",
+              "href": "mailto:melbourne@globewest.com.au"
+            }
+          ],
+          "forms": [
+            {
+              "id": "contact-form",
+              "inputs": [
+                {
+                  "name": "name",
+                  "type": "text",
+                  "placeholder": "Your Name",
+                  "required": false
+                },
+                {
+                  "name": "email",
+                  "type": "email",
+                  "placeholder": "Email address",
+                  "required": false
+                },
+                {
+                  "name": "telephone",
+                  "type": "number",
+                  "placeholder": "Contact number",
+                  "required": false
+                },
+                {
+                  "name": "suburb",
+                  "type": "text",
+                  "placeholder": "Suburb or postcode",
+                  "required": false
+                },
+                {
+                  "name": "type_id",
+                  "type": "select-one",
+                  "placeholder": "",
+                  "required": false
+                },
+                {
+                  "name": "comment",
+                  "type": "textarea",
+                  "placeholder": "Enter message here",
+                  "required": false
+                },
+                {
+                  "name": "custom_terms",
+                  "type": "checkbox",
+                  "placeholder": "",
+                  "required": false
+                },
+                {
+                  "name": "g-recaptcha-response",
+                  "type": "textarea",
+                  "placeholder": "",
+                  "required": false
+                },
+                {
+                  "name": "hideit",
+                  "type": "hidden",
+                  "placeholder": "",
+                  "required": false
+                },
+                {
+                  "name": "token",
+                  "type": "text",
+                  "placeholder": "",
+                  "required": false
+                }
+              ]
+            }
+          ],
+          "buttons": [
+            {
+              "text": "SEND EMAIL",
+              "disabled": false
+            }
+          ]
+        }
+      },
+      "mobile": {
+        "us": {
+          "title": "Contact Us | GlobeWest",
+          "rawTextLength": 2494,
+          "headings": [
+            {
+              "tag": "H2",
+              "text": "Contact Us",
+              "fontSize": "35px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "We’d love to help you test",
+              "fontSize": "15px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H4",
+              "text": "Come visit us",
+              "fontSize": "16px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "Our Showrooms",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "Melbourne Head Office",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "Melbourne Warehouse",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "Outlet",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "International Enquiries",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "Online enquiry",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            }
+          ],
+          "paragraphsCount": 32,
+          "sampleParagraphs": [
+            {
+              "tag": "LI",
+              "text": "GlobeWest Melbourne\n\n(03) 9518 1600\nmelbourne@globewest.com.au\n20-22 Parsons Ave, Springvale, VIC, 3171\nMORE INFO",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "GlobeWest Melbourne",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "GlobeWest Sydney\n\n(02) 8338 8977\nsydney@globewest.com.au\nUnit B3/35-39 Bourke Rd, Alexandria, NSW, 2015\nMORE INFO",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "GlobeWest Sydney",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "GlobeWest Brisbane\n\n(07) 3254 4415\nbrisbane@globewest.com.au\n102 Arthur St, Fortitude Valley, QLD, 4006\nMORE INFO",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "GlobeWest Brisbane",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "GlobeWest Perth\n\n(08) 9381 0000\nperth@globewest.com.au\n239 Hay St, Subiaco, WA, 6008\nMORE INFO",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "GlobeWest Perth",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "Seven 18 Trading Co, Adelaide\n\n(08) 8362 6576\nsales@seven18.com.au\n18 Chapel St, Norwood, SA, 5067\nMORE INFO",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "Seven 18 Trading Co, Adelaide",
+              "fontSize": "15px"
+            }
+          ],
+          "linksCount": 30,
+          "links": [
+            {
+              "text": "(03) 9518 1600",
+              "href": "tel:(03)%209518%201600"
+            },
+            {
+              "text": "melbourne@globewest.com.au",
+              "href": "mailto:melbourne@globewest.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "showroom/globewest-melbourne"
+            },
+            {
+              "text": "(02) 8338 8977",
+              "href": "tel:(02)%208338%208977"
+            },
+            {
+              "text": "sydney@globewest.com.au",
+              "href": "mailto:sydney@globewest.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "showroom/globewest-sydney"
+            },
+            {
+              "text": "(07) 3254 4415",
+              "href": "tel:(07)%203254%204415"
+            },
+            {
+              "text": "brisbane@globewest.com.au",
+              "href": "mailto:brisbane@globewest.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "showroom/globewest-brisbane"
+            },
+            {
+              "text": "(08) 9381 0000",
+              "href": "tel:(08)%209381%200000"
+            },
+            {
+              "text": "perth@globewest.com.au",
+              "href": "mailto:perth@globewest.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "showroom/globewest-perth"
+            },
+            {
+              "text": "(08) 8362 6576",
+              "href": "tel:(08)%208362%206576"
+            },
+            {
+              "text": "sales@seven18.com.au",
+              "href": "mailto:sales@seven18.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "showroom/seven-18-trading"
+            },
+            {
+              "text": "03 9518 1600",
+              "href": "tel:03%209518%201600"
+            },
+            {
+              "text": "melbourne@globewest.com",
+              "href": "mailto:melbourne@globewest.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "www.globewest.com.au/showroom/globewest-melbourne"
+            },
+            {
+              "text": "03 9518 1681",
+              "href": "tel:03%209518%201681"
+            },
+            {
+              "text": "melbourne@globewest.com",
+              "href": "mailto:melbourne@globewest.com.au"
+            }
+          ],
+          "forms": [
+            {
+              "id": "contact-form",
+              "inputs": [
+                {
+                  "name": "name",
+                  "type": "text",
+                  "placeholder": "Your Name",
+                  "required": false
+                },
+                {
+                  "name": "email",
+                  "type": "email",
+                  "placeholder": "Email address",
+                  "required": false
+                },
+                {
+                  "name": "telephone",
+                  "type": "number",
+                  "placeholder": "Contact number",
+                  "required": false
+                },
+                {
+                  "name": "suburb",
+                  "type": "text",
+                  "placeholder": "Suburb or postcode",
+                  "required": false
+                },
+                {
+                  "name": "type_id",
+                  "type": "select-one",
+                  "placeholder": "",
+                  "required": false
+                },
+                {
+                  "name": "comment",
+                  "type": "textarea",
+                  "placeholder": "Enter message here",
+                  "required": false
+                },
+                {
+                  "name": "custom_terms",
+                  "type": "checkbox",
+                  "placeholder": "",
+                  "required": false
+                },
+                {
+                  "name": "g-recaptcha-response",
+                  "type": "textarea",
+                  "placeholder": "",
+                  "required": false
+                },
+                {
+                  "name": "hideit",
+                  "type": "hidden",
+                  "placeholder": "",
+                  "required": false
+                },
+                {
+                  "name": "token",
+                  "type": "text",
+                  "placeholder": "",
+                  "required": false
+                }
+              ]
+            }
+          ],
+          "buttons": [
+            {
+              "text": "SEND EMAIL",
+              "disabled": false
+            }
+          ],
+          "scrollWidth": 390,
+          "hasOverflow": false
+        },
+        "au_live": {
+          "title": "Contact Us | GlobeWest",
+          "rawTextLength": 2575,
+          "headings": [
+            {
+              "tag": "H2",
+              "text": "Contact Us",
+              "fontSize": "35px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "We’d love to help you",
+              "fontSize": "15px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H4",
+              "text": "Come visit us",
+              "fontSize": "16px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "Our Showrooms",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "Melbourne Head Office",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "Melbourne Warehouse",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "GlobeWest Outlet",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H3",
+              "text": "International Enquiries",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H2",
+              "text": "Online Enquiry",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            }
+          ],
+          "paragraphsCount": 32,
+          "sampleParagraphs": [
+            {
+              "tag": "LI",
+              "text": "GlobeWest Melbourne\n\n(03) 9518 1600 (select option 3)\nmelbourne@globewest.com.au\n20-22 Parsons Ave, Springvale, VIC, 3171\nMORE INFO",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "GlobeWest Melbourne",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "GlobeWest Sydney\n\n(02) 8338 8977\nsydney@globewest.com.au\nUnit B3/35-39 Bourke Rd, Alexandria, NSW, 2015 (Enter from 42 Maddox St)\nMORE INFO",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "GlobeWest Sydney",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "GlobeWest Brisbane\n\n(07) 3254 4415\nbrisbane@globewest.com.au\n102 Arthur St, Fortitude Valley, QLD, 4006\nMORE INFO",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "GlobeWest Brisbane",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "GlobeWest Perth\n\n(08) 6187 3320\nperth@globewest.com.au\n239 Hay Street, Subiaco, WA, 6008\nMORE INFO",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "GlobeWest Perth",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "LI",
+              "text": "Seven 18 Trading Co, Adelaide\n\n(08) 8362 6576\nsales@seven18.com.au\n18 Chapel St, Norwood, SA, 5067\nMORE INFO",
+              "fontSize": "14px"
+            },
+            {
+              "tag": "P",
+              "text": "Seven 18 Trading Co, Adelaide",
+              "fontSize": "15px"
+            }
+          ],
+          "linksCount": 31,
+          "links": [
+            {
+              "text": "(03) 9518 1600 (select option 3)",
+              "href": "tel:(03)%209518%201600%20(select%20option%203)%20"
+            },
+            {
+              "text": "melbourne@globewest.com.au",
+              "href": "mailto:melbourne@globewest.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "showroom/globewest-melbourne"
+            },
+            {
+              "text": "(02) 8338 8977",
+              "href": "tel:(02)%208338%208977"
+            },
+            {
+              "text": "sydney@globewest.com.au",
+              "href": "mailto:sydney@globewest.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "showroom/globewest-sydney"
+            },
+            {
+              "text": "(07) 3254 4415",
+              "href": "tel:(07)%203254%204415"
+            },
+            {
+              "text": "brisbane@globewest.com.au",
+              "href": "mailto:brisbane@globewest.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "showroom/globewest-brisbane"
+            },
+            {
+              "text": "(08) 6187 3320",
+              "href": "tel:(08)%206187%203320"
+            },
+            {
+              "text": "perth@globewest.com.au",
+              "href": "mailto:perth@globewest.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "showroom/globewest-perth"
+            },
+            {
+              "text": "(08) 8362 6576",
+              "href": "tel:(08)%208362%206576"
+            },
+            {
+              "text": "sales@seven18.com.au",
+              "href": "mailto:sales@seven18.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "showroom/seven-18-trading"
+            },
+            {
+              "text": "03 9518 1600",
+              "href": "tel:03%209518%201600"
+            },
+            {
+              "text": "melbourne@globewest.com.au",
+              "href": "mailto:melbourne@globewest.com.au"
+            },
+            {
+              "text": "MORE INFO",
+              "href": "/showroom/globewest-melbourne"
+            },
+            {
+              "text": "03 9518 1681",
+              "href": "tel:03%209518%201681"
+            },
+            {
+              "text": "melbourne@globewest.com.au",
+              "href": "mailto:melbourne@globewest.com.au"
+            }
+          ],
+          "forms": [
+            {
+              "id": "contact-form",
+              "inputs": [
+                {
+                  "name": "name",
+                  "type": "text",
+                  "placeholder": "Your Name",
+                  "required": false
+                },
+                {
+                  "name": "email",
+                  "type": "email",
+                  "placeholder": "Email address",
+                  "required": false
+                },
+                {
+                  "name": "telephone",
+                  "type": "number",
+                  "placeholder": "Contact number",
+                  "required": false
+                },
+                {
+                  "name": "suburb",
+                  "type": "text",
+                  "placeholder": "Suburb or postcode",
+                  "required": false
+                },
+                {
+                  "name": "type_id",
+                  "type": "select-one",
+                  "placeholder": "",
+                  "required": false
+                },
+                {
+                  "name": "comment",
+                  "type": "textarea",
+                  "placeholder": "Enter message here",
+                  "required": false
+                },
+                {
+                  "name": "custom_terms",
+                  "type": "checkbox",
+                  "placeholder": "",
+                  "required": false
+                },
+                {
+                  "name": "hideit",
+                  "type": "hidden",
+                  "placeholder": "",
+                  "required": false
+                }
+              ]
+            }
+          ],
+          "buttons": [
+            {
+              "text": "SEND EMAIL",
+              "disabled": false
+            }
+          ],
+          "scrollWidth": 390,
+          "hasOverflow": false
+        }
+      }
+    },
+    "faq": {
+      "name": "Help Centre / FAQ",
+      "desktop": {
+        "us": {
+          "title": "",
+          "rawTextLength": 380,
+          "headings": [
+            {
+              "tag": "H1",
+              "text": "GlobeWest Help Centre",
+              "fontSize": "42px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H4",
+              "text": "Contact Us",
+              "fontSize": "24px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H4",
+              "text": "Talk to us on Live Chat",
+              "fontSize": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "paragraphsCount": 2,
+          "sampleParagraphs": [
+            {
+              "tag": "P",
+              "text": "We’re here to help - reach out to your local GlobeWest team for enquiries or feedback, or visit our Help Centre for quick answers.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "Our team is available via Live Chat to help with product, order, or delivery queries. We’re online Monday–Friday, 9 am–5 pm AEDST and ready to assist.",
+              "fontSize": "15px"
+            }
+          ],
+          "linksCount": 2,
+          "links": [
+            {
+              "text": "VISIT HELP CENTRE",
+              "href": "https://support.globewest.com.au/hc/en-au"
+            },
+            {
+              "text": "START LIVE CHAT NOW",
+              "href": "#"
+            }
+          ],
+          "forms": [],
+          "buttons": []
+        },
+        "au_live": {
+          "title": "GlobeWest Help Centre",
+          "rawTextLength": 380,
+          "headings": [
+            {
+              "tag": "H1",
+              "text": "GlobeWest Help Centre",
+              "fontSize": "42px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H4",
+              "text": "Contact Us",
+              "fontSize": "24px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H4",
+              "text": "Talk to us on Live Chat",
+              "fontSize": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "paragraphsCount": 2,
+          "sampleParagraphs": [
+            {
+              "tag": "P",
+              "text": "We’re here to help - reach out to your local GlobeWest team for enquiries or feedback, or visit our Help Centre for quick answers.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "Our team is available via Live Chat to help with product, order, or delivery queries. We’re online Monday–Friday, 9 am–5 pm AEDST and ready to assist.",
+              "fontSize": "15px"
+            }
+          ],
+          "linksCount": 2,
+          "links": [
+            {
+              "text": "VISIT HELP CENTRE",
+              "href": "https://support.globewest.com.au/hc/en-au"
+            },
+            {
+              "text": "START LIVE CHAT NOW",
+              "href": "#"
+            }
+          ],
+          "forms": [],
+          "buttons": []
+        }
+      },
+      "mobile": {
+        "us": {
+          "title": "",
+          "rawTextLength": 380,
+          "headings": [
+            {
+              "tag": "H1",
+              "text": "GlobeWest Help Centre",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H4",
+              "text": "Contact Us",
+              "fontSize": "18px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H4",
+              "text": "Talk to us on Live Chat",
+              "fontSize": "18px",
+              "fontWeight": "400"
+            }
+          ],
+          "paragraphsCount": 2,
+          "sampleParagraphs": [
+            {
+              "tag": "P",
+              "text": "We’re here to help - reach out to your local GlobeWest team for enquiries or feedback, or visit our Help Centre for quick answers.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "Our team is available via Live Chat to help with product, order, or delivery queries. We’re online Monday–Friday, 9 am–5 pm AEDST and ready to assist.",
+              "fontSize": "15px"
+            }
+          ],
+          "linksCount": 2,
+          "links": [
+            {
+              "text": "VISIT HELP CENTRE",
+              "href": "https://support.globewest.com.au/hc/en-au"
+            },
+            {
+              "text": "START LIVE CHAT NOW",
+              "href": "#"
+            }
+          ],
+          "forms": [],
+          "buttons": [],
+          "scrollWidth": 390,
+          "hasOverflow": false
+        },
+        "au_live": {
+          "title": "GlobeWest Help Centre",
+          "rawTextLength": 380,
+          "headings": [
+            {
+              "tag": "H1",
+              "text": "GlobeWest Help Centre",
+              "fontSize": "30px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H4",
+              "text": "Contact Us",
+              "fontSize": "18px",
+              "fontWeight": "400"
+            },
+            {
+              "tag": "H4",
+              "text": "Talk to us on Live Chat",
+              "fontSize": "18px",
+              "fontWeight": "400"
+            }
+          ],
+          "paragraphsCount": 2,
+          "sampleParagraphs": [
+            {
+              "tag": "P",
+              "text": "We’re here to help - reach out to your local GlobeWest team for enquiries or feedback, or visit our Help Centre for quick answers.",
+              "fontSize": "15px"
+            },
+            {
+              "tag": "P",
+              "text": "Our team is available via Live Chat to help with product, order, or delivery queries. We’re online Monday–Friday, 9 am–5 pm AEDST and ready to assist.",
+              "fontSize": "15px"
+            }
+          ],
+          "linksCount": 2,
+          "links": [
+            {
+              "text": "VISIT HELP CENTRE",
+              "href": "https://support.globewest.com.au/hc/en-au"
+            },
+            {
+              "text": "START LIVE CHAT NOW",
+              "href": "#"
+            }
+          ],
+          "forms": [],
+          "buttons": [],
+          "scrollWidth": 390,
+          "hasOverflow": false
+        }
+      }
+    }
+  }
+}

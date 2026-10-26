@@ -1,0 +1,126 @@
+{
+  "timestamp": "2026-10-13T08:30:35.135Z",
+  "fields": {
+    "header": {
+      "us": {
+        "utilityTextSnippet": "Become a Trade Customer | Book Showroom Appointment | Login | My Cart | Indoor | Outdoor | Homewares | In Stock | Customisation | Projects | Inspirati",
+        "hasBecomeTrade": true,
+        "hasBookShowroom": true,
+        "hasLogin": true,
+        "hasPriceToggle": false
+      },
+      "au": {
+        "utilityTextSnippet": "Find a designer or stockist | Book Showroom Appointment | Login | My Cart | Indoor | Outdoor | Homewares | In Stock | Customisation | Projects | Inspi",
+        "hasFindStockist": false,
+        "hasBookShowroom": true
+      }
+    },
+    "plp": {
+      "cardCount": 48,
+      "hasAuCopyLeak": false,
+      "heroTextSnippet": "Indoor Furniture",
+      "anyPriceLeak": false,
+      "anyCartLeak": false,
+      "anyPlaceholders": true,
+      "inspectedCards": [
+        {
+          "index": 1,
+          "title": "Pearce Marble 2 Drawer Nightstand - Matt Ocean Marble - Bone",
+          "hasDollar": false,
+          "hasAddToCart": false,
+          "isPlaceholder": true,
+          "imgSrcSnippet": "230118_Image-Coming-Soon-2_1100x1100_1.jpg"
+        },
+        {
+          "index": 2,
+          "title": "Pearce Marble 2 Drawer Nightstand - Matt Ocean Marble - Bone",
+          "hasDollar": false,
+          "hasAddToCart": false,
+          "isPlaceholder": true,
+          "imgSrcSnippet": "230118_Image-Coming-Soon-2_1100x1100_1.jpg"
+        },
+        {
+          "index": 3,
+          "title": "Arturo Timber Leg Accent Chair - Paloma - Chestnut",
+          "hasDollar": false,
+          "hasAddToCart": false,
+          "isPlaceholder": true,
+          "imgSrcSnippet": "230118_Image-Coming-Soon-2_1100x1100_1.jpg"
+        },
+        {
+          "index": 4,
+          "title": "Arturo Timber Leg Accent Chair - Paloma - Chestnut",
+          "hasDollar": false,
+          "hasAddToCart": false,
+          "isPlaceholder": true,
+          "imgSrcSnippet": "230118_Image-Coming-Soon-2_1100x1100_1.jpg"
+        },
+        {
+          "index": 5,
+          "title": "Arturo Timber Leg Accent Chair - Greige Stripe - Natural Mindi",
+          "hasDollar": false,
+          "hasAddToCart": false,
+          "isPlaceholder": true,
+          "imgSrcSnippet": "230118_Image-Coming-Soon-2_1100x1100_1.jpg"
+        },
+        {
+          "index": 6,
+          "title": "Arturo Timber Leg Accent Chair - Greige Stripe - Natural Mindi",
+          "hasDollar": false,
+          "hasAddToCart": false,
+          "isPlaceholder": true,
+          "imgSrcSnippet": "230118_Image-Coming-Soon-2_1100x1100_1.jpg"
+        },
+        {
+          "index": 7,
+          "title": "Carvara Abstract Nightstand - New Oak",
+          "hasDollar": false,
+          "hasAddToCart": false,
+          "isPlaceholder": true,
+          "imgSrcSnippet": "230118_Image-Coming-Soon-2_1100x1100_1.jpg"
+        },
+        {
+          "index": 8,
+          "title": "Carvara Abstract Nightstand - New Oak",
+          "hasDollar": false,
+          "hasAddToCart": false,
+          "isPlaceholder": true,
+          "imgSrcSnippet": "230118_Image-Coming-Soon-2_1100x1100_1.jpg"
+        }
+      ]
+    },
+    "pdp": {
+      "us": {
+        "title": "Base 2 Seater Left Arm Sofa - Oatmeal - Light Oak",
+        "priceBoxRendered": false,
+        "priceText": "",
+        "hasDollar": false,
+        "isAddCartVisible": null,
+        "hasSwatchesBtn": false,
+        "hasTradeGuidance": true
+      },
+      "au": {
+        "title": "Base 2 Seater Left Arm Sofa - Oatmeal - Light Oak",
+        "priceText": "$4,840.00",
+        "hasDollar": true,
+        "isAddCartVisible": true
+      }
+    },
+    "search": {
+      "itemCount": 0,
+      "hasZeroResultsNotice": false,
+      "priceLeak": false
+    },
+    "cart": {
+      "currentUrl": "https://mcstaging2.globewest.com/checkout/cart/",
+      "isCartEmpty": false,
+      "hasCheckoutBtn": false
+    },
+    "tradeAuth": {
+      "isToggleRendered": true,
+      "toggleText": "Trade",
+      "hasTradePrice": true,
+      "firstCardSnippet": "Compare | Save | New | Customisable | Pearce Marble 2 Drawer Nightstand - Matt Ocean Marble - Bone | $638.00 | $1,424.50 | MSRP: | $701.80 |"
+    }
+  }
+}

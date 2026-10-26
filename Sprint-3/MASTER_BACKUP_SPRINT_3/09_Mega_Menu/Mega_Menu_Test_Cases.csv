@@ -1,0 +1,33 @@
+Test ID,Feature / Category,Test Scenario,Pre-Conditions,Test Steps,Expected Result,Actual Result,Status,Severity
+"TC-MM-01","Mega Menu - Top Level Navigation","Verify Presence & Order of All 9 Navigation Categories","US Staging (https://mcstaging2.globewest.com/) loaded in desktop viewport","1. Navigate to US Staging.
+2. Inspect Header navigation bar.
+3. Compare category list against AU Staging (https://mcstaging2.globewest.com.au/).","All 9 categories (Indoor, Outdoor, Homewares, In Stock, Customisation, Projects, Inspiration, Support, Contact) render in clean hierarchy.","All 9 categories present and aligned with US catalog routing.","PASS","P1 - High"
+"TC-MM-02","Desktop - Indoor Category","Verify Indoor Mega Menu Flyout, Interactions & Link Counts","Desktop viewport 1440x900, Authenticated Trade session","1. Hover over ""Indoor"" category.
+2. Verify flyout animation and column layout (Furniture, Rugs, Lighting).
+3. Hover over Tier-2 ""Furniture"" subcategory.
+4. Audit all 66 subcategory links.","Mega menu flyout opens smoothly displaying multi-column hierarchy; tier-2 items expand subcategories.","Flyout opens with 66 total links; Furniture subcategory hovered successfully.","PASS","P1 - High"
+"TC-MM-03","Scope Isolation - Indoor","Verify Indoor Outlet Link Domain Routing (Zero AU Leakage)","Hovering Indoor mega menu","1. Hover over Indoor category.
+2. Locate ""Outlet"" subcategory link.
+3. Inspect destination href URL.","Link routes strictly to US catalog path (mcstaging2.globewest.com) without Australian domain leakage.","Link hardcodes https://globewestoutlet.com.au/collections/indoor routing US users to Australian outlet.","FAIL","P1 - High"
+"TC-MM-04","Desktop - Outdoor Category","Verify Outdoor Mega Menu Flyout, Interactions & AU Leak Check","Desktop viewport 1440x900","1. Hover over Outdoor category.
+2. Verify flyout layout and audit 30 subcategory links.
+3. Check Outlet destination URL.","All links route to US store without Australian leakage.","Link hardcodes https://globewestoutlet.com.au/collections/outdoor routing US users to Australian outlet.","FAIL","P1 - High"
+"TC-MM-05","Desktop - Homewares Category","Verify Homewares Mega Menu Flyout, Interactions & AU Leak Check","Desktop viewport 1440x900","1. Hover over Homewares category.
+2. Verify 13 subcategory links.
+3. Check Outlet destination URL.","All links route to US store without Australian leakage.","Link hardcodes https://globewestoutlet.com.au/collections/homewares routing US users to Australian outlet.","FAIL","P1 - High"
+"TC-MM-06","Desktop - In Stock Category","Verify In Stock Subcategories Parity with AU Staging","Desktop viewport 1440x900","1. Hover over ""In Stock"".
+2. Audit column grouping and 36 subcategory links.","Exact parity with AU staging column structure, zero Australian domain leakage.","Clean US catalog routing; zero AU leakage across all 36 links.","PASS","P2 - Medium"
+"TC-MM-07","Desktop - Customisation & Projects","Verify Customisation & Projects Mega Menu Parity","Desktop viewport 1440x900","1. Hover over ""Customisation"" (2 links) and ""Projects"" (18 links).
+2. Verify links and hover behavior.","All links route to US portfolio pages without Australian leakage.","Passed with 100% clean US URLs.","PASS","P2 - Medium"
+"TC-MM-08","Desktop - Inspiration Category","Verify Inspiration Editorial Links & Lookbooks","Desktop viewport 1440x900","1. Hover over ""Inspiration"".
+2. Audit 15 editorial lookbook and blog links.","All links route to US blog without Australian leakage.","Passed with 100% clean US URLs.","PASS","P2 - Medium"
+"TC-MM-09","Scope Isolation - Support Category","Verify Support Mega Menu Sub-Links for Australian Outlet Leakage","Desktop viewport 1440x900","1. Hover over ""Support"" menu.
+2. Inspect destination URLs of all 18 sub-links.","All support links route to US Help Centre; zero Australian outlet or showroom links.","🚨 2 Australian leaks detected: ""Shop Online Outlet"" (globewestoutlet.com.au) and ""Visit Melbourne Outlet"" (pages/melbourne-outlet-store).","FAIL","P1 - High"
+"TC-MM-10","Desktop - Contact Category","Verify Contact Menu Item Routing & Links","Desktop viewport 1440x900","1. Hover and inspect Contact menu item (6 links).
+2. Verify destination URLs.","Routes to US contact/showroom inquiry without Australian leakage.","Passed with 100% clean US URLs.","PASS","P2 - Medium"
+"TC-MM-11","Mobile - Hamburger Navigation","Verify Mobile Drawer Opens & Displays All 9 Categories (390x844)","Mobile viewport 390x844 (iPhone 14), Logged-in Trade customer","1. Navigate to US Staging.
+2. Tap Hamburger menu icon.
+3. Assert all 9 category accordions render cleanly without horizontal scroll.","Drawer slides out smoothly displaying all 9 top-level categories.","Drawer opens cleanly displaying all 9 categories.","PASS","P1 - High"
+"TC-MM-12","Mobile - Individual Category Drilldowns","Verify Accordion Expansion & Subcategory Navigation for All Categories","Mobile viewport 390x844","1. Individually tap each category accordion (Indoor through Contact).
+2. Verify subcategories expand cleanly.
+3. Audit 258 total child links for Australian domain redirects.","All accordions expand smoothly; sub-links route to US catalog.","All 9 accordions expand cleanly; identified 5 Australian outlet link leaks (Indoor, Outdoor, Homewares, Support x2).","FAIL","P1 - High"

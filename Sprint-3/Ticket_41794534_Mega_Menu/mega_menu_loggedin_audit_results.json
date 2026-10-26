@@ -1,0 +1,364 @@
+{
+  "ticket": "#41794534 - Mega menu (Logged-in Trade Mode)",
+  "timestamp": "2026-09-29T10:32:22.896Z",
+  "user": "deepali.londhe@overdose.digital",
+  "usBaseUrl": "https://mcstaging2.globewest.com",
+  "auBaseUrl": "https://mcstaging2.globewest.com.au",
+  "auCategories": {
+    "Indoor": {
+      "found": true,
+      "hasSubmenu": false
+    },
+    "Outdoor": {
+      "found": true,
+      "hasSubmenu": false
+    },
+    "Homewares": {
+      "found": true,
+      "hasSubmenu": false
+    },
+    "In Stock": {
+      "found": true,
+      "hasSubmenu": false
+    },
+    "Customisation": {
+      "found": true,
+      "hasSubmenu": false
+    },
+    "Projects": {
+      "found": true,
+      "hasSubmenu": false
+    },
+    "Inspiration": {
+      "found": true,
+      "hasSubmenu": false
+    }
+  },
+  "usCategories": {
+    "Indoor": {
+      "found": true,
+      "hasSubmenu": true,
+      "totalLinks": 66,
+      "links": [
+        "Furniture",
+        "Sofas",
+        "1 Seater Sofas",
+        "2 Seater Sofas",
+        "3 Seater Sofas",
+        "4 Seater Sofas",
+        "Modular Sofas",
+        "Customisable Sofas",
+        "Daybeds",
+        "Ottomans",
+        "Washable Sofas",
+        "Dining Tables",
+        "4 Seater Dining Tables",
+        "6 Seater Dining Tables",
+        "8 Seater Dining Tables",
+        "10 Seater Dining Tables",
+        "Round Dining Tables",
+        "Extension Dining Tables",
+        "Rectangle Dining Tables",
+        "Wooden Dining Tables",
+        "Oval Dining Tables",
+        "Test Category 01",
+        "Test Category 02",
+        "Test Category 03",
+        "Bar Stools & Chairs",
+        "Bar Stools",
+        "Dining Chairs",
+        "Arm Chairs",
+        "Occasional Chairs",
+        "Office Chairs",
+        "Coffee Tables",
+        "Round Coffee Tables",
+        "Rectangle Coffee Tables",
+        "Wooden Coffee Tables",
+        "Side Tables",
+        "Round Side Tables",
+        "Oak Side Tables",
+        "Console Tables",
+        "Oak Console Tables",
+        "Storage & Shelving",
+        "Buffets",
+        "Entertainment Units",
+        "Bar Cabinets",
+        "Storage Units",
+        "Bedroom Storage",
+        "Bookcases",
+        "Beds & Bedheads",
+        "Queen Size",
+        "King Size",
+        "Bedside Tables",
+        "Oak Bedside Tables",
+        "Black Bedside Tables",
+        "Bench Seats",
+        "Desks",
+        "Stools",
+        "Shop all",
+        "Shop by Room",
+        "Living Room",
+        "Dining Room & Kitchen",
+        "Hallway Furniture",
+        "Home Office & Study",
+        "Bedroom",
+        "Outdoor",
+        "Shop all",
+        "Sale",
+        "Outlet"
+      ],
+      "auLeaks": [
+        {
+          "text": "Outlet",
+          "href": "https://globewestoutlet.com.au/collections/indoor",
+          "isAULink": true
+        }
+      ],
+      "promoText": ""
+    },
+    "Outdoor": {
+      "found": true,
+      "hasSubmenu": true,
+      "totalLinks": 30,
+      "links": [
+        "Sofas",
+        "1 Seater Sofas",
+        "2 Seater Sofas",
+        "3 Seater Sofas",
+        "Modular Sofas",
+        "Daybeds",
+        "Ottomans",
+        "Sunbeds",
+        "Dining Tables",
+        "4 Seater Dining Tables",
+        "6 Seater Dining Tables",
+        "8 Seater Dining Tables",
+        "10 Seater Dining Tables",
+        "2 Seater Dining Tables",
+        "Bar Tables",
+        "Bar Stools & Chairs",
+        "Bar Stools",
+        "Dining Chairs",
+        "Arm Chairs",
+        "Bench Seats",
+        "Coffee Tables",
+        "Side Tables",
+        "Stools",
+        "Rugs",
+        "Planters",
+        "Shop all"
+      ],
+      "auLeaks": [
+        {
+          "text": "",
+          "href": "https://globewestoutlet.com.au/collections/outdoor",
+          "isAULink": true
+        }
+      ],
+      "promoText": ""
+    },
+    "Homewares": {
+      "found": true,
+      "hasSubmenu": true,
+      "totalLinks": 13,
+      "links": [
+        "Homewares",
+        "Rugs",
+        "Mirrors & Wall Decor",
+        "Cushions & Throws",
+        "Decorative Accents",
+        "Shop all",
+        "Lighting",
+        "Table Lamps",
+        "Floor Lamps",
+        "Pendant Lights",
+        "Shop all",
+        "Sale",
+        "Outlet"
+      ],
+      "auLeaks": [
+        {
+          "text": "Outlet",
+          "href": "https://globewestoutlet.com.au/collections/homewares",
+          "isAULink": true
+        }
+      ],
+      "promoText": ""
+    },
+    "In Stock": {
+      "found": true,
+      "hasSubmenu": true,
+      "totalLinks": 36,
+      "links": [
+        "Indoor",
+        "Sofas",
+        "Daybeds",
+        "Dining Tables",
+        "Barstools & Chairs",
+        "Coffee Tables",
+        "Side Tables",
+        "Console Tables",
+        "Buffets",
+        "Entertainment Units",
+        "Bar Cabinets & Storage Units",
+        "Beds & Bedheads",
+        "Bench Seats",
+        "Ottomans",
+        "Dressers",
+        "Stools",
+        "Desks",
+        "Office Chairs",
+        "Bookcases",
+        "Shop all",
+        "Outdoor",
+        "Sofas",
+        "Daybeds",
+        "Ottomans",
+        "Sunbeds",
+        "Dining Tables",
+        "Bar Tables",
+        "Barstools & Chairs",
+        "Bench Seats",
+        "Coffee Tables",
+        "Side Tables",
+        "Stools",
+        "Planters",
+        "Shop all",
+        "Homewares & Lighting",
+        "All Sale"
+      ],
+      "auLeaks": [],
+      "promoText": ""
+    },
+    "Customisation": {
+      "found": true,
+      "hasSubmenu": true,
+      "totalLinks": 2,
+      "links": [
+        "Customisable Furniture",
+        "Customisable Sofas"
+      ],
+      "auLeaks": [],
+      "promoText": ""
+    },
+    "Projects": {
+      "found": true,
+      "hasSubmenu": true,
+      "totalLinks": 18,
+      "links": [
+        "General",
+        "About GlobeWest Project",
+        "Our Difference",
+        "Our Process",
+        "Customer Benefits",
+        "Experience",
+        "Multi-Residential Development",
+        "Accommodation",
+        "Hospitality",
+        "Retirement Living",
+        "Workplaces",
+        "Property Staging",
+        "Show Homes",
+        "Retail Fitouts",
+        "Resources",
+        "Contact our Project Team",
+        "Commercial Capabilities Video",
+        "Request Project Product Portfolio"
+      ],
+      "auLeaks": [],
+      "promoText": ""
+    },
+    "Inspiration": {
+      "found": true,
+      "hasSubmenu": true,
+      "totalLinks": 15,
+      "links": [
+        "Blog & Ideas",
+        "Style Tips",
+        "Interviews",
+        "Home Tours",
+        "Designer in Profile",
+        "Stockist in Profile",
+        "Project in Focus",
+        "Loobook Library",
+        "Issue 21",
+        "Issue 20",
+        "Issue 19",
+        "Video Library",
+        "Introducing Collections 2023",
+        "Collections 2023 in Rye",
+        "Collections 2023 Outdoor"
+      ],
+      "auLeaks": [],
+      "promoText": ""
+    }
+  },
+  "leaksDetected": [
+    {
+      "text": "Outlet",
+      "href": "https://globewestoutlet.com.au/collections/indoor",
+      "isAULink": true
+    },
+    {
+      "text": "",
+      "href": "https://globewestoutlet.com.au/collections/outdoor",
+      "isAULink": true
+    },
+    {
+      "text": "Outlet",
+      "href": "https://globewestoutlet.com.au/collections/homewares",
+      "isAULink": true
+    }
+  ],
+  "differences": [
+    {
+      "category": "Indoor",
+      "auLinkCount": 0,
+      "usLinkCount": 66,
+      "leakCount": 1,
+      "match": false
+    },
+    {
+      "category": "Outdoor",
+      "auLinkCount": 0,
+      "usLinkCount": 30,
+      "leakCount": 1,
+      "match": false
+    },
+    {
+      "category": "Homewares",
+      "auLinkCount": 0,
+      "usLinkCount": 13,
+      "leakCount": 1,
+      "match": false
+    },
+    {
+      "category": "In Stock",
+      "auLinkCount": 0,
+      "usLinkCount": 36,
+      "leakCount": 0,
+      "match": false
+    },
+    {
+      "category": "Customisation",
+      "auLinkCount": 0,
+      "usLinkCount": 2,
+      "leakCount": 0,
+      "match": false
+    },
+    {
+      "category": "Projects",
+      "auLinkCount": 0,
+      "usLinkCount": 18,
+      "leakCount": 0,
+      "match": false
+    },
+    {
+      "category": "Inspiration",
+      "auLinkCount": 0,
+      "usLinkCount": 15,
+      "leakCount": 0,
+      "match": false
+    }
+  ]
+}

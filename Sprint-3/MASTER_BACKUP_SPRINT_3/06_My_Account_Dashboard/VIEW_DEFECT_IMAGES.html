@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlobeWest US - My Account Dashboard Defect Verification</title>
+  <style>
+    :root {
+      --primary: #181c21;
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --border: #e9ecef;
+      --text: #212529;
+      --text-muted: #6c757d;
+      --red: #dc3545;
+      --green: #28a745;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); padding: 32px 24px; line-height: 1.5; }
+    header { max-width: 1400px; margin: 0 auto 32px auto; background: var(--primary); color: #fff; padding: 28px 32px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    header h1 { font-size: 26px; font-weight: 700; margin-bottom: 8px; }
+    header p { color: #adb5bd; font-size: 15px; }
+    .badge-bar { margin-top: 14px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .badge { padding: 4px 12px; border-radius: 9999px; font-size: 13px; font-weight: 600; background: rgba(255,255,255,0.15); color: #fff; }
+    .badge.red { background: var(--red); }
+    .container { max-width: 1400px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px; }
+    .card { background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.04); overflow: hidden; }
+    .card-header { padding: 18px 24px; background: #fff; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .card-header h2 { font-size: 18px; font-weight: 600; color: var(--text); }
+    .card-body { padding: 20px 24px; }
+    .img-wrapper { width: 100%; border-radius: 8px; overflow: hidden; background: #f1f3f5; border: 1px solid #dee2e6; margin-bottom: 16px; }
+    .img-wrapper img { width: 100%; height: auto; display: block; }
+    .defect-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    .defect-table th, .defect-table td { padding: 12px 16px; border: 1px solid var(--border); text-align: left; font-size: 14px; }
+    .defect-table th { background: #f8f9fa; font-weight: 600; }
+    .defect-table td.expected { background: #f4fbf6; color: #1e7e34; }
+    .defect-table td.actual { background: #fdf5f5; color: #bd2130; }
+    footer { max-width: 1400px; margin: 40px auto 0 auto; text-align: center; color: var(--text-muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🚩 GlobeWest US: My Account Dashboard - Discrepancy & Defect Report</h1>
+    <p>Targeted verification of flagged discrepancies against Figma Frame 620 Design Specifications</p>
+    <div class="badge-bar">
+      <span class="badge">Ticket: #41794527</span>
+      <span class="badge">URL: mcstaging2.globewest.com/customer/account/</span>
+      <span class="badge red">3 Discrepancies Highlighted</span>
+      <span class="badge">Tested Viewports: Desktop (1440px) & Mobile (390px)</span>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Defect 1 -->
+    <div class="card">
+      <div class="card-header">
+        <h2>DEFECT #1: Utility Bar Visible on Dashboard (Frame 620 Spec Violation)</h2>
+        <span class="badge red">Figma Spec Discrepancy</span>
+      </div>
+      <div class="card-body">
+        <div class="img-wrapper">
+          <img src="DEFECT_SCREENSHOTS/DEFECT_1_UTILITY_BAR_NOT_HIDDEN.png" alt="Defect 1 - Utility Bar Visible">
+        </div>
+        <table class="defect-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">Summary</th>
+              <th style="width: 37%;">Expected (Figma Frame 620 Spec)</th>
+              <th style="width: 38%;">Actual (US Live Staging)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Utility Bar Visibility on Dashboard</strong></td>
+              <td class="expected"><strong>Desktop & Mobile:</strong> Hidden/no utility bar, so a user cannot toggle pricing view or see top showroom/company link.</td>
+              <td class="actual"><strong>Rendered:</strong> Dark brown utility bar is visible across both desktop and mobile viewports with "Book Showroom Appointment" and company name.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Defect 2 -->
+    <div class="card">
+      <div class="card-header">
+        <h2>DEFECT #2: Side Navigation Link Labels & Order Inconsistency</h2>
+        <span class="badge red">Side Nav Discrepancy</span>
+      </div>
+      <div class="card-body">
+        <div class="img-wrapper">
+          <img src="DEFECT_SCREENSHOTS/DEFECT_2_SIDE_NAV_LINKS_INCONSISTENCY.png" alt="Defect 2 - Side Nav Links">
+        </div>
+        <table class="defect-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">Summary</th>
+              <th style="width: 37%;">Expected (Figma Frame 620 Spec)</th>
+              <th style="width: 38%;">Actual (US Live Staging)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Side Navigation Links #3 & #5</strong></td>
+              <td class="expected">Link #3 must be <strong>"MY CLAIMS ⌵"</strong> and Link #5 must be <strong>"MY BOOKINGS ⌵"</strong>.</td>
+              <td class="actual">Link #3 renders <strong>"GLOBEWEST REFERRALS ⌵"</strong> and Link #5 renders <strong>"BOOKINGS ⌵"</strong>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Defect 3 -->
+    <div class="card">
+      <div class="card-header">
+        <h2>DEFECT #3: Recent Orders Table Status Badge Text Truncation</h2>
+        <span class="badge red">UI Overflow Discrepancy</span>
+      </div>
+      <div class="card-body">
+        <div class="img-wrapper">
+          <img src="DEFECT_SCREENSHOTS/DEFECT_3_RECENT_ORDERS_STATUS_TRUNCATION.png" alt="Defect 3 - Status Badges">
+        </div>
+        <table class="defect-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">Summary</th>
+              <th style="width: 37%;">Expected (Figma Frame 620 Spec)</th>
+              <th style="width: 38%;">Actual (US Live Staging)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Order Status Badge Label Padding</strong></td>
+              <td class="expected">Status badge pill containers should display the complete status name cleanly without text clipping (e.g. <em>Processing</em>, <em>Complete</em>, <em>Pending Payment</em>).</td>
+              <td class="actual">Fixed badge container width causes status labels to truncate with ellipses on both Desktop and Mobile: <strong>"Awaiting ..."</strong>, <strong>"Pending P..."</strong>, <strong>"Payment ..."</strong>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>GlobeWest QA Automation • Master Frame 620 Defect Summary</p>
+  </footer>
+
+</body>
+</html>

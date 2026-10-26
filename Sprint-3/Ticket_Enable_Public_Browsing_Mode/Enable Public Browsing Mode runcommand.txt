@@ -1,0 +1,8 @@
+Ticket Name: Enable Public Browsing Mode
+Page Name: Enable Public Browsing Mode (https://mcstaging2.globewest.com/indoor)
+
+Run command for Desktop View:
+npx playwright test tests/ticket-enable-public-browsing-mode.spec.js --project=chromium --headed
+
+Run command for Mobile View:
+npx playwright test tests/ticket-enable-public-browsing-mode.spec.js --project=mobile --headed

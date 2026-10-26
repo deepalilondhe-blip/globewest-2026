@@ -1,0 +1,81 @@
+{
+  "isVisible": true,
+  "display": "block",
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "boxShadow": "none",
+  "borderRadius": "0px",
+  "items": [
+    {
+      "text": "My Dashboard",
+      "href": "https://mcstaging2.globewest.com/customer/account/",
+      "tag": "LI",
+      "className": "nav item current item--dashboard"
+    },
+    {
+      "text": "My Dashboard",
+      "href": "https://mcstaging2.globewest.com/customer/account/",
+      "tag": "A",
+      "className": "current"
+    },
+    {
+      "text": "My Orders",
+      "href": "https://mcstaging2.globewest.com/gw_orders/order/index/",
+      "tag": "LI",
+      "className": "nav item item--counter item--orders"
+    },
+    {
+      "text": "My Orders",
+      "href": "https://mcstaging2.globewest.com/gw_orders/order/index/",
+      "tag": "A",
+      "className": ""
+    },
+    {
+      "text": "My Quotes",
+      "href": "https://mcstaging2.globewest.com/gw_quotes/quote/index/",
+      "tag": "LI",
+      "className": "nav item item--counter item--quotes"
+    },
+    {
+      "text": "My Quotes",
+      "href": "https://mcstaging2.globewest.com/gw_quotes/quote/index/",
+      "tag": "A",
+      "className": ""
+    },
+    {
+      "text": "My Holds",
+      "href": "https://mcstaging2.globewest.com/gw_orders/hold/index/",
+      "tag": "LI",
+      "className": "nav item item--counter item--holds"
+    },
+    {
+      "text": "My Holds",
+      "href": "https://mcstaging2.globewest.com/gw_orders/hold/index/",
+      "tag": "A",
+      "className": ""
+    },
+    {
+      "text": "Showroom Bookings",
+      "href": "https://mcstaging2.globewest.com/online_booking/account/index/",
+      "tag": "LI",
+      "className": "nav item item--showroom"
+    },
+    {
+      "text": "Showroom Bookings",
+      "href": "https://mcstaging2.globewest.com/online_booking/account/index/",
+      "tag": "A",
+      "className": ""
+    },
+    {
+      "text": "Logout",
+      "href": "https://mcstaging2.globewest.com/customer/account/logout/",
+      "tag": "LI",
+      "className": "nav item item--logout"
+    },
+    {
+      "text": "Logout",
+      "href": "https://mcstaging2.globewest.com/customer/account/logout/",
+      "tag": "A",
+      "className": ""
+    }
+  ]
+}

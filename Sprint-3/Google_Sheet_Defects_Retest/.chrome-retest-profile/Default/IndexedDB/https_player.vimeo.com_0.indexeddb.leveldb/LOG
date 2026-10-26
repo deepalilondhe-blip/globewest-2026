@@ -1,0 +1,6 @@
+2026/10/12-17:44:01.513 cc3d Creating DB /home/deepali/My Projects/Deepali/GlobeWest 2026 (2)/Sprint-3/Google_Sheet_Defects_Retest/.chrome-retest-profile/Default/IndexedDB/https_player.vimeo.com_0.indexeddb.leveldb since it was missing.
+2026/10/12-17:44:01.517 cc3d Reusing MANIFEST /home/deepali/My Projects/Deepali/GlobeWest 2026 (2)/Sprint-3/Google_Sheet_Defects_Retest/.chrome-retest-profile/Default/IndexedDB/https_player.vimeo.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/10/12-17:44:01.526 cc3d Level-0 table #5: started
+2026/10/12-17:44:01.527 cc3d Level-0 table #5: 1617 bytes OK
+2026/10/12-17:44:01.530 cc3d Delete type=0 #3
+2026/10/12-17:44:01.530 cc3d Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)

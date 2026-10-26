@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Defect Report & Proofs — Static Pages (#41794538)</title>
+  <style>
+    :root {
+      --bg: #fdf2f2;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border: #fecaca;
+      --defect-red: #dc2626;
+      --green-ok: #16a34a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #f8fafc;
+      color: var(--text-main);
+      padding: 30px 20px;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    header {
+      background: var(--card-bg);
+      padding: 24px 30px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    header h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--defect-red);
+      margin-bottom: 8px;
+    }
+    header p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    .summary-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .summary-item {
+      padding: 14px;
+      border-radius: 8px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+    }
+    .summary-item .num {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--defect-red);
+    }
+    .summary-item .label {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .defect-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .defect-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid #fed7aa;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.05);
+    }
+    .defect-header {
+      padding: 18px 24px;
+      background: #fff7ed;
+      border-bottom: 1px solid #fed7aa;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .defect-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #9a3412;
+    }
+    .severity-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+    .defect-body {
+      padding: 20px 24px;
+    }
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    .spec-table th, .spec-table td {
+      padding: 10px 14px;
+      border: 1px solid #e2e8f0;
+      text-align: left;
+    }
+    .spec-table th {
+      background: #f8fafc;
+      width: 25%;
+      font-weight: 600;
+    }
+    .text-green { color: var(--green-ok); font-weight: 600; }
+    .text-red { color: var(--defect-red); font-weight: 600; }
+    
+    .proof-container {
+      background: #0f172a;
+      padding: 16px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .proof-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Static Pages: Defect Audit Report & Visual Proofs</h1>
+    <p>Ticket #41794538: Static Pages: Terms, Privacy, Contact, FAQ, 404 | Authenticated Dual-Storefront Audit</p>
+    <div class="summary-box">
+      <div class="summary-item">
+        <div class="num">4</div>
+        <div class="label">Total Defects Identified</div>
+      </div>
+      <div class="summary-item">
+        <div class="num" style="color: #ea580c;">2 High</div>
+        <div class="label">P1 Severity (WCAG / Data)</div>
+      </div>
+      <div class="summary-item">
+        <div class="num" style="color: #0284c7;">1 Medium</div>
+        <div class="label">P2 Severity (Legal Sync)</div>
+      </div>
+      <div class="summary-item">
+        <div class="num" style="color: #64748b;">1 Low</div>
+        <div class="label">P3 Severity (Staging Tag)</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="defect-list">
+
+    <!-- Defect 1 -->
+    <div class="defect-card">
+      <div class="defect-header">
+        <div class="defect-title">DEFECT 1: Help Centre Page Missing &lt;title&gt; Tag (WCAG Violation) & 404 Hero Banner</div>
+        <span class="severity-badge">P1 - HIGH</span>
+      </div>
+      <div class="defect-body">
+        <table class="spec-table">
+          <tr>
+            <th>Affected Page</th>
+            <td>Help Centre / FAQ (<code>https://mcstaging2.globewest.com/help-centre</code>)</td>
+          </tr>
+          <tr>
+            <th>Expected (AU Baseline)</th>
+            <td class="text-green">Browser title is '&lt;title&gt;Help centre&lt;/title&gt;' (conforms to WCAG 2.2 AA Criterion 2.4.2 Page Titled). Hero banner image loads crisp photography.</td>
+          </tr>
+          <tr>
+            <th>Actual (US Staging Live)</th>
+            <td class="text-red">Browser title is completely EMPTY (<code>&lt;title&gt;&lt;/title&gt;</code> / <code>document.title === ""</code>). Hero banner image <code>help-center-banner.jpg</code> returns HTTP 404.</td>
+          </tr>
+          <tr>
+            <th>Root Cause & Impact</th>
+            <td>SEO & Accessibility defect. Screen readers and search crawlers cannot identify page purpose without a title tag. Broken banner causes visible image pop-in/missing graphic.</td>
+          </tr>
+        </table>
+        <div class="proof-container">
+          <img src="DEFECT_SCREENSHOTS/ANNOTATED_DEFECT_1.png" alt="Defect 1 Proof">
+        </div>
+      </div>
+    </div>
+
+    <!-- Defect 2 -->
+    <div class="defect-card">
+      <div class="defect-header">
+        <div class="defect-title">DEFECT 2: US Contact Us Page Leaking Australian Showrooms & .com.au Emails</div>
+        <span class="severity-badge">P1 - HIGH</span>
+      </div>
+      <div class="defect-body">
+        <table class="spec-table">
+          <tr>
+            <th>Affected Page</th>
+            <td>Contact Us (<code>https://mcstaging2.globewest.com/contact-us</code>)</td>
+          </tr>
+          <tr>
+            <th>Expected</th>
+            <td class="text-green">US Showroom locations and US trade customer service contacts (or generic inquiry form).</td>
+          </tr>
+          <tr>
+            <th>Actual (US Staging Live)</th>
+            <td class="text-red">Displays Australian Showroom addresses (Melbourne Head Office, Sydney, Brisbane, Perth) and Australian contact emails (<code>melbourne@globewest.com.au</code>, etc.). Broken image: <code>GW-090724-005-3_375x420.jpg</code>.</td>
+          </tr>
+          <tr>
+            <th>Root Cause & Impact</th>
+            <td>CMS catalog copy was cloned from AU production without US showroom localization. US customers will see Australian physical addresses and email domains.</td>
+          </tr>
+        </table>
+        <div class="proof-container">
+          <img src="DEFECT_SCREENSHOTS/ANNOTATED_DEFECT_2.png" alt="Defect 2 Proof">
+        </div>
+      </div>
+    </div>
+
+    <!-- Defect 3 -->
+    <div class="defect-card">
+      <div class="defect-header">
+        <div class="defect-title">DEFECT 3: Australian Corporate Entity & Statutory Jurisdiction Leaked in US Terms</div>
+        <span class="severity-badge">P2 - MEDIUM</span>
+      </div>
+      <div class="defect-body">
+        <table class="spec-table">
+          <tr>
+            <th>Affected Page</th>
+            <td>Terms & Conditions (<code>https://mcstaging2.globewest.com/terms-and-conditions-page</code>) & Privacy Policy</td>
+          </tr>
+          <tr>
+            <th>Expected</th>
+            <td class="text-green">Terms governed by appropriate US jurisdiction, US entity information, and US claims/support channels.</td>
+          </tr>
+          <tr>
+            <th>Actual (US Staging Live)</th>
+            <td class="text-red">Clause 1.1 specifies: "GlobeWest Pty Ltd, Victoria, Australia with company number ACN 674 872 621", lists <code>claims@globewest.com.au</code>, and references PPSA (Australian Personal Property Securities Act).</td>
+          </tr>
+          <tr>
+            <th>Root Cause & Impact</th>
+            <td>Legal copy needs legal team review to ensure US entity registration and governing state law replace Australian corporate references.</td>
+          </tr>
+        </table>
+        <div class="proof-container">
+          <img src="DEFECT_SCREENSHOTS/ANNOTATED_DEFECT_3.png" alt="Defect 3 Proof">
+        </div>
+      </div>
+    </div>
+
+    <!-- Defect 4 -->
+    <div class="defect-card">
+      <div class="defect-header">
+        <div class="defect-title">DEFECT 4: 404 Error Page Document Title Leaking Staging Prefix '[US]'</div>
+        <span class="severity-badge">P3 - LOW</span>
+      </div>
+      <div class="defect-body">
+        <table class="spec-table">
+          <tr>
+            <th>Affected Page</th>
+            <td>404 Error Page (<code>https://mcstaging2.globewest.com/non-existent-page-404-test</code>)</td>
+          </tr>
+          <tr>
+            <th>Expected (AU Baseline)</th>
+            <td class="text-green">Clean page title: <code>&lt;title&gt;404 Not Found&lt;/title&gt;</code>.</td>
+          </tr>
+          <tr>
+            <th>Actual (US Staging Live)</th>
+            <td class="text-red">Document title renders as <code>&lt;title&gt;[US] 404 Not Found&lt;/title&gt;</code> leaking internal staging store view name.</td>
+          </tr>
+          <tr>
+            <th>Root Cause & Impact</th>
+            <td>Magento CMS page configuration for 404 in US store view retains the staging store code prefix <code>[US]</code> in Page Title field.</td>
+          </tr>
+        </table>
+        <div class="proof-container">
+          <img src="DEFECT_SCREENSHOTS/ANNOTATED_DEFECT_4.png" alt="Defect 4 Proof">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

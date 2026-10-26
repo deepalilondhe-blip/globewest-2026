@@ -1,0 +1,72 @@
+{
+  "title": "My Dashboard",
+  "sideNavLinks": [
+    "Quotes\n                    10",
+    "Holds\n                    5",
+    "Orders\n                    8",
+    "Invoices",
+    "Invoices Requiring Payment",
+    "After Sales & Claims",
+    "Account Details",
+    "Clients Details",
+    "Referred Quotes\n                    1",
+    "Referred Boards",
+    "Company Details",
+    "Addresses",
+    "Showroom Bookings",
+    "LOYALTY PROGRAM",
+    "Email Preferences",
+    "Submit Help Form",
+    "Help Centre",
+    "LOGOUT"
+  ],
+  "mainHeadings": [
+    {
+      "tag": "H2",
+      "text": "Welcome, Deepali Londhe"
+    },
+    {
+      "tag": "H3",
+      "text": "My Recent Orders"
+    },
+    {
+      "tag": "H2",
+      "text": "Upcoming Events & Promotions"
+    },
+    {
+      "tag": "H3",
+      "text": "Showroom Bookings"
+    },
+    {
+      "tag": "H2",
+      "text": "Frequently Asked Questions"
+    },
+    {
+      "tag": "H3",
+      "text": "Frequently asked question content goes here"
+    },
+    {
+      "tag": "H3",
+      "text": "Frequently asked question content goes here 2"
+    },
+    {
+      "tag": "H3",
+      "text": "Frequently asked question content goes here 3"
+    },
+    {
+      "tag": "H3",
+      "text": "Frequently asked question content goes here 4"
+    },
+    {
+      "tag": "H3",
+      "text": "Frequently asked question content goes here 5"
+    }
+  ],
+  "hasWelcomeBanner": true,
+  "hasRecentOrders": true,
+  "hasEventsPromotions": false,
+  "hasFaqs": true,
+  "hasBookings": true,
+  "hasSubmitClaimNotice": true,
+  "bodyTextSnippet": "Enterprise tier\nWelcome, Deepali Londhe\nCUSTOMER #999130725\n Tier Discount: 54% off\n\nLorem ipsum dolor sit amet, adipiscing rhoncus litora ut dui morbi, mattis nascetur amet, ut justo primis fusce.\n\nMy Recent Orders\n\nSee all recent orders below.\n\nVIEW ALL\nORDER\n\t\nDATE\n\t\nSTATUS\n\t\nTOTAL\n\t\nBALANCE\n\tACTIONS\n#SO972501\t09/27/26\tAwaiting Payment\t$10,316.00\t$10,316.00\t\nActions\n\n#SO972502\t09/21/26\tPending Payment\t$11,506.00\t$11,506.00\t\nActions\n\n#SO972503\t09/15/26\tPayment Review\t$1,470.50\t$1,470.50\t\nActions\nNew\n\nYou can now submit claims online\n\nLorem ipsum dolor sit amet, adipiscing rhoncus litora ut dui morbi, mattis nascetur amet, ut justo primis fusce.\n\nSUBMIT CLAIM\nUpcoming Events & Promotions\n\nLorem ipsum dolor sit ame.\n\nEvent\n\nEvent Title Goes Here\n\nLorem ipsum dolor sit amet, adipiscing rhon"
+}

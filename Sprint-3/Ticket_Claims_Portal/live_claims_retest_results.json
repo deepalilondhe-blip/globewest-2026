@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-10-13T10:33:52.080Z",
+  "customerAccount": {
+    "hasBanner": false,
+    "bannerText": "",
+    "submitHref": "",
+    "sidebarClaimsLinks": [
+      {
+        "text": "Open Claims",
+        "href": "https://mcstaging2.globewest.com/gw_sales/claim/index/status/open/"
+      },
+      {
+        "text": "Pending Claims",
+        "href": "https://mcstaging2.globewest.com/gw_sales/claim/index/status/pending/"
+      },
+      {
+        "text": "Closed Claims",
+        "href": "https://mcstaging2.globewest.com/gw_sales/claim/index/status/closed/"
+      }
+    ]
+  },
+  "claimsRoutes": {
+    "/claims": {
+      "status": 404,
+      "finalUrl": "https://mcstaging2.globewest.com/claims",
+      "isRedirectedToDashboard": false,
+      "is404": true,
+      "pageTitle": "[US] 404 Not Found"
+    },
+    "/claims/create": {
+      "status": 404,
+      "finalUrl": "https://mcstaging2.globewest.com/claims/create",
+      "isRedirectedToDashboard": false,
+      "is404": true,
+      "pageTitle": "[US] 404 Not Found"
+    },
+    "/customer/account/claims/": {
+      "status": 404,
+      "finalUrl": "https://mcstaging2.globewest.com/customer/account/claims/",
+      "isRedirectedToDashboard": false,
+      "is404": true,
+      "pageTitle": "[US] 404 Not Found"
+    },
+    "/gw_sales/claim/index/status/open/": {
+      "status": 200,
+      "finalUrl": "https://mcstaging2.globewest.com/customer/account/",
+      "isRedirectedToDashboard": true,
+      "is404": false,
+      "pageTitle": "My Dashboard"
+    },
+    "/gw_sales/claim/create/": {
+      "status": 404,
+      "finalUrl": "https://mcstaging2.globewest.com/gw_sales/claim/create/",
+      "isRedirectedToDashboard": false,
+      "is404": true,
+      "pageTitle": "[US] 404 Not Found"
+    }
+  },
+  "adminConfig": {
+    "menuItems": [
+      "Indoor",
+      "Outdoor",
+      "Homewares",
+      "In Stock",
+      "Customisation",
+      "Projects",
+      "Inspiration",
+      "Support",
+      "Contact"
+    ]
+  }
+}

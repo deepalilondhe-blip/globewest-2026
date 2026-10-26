@@ -1,0 +1,24 @@
+{
+  "step1ExistingEmail": {
+    "hasError": false,
+    "errorMessage": null,
+    "advancedToStep2": true
+  },
+  "einFieldInfo": {
+    "tag": "INPUT",
+    "name": "ein",
+    "id": "abn",
+    "className": "input-text",
+    "isRequiredClass": false,
+    "dataValidate": null,
+    "ariaRequired": null,
+    "labelHtml": "<span data-bind=\"text: businessIdLabel\">EIN</span>",
+    "labelText": "EIN"
+  },
+  "step2EmptyEin": {
+    "einError": null,
+    "step3Active": true,
+    "allErrors": []
+  },
+  "timestamp": "2026-10-19T10:05:23.470Z"
+}

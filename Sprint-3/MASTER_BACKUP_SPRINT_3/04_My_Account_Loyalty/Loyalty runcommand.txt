@@ -1,0 +1,8 @@
+Ticket Name: My Account - Loyalty
+Page Name: Loyalty Program (https://mcstaging2.globewest.com/loyalty/)
+
+Run command for Desktop View:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_My_Account_Loyalty/scripts/capture_live_desktop.js"
+
+Run command for Mobile View:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_My_Account_Loyalty/scripts/capture_live_mobile.js"

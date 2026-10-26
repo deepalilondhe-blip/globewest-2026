@@ -1,0 +1,209 @@
+{
+  "probeResults": [
+    {
+      "testUrl": "https://mcstaging2.globewest.com/gw_sales/claim/index/status/open/",
+      "status": 200,
+      "title": "My Dashboard",
+      "h1": "",
+      "finalUrl": "https://mcstaging2.globewest.com/customer/account/"
+    },
+    {
+      "testUrl": "https://mcstaging2.globewest.com/gw_sales/claim/index/",
+      "status": 200,
+      "title": "My Dashboard",
+      "h1": "",
+      "finalUrl": "https://mcstaging2.globewest.com/customer/account/"
+    },
+    {
+      "testUrl": "https://mcstaging2.globewest.com/claims",
+      "status": 404,
+      "title": "[US] 404 Not Found",
+      "h1": "None",
+      "finalUrl": "https://mcstaging2.globewest.com/claims"
+    },
+    {
+      "testUrl": "https://mcstaging2.globewest.com/claims/index",
+      "status": 404,
+      "title": "[US] 404 Not Found",
+      "h1": "None",
+      "finalUrl": "https://mcstaging2.globewest.com/claims/index"
+    },
+    {
+      "testUrl": "https://mcstaging2.globewest.com/claims/create",
+      "status": 404,
+      "title": "[US] 404 Not Found",
+      "h1": "None",
+      "finalUrl": "https://mcstaging2.globewest.com/claims/create"
+    },
+    {
+      "testUrl": "https://mcstaging2.globewest.com/gw_sales/claim/create/",
+      "status": 404,
+      "title": "[US] 404 Not Found",
+      "h1": "None",
+      "finalUrl": "https://mcstaging2.globewest.com/gw_sales/claim/create/"
+    }
+  ],
+  "claimsPageData": {
+    "title": "My Dashboard",
+    "h1": "",
+    "bodySnippet": "Book Showroom Appointment\nMy Account\nMy Cart\nIndoor\nOutdoor\nHomewares\nIn Stock\nCustomisation\nProjects\nInspiration\nSupport\nContact\nMY DASHBOARD\nMY ACCOUNT\nMY CLAIMS\nGLOBEWEST REFERRALS\nMY COMPANY\nBOOKINGS\nLOYALTY PROGRAM\nHELP CENTRE\nLOGOUT\nEnterprise tier\nWelcome, Deepali Londhe\nCUSTOMER #999130725\n Tier Discount: 54% off\n\nLorem ipsum dolor sit amet, adipiscing rhoncus litora ut dui morbi, mattis nascetur amet, ut justo primis fusce.\n\nMy Recent Orders\n\nSee all recent orders below.\n\nVIEW ALL\nORDER\n\t\nDATE\n\t\nSTATUS\n\t\nTOTAL\n\t\nBALANCE\n\tACTIONS\n#SO972501\t09/27/26\tAwaiting Payment\t$10,316.00\t$10,316.00\t\nActions\n\n#SO972502\t09/21/26\tPending Payment\t$11,506.00\t$11,506.00\t\nActions\n\n#SO972503\t09/15/26\tPayment Review\t$1,470.50\t$1,470.50\t\nActions\nNew\n\nYou can now submit claims online\n\nLorem ipsum dolor sit amet, adipiscing rhoncus litora ut dui morbi, mattis nascetur amet, ut justo primis fusce.\n\nSUBMIT CLAIM\nUpcoming Events & Promotions\n\nLorem ipsum dolor sit ame.\n\nEvent\n\nEvent Title Goes Here\n\nLore",
+    "createClaimBtn": null,
+    "statusTabs": [
+      {
+        "text": "Quotes\n                    14",
+        "href": "https://mcstaging2.globewest.com/gw_quotes/quote/index/",
+        "isActive": false
+      },
+      {
+        "text": "Holds\n                    5",
+        "href": "https://mcstaging2.globewest.com/gw_orders/hold/index/",
+        "isActive": false
+      },
+      {
+        "text": "Orders\n                    8",
+        "href": "https://mcstaging2.globewest.com/gw_orders/order/index/",
+        "isActive": false
+      },
+      {
+        "text": "Invoices",
+        "href": "https://mcstaging2.globewest.com/gw_sales/invoice/index/",
+        "isActive": false
+      },
+      {
+        "text": "Invoices Requiring Payment",
+        "href": "https://mcstaging2.globewest.com/gw_sales/invoice_requiring/index/",
+        "isActive": false
+      },
+      {
+        "text": "Account Details",
+        "href": "https://mcstaging2.globewest.com/customer/account/edit/",
+        "isActive": false
+      },
+      {
+        "text": "Open Claims",
+        "href": "https://mcstaging2.globewest.com/gw_sales/claim/index/status/open/",
+        "isActive": false
+      },
+      {
+        "text": "Pending Claims",
+        "href": "https://mcstaging2.globewest.com/gw_sales/claim/index/status/pending/",
+        "isActive": false
+      },
+      {
+        "text": "Closed Claims",
+        "href": "https://mcstaging2.globewest.com/gw_sales/claim/index/status/closed/",
+        "isActive": false
+      },
+      {
+        "text": "Clients Details",
+        "href": "https://mcstaging2.globewest.com/client/",
+        "isActive": false
+      },
+      {
+        "text": "Referred Quotes\n                    1",
+        "href": "https://mcstaging2.globewest.com/gw_quotes/quote_referred/index/",
+        "isActive": false
+      },
+      {
+        "text": "Referred Boards",
+        "href": "https://mcstaging2.globewest.com/boards/boards_referred/index/",
+        "isActive": false
+      },
+      {
+        "text": "Company Details",
+        "href": "https://mcstaging2.globewest.com/company/profile/",
+        "isActive": false
+      },
+      {
+        "text": "Addresses",
+        "href": "https://mcstaging2.globewest.com/gwcompany/address/",
+        "isActive": false
+      },
+      {
+        "text": "Showroom Bookings",
+        "href": "https://mcstaging2.globewest.com/online_booking/account/index/",
+        "isActive": false
+      },
+      {
+        "text": "Email Preferences",
+        "href": "https://mcstaging2.globewest.com/email-preference/",
+        "isActive": false
+      },
+      {
+        "text": "Submit Help Form",
+        "href": "https://mcstaging2.globewest.com/help-centre/ask-a-question/",
+        "isActive": false
+      },
+      {
+        "text": "Help Centre",
+        "href": "https://mcstaging2.globewest.com/help-centre/",
+        "isActive": false
+      },
+      {
+        "text": "#SO972501",
+        "href": "https://mcstaging2.globewest.com/gw_orders/order/view/order_id/124/",
+        "isActive": false
+      },
+      {
+        "text": "View",
+        "href": "https://mcstaging2.globewest.com/gw_orders/order/view/order_id/124/",
+        "isActive": false
+      },
+      {
+        "text": "Make payment",
+        "href": "https://mcstaging2.globewest.com/gw_orders/order/makepayment/order_id/124/",
+        "isActive": false
+      },
+      {
+        "text": "#SO972502",
+        "href": "https://mcstaging2.globewest.com/gw_orders/order/view/order_id/127/",
+        "isActive": false
+      },
+      {
+        "text": "View",
+        "href": "https://mcstaging2.globewest.com/gw_orders/order/view/order_id/127/",
+        "isActive": false
+      },
+      {
+        "text": "Make payment",
+        "href": "https://mcstaging2.globewest.com/gw_orders/order/makepayment/order_id/127/",
+        "isActive": false
+      },
+      {
+        "text": "#SO972503",
+        "href": "https://mcstaging2.globewest.com/gw_orders/order/view/order_id/130/",
+        "isActive": false
+      },
+      {
+        "text": "View",
+        "href": "https://mcstaging2.globewest.com/gw_orders/order/view/order_id/130/",
+        "isActive": false
+      },
+      {
+        "text": "Make payment",
+        "href": "https://mcstaging2.globewest.com/gw_orders/order/makepayment/order_id/130/",
+        "isActive": false
+      }
+    ],
+    "table": {
+      "headers": [
+        "ORDER",
+        "DATE",
+        "STATUS",
+        "TOTAL",
+        "BALANCE",
+        "ACTIONS"
+      ],
+      "rowCount": 3
+    },
+    "faqs": {
+      "count": 0,
+      "samples": []
+    },
+    "hasNeedHelp": false,
+    "needHelpSnippet": null,
+    "hasAuPhone": false,
+    "hasAuEmail": false,
+    "hasIncGst": false
+  }
+}

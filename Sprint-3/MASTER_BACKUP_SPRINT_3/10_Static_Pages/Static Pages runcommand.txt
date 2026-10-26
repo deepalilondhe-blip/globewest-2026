@@ -1,0 +1,8 @@
+Ticket Name: #41794538 - Static Pages: Terms, Privacy, Contact, FAQ, 404
+Page Name: Static Pages (Terms, Privacy, Contact, FAQ, 404) (https://mcstaging2.globewest.com/)
+
+Run command for Desktop View:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794538_Static_Pages/scripts/run_headed_live_au_comparison.js"
+
+Run command for Mobile View:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794538_Static_Pages/scripts/run_headed_mobile_live_comparison.js"

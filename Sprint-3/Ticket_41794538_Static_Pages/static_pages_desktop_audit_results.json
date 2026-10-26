@@ -1,0 +1,173 @@
+{
+  "timestamp": "2026-10-01T11:18:51.769Z",
+  "ticket": "#41794538 - Static Pages: Terms, Privacy, Contact, FAQ, 404",
+  "pages": {
+    "404": {
+      "au": {
+        "title": "404 Not Found",
+        "h1": [],
+        "h2": [
+          "Page not available.",
+          "CONNECT WITH US",
+          "Subscribe"
+        ],
+        "bodyLength": 1154,
+        "imagesCount": 0,
+        "brokenImages": 0,
+        "placeholders": 0
+      },
+      "us": {
+        "title": "[US] 404 Not Found",
+        "h1": [],
+        "h2": [
+          "Page not available.",
+          "CONNECT WITH US",
+          "Subscribe"
+        ],
+        "bodyLength": 1174,
+        "imagesCount": 0,
+        "brokenImages": 0,
+        "placeholders": 0
+      }
+    },
+    "terms": {
+      "au": {
+        "title": "Terms & Conditions",
+        "h1": [],
+        "h2": [
+          "What we collect",
+          "What we do with the information we gather",
+          "Security",
+          "How we use cookies",
+          "Links to other websites",
+          "Controlling your personal information",
+          "List of cookies we collect",
+          "Terms & Conditions",
+          "CONNECT WITH US",
+          "Subscribe"
+        ],
+        "bodyLength": 65939,
+        "imagesCount": 0,
+        "brokenImages": 0,
+        "placeholders": 0
+      },
+      "us": {
+        "title": "Terms and Conditions",
+        "h1": [
+          "Terms and Conditions"
+        ],
+        "h2": [
+          "Connect with us",
+          "Subscribe"
+        ],
+        "bodyLength": 44187,
+        "imagesCount": 0,
+        "brokenImages": 0,
+        "placeholders": 0
+      }
+    },
+    "privacy": {
+      "au": {
+        "title": "Privacy Policy",
+        "h1": [],
+        "h2": [
+          "What we collect",
+          "What we do with the information we gather",
+          "Security",
+          "How we use cookies",
+          "Links to other websites",
+          "Controlling your personal information",
+          "List of cookies we collect",
+          "CONNECT WITH US",
+          "Subscribe"
+        ],
+        "bodyLength": 25164,
+        "imagesCount": 0,
+        "brokenImages": 0,
+        "placeholders": 0
+      },
+      "us": {
+        "title": "Privacy Policy",
+        "h1": [],
+        "h2": [
+          "What we collect",
+          "What we do with the information we gather",
+          "Security",
+          "How we use cookies",
+          "Links to other websites",
+          "Controlling your personal information",
+          "List of cookies we collect",
+          "CONNECT WITH US",
+          "Subscribe"
+        ],
+        "bodyLength": 25194,
+        "imagesCount": 0,
+        "brokenImages": 0,
+        "placeholders": 0
+      }
+    },
+    "contact": {
+      "au": {
+        "title": "Title Staging",
+        "h1": [],
+        "h2": [
+          "Contact Us",
+          "Online enquiry",
+          "Showroom locations",
+          "Melbourne Head Office & Warehouse",
+          "Melbourne Outlet",
+          "CONNECT WITH US",
+          "Subscribe"
+        ],
+        "bodyLength": 3139,
+        "imagesCount": 6,
+        "brokenImages": 3,
+        "placeholders": 0
+      },
+      "us": {
+        "title": "Contact Us | GlobeWest",
+        "h1": [],
+        "h2": [
+          "Contact Us",
+          "Our Showrooms",
+          "Online enquiry",
+          "CONNECT WITH US",
+          "Subscribe"
+        ],
+        "bodyLength": 3468,
+        "imagesCount": 13,
+        "brokenImages": 4,
+        "placeholders": 0
+      }
+    },
+    "faq": {
+      "au": {
+        "title": "Help centre",
+        "h1": [],
+        "h2": [
+          "Help Centre",
+          "CONNECT WITH US",
+          "Subscribe"
+        ],
+        "bodyLength": 2681,
+        "imagesCount": 2,
+        "brokenImages": 1,
+        "placeholders": 0
+      },
+      "us": {
+        "title": "",
+        "h1": [
+          "GlobeWest Help Centre"
+        ],
+        "h2": [
+          "CONNECT WITH US",
+          "Subscribe"
+        ],
+        "bodyLength": 1354,
+        "imagesCount": 2,
+        "brokenImages": 1,
+        "placeholders": 0
+      }
+    }
+  }
+}

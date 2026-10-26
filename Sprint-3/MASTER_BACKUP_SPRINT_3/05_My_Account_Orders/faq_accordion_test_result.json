@@ -1,0 +1,18 @@
+[
+  {
+    "index": 1,
+    "h3Classes": "allow",
+    "h3AriaExpanded": "true",
+    "nextTag": "DIV",
+    "nextVisible": true,
+    "nextHeight": 104
+  },
+  {
+    "index": 2,
+    "h3Classes": "allow",
+    "h3AriaExpanded": "true",
+    "nextTag": "DIV",
+    "nextVisible": true,
+    "nextHeight": 104
+  }
+]

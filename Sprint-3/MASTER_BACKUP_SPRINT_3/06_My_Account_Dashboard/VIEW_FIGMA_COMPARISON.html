@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlobeWest US - My Account Dashboard Figma vs Live Staging Comparison</title>
+  <style>
+    :root {
+      --primary: #181c21;
+      --accent: #0066cc;
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --border: #e9ecef;
+      --text: #212529;
+      --text-muted: #6c757d;
+      --pass: #28a745;
+      --fail: #dc3545;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); padding: 32px 24px; line-height: 1.5; }
+    header { max-width: 1400px; margin: 0 auto 32px auto; background: var(--primary); color: #fff; padding: 28px 32px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    header h1 { font-size: 26px; font-weight: 700; margin-bottom: 8px; }
+    header p { color: #adb5bd; font-size: 15px; }
+    .badge-bar { margin-top: 14px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .badge { padding: 4px 12px; border-radius: 9999px; font-size: 13px; font-weight: 600; background: rgba(255,255,255,0.15); color: #fff; }
+    .badge.green { background: #28a745; }
+    .badge.red { background: #dc3545; }
+    .container { max-width: 1400px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px; }
+    .card { background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.04); overflow: hidden; }
+    .card-header { padding: 18px 24px; background: #fff; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .card-header h2 { font-size: 18px; font-weight: 600; color: var(--text); }
+    .card-body { padding: 20px 24px; }
+    .img-wrapper { width: 100%; border-radius: 8px; overflow: hidden; background: #f1f3f5; border: 1px solid #dee2e6; margin-bottom: 12px; }
+    .img-wrapper img { width: 100%; height: auto; display: block; }
+    .notes { font-size: 14px; color: var(--text-muted); background: #f8f9fa; padding: 12px 16px; border-radius: 6px; border-left: 4px solid var(--accent); }
+    footer { max-width: 1400px; margin: 40px auto 0 auto; text-align: center; color: var(--text-muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📋 GlobeWest US: My Account Dashboard - Figma vs Live Audit</h1>
+    <p>Comprehensive verification of US Staging Dashboard against Figma Master Frame 620 (Node 2581-64183)</p>
+    <div class="badge-bar">
+      <span class="badge">Ticket: #41794527</span>
+      <span class="badge">URL: mcstaging2.globewest.com/customer/account/</span>
+      <span class="badge green">Figma Verified: Frame 620</span>
+      <span class="badge green">10 Audit Modules</span>
+      <span class="badge red">3 Discrepancies Flagged</span>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- 01 Header & Utility Bar -->
+    <div class="card">
+      <div class="card-header">
+        <h2>1. Header & Utility Bar Comparison</h2>
+        <span class="badge red">Frame 620 Discrepancy</span>
+      </div>
+      <div class="card-body">
+        <div class="img-wrapper">
+          <img src="REAL_COMPARISONS/01_COMPARE_HEADER_AND_UTILITY_BAR.png" alt="Header & Utility Bar Comparison">
+        </div>
+        <div class="notes">
+          <strong>Figma Frame 620 Specification:</strong> "Desktop & Mobile: Hidden/no utility bar, so a user cannot toggle pricing view."<br>
+          <strong>Live US Staging:</strong> The dark brown utility bar is visible with "Book Showroom Appointment" and company details.
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 Left Navigation Sidebar -->
+    <div class="card">
+      <div class="card-header">
+        <h2>2. Left Navigation Sidebar Comparison</h2>
+        <span class="badge red">Label Discrepancy</span>
+      </div>
+      <div class="card-body">
+        <div class="img-wrapper">
+          <img src="REAL_COMPARISONS/02_COMPARE_LEFT_NAVIGATION_SIDEBAR.png" alt="Left Navigation Sidebar Comparison">
+        </div>
+        <div class="notes">
+          <strong>Figma Frame 620 Specification:</strong> Link #3 must be "MY CLAIMS ⌵" and link #5 must be "MY BOOKINGS ⌵".<br>
+          <strong>Live US Staging:</strong> Link #3 renders "GLOBEWEST REFERRALS ⌵" and link #5 renders "BOOKINGS ⌵".
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 Welcome / Loyalty Banner -->
+    <div class="card">
+      <div class="card-header">
+        <h2>3. Welcome / Loyalty Banner Comparison</h2>
+        <span class="badge green">Passed</span>
+      </div>
+      <div class="card-body">
+        <div class="img-wrapper">
+          <img src="REAL_COMPARISONS/03_COMPARE_WELCOME_LOYALTY_BANNER.png" alt="Welcome / Loyalty Banner Comparison">
+        </div>
+        <div class="notes">
+          <strong>Verification:</strong> Renders Enterprise tier pill badge, IvyMode serif heading ("Welcome, Deepali Londhe"), Customer ID, Tier Discount (54% off), and promotional sofa image. Matches Figma artboard.
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 Recent Orders Table -->
+    <div class="card">
+      <div class="card-header">
+        <h2>4. My Recent Orders Table Comparison</h2>
+        <span class="badge red">Badge Truncation Discrepancy</span>
+      </div>
+      <div class="card-body">
+        <div class="img-wrapper">
+          <img src="REAL_COMPARISONS/04_COMPARE_RECENT_ORDERS_TABLE.png" alt="Recent Orders Table Comparison">
+        </div>
+        <div class="notes">
+          <strong>Verification:</strong> Table columns (ORDER, DATE, STATUS, TOTAL, BALANCE, ACTIONS), USA date formatting (09/27/26), and order link navigation match Figma. Status badges exhibit text truncation with ellipses ("Awaiting ...", "Pending P...").
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 Submit Claim Notification -->
+    <div class="card">
+      <div class="card-header">
+        <h2>5. Online Claims Notification Block Comparison</h2>
+        <span class="badge green">Passed</span>
+      </div>
+      <div class="card-body">
+        <div class="img-wrapper">
+          <img src="REAL_COMPARISONS/05_COMPARE_SUBMIT_CLAIM_NOTIFICATION.png" alt="Submit Claim Notification Comparison">
+        </div>
+        <div class="notes">
+          <strong>Verification:</strong> 1-column notification block with "New" tag, "You can now submit claims online" heading, paragraph copy, and "SUBMIT CLAIM" button fully matches Figma.
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 Upcoming Events & Promotions -->
+    <div class="card">
+      <div class="card-header">
+        <h2>6. Upcoming Events & Promotions Comparison</h2>
+        <span class="badge green">Passed</span>
+      </div>
+      <div class="card-body">
+        <div class="img-wrapper">
+          <img src="REAL_COMPARISONS/06_COMPARE_EVENTS_AND_PROMOTIONS.png" alt="Upcoming Events & Promotions Comparison">
+        </div>
+        <div class="notes">
+          <strong>Verification:</strong> 3-column promo grid rendered cleanly with Card 1 (Event), Card 2 (Sale: 15% off All Indoor), and Card 3 (News) including images, copy, and CTAs.
+        </div>
+      </div>
+    </div>
+
+    <!-- 07 Showroom Bookings -->
+    <div class="card">
+      <div class="card-header">
+        <h2>7. Showroom Bookings Block Comparison</h2>
+        <span class="badge green">Passed</span>
+      </div>
+      <div class="card-body">
+        <div class="img-wrapper">
+          <img src="REAL_COMPARISONS/07_COMPARE_SHOWROOM_BOOKINGS.png" alt="Showroom Bookings Comparison">
+        </div>
+        <div class="notes">
+          <strong>Verification:</strong> Correctly displays empty state message ("All upcoming showroom bookings listed below...") and "MAKE A BOOKING" CTA button when no active appointments exist.
+        </div>
+      </div>
+    </div>
+
+    <!-- 08 Frequently Asked Questions -->
+    <div class="card">
+      <div class="card-header">
+        <h2>8. Frequently Asked Questions Comparison</h2>
+        <span class="badge green">Passed</span>
+      </div>
+      <div class="card-body">
+        <div class="img-wrapper">
+          <img src="REAL_COMPARISONS/08_COMPARE_FREQUENTLY_ASKED_QUESTIONS.png" alt="FAQs Comparison">
+        </div>
+        <div class="notes">
+          <strong>Verification:</strong> 5 FAQ accordion items rendered, closed by default, single accordion active at a time as required by Frame 620.
+        </div>
+      </div>
+    </div>
+
+    <!-- 09 Mobile Header & Nav -->
+    <div class="card">
+      <div class="card-header">
+        <h2>9. Mobile Header & Navigation Comparison</h2>
+        <span class="badge red">Utility Bar Discrepancy</span>
+      </div>
+      <div class="card-body">
+        <div class="img-wrapper">
+          <img src="REAL_COMPARISONS/09_COMPARE_MOBILE_HEADER_AND_NAV.png" alt="Mobile Header & Nav Comparison">
+        </div>
+        <div class="notes">
+          <strong>Verification:</strong> Mobile hamburger, search, logo, and "My Dashboard" collapsible selector match layout. Top utility bar remains rendered on mobile.
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 Mobile Orders & Cards -->
+    <div class="card">
+      <div class="card-header">
+        <h2>10. Mobile Orders Table & Content Blocks Comparison</h2>
+        <span class="badge green">Passed</span>
+      </div>
+      <div class="card-body">
+        <div class="img-wrapper">
+          <img src="REAL_COMPARISONS/10_COMPARE_MOBILE_ORDERS_AND_CARDS.png" alt="Mobile Orders & Cards Comparison">
+        </div>
+        <div class="notes">
+          <strong>Verification:</strong> Mobile orders table appropriately collapses columns (Balance hidden), and promo cards stack vertically in mobile viewport.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>GlobeWest QA Automation • Master Frame 620 Verification Report</p>
+  </footer>
+
+</body>
+</html>

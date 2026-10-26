@@ -46,6 +46,27 @@ module.exports = defineConfig({
   projects: [
     /* 💻 Desktop Browsers */
     {
+      name: 'chromium',
+      use: { 
+        ...devices['Desktop Chrome'], 
+        channel: 'chrome',
+        launchOptions: {
+          args: ['--force-renderer-accessibility']
+        }
+      },
+    },
+    {
+      name: 'mobile',
+      use: {
+        ...devices['Pixel 5'],
+        userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1',
+        viewport: { width: 393, height: 852 },
+        deviceScaleFactor: 3,
+        hasTouch: true,
+        isMobile: true,
+      },
+    },
+    {
       name: 'desktop-chrome',
       use: { 
         ...devices['Desktop Chrome'], 

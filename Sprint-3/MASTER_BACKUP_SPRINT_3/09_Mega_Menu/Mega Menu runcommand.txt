@@ -1,0 +1,8 @@
+Ticket Name: #41794534 - Mega menu
+Page Name: Mega Menu (https://mcstaging2.globewest.com)
+
+Run command for Desktop View:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794534_Mega_Menu/scripts/verify_individual_mega_menus_desktop.js"
+
+Run command for Mobile View:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794534_Mega_Menu/scripts/verify_individual_mega_menus_mobile.js"

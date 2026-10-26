@@ -1,0 +1,233 @@
+{
+  "url": "https://mcstaging2.globewest.com/gw_orders/hold/index/",
+  "pageHeading": "My Holds",
+  "description": "N/A",
+  "filterElements": [
+    {
+      "text": "Quotes",
+      "classes": "",
+      "isActive": false,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(56, 28, 18)",
+      "padding": "0px",
+      "borderRadius": "0px"
+    },
+    {
+      "text": "Holds",
+      "classes": "current",
+      "isActive": false,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(56, 28, 18)",
+      "padding": "0px",
+      "borderRadius": "0px"
+    },
+    {
+      "text": "Orders",
+      "classes": "",
+      "isActive": false,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(56, 28, 18)",
+      "padding": "0px",
+      "borderRadius": "0px"
+    },
+    {
+      "text": "Invoices",
+      "classes": "",
+      "isActive": false,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(56, 28, 18)",
+      "padding": "0px",
+      "borderRadius": "0px"
+    },
+    {
+      "text": "Invoices Requiring Payment",
+      "classes": "",
+      "isActive": false,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(56, 28, 18)",
+      "padding": "0px",
+      "borderRadius": "0px"
+    },
+    {
+      "text": "After Sales & Claims",
+      "classes": "",
+      "isActive": false,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(56, 28, 18)",
+      "padding": "0px",
+      "borderRadius": "0px"
+    },
+    {
+      "text": "Account Details",
+      "classes": "",
+      "isActive": false,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(56, 28, 18)",
+      "padding": "0px",
+      "borderRadius": "0px"
+    },
+    {
+      "text": "Clients Details",
+      "classes": "",
+      "isActive": false,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(56, 28, 18)",
+      "padding": "0px",
+      "borderRadius": "0px"
+    },
+    {
+      "text": "Referred Quotes",
+      "classes": "",
+      "isActive": false,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(56, 28, 18)",
+      "padding": "0px",
+      "borderRadius": "0px"
+    },
+    {
+      "text": "Referred Boards",
+      "classes": "",
+      "isActive": false,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(56, 28, 18)",
+      "padding": "0px",
+      "borderRadius": "0px"
+    },
+    {
+      "text": "Company Details",
+      "classes": "",
+      "isActive": false,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(56, 28, 18)",
+      "padding": "0px",
+      "borderRadius": "0px"
+    },
+    {
+      "text": "Addresses",
+      "classes": "",
+      "isActive": false,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(56, 28, 18)",
+      "padding": "0px",
+      "borderRadius": "0px"
+    },
+    {
+      "text": "Showroom Bookings",
+      "classes": "",
+      "isActive": false,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(56, 28, 18)",
+      "padding": "0px",
+      "borderRadius": "0px"
+    },
+    {
+      "text": "Email Preferences",
+      "classes": "",
+      "isActive": false,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(56, 28, 18)",
+      "padding": "0px",
+      "borderRadius": "0px"
+    },
+    {
+      "text": "Submit Help Form",
+      "classes": "",
+      "isActive": false,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(56, 28, 18)",
+      "padding": "0px",
+      "borderRadius": "0px"
+    },
+    {
+      "text": "Help Centre",
+      "classes": "",
+      "isActive": false,
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(56, 28, 18)",
+      "padding": "0px",
+      "borderRadius": "0px"
+    },
+    {
+      "text": "ACTIVE",
+      "classes": "account-listing-ui__filters__filter is-active",
+      "isActive": true,
+      "bg": "rgb(56, 28, 18)",
+      "color": "rgb(255, 255, 255)",
+      "padding": "0px 16px",
+      "borderRadius": "0px"
+    },
+    {
+      "text": "INACTIVE",
+      "classes": "account-listing-ui__filters__filter",
+      "isActive": false,
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(56, 28, 18)",
+      "padding": "0px 16px",
+      "borderRadius": "0px"
+    }
+  ],
+  "search": {
+    "present": true,
+    "placeholder": null,
+    "parentClass": ""
+  },
+  "table": {
+    "headers": [
+      "HOLD",
+      "EXP. DATE",
+      "CUST P0#",
+      "ORDER NAME",
+      "CLIENT NAME",
+      "STATUS",
+      "TOTAL",
+      "ACTIONS"
+    ],
+    "columnCount": 8,
+    "rowCount": 1,
+    "emptyAlert": "None",
+    "sampleRow": {
+      "rowNumber": 1,
+      "holdIdText": "Table is empty!",
+      "hasHoldLink": false,
+      "holdLinkHref": "NONE",
+      "cells": [
+        "Table is empty!"
+      ],
+      "hasActionsDropdown": false
+    }
+  },
+  "hasFAQ": true,
+  "supportText": "MY DASHBOARD\nMY ACCOUNT\nQuotes\nHolds\nOrders\nInvoices\nInvoices Requiring Payment\nAfter Sales & Claims\nAccount Details\nGLOBEWEST REFERRALS\nMY COMPANY\nBOOKINGS\nHELP CENTRE\nLOGOUT\nMy Holds\nA product hold reserves your favourite items for 2 business days.\nACTIVE\nINACTIVE\nHOLD\n\t\nEXP. DATE\n\t\nCUST P0#\n\t\nORDER NAME\n\t\nCLIENT NAME\n\t\nSTATUS\n\t\nTOTAL\n\tACTIONS\n\nTable is empty!\nFrequently Asked Questions\nFrequently asked question content goes here\nFrequently asked question content goes here\nNeed help? Contact our sales team\nP: +613 9518 1600\nsales@globewest.com\nOrder changes made after submission cannot be made via this portal.",
+  "sidebarLinks": [
+    {
+      "text": "Quotes",
+      "hasBadge": false,
+      "badgeValue": "NONE"
+    },
+    {
+      "text": "Holds",
+      "hasBadge": false,
+      "badgeValue": "NONE"
+    },
+    {
+      "text": "Orders",
+      "hasBadge": false,
+      "badgeValue": "NONE"
+    },
+    {
+      "text": "Invoices",
+      "hasBadge": false,
+      "badgeValue": "NONE"
+    },
+    {
+      "text": "Invoices Requiring Payment",
+      "hasBadge": false,
+      "badgeValue": "NONE"
+    },
+    {
+      "text": "Referred Quotes",
+      "hasBadge": false,
+      "badgeValue": "NONE"
+    }
+  ]
+}

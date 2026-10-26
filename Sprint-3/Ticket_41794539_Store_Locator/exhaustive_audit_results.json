@@ -1,0 +1,178 @@
+{
+  "timestamp": "2026-10-14T04:14:00.319Z",
+  "docTitle": "Find a Stockist & Showroom | GlobeWest",
+  "isTitleFixed": true,
+  "h1Inspection": {
+    "text": "FIND A STOCKIST",
+    "fontFamily": "IvyMode, \"Times New Roman\", Georgia, serif",
+    "fontSize": "30px",
+    "fontWeight": "400",
+    "lineHeight": "37px",
+    "letterSpacing": "0.8px",
+    "color": "rgb(56, 28, 18)",
+    "margin": "0px 0px 15px",
+    "padding": "0px"
+  },
+  "searchFormsInspection": {
+    "formCount": 0,
+    "inputs": [
+      {
+        "id": "",
+        "type": "text",
+        "placeholder": "",
+        "label": "NO_LABEL",
+        "fontSize": "13px",
+        "fontFamily": "proxima-nova, Helvetica, Arial, sans-serif",
+        "border": "0px solid rgb(56, 28, 18)",
+        "padding": "0px"
+      }
+    ]
+  },
+  "isPlaceholderFixed": false,
+  "mapInspection": {
+    "exists": true,
+    "width": "756.797px",
+    "height": "835px",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "hasErrorBox": false,
+    "errorSnippet": ""
+  },
+  "isMapBroken": true,
+  "cmsBlockInspection": {
+    "headingText": "How to Buy with a Stockist",
+    "headingFontWeight": "400",
+    "headingFontSize": "30px",
+    "headingFontFamily": "IvyMode, \"Times New Roman\", Georgia, serif",
+    "hasUsSuffix": false,
+    "hasAusFinest": true,
+    "hasFinalise": true,
+    "hasFinalize": false,
+    "snippet": "How to Buy with a Stockist GlobeWest is stocked at some of Australia's finest furniture and home decor retailers. Stockists display select GlobeWest products in-store and can order any item from the collection for you. You’re also welcome at GlobeWest trade showrooms. Consultants will connect you "
+  },
+  "isCmsSuffixRemoved": true,
+  "tradeHeaderInspection": {
+    "toggleVisible": null,
+    "toggleText": "",
+    "userGreeting": ""
+  },
+  "mobileEvaluation": {
+    "h1FontSize": "26px",
+    "mapHeight": "350px",
+    "inputCount": 2,
+    "placeholders": [
+      "Eg. 90210",
+      "Start Typing"
+    ]
+  },
+  "auBaselineInspection": {
+    "docTitle": "",
+    "h1": "FIND A STOCKIST",
+    "inputs": [
+      "Eg.3000",
+      "Start Typing"
+    ],
+    "mapOperational": true
+  },
+  "refererErrors": [
+    {
+      "type": "error",
+      "text": "Google Maps JavaScript API error: RefererNotAllowedMapError\nhttps://developers.google.com/maps/documentation/javascript/error-messages#referer-not-allowed-map-error\nYour site URL to be authorized: https://mcstaging2.globewest.com/locator"
+    },
+    {
+      "type": "error",
+      "text": "Google Maps JavaScript API error: RefererNotAllowedMapError\nhttps://developers.google.com/maps/documentation/javascript/error-messages#referer-not-allowed-map-error\nYour site URL to be authorized: https://mcstaging2.globewest.com/locator"
+    }
+  ],
+  "mapsNetworkRequests": [
+    {
+      "url": "https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDhcaKRBkTqWNXilkGkZEeNtp8uVJYNx8c",
+      "status": 200,
+      "statusText": ""
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/8b/marker.js",
+      "status": 200,
+      "statusText": ""
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/8b/map.js",
+      "status": 200,
+      "statusText": ""
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "status": 200,
+      "statusText": ""
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/8b/log.js",
+      "status": 200,
+      "statusText": ""
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/8b/onion.js",
+      "status": 200,
+      "statusText": ""
+    },
+    {
+      "url": "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
+      "status": 200,
+      "statusText": ""
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDhcaKRBkTqWNXilkGkZEeNtp8uVJYNx8c",
+      "status": 200,
+      "statusText": ""
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/8b/map.js",
+      "status": 200,
+      "statusText": ""
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/8b/marker.js",
+      "status": 200,
+      "statusText": ""
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/8b/log.js",
+      "status": 200,
+      "statusText": ""
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/8b/onion.js",
+      "status": 200,
+      "statusText": ""
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "status": 200,
+      "statusText": ""
+    },
+    {
+      "url": "https://maps.googleapis.com/$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo",
+      "status": 200,
+      "statusText": ""
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDhcaKRBkTqWNXilkGkZEeNtp8uVJYNx8c",
+      "status": 200,
+      "statusText": ""
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/8b/map.js",
+      "status": 200,
+      "statusText": ""
+    },
+    {
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/8b/marker.js",
+      "status": 200,
+      "statusText": ""
+    },
+    {
+      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "status": 200,
+      "statusText": ""
+    }
+  ]
+}

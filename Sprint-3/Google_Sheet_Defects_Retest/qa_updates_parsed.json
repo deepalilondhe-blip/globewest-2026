@@ -1,0 +1,502 @@
+[
+  {
+    "index": 1,
+    "ticket_id": "DE#01",
+    "page": "DashBoard",
+    "task": "Arrows are un-even.\nhttps://prnt.sc/eqQNH6yNWbev",
+    "status": "ReOpen",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/l5uDjkMgj2hX\nVertical alignment is not proper."
+  },
+  {
+    "index": 2,
+    "ticket_id": "DE#02",
+    "page": "DashBoard",
+    "task": "Column labels should be aligned to left same as per the Figma.\nhttps://prnt.sc/aPONlOkKHpbA",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/bNiOG57j09R4\nIt is working fine now"
+  },
+  {
+    "index": 3,
+    "ticket_id": "DE#03",
+    "page": "DashBoard",
+    "task": "Button size should be identical to each other.\nhttps://prnt.sc/MYymqukiHJnA",
+    "status": "Awaiting for client response",
+    "date": "8-Oct-2026",
+    "col9_comment": "we need to explain this to clients",
+    "col10_retest_note": ""
+  },
+  {
+    "index": 4,
+    "ticket_id": "DE#04",
+    "page": "Dashboard",
+    "task": "Text and button should be in same line as per the Figma.\nhttps://prnt.sc/qVKumFyMddAy",
+    "status": "Assigned to QA",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": ""
+  },
+  {
+    "index": 5,
+    "ticket_id": "DE#05",
+    "page": "Dashboard",
+    "task": "Text is missing as per the Figma design.\nhttps://prnt.sc/qAqlUjx3eW1L",
+    "status": "ReOpen",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/uN8E8SwzP-Lq\nText present above should mentioned below the table"
+  },
+  {
+    "index": 6,
+    "ticket_id": "DE#06",
+    "page": "Dashboard",
+    "task": "Title is different than the Figma.\nhttps://prnt.sc/b_RrfOebSGjJ",
+    "status": "Awaiting for client response",
+    "date": "8-Oct-2026",
+    "col9_comment": "We have already commented on this for the client.",
+    "col10_retest_note": ""
+  },
+  {
+    "index": 7,
+    "ticket_id": "DE#07",
+    "page": "Dashboard",
+    "task": "Edit booking is not working properly\nhttps://screenrec.com/share/ExAV0q6WwK",
+    "status": "Awaiting for client response",
+    "date": "8-Oct-2026",
+    "col9_comment": "It is depends on the cient.",
+    "col10_retest_note": ""
+  },
+  {
+    "index": 8,
+    "ticket_id": "DE#08",
+    "page": "Quote Listing",
+    "task": "Column label should match with Figma\nhttps://prnt.sc/3dMgKg9vb07t",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/z3IGCriaedMT\nIt is working fine now"
+  },
+  {
+    "index": 9,
+    "ticket_id": "DE#09",
+    "page": "Quote Listing",
+    "task": "Pagination section design should match with Figma\nhttps://prnt.sc/vU9ByE3mQhAf",
+    "status": "To Do",
+    "date": "8-Oct-2026",
+    "col9_comment": "Need to discuss it with the Developer",
+    "col10_retest_note": "https://prnt.sc/0eql0XafFCw1\nDesgined is not matched with the Figma"
+  },
+  {
+    "index": 10,
+    "ticket_id": "DE#10",
+    "page": "Quote Listing",
+    "task": "As per the comment only upto 8 FAQs will be added but in our case admin can add more than it.\nhttps://prnt.sc/7mlNCuzNklqP",
+    "status": "On hold",
+    "date": "8-Oct-2026",
+    "col9_comment": "As per the discussion it is coming from the CMS blck and it is not possible to restrice it.",
+    "col10_retest_note": ""
+  },
+  {
+    "index": 11,
+    "ticket_id": "DE#11",
+    "page": "Quote Listing Responsive",
+    "task": "table column sequence should match with figma\nhttps://prnt.sc/8cA5R4VB87Fk",
+    "status": "Awaiting for client response",
+    "date": "8-Oct-2026",
+    "col9_comment": "We have already commented on this for the client.",
+    "col10_retest_note": ""
+  },
+  {
+    "index": 12,
+    "ticket_id": "DE#12",
+    "page": "Quote Listing Responsive",
+    "task": "All the entries must be present in the responsive that are present in the desktop view.\nhttps://prnt.sc/I9m2Zhf03c8P",
+    "status": "Assigned to QA",
+    "date": "8-Oct-2026",
+    "col9_comment": "That's not an issue",
+    "col10_retest_note": "In desktop all the entries are displayed in the All section, But in the responsive All sectino is only have OPEN status entries\nDesktop: https://prnt.sc/90SCvIsldP_n\nMobile:"
+  },
+  {
+    "index": 13,
+    "ticket_id": "DE#13",
+    "page": "Quote Detail",
+    "task": "Test is missing\nhttps://prnt.sc/_PhL3FHNMxls",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/bA0G7snMKAMW\nIt is working fine now"
+  },
+  {
+    "index": 14,
+    "ticket_id": "DE#14",
+    "page": "Quote Detail",
+    "task": "Match the spacing between Label and value as per figma\nhttps://prnt.sc/xXWBbYadhWUi",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/tYVK63eTWyiZ\nIt is working fine now"
+  },
+  {
+    "index": 15,
+    "ticket_id": "DE#15",
+    "page": "Quote Detail",
+    "task": "Spacing should be properly matched with the Figma design.\nhttps://prnt.sc/vO6Y6e_I0tKM",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "]https://prnt.sc/NArXmbE1GJpa\nIt is working fine now"
+  },
+  {
+    "index": 16,
+    "ticket_id": "DE#16",
+    "page": "Quote Detail",
+    "task": "Instead of QTY, it should be stock status as per the Figma\nhttps://prnt.sc/6ksoKclPn4FB",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/SSJbcDuqGPJP\nIt is working fine now"
+  },
+  {
+    "index": 17,
+    "ticket_id": "DE#17",
+    "page": "Quote Detail",
+    "task": "Quote Pricing summary section is missing\nhttps://prnt.sc/WRy5CZZDp_Nf",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/lwr5wIqqYSY7\nIt is working fine now"
+  },
+  {
+    "index": 18,
+    "ticket_id": "DE#18",
+    "page": "Quote Detail",
+    "task": "Shipping option text is missing\nhttps://prnt.sc/P-hW_putTcrN",
+    "status": "To Do",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": ""
+  },
+  {
+    "index": 19,
+    "ticket_id": "DE#19",
+    "page": "Quote Detail",
+    "task": "Need to remove the section as not available in Figma\nhttps://prnt.sc/eSgFgHuJOgKe",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "need to discuss with developer",
+    "col10_retest_note": "https://prnt.sc/iRp_2Su3nTnQ\nIt is working fine now"
+  },
+  {
+    "index": 20,
+    "ticket_id": "DE#20",
+    "page": "Quote Detail",
+    "task": "Text and button should be aligned in one row.\nhttps://prnt.sc/ZsCzlGrYDuai",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/bgQDArAIqRzi\nIt is working fine now"
+  },
+  {
+    "index": 21,
+    "ticket_id": "DE#21",
+    "page": "Quote Detail",
+    "task": "As per the comment only upto 8 FAQs will be added but in our case admin can add more than it.\nhttps://prnt.sc/HhnfWepljfum",
+    "status": "To Do",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": ""
+  },
+  {
+    "index": 22,
+    "ticket_id": "DE#22",
+    "page": "Quote Detail",
+    "task": "Need to remove the text as not available in the Figma design.\nhttps://prnt.sc/o_aI_6-kjuLC",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/xNfGnOIpnpa1\nIt is working fine now"
+  },
+  {
+    "index": 23,
+    "ticket_id": "DE#23",
+    "page": "Quote Detail",
+    "task": "Button size should be matched with Figma\nhttps://prnt.sc/Rc_O9TORkEmN",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/VRqvt_5k02tD\nIt is working fine now"
+  },
+  {
+    "index": 24,
+    "ticket_id": "DE#24",
+    "page": "Quote Detail",
+    "task": "Add proper spacing betwwen label and value.\nhttps://prnt.sc/xoW1Gnb1QgZn",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/8cig0fld5MX4\nIt is working fine now"
+  },
+  {
+    "index": 25,
+    "ticket_id": "DE#25",
+    "page": "Quote View",
+    "task": "Make the alignment porper as per the Quote modify page.\nhttps://prnt.sc/VgnflxKb4WBJ",
+    "status": "On hold",
+    "date": "8-Oct-2026",
+    "col9_comment": "need to discuss with vinod for content center align",
+    "col10_retest_note": ""
+  },
+  {
+    "index": 26,
+    "ticket_id": "DE#26",
+    "page": "Quote View",
+    "task": "Make the spacing proper between lable and value.\nhttps://prnt.sc/zQ6jJ7ASz9UH",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/SBrFMj9OG9n1\nIt is working fine now"
+  },
+  {
+    "index": 27,
+    "ticket_id": "DE#27",
+    "page": "Order Listing",
+    "task": "Button size should be identical to each other.\nhttps://prnt.sc/1PLEtd2Ir-kw",
+    "status": "On hold",
+    "date": "8-Oct-2026",
+    "col9_comment": "Btn left align same as figma and text was center align",
+    "col10_retest_note": ""
+  },
+  {
+    "index": 28,
+    "ticket_id": "DE#28",
+    "page": "Order Listing",
+    "task": "Arrow size should be bigger as it is not properly visible.\nhttps://prnt.sc/ekH1iuAP0wJD",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/xzb4JcO4uFhm\nIt is working fine now"
+  },
+  {
+    "index": 29,
+    "ticket_id": "DE#29",
+    "page": "Ortder listing",
+    "task": "More than 8 faqs are added.\nhttps://prnt.sc/dzgDGfdYSqxn",
+    "status": "To Do",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": ""
+  },
+  {
+    "index": 30,
+    "ticket_id": "DE#30",
+    "page": "Order Detail",
+    "task": "Spelling Mistake, its POY instead of PO.\nhttps://prnt.sc/om9P0TnEUEsP",
+    "status": "Assigned to QA",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": ""
+  },
+  {
+    "index": 31,
+    "ticket_id": "DE#31",
+    "page": "Order Detail",
+    "task": "Order Notes are missing\nhttps://prnt.sc/6m0wX4urMurF",
+    "status": "To Do",
+    "date": "8-Oct-2026",
+    "col9_comment": "Need to Discuss with client",
+    "col10_retest_note": ""
+  },
+  {
+    "index": 32,
+    "ticket_id": "DE#32",
+    "page": "Order Detail",
+    "task": "Add proper spaing between label and vaule.\nhttps://prnt.sc/34a6O7-zrMoh",
+    "status": "Assigned to QA",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": ""
+  },
+  {
+    "index": 33,
+    "ticket_id": "DE#33",
+    "page": "Order Detail",
+    "task": "Mobile number should be displayed at bottom of address as per the Figma\nhttps://prnt.sc/qmQWtnM7NtnB",
+    "status": "To Do",
+    "date": "8-Oct-2026",
+    "col9_comment": "need to update sample data",
+    "col10_retest_note": ""
+  },
+  {
+    "index": 34,
+    "ticket_id": "DE#34",
+    "page": "Order Detail",
+    "task": "Need to remove \"ex Tax\" text from amount as it is not present in the Figma.\nhttps://prnt.sc/v3oGJ0XoHIlF",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/7Ncebf98dAl6\nIt is workign fine now"
+  },
+  {
+    "index": 35,
+    "ticket_id": "DE#35",
+    "page": "Order Detail",
+    "task": "Seperator line is missing and font size is not proper for the shipping Amount.\nhttps://prnt.sc/zp5RlFLaWdMS",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/bdgJWBfrklFj\nIt is working fine now"
+  },
+  {
+    "index": 36,
+    "ticket_id": "DE#36",
+    "page": "Order Detail",
+    "task": "1. Font size and font family is not proper.\n2. Alignment should matched with the Figma\n3. Need to remove the text that not present in Figma\nhttps://prnt.sc/F4ED9YBlwQs_",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/1Jdt1zcZCefb\nIt is working fine now"
+  },
+  {
+    "index": 37,
+    "ticket_id": "DE#37",
+    "page": "Order Detail Responsive",
+    "task": "Add proper spacing between label and value.\nhttps://prnt.sc/6uFpP1CEanpd",
+    "status": "Assigned to QA",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": ""
+  },
+  {
+    "index": 38,
+    "ticket_id": "DE#38",
+    "page": "Order Detail Responsive",
+    "task": "Summary section is not designed as per Figma\nhttps://prnt.sc/X3E49VXb9ru9",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/WvgfsdS0pOvf\nIt is working fine now"
+  },
+  {
+    "index": 39,
+    "ticket_id": "DE#39",
+    "page": "Order Detail Responsive",
+    "task": "Need to add proper spacing between FAQ title and table.\nhttps://prnt.sc/X3E49VXb9ru9",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/4MremUQBw-Xv\nIt is working fine now"
+  },
+  {
+    "index": 40,
+    "ticket_id": "DE#40",
+    "page": "Account Dropdown",
+    "task": "Need to add space between Logout link as per the Figma design.\nhttps://prnt.sc/BpqKPAI5XI6d",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/SCurzBCggULM\nIt is working fine now"
+  },
+  {
+    "index": 41,
+    "ticket_id": "DE#41",
+    "page": "Hold Listing",
+    "task": "Make the Arrows more visible.\nhttps://prnt.sc/tqsR0GZYyo3p",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/WpEfqRG2zhVE\nIt is working fine now"
+  },
+  {
+    "index": 42,
+    "ticket_id": "DE#42",
+    "page": "Hold Listing",
+    "task": "Can be add more than 8 FAQs\nhttps://prnt.sc/LcEVfg_Ejly7",
+    "status": "To Do",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": ""
+  },
+  {
+    "index": 43,
+    "ticket_id": "DE#43",
+    "page": "Hold Listing Responsive",
+    "task": "Column sequence should be matched with figma\nhttps://prnt.sc/gAG6LopVuIhw",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/FDjg99DHmeqx\nIt is working fine now"
+  },
+  {
+    "index": 44,
+    "ticket_id": "DE#44",
+    "page": "Hold Detail",
+    "task": "Spacing should be properly matched with the Figma design.\nhttps://prnt.sc/mZFG9rYm_F-r",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/CO_hOXBqnrXU\nIt is working fine now"
+  },
+  {
+    "index": 45,
+    "ticket_id": "DE#45",
+    "page": "Hold Detail",
+    "task": "Alignment is not proper.\nhttps://prnt.sc/RIAVqsqMNxg8",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/_VPBt0jMg_eE\nIt is working fine now"
+  },
+  {
+    "index": 46,
+    "ticket_id": "DE#46",
+    "page": "Hold Detail",
+    "task": "FAQ section is missing\nhttps://prnt.sc/ZyyVL7UYW0Bm",
+    "status": "To Do",
+    "date": "8-Oct-2026",
+    "col9_comment": "need to discuss with developer",
+    "col10_retest_note": ""
+  },
+  {
+    "index": 47,
+    "ticket_id": "DE#47",
+    "page": "Hold Detail",
+    "task": "1. Font style is not matched with Figma\n2. alignment is not matched with Figma\nhttps://prnt.sc/Jyui4e78Sh-Q",
+    "status": "To Do",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": ""
+  },
+  {
+    "index": 48,
+    "ticket_id": "DE#48",
+    "page": "Hold Detail",
+    "task": "Order Notes are missing\nhttps://prnt.sc/z0g4HZPdUHE3",
+    "status": "To Do",
+    "date": "8-Oct-2026",
+    "col9_comment": "Need to discuss with client",
+    "col10_retest_note": ""
+  },
+  {
+    "index": 49,
+    "ticket_id": "DE#49",
+    "page": "Hold Detail",
+    "task": "Shipping Amount is missing\nhttps://prnt.sc/-Qx-w5fGqcyI",
+    "status": "ReOpen",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/WwFV87t33Wa1\nShipping amount is missing"
+  },
+  {
+    "index": 50,
+    "ticket_id": "DE#50",
+    "page": "Hold View",
+    "task": "Spacing between label and text should be proper.\nhttps://prnt.sc/GHPrMnFigKoI",
+    "status": "Completed",
+    "date": "8-Oct-2026",
+    "col9_comment": "",
+    "col10_retest_note": "https://prnt.sc/RfKwJdCiSaut\nIt is working fine now"
+  }
+]

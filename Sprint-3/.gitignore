@@ -1,0 +1,7 @@
+# Ignore node modules and temp cache
+node_modules/
+.cache/
+*.tmp
+.DS_Store
+GlobeWest 2026/
+.figma-chrome-profile/

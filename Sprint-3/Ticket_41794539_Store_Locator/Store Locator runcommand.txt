@@ -1,0 +1,8 @@
+Ticket Name: #41794539 - Store Locator
+Page Name: Store Locator (https://mcstaging2.globewest.com/locator)
+
+Run command for Desktop View:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794539_Store_Locator/scripts/run_desktop_live_comparison.js"
+
+Run command for Mobile View:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794539_Store_Locator/scripts/run_mobile_live_comparison.js"

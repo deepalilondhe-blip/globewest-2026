@@ -1,0 +1,46 @@
+Hello @MohamedB @MichelleM ,
+
+I have tested the customer account registration disabling changes on Staging 2 across all touchpoints (Desktop & Responsive) as well as the Magento Admin configuration.
+
+Please find the detailed test results and evidence links below:
+
+1. Login Popup (Header "My Account" Flyout) - [PASSED]
+Verified that the "Don't have an account? / Create An Account" section is completely removed. Only the Customer Login form remains active.
+- Desktop Evidence: https://prnt.sc/0Ylg_bXjY1V4
+- Responsive Evidence: 
+  * https://prnt.sc/WXW_RRkq5Md8
+  * https://prnt.sc/G5ZRuTP3yqud
+
+2. Login Page (customer/account/login) - [DEFECT OBSERVED]
+- The [CREATE AN ACCOUNT] button is hidden as expected.
+- Admin Configuration Proof: https://prnt.sc/eyvKIhg64kAK
+- Desktop Verification: https://prnt.sc/QIjgGVGaOKz5
+- Responsive Verification: https://prnt.sc/o8GJC2HwdsDD
+
+Defect:
+While the [CREATE AN ACCOUNT] button has been removed, the heading "General Public" and its descriptive paragraph ("Create a web account with GlobeWest to check out faster, create and share wishlists and moodboards, view all orders and more!") remain visible as orphaned copy with no action button underneath.
+Expected: Since customer registration is disabled for the US store, the entire ".b2c-customer-register" block should be hidden on the US storefront so that only the "Trade Customers" block remains.
+- Defect Evidence (Desktop): https://prnt.sc/eI5KjbwM4Q0t
+- Defect Evidence (Responsive): https://prnt.sc/b_ImmrUHtl9m
+
+3. Register Page Direct URL Access (customer/account/create) - [PASSED]
+Direct navigation to the registration URL is intercepted and automatically redirects to the Login page (customer/account/login/).
+- Evidence: https://prnt.sc/ok6Ya8YxJ2ty
+
+4. Register Form Submit (POST customer/account/createpost) - [PASSED]
+Direct form submission bypass is rejected and redirected to the login page. Zero customer records are created in the database.
+- Redirect Evidence (Console): https://prnt.sc/d0HTpW1SMNFY
+- Rejection Proof (Admin DB 0 Records): https://prnt.sc/bsx4khVgy6Wz
+
+5. Ajax Signup API (POST od_theme/account/signup) - [PASSED]
+Endpoint returns: {"success": 0, "message": "Customer registration is already disabled."}
+- Evidence: https://prnt.sc/33qcB_nyK_zs
+
+6. Online Booking Guest API (POST online_booking/customer/save) - [PASSED]
+Endpoint returns: {"status": "error", "text": "Account registration is not available. Please sign in to an existing account to continue."}
+- Evidence: https://prnt.sc/bge7JVy_xvkr
+
+I have tested and assigning this ticket to you. Please let me know once the defect is fixed.
+
+Thank you,
+Deepali

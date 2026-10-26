@@ -1,0 +1,37 @@
+[
+  {
+    "input": "2125550199",
+    "type": "Standard US 10-digit",
+    "rejected": true,
+    "errorMessage": "Please enter a valid phone number. Example: 0491 570 157 or +61 491 570 157 (Mobile)",
+    "advancedToStep2": null
+  },
+  {
+    "input": "(212) 555-0199",
+    "type": "Formatted US (212) 555-0199",
+    "rejected": true,
+    "errorMessage": "Please enter a valid phone number. Example: 0491 570 157 or +61 491 570 157 (Mobile)",
+    "advancedToStep2": null
+  },
+  {
+    "input": "+1 212 555 0199",
+    "type": "US with +1 (+1 212 555 0199)",
+    "rejected": true,
+    "errorMessage": "Please enter a valid phone number. Example: 0491 570 157 or +61 491 570 157 (Mobile)",
+    "advancedToStep2": null
+  },
+  {
+    "input": "212-555-0199",
+    "type": "US with dashes 212-555-0199",
+    "rejected": true,
+    "errorMessage": "Please enter a valid phone number. Example: 0491 570 157 or +61 491 570 157 (Mobile)",
+    "advancedToStep2": null
+  },
+  {
+    "input": "0491 570 157",
+    "type": "Australian Mobile 0491 570 157",
+    "rejected": false,
+    "errorMessage": null,
+    "advancedToStep2": true
+  }
+]

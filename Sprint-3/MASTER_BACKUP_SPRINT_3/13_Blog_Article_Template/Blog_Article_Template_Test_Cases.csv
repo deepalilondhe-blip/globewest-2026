@@ -1,0 +1,107 @@
+Test ID,Feature / Category,Test Scenario,Pre-Conditions,Test Steps,Expected Result,Actual Result,Status,Severity
+"TC-BAT-01","Dual-Auth Matrix","Verify Public / Guest Browsing State (Wholesale Pricing Masked & Registration CTAs)","User is logged out / incognito session on US Staging (https://mcstaging2.globewest.com)","1. Open US Blog Article Template URL while unauthenticated.
+2. Inspect top utility header bar.
+3. Verify wholesale trade pricing is strictly hidden.
+4. Verify presence of ""Become a Trade Customer"" and ""Book Showroom"" CTAs.","Article loads cleanly in guest mode. Wholesale trade prices are completely masked. Top utility bar displays ""Become a Trade Customer"" and registration links without auth forced redirect.","Guest browsing verified. Wholesale pricing remains hidden across all header and flyout elements. Trade CTAs render as expected.","PASS","P1 - High"
+"TC-BAT-02","Dual-Auth Matrix","Verify Authenticated US Trade Account Access & Account Header Details","US Staging login URL (https://mcstaging2.globewest.com/customer/account/login/)","1. Log into US Staging with US Trade credentials (deepali.londhe@overdose.digital / Deep@123).
+2. Navigate to Blog Article Template URL.
+3. Assert company identification banner and account state.","Trade user is authenticated and header renders ""Company: Alert Loans Pty Ltd"" alongside ""Sign Out"" and My Account navigation.","Trade user successfully authenticated. Header displays active company details (""Alert Loans Pty Ltd"") with zero session drops.","PASS","P1 - High"
+"TC-BAT-03","Dual-Auth Matrix","Verify Header Pricing Toggle Mode Switcher (Trade Mode vs MSRP Mode)","Authenticated US Trade session on US Blog Article Template","1. Locate header pricing toggle dropdown.
+2. Verify presence of ""Trade ⌵"" and ""MSRP ⌵"" options.
+3. Toggle between Trade Mode and MSRP Mode and observe header state.","Pricing toggle dropdown allows switching between Trade Mode and MSRP Mode seamlessly across the blog article page.","Trade pricing toggle functions correctly in header. Mode selection toggles smoothly without page reload or styling glitches.","PASS","P2 - Medium"
+"TC-BAT-04","Dual-Auth Matrix","Verify AU Baseline Authenticated Session Parity Check","AU Staging (https://mcstaging2.globewest.com.au/customer/account/login/)","1. Log into AU Staging baseline with AU Trade account (deepalilondhe576@gmail.com / Deep@123).
+2. Access AU blog article baseline.
+3. Cross-verify header components and layout parity against US storefront.","AU authenticated baseline renders corresponding trade navigation and acts as benchmark for layout and feature parity.","AU baseline authenticated successfully. Core navigation and layout parity verified.","PASS","P2 - Medium"
+"TC-BAT-05","Hero Header Banner","Verify Full-Width Featured Hero Header Lifestyle Image Presence","Desktop Viewport 1440x900 on US Blog Article Template","1. Navigate to US Blog Article Template URL.
+2. Inspect area directly below site navigation and above breadcrumbs/title.
+3. Compare layout against AU Live article hero banner (Rectangle_Copy.jpg).","Full-width lifestyle hero header image renders directly beneath the main navigation bar across the full viewport width.","DEFECT: Top hero banner image is completely missing on US Staging. Article title and breadcrumbs sit directly flush beneath header with 0px hero breathing room.","FAIL","P1 - High"
+"TC-BAT-06","Hero Header Banner","Verify Hero Banner Image Aspect Ratio & Responsive Scaling Across Viewports","US Blog Article Template tested at 1440px, 1024px, 768px, and 390px widths","1. Inspect hero banner container styling and CSS rules.
+2. Resize viewport from desktop to mobile.
+3. Check image object-fit, max-width, and height calculations.","Hero container scales proportionally without distortion, keeping focal point centered.","BLOCKED: Due to Defect TC-BAT-05 (missing hero banner on US staging), responsive behavior of hero container cannot be validated.","FAIL","P1 - High"
+"TC-BAT-07","Article Title & Typography","Verify Article H1 Headline Copy Sanitation of Staging Duplication Artifacts","Desktop Viewport 1440x900","1. Locate main H1 page title on US article page.
+2. Inspect text content and verify editorial clarity.
+3. Compare against AU Live title: ""Stockist in Profile | IKOS Home"".","Title displays clean editorial headline: ""Stockist in Profile | IKOS Home"" with zero staging duplication text.","DEFECT: Title displays ""Stockist in Profile | IKOS Home (Duplicated) (Duplicated)"", polluting editorial quality with staging artifacts.","FAIL","P2 - Medium"
+"TC-BAT-08","Article Title & Typography","Verify Article URL-Key Slug Sanitation & Special Character Encoding","Browser address bar on US Staging","1. Inspect browser URL-key slug.
+2. Check for staging duplication suffixes and unencoded pipe characters (%7C).","Clean canonical URL slug matching editorial standard: /blog/stockist-in-profile/stockist-in-profile-ikos-home.","DEFECT: URL slug contains staging artifacts: /stockist-in-profile-%7C-ikos-home-duplicated.","FAIL","P2 - Medium"
+"TC-BAT-09","Breadcrumbs Navigation","Verify Breadcrumb Hierarchy Path, Text Labels, and Active Trail Links","US Blog Article Template loaded","1. Locate breadcrumbs trail above article title.
+2. Verify trail hierarchy: Home > Blog > Stockist in Profile > Stockist in Profile | IKOS Home.
+3. Click ""Home"" and ""Blog"" breadcrumbs to verify navigation.","Breadcrumb trail accurately mirrors CMS post hierarchy; links resolve internally to US staging URLs.","Breadcrumbs render correctly; ""Home"" and ""Blog"" links resolve to US store paths.","PASS","P3 - Low"
+"TC-BAT-10","Meta Information","Verify Article Publishing Date Formatting & Placement","Desktop Viewport 1440x900","1. Inspect date element rendered above or below article title.
+2. Verify format (e.g. ""OCT 02, 2026"") and computed typography.
+3. Confirm date matches publishing date of article.","Date displays clearly in standardized uppercase format (e.g. ""OCT 02, 2026"") with font-size 13px–14px and muted color.","Date element displays ""OCT 02, 2026"" with correct uppercase styling and font weight.","PASS","P3 - Low"
+"TC-BAT-11","Meta Information","Verify Article Category Badge / Pill Styling and Link Destination","US Blog Article Template loaded","1. Locate category tag (""STOCKIST IN PROFILE"").
+2. Inspect pill border-radius, padding, and text-transform.
+3. Click category link and verify category listing page destination.","Category pill renders with capsule styling / letter spacing, linking to US blog category archive.","Category tag renders and links internally to /blog/stockist-in-profile.","PASS","P3 - Low"
+"TC-BAT-12","Meta Information","Verify Byline / Author Attribution & Estimated Reading Time Rendering","US Blog Article Template loaded","1. Inspect author byline section under title.
+2. Verify author name or brand editorial credit.
+3. Verify presence or styling of reading time indicator if enabled in Magefan config.","Byline renders cleanly with consistent font-family and styling matching AU baseline.","Byline metadata renders in parity with AU baseline.","PASS","P3 - Low"
+"TC-BAT-13","Social Sharing","Verify Social Share Bar Icon Rendering (Facebook, Pinterest, X/Twitter)","Desktop Viewport 1440x900","1. Locate ""SHARE:"" social share block under article header.
+2. Inspect Facebook, Pinterest, and X/Twitter SVG/font icons.
+3. Verify icon dimensions (16px–20px), alignment, and spacing.","Share bar renders ""SHARE:"" label followed by crisp social media icons with clean margins.","Facebook, Pinterest, and Twitter icons render sharply with appropriate hover colors.","PASS","P3 - Low"
+"TC-BAT-14","Social Sharing","Verify Social Share Click Intent URLs & Popup Windows","Desktop Viewport with popup blocker disabled","1. Click Facebook icon and verify sharer.php popup URL.
+2. Click Pinterest icon and verify pin/create URL with article image.
+3. Click Twitter/X icon and verify intent/tweet URL with article title.","Each button opens respective social share dialog containing current article URL and title.","Share links open valid share intent URLs referencing US article URL.","PASS","P3 - Low"
+"TC-BAT-15","Editorial Content Body","Verify Editorial Lead / Introduction Paragraph Typography & Line Height","Desktop Viewport 1440x900","1. Locate opening lead paragraph.
+2. Inspect computed font-size (18px–20px), line-height (~1.6), and text-align.
+3. Check centered or left-aligned layout matching AU baseline.","Lead paragraph renders with prominent font size, generous line-height, and editorial spacing.","Lead paragraph typography aligns with AU design baseline.","PASS","P2 - Medium"
+"TC-BAT-16","Editorial Content Body","Verify Two-Column Page Builder Grid Structure (Interview Layout)","Desktop Viewport 1440x900","1. Scroll down through article body.
+2. Verify 2-column Page Builder grid: Left column (imagery) and Right column (Q&A text).
+3. Check column gap and gutter margins.","Two-column grid renders cleanly without overlapping containers or broken flex/grid wrappers.","Two-column Magefan Page Builder structure renders with left photography and right Q&A text.","PASS","P2 - Medium"
+"TC-BAT-17","Editorial Content Body","Verify Inset Lifestyle Photography High-Resolution Display & Aspect Ratio","Desktop Viewport 1440x900","1. Inspect all embedded photography in left and right body columns.
+2. Check naturalWidth vs clientWidth to verify image resolution.
+3. Check aspect ratios and confirm images are not stretched or pixelated.","High-resolution lifestyle interior photography renders with crisp detail and natural proportions.","Body lifestyle images render sharply with high natural resolution (e.g. 1200px+ width).","PASS","P2 - Medium"
+"TC-BAT-18","Editorial Content Body","Verify Editorial Headings & Subheadings Hierarchy (H2, H3, H4)","Article body scrolled into view","1. Inspect Q&A question headings in interview body.
+2. Verify semantic heading tags (H2/H3/H4) and font weights (600/700).
+3. Check margin-top and margin-bottom separation from paragraphs.","Headings maintain consistent editorial hierarchy and comfortable margin spacing.","Interview question headings render with consistent typography and margin separation.","PASS","P3 - Low"
+"TC-BAT-19","Editorial Content Body","Verify Blockquote / Pull Quote Stylistic Formatting & Accent Borders","Article body containing editorial pull quote","1. Locate pull quote in editorial body.
+2. Verify font styling (italic / serif / stylized display font).
+3. Inspect quotation marks or left accent border.","Pull quotes are styled distinctly from body copy with appropriate margins and italic styling.","Editorial quotes render with styled typography matching AU layout.","PASS","P3 - Low"
+"TC-BAT-20","Editorial Content Body","Verify Stockist Details & Location Callout Box Formatting","Scroll to stockist info section at bottom of body","1. Inspect stockist information callout container.
+2. Check business name, address, phone number, and opening hours.
+3. Verify container padding and border styling.","Stockist details render in a well-defined card/box with clean spacing and clear typography.","Stockist profile info renders cleanly in dedicated container.","PASS","P3 - Low"
+"TC-BAT-21","Editorial Content Body","Verify ""FIND A STOCKIST"" CTA Button Styling & URL Destination","Stockist section in view","1. Locate primary ""FIND A STOCKIST"" CTA button.
+2. Verify pill/box button styling, hover state, and cursor.
+3. Click button and verify destination URL.","Button styled to brand guidelines, navigating internally to US store locator (/locator) without AU redirection.","CTA button points to internal US path /locator. Button hover styling functions properly.","PASS","P2 - Medium"
+"TC-BAT-22","Editorial Content Body","Verify Inline Hyperlink Hover Transitions & Color Contrast","Editorial body with inline text links","1. Locate hyperlinked text in interview body.
+2. Hover over links and verify underline transition and color change.
+3. Inspect color contrast ratio against white background.","Links have distinct styling, visible hover feedback, and meet WCAG AA contrast ratio (>= 4.5:1).","Inline links have distinct color and hover underline transitions.","PASS","P3 - Low"
+"TC-BAT-23","Editorial Content Body","Verify Copy Scope & Localization Sanitization (Australian Data Leaks)","Full article text audit","1. Inspect editorial copy for Australian phone numbers, postcodes, or domain leaks.
+2. Check stockist address: ""Hampton VIC 3188"" and phone ""(03) 9521 0000"".
+3. Check for mentions of Australian states or .com.au links.","Sample content should be localized for US storefront or flagged as an Australian demo fixture.","CONTENT NOTE: Body text contains Australian address (""Hampton VIC 3188"") and AU phone. Acceptable as imported sample post, but recommended to update with US partner.","PASS (with Content Note)","P3 - Low"
+"TC-BAT-24","Bottom Blog Slider","Verify Card Thumbnail Image Rendering & Asset Integrity (.home-page-fresh-ideas)","Desktop Viewport 1440x900, scroll to bottom section","1. Scroll to newly added ""Inspiring Trends & Directions"" section at bottom of article.
+2. Inspect each card thumbnail <img> element in .home-page-fresh-ideas.
+3. Measure computed height and natural dimensions in browser console.","All 5 article cards render high-resolution thumbnail images (height ~260px–300px) above titles/categories.","DEFECT: All card thumbnail images have computed height: 0px (naturalWidth: 0). Cards show only text labels on blank beige background.","FAIL","P1 - High"
+"TC-BAT-25","Bottom Blog Slider","Verify Article Card Titles, Category Tags & Date Alignment in Slider","Bottom blog slider in view","1. Inspect card text content under thumbnails.
+2. Verify card category pill (""DESIGNER IN PROFILE"", ""COLLECTION"", etc.).
+3. Verify card headline truncation or multi-line wrapping.","Card titles wrap neatly with uniform line-height; category tags display consistent pill styling.","Card text and categories render, but visually float awkwardly due to collapsed 0px thumbnail images above them.","PASS (Text layout only)","P2 - Medium"
+"TC-BAT-26","Bottom Blog Slider","Verify Carousel Navigation Arrows & Swiper/Slick Track Controls","Bottom blog slider in view at 1440x900","1. Inspect slider container for left and right carousel arrow buttons.
+2. Attempt clicking next/previous arrows to cycle through posts.
+3. Compare against AU Live slider navigation controls.","Slider provides smooth horizontal carousel navigation with interactive left/right arrows and responsive card tracks.","DEFECT: Slider lacks carousel arrows and renders as a static, broken grid with overlapping divider lines.","FAIL","P2 - Medium"
+"TC-BAT-27","Bottom Blog Slider","Verify Carousel Touch Swipe & Drag Interaction on Touch Viewports","Mobile / Tablet touch viewport emulator","1. Perform horizontal drag / swipe gesture across slider cards.
+2. Verify track responds with fluid momentum scrolling.
+3. Ensure swipe gesture does not trigger unintended article navigation.","Carousel slides smoothly upon touch drag with appropriate friction and snap-to-slide physics.","BLOCKED: Missing interactive carousel arrows and collapsed image dimensions impair swiper track behavior.","FAIL","P2 - Medium"
+"TC-BAT-28","Bottom Blog Slider","Verify Card Hover States & Micro-Zoom Animations","Desktop Viewport with mouse cursor","1. Hover mouse over individual slider cards.
+2. Observe image scale transform (micro-zoom ~1.05x).
+3. Check cursor pointer feedback on card container.","Hovering triggers subtle image zoom transition and title color change with cursor pointer.","BLOCKED: Cannot test image micro-zoom because thumbnail images render at 0px height.","FAIL","P2 - Medium"
+"TC-BAT-29","Bottom Blog Slider","Verify Card Click-Through Navigation to Target Blog Articles","Bottom blog slider in view","1. Click on card title and container of card #1 (""Designer in Profile | Studio Yugen"").
+2. Verify browser navigates to correct target article URL on US Staging.
+3. Confirm zero redirection to Australian domain.","Clicking card navigates directly to corresponding US staging blog article without 404 or redirect error.","Card link routes to internal US staging path /blog/designer-in-profile/designer-in-profile-studio-yugen.","PASS","P2 - Medium"
+"TC-BAT-30","Reciprocal Navigation","Verify ""Previous Article"" Reciprocal Navigation Link Presence & Functionality","Scroll to .post-nav bar below the bottom blog slider","1. Locate sequential post navigation bar at bottom of page.
+2. Look for left-aligned ""← PREVIOUS ARTICLE"" link.
+3. Compare against AU Live post navigation bar.","Both ""← PREVIOUS ARTICLE"" and ""NEXT ARTICLE →"" links are visible and reciprocal.","DEFECT: ""← PREVIOUS ARTICLE"" link is completely missing from US Staging. Only ""NEXT ARTICLE →"" is displayed.","FAIL","P2 - Medium"
+"TC-BAT-31","Reciprocal Navigation","Verify ""NEXT ARTICLE →"" Link Target, Arrow Iconography & Navigation","Scroll to .post-nav bar","1. Inspect ""NEXT ARTICLE →"" link and right arrow icon.
+2. Hover over link to verify text color / arrow nudge animation.
+3. Click link and confirm navigation to subsequent chronological post.","Next link is clearly visible on right, styled with arrow icon, and navigates to the next chronological blog post.","""NEXT ARTICLE →"" link is visible and navigates to subsequent post on US Staging.","PASS","P2 - Medium"
+"TC-BAT-32","Responsive Layout","Verify Desktop Viewport (1440x900 & 1920x1080) Full Layout Integrity","Desktop Chrome at 1440x900 and 1920x1080","1. Load US Blog Article Template on large desktop viewports.
+2. Verify max-width container constraints (centered with side gutters).
+3. Check header, body columns, slider, and footer alignment.","Page maintains centered container (e.g. 1440px max-width) without stretching excessively on ultra-wide screens.","Desktop container constraints function properly; layout remains centered with consistent margins.","PASS","P2 - Medium"
+"TC-BAT-33","Responsive Layout","Verify Tablet Viewport (768x1024 - iPad) Two-Column Layout Adaptation","Tablet Viewport 768x1024 Portrait and Landscape","1. Switch viewport to 768px width.
+2. Verify 2-column editorial grid behavior (stacks or resizes smoothly).
+3. Inspect tap target sizes for buttons and social icons (minimum 44x44px).","Content resizes gracefully; columns maintain readable line lengths; tap targets meet mobile accessibility guidelines.","Tablet layout resizes gracefully without horizontal overflow or clipped text.","PASS","P2 - Medium"
+"TC-BAT-34","Responsive Layout","Verify Mobile Viewport (390x844 - iPhone) Single-Column Stacking & Touch Usability","Mobile Viewport 390x844 (iPhone 14/15 emulation)","1. Load US Blog Article Template on mobile viewport.
+2. Verify 2-column layout collapses to single vertical stack (photo then text).
+3. Verify title text wrapping and zero horizontal page scrolling.
+4. Check mobile header hamburger menu and cart icon.","Columns collapse into single column; images scale to 100% width; zero horizontal overflow scrollbar; clean mobile reading experience.","DEFECT: While columns collapse, the missing hero banner image and title wrapping with ""(Duplicated) (Duplicated)"" creates jarring visual clutter at top of mobile screen.","FAIL","P1 - High"
+"TC-BAT-35","Catalog & Asset Integrity","Verify Zero Placeholder Media & Open Graph Head Meta Tags Validation","Full Page DOM and HTML <head> inspection","1. Run automated scan across all <img> elements for ""/placeholder/default/"".
+2. Inspect HTML <head> tags: <title>, meta description, canonical link, og:image, and og:title.
+3. Verify canonical link matches US staging domain.","Zero NetSuite placeholder images present; SEO title and meta description accurately describe the article; Open Graph tags configured.","All article body images are genuine editorial photography (no placeholder paths); HTML title and Open Graph tags reflect article post.","PASS","P2 - Medium"

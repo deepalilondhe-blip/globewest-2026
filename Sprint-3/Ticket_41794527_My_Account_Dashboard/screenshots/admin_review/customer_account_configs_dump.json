@@ -1,0 +1,485 @@
+[
+  {
+    "title": "Dashboard Content",
+    "fields": [
+      {
+        "label": "Dashboard Welcome Text",
+        "value": "Be inspired and create joy in your environment"
+      },
+      {
+        "label": "Dashboard Subtitle Text",
+        "value": "To raise a product claim, go to My Account > After Sales & Claims. There, you ca"
+      },
+      {
+        "label": "Dashboard Recent Orders Title",
+        "value": "My Recent Orders"
+      },
+      {
+        "label": "Dashboard Recent Orders Text",
+        "value": "See all recent orders below. "
+      },
+      {
+        "label": "Dashboard My Designer or Stockist Title",
+        "value": "My Designer or Stockist"
+      },
+      {
+        "label": "My Designer or Stockist Text",
+        "value": "See below your Designer & Stockist details. "
+      },
+      {
+        "label": "Dashboard No Designer or Stockist Text",
+        "value": "No connected Designer or Stockist"
+      },
+      {
+        "label": "Dashboard Showroom and Booking Title",
+        "value": "Showroom Bookings "
+      },
+      {
+        "label": "Dashboard Showroom and Booking text",
+        "value": "All upcoming showroom bookings listed below. We look forward to seeing you soon!"
+      },
+      {
+        "label": "Dashboard Wishlist Title",
+        "value": "My Wishlist "
+      },
+      {
+        "label": "Dashboard Wishlist Amount Title",
+        "value": "You have %1 items in your wishlist"
+      },
+      {
+        "label": "Dashboard Holds Title",
+        "value": "My Holds"
+      },
+      {
+        "label": "Dashboard Holds Text",
+        "value": "Products will be held safe for you for 2 business days and are waiting for your "
+      },
+      {
+        "label": "Dashboard Referral Code Title",
+        "value": "Referral Code"
+      },
+      {
+        "label": "Dashboard Referral Code Text",
+        "value": "See below your referral code to share with your clients. "
+      },
+      {
+        "label": "Dashboard Attribution Credits Title",
+        "value": "Attribution Credits"
+      },
+      {
+        "label": "Is Show Orders block",
+        "value": "0"
+      },
+      {
+        "label": "Is Show Orders block",
+        "value": "1"
+      },
+      {
+        "label": "Is Show Holds Block",
+        "value": "1"
+      },
+      {
+        "label": "Is Show Credits Block",
+        "value": "1"
+      },
+      {
+        "label": "Is Show Booking Block",
+        "value": "1"
+      },
+      {
+        "label": "Is Show Wishlist Block",
+        "value": "0"
+      },
+      {
+        "label": "Is Show Quote Block",
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "title": "Hidden blocks of the dashboard",
+    "fields": [
+      {
+        "label": "Is Show Orders block",
+        "value": "1"
+      },
+      {
+        "label": "Is Show Holds Block",
+        "value": "1"
+      },
+      {
+        "label": "Is Show Credits Block",
+        "value": "1"
+      },
+      {
+        "label": "Is Show Booking Block",
+        "value": "1"
+      },
+      {
+        "label": "Is Show Wishlist Block",
+        "value": "0"
+      },
+      {
+        "label": "Is Show Quote Block",
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "title": "B2b Account Content",
+    "fields": [
+      {
+        "label": "B2b Quotes Title",
+        "value": "My Quotes"
+      },
+      {
+        "label": "B2b Quotes Text",
+        "value": "A GlobeWest quote is valid for 30 days, enough time for your clients to imagine "
+      },
+      {
+        "label": "B2b Quotes View Title",
+        "value": ""
+      },
+      {
+        "label": "B2b Quotes View Text",
+        "value": ""
+      },
+      {
+        "label": "B2b Quotes Modify Title",
+        "value": ""
+      },
+      {
+        "label": "B2b Quotes Modify Text",
+        "value": ""
+      },
+      {
+        "label": "B2b Holds Title",
+        "value": "My Holds"
+      },
+      {
+        "label": "B2b Holds Text",
+        "value": "A product hold reserves your favourite items for 2 business days."
+      },
+      {
+        "label": "B2b Holds View Title",
+        "value": ""
+      },
+      {
+        "label": "B2b Holds View Text",
+        "value": ""
+      },
+      {
+        "label": "B2b Holds Modify Title",
+        "value": ""
+      },
+      {
+        "label": "B2b Holds Modify Text",
+        "value": ""
+      },
+      {
+        "label": "B2b Orders Title",
+        "value": "My Orders"
+      },
+      {
+        "label": "B2b Orders Text",
+        "value": "Orders in the system, past and present. Thanks for creating your space with us."
+      },
+      {
+        "label": "B2b Orders View Title",
+        "value": ""
+      },
+      {
+        "label": "B2b Orders View Text",
+        "value": ""
+      },
+      {
+        "label": "B2b Invoices Title",
+        "value": "My Invoices"
+      },
+      {
+        "label": "B2b Invoices Text",
+        "value": "View your invoices below. "
+      },
+      {
+        "label": "B2b Invoices View Title",
+        "value": ""
+      },
+      {
+        "label": "B2b Invoices View Text",
+        "value": ""
+      },
+      {
+        "label": "B2b Invoices requiring payment Title",
+        "value": "Invoices requiring payment "
+      },
+      {
+        "label": "B2b Invoices requiring payment Text",
+        "value": "See below your invoices requiring payment. "
+      },
+      {
+        "label": "B2b Credit Title",
+        "value": "My Attribution Credits"
+      },
+      {
+        "label": "B2b Credit Text",
+        "value": "We design for Designers, and love our relationship with Trade. With this in mind"
+      },
+      {
+        "label": "B2b Wishlist Title",
+        "value": "Wishlist & Boards"
+      },
+      {
+        "label": "B2b Wishlist Text",
+        "value": "Visual list of items you've 'loved' whilst browsing our website.  Add them to a "
+      },
+      {
+        "label": "B2b details Title",
+        "value": "All your important information will be kept here. Please keep it updated so we h"
+      },
+      {
+        "label": "B2b Make Payment Title",
+        "value": "Make a Payment"
+      },
+      {
+        "label": "B2b Make Payment subtitle",
+        "value": "Process your payment to finalise your order, and we can get to work to deliver y"
+      },
+      {
+        "label": "B2b details Text",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "title": "B2b GlobeWest Referred",
+    "fields": [
+      {
+        "label": "B2b Referred Orders Title",
+        "value": "Referred Orders"
+      },
+      {
+        "label": "B2b Referred Orders Text",
+        "value": "Current client list of orders - making it easier for you to see where everything"
+      },
+      {
+        "label": "B2b Referred quotes Title",
+        "value": "Referred Quotes"
+      },
+      {
+        "label": "B2b Referred quotes Text",
+        "value": "Current client list of quotes - making it easier for you to see where everything"
+      },
+      {
+        "label": "B2b Referred boards Title",
+        "value": "Referred Boards"
+      },
+      {
+        "label": "B2b Referred boards Text",
+        "value": "Visual list of items you've 'loved' whilst browsing our website.  Add them to a "
+      }
+    ]
+  },
+  {
+    "title": "B2b My Clients",
+    "fields": [
+      {
+        "label": "B2b Client Details Title",
+        "value": ""
+      },
+      {
+        "label": "B2b Client Details Text",
+        "value": ""
+      },
+      {
+        "label": "B2b Client Details Privacy Text",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "title": "B2b My Company",
+    "fields": [
+      {
+        "label": "B2b Company Details Title",
+        "value": "Company Details"
+      },
+      {
+        "label": "B2b Company Details Text",
+        "value": "We want all the visitors to our site to see as much of you as we do. Please incl"
+      },
+      {
+        "label": "B2b Company Details Members Description Title",
+        "value": "Company Members"
+      },
+      {
+        "label": "B2b Company Details Members Description Text",
+        "value": "See below other members of your company. "
+      },
+      {
+        "label": "B2b Company Details Subcompanies Title",
+        "value": "Sub Company Details"
+      },
+      {
+        "label": "B2b Company Details Subcompanies Text",
+        "value": "See below your sub company member details. "
+      },
+      {
+        "label": "B2b Company Find Designer Title",
+        "value": "Find a Designer Profile"
+      },
+      {
+        "label": "B2b Company Find Designer Text",
+        "value": "We want all the visitors to our site to see why you are one of our favourite Des"
+      },
+      {
+        "label": "B2b Company Find Stockist Title",
+        "value": "Find a Stockist Profile"
+      },
+      {
+        "label": "B2b Company Find Stockist Text",
+        "value": "We want all the visitors to our site to see why you are one of our favourite Sto"
+      },
+      {
+        "label": "B2b Company Addresses Title",
+        "value": "Addresses "
+      },
+      {
+        "label": "B2b Company Addresses Text",
+        "value": "See your saved addresses below. "
+      },
+      {
+        "label": "B2b Company Addresses Billing Info Text",
+        "value": "To update your billing address contact GlobeWest Finance on  (03) 9518 1600 (opt"
+      },
+      {
+        "label": "B2b Company Booking Title",
+        "value": "Showroom Bookings"
+      },
+      {
+        "label": "B2b Company Booking Text",
+        "value": "All upcoming showroom bookings listed below. We look forward to seeing you soon!"
+      }
+    ]
+  },
+  {
+    "title": "B2b Help Centre",
+    "fields": [
+      {
+        "label": "B2b Claims in Progress Title",
+        "value": "My Claims"
+      },
+      {
+        "label": "B2b Claims in Progress Text",
+        "value": "See Claims details below. "
+      },
+      {
+        "label": "Lodge After Sales Enquiry Title",
+        "value": "Lodge After Sales Enquiry"
+      },
+      {
+        "label": "Lodge After Sales Enquiry Text",
+        "value": "Lodge any after sales queries below. "
+      }
+    ]
+  },
+  {
+    "title": "B2b Help Block Hold Orders",
+    "fields": [
+      {
+        "label": "Phone Number",
+        "value": "+613 9518 1600"
+      },
+      {
+        "label": "Email",
+        "value": "sales@globewest.com.au"
+      }
+    ]
+  },
+  {
+    "title": "Email Preferences",
+    "fields": [
+      {
+        "label": "Email Preferences Title",
+        "value": ""
+      },
+      {
+        "label": "Email Preferences Subtitle",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "title": "B2c Account",
+    "fields": [
+      {
+        "label": "B2C Quotes Title",
+        "value": "My Quotes"
+      },
+      {
+        "label": "B2C Quotes Text",
+        "value": "A GlobeWest quote is valid for 30 days, enough time for you to imagine all the j"
+      },
+      {
+        "label": "B2C Quotes View Title",
+        "value": ""
+      },
+      {
+        "label": "B2C Quotes View Text",
+        "value": ""
+      },
+      {
+        "label": "My Addresses Title",
+        "value": "My Addresses"
+      },
+      {
+        "label": "My Addresses Subtitle",
+        "value": "See your billing and delivery addresses below."
+      },
+      {
+        "label": "Individual orders title",
+        "value": ""
+      },
+      {
+        "label": "Individual orders subtitle",
+        "value": ""
+      },
+      {
+        "label": "Individual orders view title",
+        "value": ""
+      },
+      {
+        "label": "Individual orders view subtitle",
+        "value": ""
+      },
+      {
+        "label": "Referral orders view title",
+        "value": ""
+      },
+      {
+        "label": "Referral orders view subtitle",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "title": "B2C Help Centre",
+    "fields": [
+      {
+        "label": "B2b Return in Progress Title",
+        "value": "Returns in progress"
+      },
+      {
+        "label": "B2b Return in Progress Subtitle",
+        "value": "See below your in progress returns. "
+      },
+      {
+        "label": "Make a return Title",
+        "value": "Make a Return"
+      },
+      {
+        "label": "Make a return Subtitle",
+        "value": "Please provide details of your return below. "
+      }
+    ]
+  }
+]

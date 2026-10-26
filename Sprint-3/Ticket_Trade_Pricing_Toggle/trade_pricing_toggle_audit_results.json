@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-10-13T08:57:59.198Z",
+  "tests": {
+    "guest": {
+      "isToggleVisible": false,
+      "hasPrice": false
+    },
+    "tradeDefault": {
+      "togglePlacement": {
+        "rendered": true,
+        "triggerText": "Trade",
+        "rootClass": "price-view-trade"
+      },
+      "cardPriceTrade": {
+        "priceTextSnippet": "$638.00 | $1,424.50 | MSRP: | $701.80",
+        "hasTradePrice": true,
+        "hasMsrp": true
+      }
+    },
+    "msrpToggle": {
+      "rootClass": "price-view-msrp",
+      "triggerText": "MSRP",
+      "priceTextSnippet": "$701.80 | MSRP",
+      "hasMsrp": true
+    },
+    "cartInvariance": {
+      "items": [],
+      "grandTotal": "",
+      "hasToggleInCart": true
+    },
+    "mobileSlideout": {
+      "mobileTrigger": {
+        "found": true,
+        "hasEyeIcon": true,
+        "text": "Trade",
+        "width": 91.6875,
+        "height": 24
+      },
+      "slideoutState": {
+        "isVisible": true,
+        "items": [
+          "",
+          "Trade",
+          "Trade",
+          "MSRP",
+          "MSRP"
+        ]
+      }
+    }
+  }
+}

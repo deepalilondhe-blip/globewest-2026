@@ -26,16 +26,23 @@
 
 ---
 
-## 3. 🔐 Dual-Auth Matrix Testing (Logged-Out Guest vs. Logged-In Trade)
-Every ticket touching pricing, catalog, header, cart, or account MUST be tested under BOTH states:
-1. **Logged-Out (Public Browsing Mode)**:
+## 3. 🔐 Dual-Auth Matrix & Dual-URL Testing (Mandatory Logged-In on BOTH US & AU)
+Every ticket moving forward MUST be tested under BOTH Logged-Out and Logged-In states across **BOTH US and AU Staging storefronts**:
+
+1. **Both URLs Tested Under Authenticated (Logged-In) State**:
+   - **US Staging (`https://mcstaging2.globewest.com`)**:
+     - Must log in with US Trade account (`deepali.londhe@overdose.digital` / `Deep@123`).
+     - Must verify both **Trade Mode** (`👁️ Trade ⌵`) and **MSRP Mode** (`👁️ MSRP ⌵`) via the header pricing toggle.
+     - Dual pricing line must render: **Trade Price + MSRP** (e.g., `$1390 • MSRP: $1490`).
+     - Inventory indicator must render: **`• In Stock (X)`** or lead time.
+   - **AU Baseline Staging (`https://mcstaging2.globewest.com.au`)**:
+     - Must log in with AU customer / Trade account (`deepalilondhe576@gmail.com` / `Deep@123`).
+     - Must inspect authenticated baseline UI/features directly to prevent defect leakage.
+
+2. **Logged-Out State (Public Browsing Mode)**:
    - Wholesale/trade pricing must be strictly masked (`Trade Login Required / Unpriced`).
    - Top utility bar must show `"Become a Trade Customer"` / `"Ready to Buy"` and `"Book Showroom"`.
-2. **Logged-In (Trade Customer Mode)**:
-   - Header pricing toggle must appear (`Trade` vs `MSRP`).
-   - Dual pricing line must render: **Trade Price + MSRP** (e.g., `$1390 • MSRP: $1490`).
-   - Inventory & stock indicator must render: **`• In Stock (X)`** or lead-time status.
-   - Trade registration CTAs must be hidden.
+   - Trade registration CTAs active.
 
 ---
 

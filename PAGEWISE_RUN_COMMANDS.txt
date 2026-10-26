@@ -217,4 +217,64 @@ xdg-open "Sprint-3/Ticket_41794529_My_Account_Quotes/VIEW_DEFECT_IMAGES.html"
 # G. View Full QA Audit Report:
 xdg-open "Sprint-3/Ticket_41794529_My_Account_Quotes/QA_AUDIT_REPORT.md"
 
+--------------------------------------------------------------------------------
+16. TRADE APPLICATION FORM (Ticket: Trade Application Form)
+--------------------------------------------------------------------------------
+# Target Live URL: https://mcstaging2.globewest.com/gwcustomer/trade/create
+# Figma Spec Nodes:
+#   Desktop Spec: https://www.figma.com/design/oSBa3EMR3goI0vM1tXCdTk/Globewest-USA---External?node-id=3226-21024
+#   Mobile Spec:  https://www.figma.com/design/oSBa3EMR3goI0vM1tXCdTk/Globewest-USA---External?node-id=3226-21130
+#   EIN Change:   https://www.figma.com/design/oSBa3EMR3goI0vM1tXCdTk/Globewest-USA---External?node-id=3226-21364
+
+# A. Run Live Desktop Headed Walkthrough (Dummy Data & Defect Audit):
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_Trade_Application_Form/scripts/run_desktop_live_comparison.js"
+
+# B. Run Live Mobile Headed Walkthrough (390x844 Viewport & Dummy Data):
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_Trade_Application_Form/scripts/run_mobile_live_comparison.js"
+
+# C. Regenerate Red/Green Side-by-Side Comparison Passes:
+python3 "Sprint-3/Ticket_Trade_Application_Form/scripts/generate_side_by_side_comparisons.py"
+
+# D. Regenerate Excel (.xlsx) and CSV (.csv) Test Cases:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_Trade_Application_Form/scripts/export_test_cases.js"
+
+# E. Open Interactive Visual Defect Gallery in Browser:
+xdg-open "Sprint-3/Ticket_Trade_Application_Form/VIEW_DEFECT_IMAGES.html"
+
+# F. View Full QA Audit Report:
+xdg-open "Sprint-3/Ticket_Trade_Application_Form/QA_AUDIT_REPORT.md"
+
+--------------------------------------------------------------------------------
+17. STORE LOCATOR (Ticket #41794539 / Task: Store Locator)
+--------------------------------------------------------------------------------
+# Target Live URL : https://mcstaging2.globewest.com/locator
+# AU Baseline URL : https://www.globewest.com.au/locator
+# Figma Spec      : https://www.figma.com/design/oSBa3EMR3goI0vM1tXCdTk/Globewest-USA---External
+
+# A. Run Live Desktop Store Locator Comparison Walkthrough (with Cursor Click Highlight):
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794539_Store_Locator/scripts/run_desktop_live_comparison.js"
+
+# B. Run Live Mobile Store Locator Comparison (Real iPhone 17 Pro 402x874 @3x with Cursor Click Highlight):
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794539_Store_Locator/scripts/run_mobile_live_comparison.js"
+
+# C. Run Mandatory Dual-Auth & Real iPhone 17 Pro Audit Suite:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794539_Store_Locator/scripts/run_dual_auth_iphone17pro_audit.js"
+
+# D. Run Automated WCAG 2.2 AA Accessibility Scan:
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794539_Store_Locator/scripts/run_accessibility_wcag_audit.js"
+
+# E. Regenerate Precision Red/Green Side-by-Side Comparison Passes & iPhone 17 Pro Hardware Mockups:
+python3 "Sprint-3/Ticket_41794539_Store_Locator/scripts/generate_store_locator_comparisons.py"
+python3 "Sprint-3/Ticket_41794539_Store_Locator/scripts/generate_iphone17pro_device_mockups.py"
+
+# F. Regenerate Excel (.xlsx) and CSV (.csv) Test Cases (28 TCs):
+NODE_PATH="GlobeWest 2026/node_modules" node "Sprint-3/Ticket_41794539_Store_Locator/scripts/export_test_cases.js"
+
+# G. Open Interactive Visual Defect Gallery in Browser:
+xdg-open "Sprint-3/Ticket_41794539_Store_Locator/VIEW_DEFECT_IMAGES.html"
+
+# H. View Full QA Audit Report & AU vs US Comparative Matrix:
+xdg-open "Sprint-3/Ticket_41794539_Store_Locator/AU_VS_US_DEFECT_AUDIT_REPORT.md"
+
 ================================================================================
+

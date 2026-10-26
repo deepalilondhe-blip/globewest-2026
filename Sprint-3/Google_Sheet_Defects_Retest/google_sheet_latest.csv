@@ -1,0 +1,135 @@
+ Page Name,Ticket ID,Task,Seviority,Device,Iteration,Bug Type,Bug Type,Ticket Generated,,
+DashBoard,DE#01,"Arrows are un-even.
+https://prnt.sc/eqQNH6yNWbev",Moderate,Website,Round 1,UI,ReOpen,8-Oct-2026,,"https://prnt.sc/l5uDjkMgj2hX
+Vertical alignment is not proper."
+DashBoard,DE#02,"Column labels should be aligned to left same as per the Figma.
+https://prnt.sc/aPONlOkKHpbA",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/bNiOG57j09R4
+It is working fine now"
+DashBoard,DE#03,"Button size should be identical to each other.
+https://prnt.sc/MYymqukiHJnA",Moderate,Website,Round 1,UI,Awaiting for client response,8-Oct-2026,we need to explain this to clients,
+Dashboard,DE#04,"Text and button should be in same line as per the Figma.
+https://prnt.sc/qVKumFyMddAy",Moderate,Website,Round 1,UI,Assigned to QA,8-Oct-2026,,
+Dashboard,DE#05,"Text is missing as per the Figma design.
+https://prnt.sc/qAqlUjx3eW1L",Moderate,Website,Round 1,UI,ReOpen,8-Oct-2026,,"https://prnt.sc/uN8E8SwzP-Lq
+Text present above should mentioned below the table"
+Dashboard,DE#06,"Title is different than the Figma.
+https://prnt.sc/b_RrfOebSGjJ",Moderate,Website,Round 1,UI,Awaiting for client response,8-Oct-2026,We have already commented on this for the client.,
+Dashboard,DE#07,"Edit booking is not working properly
+https://screenrec.com/share/ExAV0q6WwK",Moderate,Website,Round 1,Functional,Awaiting for client response,8-Oct-2026,It is depends on the cient.,
+Quote Listing,DE#08,"Column label should match with Figma
+https://prnt.sc/3dMgKg9vb07t",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/z3IGCriaedMT
+It is working fine now"
+Quote Listing,DE#09,"Pagination section design should match with Figma
+https://prnt.sc/vU9ByE3mQhAf",Moderate,Website,Round 1,UI,To Do,8-Oct-2026,Need to discuss it with the Developer,"https://prnt.sc/0eql0XafFCw1
+Desgined is not matched with the Figma"
+Quote Listing,DE#10,"As per the comment only upto 8 FAQs will be added but in our case admin can add more than it.
+https://prnt.sc/7mlNCuzNklqP",Moderate,Website,Round 1,Functional,On hold,8-Oct-2026,As per the discussion it is coming from the CMS blck and it is not possible to restrice it.,
+Quote Listing Responsive,DE#11,"table column sequence should match with figma
+https://prnt.sc/8cA5R4VB87Fk",Moderate,Website,Round 1,UI,Awaiting for client response,8-Oct-2026,We have already commented on this for the client.,
+Quote Listing Responsive,DE#12,"All the entries must be present in the responsive that are present in the desktop view.
+https://prnt.sc/I9m2Zhf03c8P",Moderate,Website,Round 1,UI,Assigned to QA,8-Oct-2026,That's not an issue,"In desktop all the entries are displayed in the All section, But in the responsive All sectino is only have OPEN status entries
+Desktop: https://prnt.sc/90SCvIsldP_n
+Mobile: "
+Quote Detail,DE#13,"Test is missing
+https://prnt.sc/_PhL3FHNMxls",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/bA0G7snMKAMW
+It is working fine now"
+Quote Detail,DE#14,"Match the spacing between Label and value as per figma
+https://prnt.sc/xXWBbYadhWUi",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/tYVK63eTWyiZ
+It is working fine now"
+Quote Detail,DE#15,"Spacing should be properly matched with the Figma design.
+https://prnt.sc/vO6Y6e_I0tKM",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"]https://prnt.sc/NArXmbE1GJpa
+It is working fine now"
+Quote Detail,DE#16,"Instead of QTY, it should be stock status as per the Figma
+https://prnt.sc/6ksoKclPn4FB",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/SSJbcDuqGPJP
+It is working fine now"
+Quote Detail,DE#17,"Quote Pricing summary section is missing
+https://prnt.sc/WRy5CZZDp_Nf",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/lwr5wIqqYSY7
+It is working fine now"
+Quote Detail,DE#18,"Shipping option text is missing
+https://prnt.sc/P-hW_putTcrN",Moderate,Website,Round 1,Functional,To Do,8-Oct-2026,,
+Quote Detail,DE#19,"Need to remove the section as not available in Figma
+https://prnt.sc/eSgFgHuJOgKe",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,need to discuss with developer,"https://prnt.sc/iRp_2Su3nTnQ
+It is working fine now"
+Quote Detail,DE#20,"Text and button should be aligned in one row.
+https://prnt.sc/ZsCzlGrYDuai",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/bgQDArAIqRzi
+It is working fine now"
+Quote Detail,DE#21,"As per the comment only upto 8 FAQs will be added but in our case admin can add more than it.
+https://prnt.sc/HhnfWepljfum",Moderate,Website,Round 1,Functional,To Do,8-Oct-2026,,
+Quote Detail,DE#22,"Need to remove the text as not available in the Figma design.
+https://prnt.sc/o_aI_6-kjuLC",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/xNfGnOIpnpa1
+It is working fine now"
+Quote Detail,DE#23,"Button size should be matched with Figma
+https://prnt.sc/Rc_O9TORkEmN",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/VRqvt_5k02tD
+It is working fine now"
+Quote Detail,DE#24,"Add proper spacing betwwen label and value.
+https://prnt.sc/xoW1Gnb1QgZn",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/8cig0fld5MX4
+It is working fine now"
+Quote View,DE#25,"Make the alignment porper as per the Quote modify page.
+https://prnt.sc/VgnflxKb4WBJ",Moderate,Website,Round 1,UI,On hold,8-Oct-2026,need to discuss with vinod for content center align,
+Quote View,DE#26,"Make the spacing proper between lable and value.
+https://prnt.sc/zQ6jJ7ASz9UH",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/SBrFMj9OG9n1
+It is working fine now"
+Order Listing,DE#27,"Button size should be identical to each other.
+https://prnt.sc/1PLEtd2Ir-kw",Moderate,Website,Round 1,UI,On hold,8-Oct-2026,Btn left align same as figma and text was center align,
+Order Listing,DE#28,"Arrow size should be bigger as it is not properly visible.
+https://prnt.sc/ekH1iuAP0wJD",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/xzb4JcO4uFhm
+It is working fine now"
+Ortder listing,DE#29,"More than 8 faqs are added.
+https://prnt.sc/dzgDGfdYSqxn",Moderate,Website,Round 1,Functional,To Do,8-Oct-2026,,
+Order Detail,DE#30,"Spelling Mistake, its POY instead of PO.
+https://prnt.sc/om9P0TnEUEsP",Moderate,Website,Round 1,UI,Assigned to QA,8-Oct-2026,,
+Order Detail,DE#31,"Order Notes are missing
+https://prnt.sc/6m0wX4urMurF",Moderate,Website,Round 1,UI,To Do,8-Oct-2026,Need to Discuss with client ,
+Order Detail,DE#32,"Add proper spaing between label and vaule.
+https://prnt.sc/34a6O7-zrMoh",Moderate,Website,Round 1,UI,Assigned to QA,8-Oct-2026,,
+Order Detail,DE#33,"Mobile number should be displayed at bottom of address as per the Figma
+https://prnt.sc/qmQWtnM7NtnB",Moderate,Website,Round 1,UI,To Do,8-Oct-2026,need to update sample data,
+Order Detail,DE#34,"Need to remove ""ex Tax"" text from amount as it is not present in the Figma.
+https://prnt.sc/v3oGJ0XoHIlF",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/7Ncebf98dAl6
+It is workign fine now"
+Order Detail,DE#35,"Seperator line is missing and font size is not proper for the shipping Amount.
+https://prnt.sc/zp5RlFLaWdMS",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/bdgJWBfrklFj
+It is working fine now"
+Order Detail,DE#36,"1. Font size and font family is not proper.
+2. Alignment should matched with the Figma
+3. Need to remove the text that not present in Figma
+https://prnt.sc/F4ED9YBlwQs_",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/1Jdt1zcZCefb
+It is working fine now"
+Order Detail Responsive,DE#37,"Add proper spacing between label and value.
+https://prnt.sc/6uFpP1CEanpd",Moderate,Website,Round 1,UI,Assigned to QA,8-Oct-2026,,
+Order Detail Responsive,DE#38,"Summary section is not designed as per Figma
+https://prnt.sc/X3E49VXb9ru9",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/WvgfsdS0pOvf
+It is working fine now"
+Order Detail Responsive,DE#39,"Need to add proper spacing between FAQ title and table.
+https://prnt.sc/X3E49VXb9ru9",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/4MremUQBw-Xv
+It is working fine now"
+Account Dropdown,DE#40,"Need to add space between Logout link as per the Figma design.
+https://prnt.sc/BpqKPAI5XI6d",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/SCurzBCggULM
+It is working fine now"
+Hold Listing,DE#41,"Make the Arrows more visible.
+https://prnt.sc/tqsR0GZYyo3p",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/WpEfqRG2zhVE
+It is working fine now"
+Hold Listing,DE#42,"Can be add more than 8 FAQs
+https://prnt.sc/LcEVfg_Ejly7",Moderate,Website,Round 1,Functional,To Do,8-Oct-2026,,
+Hold Listing Responsive,DE#43,"Column sequence should be matched with figma
+https://prnt.sc/gAG6LopVuIhw",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/FDjg99DHmeqx
+It is working fine now"
+Hold Detail,DE#44,"Spacing should be properly matched with the Figma design.
+https://prnt.sc/mZFG9rYm_F-r",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/CO_hOXBqnrXU
+It is working fine now"
+Hold Detail,DE#45,"Alignment is not proper.
+https://prnt.sc/RIAVqsqMNxg8",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/_VPBt0jMg_eE
+It is working fine now"
+Hold Detail,DE#46,"FAQ section is missing
+https://prnt.sc/ZyyVL7UYW0Bm",Moderate,Website,Round 1,UI,To Do,8-Oct-2026,need to discuss with developer,
+Hold Detail,DE#47,"1. Font style is not matched with Figma
+2. alignment is not matched with Figma
+https://prnt.sc/Jyui4e78Sh-Q",Moderate,Website,Round 1,UI,To Do,8-Oct-2026,,
+Hold Detail,DE#48,"Order Notes are missing
+https://prnt.sc/z0g4HZPdUHE3",Moderate,Website,Round 1,Functional,To Do,8-Oct-2026,Need to discuss with client,
+Hold Detail,DE#49,"Shipping Amount is missing
+https://prnt.sc/-Qx-w5fGqcyI",Moderate,Website,Round 1,UI,ReOpen,8-Oct-2026,,"https://prnt.sc/WwFV87t33Wa1
+Shipping amount is missing "
+Hold View,DE#50,"Spacing between label and text should be proper.
+https://prnt.sc/GHPrMnFigKoI",Moderate,Website,Round 1,UI,Completed,8-Oct-2026,,"https://prnt.sc/RfKwJdCiSaut
+It is working fine now"

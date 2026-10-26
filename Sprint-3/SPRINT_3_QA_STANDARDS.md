@@ -40,3 +40,16 @@ Sprint-3/
 ## 4. Test Case Deliverables & Sprint Demo Readiness
 * **Excel (.xlsx) & CSV format**: Every ticket must generate both `.xlsx` and `.csv` files using `scripts/export_test_cases.js`.
 * **Sprint Demo Notes**: Every ticket must include a concise, step-by-step demo guide formatted for stakeholders (Feature overview, demo steps, expected vs live behavior, defect callouts).
+
+---
+
+## 5. 🔐 Mandatory Logged-In Verification on Both URLs (US & AU)
+* **Never test guest/logged-out only.**
+* Every ticket moving forward MUST execute authenticated tests on **BOTH** staging environments:
+  1. **US Staging (`https://mcstaging2.globewest.com`)**:
+     - Login: `deepali.londhe@overdose.digital` / `Deep@123`
+     - Must audit both **Trade Mode** and **MSRP Mode** via the header price toggle.
+  2. **AU Staging Baseline (`https://mcstaging2.globewest.com.au`)**:
+     - Login: `deepalilondhe576@gmail.com` / `Deep@123`
+     - Verify authenticated baseline behavior directly to ensure zero defect leakage.
+

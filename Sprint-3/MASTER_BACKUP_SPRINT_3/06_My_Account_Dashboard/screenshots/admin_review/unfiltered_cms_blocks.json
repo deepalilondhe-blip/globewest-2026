@@ -1,0 +1,1416 @@
+[
+  {
+    "id": "",
+    "title": "All in Column",
+    "identifier": "All in Column",
+    "storeView": "",
+    "status": "All in Column\n            \n EnabledDisabled"
+  },
+  {
+    "id": "",
+    "title": "All in Column",
+    "identifier": "All in Column",
+    "storeView": "",
+    "status": "All in Column\n            \n EnabledDisabled"
+  },
+  {
+    "id": "1",
+    "title": "Catalog Events Lister",
+    "identifier": "catalog_events_lister",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "4",
+    "title": "[Checkout] FAQ Popup",
+    "identifier": "checkout_faq_popup",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "7",
+    "title": "[Checkout] Need Help",
+    "identifier": "checkout_need_help",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "10",
+    "title": "[Checkout] Need Assistance",
+    "identifier": "checkout_need_assistance",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "13",
+    "title": "[Footer] Links",
+    "identifier": "footer_links",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View\n      B2C Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "16",
+    "title": "Need help links",
+    "identifier": "need_help_links",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "19",
+    "title": "[Header] Promo",
+    "identifier": "header_promo",
+    "storeView": "All Store Views",
+    "status": "Disabled"
+  },
+  {
+    "id": "22",
+    "title": "[Account] [My Dashboard] Subtitle",
+    "identifier": "account_dashboard_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "25",
+    "title": "[Account] [My Orders] Subtitle",
+    "identifier": "account_orders_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "31",
+    "title": "[Account] [My Details] Subtitle",
+    "identifier": "account_details_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "34",
+    "title": "[Account] [My Addresses] Subtitle",
+    "identifier": "account_addresses_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "37",
+    "title": "[Account] [Saved Email Preference] Subtitle",
+    "identifier": "account_subscriptions_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "40",
+    "title": "[Account] [Order Details] Subtitle",
+    "identifier": "account_order_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "43",
+    "title": "[Account] [Order Details] Need return",
+    "identifier": "account_order_return",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "46",
+    "title": "Custom newsletter",
+    "identifier": "newsletter_custom",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View\n      B2C Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "49",
+    "title": "[Footer] Social Links",
+    "identifier": "social-links-footer",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View\n      B2C Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "52",
+    "title": "[Footer] Visit Showroom",
+    "identifier": "visit-showroom-footer",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View\n      B2C Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "55",
+    "title": "[Footer] Design Logo",
+    "identifier": "design-logo-footer",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "58",
+    "title": "[Footer] Bottom links",
+    "identifier": "links-footer-bottom",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View\n      B2C Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "61",
+    "title": "[Footer] Reviews bottom",
+    "identifier": "reviews-footer-bottom",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "64",
+    "title": "[Home] Main Banner",
+    "identifier": "main-banner",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "67",
+    "title": "[Home Page] Category Carousel",
+    "identifier": "home-category-carousel",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "70",
+    "title": "[Home Page] About us",
+    "identifier": "home-page-about-us",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "73",
+    "title": "[Global] Find designer",
+    "identifier": "global-find-designer",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "76",
+    "title": "[Global] Featured in Press",
+    "identifier": "global-featured-in-press",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "79",
+    "title": "[Home Page] Seo text",
+    "identifier": "home-seo-text",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "82",
+    "title": "[Global] Visit our Showrooms",
+    "identifier": "global-visit-showroom",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "85",
+    "title": "[Home Page] Video Block B2C",
+    "identifier": "home-video-block",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "88",
+    "title": "[Account] [Login] Create b2b account",
+    "identifier": "login-create-b2b",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "91",
+    "title": "[Account] [Login] Create b2c account",
+    "identifier": "login-create-b2c",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "97",
+    "title": "[Account] [Login] Forgot Password Image",
+    "identifier": "auth_image_block",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "99",
+    "title": "[Account] [Register] Register Image",
+    "identifier": "auth_image_register_block",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "102",
+    "title": "[Home Page][Blog] Post List",
+    "identifier": "homepage_recent_articles",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "105",
+    "title": "[Blog] [Category] Hero Banner",
+    "identifier": "blog-category-banner",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "108",
+    "title": "[Home Page] Welcome popup",
+    "identifier": "welcome_popup",
+    "storeView": "All Store Views",
+    "status": "Disabled"
+  },
+  {
+    "id": "135",
+    "title": "[Banner Product][Category] Container for Promo",
+    "identifier": "product-banner-container",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "145",
+    "title": "[Help Centre] Article/Search page header",
+    "identifier": "help-center-article-header",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "148",
+    "title": "[Blog] [Post] Content",
+    "identifier": "blog-post-content",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "151",
+    "title": "[Global] Find stockist",
+    "identifier": "global-find-stockist",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "154",
+    "title": "[Global] Visit Outlet",
+    "identifier": "global-visit-outlet",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "160",
+    "title": "[Header] Top Links Right",
+    "identifier": "header-top-links",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View\n      B2C Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "163",
+    "title": "[Global] Visit our Showroom map",
+    "identifier": "global-visit-showroom-map",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "166",
+    "title": "[HELP] Bottom block contact",
+    "identifier": "help-center-bottom-block-contact",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "169",
+    "title": "[Algolia Search] Sidebar banner",
+    "identifier": "algolia_sidebar_banner",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "172",
+    "title": "[Collection] Vittoria",
+    "identifier": "product_family_vittoria",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "175",
+    "title": "[Account] [B2B] [Quotes] Subtitle",
+    "identifier": "account_b2b_quotes_subtitle",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "178",
+    "title": "[Help Centre] General FAQ",
+    "identifier": "help-centre-general-faq",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "181",
+    "title": "[HELP] Help Centre",
+    "identifier": "help-centre-block",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "184",
+    "title": "[Lookbook] Tempalates one widget",
+    "identifier": "lookbook_one_widget",
+    "storeView": "All Store Views",
+    "status": "Disabled"
+  },
+  {
+    "id": "196",
+    "title": "[Find Designer] Top Block",
+    "identifier": "find_designer_top_block",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "211",
+    "title": "[Account] [B2B] [Modify Quote] Subtitle",
+    "identifier": "account_b2b_modify_quote_subtitle",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "217",
+    "title": "[Lookbook] Made for [Living]",
+    "identifier": "lookbook_made_for_block_living",
+    "storeView": "All Store Views",
+    "status": "Disabled"
+  },
+  {
+    "id": "220",
+    "title": "[Find Designer] FAQ's",
+    "identifier": "find_designer_faqs",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "223",
+    "title": "[Home page] Lookbook styles to suit any project",
+    "identifier": "home_page_lookbook_styles",
+    "storeView": "All Store Views",
+    "status": "Disabled"
+  },
+  {
+    "id": "226",
+    "title": "[Blog][Post][Lookbook] Template two widgets",
+    "identifier": "blog_post_lookbook_template_two_widgets",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "229",
+    "title": "[Blog][Post][Lookbook] Template three widgets",
+    "identifier": "blog_post_lookbook_three_widgets",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "232",
+    "title": "[Blog][Post][Lookbook] Template four widgets",
+    "identifier": "blog_post_lookbook_four_widgets",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "235",
+    "title": "[Blog][Post][Lookbook] Nicole's apartment living style",
+    "identifier": "blog_post_lookbook_living_style",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "238",
+    "title": "[Find Designer] Trade Customer",
+    "identifier": "find_designer_trade_customer",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "241",
+    "title": "[Find Designer] How is to work with a Designer",
+    "identifier": "find_designer_work_with_designer",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "244",
+    "title": "Contact Us top",
+    "identifier": "contact-us-top",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "247",
+    "title": "[PDP] Need help?",
+    "identifier": "pdp_need_help",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View\n      B2C Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "250",
+    "title": "[Home page] Promotional banner",
+    "identifier": "home_page_promotional_banner",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "253",
+    "title": "Moving Guide and Delivery",
+    "identifier": "moving_guide_and_delivery",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "256",
+    "title": "[PDP] How to Buy from GlobeWest",
+    "identifier": "pdp_how_to_buy",
+    "storeView": "Main Website\n   Main Website Store\n      B2C Store View",
+    "status": "Disabled"
+  },
+  {
+    "id": "259",
+    "title": "product care material wood",
+    "identifier": "product_care_material_wood",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "265",
+    "title": "[Help Centre] Delivery",
+    "identifier": "help-centre-delivery",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "268",
+    "title": "[Help Centre] Product Availability",
+    "identifier": "help-centre-product-availability",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "271",
+    "title": "[Blog] [Product care] Banner",
+    "identifier": "blog-product-care",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "274",
+    "title": "[Projects][Property Developer] Speak to us",
+    "identifier": "projects_property_speak_to_us",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "277",
+    "title": "[Projects][Property Developer] Solution for every industry",
+    "identifier": "projects_property_solution_industry",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "280",
+    "title": "[Projects][Property Developer] Download Brochure popup Form",
+    "identifier": "download_brochure_popup_form",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "283",
+    "title": "[PDP] Request Free swatches",
+    "identifier": "pdp_request_free_swatches",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "286",
+    "title": "[Account] [B2B] [Modify Quote] Need help",
+    "identifier": "account_b2b_modify_quote_need_help",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View\nUSA Website\n   USA Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "289",
+    "title": "[Stockist] How to Buy with a Stockist",
+    "identifier": "stockist_info",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "292",
+    "title": "[Projects][Property Developer] Apply trade account",
+    "identifier": "projects-apply-trade-account",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "295",
+    "title": "[Projects][Master] Catalogue",
+    "identifier": "projects-catalogue-master",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "298",
+    "title": "[Projects][Property Developer] Our team",
+    "identifier": "projects_our-team",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "301",
+    "title": "[Projects][Property Developer] Product customisation",
+    "identifier": "projects-product-customisation",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "304",
+    "title": "[Stockist] About Block",
+    "identifier": "stockist_about",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "307",
+    "title": "[Account] [B2B] [Preview Quote] Modal subtitle",
+    "identifier": "account_b2b_preview_quote_modal_subtitle",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "310",
+    "title": "[Account] [B2B] [Preview Quote] Quote subtitle",
+    "identifier": "account_b2b_preview_quote_subtitle",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "313",
+    "title": "[Property Staging] Our latest projects",
+    "identifier": "projects-our-latest-projects",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "319",
+    "title": "[Projects]Sticky header",
+    "identifier": "projects_landing_sticky-header",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "322",
+    "title": "[Property Developer] Sticky header",
+    "identifier": "projects_property_sticky-header",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "325",
+    "title": "[Property Developer] Visit our showroom",
+    "identifier": "projects-visit-our-showroom",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "328",
+    "title": "product care ts solid oak",
+    "identifier": "product_care_material_tssolidoak",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "331",
+    "title": "[Showroom] About Block",
+    "identifier": "showroom_about",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "334",
+    "title": "[Showroom] Virtual Videos",
+    "identifier": "showroom_virtual_videos",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "337",
+    "title": "[Banner Product][Category] Shop B2B",
+    "identifier": "product-banner-category-shop-b2b",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "340",
+    "title": "[Banner Product][Category] Shop B2C",
+    "identifier": "product-banner-category-shop-b2c",
+    "storeView": "Main Website\n   Main Website Store\n      B2C Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "343",
+    "title": "[Global]Text slider with thumbs",
+    "identifier": "test-slider-with-thumbs",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "346",
+    "title": "[Account] [Company] [Addresses] Billing Address Info",
+    "identifier": "account_company_address_billing_info",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "349",
+    "title": "[Account] [Company] Subtitle",
+    "identifier": "account_company_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "352",
+    "title": "[Cart][Empty Cart] Blog widget",
+    "identifier": "blog_widget_block",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "355",
+    "title": "[Account] [Credits] Subtitle",
+    "identifier": "account_credits_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "358",
+    "title": "[Home Page][US] Video Block B2B",
+    "identifier": "home-us-video-block-b2b",
+    "storeView": "USA Website\n   USA Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "361",
+    "title": "[Account] [B2B] [Company] Subtitle",
+    "identifier": "account_b2b_company_details_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "364",
+    "title": "[Trade Application] Image",
+    "identifier": "trade-application-image",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "367",
+    "title": "[Account] [Credits] Learn more about the program",
+    "identifier": "account_credits_learn_more",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "370",
+    "title": "[Search Result][Blog] Post List",
+    "identifier": "search_blog_widget",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "373",
+    "title": "[Stockist Locator] FAQ's",
+    "identifier": "stockist_locator_faqs",
+    "storeView": "All Store Views",
+    "status": "Disabled"
+  },
+  {
+    "id": "376",
+    "title": "[Lookbook] Made for [Office]",
+    "identifier": "lookbook_made_for_block_office",
+    "storeView": "All Store Views",
+    "status": "Disabled"
+  },
+  {
+    "id": "382",
+    "title": "[PLP] Seo text",
+    "identifier": "plp-seo-text-1",
+    "storeView": "All Store Views",
+    "status": "Disabled"
+  },
+  {
+    "id": "388",
+    "title": "[Account] [My Wishlist] Subtitle",
+    "identifier": "account_wishlist_subtitle",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "391",
+    "title": "[Designer] FAQ's",
+    "identifier": "designer_profile_faqs",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "394",
+    "title": "[Account] [B2B] [Invoices] Subtitle",
+    "identifier": "account_b2b_invoices_subtitle",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "397",
+    "title": "[Account] [Company] [Designer] Description",
+    "identifier": "account_company_designer_description",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "400",
+    "title": "[Account] [Company] [Stockist] Description",
+    "identifier": "account_company_stockist_description",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "403",
+    "title": "[Account] [Company] Contact Block",
+    "identifier": "account_company_contact",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "406",
+    "title": "[Account] [Client] Subtitle",
+    "identifier": "account_client_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "409",
+    "title": "[Account] [Clients] Privacy policy",
+    "identifier": "account_clients_privacy",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "412",
+    "title": "[Account] [B2B] [Invoices] Pay Info",
+    "identifier": "account_b2b_invoices_pay_info",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "415",
+    "title": "[Account] [B2B] [Invoices] Terms & Conditions",
+    "identifier": "account_b2b_invoices_terms_conditions",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "418",
+    "title": "[PDP] [Modular Modal] Description",
+    "identifier": "pdp_modular_modal_description",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "421",
+    "title": "[Account] [My Company] Members description",
+    "identifier": "account_company_members_description",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "424",
+    "title": "[Account] [My Company] Sub Companies description",
+    "identifier": "account_sub_companies_description",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "433",
+    "title": "[Account] [Help Center] Visit Link",
+    "identifier": "account_visit_help_center",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "434",
+    "title": "[Account] [Bookings] Subtitle",
+    "identifier": "account_booking_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "437",
+    "title": "[Global]Text slider with thumbs for projects",
+    "identifier": "test-slider-with-thumbs-63294418384e7",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "443",
+    "title": "[Account] [B2B] [Invoices] [Requiring] Subtitle",
+    "identifier": "account_b2b_invoices_requiring_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "446",
+    "title": "[Category] Product Banner - White Background_B2C",
+    "identifier": "plp_product_banner_white_bg",
+    "storeView": "Main Website\n   Main Website Store\n      B2C Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "449",
+    "title": "[Category] Product Banner - Gray Background_В2С",
+    "identifier": "plp_product_banner_gray_bg",
+    "storeView": "Main Website\n   Main Website Store\n      B2C Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "452",
+    "title": "[Category] Product Banner - Image Background_B2C",
+    "identifier": "plp_product_banner_image_bg",
+    "storeView": "Main Website\n   Main Website Store\n      B2C Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "455",
+    "title": "[Category] Product Banner - Image Background_B2B",
+    "identifier": "plp_product_banner_image_bg",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "458",
+    "title": "[Category] Product Banner - Gray Background_B2B",
+    "identifier": "plp_product_banner_gray_bg",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "461",
+    "title": "[Category] Product Banner - White Background_B2B",
+    "identifier": "plp_product_banner_white_bg",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "464",
+    "title": "[Account] [Help Center] Claims description",
+    "identifier": "account_claims_description",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "467",
+    "title": "[Account] [Help Center] After sales description",
+    "identifier": "account_after_sales_description",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "470",
+    "title": "[Account] [Help Center] Claims description",
+    "identifier": "account_claims_description",
+    "storeView": "Main Website\n   Main Website Store\n      B2C Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "473",
+    "title": "[Account] [Help Center] After sales description",
+    "identifier": "account_after_sales_description",
+    "storeView": "Main Website\n   Main Website Store\n      B2C Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "476",
+    "title": "[Account] [Help Center] Edit Claim Description",
+    "identifier": "account_edit_claims_description",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "479",
+    "title": "[Account][Claims][Edit] - Help text for questions",
+    "identifier": "account_edit_claims_question_help_text",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "482",
+    "title": "[Account] [B2B] [Quotes] [Referred] Subtitle",
+    "identifier": "account_b2b_quotes_referred_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "485",
+    "title": "[Checkout] [Success] info block",
+    "identifier": "checkout_success_cms-block",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "488",
+    "title": "[Checkout] [Success] Info block Hold",
+    "identifier": "checkout.success.cms_block-hold",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "491",
+    "title": "[Accommodation] Our latest projects",
+    "identifier": "projects-our-latest-projects-63434f4405051",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "494",
+    "title": "[Hospitality] Our latest projects",
+    "identifier": "projects-our-latest-projects-63439968c347c",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "497",
+    "title": "[Workplaces] Our latest projects",
+    "identifier": "projects-our-latest-projects-63479a355d5ab",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "500",
+    "title": "[Account] [B2B] [Referred Boards] Subtitle",
+    "identifier": "account_b2b_boards_referred_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "503",
+    "title": "[Account] [Requsition] [Board] Modal subtitle",
+    "identifier": "account_requisition_modal-content",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "506",
+    "title": "[Checkout] [Success] Reseller Block",
+    "identifier": "checkout_success_reseller-block",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "509",
+    "title": "[Retirement Living] Our latest projects",
+    "identifier": "projects-our-latest-projects-6359b8a1c8da8",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "512",
+    "title": "[Multi-Residential] Our latest projects",
+    "identifier": "projects-our-latest-projects-63479a355d5ab-6359f37923a87",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "515",
+    "title": "[Show Homes] Our latest projects",
+    "identifier": "projects-our-latest-projects-635a0cc68d552",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "518",
+    "title": "[Retail Fitouts] Our latest projects",
+    "identifier": "projects-our-latest-projects-63434f4405051-635b18d506471",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "521",
+    "title": "[Account] [B2B] [Holds] Subtitle",
+    "identifier": "account_b2b_holds_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "524",
+    "title": "[Account] [B2B] [Payment for Invoice] Subtitle",
+    "identifier": "account_b2b_invoice_payment_subtitle",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "527",
+    "title": "[Physical Swatches][Success]",
+    "identifier": "physical_swatches_success",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "530",
+    "title": "[Account] [B2B] [Orders] [Referred] Subtitle",
+    "identifier": "account_b2b_orders_referred_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "533",
+    "title": "[Account] [Orders] [Payment] Subtitle",
+    "identifier": "account_orders_payment_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "536",
+    "title": "[Account] [B2C] [Quotes] Subtitle",
+    "identifier": "account_b2c_quotes_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "539",
+    "title": "[Account] [B2C] [Quotes] View Subtitle",
+    "identifier": "account_b2c_view_quote_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "542",
+    "title": "[Account] [B2C] [Orders] Subtitle",
+    "identifier": "account_b2c_orders_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "545",
+    "title": "[Help Centre] Damages & Returns",
+    "identifier": "help-centre-damages-and-returns",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "548",
+    "title": "[Help Centre] Marketing & Communications",
+    "identifier": "help-centre-marketing-and-communications",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "551",
+    "title": "[Help Centre] Payments & Ordering",
+    "identifier": "help-centre-payments-ordering",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "554",
+    "title": "[Account] [B2C] [Quote] Need help",
+    "identifier": "account_b2C_quote_need_help",
+    "storeView": "Main Website\n   Main Website Store\n      B2C Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "557",
+    "title": "[Account] [B2B] [Holds] Modify Subtitle",
+    "identifier": "account_b2b_hold_modify_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "560",
+    "title": "[Account] [B2B] [Holds] View Subtitle",
+    "identifier": "account_b2b_hold_view_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "563",
+    "title": "[Account] [B2B] [Hold] Need help",
+    "identifier": "account_b2b_hold_need_help",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "566",
+    "title": "[Account] [B2B] [Orders] Help",
+    "identifier": "account_b2b_orders_help",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "569",
+    "title": "[Account] [B2С] [Order] Subtitle",
+    "identifier": "account_b2c_order_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "572",
+    "title": "[Account] [Email Preference] Subtitle",
+    "identifier": "account_email_preference_subtitle",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "575",
+    "title": "[Account][Quote] - Bottom info block",
+    "identifier": "account_quote_bottom_info_block",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "578",
+    "title": "[Checkout][Success] Blog widget",
+    "identifier": "checkout_success_blog",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "581",
+    "title": "[Account][Quote] - Bottom info block",
+    "identifier": "account_quote_bottom_info_block_b2c",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "584",
+    "title": "[Account] [B2B] [Invoices] Pay Info",
+    "identifier": "account_b2b_invoices_pay_info_print",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "587",
+    "title": "[Account] [B2B] [Hold] More products",
+    "identifier": "account_b2b_hold_modify_need_help",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "590",
+    "title": "[Home] [Yotpo] - Instagram block B2B",
+    "identifier": "insta-block-home-page",
+    "storeView": "Main Website\n   Main Website Store\n      B2B Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "593",
+    "title": "[Account][Hold] - Reactivation popup message",
+    "identifier": "account_b2b_holds_popup_message",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "596",
+    "title": "[Contact Us] Bottom Block",
+    "identifier": "contact-us-bottom-block",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "599",
+    "title": "[Checkout][Success] - Benefits",
+    "identifier": "checkout_success_benefits",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "602",
+    "title": "product care hf marble and stone",
+    "identifier": "product_care_material_hfmarbleandstone",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "605",
+    "title": "[Checkout] [Success] info block B2C",
+    "identifier": "checkout_success_cms-block",
+    "storeView": "Main Website\n   Main Website Store\n      B2C Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "611",
+    "title": "[Lookbook] Blog - Sofa Tips [TEST]",
+    "identifier": "lookbook_made_for_block_test",
+    "storeView": "All Store Views",
+    "status": "Disabled"
+  },
+  {
+    "id": "617",
+    "title": "[Lookbook] Product - Hotspot [TEST]",
+    "identifier": "lookbook_made_for_block_hotspot_test",
+    "storeView": "All Store Views",
+    "status": "Disabled"
+  },
+  {
+    "id": "620",
+    "title": "[Lookbook] Product - Bed [TEST]",
+    "identifier": "lookbook_made_for_block_bed_test",
+    "storeView": "All Store Views",
+    "status": "Disabled"
+  },
+  {
+    "id": "623",
+    "title": "[Lookbook] Made for Blog - [Test]",
+    "identifier": "lookbook_made_for_blog_test1",
+    "storeView": "All Store Views",
+    "status": "Disabled"
+  },
+  {
+    "id": "626",
+    "title": "[Lookbook] Made for Test Area of use PDP",
+    "identifier": "lookbook_made_for_Areaofuse_test",
+    "storeView": "All Store Views",
+    "status": "Disabled"
+  },
+  {
+    "id": "629",
+    "title": "[PDP][Add to Quote/Hold Popup] - Empty Hold Info Message",
+    "identifier": "pdp_empty_hold_info_message",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "632",
+    "title": "[Home] [Yotpo] - Instagram block B2C",
+    "identifier": "insta-block-home-page-b2c",
+    "storeView": "Main Website\n   Main Website Store\n      B2C Store View",
+    "status": "Enabled"
+  },
+  {
+    "id": "635",
+    "title": "[Home] Main Banner Test",
+    "identifier": "main-banner-test",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "637",
+    "title": "product care hf bone inlay",
+    "identifier": "product_care_material_hfboneinlay",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "640",
+    "title": "product care hf concrete and cement",
+    "identifier": "product_care_material_hfconcreteandcement",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "643",
+    "title": "product care hf fibrestone and fibreglass",
+    "identifier": "product_care_material_hffibrestoneandfibreglass",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "646",
+    "title": "product care hf glass and mirror",
+    "identifier": "product_care_material_hfglassandmirror",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "649",
+    "title": "product care hf tile",
+    "identifier": "product_care_material_hftile",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "652",
+    "title": "product care hf terrazzo",
+    "identifier": "product_care_material_hfterrazzo",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "655",
+    "title": "product care hf engineered timber",
+    "identifier": "product_care_material_hfengineeredtimber",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "658",
+    "title": "product care hf ceramic outdoor",
+    "identifier": "product_care_material_hfceramicoutdoor",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "661",
+    "title": "product care hf engineered stone",
+    "identifier": "product_care_material_hfengineeredstone",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "664",
+    "title": "product care outuph sunbrella",
+    "identifier": "product_care_material_outuphsunbrella",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "667",
+    "title": "product care outuph sunproof",
+    "identifier": "product_care_material_outuphsunproof",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "670",
+    "title": "product care outuph agora",
+    "identifier": "product_care_material_outuphagora",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "673",
+    "title": "product care outuph batyline and textilene",
+    "identifier": "product_care_material_outuphbatylineandtextilene",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "676",
+    "title": "product care outuph pet polyprop outdoor uph",
+    "identifier": "product_care_material_outuphpetpolyprop",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "679",
+    "title": "product care wv pet polyprop",
+    "identifier": "product_care_material_wvpetpolyprop",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "682",
+    "title": "product care hf pet polyprop",
+    "identifier": "product_care_material_hfpetpolyprop",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  },
+  {
+    "id": "685",
+    "title": "product care met metal",
+    "identifier": "product_care_material_metmetal",
+    "storeView": "All Store Views",
+    "status": "Enabled"
+  }
+]

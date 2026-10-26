@@ -1,0 +1,15 @@
+Hello @MohamedB @MichelleM,
+
+I have re-tested the Login page on US Staging (mcstaging2.globewest.com) across both Desktop and Mobile views.
+
+Verification Results:
+1. Login Page (customer/account/login): Confirmed that the orphaned ".b2c-customer-register" block and "General Public" heading have been completely removed. Only the "Trade Customers" block remains visible with the [BECOME A TRADE CUSTOMER] CTA as expected.
+- Desktop Evidence: https://prnt.sc/h89QLMCcGTfz
+- Mobile Evidence: https://prnt.sc/MHHZ7xr4EZXO
+
+2. Registration APIs: Confirmed that Ajax signup and online booking registration endpoints remain securely disabled.
+
+This defect is now verified and FIXED. The ticket is approved from my side, and I am assigning it to @MichelleM for final review. Please have a look and let me know if anything else is needed.
+
+Thank you,
+Deepali

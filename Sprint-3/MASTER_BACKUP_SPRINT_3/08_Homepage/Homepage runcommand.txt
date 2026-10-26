@@ -1,0 +1,8 @@
+Ticket Name: #41794519 - Homepage
+Page Name: US Storefront Homepage (/)
+
+Run command for Desktop View:
+npx playwright test "GlobeWest 2026/tests/ticket-homepage-audit.spec.js" --project=desktop-chrome --headed
+
+Run command for Mobile View:
+npx playwright test "GlobeWest 2026/tests/ticket-homepage-audit.spec.js" --project=mobile-chrome --headed
