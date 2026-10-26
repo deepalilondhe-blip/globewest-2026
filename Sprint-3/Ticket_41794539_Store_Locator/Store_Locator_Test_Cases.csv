@@ -81,3 +81,11 @@ TC-GW-LOC-034,Map Canvas & Accessibility,Logged Out (Public Guest) & Trade,Verif
 3. Use '+' and '-' keys on keyboard to zoom in and out.
 4. Tab to the 'Keyboard shortcuts' button and press Enter.
 5. Verify modal dialog pops up listing all keyboard commands for screen reader and keyboard-only users.",Google Maps canvas supports keyboard traversal per WCAG 2.2 AA (Criterion 2.1.1 Keyboard Accessible) and exposes built-in shortcut dialog.,PASS: Keyboard shortcuts button activates accessible modal dialog with complete shortcut documentation; arrow keys pan map smoothly.,PASS,LOW (WCAG 2.2 AA Verified),screenshots/desktop/map_verification_current.png
+TC-GW-LOC-035,Map Canvas & Search Navigation,Logged Out (Public Guest) & Trade,Verify Map Navigates and Highlights Store Pin When Entering City or ZIP Code,User is on the Store Locator page (/locator) and the Google Map is loaded.,"1. Go to the Store Locator search box.
+2. Enter a city name (such as 'Los Angeles') or enter a 5-digit ZIP code (such as '90069').
+3. Click the Search button or press Enter.
+4. Check the Google Map on the screen.
+5. Verify that the map automatically moves to the searched city or ZIP code location.
+6. Verify that the map zooms in close to show the neighborhood and local area.
+7. Verify that the store pin on the map is highlighted and centered.
+8. Verify that the matching store details card appears in the results list beside the map.","When the user enters a city or ZIP code, the map should automatically move to that city, zoom in to the local area, highlight the store pin on the map, and display the store details in the results list.","PASS: When searching 'Los Angeles', the map smoothly moves to Los Angeles / West Hollywood, zooms in to show the local area, and centers the store pin (8687 Melrose Ave). The store card also appears in the sidebar list.",PASS,HIGH (Core Feature Verified),screenshots/desktop/map_city_navigation_la.png

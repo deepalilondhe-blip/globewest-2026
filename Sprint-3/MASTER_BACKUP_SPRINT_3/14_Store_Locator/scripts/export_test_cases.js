@@ -446,6 +446,19 @@ const testCases = [
     "Status": "PASS",
     "Severity": "LOW (WCAG 2.2 AA Verified)",
     "Evidence Reference": "screenshots/desktop/map_verification_current.png"
+  },
+  {
+    "Test Case ID": "TC-GW-LOC-035",
+    "Module": "Map Canvas & Search Navigation",
+    "Auth Matrix": "Logged Out (Public Guest) & Trade",
+    "Test Scenario / Title": "Verify Map Navigates and Highlights Store Pin When Entering City or ZIP Code",
+    "Preconditions": "User is on the Store Locator page (/locator) and the Google Map is loaded.",
+    "Test Steps": "1. Go to the Store Locator search box.\n2. Enter a city name (such as 'Los Angeles') or enter a 5-digit ZIP code (such as '90069').\n3. Click the Search button or press Enter.\n4. Check the Google Map on the screen.\n5. Verify that the map automatically moves to the searched city or ZIP code location.\n6. Verify that the map zooms in close to show the neighborhood and local area.\n7. Verify that the store pin on the map is highlighted and centered.\n8. Verify that the matching store details card appears in the results list beside the map.",
+    "Expected Result (AU Baseline / Figma)": "When the user enters a city or ZIP code, the map should automatically move to that city, zoom in to the local area, highlight the store pin on the map, and display the store details in the results list.",
+    "Actual Result (mcstaging2 Live)": "PASS: When searching 'Los Angeles', the map smoothly moves to Los Angeles / West Hollywood, zooms in to show the local area, and centers the store pin (8687 Melrose Ave). The store card also appears in the sidebar list.",
+    "Status": "PASS",
+    "Severity": "HIGH (Core Feature Verified)",
+    "Evidence Reference": "screenshots/desktop/map_city_navigation_la.png"
   }
 ];
 

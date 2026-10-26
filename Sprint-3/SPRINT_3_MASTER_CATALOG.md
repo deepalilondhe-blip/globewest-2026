@@ -28,7 +28,7 @@
 | 11 | **About Us** | `/about-us` | About Us Spec | **20 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: AU branding badges & high-res image scaling |
 | 12 | **Blog Index Page** | `/blog` | Blog Index Spec | **30 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Pagination styling & category filtering |
 | 13 | **Blog Article Template** | `/blog/sample-article` | Blog Detail Spec | **25 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Social share links, related articles layout |
-| 14 | **Store Locator** | `/locator` | AU Baseline & US Figma | **34 TCs** (.xlsx & .csv) | AUDITED & RETESTED | 🟢 Google Maps API Fixed (Map canvas, satellite view, zoom, pins & keyboard accessibility); 🟡 Remaining: Regional Copy Leaks, Footer Badge & WCAG Form Labels |
+| 14 | **Store Locator** | `/locator` | AU Baseline & US Figma | **35 TCs** (.xlsx & .csv) | AUDITED & RETESTED | 🟢 Google Maps API Fixed (Map canvas, satellite view, zoom, pins, keyboard accessibility & city/ZIP auto-navigation); 🟡 Remaining: Regional Copy Leaks, Footer Badge & WCAG Form Labels |
 | 15 | **Claims Portal** | `/customer/account/` (`/gw_sales/claim/`) | Frames 630 & 631, `desktop/my_account/My Claims`, `mobile/my_account/My Claims`, `Create Claim` | Ready for QA | PREPARED & AUDITED | 🔴 Live US Staging Banner has dead link (`href="#"`), backend module redirects to dashboard |
 
 ---
