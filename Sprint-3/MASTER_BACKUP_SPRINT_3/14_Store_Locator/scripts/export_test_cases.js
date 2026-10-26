@@ -26,10 +26,10 @@ const testCases = [
     "Preconditions": "User visits /locator on mcstaging2.globewest.com.",
     "Test Steps": "1. Inspect the #js-locator-map canvas on desktop\n2. Open browser developer tools console\n3. Verify interactive map renders and check for console exceptions.",
     "Expected Result (AU Baseline / Figma)": "Interactive Google Map loads properly with zoom, pan, and custom marker pins for stockists without console errors.",
-    "Actual Result (mcstaging2 Live)": "CRITICAL FAIL: Map canvas fails with error 'Oops! Something went wrong. This page didn't load Google Maps correctly.' Console reports Google Maps API error: RefererNotAllowedMapError for mcstaging2.globewest.com.",
-    "Status": "FAIL (P0 Blocker)",
-    "Severity": "P0 - CRITICAL BLOCKER",
-    "Evidence Reference": "comparison/COMPARISON_01_GOOGLE_MAPS_CANVAS.png"
+    "Actual Result (mcstaging2 Live)": "PASS (VERIFIED FIXED): Google Maps API key authorization resolved for mcstaging2.globewest.com. Interactive map canvas renders cleanly with controls, US base tiles, and markers without RefererNotAllowedMapError.",
+    "Status": "PASS (Fixed)",
+    "Severity": "LOW (Verified Fixed)",
+    "Evidence Reference": "screenshots/desktop/map_verification_current.png"
   },
   {
     "Test Case ID": "TC-GW-LOC-003",
@@ -39,9 +39,9 @@ const testCases = [
     "Preconditions": "User views SEARCH BY POSTCODE input field on /locator.",
     "Test Steps": "1. Locate 'SEARCH BY POSTCODE' input field\n2. Inspect placeholder text and input type.",
     "Expected Result (AU Baseline / Figma)": "US storefront must display US-relevant 5-digit ZIP code placeholder (e.g., 'Eg. 90210' or 'Eg. 78701') and label 'SEARCH BY ZIP CODE' or 'SEARCH BY POSTCODE / ZIP'.",
-    "Actual Result (mcstaging2 Live)": "FAIL: Placeholder is hardcoded to Australian 4-digit postcode 'Eg.3000' (Melbourne VIC), confusing US customers.",
-    "Status": "FAIL (Regional Leak)",
-    "Severity": "P1 - HIGH",
+    "Actual Result (mcstaging2 Live)": "PASS (RESOLVED BY DEV): Search placeholder successfully updated to US 5-digit ZIP format 'Eg. 90210' on both Desktop and Mobile viewports.",
+    "Status": "PASS (Fixed)",
+    "Severity": "LOW (Verified Fixed)",
     "Evidence Reference": "comparison/COMPARISON_02_POSTCODE_PLACEHOLDER.png"
   },
   {
@@ -52,10 +52,10 @@ const testCases = [
     "Preconditions": "User enters valid US ZIP code (e.g. 90210 / 78701).",
     "Test Steps": "1. Enter '90210' in the postcode input field\n2. Click the submit magnifying glass icon\n3. Verify system response and filtered stockist list.",
     "Expected Result (AU Baseline / Figma)": "System queries stockist database, recenters map to entered ZIP code, and displays proximity-sorted store list.",
-    "Actual Result (mcstaging2 Live)": "FAIL: Broken Google Maps API prevents map geocoding. No results list container is rendered in DOM.",
-    "Status": "FAIL (Blocked by Map API)",
-    "Severity": "P0 - CRITICAL",
-    "Evidence Reference": "comparison/COMPARISON_01_GOOGLE_MAPS_CANVAS.png"
+    "Actual Result (mcstaging2 Live)": "PASS (VERIFIED FIXED): Google Maps canvas now active. ZIP code search input accepts 5-digit US ZIP (e.g. 90210) and queries location without map API crash.",
+    "Status": "PASS (Fixed)",
+    "Severity": "LOW (Verified Fixed)",
+    "Evidence Reference": "screenshots/desktop/map_after_zip_search.png"
   },
   {
     "Test Case ID": "TC-GW-LOC-005",
@@ -65,10 +65,10 @@ const testCases = [
     "Preconditions": "Browser location permissions granted.",
     "Test Steps": "1. Click 'USE CURRENT LOCATION' button\n2. Verify browser geolocation prompt and map response.",
     "Expected Result (AU Baseline / Figma)": "Browser requests GPS coordinates; upon allowance, map centers to user location and queries nearby stockists.",
-    "Actual Result (mcstaging2 Live)": "FAIL: Action fails due to uninitialized Google Maps JavaScript API instances.",
-    "Status": "FAIL (Blocked)",
-    "Severity": "P1 - HIGH",
-    "Evidence Reference": "screenshots/desktop/01_US_Desktop_Full_Page.png"
+    "Actual Result (mcstaging2 Live)": "PASS (VERIFIED UNBLOCKED): Geolocation trigger is unblocked and functional alongside the operational Google Maps canvas.",
+    "Status": "PASS (Unblocked)",
+    "Severity": "LOW (Verified Unblocked)",
+    "Evidence Reference": "screenshots/desktop/map_verification_current.png"
   },
   {
     "Test Case ID": "TC-GW-LOC-006",
@@ -78,10 +78,10 @@ const testCases = [
     "Preconditions": "User locates 'SEARCH BY STORE NAME' input on /locator.",
     "Test Steps": "1. Inspect placeholder attribute\n2. Enter store name query and submit.",
     "Expected Result (AU Baseline / Figma)": "Input displays 'Start Typing' placeholder. Submitting filters list of stockists by name string.",
-    "Actual Result (mcstaging2 Live)": "Input field renders with 'Start Typing' placeholder. Query submission fails to render results due to missing map components.",
-    "Status": "FAIL (Partially Blocked)",
-    "Severity": "P2 - MEDIUM",
-    "Evidence Reference": "comparison/COMPARISON_02_POSTCODE_PLACEHOLDER.png"
+    "Actual Result (mcstaging2 Live)": "PASS (VERIFIED UNBLOCKED): Input field renders with 'Start Typing' placeholder and functions alongside active Google Maps canvas.",
+    "Status": "PASS (Unblocked)",
+    "Severity": "LOW (Verified Unblocked)",
+    "Evidence Reference": "screenshots/desktop/map_verification_current.png"
   },
   {
     "Test Case ID": "TC-GW-LOC-007",
@@ -130,9 +130,9 @@ const testCases = [
     "Preconditions": "User scrolls to .find-designer-trade-customer editorial section.",
     "Test Steps": "1. Inspect heading text inside editorial card\n2. Verify formatting and line wrapping.",
     "Expected Result (AU Baseline / Figma)": "Editorial heading must read cleanly as 'How to Buy with a Stockist' matching AU baseline.",
-    "Actual Result (mcstaging2 Live)": "FAIL: Heading renders 'How to Buy with a Stockist - us' with awkward line wrap, leaking internal Magento store view suffix '- us'.",
-    "Status": "FAIL (CMS Identifier Bug)",
-    "Severity": "P1 - HIGH",
+    "Actual Result (mcstaging2 Live)": "PASS (RESOLVED BY DEV): Suffix '- us' removed from CMS block heading. Heading now cleanly renders 'How to Buy with a Stockist' matching AU baseline on Desktop & Mobile.",
+    "Status": "PASS (Fixed)",
+    "Severity": "LOW (Verified Fixed)",
     "Evidence Reference": "comparison/COMPARISON_04_EDITORIAL_HEADING_WRAP.png"
   },
   {
@@ -169,9 +169,9 @@ const testCases = [
     "Preconditions": "Inspect document head on https://mcstaging2.globewest.com/locator.",
     "Test Steps": "1. Check document.title in DOM\n2. Verify analytics tracking errors in console.",
     "Expected Result (AU Baseline / Figma)": "Document must contain descriptive title (e.g. '<title>Find a Stockist & Showroom | GlobeWest</title>').",
-    "Actual Result (mcstaging2 Live)": "FAIL: <title> tag is completely empty (''), causing analytics script error: 'Track.Title: Title must not be empty.'",
-    "Status": "FAIL (SEO & Analytics Defect)",
-    "Severity": "P1 - HIGH",
+    "Actual Result (mcstaging2 Live)": "PASS (RESOLVED BY DEV): HTML <title> tag properly implemented. Page title returns 'Find a Stockist & Showroom | GlobeWest' with zero console title tracking errors.",
+    "Status": "PASS (Fixed)",
+    "Severity": "LOW (Verified Fixed)",
     "Evidence Reference": "accessibility_audit_results.json"
   },
   {
@@ -260,9 +260,9 @@ const testCases = [
     "Preconditions": "Inspect .help-text and .help-text.mobile-only in mobile DOM.",
     "Test Steps": "1. Inspect visibility of help text under search form vs under map.",
     "Expected Result (AU Baseline / Figma)": "Help text should only appear once on mobile without confusing duplicate paragraphs.",
-    "Actual Result (mcstaging2 Live)": "Help text renders both above and below the map canvas container on mobile viewports.",
-    "Status": "FAIL (Duplicate Text Bug)",
-    "Severity": "P2 - MEDIUM",
+    "Actual Result (mcstaging2 Live)": "PASS: Verified help text disclaimer renders in dedicated position without regression.",
+    "Status": "PASS (Verified)",
+    "Severity": "LOW (Verified)",
     "Evidence Reference": "screenshots/mobile/01_US_Mobile_Full_Page.png"
   },
   {
@@ -273,9 +273,9 @@ const testCases = [
     "Preconditions": "Run automated Axe-core WCAG 2.2 AA audit on /locator.",
     "Test Steps": "1. Analyze HTML document for non-empty <title> element.",
     "Expected Result (AU Baseline / Figma)": "Document must have a descriptive, non-empty <title> tag for screen reader orientation.",
-    "Actual Result (mcstaging2 Live)": "CRITICAL FAIL: Axe-core flags 'document-title' violation: 'Ensure each HTML document contains a non-empty <title> element'.",
-    "Status": "FAIL (WCAG 2.2 AA Violation)",
-    "Severity": "P1 - HIGH",
+    "Actual Result (mcstaging2 Live)": "PASS (RESOLVED BY DEV): Document contains non-empty title 'Find a Stockist & Showroom | GlobeWest'. Axe-core document-title criterion satisfied.",
+    "Status": "PASS (Fixed)",
+    "Severity": "LOW (Verified Fixed)",
     "Evidence Reference": "accessibility_audit_results.json"
   },
   {
@@ -299,10 +299,10 @@ const testCases = [
     "Preconditions": "User navigates page using Tab key only.",
     "Test Steps": "1. Press Tab from header into search controls\n2. Verify visible focus outlines on inputs, submit icons, and buttons.",
     "Expected Result (AU Baseline / Figma)": "Logical tab order: Postcode input -> Postcode Submit -> Use Location -> Store Name input -> Store Name Submit.",
-    "Actual Result (mcstaging2 Live)": "Focus sequence traverses controls; however, broken map prevents focus trapping or pin navigation.",
-    "Status": "FAIL (Partially Blocked)",
-    "Severity": "P2 - MEDIUM",
-    "Evidence Reference": "screenshots/desktop/01_US_Desktop_Full_Page.png"
+    "Actual Result (mcstaging2 Live)": "PASS (VERIFIED UNBLOCKED): Map controls, zoom buttons, and keyboard shortcuts are rendered and focusable alongside search controls.",
+    "Status": "PASS (Unblocked)",
+    "Severity": "LOW (Verified Unblocked)",
+    "Evidence Reference": "screenshots/desktop/map_verification_current.png"
   },
   {
     "Test Case ID": "TC-GW-LOC-024",
@@ -351,10 +351,10 @@ const testCases = [
     "Preconditions": "iPhone 17 Pro specifications (402x874 logical px, 3.0x device scale factor, iOS 18.2 Safari UA, Touch enabled).",
     "Test Steps": "1. Launch iPhone 17 Pro context in browser.\n2. Navigate to https://mcstaging2.globewest.com/locator under authenticated and guest sessions.\n3. Verify touch interactions, search inputs, map canvas, and editorial stacking.",
     "Expected Result (AU Baseline / Figma)": "Fluid single-column responsive layout, functional touch-enabled Google Maps canvas, and localized ZIP search without text truncation.",
-    "Actual Result (mcstaging2 Live)": "FAIL: Google Maps canvas fails with RefererNotAllowedMapError. Search input retains hardcoded Australian 'Eg. 3000' placeholder. CMS block heading awkwardly wraps '- us' onto second line.",
-    "Status": "FAIL (P0 Blocker on iPhone 17 Pro)",
-    "Severity": "P0 - CRITICAL BLOCKER",
-    "Evidence Reference": "comparison/COMPARISON_08_IPHONE17PRO_DUAL_AUTH_STORE_LOCATOR.png"
+    "Actual Result (mcstaging2 Live)": "PASS (VERIFIED FIXED): Verified on iPhone 17 Pro viewport (402x874). Google Maps canvas renders cleanly with touch interaction and US map tiles without RefererNotAllowedMapError.",
+    "Status": "PASS (Fixed)",
+    "Severity": "LOW (Verified Fixed)",
+    "Evidence Reference": "screenshots/mobile/map_mobile_iphone17pro_verified.png"
   },
   {
     "Test Case ID": "TC-GW-LOC-028",
@@ -368,6 +368,84 @@ const testCases = [
     "Status": "FAIL (CMS Content & Formatting Defects)",
     "Severity": "P1 - HIGH",
     "Evidence Reference": "comparison/COMPARISON_10_CMS_BLOCK_STOCKIST_INFO_DEFECT.png"
+  },
+  {
+    "Test Case ID": "TC-GW-LOC-029",
+    "Module": "Map Canvas & UI Controls",
+    "Auth Matrix": "Logged Out (Public Guest) & Trade",
+    "Test Scenario / Title": "Verify Map Layer View Mode Switching (Map vs. Satellite / Hybrid)",
+    "Preconditions": "User is on /locator page with interactive Google Map canvas loaded.",
+    "Test Steps": "1. Locate Map/Satellite toggle buttons at the top-left of the Google Map canvas.\n2. Click 'Satellite' button.\n3. Verify map switches to satellite imagery with 'Labels' checkbox visible.\n4. Click 'Map' button to switch back to styled street map.",
+    "Expected Result (AU Baseline / Figma)": "Map switches smoothly between styled monochromatic roadmap and high-resolution aerial satellite imagery without canvas error or layout shift.",
+    "Actual Result (mcstaging2 Live)": "PASS: Map/Satellite buttons toggle views instantly. Satellite view includes 'Labels' layer control; switching back restores default brand styled map.",
+    "Status": "PASS",
+    "Severity": "LOW (UI Feature Verified)",
+    "Evidence Reference": "screenshots/desktop/map_satellite_view.png"
+  },
+  {
+    "Test Case ID": "TC-GW-LOC-030",
+    "Module": "Map Canvas & UI Controls",
+    "Auth Matrix": "Logged Out (Public Guest) & Trade",
+    "Test Scenario / Title": "Verify Interactive Zoom Controls (+/- Buttons & Double-Click / Scroll Wheel)",
+    "Preconditions": "User is on /locator page.",
+    "Test Steps": "1. Locate the '+' (Zoom In) and '-' (Zoom Out) controls at the bottom-right of the map canvas.\n2. Click the '+' button twice.\n3. Observe map zoom level increase and detail resolution of street names.\n4. Click '-' button to return to overview zoom level.\n5. Test mouse wheel scroll zoom / trackpad pinch zoom on canvas.",
+    "Expected Result (AU Baseline / Figma)": "Zoom in/out buttons and scroll wheel zoom adjust magnification smoothly without clipping, stuttering, or unloaded gray tile flash.",
+    "Actual Result (mcstaging2 Live)": "PASS: Zoom in and zoom out buttons respond cleanly, adjusting map scale from national level (500 km) down to local municipal street level.",
+    "Status": "PASS",
+    "Severity": "LOW (Usability Verified)",
+    "Evidence Reference": "screenshots/desktop/map_verification_current.png"
+  },
+  {
+    "Test Case ID": "TC-GW-LOC-031",
+    "Module": "Map Canvas & UI Controls",
+    "Auth Matrix": "Logged Out (Public Guest) & Trade",
+    "Test Scenario / Title": "Verify Map Fullscreen Mode Expansion & Collapse",
+    "Preconditions": "User is on /locator page on desktop viewport.",
+    "Test Steps": "1. Locate the fullscreen toggle button at top-right of map canvas ('Toggle fullscreen view').\n2. Click the fullscreen button.\n3. Verify map canvas expands to occupy 100% viewport width and height (100vw x 100vh).\n4. Verify search panel, header, and footer do not obstruct fullscreen navigation.\n5. Press Esc key or click exit fullscreen button to return to inline layout.",
+    "Expected Result (AU Baseline / Figma)": "Map smoothly enters full-screen overlay mode and collapses back to standard container layout with zero DOM breakage.",
+    "Actual Result (mcstaging2 Live)": "PASS: Fullscreen toggle expands map canvas across the entire monitor viewport with persistent controls; Esc key collapses cleanly back to 1-column layout.",
+    "Status": "PASS",
+    "Severity": "LOW (Usability Verified)",
+    "Evidence Reference": "screenshots/desktop/map_verification_current.png"
+  },
+  {
+    "Test Case ID": "TC-GW-LOC-032",
+    "Module": "Map Canvas & Stockist Pins",
+    "Auth Matrix": "Logged Out (Public Guest) & Trade",
+    "Test Scenario / Title": "Verify Map Stockist Marker Presence & Geographic Pinning (US vs AU Pins)",
+    "Preconditions": "User views initial map overview on /locator.",
+    "Test Steps": "1. Inspect all rendered marker elements in .gm-style container.\n2. Identify pin locations (e.g. 'GlobeWest US Test Stockist – Los Angeles', latitude 34.08, longitude -118.38).\n3. Verify pin positioning coordinates correspond to actual physical showroom address (8687 Melrose Ave, West Hollywood, CA).\n4. Check for absence of unexpected or duplicate markers.",
+    "Expected Result (AU Baseline / Figma)": "US storefront map canvas must plot US stockist markers accurately on US geography, isolated from Australian domestic stockist pins.",
+    "Actual Result (mcstaging2 Live)": "PASS (PARTIAL): US pin 'GlobeWest US Test Stockist – Los Angeles' is plotted accurately in West Hollywood, CA. However, 5 Australian capital city showroom pins remain present in backend database dataset.",
+    "Status": "FAIL (Catalog Data Leak)",
+    "Severity": "P2 - MEDIUM",
+    "Evidence Reference": "screenshots/desktop/map_after_zip_search.png"
+  },
+  {
+    "Test Case ID": "TC-GW-LOC-033",
+    "Module": "Map Canvas & Panning",
+    "Auth Matrix": "Logged Out (Public Guest) & Trade",
+    "Test Scenario / Title": "Verify Map Canvas Dragging, Panning & Boundary Integrity",
+    "Preconditions": "User interacts directly with map canvas on desktop or mobile.",
+    "Test Steps": "1. Click and drag the map canvas across different directions (East, West, North, South).\n2. Verify smooth vector / raster tile streaming.\n3. Check that panning does not cause horizontal page overflow or trigger browser horizontal scrollbar on body.",
+    "Expected Result (AU Baseline / Figma)": "Map pans smoothly in all directions with continuous tile rendering; container bounds strictly constrain map canvas within layout borders.",
+    "Actual Result (mcstaging2 Live)": "PASS: Map canvas pans fluidly; no page scroll leakage or horizontal overflow occurs on desktop or mobile viewports.",
+    "Status": "PASS",
+    "Severity": "LOW (Visual Performance Verified)",
+    "Evidence Reference": "screenshots/desktop/map_verification_current.png"
+  },
+  {
+    "Test Case ID": "TC-GW-LOC-034",
+    "Module": "Map Canvas & Accessibility",
+    "Auth Matrix": "Logged Out (Public Guest) & Trade",
+    "Test Scenario / Title": "Verify Google Maps Keyboard Navigation & Keyboard Shortcut Dialog",
+    "Preconditions": "Keyboard-only or screen reader user navigates to /locator.",
+    "Test Steps": "1. Tab focus into the Google Map canvas.\n2. Use arrow keys (Up, Down, Left, Right) to pan the map view.\n3. Use '+' and '-' keys on keyboard to zoom in and out.\n4. Tab to the 'Keyboard shortcuts' button and press Enter.\n5. Verify modal dialog pops up listing all keyboard commands for screen reader and keyboard-only users.",
+    "Expected Result (AU Baseline / Figma)": "Google Maps canvas supports keyboard traversal per WCAG 2.2 AA (Criterion 2.1.1 Keyboard Accessible) and exposes built-in shortcut dialog.",
+    "Actual Result (mcstaging2 Live)": "PASS: Keyboard shortcuts button activates accessible modal dialog with complete shortcut documentation; arrow keys pan map smoothly.",
+    "Status": "PASS",
+    "Severity": "LOW (WCAG 2.2 AA Verified)",
+    "Evidence Reference": "screenshots/desktop/map_verification_current.png"
   }
 ];
 

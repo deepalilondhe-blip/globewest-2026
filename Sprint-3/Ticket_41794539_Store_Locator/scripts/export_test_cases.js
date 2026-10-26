@@ -368,6 +368,84 @@ const testCases = [
     "Status": "FAIL (CMS Content & Formatting Defects)",
     "Severity": "P1 - HIGH",
     "Evidence Reference": "comparison/COMPARISON_10_CMS_BLOCK_STOCKIST_INFO_DEFECT.png"
+  },
+  {
+    "Test Case ID": "TC-GW-LOC-029",
+    "Module": "Map Canvas & UI Controls",
+    "Auth Matrix": "Logged Out (Public Guest) & Trade",
+    "Test Scenario / Title": "Verify Map Layer View Mode Switching (Map vs. Satellite / Hybrid)",
+    "Preconditions": "User is on /locator page with interactive Google Map canvas loaded.",
+    "Test Steps": "1. Locate Map/Satellite toggle buttons at the top-left of the Google Map canvas.\n2. Click 'Satellite' button.\n3. Verify map switches to satellite imagery with 'Labels' checkbox visible.\n4. Click 'Map' button to switch back to styled street map.",
+    "Expected Result (AU Baseline / Figma)": "Map switches smoothly between styled monochromatic roadmap and high-resolution aerial satellite imagery without canvas error or layout shift.",
+    "Actual Result (mcstaging2 Live)": "PASS: Map/Satellite buttons toggle views instantly. Satellite view includes 'Labels' layer control; switching back restores default brand styled map.",
+    "Status": "PASS",
+    "Severity": "LOW (UI Feature Verified)",
+    "Evidence Reference": "screenshots/desktop/map_satellite_view.png"
+  },
+  {
+    "Test Case ID": "TC-GW-LOC-030",
+    "Module": "Map Canvas & UI Controls",
+    "Auth Matrix": "Logged Out (Public Guest) & Trade",
+    "Test Scenario / Title": "Verify Interactive Zoom Controls (+/- Buttons & Double-Click / Scroll Wheel)",
+    "Preconditions": "User is on /locator page.",
+    "Test Steps": "1. Locate the '+' (Zoom In) and '-' (Zoom Out) controls at the bottom-right of the map canvas.\n2. Click the '+' button twice.\n3. Observe map zoom level increase and detail resolution of street names.\n4. Click '-' button to return to overview zoom level.\n5. Test mouse wheel scroll zoom / trackpad pinch zoom on canvas.",
+    "Expected Result (AU Baseline / Figma)": "Zoom in/out buttons and scroll wheel zoom adjust magnification smoothly without clipping, stuttering, or unloaded gray tile flash.",
+    "Actual Result (mcstaging2 Live)": "PASS: Zoom in and zoom out buttons respond cleanly, adjusting map scale from national level (500 km) down to local municipal street level.",
+    "Status": "PASS",
+    "Severity": "LOW (Usability Verified)",
+    "Evidence Reference": "screenshots/desktop/map_verification_current.png"
+  },
+  {
+    "Test Case ID": "TC-GW-LOC-031",
+    "Module": "Map Canvas & UI Controls",
+    "Auth Matrix": "Logged Out (Public Guest) & Trade",
+    "Test Scenario / Title": "Verify Map Fullscreen Mode Expansion & Collapse",
+    "Preconditions": "User is on /locator page on desktop viewport.",
+    "Test Steps": "1. Locate the fullscreen toggle button at top-right of map canvas ('Toggle fullscreen view').\n2. Click the fullscreen button.\n3. Verify map canvas expands to occupy 100% viewport width and height (100vw x 100vh).\n4. Verify search panel, header, and footer do not obstruct fullscreen navigation.\n5. Press Esc key or click exit fullscreen button to return to inline layout.",
+    "Expected Result (AU Baseline / Figma)": "Map smoothly enters full-screen overlay mode and collapses back to standard container layout with zero DOM breakage.",
+    "Actual Result (mcstaging2 Live)": "PASS: Fullscreen toggle expands map canvas across the entire monitor viewport with persistent controls; Esc key collapses cleanly back to 1-column layout.",
+    "Status": "PASS",
+    "Severity": "LOW (Usability Verified)",
+    "Evidence Reference": "screenshots/desktop/map_verification_current.png"
+  },
+  {
+    "Test Case ID": "TC-GW-LOC-032",
+    "Module": "Map Canvas & Stockist Pins",
+    "Auth Matrix": "Logged Out (Public Guest) & Trade",
+    "Test Scenario / Title": "Verify Map Stockist Marker Presence & Geographic Pinning (US vs AU Pins)",
+    "Preconditions": "User views initial map overview on /locator.",
+    "Test Steps": "1. Inspect all rendered marker elements in .gm-style container.\n2. Identify pin locations (e.g. 'GlobeWest US Test Stockist – Los Angeles', latitude 34.08, longitude -118.38).\n3. Verify pin positioning coordinates correspond to actual physical showroom address (8687 Melrose Ave, West Hollywood, CA).\n4. Check for absence of unexpected or duplicate markers.",
+    "Expected Result (AU Baseline / Figma)": "US storefront map canvas must plot US stockist markers accurately on US geography, isolated from Australian domestic stockist pins.",
+    "Actual Result (mcstaging2 Live)": "PASS (PARTIAL): US pin 'GlobeWest US Test Stockist – Los Angeles' is plotted accurately in West Hollywood, CA. However, 5 Australian capital city showroom pins remain present in backend database dataset.",
+    "Status": "FAIL (Catalog Data Leak)",
+    "Severity": "P2 - MEDIUM",
+    "Evidence Reference": "screenshots/desktop/map_after_zip_search.png"
+  },
+  {
+    "Test Case ID": "TC-GW-LOC-033",
+    "Module": "Map Canvas & Panning",
+    "Auth Matrix": "Logged Out (Public Guest) & Trade",
+    "Test Scenario / Title": "Verify Map Canvas Dragging, Panning & Boundary Integrity",
+    "Preconditions": "User interacts directly with map canvas on desktop or mobile.",
+    "Test Steps": "1. Click and drag the map canvas across different directions (East, West, North, South).\n2. Verify smooth vector / raster tile streaming.\n3. Check that panning does not cause horizontal page overflow or trigger browser horizontal scrollbar on body.",
+    "Expected Result (AU Baseline / Figma)": "Map pans smoothly in all directions with continuous tile rendering; container bounds strictly constrain map canvas within layout borders.",
+    "Actual Result (mcstaging2 Live)": "PASS: Map canvas pans fluidly; no page scroll leakage or horizontal overflow occurs on desktop or mobile viewports.",
+    "Status": "PASS",
+    "Severity": "LOW (Visual Performance Verified)",
+    "Evidence Reference": "screenshots/desktop/map_verification_current.png"
+  },
+  {
+    "Test Case ID": "TC-GW-LOC-034",
+    "Module": "Map Canvas & Accessibility",
+    "Auth Matrix": "Logged Out (Public Guest) & Trade",
+    "Test Scenario / Title": "Verify Google Maps Keyboard Navigation & Keyboard Shortcut Dialog",
+    "Preconditions": "Keyboard-only or screen reader user navigates to /locator.",
+    "Test Steps": "1. Tab focus into the Google Map canvas.\n2. Use arrow keys (Up, Down, Left, Right) to pan the map view.\n3. Use '+' and '-' keys on keyboard to zoom in and out.\n4. Tab to the 'Keyboard shortcuts' button and press Enter.\n5. Verify modal dialog pops up listing all keyboard commands for screen reader and keyboard-only users.",
+    "Expected Result (AU Baseline / Figma)": "Google Maps canvas supports keyboard traversal per WCAG 2.2 AA (Criterion 2.1.1 Keyboard Accessible) and exposes built-in shortcut dialog.",
+    "Actual Result (mcstaging2 Live)": "PASS: Keyboard shortcuts button activates accessible modal dialog with complete shortcut documentation; arrow keys pan map smoothly.",
+    "Status": "PASS",
+    "Severity": "LOW (WCAG 2.2 AA Verified)",
+    "Evidence Reference": "screenshots/desktop/map_verification_current.png"
   }
 ];
 
