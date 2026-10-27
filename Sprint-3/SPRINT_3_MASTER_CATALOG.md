@@ -23,7 +23,7 @@
 | 8 | **FAQ Management Guide** | Magento Admin Page Builder | Frames 620/621/622/624/626 | [Admin Guide](HOW_TO_ADD_NEW_FAQ_ADMIN_GUIDE.md) | COMPLETE & SCRIPTED | 🟢 Up to 8 FAQs, Closed by Default, Single-Open Rule |
 | 8 | **Login, Create Account & Password** | `/customer/account/login/` | Auth Pages (Desktop & Mobile) | Verified & Scripted | RETESTED & VERIFIED | 🟢 Pass / Retest Verified |
 | 8 | **Homepage** | `/` | Desktop & Mobile Homepage | **21 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Hero banner CTA padding, Trade mode toggle |
-| 9 | **Mega Menu** | Primary Nav Header | Desktop Mega Menu & Mobile Drawer | **21 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Subcategory flyout alignment, brand links |
+| 9 | **Mega Menu** | Primary Nav Header | Desktop Mega Menu & Mobile Drawer | **28 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Subcategory flyout alignment, brand links |
 | 10 | **Static Pages** | Terms, Privacy, FAQ, Contact Us, 404 | Content Pages Spec | **21 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Australian contact numbers & AU business addresses |
 | 11 | **About Us** | `/about-us` | About Us Spec | **21 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: AU branding badges & high-res image scaling |
 | 12 | **Blog Index Page** | `/blog` | Blog Index Spec | **37 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Pagination styling & category filtering |

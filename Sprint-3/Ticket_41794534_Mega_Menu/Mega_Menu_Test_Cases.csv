@@ -131,3 +131,51 @@ Step 3: Verify the browser navigates back to the homepage.","Clicking the logo t
 Step 2: Open and close a category dropdown.
 
 Step 3: Check if the screen reader announces whether the menu is expanded or collapsed.","Screen reader should announce the category name and state (expanded or collapsed).","Screen reader announces category name and expanded/collapsed state accurately.","PASS","P1 - High"
+
+"TC-MM-22","Desktop - Editorial & Promo Cards","Verify Promotional Card Display & US Image/Link Parity in Flyouts","Desktop viewport 1440x900 on US staging homepage","Step 1: Hover mouse over categories containing promotional cards (Indoor, Outdoor, Homewares, In Stock).
+
+Step 2: Inspect right-hand promotional card imagery, heading copy, and CTA button.
+
+Step 3: Click promotional card CTA and assert target destination URL on US storefront.","Promotional cards display high-resolution imagery and headlines matching design spec; CTA links navigate cleanly to US collection pages without AU domain leakage.","Right-hand promotional cards render high-res lifestyle imagery; CTAs link cleanly to US collections with zero Australian domain leakage.","PASS","P2 - Medium"
+
+"TC-MM-23","Tablet - Responsive Navigation (768px - 1024px)","Verify Mega Menu Responsive Breakpoint & Touch Drawer on Tablet / iPad","Tablet viewport 820x1180 (iPad Air) and 768x1024 (iPad Mini)","Step 1: Open US staging homepage on tablet viewport.
+
+Step 2: Verify header navigation collapses cleanly into mobile hamburger icon at tablet widths.
+
+Step 3: Tap hamburger icon to open side drawer.
+
+Step 4: Tap category accordions (Indoor, Outdoor, Support) and test touch interaction.","Header navigation adapts responsively without horizontal overflow or overlapping logo; side drawer opens smoothly with responsive touch targets.","Navigation adapts cleanly to tablet viewport; hamburger drawer operates smoothly with comfortable touch spacing across all categories.","PASS","P1 - High"
+
+"TC-MM-24","Desktop - Sticky Header on Scroll","Verify Mega Menu Flyout Behavior when Header is Sticky on Page Scroll","Desktop viewport 1440x900, user is on a long PLP or PDP page","Step 1: Scroll down page past 300px so sticky header locks to top of viewport.
+
+Step 2: Hover mouse over navigation categories (Indoor, Outdoor, Inspiration).
+
+Step 3: Verify mega menu flyout dropdown positions correctly below sticky header without clipping or visual lag.","Mega menu flyout opens directly underneath the sticky header bar with proper z-index layering over page content.","Mega menu flyout opens seamlessly beneath sticky header; z-index layering sits cleanly above PLP product cards and banners.","PASS","P2 - Medium"
+
+"TC-MM-25","Desktop - Primary Category Landing","Verify Direct Click on Top-Level Category Navigates to Primary Category PLP","Desktop viewport 1440x900 on homepage","Step 1: Click directly on top-level category label ""Indoor"" (not subcategory link).
+
+Step 2: Verify browser navigates to /indoor collection page.
+
+Step 3: Repeat direct click test for ""Outdoor"" and ""Homewares"".","Direct click on parent category label routes user to the primary category PLP (/indoor, /outdoor, /homewares) with full product catalog.","Direct clicks route cleanly to respective parent category PLPs on US storefront (/indoor, /outdoor, /homewares) with HTTP 200.","PASS","P2 - Medium"
+
+"TC-MM-26","Cross-Feature Coexistence - Mini Cart","Verify Open Mega Menu Flyout Dismisses when Mini Cart Drawer is Opened","Desktop viewport 1440x900, active open mega menu flyout","Step 1: Hover over ""Indoor"" to expand mega menu flyout.
+
+Step 2: Click the Mini Cart bag icon in the header.
+
+Step 3: Verify mega menu flyout automatically closes as mini cart slide-out drawer opens.","Mega menu flyout closes immediately to avoid visual z-index collision with the cart drawer.","Mega menu collapses cleanly as mini cart drawer opens; zero z-index or visual overlap conflict.","PASS","P1 - High"
+
+"TC-MM-27","Dual-Auth Matrix - Trade Customer Session","Verify Mega Menu Structure and Category Parity in Authenticated Trade Session","Logged in as approved US Trade customer (deepali.londhe@overdose.digital)","Step 1: Log in as Trade customer on US staging.
+
+Step 2: Inspect top navigation menu bar and all 9 categories.
+
+Step 3: Hover through Indoor, Outdoor, and In Stock flyouts.
+
+Step 4: Verify trade pricing toggle and account dropdown coexist alongside mega menu.","All 9 categories retain full parity with guest view; trade pricing indicator and account utilities render cleanly without displacing category pills.","All 9 categories render with exact parity in Trade session; header utilities and trade toggle coexist without layout distortion.","PASS","P1 - High"
+
+"TC-MM-28","Catalog Routing Integrity - Subcategory PLPs","Verify Core Subcategory Links Navigate to Active US PLP Pages (Zero 404s)","Desktop viewport 1440x900 on US staging","Step 1: Hover over ""Indoor"" and click ""Sofas"", ""Dining Tables"", ""Lounge Chairs"".
+
+Step 2: Hover over ""Outdoor"" and click ""Dining Tables"", ""Sofas"".
+
+Step 3: Hover over ""In Stock"" and click ""In Stock Indoor"".
+
+Step 4: Verify all destination pages return HTTP 200 with populated product listing grids.","All sampled subcategory links route to valid US PLP paths with active product listings and zero 404 error pages.","All core subcategory links return HTTP 200 with populated product grids and zero 404 broken page errors.","PASS","P1 - High"

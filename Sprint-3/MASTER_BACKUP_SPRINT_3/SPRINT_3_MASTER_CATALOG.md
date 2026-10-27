@@ -22,7 +22,7 @@
 | 7 | **My Account – Dropdown** | Header `👤 My Account` / Mobile Overlay | Frame 620 Dropdown Artboards | **30 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Wishlist missing in dropdown, drawer links missing |
 | 8 | **Login, Create Account & Password** | `/customer/account/login/` | Auth Pages (Desktop & Mobile) | Verified & Scripted | RETESTED & VERIFIED | 🟢 Pass / Retest Verified |
 | 8 | **Homepage** | `/` | Desktop & Mobile Homepage | **25 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Hero banner CTA padding, Trade mode toggle |
-| 9 | **Mega Menu** | Primary Nav Header | Desktop Mega Menu & Mobile Drawer | **20 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Subcategory flyout alignment, brand links |
+| 9 | **Mega Menu** | Primary Nav Header | Desktop Mega Menu & Mobile Drawer | **28 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Subcategory flyout alignment, brand links |
 | 10 | **Static Pages** | Terms, Privacy, FAQ, Contact Us, 404 | Content Pages Spec | **25 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Australian contact numbers & AU business addresses |
 | 11 | **About Us** | `/about-us` | About Us Spec | **20 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: AU branding badges & high-res image scaling |
 | 12 | **Blog Index Page** | `/blog` | Blog Index Spec | **30 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Pagination styling & category filtering |

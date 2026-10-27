@@ -237,6 +237,83 @@ const testCases = [
     "Actual Result": "Screen reader announces category name and expanded/collapsed state accurately.",
     "Status": "PASS",
     "Severity": "P1 - High"
+  },
+  {
+    "Test ID": "TC-MM-22",
+    "Feature / Category": "Desktop - Editorial & Promo Cards",
+    "Test Scenario": "Verify Promotional Card Display & US Image/Link Parity in Flyouts",
+    "Pre-Conditions": "Desktop viewport 1440x900 on US staging homepage",
+    "Test Steps": "Step 1: Hover mouse over categories containing promotional cards (Indoor, Outdoor, Homewares, In Stock).\n\nStep 2: Inspect right-hand promotional card imagery, heading copy, and CTA button.\n\nStep 3: Click promotional card CTA and assert target destination URL on US storefront.",
+    "Expected Result": "Promotional cards display high-resolution imagery and headlines matching design spec; CTA links navigate cleanly to US collection pages without AU domain leakage.",
+    "Actual Result": "Right-hand promotional cards render high-res lifestyle imagery; CTAs link cleanly to US collections with zero Australian domain leakage.",
+    "Status": "PASS",
+    "Severity": "P2 - Medium"
+  },
+  {
+    "Test ID": "TC-MM-23",
+    "Feature / Category": "Tablet - Responsive Navigation (768px - 1024px)",
+    "Test Scenario": "Verify Mega Menu Responsive Breakpoint & Touch Drawer on Tablet / iPad",
+    "Pre-Conditions": "Tablet viewport 820x1180 (iPad Air) and 768x1024 (iPad Mini)",
+    "Test Steps": "Step 1: Open US staging homepage on tablet viewport.\n\nStep 2: Verify header navigation collapses cleanly into mobile hamburger icon at tablet widths.\n\nStep 3: Tap hamburger icon to open side drawer.\n\nStep 4: Tap category accordions (Indoor, Outdoor, Support) and test touch interaction.",
+    "Expected Result": "Header navigation adapts responsively without horizontal overflow or overlapping logo; side drawer opens smoothly with responsive touch targets.",
+    "Actual Result": "Navigation adapts cleanly to tablet viewport; hamburger drawer operates smoothly with comfortable touch spacing across all categories.",
+    "Status": "PASS",
+    "Severity": "P1 - High"
+  },
+  {
+    "Test ID": "TC-MM-24",
+    "Feature / Category": "Desktop - Sticky Header on Scroll",
+    "Test Scenario": "Verify Mega Menu Flyout Behavior when Header is Sticky on Page Scroll",
+    "Pre-Conditions": "Desktop viewport 1440x900, user is on a long PLP or PDP page",
+    "Test Steps": "Step 1: Scroll down page past 300px so sticky header locks to top of viewport.\n\nStep 2: Hover mouse over navigation categories (Indoor, Outdoor, Inspiration).\n\nStep 3: Verify mega menu flyout dropdown positions correctly below sticky header without clipping or visual lag.",
+    "Expected Result": "Mega menu flyout opens directly underneath the sticky header bar with proper z-index layering over page content.",
+    "Actual Result": "Mega menu flyout opens seamlessly beneath sticky header; z-index layering sits cleanly above PLP product cards and banners.",
+    "Status": "PASS",
+    "Severity": "P2 - Medium"
+  },
+  {
+    "Test ID": "TC-MM-25",
+    "Feature / Category": "Desktop - Primary Category Landing",
+    "Test Scenario": "Verify Direct Click on Top-Level Category Navigates to Primary Category PLP",
+    "Pre-Conditions": "Desktop viewport 1440x900 on homepage",
+    "Test Steps": "Step 1: Click directly on top-level category label \"Indoor\" (not subcategory link).\n\nStep 2: Verify browser navigates to /indoor collection page.\n\nStep 3: Repeat direct click test for \"Outdoor\" and \"Homewares\".",
+    "Expected Result": "Direct click on parent category label routes user to the primary category PLP (/indoor, /outdoor, /homewares) with full product catalog.",
+    "Actual Result": "Direct clicks route cleanly to respective parent category PLPs on US storefront (/indoor, /outdoor, /homewares) with HTTP 200.",
+    "Status": "PASS",
+    "Severity": "P2 - Medium"
+  },
+  {
+    "Test ID": "TC-MM-26",
+    "Feature / Category": "Cross-Feature Coexistence - Mini Cart",
+    "Test Scenario": "Verify Open Mega Menu Flyout Dismisses when Mini Cart Drawer is Opened",
+    "Pre-Conditions": "Desktop viewport 1440x900, active open mega menu flyout",
+    "Test Steps": "Step 1: Hover over \"Indoor\" to expand mega menu flyout.\n\nStep 2: Click the Mini Cart bag icon in the header.\n\nStep 3: Verify mega menu flyout automatically closes as mini cart slide-out drawer opens.",
+    "Expected Result": "Mega menu flyout closes immediately to avoid visual z-index collision with the cart drawer.",
+    "Actual Result": "Mega menu collapses cleanly as mini cart drawer opens; zero z-index or visual overlap conflict.",
+    "Status": "PASS",
+    "Severity": "P1 - High"
+  },
+  {
+    "Test ID": "TC-MM-27",
+    "Feature / Category": "Dual-Auth Matrix - Trade Customer Session",
+    "Test Scenario": "Verify Mega Menu Structure and Category Parity in Authenticated Trade Session",
+    "Pre-Conditions": "Logged in as approved US Trade customer (deepali.londhe@overdose.digital)",
+    "Test Steps": "Step 1: Log in as Trade customer on US staging.\n\nStep 2: Inspect top navigation menu bar and all 9 categories.\n\nStep 3: Hover through Indoor, Outdoor, and In Stock flyouts.\n\nStep 4: Verify trade pricing toggle and account dropdown coexist alongside mega menu.",
+    "Expected Result": "All 9 categories retain full parity with guest view; trade pricing indicator and account utilities render cleanly without displacing category pills.",
+    "Actual Result": "All 9 categories render with exact parity in Trade session; header utilities and trade toggle coexist without layout distortion.",
+    "Status": "PASS",
+    "Severity": "P1 - High"
+  },
+  {
+    "Test ID": "TC-MM-28",
+    "Feature / Category": "Catalog Routing Integrity - Subcategory PLPs",
+    "Test Scenario": "Verify Core Subcategory Links Navigate to Active US PLP Pages (Zero 404s)",
+    "Pre-Conditions": "Desktop viewport 1440x900 on US staging",
+    "Test Steps": "Step 1: Hover over \"Indoor\" and click \"Sofas\", \"Dining Tables\", \"Lounge Chairs\".\n\nStep 2: Hover over \"Outdoor\" and click \"Dining Tables\", \"Sofas\".\n\nStep 3: Hover over \"In Stock\" and click \"In Stock Indoor\".\n\nStep 4: Verify all destination pages return HTTP 200 with populated product listing grids.",
+    "Expected Result": "All sampled subcategory links route to valid US PLP paths with active product listings and zero 404 error pages.",
+    "Actual Result": "All core subcategory links return HTTP 200 with populated product grids and zero 404 broken page errors.",
+    "Status": "PASS",
+    "Severity": "P1 - High"
   }
 ];
 
