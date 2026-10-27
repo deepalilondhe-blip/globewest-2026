@@ -1,0 +1,111 @@
+{
+  "timestamp": "2026-10-15T06:03:40.568Z",
+  "sections": {
+    "utilityBarLoggedOut": {
+      "rendered": true,
+      "text": "Become a Trade Customer | Book Showroom Appointment",
+      "links": [
+        {
+          "text": "Become a Trade Customer",
+          "href": "https://mcstaging2.globewest.com/how-to-buy-trade"
+        },
+        {
+          "text": "Book Showroom Appointment",
+          "href": "/online_booking/"
+        }
+      ]
+    },
+    "heroBanner": {
+      "breadcrumbs": "Home  Indoor",
+      "titleText": "Indoor Furniture",
+      "titleFontFamily": "IvyMode, \"Times New Roman\", Georgia, serif",
+      "titleFontSize": "55px",
+      "hasQuickLinksSection": false
+    },
+    "filterToolbar": {
+      "pillsCount": 19,
+      "pillsList": [
+        "Brand",
+        "Style",
+        "Room",
+        "Width",
+        "Height",
+        "Depth"
+      ],
+      "sortDefaultOption": "New Arrivals",
+      "hasFiltersSidebarHeading": true,
+      "hasHideFiltersToggle": true
+    },
+    "guestCard": {
+      "rendered": true,
+      "compareFontWeight": "500",
+      "comparePadding": "0px",
+      "compareMargin": "0px",
+      "imageSrcSnippet": "https://mcstaging2.globewest.com/media/catalog/product/placeholder/def",
+      "isPlaceholderImage": true,
+      "badgeText": "None",
+      "isBadgeBelowPhoto": null,
+      "hasPriceInGuestMode": false
+    },
+    "utilityBarLoggedIn": {
+      "rendered": true,
+      "hasPriceToggle": true,
+      "priceToggleLabel": "Trade",
+      "hasAccountMenu": true,
+      "accountMenuText": "My Account",
+      "showroomLinkText": "Book Showroom Appointment"
+    },
+    "authCards": [
+      {
+        "cardIndex": 1,
+        "title": "Pearce Marble 2 Drawer Nightstand - Matt Ocean Marble - Bone",
+        "priceText": "$580.00 | $1,295.00 | MSRP: | $638.00",
+        "stock": "N/A",
+        "swatchesCount": 0,
+        "hasCompare": true,
+        "actionRight": "Save",
+        "hasTradePrice": true,
+        "hasMsrp": true
+      },
+      {
+        "cardIndex": 2,
+        "title": "Arturo Timber Leg Accent Chair - Paloma - Chestnut",
+        "priceText": "$470.00 | $1,140.00 | MSRP: | $517.00",
+        "stock": "N/A",
+        "swatchesCount": 0,
+        "hasCompare": true,
+        "actionRight": "Save",
+        "hasTradePrice": true,
+        "hasMsrp": true
+      },
+      {
+        "cardIndex": 3,
+        "title": "Arturo Timber Leg Accent Chair - Greige Stripe - Natural Mindi",
+        "priceText": "$585.00 | $1,140.00 | MSRP: | $644.00",
+        "stock": "N/A",
+        "swatchesCount": 0,
+        "hasCompare": true,
+        "actionRight": "Save",
+        "hasTradePrice": true,
+        "hasMsrp": true
+      },
+      {
+        "cardIndex": 4,
+        "title": "Carvara Abstract Nightstand - New Oak",
+        "priceText": "$475.00 | $795.00 | MSRP: | $523.00",
+        "stock": "N/A",
+        "swatchesCount": 0,
+        "hasCompare": true,
+        "actionRight": "Save",
+        "hasTradePrice": true,
+        "hasMsrp": true
+      }
+    ],
+    "mobile": {
+      "hasBrowseByButton": true,
+      "browseByButtonText": "Show Filters",
+      "gridColumns": "none",
+      "firstCardWidth": 162
+    }
+  }
+}

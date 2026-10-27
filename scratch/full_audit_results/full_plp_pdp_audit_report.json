@@ -1,0 +1,274 @@
+{
+  "timestamp": "2026-10-19T08:18:03.386Z",
+  "plpTrade": {
+    "cardCount": 12,
+    "cards": [
+      {
+        "cardIndex": 0,
+        "title": "Leon Side Table - Powder Blue",
+        "comparePresent": false,
+        "compareStyles": null,
+        "badges": [],
+        "swatchCount": 0,
+        "isPlaceholder": true,
+        "imgSrc": "https://mcstaging2.globewest.com/media/catalog/product/placeholder/default/230118_Image-Coming-Soon-"
+      },
+      {
+        "cardIndex": 1,
+        "title": "Cape 1 Seater Sofa - Driftwood - Sandcastle",
+        "comparePresent": false,
+        "compareStyles": null,
+        "badges": [],
+        "swatchCount": 0,
+        "isPlaceholder": true,
+        "imgSrc": "https://mcstaging2.globewest.com/media/catalog/product/placeholder/default/230118_Image-Coming-Soon-"
+      },
+      {
+        "cardIndex": 2,
+        "title": "Pearce Marble 2 Drawer Nightstand - Matt Ocean Marble - Bone",
+        "priceBox": "$580.00 $1,295.00 MSRP: $638.00",
+        "comparePresent": true,
+        "compareStyles": {
+          "fontWeight": "500",
+          "margin": "0px",
+          "padding": "0px",
+          "position": "relative",
+          "top": "0px",
+          "left": "0px"
+        },
+        "badges": [],
+        "swatchCount": 0,
+        "isPlaceholder": true,
+        "imgSrc": "https://mcstaging2.globewest.com/media/catalog/product/placeholder/default/230118_Image-Coming-Soon-"
+      },
+      {
+        "cardIndex": 3,
+        "title": "Pearce Marble 2 Drawer Nightstand - Matt Ocean Marble - Bone",
+        "priceBox": "$580.00 $1,295.00 MSRP: $638.00",
+        "comparePresent": true,
+        "compareStyles": {
+          "fontWeight": "500",
+          "margin": "0px",
+          "padding": "0px",
+          "position": "relative",
+          "top": "0px",
+          "left": "0px"
+        },
+        "badges": [],
+        "swatchCount": 0,
+        "isPlaceholder": true,
+        "imgSrc": "https://mcstaging2.globewest.com/media/catalog/product/placeholder/default/230118_Image-Coming-Soon-"
+      },
+      {
+        "cardIndex": 4,
+        "title": "Arturo Timber Leg Accent Chair - Paloma - Chestnut",
+        "priceBox": "$470.00 $1,140.00 MSRP: $517.00",
+        "comparePresent": true,
+        "compareStyles": {
+          "fontWeight": "500",
+          "margin": "0px",
+          "padding": "0px",
+          "position": "relative",
+          "top": "0px",
+          "left": "0px"
+        },
+        "badges": [],
+        "swatchCount": 0,
+        "isPlaceholder": true,
+        "imgSrc": "https://mcstaging2.globewest.com/media/catalog/product/placeholder/default/230118_Image-Coming-Soon-"
+      },
+      {
+        "cardIndex": 5,
+        "title": "Arturo Timber Leg Accent Chair - Paloma - Chestnut",
+        "priceBox": "$470.00 $1,140.00 MSRP: $517.00",
+        "comparePresent": true,
+        "compareStyles": {
+          "fontWeight": "500",
+          "margin": "0px",
+          "padding": "0px",
+          "position": "relative",
+          "top": "0px",
+          "left": "0px"
+        },
+        "badges": [],
+        "swatchCount": 0,
+        "isPlaceholder": true,
+        "imgSrc": "https://mcstaging2.globewest.com/media/catalog/product/placeholder/default/230118_Image-Coming-Soon-"
+      },
+      {
+        "cardIndex": 6,
+        "title": "Arturo Timber Leg Accent Chair - Greige Stripe - Natural Mindi",
+        "priceBox": "$585.00 $1,140.00 MSRP: $644.00",
+        "comparePresent": true,
+        "compareStyles": {
+          "fontWeight": "500",
+          "margin": "0px",
+          "padding": "0px",
+          "position": "relative",
+          "top": "0px",
+          "left": "0px"
+        },
+        "badges": [],
+        "swatchCount": 0,
+        "isPlaceholder": true,
+        "imgSrc": "https://mcstaging2.globewest.com/media/catalog/product/placeholder/default/230118_Image-Coming-Soon-"
+      },
+      {
+        "cardIndex": 7,
+        "title": "Arturo Timber Leg Accent Chair - Greige Stripe - Natural Mindi",
+        "priceBox": "$585.00 $1,140.00 MSRP: $644.00",
+        "comparePresent": true,
+        "compareStyles": {
+          "fontWeight": "500",
+          "margin": "0px",
+          "padding": "0px",
+          "position": "relative",
+          "top": "0px",
+          "left": "0px"
+        },
+        "badges": [],
+        "swatchCount": 0,
+        "isPlaceholder": true,
+        "imgSrc": "https://mcstaging2.globewest.com/media/catalog/product/placeholder/default/230118_Image-Coming-Soon-"
+      },
+      {
+        "cardIndex": 8,
+        "title": "Carvara Abstract Nightstand - New Oak",
+        "priceBox": "$475.00 $795.00 MSRP: $523.00",
+        "comparePresent": true,
+        "compareStyles": {
+          "fontWeight": "500",
+          "margin": "0px",
+          "padding": "0px",
+          "position": "relative",
+          "top": "0px",
+          "left": "0px"
+        },
+        "badges": [],
+        "swatchCount": 0,
+        "isPlaceholder": true,
+        "imgSrc": "https://mcstaging2.globewest.com/media/catalog/product/placeholder/default/230118_Image-Coming-Soon-"
+      },
+      {
+        "cardIndex": 9,
+        "title": "Carvara Abstract Nightstand - New Oak",
+        "priceBox": "$475.00 $795.00 MSRP: $523.00",
+        "comparePresent": true,
+        "compareStyles": {
+          "fontWeight": "500",
+          "margin": "0px",
+          "padding": "0px",
+          "position": "relative",
+          "top": "0px",
+          "left": "0px"
+        },
+        "badges": [],
+        "swatchCount": 0,
+        "isPlaceholder": true,
+        "imgSrc": "https://mcstaging2.globewest.com/media/catalog/product/placeholder/default/230118_Image-Coming-Soon-"
+      },
+      {
+        "cardIndex": 10,
+        "title": "Carvara Abstract Nightstand - Mocha Oak",
+        "priceBox": "$475.00 $795.00 MSRP: $523.00",
+        "comparePresent": true,
+        "compareStyles": {
+          "fontWeight": "500",
+          "margin": "0px",
+          "padding": "0px",
+          "position": "relative",
+          "top": "0px",
+          "left": "0px"
+        },
+        "badges": [],
+        "swatchCount": 0,
+        "isPlaceholder": true,
+        "imgSrc": "https://mcstaging2.globewest.com/media/catalog/product/placeholder/default/230118_Image-Coming-Soon-"
+      },
+      {
+        "cardIndex": 11,
+        "title": "Carvara Abstract Nightstand - Mocha Oak",
+        "priceBox": "$475.00 $795.00 MSRP: $523.00",
+        "comparePresent": true,
+        "compareStyles": {
+          "fontWeight": "500",
+          "margin": "0px",
+          "padding": "0px",
+          "position": "relative",
+          "top": "0px",
+          "left": "0px"
+        },
+        "badges": [],
+        "swatchCount": 0,
+        "isPlaceholder": true,
+        "imgSrc": "https://mcstaging2.globewest.com/media/catalog/product/placeholder/default/230118_Image-Coming-Soon-"
+      }
+    ]
+  },
+  "plpGuest": {
+    "topBar": "Become a Trade Customer | Book Showroom Appointment",
+    "hasPricingToggle": false,
+    "cardCount": 8,
+    "cards": [
+      {
+        "title": "Pearce Marble 2 Drawer Nightstand - Matt Ocean Marble - Bone",
+        "hasPrices": false
+      },
+      {
+        "title": "Pearce Marble 2 Drawer Nightstand - Matt Ocean Marble - Bone",
+        "hasPrices": false
+      },
+      {
+        "title": "Arturo Timber Leg Accent Chair - Paloma - Chestnut",
+        "hasPrices": false
+      },
+      {
+        "title": "Arturo Timber Leg Accent Chair - Paloma - Chestnut",
+        "hasPrices": false
+      },
+      {
+        "title": "Arturo Timber Leg Accent Chair - Greige Stripe - Natural Mindi",
+        "hasPrices": false
+      },
+      {
+        "title": "Arturo Timber Leg Accent Chair - Greige Stripe - Natural Mindi",
+        "hasPrices": false
+      },
+      {
+        "title": "Carvara Abstract Nightstand - New Oak",
+        "hasPrices": false
+      },
+      {
+        "title": "Carvara Abstract Nightstand - New Oak",
+        "hasPrices": false
+      }
+    ]
+  },
+  "pdpTrade": {
+    "title": "Leon Side Table - Powder Blue",
+    "priceBox": "$300.00 MSRP: $330.00",
+    "hasAddToCart": true,
+    "hasAddToQuote": false,
+    "swatches": [],
+    "colourHeading": "COLOUR: Powder Blue",
+    "warrantyLink": "https://support.globewest.com.au/hc/en-au/articles/13752185546383-What-is-the-warranty-period-on-GlobeWest-products",
+    "tabs": [
+      "ALL",
+      "IN STOCK",
+      "Specifications",
+      "Brochures & Downloads",
+      "PRODUCTS",
+      "CUSTOMER SUPPORT",
+      "OUR BRAND"
+    ],
+    "hasProp65Warning": false
+  },
+  "pdpGuest": {
+    "priceBox": "",
+    "hasAddToCart": false,
+    "hasAddToQuote": false,
+    "hasRequestFreeSwatchesCTA": false,
+    "swatchCTAText": null,
+    "hasEtaLeaking": true
+  }
+}

@@ -1,0 +1,8 @@
+Ticket Name: #41794520 - Category Page (PLP)
+Page Name: Product Listing Page (https://mcstaging2.globewest.com/indoor)
+
+Run command for Desktop View:
+DISPLAY=:0 node "PLP page/scripts/audit_plp_regression_login_headed.js"
+
+Run command for Mobile View:
+DISPLAY=:0 node "PLP page/scripts/audit_plp_regression_mobile_headed.js"

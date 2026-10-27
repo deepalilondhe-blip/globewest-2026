@@ -1,0 +1,152 @@
+[
+  {
+    "viewport": "desktop_1440",
+    "width": 1440,
+    "product": "Leon_Side_Table",
+    "issues": [
+      {
+        "type": "MISSING_PROP_65_WARNING",
+        "detail": "Mandatory California Proposition 65 warning box is missing"
+      },
+      {
+        "type": "AUSTRALIAN_LOCALIZATION_LEAKS",
+        "detail": "AU copy/branding detected on US storefront: Customisation, COLOUR:, Help Centre, After Sales Enquiries, Metric KG units in specs"
+      }
+    ]
+  },
+  {
+    "viewport": "desktop_1440",
+    "width": 1440,
+    "product": "Amari_Planter",
+    "issues": [
+      {
+        "type": "MISSING_PROP_65_WARNING",
+        "detail": "Mandatory California Proposition 65 warning box is missing"
+      },
+      {
+        "type": "AUSTRALIAN_LOCALIZATION_LEAKS",
+        "detail": "AU copy/branding detected on US storefront: Customisation, COLOUR:, Help Centre, After Sales Enquiries, Metric KG units in specs"
+      }
+    ]
+  },
+  {
+    "viewport": "laptop_1024",
+    "width": 1024,
+    "product": "Leon_Side_Table",
+    "issues": [
+      {
+        "type": "MISSING_PROP_65_WARNING",
+        "detail": "Mandatory California Proposition 65 warning box is missing"
+      },
+      {
+        "type": "AUSTRALIAN_LOCALIZATION_LEAKS",
+        "detail": "AU copy/branding detected on US storefront: COLOUR:, Metric KG units in specs"
+      }
+    ]
+  },
+  {
+    "viewport": "laptop_1024",
+    "width": 1024,
+    "product": "Amari_Planter",
+    "issues": [
+      {
+        "type": "MISSING_PROP_65_WARNING",
+        "detail": "Mandatory California Proposition 65 warning box is missing"
+      },
+      {
+        "type": "AUSTRALIAN_LOCALIZATION_LEAKS",
+        "detail": "AU copy/branding detected on US storefront: COLOUR:, Metric KG units in specs"
+      }
+    ]
+  },
+  {
+    "viewport": "tablet_768",
+    "width": 768,
+    "product": "Leon_Side_Table",
+    "issues": [
+      {
+        "type": "MISSING_PROP_65_WARNING",
+        "detail": "Mandatory California Proposition 65 warning box is missing"
+      },
+      {
+        "type": "AUSTRALIAN_LOCALIZATION_LEAKS",
+        "detail": "AU copy/branding detected on US storefront: COLOUR:, Metric KG units in specs"
+      }
+    ]
+  },
+  {
+    "viewport": "tablet_768",
+    "width": 768,
+    "product": "Amari_Planter",
+    "issues": [
+      {
+        "type": "MISSING_PROP_65_WARNING",
+        "detail": "Mandatory California Proposition 65 warning box is missing"
+      },
+      {
+        "type": "AUSTRALIAN_LOCALIZATION_LEAKS",
+        "detail": "AU copy/branding detected on US storefront: COLOUR:, Metric KG units in specs"
+      }
+    ]
+  },
+  {
+    "viewport": "mobile_414",
+    "width": 414,
+    "product": "Leon_Side_Table",
+    "issues": [
+      {
+        "type": "MISSING_PROP_65_WARNING",
+        "detail": "Mandatory California Proposition 65 warning box is missing"
+      },
+      {
+        "type": "AUSTRALIAN_LOCALIZATION_LEAKS",
+        "detail": "AU copy/branding detected on US storefront: COLOUR:, Metric KG units in specs"
+      }
+    ]
+  },
+  {
+    "viewport": "mobile_414",
+    "width": 414,
+    "product": "Amari_Planter",
+    "issues": [
+      {
+        "type": "MISSING_PROP_65_WARNING",
+        "detail": "Mandatory California Proposition 65 warning box is missing"
+      },
+      {
+        "type": "AUSTRALIAN_LOCALIZATION_LEAKS",
+        "detail": "AU copy/branding detected on US storefront: COLOUR:, Metric KG units in specs"
+      }
+    ]
+  },
+  {
+    "viewport": "mobile_375",
+    "width": 375,
+    "product": "Leon_Side_Table",
+    "issues": [
+      {
+        "type": "MISSING_PROP_65_WARNING",
+        "detail": "Mandatory California Proposition 65 warning box is missing"
+      },
+      {
+        "type": "AUSTRALIAN_LOCALIZATION_LEAKS",
+        "detail": "AU copy/branding detected on US storefront: COLOUR:, Metric KG units in specs"
+      }
+    ]
+  },
+  {
+    "viewport": "mobile_375",
+    "width": 375,
+    "product": "Amari_Planter",
+    "issues": [
+      {
+        "type": "MISSING_PROP_65_WARNING",
+        "detail": "Mandatory California Proposition 65 warning box is missing"
+      },
+      {
+        "type": "AUSTRALIAN_LOCALIZATION_LEAKS",
+        "detail": "AU copy/branding detected on US storefront: COLOUR:, Metric KG units in specs"
+      }
+    ]
+  }
+]

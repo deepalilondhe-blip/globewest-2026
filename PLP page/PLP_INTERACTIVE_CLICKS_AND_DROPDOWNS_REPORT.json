@@ -1,0 +1,78 @@
+{
+  "timestamp": "2026-10-15T08:36:14.324Z",
+  "passedChecks": [
+    {
+      "area": "Utility Bar",
+      "item": "Become a Trade Customer Link",
+      "status": "PASS",
+      "detail": "https://mcstaging2.globewest.com/how-to-buy-trade"
+    },
+    {
+      "area": "Utility Bar",
+      "item": "Book Showroom Appointment Link",
+      "status": "PASS",
+      "detail": "/online_booking/"
+    },
+    {
+      "area": "Navigation",
+      "item": "Megamenu Hover (Indoor)",
+      "status": "PASS",
+      "detail": "Submenu: true"
+    },
+    {
+      "area": "Filters",
+      "item": "Horizontal Filter Pills Clickable",
+      "status": "PASS",
+      "detail": "19 pills verified"
+    },
+    {
+      "area": "Product Card",
+      "item": "Compare Checkbox Click",
+      "status": "PASS",
+      "detail": "Feedback: false"
+    },
+    {
+      "area": "Product Card",
+      "item": "Wholesale Price Masking & Add to Cart Suppression",
+      "status": "PASS"
+    },
+    {
+      "area": "Mobile Header",
+      "item": "Pricing Toggle Switched to MSRP Mode",
+      "status": "PASS"
+    },
+    {
+      "area": "Mobile Nav",
+      "item": "Hamburger Navigation Drawer Opens",
+      "status": "PASS"
+    },
+    {
+      "area": "Mobile Search",
+      "item": "Mobile Search Trigger",
+      "status": "PASS"
+    },
+    {
+      "area": "Mobile Cards",
+      "item": "MSRP Pricing Display Parity",
+      "status": "PASS",
+      "detail": " |                    |                        |                      |                                                |                          |   "
+    },
+    {
+      "area": "Mobile Cards",
+      "item": "Mobile [ ] Compare Checkbox Present",
+      "status": "PASS"
+    }
+  ],
+  "defectsFound": [
+    {
+      "area": "Product Card",
+      "defect": "Wishlist Heart icon (♡) on top-right of product card is missing on live category cards (present in Figma desktop/Category/Logged Out).",
+      "severity": "MEDIUM"
+    },
+    {
+      "area": "Mobile Cards",
+      "defect": "Wishlist Heart icon (♡) on top-right of mobile product card is missing (specified in Figma Mobile/Category/MSRP Pricing).",
+      "severity": "MEDIUM"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "audit1": {
+    "pdp": "Leon Side Table",
+    "topBarText": "Book Showroom Appointment",
+    "hasTradeToggle": false,
+    "isPriceBoxVisible": false,
+    "priceBoxText": "",
+    "detectedPricesOnPage": [
+      "$300.00",
+      "$300.00",
+      "$600.00",
+      "$600.00",
+      "$0.00",
+      "$600.00"
+    ],
+    "hasMSRP": false,
+    "hasAddToCart": false,
+    "hasAddToQuote": false,
+    "hasJoinTradeCTA": false,
+    "hasLoginPricingCTA": false,
+    "hasEtaLeak": true,
+    "altProductsPriceLeak": []
+  },
+  "audit2": {
+    "pdp": "Amari Planter",
+    "isPriceBoxVisible": false,
+    "priceBoxText": "",
+    "detectedPricesOnPage": [
+      "$300.00",
+      "$300.00",
+      "$600.00",
+      "$600.00",
+      "$0.00",
+      "$600.00"
+    ],
+    "hasMSRP": false,
+    "hasAddToCart": false,
+    "hasEtaLeak": true,
+    "altProductsPriceLeak": []
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "test1_header_popup_desktop": {
+    "popupVisible": true,
+    "hasCreateAccountText": false,
+    "hasCreateBtn": false,
+    "rawText": "Customer Login |              |              |                  |                      |                          |                              |                                 Email Address |                              |                              |                                  |                              |                          |                          |                              |                                 Password |                              |                              |                                  |                                  |                                     I forgot? |                                  |                              |                          |                      |                      |                          |                              |                                 Sign In"
+  },
+  "test1_header_menu_mobile": {
+    "hasCreateTextInMenu": false,
+    "registerLinksCount": 0,
+    "regLinks": []
+  },
+  "test2_login_page": {
+    "hasNewCustBlock": false,
+    "isNewCustBlockVisible": false,
+    "hasCreateBtn": false,
+    "hasRegisteredBlock": true,
+    "loginPageText": "Login EMAIL  PASSWORD  I forgot? Remember Me What's this? LOGIN Create an Account Trade Customers Create a web account for 24/7 access to trade pricing, to quickly create and easily share visual quotations with clients customised with your business profile, submit orders online to save time and expedite processing, view and track your orders in your account and receive product updates and interiors inspiration. BECOME A TRADE CUSTOMER General Public Create a web account with GlobeWest to check out faster, create and share wishlists and moodboards, view all orders and more!"
+  },
+  "test3_register_page_redirect": {
+    "requestedUrl": "https://mcstaging2.globewest.com/customer/account/create",
+    "finalUrl": "https://mcstaging2.globewest.com/customer/account/login/",
+    "isRedirectedToLogin": true,
+    "httpStatus": 200
+  },
+  "test4_direct_createpost": {
+    "status": 200,
+    "redirected": true,
+    "url": "https://mcstaging2.globewest.com/customer/account/login/",
+    "statusText": ""
+  },
+  "test5_ajax_signup": {
+    "status": 200,
+    "json": {
+      "success": 0,
+      "message": "Customer registration is already disabled."
+    },
+    "text": null
+  },
+  "test6_online_booking": {
+    "status": 200,
+    "json": {
+      "status": "error",
+      "text": "Account registration is not available. Please sign in to an existing account to continue.",
+      "timify_customer_id": ""
+    },
+    "text": null
+  },
+  "test7_admin_setting": {
+    "scope": "All Store Views",
+    "settingFound": false,
+    "settingId": null,
+    "settingName": null,
+    "selectedValue": null,
+    "selectedText": null,
+    "labelText": null
+  }
+}

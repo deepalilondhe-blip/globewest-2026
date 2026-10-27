@@ -1,0 +1,8 @@
+Ticket Name: P-GLW-007 - Product Detail Page (PDP)
+Page Name: Product Detail Page (https://mcstaging2.globewest.com/leon-side-table-powder-blue-lto-leon-x-powder-blue)
+
+Run command for Desktop View:
+npx playwright test "PDP Page/ticket-pdp-page.spec.js" --project=desktop-chrome --headed
+
+Run command for Mobile View:
+npx playwright test "PDP Page/ticket-pdp-page.spec.js" --project=mobile-chrome --headed

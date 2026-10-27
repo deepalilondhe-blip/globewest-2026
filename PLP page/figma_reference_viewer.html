@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Figma Design Reference: Category Page (Without Login)</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --accent: #2563eb;
+      --accent-green: #10b981;
+      --accent-amber: #f59e0b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 24px;
+      line-height: 1.5;
+    }
+    .header-panel {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-radius: 9999px;
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .meta-item {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+    .meta-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .meta-val {
+      font-size: 13px;
+      font-weight: 600;
+      color: #38bdf8;
+      word-break: break-all;
+    }
+    .meta-val a {
+      color: #38bdf8;
+      text-decoration: underline;
+    }
+    .spec-card {
+      background: #1e293b;
+      border: 1px solid #eab308;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .spec-title {
+      color: #facc15;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .spec-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 8px 16px;
+      font-size: 13px;
+      color: #cbd5e1;
+    }
+    .spec-list li::before {
+      content: "✔";
+      color: #10b981;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    .image-container {
+      background: #020617;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .image-container h3 {
+      font-size: 16px;
+      margin-bottom: 12px;
+      text-align: left;
+      color: #93c5fd;
+    }
+    img.figma-preview {
+      width: 100%;
+      max-height: 700px;
+      object-fit: contain;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      background: #111;
+    }
+    .cta-banner {
+      margin-top: 16px;
+      padding: 12px 18px;
+      background: rgba(37, 99, 235, 0.2);
+      border: 1px solid rgba(37, 99, 235, 0.5);
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-panel">
+    <span class="badge">Approved Figma Reference</span>
+    <h1>Figma Design: PLP (Category Page) Without Login Scenario</h1>
+    <p class="subtitle">Exact design specifications and artboard utilized for verifying the Public Guest Browsing mode on mcstaging2.globewest.com</p>
+
+    <div class="meta-grid">
+      <div class="meta-item">
+        <div class="meta-label">Figma Project File</div>
+        <div class="meta-val">Globewest USA - External</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Target Page in Figma</div>
+        <div class="meta-val">[FINAL] Designs</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Artboard Layer Name</div>
+        <div class="meta-val">desktop/Category/Show Filters (1440x836px)</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Figma Direct Node URL</div>
+        <div class="meta-val"><a href="https://www.figma.com/design/oSBa3EMR3goI0vM1tXCdTk/Globewest-USA---External?node-id=2316-12739" target="_blank">node-id=2316-12739</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spec-card">
+    <div class="spec-title">📌 EXACT FIGMA REQUIREMENTS FOR WITHOUT LOGIN (PUBLIC GUEST BROWSING)</div>
+    <ul class="spec-list">
+      <li><strong>Figma Comment #141 (Michelle Braks):</strong> "could we please remove pricing here as this screen is for a Non-logged in user."</li>
+      <li><strong>Wholesale Price Masking:</strong> Suppress wholesale trade pricing & MSRP across cards (no dollar leakage).</li>
+      <li><strong>Top Utility Bar:</strong> Must display "Become a Trade Customer" & "Book Showroom Appointment".</li>
+      <li><strong>Pricing Toggle:</strong> B2B Trade/MSRP toggle must be completely hidden for guests.</li>
+      <li><strong>Hero Banner:</strong> Section under hero containing subcategory quick links is completely removed.</li>
+      <li><strong>Filter Layout:</strong> Left-aligned horizontal filter pills with redundant "Shopping Options" title removed.</li>
+      <li><strong>Compare Checkbox:</strong> [ ] Compare on top-left of each card with regular font-weight (400).</li>
+      <li><strong>Badges:</strong> [New] and [Customisable] badges placed below photo, above title inside details.</li>
+    </ul>
+  </div>
+
+  <div class="image-container">
+    <h3>🖼️ High-Resolution Figma Artboard: <code>desktop/Category/Show Filters</code></h3>
+    <img class="figma-preview" src="file:///home/deepali/My Projects/Deepali/GlobeWest 2026 (2)/PLP page/screenshots/figma_comparison/FIGMA_ZOOMED_SHOW_FILTERS_EXACT.png" alt="Figma Show Filters Artboard">
+  </div>
+
+  <div class="cta-banner">
+    <div>🚀 <strong>Next Action:</strong> Switching to Live US Storefront (<code>https://mcstaging2.globewest.com/indoor</code>) to inspect each specification live in Chrome.</div>
+  </div>
+
+</body>
+</html>
