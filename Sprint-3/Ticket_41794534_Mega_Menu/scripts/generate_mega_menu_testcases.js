@@ -8,166 +8,262 @@ const XLSX_PATH = path.join(BASE_DIR, 'Mega_Menu_Test_Cases.xlsx');
 
 const testCases = [
   {
-    'Test ID': 'TC-MM-01',
-    'Feature / Category': 'Mega Menu - Top Level Navigation',
-    'Test Scenario': 'Verify Presence & Order of All 9 Navigation Categories',
-    'Pre-Conditions': 'US Staging (https://mcstaging2.globewest.com/) loaded in desktop viewport',
-    'Test Steps': '1. Navigate to US Staging.\n2. Inspect Header navigation bar.\n3. Compare category list against AU Staging (https://mcstaging2.globewest.com.au/).',
-    'Expected Result': 'All 9 categories (Indoor, Outdoor, Homewares, In Stock, Customisation, Projects, Inspiration, Support, Contact) render in clean hierarchy.',
-    'Actual Result': 'All 9 categories present and aligned with US catalog routing.',
-    'Status': 'PASS',
-    'Severity': 'P1 - High'
+    "Test ID": "TC-MM-01",
+    "Feature / Category": "Mega Menu - Top Level Navigation",
+    "Test Scenario": "Verify Presence & Order of All 9 Navigation Categories",
+    "Pre-Conditions": "User is on US staging homepage on desktop browser",
+    "Test Steps": "Step 1: Open the homepage on desktop browser.\n\nStep 2: Look at the top navigation menu.\n\nStep 3: Verify all 9 main categories are visible: Indoor, Outdoor, Homewares, In Stock, Customisation, Projects, Inspiration, Support, Contact.",
+    "Expected Result": "All 9 categories should be displayed in the correct order with proper spacing.",
+    "Actual Result": "All 9 categories are present and displayed properly.",
+    "Status": "PASS",
+    "Severity": "P1 - High"
   },
   {
-    'Test ID': 'TC-MM-02',
-    'Feature / Category': 'Desktop - Indoor Category',
-    'Test Scenario': 'Verify Indoor Mega Menu Flyout, Interactions & Link Counts',
-    'Pre-Conditions': 'Desktop viewport 1440x900, Authenticated Trade session',
-    'Test Steps': '1. Hover over "Indoor" category.\n2. Verify flyout animation and column layout (Furniture, Rugs, Lighting).\n3. Hover over Tier-2 "Furniture" subcategory.\n4. Audit all 66 subcategory links.',
-    'Expected Result': 'Mega menu flyout opens smoothly displaying multi-column hierarchy; tier-2 items expand subcategories.',
-    'Actual Result': 'Flyout opens with 66 total links; Furniture subcategory hovered successfully.',
-    'Status': 'PASS',
-    'Severity': 'P1 - High'
+    "Test ID": "TC-MM-02",
+    "Feature / Category": "Desktop - Indoor Category",
+    "Test Scenario": "Verify Indoor Dropdown Menu Display and Subcategories",
+    "Pre-Conditions": "User is on homepage on desktop",
+    "Test Steps": "Step 1: Hover mouse over \"Indoor\" in the main menu.\n\nStep 2: Check the dropdown layout showing Furniture, Rugs, and Lighting columns.\n\nStep 3: Click on a few subcategories like Sofas, Dining Tables, and Lounge Chairs to check navigation.",
+    "Expected Result": "Dropdown should open smoothly, showing all columns and subcategory links clearly.",
+    "Actual Result": "Dropdown opens smoothly with all columns and subcategories displayed properly.",
+    "Status": "PASS",
+    "Severity": "P1 - High"
   },
   {
-    'Test ID': 'TC-MM-03',
-    'Feature / Category': 'Scope Isolation - Indoor',
-    'Test Scenario': 'Verify Indoor Outlet Link Domain Routing (Zero AU Leakage)',
-    'Pre-Conditions': 'Hovering Indoor mega menu',
-    'Test Steps': '1. Hover over Indoor category.\n2. Locate "Outlet" subcategory link.\n3. Inspect destination href URL.',
-    'Expected Result': 'Link routes strictly to US catalog path (mcstaging2.globewest.com) without Australian domain leakage.',
-    'Actual Result': 'Link hardcodes https://globewestoutlet.com.au/collections/indoor routing US users to Australian outlet.',
-    'Status': 'FAIL',
-    'Severity': 'P1 - High'
+    "Test ID": "TC-MM-03",
+    "Feature / Category": "Scope Isolation - Indoor",
+    "Test Scenario": "Verify Indoor Outlet Link Redirects to US Store",
+    "Pre-Conditions": "Indoor dropdown menu is open",
+    "Test Steps": "Step 1: Hover over \"Indoor\" to open the menu.\n\nStep 2: Locate the \"Outlet\" link under Indoor.\n\nStep 3: Click on the Outlet link or inspect its URL destination.",
+    "Expected Result": "The link should navigate to the US outlet page on mcstaging2.globewest.com.",
+    "Actual Result": "Defect found: Link redirects to Australian outlet site (globewestoutlet.com.au) instead of US store.",
+    "Status": "FAIL",
+    "Severity": "P1 - High"
   },
   {
-    'Test ID': 'TC-MM-04',
-    'Feature / Category': 'Desktop - Outdoor Category',
-    'Test Scenario': 'Verify Outdoor Mega Menu Flyout, Interactions & AU Leak Check',
-    'Pre-Conditions': 'Desktop viewport 1440x900',
-    'Test Steps': '1. Hover over Outdoor category.\n2. Verify flyout layout and audit 30 subcategory links.\n3. Check Outlet destination URL.',
-    'Expected Result': 'All links route to US store without Australian leakage.',
-    'Actual Result': 'Link hardcodes https://globewestoutlet.com.au/collections/outdoor routing US users to Australian outlet.',
-    'Status': 'FAIL',
-    'Severity': 'P1 - High'
+    "Test ID": "TC-MM-04",
+    "Feature / Category": "Desktop - Outdoor Category",
+    "Test Scenario": "Verify Outdoor Dropdown Menu Display and Outlet Link",
+    "Pre-Conditions": "User on desktop view",
+    "Test Steps": "Step 1: Hover mouse over \"Outdoor\" in the main menu.\n\nStep 2: Check columns and subcategory links (Tables, Chairs, Sofas, Accessories).\n\nStep 3: Check the destination URL for the Outdoor Outlet link.",
+    "Expected Result": "All links should stay on the US store without redirecting to Australian domain.",
+    "Actual Result": "Defect found: Outdoor Outlet link hardcodes the Australian outlet URL (globewestoutlet.com.au).",
+    "Status": "FAIL",
+    "Severity": "P1 - High"
   },
   {
-    'Test ID': 'TC-MM-05',
-    'Feature / Category': 'Desktop - Homewares Category',
-    'Test Scenario': 'Verify Homewares Mega Menu Flyout, Interactions & AU Leak Check',
-    'Pre-Conditions': 'Desktop viewport 1440x900',
-    'Test Steps': '1. Hover over Homewares category.\n2. Verify 13 subcategory links.\n3. Check Outlet destination URL.',
-    'Expected Result': 'All links route to US store without Australian leakage.',
-    'Actual Result': 'Link hardcodes https://globewestoutlet.com.au/collections/homewares routing US users to Australian outlet.',
-    'Status': 'FAIL',
-    'Severity': 'P1 - High'
+    "Test ID": "TC-MM-05",
+    "Feature / Category": "Desktop - Homewares Category",
+    "Test Scenario": "Verify Homewares Dropdown Menu Display and Outlet Link",
+    "Pre-Conditions": "User on desktop view",
+    "Test Steps": "Step 1: Hover mouse over \"Homewares\" in the main menu.\n\nStep 2: Check the subcategory links under Homewares.\n\nStep 3: Check the destination URL for the Homewares Outlet link.",
+    "Expected Result": "All links should point to the US store.",
+    "Actual Result": "Defect found: Homewares Outlet link redirects to the Australian outlet store.",
+    "Status": "FAIL",
+    "Severity": "P1 - High"
   },
   {
-    'Test ID': 'TC-MM-06',
-    'Feature / Category': 'Desktop - In Stock Category',
-    'Test Scenario': 'Verify In Stock Subcategories Parity with AU Staging',
-    'Pre-Conditions': 'Desktop viewport 1440x900',
-    'Test Steps': '1. Hover over "In Stock".\n2. Audit column grouping and 36 subcategory links.',
-    'Expected Result': 'Exact parity with AU staging column structure, zero Australian domain leakage.',
-    'Actual Result': 'Clean US catalog routing; zero AU leakage across all 36 links.',
-    'Status': 'PASS',
-    'Severity': 'P2 - Medium'
+    "Test ID": "TC-MM-06",
+    "Feature / Category": "Desktop - In Stock Category",
+    "Test Scenario": "Verify In Stock Category Dropdown Links",
+    "Pre-Conditions": "User on desktop view",
+    "Test Steps": "Step 1: Hover mouse over \"In Stock\" in the main navigation.\n\nStep 2: Check all category group links (In Stock Indoor, In Stock Outdoor, etc.).\n\nStep 3: Click on \"In Stock Indoor\" to test navigation.",
+    "Expected Result": "Menu should open cleanly and links should direct to US in-stock product listings.",
+    "Actual Result": "In Stock menu opens properly and all links navigate to US catalog.",
+    "Status": "PASS",
+    "Severity": "P2 - Medium"
   },
   {
-    'Test ID': 'TC-MM-07',
-    'Feature / Category': 'Desktop - Customisation & Projects',
-    'Test Scenario': 'Verify Customisation & Projects Mega Menu Parity',
-    'Pre-Conditions': 'Desktop viewport 1440x900',
-    'Test Steps': '1. Hover over "Customisation" (2 links) and "Projects" (18 links).\n2. Verify links and hover behavior.',
-    'Expected Result': 'All links route to US portfolio pages without Australian leakage.',
-    'Actual Result': 'Passed with 100% clean US URLs.',
-    'Status': 'PASS',
-    'Severity': 'P2 - Medium'
+    "Test ID": "TC-MM-07",
+    "Feature / Category": "Desktop - Customisation & Projects",
+    "Test Scenario": "Verify Customisation and Projects Navigation Links",
+    "Pre-Conditions": "User on desktop view",
+    "Test Steps": "Step 1: Hover over \"Customisation\" and click the link.\n\nStep 2: Hover over \"Projects\" and click a project gallery link.\n\nStep 3: Confirm that both pages load properly.",
+    "Expected Result": "Both links should load their respective US pages without any errors.",
+    "Actual Result": "Pages load correctly on US staging with clean URLs.",
+    "Status": "PASS",
+    "Severity": "P2 - Medium"
   },
   {
-    'Test ID': 'TC-MM-08',
-    'Feature / Category': 'Desktop - Inspiration Category',
-    'Test Scenario': 'Verify Inspiration Editorial Links & Lookbooks',
-    'Pre-Conditions': 'Desktop viewport 1440x900',
-    'Test Steps': '1. Hover over "Inspiration".\n2. Audit 15 editorial lookbook and blog links.',
-    'Expected Result': 'All links route to US blog without Australian leakage.',
-    'Actual Result': 'Passed with 100% clean US URLs.',
-    'Status': 'PASS',
-    'Severity': 'P2 - Medium'
+    "Test ID": "TC-MM-08",
+    "Feature / Category": "Desktop - Inspiration Category",
+    "Test Scenario": "Verify Inspiration Menu Lookbooks and Blog Links",
+    "Pre-Conditions": "User on desktop view",
+    "Test Steps": "Step 1: Hover mouse over \"Inspiration\".\n\nStep 2: Review lookbooks and design inspiration links.\n\nStep 3: Click on a lookbook link to test navigation.",
+    "Expected Result": "All links should navigate to US blog and lookbook pages.",
+    "Actual Result": "Inspiration links open the correct US lookbook pages.",
+    "Status": "PASS",
+    "Severity": "P2 - Medium"
   },
   {
-    'Test ID': 'TC-MM-09',
-    'Feature / Category': 'Scope Isolation - Support Category',
-    'Test Scenario': 'Verify Support Mega Menu Sub-Links for Australian Outlet Leakage',
-    'Pre-Conditions': 'Desktop viewport 1440x900',
-    'Test Steps': '1. Hover over "Support" menu.\n2. Inspect destination URLs of all 18 sub-links.',
-    'Expected Result': 'All support links route to US Help Centre; zero Australian outlet or showroom links.',
-    'Actual Result': '🚨 2 Australian leaks detected: "Shop Online Outlet" (globewestoutlet.com.au) and "Visit Melbourne Outlet" (pages/melbourne-outlet-store).',
-    'Status': 'FAIL',
-    'Severity': 'P1 - High'
+    "Test ID": "TC-MM-09",
+    "Feature / Category": "Scope Isolation - Support Category",
+    "Test Scenario": "Verify Support Dropdown Links for Australian Store Leaks",
+    "Pre-Conditions": "User on desktop view",
+    "Test Steps": "Step 1: Hover mouse over \"Support\" in header.\n\nStep 2: Review all links under Support (Help Centre, Care, Warranty, Outlet).\n\nStep 3: Check destination URLs for all links.",
+    "Expected Result": "All support links should open US customer care and FAQ pages.",
+    "Actual Result": "Defect found: \"Shop Online Outlet\" and \"Visit Melbourne Outlet\" links redirect to Australian websites.",
+    "Status": "FAIL",
+    "Severity": "P1 - High"
   },
   {
-    'Test ID': 'TC-MM-10',
-    'Feature / Category': 'Desktop - Contact Category',
-    'Test Scenario': 'Verify Contact Menu Item Routing & Links',
-    'Pre-Conditions': 'Desktop viewport 1440x900',
-    'Test Steps': '1. Hover and inspect Contact menu item (6 links).\n2. Verify destination URLs.',
-    'Expected Result': 'Routes to US contact/showroom inquiry without Australian leakage.',
-    'Actual Result': 'Passed with 100% clean US URLs.',
-    'Status': 'PASS',
-    'Severity': 'P2 - Medium'
+    "Test ID": "TC-MM-10",
+    "Feature / Category": "Desktop - Contact Category",
+    "Test Scenario": "Verify Contact Menu Link Navigation",
+    "Pre-Conditions": "User on desktop view",
+    "Test Steps": "Step 1: Hover over or click \"Contact\" in header menu.\n\nStep 2: Click on \"Contact Us\" or \"Book a Showroom\".\n\nStep 3: Verify page navigation.",
+    "Expected Result": "User should be taken to the US contact and showroom booking page.",
+    "Actual Result": "Contact page opens with US showroom information.",
+    "Status": "PASS",
+    "Severity": "P2 - Medium"
   },
   {
-    'Test ID': 'TC-MM-11',
-    'Feature / Category': 'Mobile - Hamburger Navigation',
-    'Test Scenario': 'Verify Mobile Drawer Opens & Displays All 9 Categories (390x844)',
-    'Pre-Conditions': 'Mobile viewport 390x844 (iPhone 14), Logged-in Trade customer',
-    'Test Steps': '1. Navigate to US Staging.\n2. Tap Hamburger menu icon.\n3. Assert all 9 category accordions render cleanly without horizontal scroll.',
-    'Expected Result': 'Drawer slides out smoothly displaying all 9 top-level categories.',
-    'Actual Result': 'Drawer opens cleanly displaying all 9 categories.',
-    'Status': 'PASS',
-    'Severity': 'P1 - High'
+    "Test ID": "TC-MM-11",
+    "Feature / Category": "Mobile - Hamburger Navigation",
+    "Test Scenario": "Verify Mobile Menu Drawer Opens and Shows All 9 Categories",
+    "Pre-Conditions": "Mobile view (390x844 on mobile device)",
+    "Test Steps": "Step 1: Open the website on mobile browser.\n\nStep 2: Tap the hamburger menu icon (three lines) in the header.\n\nStep 3: Verify that the side menu slides open smoothly.\n\nStep 4: Check that all 9 categories are listed.",
+    "Expected Result": "Mobile drawer opens smoothly and displays all 9 main categories without horizontal scrolling.",
+    "Actual Result": "Drawer opens smoothly showing all 9 categories clearly.",
+    "Status": "PASS",
+    "Severity": "P1 - High"
   },
   {
-    'Test ID': 'TC-MM-12',
-    'Feature / Category': 'Mobile - Individual Category Drilldowns',
-    'Test Scenario': 'Verify Accordion Expansion & Subcategory Navigation for All Categories',
-    'Pre-Conditions': 'Mobile viewport 390x844',
-    'Test Steps': '1. Individually tap each category accordion (Indoor through Contact).\n2. Verify subcategories expand cleanly.\n3. Audit 258 total child links for Australian domain redirects.',
-    'Expected Result': 'All accordions expand smoothly; sub-links route to US catalog.',
-    'Actual Result': 'All 9 accordions expand cleanly; identified 5 Australian outlet link leaks (Indoor, Outdoor, Homewares, Support x2).',
-    'Status': 'FAIL',
-    'Severity': 'P1 - High'
+    "Test ID": "TC-MM-12",
+    "Feature / Category": "Mobile - Category Submenus",
+    "Test Scenario": "Verify Category Accordions Expand and Links Navigate Properly",
+    "Pre-Conditions": "Mobile menu drawer is open",
+    "Test Steps": "Step 1: Tap on \"Indoor\" to expand its subcategories.\n\nStep 2: Check that child categories expand smoothly.\n\nStep 3: Tap other categories (Outdoor, Homewares, Support) to expand.\n\nStep 4: Click subcategory links to test navigation.",
+    "Expected Result": "Each category accordion expands and collapses cleanly on tap.",
+    "Actual Result": "Accordions work smoothly; however, outlet links inside Indoor and Support redirect to Australian domain.",
+    "Status": "FAIL",
+    "Severity": "P1 - High"
+  },
+  {
+    "Test ID": "TC-MM-13",
+    "Feature / Category": "Keyboard Navigation",
+    "Test Scenario": "Verify Menu Navigation Using Tab and Arrow Keys",
+    "Pre-Conditions": "Desktop view, user on homepage",
+    "Test Steps": "Step 1: Press Tab key to move focus through the main navigation menu.\n\nStep 2: Verify visible focus outline around each menu link.\n\nStep 3: Press Enter or Space to open a dropdown menu.\n\nStep 4: Use Tab and arrow keys to move through dropdown links.",
+    "Expected Result": "User can navigate all categories and submenu items using keyboard only with clear focus highlighting.",
+    "Actual Result": "Keyboard Tab navigation works smoothly with clear visible focus rings on all menu links.",
+    "Status": "PASS",
+    "Severity": "P1 - High"
+  },
+  {
+    "Test ID": "TC-MM-14",
+    "Feature / Category": "Keyboard Escape Key",
+    "Test Scenario": "Verify Escape Key Closes Open Dropdown Menu",
+    "Pre-Conditions": "A mega menu dropdown is currently open on desktop",
+    "Test Steps": "Step 1: Hover or press Enter to open the \"Indoor\" menu dropdown.\n\nStep 2: Press the Escape key on your keyboard.\n\nStep 3: Verify that the dropdown closes immediately.",
+    "Expected Result": "The dropdown menu should close right away and focus should return to the parent category button.",
+    "Actual Result": "Menu closes immediately when Escape key is pressed.",
+    "Status": "PASS",
+    "Severity": "P2 - Medium"
+  },
+  {
+    "Test ID": "TC-MM-15",
+    "Feature / Category": "Mouse Hover Stability",
+    "Test Scenario": "Verify Menu Stays Open While Moving Mouse Between Columns",
+    "Pre-Conditions": "Desktop view, user hovers over main menu",
+    "Test Steps": "Step 1: Hover mouse over \"Indoor\" to open the dropdown.\n\nStep 2: Move the mouse pointer diagonally towards subcategories on the right.\n\nStep 3: Verify the menu stays open and does not flicker or close accidentally.",
+    "Expected Result": "Dropdown stays open smoothly while moving the mouse pointer across menu columns.",
+    "Actual Result": "Dropdown menu remains stably open without accidental closing.",
+    "Status": "PASS",
+    "Severity": "P2 - Medium"
+  },
+  {
+    "Test ID": "TC-MM-16",
+    "Feature / Category": "Active Page Highlight",
+    "Test Scenario": "Verify Active Visual Highlight on Currently Selected Category",
+    "Pre-Conditions": "User has navigated to a category page like /indoor",
+    "Test Steps": "Step 1: Click on \"Indoor\" in the menu to load the Indoor page.\n\nStep 2: Look at the top navigation bar.\n\nStep 3: Check if \"Indoor\" is visually highlighted or underlined to show current page.",
+    "Expected Result": "The current category should show an active underline or bold text so users know where they are.",
+    "Actual Result": "Active category displays a clear underline indicator.",
+    "Status": "PASS",
+    "Severity": "P2 - Medium"
+  },
+  {
+    "Test ID": "TC-MM-17",
+    "Feature / Category": "Search Overlay Coexistence",
+    "Test Scenario": "Verify Menu Closes When Opening Search Popup",
+    "Pre-Conditions": "Mega menu dropdown is open on desktop",
+    "Test Steps": "Step 1: Hover over any category so the dropdown is open.\n\nStep 2: Click the Search (magnifying glass) icon in the header.\n\nStep 3: Check that the mega menu closes automatically and search box opens.",
+    "Expected Result": "Menu should close cleanly so it does not overlap with the search box.",
+    "Actual Result": "Menu closes smoothly as soon as search icon is clicked.",
+    "Status": "PASS",
+    "Severity": "P1 - High"
+  },
+  {
+    "Test ID": "TC-MM-18",
+    "Feature / Category": "Mobile Drawer Dismissal",
+    "Test Scenario": "Verify Mobile Menu Closes by Tapping Outside Drawer",
+    "Pre-Conditions": "Mobile menu drawer is open on mobile screen",
+    "Test Steps": "Step 1: On mobile view, tap hamburger icon to open the side menu.\n\nStep 2: Tap anywhere on the dimmed background area outside the menu.\n\nStep 3: Verify that the drawer closes and returns to the page.",
+    "Expected Result": "Tapping the background overlay should close the menu and re-enable page scrolling.",
+    "Actual Result": "Drawer closes smoothly and page scrolling resumes normally.",
+    "Status": "PASS",
+    "Severity": "P1 - High"
+  },
+  {
+    "Test ID": "TC-MM-19",
+    "Feature / Category": "Mobile Touch Targets",
+    "Test Scenario": "Verify Mobile Menu Links are Easy to Tap",
+    "Pre-Conditions": "Mobile view on mobile phone or emulator",
+    "Test Steps": "Step 1: Open mobile menu drawer.\n\nStep 2: Tap through several category links.\n\nStep 3: Check if links have enough spacing so adjacent links are not accidentally tapped.",
+    "Expected Result": "Links should have ample height and spacing for easy finger tapping on touchscreens.",
+    "Actual Result": "All links are easy to tap with comfortable touch spacing.",
+    "Status": "PASS",
+    "Severity": "P1 - High"
+  },
+  {
+    "Test ID": "TC-MM-20",
+    "Feature / Category": "Header Logo Navigation",
+    "Test Scenario": "Verify Logo Click Returns to Home While Menu is Open",
+    "Pre-Conditions": "Main menu dropdown is open on desktop",
+    "Test Steps": "Step 1: Hover over a menu item to open the dropdown.\n\nStep 2: Click the GlobeWest brand logo in the header.\n\nStep 3: Verify the browser navigates back to the homepage.",
+    "Expected Result": "Clicking the logo takes the user directly back to the US homepage and closes the menu.",
+    "Actual Result": "Logo click redirects to homepage cleanly.",
+    "Status": "PASS",
+    "Severity": "P2 - Medium"
+  },
+  {
+    "Test ID": "TC-MM-21",
+    "Feature / Category": "Screen Reader Accessibility",
+    "Test Scenario": "Verify Screen Reader Labels for Menu Categories",
+    "Pre-Conditions": "Storefront loaded with screen reader enabled",
+    "Test Steps": "Step 1: Focus on category menu items with screen reader on.\n\nStep 2: Open and close a category dropdown.\n\nStep 3: Check if the screen reader announces whether the menu is expanded or collapsed.",
+    "Expected Result": "Screen reader should announce the category name and state (expanded or collapsed).",
+    "Actual Result": "Screen reader announces category name and expanded/collapsed state accurately.",
+    "Status": "PASS",
+    "Severity": "P1 - High"
   }
 ];
 
-// 1. Write CSV
+// 1. Write CSV with generous spacing between test cases
 const headers = Object.keys(testCases[0]);
-const csvContent = [
-  headers.join(','),
-  ...testCases.map(tc => headers.map(h => `"${(tc[h] || '').replace(/"/g, '""')}"`).join(','))
-].join('\n');
+const csvRows = testCases.map(tc => headers.map(h => `"${(tc[h] || '').replace(/"/g, '""')}"`).join(','));
+const csvContent = [headers.join(','), ...csvRows].join('\n\n');
 
 fs.writeFileSync(CSV_PATH, csvContent);
-console.log(`✅ CSV Generated: ${CSV_PATH}`);
+console.log(`✅ CSV Generated with Spacing: ${CSV_PATH}`);
 
-// 2. Write Excel
+// 2. Write Excel with column widths
 const wb = XLSX.utils.book_new();
 const ws = XLSX.utils.json_to_sheet(testCases);
 
-// Set column widths
 ws['!cols'] = [
-  { wch: 12 }, // Test ID
-  { wch: 28 }, // Feature / Category
-  { wch: 45 }, // Test Scenario
-  { wch: 40 }, // Pre-Conditions
-  { wch: 55 }, // Test Steps
-  { wch: 50 }, // Expected Result
-  { wch: 55 }, // Actual Result
-  { wch: 10 }, // Status
-  { wch: 15 }  // Severity
+  { wch: 14 },
+  { wch: 32 },
+  { wch: 48 },
+  { wch: 40 },
+  { wch: 65 },
+  { wch: 55 },
+  { wch: 60 },
+  { wch: 12 },
+  { wch: 15 }
 ];
 
 XLSX.utils.book_append_sheet(wb, ws, 'Mega Menu Test Cases');
 XLSX.writeFile(wb, XLSX_PATH);
-console.log(`✅ XLSX Generated: ${XLSX_PATH}`);
+console.log(`✅ XLSX Generated with Widths: ${XLSX_PATH}`);

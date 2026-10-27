@@ -1,33 +1,133 @@
 Test ID,Feature / Category,Test Scenario,Pre-Conditions,Test Steps,Expected Result,Actual Result,Status,Severity
-"TC-MM-01","Mega Menu - Top Level Navigation","Verify Presence & Order of All 9 Navigation Categories","US Staging (https://mcstaging2.globewest.com/) loaded in desktop viewport","1. Navigate to US Staging.
-2. Inspect Header navigation bar.
-3. Compare category list against AU Staging (https://mcstaging2.globewest.com.au/).","All 9 categories (Indoor, Outdoor, Homewares, In Stock, Customisation, Projects, Inspiration, Support, Contact) render in clean hierarchy.","All 9 categories present and aligned with US catalog routing.","PASS","P1 - High"
-"TC-MM-02","Desktop - Indoor Category","Verify Indoor Mega Menu Flyout, Interactions & Link Counts","Desktop viewport 1440x900, Authenticated Trade session","1. Hover over ""Indoor"" category.
-2. Verify flyout animation and column layout (Furniture, Rugs, Lighting).
-3. Hover over Tier-2 ""Furniture"" subcategory.
-4. Audit all 66 subcategory links.","Mega menu flyout opens smoothly displaying multi-column hierarchy; tier-2 items expand subcategories.","Flyout opens with 66 total links; Furniture subcategory hovered successfully.","PASS","P1 - High"
-"TC-MM-03","Scope Isolation - Indoor","Verify Indoor Outlet Link Domain Routing (Zero AU Leakage)","Hovering Indoor mega menu","1. Hover over Indoor category.
-2. Locate ""Outlet"" subcategory link.
-3. Inspect destination href URL.","Link routes strictly to US catalog path (mcstaging2.globewest.com) without Australian domain leakage.","Link hardcodes https://globewestoutlet.com.au/collections/indoor routing US users to Australian outlet.","FAIL","P1 - High"
-"TC-MM-04","Desktop - Outdoor Category","Verify Outdoor Mega Menu Flyout, Interactions & AU Leak Check","Desktop viewport 1440x900","1. Hover over Outdoor category.
-2. Verify flyout layout and audit 30 subcategory links.
-3. Check Outlet destination URL.","All links route to US store without Australian leakage.","Link hardcodes https://globewestoutlet.com.au/collections/outdoor routing US users to Australian outlet.","FAIL","P1 - High"
-"TC-MM-05","Desktop - Homewares Category","Verify Homewares Mega Menu Flyout, Interactions & AU Leak Check","Desktop viewport 1440x900","1. Hover over Homewares category.
-2. Verify 13 subcategory links.
-3. Check Outlet destination URL.","All links route to US store without Australian leakage.","Link hardcodes https://globewestoutlet.com.au/collections/homewares routing US users to Australian outlet.","FAIL","P1 - High"
-"TC-MM-06","Desktop - In Stock Category","Verify In Stock Subcategories Parity with AU Staging","Desktop viewport 1440x900","1. Hover over ""In Stock"".
-2. Audit column grouping and 36 subcategory links.","Exact parity with AU staging column structure, zero Australian domain leakage.","Clean US catalog routing; zero AU leakage across all 36 links.","PASS","P2 - Medium"
-"TC-MM-07","Desktop - Customisation & Projects","Verify Customisation & Projects Mega Menu Parity","Desktop viewport 1440x900","1. Hover over ""Customisation"" (2 links) and ""Projects"" (18 links).
-2. Verify links and hover behavior.","All links route to US portfolio pages without Australian leakage.","Passed with 100% clean US URLs.","PASS","P2 - Medium"
-"TC-MM-08","Desktop - Inspiration Category","Verify Inspiration Editorial Links & Lookbooks","Desktop viewport 1440x900","1. Hover over ""Inspiration"".
-2. Audit 15 editorial lookbook and blog links.","All links route to US blog without Australian leakage.","Passed with 100% clean US URLs.","PASS","P2 - Medium"
-"TC-MM-09","Scope Isolation - Support Category","Verify Support Mega Menu Sub-Links for Australian Outlet Leakage","Desktop viewport 1440x900","1. Hover over ""Support"" menu.
-2. Inspect destination URLs of all 18 sub-links.","All support links route to US Help Centre; zero Australian outlet or showroom links.","🚨 2 Australian leaks detected: ""Shop Online Outlet"" (globewestoutlet.com.au) and ""Visit Melbourne Outlet"" (pages/melbourne-outlet-store).","FAIL","P1 - High"
-"TC-MM-10","Desktop - Contact Category","Verify Contact Menu Item Routing & Links","Desktop viewport 1440x900","1. Hover and inspect Contact menu item (6 links).
-2. Verify destination URLs.","Routes to US contact/showroom inquiry without Australian leakage.","Passed with 100% clean US URLs.","PASS","P2 - Medium"
-"TC-MM-11","Mobile - Hamburger Navigation","Verify Mobile Drawer Opens & Displays All 9 Categories (390x844)","Mobile viewport 390x844 (iPhone 14), Logged-in Trade customer","1. Navigate to US Staging.
-2. Tap Hamburger menu icon.
-3. Assert all 9 category accordions render cleanly without horizontal scroll.","Drawer slides out smoothly displaying all 9 top-level categories.","Drawer opens cleanly displaying all 9 categories.","PASS","P1 - High"
-"TC-MM-12","Mobile - Individual Category Drilldowns","Verify Accordion Expansion & Subcategory Navigation for All Categories","Mobile viewport 390x844","1. Individually tap each category accordion (Indoor through Contact).
-2. Verify subcategories expand cleanly.
-3. Audit 258 total child links for Australian domain redirects.","All accordions expand smoothly; sub-links route to US catalog.","All 9 accordions expand cleanly; identified 5 Australian outlet link leaks (Indoor, Outdoor, Homewares, Support x2).","FAIL","P1 - High"
+
+"TC-MM-01","Mega Menu - Top Level Navigation","Verify Presence & Order of All 9 Navigation Categories","User is on US staging homepage on desktop browser","Step 1: Open the homepage on desktop browser.
+
+Step 2: Look at the top navigation menu.
+
+Step 3: Verify all 9 main categories are visible: Indoor, Outdoor, Homewares, In Stock, Customisation, Projects, Inspiration, Support, Contact.","All 9 categories should be displayed in the correct order with proper spacing.","All 9 categories are present and displayed properly.","PASS","P1 - High"
+
+"TC-MM-02","Desktop - Indoor Category","Verify Indoor Dropdown Menu Display and Subcategories","User is on homepage on desktop","Step 1: Hover mouse over ""Indoor"" in the main menu.
+
+Step 2: Check the dropdown layout showing Furniture, Rugs, and Lighting columns.
+
+Step 3: Click on a few subcategories like Sofas, Dining Tables, and Lounge Chairs to check navigation.","Dropdown should open smoothly, showing all columns and subcategory links clearly.","Dropdown opens smoothly with all columns and subcategories displayed properly.","PASS","P1 - High"
+
+"TC-MM-03","Scope Isolation - Indoor","Verify Indoor Outlet Link Redirects to US Store","Indoor dropdown menu is open","Step 1: Hover over ""Indoor"" to open the menu.
+
+Step 2: Locate the ""Outlet"" link under Indoor.
+
+Step 3: Click on the Outlet link or inspect its URL destination.","The link should navigate to the US outlet page on mcstaging2.globewest.com.","Defect found: Link redirects to Australian outlet site (globewestoutlet.com.au) instead of US store.","FAIL","P1 - High"
+
+"TC-MM-04","Desktop - Outdoor Category","Verify Outdoor Dropdown Menu Display and Outlet Link","User on desktop view","Step 1: Hover mouse over ""Outdoor"" in the main menu.
+
+Step 2: Check columns and subcategory links (Tables, Chairs, Sofas, Accessories).
+
+Step 3: Check the destination URL for the Outdoor Outlet link.","All links should stay on the US store without redirecting to Australian domain.","Defect found: Outdoor Outlet link hardcodes the Australian outlet URL (globewestoutlet.com.au).","FAIL","P1 - High"
+
+"TC-MM-05","Desktop - Homewares Category","Verify Homewares Dropdown Menu Display and Outlet Link","User on desktop view","Step 1: Hover mouse over ""Homewares"" in the main menu.
+
+Step 2: Check the subcategory links under Homewares.
+
+Step 3: Check the destination URL for the Homewares Outlet link.","All links should point to the US store.","Defect found: Homewares Outlet link redirects to the Australian outlet store.","FAIL","P1 - High"
+
+"TC-MM-06","Desktop - In Stock Category","Verify In Stock Category Dropdown Links","User on desktop view","Step 1: Hover mouse over ""In Stock"" in the main navigation.
+
+Step 2: Check all category group links (In Stock Indoor, In Stock Outdoor, etc.).
+
+Step 3: Click on ""In Stock Indoor"" to test navigation.","Menu should open cleanly and links should direct to US in-stock product listings.","In Stock menu opens properly and all links navigate to US catalog.","PASS","P2 - Medium"
+
+"TC-MM-07","Desktop - Customisation & Projects","Verify Customisation and Projects Navigation Links","User on desktop view","Step 1: Hover over ""Customisation"" and click the link.
+
+Step 2: Hover over ""Projects"" and click a project gallery link.
+
+Step 3: Confirm that both pages load properly.","Both links should load their respective US pages without any errors.","Pages load correctly on US staging with clean URLs.","PASS","P2 - Medium"
+
+"TC-MM-08","Desktop - Inspiration Category","Verify Inspiration Menu Lookbooks and Blog Links","User on desktop view","Step 1: Hover mouse over ""Inspiration"".
+
+Step 2: Review lookbooks and design inspiration links.
+
+Step 3: Click on a lookbook link to test navigation.","All links should navigate to US blog and lookbook pages.","Inspiration links open the correct US lookbook pages.","PASS","P2 - Medium"
+
+"TC-MM-09","Scope Isolation - Support Category","Verify Support Dropdown Links for Australian Store Leaks","User on desktop view","Step 1: Hover mouse over ""Support"" in header.
+
+Step 2: Review all links under Support (Help Centre, Care, Warranty, Outlet).
+
+Step 3: Check destination URLs for all links.","All support links should open US customer care and FAQ pages.","Defect found: ""Shop Online Outlet"" and ""Visit Melbourne Outlet"" links redirect to Australian websites.","FAIL","P1 - High"
+
+"TC-MM-10","Desktop - Contact Category","Verify Contact Menu Link Navigation","User on desktop view","Step 1: Hover over or click ""Contact"" in header menu.
+
+Step 2: Click on ""Contact Us"" or ""Book a Showroom"".
+
+Step 3: Verify page navigation.","User should be taken to the US contact and showroom booking page.","Contact page opens with US showroom information.","PASS","P2 - Medium"
+
+"TC-MM-11","Mobile - Hamburger Navigation","Verify Mobile Menu Drawer Opens and Shows All 9 Categories","Mobile view (390x844 on mobile device)","Step 1: Open the website on mobile browser.
+
+Step 2: Tap the hamburger menu icon (three lines) in the header.
+
+Step 3: Verify that the side menu slides open smoothly.
+
+Step 4: Check that all 9 categories are listed.","Mobile drawer opens smoothly and displays all 9 main categories without horizontal scrolling.","Drawer opens smoothly showing all 9 categories clearly.","PASS","P1 - High"
+
+"TC-MM-12","Mobile - Category Submenus","Verify Category Accordions Expand and Links Navigate Properly","Mobile menu drawer is open","Step 1: Tap on ""Indoor"" to expand its subcategories.
+
+Step 2: Check that child categories expand smoothly.
+
+Step 3: Tap other categories (Outdoor, Homewares, Support) to expand.
+
+Step 4: Click subcategory links to test navigation.","Each category accordion expands and collapses cleanly on tap.","Accordions work smoothly; however, outlet links inside Indoor and Support redirect to Australian domain.","FAIL","P1 - High"
+
+"TC-MM-13","Keyboard Navigation","Verify Menu Navigation Using Tab and Arrow Keys","Desktop view, user on homepage","Step 1: Press Tab key to move focus through the main navigation menu.
+
+Step 2: Verify visible focus outline around each menu link.
+
+Step 3: Press Enter or Space to open a dropdown menu.
+
+Step 4: Use Tab and arrow keys to move through dropdown links.","User can navigate all categories and submenu items using keyboard only with clear focus highlighting.","Keyboard Tab navigation works smoothly with clear visible focus rings on all menu links.","PASS","P1 - High"
+
+"TC-MM-14","Keyboard Escape Key","Verify Escape Key Closes Open Dropdown Menu","A mega menu dropdown is currently open on desktop","Step 1: Hover or press Enter to open the ""Indoor"" menu dropdown.
+
+Step 2: Press the Escape key on your keyboard.
+
+Step 3: Verify that the dropdown closes immediately.","The dropdown menu should close right away and focus should return to the parent category button.","Menu closes immediately when Escape key is pressed.","PASS","P2 - Medium"
+
+"TC-MM-15","Mouse Hover Stability","Verify Menu Stays Open While Moving Mouse Between Columns","Desktop view, user hovers over main menu","Step 1: Hover mouse over ""Indoor"" to open the dropdown.
+
+Step 2: Move the mouse pointer diagonally towards subcategories on the right.
+
+Step 3: Verify the menu stays open and does not flicker or close accidentally.","Dropdown stays open smoothly while moving the mouse pointer across menu columns.","Dropdown menu remains stably open without accidental closing.","PASS","P2 - Medium"
+
+"TC-MM-16","Active Page Highlight","Verify Active Visual Highlight on Currently Selected Category","User has navigated to a category page like /indoor","Step 1: Click on ""Indoor"" in the menu to load the Indoor page.
+
+Step 2: Look at the top navigation bar.
+
+Step 3: Check if ""Indoor"" is visually highlighted or underlined to show current page.","The current category should show an active underline or bold text so users know where they are.","Active category displays a clear underline indicator.","PASS","P2 - Medium"
+
+"TC-MM-17","Search Overlay Coexistence","Verify Menu Closes When Opening Search Popup","Mega menu dropdown is open on desktop","Step 1: Hover over any category so the dropdown is open.
+
+Step 2: Click the Search (magnifying glass) icon in the header.
+
+Step 3: Check that the mega menu closes automatically and search box opens.","Menu should close cleanly so it does not overlap with the search box.","Menu closes smoothly as soon as search icon is clicked.","PASS","P1 - High"
+
+"TC-MM-18","Mobile Drawer Dismissal","Verify Mobile Menu Closes by Tapping Outside Drawer","Mobile menu drawer is open on mobile screen","Step 1: On mobile view, tap hamburger icon to open the side menu.
+
+Step 2: Tap anywhere on the dimmed background area outside the menu.
+
+Step 3: Verify that the drawer closes and returns to the page.","Tapping the background overlay should close the menu and re-enable page scrolling.","Drawer closes smoothly and page scrolling resumes normally.","PASS","P1 - High"
+
+"TC-MM-19","Mobile Touch Targets","Verify Mobile Menu Links are Easy to Tap","Mobile view on mobile phone or emulator","Step 1: Open mobile menu drawer.
+
+Step 2: Tap through several category links.
+
+Step 3: Check if links have enough spacing so adjacent links are not accidentally tapped.","Links should have ample height and spacing for easy finger tapping on touchscreens.","All links are easy to tap with comfortable touch spacing.","PASS","P1 - High"
+
+"TC-MM-20","Header Logo Navigation","Verify Logo Click Returns to Home While Menu is Open","Main menu dropdown is open on desktop","Step 1: Hover over a menu item to open the dropdown.
+
+Step 2: Click the GlobeWest brand logo in the header.
+
+Step 3: Verify the browser navigates back to the homepage.","Clicking the logo takes the user directly back to the US homepage and closes the menu.","Logo click redirects to homepage cleanly.","PASS","P2 - Medium"
+
+"TC-MM-21","Screen Reader Accessibility","Verify Screen Reader Labels for Menu Categories","Storefront loaded with screen reader enabled","Step 1: Focus on category menu items with screen reader on.
+
+Step 2: Open and close a category dropdown.
+
+Step 3: Check if the screen reader announces whether the menu is expanded or collapsed.","Screen reader should announce the category name and state (expanded or collapsed).","Screen reader announces category name and expanded/collapsed state accurately.","PASS","P1 - High"

@@ -38,6 +38,7 @@ async function clearOverlays(page) {
   // 1. Authenticate on US Staging
   console.log('🇺🇸 Logging in to US Staging with US Trade Account...');
   try {
+    
     await page.goto(US_LOGIN_URL, { timeout: 60000, waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(2000);
     await clearOverlays(page);

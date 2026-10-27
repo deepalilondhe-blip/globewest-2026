@@ -361,7 +361,7 @@ const testCases = [
     "Module": "CMS Block Verification",
     "Auth Matrix": "Logged In & Logged Out",
     "Test Scenario / Title": "CMS Block Verification: [Stockist][US] How to Buy with a Stockist (stockist_info)",
-    "Preconditions": "Developer Vinod Vankar deployed CMS block 'stockist_info' with Title '[Stockist][US] How to Buy with a Stockist' assigned to USA Website Store -> B2B Store View.",
+    "Preconditions": "CMS block 'stockist_info' with Title '[Stockist][US] How to Buy with a Stockist' is deployed and assigned to USA Website Store -> B2B Store View.",
     "Test Steps": "1. Inspect DOM on US /locator for CMS block .find-designer-trade-customer / stockist_info.\n2. Verify block heading, paragraph copy, and spelling standards.",
     "Expected Result (AU Baseline / Figma)": "Heading must render cleanly as 'How to Buy with a Stockist'. Copy must be localized for US market without references to Australia. American English spelling ('finalize') must be used.",
     "Actual Result (mcstaging2 Live)": "FAIL: 1. Heading renders 'How to Buy with a Stockist - us' leaking '- us' onto line 2 on mobile. 2. Body copy leaks 'Australia\\'s finest furniture and home decor retailers'. 3. Uses Australian spelling 'to finalise your order'.",

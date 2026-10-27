@@ -1,57 +1,139 @@
 Test ID,Feature / Category,Test Scenario,Pre-Conditions,Test Steps,Expected Result,Actual Result,Status,Severity
-"TC-STAT-001","Dual-Auth Matrix","Verify Authenticated Sessions across all 5 Static Pages on US and AU Storefronts","US Staging (https://mcstaging2.globewest.com/) & AU Staging (https://mcstaging2.globewest.com.au/)","1. Authenticate on US Staging with Trade Customer (deepali.londhe@overdose.digital).
-2. Authenticate on AU Staging with Customer (deepalilondhe576@gmail.com).
-3. Navigate to each static page: /terms-and-conditions-page, /privacy-policy, /contact-us, /help-centre, /404.
-4. Verify authenticated session header remains persistent.","Header persistently displays logged-in user state; Trade pricing and account navigation available across all static pages without session drops.","All 5 static pages successfully accessed under authenticated state on both storefronts; sessions remained persistent.","PASS","P1 - High"
-"TC-STAT-002","Terms & Conditions","Verify Tabbed Layout and Accordion Functionality (Trade vs General Public)","US Staging /terms-and-conditions-page (Desktop 1440x900)","1. Navigate to /terms-and-conditions-page.
-2. Verify presence of ""Trade Customers"" and ""General Public"" tabs.
-3. Click into accordion sections (1. Introduction through 16. Definitions).
-4. Assert accordion expands and collapses smoothly.","Interactive tabs toggle between Trade and General Public terms; all 16 numbered sections expand and display clause text clearly.","Tabs and accordions function smoothly; all clause panels expand with full text content.","PASS","P1 - High"
-"TC-STAT-003","Terms & Conditions","Verify US Legal Entity & Australian Jurisdiction Leakage Audit","US Staging /terms-and-conditions-page","1. Inspect clause 1.1 ""Who we are"" and contact references.
-2. Check for Australian corporate references (ACN, Victoria, PPSA, claims@globewest.com.au).
-3. Check against US legal requirements.","Terms must specify US legal entity and governing jurisdiction without Australian statutory leakage (ACN, PPSA).","DEFECT: Clause 1.1 specifies ""GlobeWest Pty Ltd, Victoria, Australia ACN 674 872 621"", claims@globewest.com.au, and PPSA (Australian Personal Property Securities Act).","FAIL","P2 - Medium"
-"TC-STAT-004","Terms & Conditions","Verify Responsive Mobile Usability & Collapsible Drawer Behavior","Mobile Viewport 390x844 (iPhone 14/15)","1. Load /terms-and-conditions-page in mobile viewport.
-2. Verify tab pills wrap cleanly.
-3. Tap to expand accordion items on touch device.
-4. Check horizontal scrolling or layout clipping.","Accordions stack cleanly; touch targets are minimum 44x44px; zero horizontal scrolling or layout clipping.","Mobile layout adapts seamlessly; accordion triggers are finger-friendly; text wraps cleanly within 390px viewport.","PASS","P1 - High"
-"TC-STAT-005","Privacy Policy","Verify Content Hierarchy & Section Matching (AU Baseline vs US Target)","US Staging /privacy-policy vs AU Baseline /privacy-policy","1. Navigate to /privacy-policy on both environments.
-2. Compare H2 headings: ""What we collect"", ""What we do with information"", ""Security"", ""How we use cookies"", ""List of cookies we collect"".
-3. Verify section copy and paragraph counts.","US Privacy Policy structure, headings, and cookie tables match AU baseline 1-to-1 without content loss.","Matches AU baseline: identical H2 hierarchy (7 sections) and consistent body copy (AU 25,164 chars vs US 25,194 chars).","PASS","P1 - High"
-"TC-STAT-006","Privacy Policy","Verify Cookie Table Formatting & Responsive Mobile Overflow","US Staging /privacy-policy (Desktop & Mobile)","1. Scroll down to ""List of cookies we collect"" table.
-2. Inspect table columns: Cookie Name, Cookie Description.
-3. Switch to mobile viewport (390px) and verify table scroll/wrap behavior.","Cookie table is structured with headers; on mobile, table is horizontally scrollable or responsive without breaking container bounds.","Table renders cleanly on desktop; responsive overflow container allows smooth horizontal scrolling on mobile.","PASS","P2 - Medium"
-"TC-STAT-007","Privacy Policy","Verify Contact Email & Australian Legal Entity References","US Staging /privacy-policy","1. Inspect Privacy Policy contact section.
-2. Check for Australian ABN and .com.au emails (marketing@globewest.com.au, enquiries@globewest.com.au).","Privacy Policy should list US-appropriate contact endpoints and privacy rights disclosures (e.g., CCPA / US privacy contact).","DEFECT: Lists Australian emails (marketing@globewest.com.au, enquiries@globewest.com.au) and references Australian privacy legislation.","FAIL","P2 - Medium"
-"TC-STAT-008","Contact Us","Verify Page Layout, Online Inquiry Form & Field Validation","US Staging /contact-us (Desktop 1440x900)","1. Navigate to /contact-us.
-2. Inspect H2 headings (""Contact Us"", ""Our Showrooms"", ""Online enquiry"").
-3. Test form input fields (Name, Email, Phone, Inquiry Reason, Message).
-4. Attempt submission with empty required fields.","Online inquiry form renders cleanly; required field validations trigger with descriptive error messages.","Form renders with all input fields; required validation triggers correctly on empty submit.","PASS","P1 - High"
-"TC-STAT-009","Contact Us","Verify Showroom Directory Localization & Australian Data Leakage","US Staging /contact-us","1. Inspect ""Our Showrooms"" section.
-2. Verify showroom cards, addresses, opening hours, and contact emails.
-3. Check whether US showrooms or AU showrooms are displayed.","US Contact page must display US showroom locations and US contact info.","DEFECT: Displays Australian showrooms (Melbourne, Sydney, Brisbane, Perth) and .com.au emails (melbourne@globewest.com.au, etc.).","FAIL","P1 - High"
-"TC-STAT-010","Contact Us","Verify Showroom Imagery & Broken Asset Inspection","US Staging /contact-us","1. Inspect all showroom and hero image tags in <main>.
-2. Assert naturalWidth > 0 and HTTP 200 for all image assets.
-3. Check for placeholder images.","All showroom photos load high-res photography; zero broken image links.","DEFECT: Broken image link detected for ""GW-090724-005-3_375x420.jpg"" returning HTTP 404.","FAIL","P2 - Medium"
-"TC-STAT-011","Contact Us","Verify Responsive Mobile Layout & Form Usability","Mobile Viewport 390x844","1. Load /contact-us on mobile.
-2. Inspect single-column stacking of form and showroom cards.
-3. Test input tap responsiveness and keyboard avoidance.","Clean vertical stack; input fields stretch full-width (350px); touch targets conform to mobile accessibility standards.","Mobile layout stacks cleanly; form inputs full-width and functional on touch devices.","PASS","P1 - High"
-"TC-STAT-012","Help Centre / FAQ","Verify Document <title> Tag & WCAG 2.2 AA Conformance (Empty Title Check)","US Staging /help-centre vs AU Baseline /help-centre","1. Navigate to /help-centre on US Staging.
-2. Inspect document.title via DOM inspection.
-3. Compare with AU baseline document.title.","Document title must be non-empty and descriptive: ""<title>Help centre</title>"" (conforms to WCAG 2.2 AA Criterion 2.4.2 Page Titled).","DEFECT: US Staging document.title is completely EMPTY ("""") whereas AU Staging has ""Help centre"".","FAIL","P1 - High"
-"TC-STAT-013","Help Centre / FAQ","Verify Hero Banner Photography & Category Navigation Grid","US Staging /help-centre","1. Inspect Help Centre hero banner asset.
-2. Inspect category cards (Orders, Delivery, Returns, Trade Accounts, Product Care).
-3. Check category card links and hover states.","Hero banner renders crisp photography; category cards render with icons and navigate to appropriate articles.","DEFECT: Hero banner image (help-center-banner.jpg) fails to load (404 error); category navigation grid renders properly.","FAIL","P2 - Medium"
-"TC-STAT-014","Help Centre / FAQ","Verify Search Bar Interaction & Responsive Mobile Layout","Desktop 1440px & Mobile 390px Viewports","1. Inspect search input in Help Centre.
-2. Enter search queries (e.g. ""delivery"", ""trade discount"").
-3. Switch to mobile viewport and verify responsive stacking.","Search input accessible with placeholder text; category cards stack into 1-2 columns on mobile cleanly.","Search input functional; layout adapts smoothly to 390px mobile viewport with zero horizontal overflow.","PASS","P2 - Medium"
-"TC-STAT-015","404 Page Not Found","Verify HTTP 404 Status Code & Error Messaging on Invalid URL","US Staging /non-existent-page-404-test","1. Navigate to an arbitrary non-existent URL (/non-existent-page-404-test).
-2. Assert HTTP response status is 404 Not Found.
-3. Verify H2 heading ""Page not available."" and body copy.","Server returns 404 response; user-friendly error message ""Page not available."" renders within global header and footer.","Server returns HTTP 404; H2 ""Page not available."" renders within global header/footer structure identical to AU baseline.","PASS","P1 - High"
-"TC-STAT-016","404 Page Not Found","Verify Document <title> Tag Staging Prefix Sanitization","US Staging /non-existent-page-404-test vs AU Baseline","1. Inspect document.title on US 404 page.
-2. Compare with AU baseline title.","Document title is cleanly formatted: ""<title>404 Not Found</title>"".","DEFECT: Title contains internal staging store prefix: ""[US] 404 Not Found"" (AU baseline is ""404 Not Found"").","FAIL","P3 - Low"
-"TC-STAT-017","404 Page Not Found","Verify Recovery CTAs, Search Bar & Responsive Mobile Layout","Desktop 1440px & Mobile 390px Viewports","1. Check recovery links (Home, Catalog, Contact Us).
-2. Verify search bar presence in header.
-3. Inspect layout in 390px mobile view.","Header search bar and navigation links allow user recovery; layout renders without distortion on mobile.","Header search and navigation links allow immediate recovery; mobile view renders cleanly (375x1262px).","PASS","P2 - Medium"
-"TC-STAT-018","Cross-Page Integrity","Verify URL Path Resolution & Footer Navigation Links","US Staging Footer Links","1. Click all footer static page links (Terms, Privacy, Contact, FAQ).
-2. Check redirection and URL resolution.
-3. Assert zero 404 errors on linked paths.","Footer links map correctly: Terms -> /terms-and-conditions-page, Privacy -> /privacy-policy, Contact -> /contact-us, FAQ -> /help-centre.","All footer links resolve to 200 OK without broken redirects or dead ends.","PASS","P1 - High"
+
+"TC-STAT-001","Dual-Auth Matrix","Verify Authenticated Sessions across all 5 Static Pages on US and AU Storefronts","US Staging (https://mcstaging2.globewest.com/) & AU Staging (https://mcstaging2.globewest.com.au/)","Step 1: Authenticate on US Staging with Trade Customer (trade.tester@globewest.com).
+
+Step 2: Authenticate on AU Staging with Customer (customer.tester@globewest.com.au).
+
+Step 3: Navigate to each static page: /terms-and-conditions-page, /privacy-policy, /contact-us, /help-centre, /404.
+
+Step 4: Verify authenticated session header remains persistent.","Header persistently displays logged-in user state; Trade pricing and account navigation available across all static pages without session drops.","All 5 static pages successfully accessed under authenticated state on both storefronts; sessions remained persistent.","PASS","P1 - High"
+
+"TC-STAT-002","Terms & Conditions","Verify Tabbed Layout and Accordion Functionality (Trade vs General Public)","US Staging /terms-and-conditions-page (Desktop 1440x900)","Step 1: Navigate to /terms-and-conditions-page.
+
+Step 2: Verify presence of ""Trade Customers"" and ""General Public"" tabs.
+
+Step 3: Click into accordion sections (1. Introduction through 16. Definitions).
+
+Step 4: Assert accordion expands and collapses smoothly.","Interactive tabs toggle between Trade and General Public terms; all 16 numbered sections expand and display clause text clearly.","Tabs and accordions function smoothly; all clause panels expand with full text content.","PASS","P1 - High"
+
+"TC-STAT-003","Terms & Conditions","Verify US Legal Entity & Australian Jurisdiction Leakage Audit","US Staging /terms-and-conditions-page","Step 1: Inspect clause 1.1 ""Who we are"" and contact references.
+
+Step 2: Check for Australian corporate references (ACN, Victoria, PPSA, claims@globewest.com.au).
+
+Step 3: Check against US legal requirements.","Terms must specify US legal entity and governing jurisdiction without Australian statutory leakage (ACN, PPSA).","DEFECT: Clause 1.1 specifies ""GlobeWest Pty Ltd, Victoria, Australia ACN 674 872 621"", claims@globewest.com.au, and PPSA (Australian Personal Property Securities Act).","FAIL","P2 - Medium"
+
+"TC-STAT-004","Terms & Conditions","Verify Responsive Mobile Usability & Collapsible Drawer Behavior","Mobile Viewport 390x844 (iPhone 14/15)","Step 1: Load /terms-and-conditions-page in mobile viewport.
+
+Step 2: Verify tab pills wrap cleanly.
+
+Step 3: Tap to expand accordion items on touch device.
+
+Step 4: Check horizontal scrolling or layout clipping.","Accordions stack cleanly; touch targets are minimum 44x44px; zero horizontal scrolling or layout clipping.","Mobile layout adapts seamlessly; accordion triggers are finger-friendly; text wraps cleanly within 390px viewport.","PASS","P1 - High"
+
+"TC-STAT-005","Privacy Policy","Verify Content Hierarchy & Section Matching (AU Baseline vs US Target)","US Staging /privacy-policy vs AU Baseline /privacy-policy","Step 1: Navigate to /privacy-policy on both environments.
+
+Step 2: Compare H2 headings: ""What we collect"", ""What we do with information"", ""Security"", ""How we use cookies"", ""List of cookies we collect"".
+
+Step 3: Verify section copy and paragraph counts.","US Privacy Policy structure, headings, and cookie tables match AU baseline 1-to-1 without content loss.","Matches AU baseline: identical H2 hierarchy (7 sections) and consistent body copy (AU 25,164 chars vs US 25,194 chars).","PASS","P1 - High"
+
+"TC-STAT-006","Privacy Policy","Verify Cookie Table Formatting & Responsive Mobile Overflow","US Staging /privacy-policy (Desktop & Mobile)","Step 1: Scroll down to ""List of cookies we collect"" table.
+
+Step 2: Inspect table columns: Cookie Name, Cookie Description.
+
+Step 3: Switch to mobile viewport (390px) and verify table scroll/wrap behavior.","Cookie table is structured with headers; on mobile, table is horizontally scrollable or responsive without breaking container bounds.","Table renders cleanly on desktop; responsive overflow container allows smooth horizontal scrolling on mobile.","PASS","P2 - Medium"
+
+"TC-STAT-007","Privacy Policy","Verify Contact Email & Australian Legal Entity References","US Staging /privacy-policy","Step 1: Inspect Privacy Policy contact section.
+
+Step 2: Check for Australian ABN and .com.au emails (marketing@globewest.com.au, enquiries@globewest.com.au).","Privacy Policy should list US-appropriate contact endpoints and privacy rights disclosures (e.g., CCPA / US privacy contact).","DEFECT: Lists Australian emails (marketing@globewest.com.au, enquiries@globewest.com.au) and references Australian privacy legislation.","FAIL","P2 - Medium"
+
+"TC-STAT-008","Contact Us","Verify Page Layout, Online Inquiry Form & Field Validation","US Staging /contact-us (Desktop 1440x900)","Step 1: Navigate to /contact-us.
+
+Step 2: Inspect H2 headings (""Contact Us"", ""Our Showrooms"", ""Online enquiry"").
+
+Step 3: Test form input fields (Name, Email, Phone, Inquiry Reason, Message).
+
+Step 4: Attempt submission with empty required fields.","Online inquiry form renders cleanly; required field validations trigger with descriptive error messages.","Form renders with all input fields; required validation triggers correctly on empty submit.","PASS","P1 - High"
+
+"TC-STAT-009","Contact Us","Verify Showroom Directory Localization & Australian Data Leakage","US Staging /contact-us","Step 1: Inspect ""Our Showrooms"" section.
+
+Step 2: Verify showroom cards, addresses, opening hours, and contact emails.
+
+Step 3: Check whether US showrooms or AU showrooms are displayed.","US Contact page must display US showroom locations and US contact info.","DEFECT: Displays Australian showrooms (Melbourne, Sydney, Brisbane, Perth) and .com.au emails (melbourne@globewest.com.au, etc.).","FAIL","P1 - High"
+
+"TC-STAT-010","Contact Us","Verify Showroom Imagery & Broken Asset Inspection","US Staging /contact-us","Step 1: Inspect all showroom and hero image tags in <main>.
+
+Step 2: Assert naturalWidth > 0 and HTTP 200 for all image assets.
+
+Step 3: Check for placeholder images.","All showroom photos load high-res photography; zero broken image links.","DEFECT: Broken image link detected for ""GW-090724-005-3_375x420.jpg"" returning HTTP 404.","FAIL","P2 - Medium"
+
+"TC-STAT-011","Contact Us","Verify Responsive Mobile Layout & Form Usability","Mobile Viewport 390x844","Step 1: Load /contact-us on mobile.
+
+Step 2: Inspect single-column stacking of form and showroom cards.
+
+Step 3: Test input tap responsiveness and keyboard avoidance.","Clean vertical stack; input fields stretch full-width (350px); touch targets conform to mobile accessibility standards.","Mobile layout stacks cleanly; form inputs full-width and functional on touch devices.","PASS","P1 - High"
+
+"TC-STAT-012","Help Centre / FAQ","Verify Document <title> Tag & WCAG 2.2 AA Conformance (Empty Title Check)","US Staging /help-centre vs AU Baseline /help-centre","Step 1: Navigate to /help-centre on US Staging.
+
+Step 2: Inspect document.title via DOM inspection.
+
+Step 3: Compare with AU baseline document.title.","Document title must be non-empty and descriptive: ""<title>Help centre</title>"" (conforms to WCAG 2.2 AA Criterion 2.4.2 Page Titled).","DEFECT: US Staging document.title is completely EMPTY ("""") whereas AU Staging has ""Help centre"".","FAIL","P1 - High"
+
+"TC-STAT-013","Help Centre / FAQ","Verify Hero Banner Photography & Category Navigation Grid","US Staging /help-centre","Step 1: Inspect Help Centre hero banner asset.
+
+Step 2: Inspect category cards (Orders, Delivery, Returns, Trade Accounts, Product Care).
+
+Step 3: Check category card links and hover states.","Hero banner renders crisp photography; category cards render with icons and navigate to appropriate articles.","DEFECT: Hero banner image (help-center-banner.jpg) fails to load (404 error); category navigation grid renders properly.","FAIL","P2 - Medium"
+
+"TC-STAT-014","Help Centre / FAQ","Verify Search Bar Interaction & Responsive Mobile Layout","Desktop 1440px & Mobile 390px Viewports","Step 1: Inspect search input in Help Centre.
+
+Step 2: Enter search queries (e.g. ""delivery"", ""trade discount"").
+
+Step 3: Switch to mobile viewport and verify responsive stacking.","Search input accessible with placeholder text; category cards stack into 1-2 columns on mobile cleanly.","Search input functional; layout adapts smoothly to 390px mobile viewport with zero horizontal overflow.","PASS","P2 - Medium"
+
+"TC-STAT-015","404 Page Not Found","Verify HTTP 404 Status Code & Error Messaging on Invalid URL","US Staging /non-existent-page-404-test","Step 1: Navigate to an arbitrary non-existent URL (/non-existent-page-404-test).
+
+Step 2: Assert HTTP response status is 404 Not Found.
+
+Step 3: Verify H2 heading ""Page not available."" and body copy.","Server returns 404 response; user-friendly error message ""Page not available."" renders within global header and footer.","Server returns HTTP 404; H2 ""Page not available."" renders within global header/footer structure identical to AU baseline.","PASS","P1 - High"
+
+"TC-STAT-016","404 Page Not Found","Verify Document <title> Tag Staging Prefix Sanitization","US Staging /non-existent-page-404-test vs AU Baseline","Step 1: Inspect document.title on US 404 page.
+
+Step 2: Compare with AU baseline title.","Document title is cleanly formatted: ""<title>404 Not Found</title>"".","DEFECT: Title contains internal staging store prefix: ""[US] 404 Not Found"" (AU baseline is ""404 Not Found"").","FAIL","P3 - Low"
+
+"TC-STAT-017","404 Page Not Found","Verify Recovery CTAs, Search Bar & Responsive Mobile Layout","Desktop 1440px & Mobile 390px Viewports","Step 1: Check recovery links (Home, Catalog, Contact Us).
+
+Step 2: Verify search bar presence in header.
+
+Step 3: Inspect layout in 390px mobile view.","Header search bar and navigation links allow user recovery; layout renders without distortion on mobile.","Header search and navigation links allow immediate recovery; mobile view renders cleanly (375x1262px).","PASS","P2 - Medium"
+
+"TC-STAT-018","Cross-Page Integrity","Verify URL Path Resolution & Footer Navigation Links","US Staging Footer Links","Step 1: Click all footer static page links (Terms, Privacy, Contact, FAQ).
+
+Step 2: Check redirection and URL resolution.
+
+Step 3: Assert zero 404 errors on linked paths.","Footer links map correctly: Terms -> /terms-and-conditions-page, Privacy -> /privacy-policy, Contact -> /contact-us, FAQ -> /help-centre.","All footer links resolve to 200 OK without broken redirects or dead ends.","PASS","P1 - High"
+
+"TC-STAT-019","Contact Us Page","Verify Contact Us Form Input Validation & Error Feedback","US Staging /contact-us (Desktop & Mobile)","Step 1: Navigate to /contact-us.
+
+Step 2: Submit empty contact form.
+
+Step 3: Verify inline error validation styling.
+
+Step 4: Fill valid name, email, phone, inquiry type, and message.
+
+Step 5: Assert submit button interaction.","Required inputs trigger clear error outlines with accessible text; valid inputs pass client-side validation smoothly.","Contact form validates required fields cleanly with inline error messaging and proper field labeling.","PASS","P1 - High"
+
+"TC-STAT-020","Help Centre / FAQ","Verify Help Centre FAQ Real-Time Search & Category Filter Traversal","US Staging /help-centre","Step 1: Navigate to /help-centre.
+
+Step 2: Enter keyword search query in FAQ search bar.
+
+Step 3: Verify real-time accordion filtering.
+
+Step 4: Click topic category tabs (Orders, Delivery, Returns, Trade Accounts).","FAQ search dynamically filters questions; topic category tabs switch visible question accordions without layout breakage.","FAQ topics and accordion questions respond accurately to keyword filtering and category selection.","PASS","P2 - Medium"
+
+"TC-STAT-021","404 Error Page","Verify 404 Error Page Branded Hero, Search Bar & Home Redirection","US Staging direct navigation to non-existent route /invalid-page-test-404","Step 1: Navigate to /non-existent-url-slug.
+
+Step 2: Verify HTTP 404 status code and branded error layout.
+
+Step 3: Test ""Return to Home"" button navigation.
+
+Step 4: Test embedded search bar execution.","Branded 404 template renders with helpful navigation, search input, and button redirecting directly to US home page.","404 page renders branded layout with search bar and functional ""Return to Home"" button; zero broken asset links.","PASS","P2 - Medium"

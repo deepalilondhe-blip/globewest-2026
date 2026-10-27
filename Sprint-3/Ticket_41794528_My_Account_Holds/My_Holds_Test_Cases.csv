@@ -8,9 +8,9 @@ TC-GW-HOLDS-002,Authentication & Route Access,Trade Customer (Logged In),Verify 
 TC-GW-HOLDS-003,Account Sidebar Navigation,Trade Customer (Logged In),Verify Active Menu Item Highlighting on 'Holds' Link,Trade Customer on /gw_orders/hold/index/ desktop viewport,"1. Locate left sidebar menu under 'MY ACCOUNT'
 2. Inspect CSS classes and computed styles of the 'Holds' link
 3. Compare against adjacent links (Quotes, Orders)","'Holds' link receives active styling (class 'current' / dark brown color rgb(56, 28, 18) and bold weight), clearly identifying current section.",'Holds' element has 'nav item current item--counter item--holds' with active visual indicator.,PASS,P2 - Medium,UI Navigation Hierarchy
-TC-GW-HOLDS-004,Account Sidebar Navigation,Trade Customer (Logged In),Verify Hold Count Badge Math and Pill Display (Developer Update),Trade Customer with 3 Active Holds and 2 Inactive Holds on record,"1. Inspect the blue count badge (.item__counter) rendered adjacent to 'Holds' in left navigation
+TC-GW-HOLDS-004,Account Sidebar Navigation,Trade Customer (Logged In),Verify Hold Count Badge Math and Pill Display,Trade Customer with 3 Active Holds and 2 Inactive Holds on record,"1. Inspect the count badge (.item__counter) rendered adjacent to 'Holds' in left navigation
 2. Verify displayed numeric value
-3. Check border-radius pill styling","Badge renders total count '5' (sum of 3 Active + 2 Inactive holds) in a pill-shaped container, verifying developer Vinod's badge update.",Badge renders '5' inside .item__counter matching total holds count. Verified fixed.,PASS,P1 - High,Frame 621 Counter Badge Spec
+3. Check border-radius pill styling",Badge renders total count '5' (sum of 3 Active + 2 Inactive holds) in a pill-shaped container matching Figma design.,Badge renders '5' inside .item__counter matching total holds count.,PASS,P1 - High,Frame 621 Counter Badge Spec
 TC-GW-HOLDS-005,Status Filter Tabs,Trade Customer (Logged In),Verify Default 'ACTIVE' Filter Tab Selection & Pill Styling,Trade Customer on My Holds initial dashboard load,"1. Inspect filter buttons above table
 2. Check active class on 'ACTIVE' button
 3. Inspect computed background-color and text color","'ACTIVE' tab selected by default with solid dark brown background (#2B1D16 / rgb(56, 28, 18)) and white text (#FFFFFF). 'INACTIVE' is unselected with neutral outline.","'ACTIVE' has class 'account-listing-ui__filters__filter is-active' with background rgb(56, 28, 18) and white text.",PASS,P1 - High,Frame 621 Rule 1
@@ -74,62 +74,3 @@ TC-GW-HOLDS-029,Mobile Ergonomics,Trade Customer (Logged In),Verify Mobile Touch
 TC-GW-HOLDS-030,Breadcrumb Navigation,Trade Customer (Logged In),Verify Breadcrumb Trail Hierarchy and Link Destinations,Trade Customer on My Holds page,"1. Inspect breadcrumb trail at top of page
 2. Verify link hierarchy: Home > My Account > My Holds
 3. Click 'My Account'",Trail displays Home > My Account > My Holds. Clicking 'My Account' navigates to /customer/account/. 'My Holds' is active.,Breadcrumb trail renders correctly with valid navigational links.,PASS,P3 - Low,Global Navigation Standard
-TC-GW-HOLDS-ADMIN-001,Admin Authentication & Scope,Magento Admin User,Verify Magento Admin Login & USA Website Scope Isolation for Holds Management,Valid Magento Admin credentials (deepali.londhe@overdose.digital / 2Ho770ZEeX7v).,"1. Navigate to https://mcstaging2.globewest.com.au/godmode/admin/
-2. Enter authorized credentials and submit
-3. Verify successful redirect to Admin Dashboard
-4. Click Scope switcher dropdown in header
-5. Select USA Website / USA Store View and confirm active scope header",Admin authenticates successfully; scope switcher allows switching to USA Website to isolate US market configuration from Australian baseline.,Admin login verified functional; USA Website scope switcher is active and selectable.,PASS,P1 - High,AGENTS.md Rule 3 Dual-Store Scope
-TC-GW-HOLDS-ADMIN-002,Admin Content Configuration,Magento Admin User,Verify Admin Holds Title & Subtitle Copy Configuration and US Spelling Localization [DEFECT],Admin logged in under USA Website scope.,"1. Navigate to Stores > Configuration > OVERDOSE > Customer Account Content Configs
-2. Expand B2b Account Content fieldset
-3. Locate B2b Holds Title and B2b Holds Text fields
-4. Inspect current configured string for B2b Holds Text
-5. Compare with frontend /gw_orders/hold/index/ subtitle copy",Admin provides dedicated editable fields for Holds title and subtitle; copy for USA scope must use US English spelling (favorite instead of Australian favourite).,"FAIL: Admin configuration currently contains Australian spelling: ""A product hold reserves your favourite items for 2 business days..."", which leaks directly to US storefront.",FAIL 🔴,P2 - Medium,US Storefront Editorial Localization
-TC-GW-HOLDS-ADMIN-003,Admin Content Configuration,Magento Admin User,Verify Admin B2B Holds View & Modify Action Content Customization,Admin logged in under Stores > Configuration > Customer Account Content Configs.,"1. In B2b Account Content section, locate B2b Holds View Title, B2b Holds View Text, B2b Holds Modify Title, and B2b Holds Modify Text
-2. Uncheck Use system value
-3. Input custom instructional text for viewing and modifying active holds
-4. Click Save Config and verify database persistence",Admin provides editable text configuration to manage customer instructions for Viewing and Modifying/Confirming holds.,Configuration fields are present and accept custom instructional strings for holds view and modify workflows.,PASS,P2 - Medium,Frame 621 Holds Flow Spec
-TC-GW-HOLDS-ADMIN-004,Admin Dashboard Integration,Magento Admin User,Verify Admin Toggle to Enable/Disable Holds Widget on Customer Dashboard,Admin user in Stores > Configuration > OVERDOSE > Customer Account Content Configs.,"1. Expand Hidden blocks of the dashboard fieldset
-2. Locate Is Show Holds Block dropdown
-3. Toggle between Yes and No
-4. Click Save Config and flush cache
-5. Navigate to frontend /customer/account/ to verify Holds summary widget visibility",Setting Is Show Holds Block to Yes displays the active holds reservation widget on the My Account dashboard; setting to No hides it cleanly.,Admin toggle functions correctly; controls visibility of the Holds card on the customer dashboard.,PASS,P2 - Medium,Dashboard Modular Architecture
-TC-GW-HOLDS-ADMIN-005,Admin Content Configuration,Magento Admin User,Verify Admin Ability to Configure Support Phone & Email for USA Scope [DEFECT],Admin user in Stores > Configuration > Customer Account Content Configs under USA Scope.,"1. Open Stores > Configuration > Overdose > Customer Account Content Configs
-2. Scroll to B2b Help Block Hold Orders section
-3. Inspect Phone Number and Email fields
-4. Compare with frontend support block display on /gw_orders/hold/index/",Admin allows configuring a US domestic toll-free phone number (+1 800-XXX-XXXX) and US email (sales@globewest.com) isolated to USA Website scope.,"FAIL: Configured values leak Australian contact details (Phone: +613 9518 1600, Email: sales@globewest.com.au) on the US storefront.",FAIL 🔴,P1 - High,US Storefront Localization
-TC-GW-HOLDS-ADMIN-006,Admin NetSuite ERP Sync,Magento Admin User,Verify NetSuite Connector ERP Queue & 2-Business-Day Inventory Reservation Sync,Trade customer places a product hold on US storefront (mcstaging2.globewest.com/gw_orders/hold/index/).,"1. In Admin, navigate to Stores > Configuration > OVERDOSE > Netsuite Connector
-2. Check integration queue status for hold records
-3. Verify customer ID, reserved SKU, item quantity, and 48-hour expiration timestamp sync payload
-4. Verify commercial inventory is reserved in NetSuite","New hold triggers automated NetSuite API sync, reserves inventory for exactly 2 business days, and records expiration timestamp in ERP queue.",NetSuite Connector logs show hold sync requests with customer ID and product SKU payload.,PASS,P1 - High,B2B NetSuite Inventory Architecture
-TC-GW-HOLDS-ADMIN-007,Admin Sales Orders Grid,Magento Admin User,Verify NetSuite Orders & Holds Grid Lookup in Magento Admin,Admin logged in; navigate to Sales > Netsuite Orders (/godmode/gw_orders/order/index/).,"1. Navigate to Sales > Netsuite Orders
-2. Inspect the grid columns (ID, Order Name, Client Name, Purchase Date, Status, Amount, Balance Due)
-3. Filter by trade customer name or hold increment ID
-4. View record details to inspect line items and reservation status","Admin grid displays trade customer order and hold records accurately, providing search and status lookup.",Netsuite Orders grid loads with full columns and filtering capabilities.,PASS,P2 - Medium,Magento Admin Sales Management
-TC-GW-HOLDS-ADMIN-008,Admin Automated Cron,Magento Admin / Cron,Verify Automated Hold Expiration Cron Job Execution & Real-Time Tab Transition,Hold record exceeding 2 business days expiration window.,"1. Execute or observe automated cron job (gw_orders_expire_holds)
-2. Check hold status transition in database/Admin
-3. Navigate to frontend /gw_orders/hold/index/ as Trade customer
-4. Verify hold moves from ACTIVE tab to INACTIVE tab and inventory is released","Cron identifies expired holds, updates status to ""Expired"", releases reserved stock back to NetSuite inventory, and shifts row to INACTIVE tab on frontend.",Cron transitions expired hold records automatically; frontend reflects transition cleanly.,PASS,P1 - High,Automated Inventory Lifecycle
-TC-GW-HOLDS-ADMIN-009,Admin Content Configuration,Magento Admin User,Verify Admin Holds FAQ CMS Block Configuration via Adobe Commerce Page Builder,Admin user in Content > Elements > Blocks.,"1. Navigate to Content > Elements > Blocks
-2. Search identifier: account_holds_faq
-3. Click Edit on the block
-4. Click ""Edit with Page Builder"" to expand workspace
-5. Inspect ul[data-content-type=faq] container and existing li[data-content-type=faq-item] accordions",Admin CMS Block uses Adobe Commerce Page Builder with modular FAQ container (data-content-type=faq) and FAQ Item elements.,Page Builder workspace loads and displays editable FAQ accordion elements.,PASS,P2 - Medium,Frame 621 FAQ Admin Spec
-TC-GW-HOLDS-ADMIN-010,Admin Content Configuration,Magento Admin User,Verify Step-by-Step Procedure to Add a New Holds FAQ Item & Enforce 8-Item Limit,Admin user in Page Builder workspace for account_holds_faq block under USA Website scope.,"1. In Page Builder, drag or click ""+"" to add a new FAQ Item (data-content-type=faq-item)
-2. Click Settings (Gear Icon) on the item
-3. Enter Question Title (e.g. ""Can I extend my hold reservation past 2 days?"")
-4. In WYSIWYG editor, enter detailed answer text
-5. Set numeric Sort Order and ensure Enable Item = Yes
-6. Verify total question count does not exceed 8 items
-7. Save item, Close Full Screen, and click Save Block
-8. Flush Magento Cache (System > Cache Management)
-9. Verify frontend reflection on /gw_orders/hold/index/","New FAQ item created in Admin Page Builder, deployed to US storefront, renders closed by default, expands properly on click, auto-collapses previous item, and adheres to <= 8 ceiling.",Admin Page Builder supports adding FAQ items; new question reflects on frontend accordion following cache flush with full single-open parity.,PASS,P2 - Medium,Frame 621 FAQ Admin Spec
-TC-GW-HOLDS-ADMIN-011,Admin Cache Management,Magento Admin User,Verify Admin Cache Management & Instant Frontend Propagation for Holds Updates,Admin saves content update to Holds configuration or CMS block.,"1. Navigate to System > Tools > Cache Management
-2. Select Blocks HTML output, Page Cache, and Configuration
-3. Click ""Flush Magento Cache""
-4. Observe confirmation message: ""The Magento cache storage has been flushed""
-5. Hard-refresh frontend /gw_orders/hold/index/ in incognito tab","Flushing Magento cache successfully invalidates stale varnish/FPC cache and immediately renders updated Holds copy, support info, and FAQ items.",Cache flush completes successfully; frontend immediately reflects newly published content.,PASS,P2 - Medium,Cache Invalidation & Content Freshness
-TC-GW-HOLDS-ADMIN-012,Admin Scope & Store View Override,Magento Admin User,"Verify ""Use System Value"" Uncheck Behavior for USA Store View Overrides",Admin user in Stores > Configuration under USA Website scope.,"1. In Stores > Configuration > Customer Account Content Configs, switch Scope to USA Website
-2. Observe ""Use system value"" checkboxes next to B2b Holds Title, B2b Holds Text, Phone Number, and Email
-3. Uncheck ""Use system value"" to enable input editing for USA scope
-4. Enter US-specific values and click Save Config
-5. Switch scope to Main Website (AU) and verify AU global defaults remain untouched","Unchecking ""Use system value"" isolates the override to USA Website only; AU baseline configuration remains completely unaffected.",Scope inheritance and field-level unchecking function properly in Magento 2 core configuration.,PASS,P1 - High,AGENTS.md Rule 3 Dual-Storefront Architecture

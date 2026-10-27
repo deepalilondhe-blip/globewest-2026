@@ -40,8 +40,15 @@ function exportTestCases(testCases, outputDir, baseFileName) {
   const csvPath = path.join(outputDir, `${baseFileName}.csv`);
 
   XLSX.writeFile(wb, xlsxPath);
-  const csvData = XLSX.utils.sheet_to_csv(ws);
-  fs.writeFileSync(csvPath, csvData, 'utf-8');
+  const headers = Object.keys(testCases[0]);
+  const csvRows = testCases.map(tc => {
+    return headers.map(h => {
+      let val = (tc[h] || '').toString();
+      return `"${val.replace(/"/g, '""')}"`;
+    }).join(',');
+  });
+  const csvContent = [headers.join(','), ...csvRows].join('\n\n');
+  fs.writeFileSync(csvPath, csvContent, 'utf-8');
 
   console.log(`[EXPORT] Created Excel sheet: ${xlsxPath}`);
   console.log(`[EXPORT] Created CSV format:  ${csvPath}`);

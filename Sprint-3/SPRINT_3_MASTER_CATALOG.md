@@ -22,14 +22,16 @@
 | 7 | **My Account – Dropdown** | Header `👤 My Account` / Mobile Overlay | Frame 620 Dropdown Artboards | **30 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Wishlist missing in dropdown, drawer links missing |
 | 8 | **FAQ Management Guide** | Magento Admin Page Builder | Frames 620/621/622/624/626 | [Admin Guide](HOW_TO_ADD_NEW_FAQ_ADMIN_GUIDE.md) | COMPLETE & SCRIPTED | 🟢 Up to 8 FAQs, Closed by Default, Single-Open Rule |
 | 8 | **Login, Create Account & Password** | `/customer/account/login/` | Auth Pages (Desktop & Mobile) | Verified & Scripted | RETESTED & VERIFIED | 🟢 Pass / Retest Verified |
-| 8 | **Homepage** | `/` | Desktop & Mobile Homepage | **25 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Hero banner CTA padding, Trade mode toggle |
-| 9 | **Mega Menu** | Primary Nav Header | Desktop Mega Menu & Mobile Drawer | **20 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Subcategory flyout alignment, brand links |
-| 10 | **Static Pages** | Terms, Privacy, FAQ, Contact Us, 404 | Content Pages Spec | **25 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Australian contact numbers & AU business addresses |
-| 11 | **About Us** | `/about-us` | About Us Spec | **20 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: AU branding badges & high-res image scaling |
-| 12 | **Blog Index Page** | `/blog` | Blog Index Spec | **30 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Pagination styling & category filtering |
-| 13 | **Blog Article Template** | `/blog/sample-article` | Blog Detail Spec | **25 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Social share links, related articles layout |
+| 8 | **Homepage** | `/` | Desktop & Mobile Homepage | **21 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Hero banner CTA padding, Trade mode toggle |
+| 9 | **Mega Menu** | Primary Nav Header | Desktop Mega Menu & Mobile Drawer | **21 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Subcategory flyout alignment, brand links |
+| 10 | **Static Pages** | Terms, Privacy, FAQ, Contact Us, 404 | Content Pages Spec | **21 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Australian contact numbers & AU business addresses |
+| 11 | **About Us** | `/about-us` | About Us Spec | **21 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: AU branding badges & high-res image scaling |
+| 12 | **Blog Index Page** | `/blog` | Blog Index Spec | **37 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Pagination styling & category filtering |
+| 13 | **Blog Article Template** | `/blog/sample-article` | Blog Detail Spec | **35 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Social share links, related articles layout |
 | 14 | **Store Locator** | `/locator` | AU Baseline & US Figma | **35 TCs** (.xlsx & .csv) | AUDITED & RETESTED | 🟢 Google Maps API Fixed (Map canvas, satellite view, zoom, pins, keyboard accessibility & city/ZIP auto-navigation); 🟡 Remaining: Regional Copy Leaks, Footer Badge & WCAG Form Labels |
 | 15 | **Claims Portal** | `/customer/account/` (`/gw_sales/claim/`) | Frames 630 & 631, `desktop/my_account/My Claims`, `mobile/my_account/My Claims`, `Create Claim` | Ready for QA | PREPARED & AUDITED | 🔴 Live US Staging Banner has dead link (`href="#"`), backend module redirects to dashboard |
+| 16 | **Enable Public Browsing Mode** | Storefront Public Views | Public Browsing Architecture | **21 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🟢 Pass / Verified Public Price Masking & Guest Access |
+| 17 | **Trade Pricing Toggle** | Header Utility & PLP/PDP/Search | Header Pricing Switcher Spec | **21 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🟢 Pass / Verified Trade vs MSRP Modes & Dual Pricing |
 
 ---
 

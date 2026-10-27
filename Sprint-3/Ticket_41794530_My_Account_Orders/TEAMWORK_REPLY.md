@@ -25,6 +25,7 @@ I have completed the QA re-verification on live staging against the Figma specif
    - Attached proof: RETEST_PROOF_02_FAQ_ACCORDION_SINGLE_OPEN.png
 
 3. Support Block Layout:
+
    - The divider line issue overlapping the text has been resolved.
 
 Assigning this ticket to you for review and next steps.
