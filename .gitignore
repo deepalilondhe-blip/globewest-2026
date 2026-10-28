@@ -16,3 +16,12 @@ playwright-report/
 .figma-chrome-profile/
 __pycache__/
 *.pyc
+
+# Environment & Credentials (GitGuardian & Secret Protection)
+.env
+.env.*
+*.key
+*.pem
+*.cert
+secret/
+secrets/
