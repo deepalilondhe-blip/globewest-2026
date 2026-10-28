@@ -78,7 +78,7 @@ During live testing with US Trade credentials (`deepali.londhe@overdose.digital`
 
 ## 4. Test Case Deliverables Summary
 
-A comprehensive test suite of **55 test cases** has been generated and exported to the ticket directory covering all client requirements, mobile responsive layouts, autocomplete lookup flows, FAQ mutex rules, UI behaviors, error handling, quantity boundary constraints, and NetSuite status mappings:
+A comprehensive test suite of **60 test cases** has been generated and exported to the ticket directory covering all client requirements, mobile responsive layouts, autocomplete lookup flows, accessibility (WCAG 2.1 AA), drag-and-drop feedback, double-submission debounce, FAQ mutex rules, UI behaviors, error handling, quantity boundary constraints, and NetSuite status mappings:
 - 📊 **Excel Spreadsheet**: `Sprint-3/Ticket_Claims_Portal/Claims_Portal_Test_Cases.xlsx`
 - 📄 **CSV Export**: `Sprint-3/Ticket_Claims_Portal/Claims_Portal_Test_Cases.csv`
 

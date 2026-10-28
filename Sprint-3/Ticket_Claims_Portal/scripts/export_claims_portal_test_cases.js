@@ -809,6 +809,80 @@ const testCases = [
     "Status": "FAIL (Blocked by P0)",
     "Severity": "P2 - MEDIUM",
     "Figma Frame Reference": "Figma Frame 2383-11003 (desktop/my_account/Create Claim)"
+  },
+
+  // -------------------------------------------------------------------------
+  // SECTION 10: ACCESSIBILITY, INTERACTIVE FEEDBACK & RESILIENCE (WCAG & SPEC)
+  // -------------------------------------------------------------------------
+  {
+    "Test Case ID": "TC-GW-CLM-056",
+    "Module": "Accessibility & Usability",
+    "Feature Scope": "Keyboard Navigation (WCAG 2.1 AA)",
+    "Auth Matrix": "Authenticated (US Trade Customer)",
+    "Test Scenario / Title": "Verify Keyboard Focus Order and Interactive Tab Traversal Across Create Claim Form",
+    "Preconditions": "User on Create Claim page using keyboard only.",
+    "Test Steps": "1. Press Tab key sequentially from top of page\n2. Verify focus moves logically through Claim Type, Product Lookup, Quantity, Resolution, Description, Dropzone, and Review CTA\n3. Verify visible high-contrast focus rings on all inputs.",
+    "Expected Result (Spec)": "Tab order follows logical DOM reading hierarchy without keyboard traps; all inputs feature visible focus states meeting WCAG 2.1 AA standards per Frame 2383-11003.",
+    "Actual Result (mcstaging2 Live)": "BLOCKED: Create Claim form undeployed (404).",
+    "Status": "FAIL (Blocked by P0)",
+    "Severity": "P2 - MEDIUM",
+    "Figma Frame Reference": "Figma Frame 2383-11003 & Frame 631"
+  },
+  {
+    "Test Case ID": "TC-GW-CLM-057",
+    "Module": "Media Intake Validation",
+    "Feature Scope": "Drag-and-Drop Active States",
+    "Auth Matrix": "Authenticated (US Trade Customer)",
+    "Test Scenario / Title": "Verify Drag-and-Drop Active Visual Hover Feedback on Media Dropzone",
+    "Preconditions": "User dragging media files from local operating system.",
+    "Test Steps": "1. Drag valid image file over upload dropzone container\n2. Observe dropzone visual styling while file is hovered\n3. Release file to trigger upload.",
+    "Expected Result (Spec)": "Dropzone triggers active dragover state with highlighted border (#381C12) and helper copy change ('Drop files here to upload') per Frame 2383-11003.",
+    "Actual Result (mcstaging2 Live)": "BLOCKED: Form undeployed (404).",
+    "Status": "FAIL (Blocked by P0)",
+    "Severity": "P2 - MEDIUM",
+    "Figma Frame Reference": "Figma Frame 2383-11003 (desktop/my_account/Create Claim)"
+  },
+  {
+    "Test Case ID": "TC-GW-CLM-058",
+    "Module": "Submission & Notifications",
+    "Feature Scope": "Double-Submission Debounce",
+    "Auth Matrix": "Authenticated (US Trade Customer)",
+    "Test Scenario / Title": "Verify Rapid Double-Click Debounce Prevention on Claim Submission CTA",
+    "Preconditions": "User on final Claim Review step ready to submit.",
+    "Test Steps": "1. Rapidly click '[ SUBMIT CLAIM ]' button twice within 300ms\n2. Verify button state immediately after first click\n3. Verify only one NetSuite case record is created.",
+    "Expected Result (Spec)": "Button is immediately disabled with inline spinner upon initial click; secondary click is ignored, preventing duplicate NetSuite Case IDs per Frame 630 & Frame 631.",
+    "Actual Result (mcstaging2 Live)": "BLOCKED: Form undeployed (404).",
+    "Status": "FAIL (Blocked by P0)",
+    "Severity": "P1 - HIGH",
+    "Figma Frame Reference": "Figma Frame 630 & Frame 631"
+  },
+  {
+    "Test Case ID": "TC-GW-CLM-059",
+    "Module": "Form Validation",
+    "Feature Scope": "Special Characters & XSS Sanitization",
+    "Auth Matrix": "Authenticated (US Trade Customer)",
+    "Test Scenario / Title": "Verify Special Characters, Emojis, and HTML Sanitization in Issue Description",
+    "Preconditions": "User entering complex text in Description textarea.",
+    "Test Steps": "1. Enter text with emojis ('📦 Damaged leg & scratch ⚡'), quotes, and HTML tags ('<script>alert(1)</script>')\n2. Submit claim\n3. Inspect rendered summary and NetSuite ticket.",
+    "Expected Result (Spec)": "Textarea accepts multiline formatting and emojis cleanly; HTML/script tags are safely sanitized to prevent XSS and database corruption per Frame 2383-11003.",
+    "Actual Result (mcstaging2 Live)": "BLOCKED: Form undeployed (404).",
+    "Status": "FAIL (Blocked by P0)",
+    "Severity": "P1 - HIGH",
+    "Figma Frame Reference": "Figma Frame 2383-11003 (desktop/my_account/Create Claim)"
+  },
+  {
+    "Test Case ID": "TC-GW-CLM-060",
+    "Module": "Network & Error Resilience",
+    "Feature Scope": "Backend API & Timeout Handling",
+    "Auth Matrix": "Authenticated (US Trade Customer)",
+    "Test Scenario / Title": "Verify Graceful Error Recovery Banner on Backend API or NetSuite Timeout",
+    "Preconditions": "Network latency or backend NetSuite gateway timeout during submission.",
+    "Test Steps": "1. Simulate 504 Gateway Timeout or network drop during claim submit\n2. Observe UI response\n3. Verify user does not lose entered form data.",
+    "Expected Result (Spec)": "System displays non-disruptive error alert: 'We are currently unable to submit your claim. Please retry or contact support' while preserving all entered form data for easy re-try per Frame 630.",
+    "Actual Result (mcstaging2 Live)": "BLOCKED: Form undeployed (404).",
+    "Status": "FAIL (Blocked by P0)",
+    "Severity": "P1 - HIGH",
+    "Figma Frame Reference": "Figma Frame 630 (Functional Specifications & Rules)"
   }
 ];
 
