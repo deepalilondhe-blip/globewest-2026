@@ -112,3 +112,36 @@ Test Case ID,Module,Feature Scope,Auth Matrix,Test Scenario / Title,Precondition
 2. Verify system displays Claim Summary review modal/page
 3. Click [ BACK ] button
 4. Verify user returns to edit form with all entered data, attached photos, and selections intact.","[ REVIEW ] navigates to summary review before lodging; [ BACK ] returns to form preserving all user input without data loss per Figma Frame 2383-11003 & Frame 631.","BLOCKED: Form undeployed (404).","FAIL (Blocked by P0)","P1 - HIGH","Figma Frame 631 & Frame 2383-11003"
+"TC-GW-CLM-041","UI Table States","Empty State Handling","Authenticated (US Trade Customer)","Verify Empty State Display When No Claims Exist for Selected Filter","Account with zero claims or filter returning 0 records.","1. Navigate to My Claims with empty account or filter with 0 items
+2. Inspect table container
+3. Verify empty state copy and action CTA.","Renders clean empty state ('You have no claims in this view') with primary [ CREATE NEW CLAIM ] CTA button; no broken table or JavaScript error per Frame 2383-11454.","BLOCKED: 302 Redirect loop to My Dashboard.","FAIL (Blocked by P0)","P2 - MEDIUM","Figma Frame 2383-11454 (desktop/my_account/My Claims)"
+"TC-GW-CLM-042","Claims Search & Filtering","Table Search Bar","Authenticated (US Trade Customer)","Verify Live Keyword Search Filtering Across Claims Table","Customer has multiple claims across different orders/products.","1. Enter keyword in search input (e.g. Order #, SKU, or Product Name)
+2. Observe table update without page reload
+3. Clear search bar.","System dynamically filters table rows matching search query with debounce (300ms) without full page reload per Frame 2383-11454.","BLOCKED: Claims listing inaccessible.","FAIL (Blocked by P0)","P1 - HIGH","Figma Frame 2383-11454 (desktop/my_account/My Claims)"
+"TC-GW-CLM-043","Claims Search & Filtering","Status Filter Tabs (ALL, OPEN, PENDING, CLOSED)","Authenticated (US Trade Customer)","Verify Status Filter Tab Switching and Active Indicator","User on My Claims listing page.","1. Click 'ALL' tab
+2. Click 'OPEN' tab
+3. Click 'PENDING' tab
+4. Click 'CLOSED' tab
+5. Verify active tab styling and URL/state update.","Tab switches active indicator (underline/pill), updates displayed claims instantly or via clean AJAX request, and preserves filter state per Frame 2383-11454.","BLOCKED: Route redirects to Dashboard.","FAIL (Blocked by P0)","P1 - HIGH","Figma Frame 2383-11454 (desktop/my_account/My Claims)"
+"TC-GW-CLM-044","Navigation & Hierarchy","Sidebar Active Indicator (AGENTS.md Rule 2)","Authenticated (US Trade Customer)","Verify My Account Sidebar 'MY CLAIMS' Active Brown Pill Styling and Sub-Items","User viewing any Claims view.","1. Inspect My Account left navigation sidebar
+2. Inspect 'MY CLAIMS' menu item
+3. Check computed background color, border-radius, and sub-items (Open Claims, Pending Claims, Closed Claims).","'MY CLAIMS' item renders active brown pill styling with sub-items expanded per Figma Frame 2383-11454 and Rule 2 of AGENTS.md.","BLOCKED: Inaccessible on live storefront (302 redirect).","FAIL (Blocked by P0)","P2 - MEDIUM","Figma Frame 2383-11454 (desktop/my_account/My Claims)"
+"TC-GW-CLM-045","Form Validation","Quantity Bound Enforcement","Authenticated (US Trade Customer)","Verify Claim Quantity Cannot Exceed Purchased Invoice Quantity","User selected product with invoice quantity of 2.","1. Locate Quantity field
+2. Attempt to input quantity higher than invoice quantity (e.g., 5)
+3. Attempt to proceed to Review.","System enforces quantity constraint: field max value locked to purchased quantity or shows inline error 'Quantity cannot exceed purchased quantity (2)' per Frame 2383-11003.","BLOCKED: Create Claim form undeployed (404).","FAIL (Blocked by P0)","P1 - HIGH","Figma Frame 2383-11003 (desktop/my_account/Create Claim)"
+"TC-GW-CLM-046","Media Intake Validation","File Size Limit (100MB)","Authenticated (US Trade Customer)","Verify Rejection of Media Files Exceeding 100MB Limit","User attempts to upload file > 100MB.","1. Select a video or image file > 100MB (e.g. 110MB .mp4)
+2. Drop into upload dropzone
+3. Verify upload rejection.","System blocks file with clear validation toast/error: 'File size exceeds maximum limit of 100MB' per Frame 2383-11003 & Frame 631.","BLOCKED: Form undeployed (404).","FAIL (Blocked by P0)","P1 - HIGH","Figma Frame 631 (Create Claim Functional Specifications)"
+"TC-GW-CLM-047","Media Intake Validation","File Extension Whitelist","Authenticated (US Trade Customer)","Verify Rejection of Disallowed File Extensions (.pdf, .exe, .zip)","User attempts to upload non-supported media type.","1. Attempt to upload a .pdf or .zip file
+2. Drop into file dropzone
+3. Verify validation error.","System strictly enforces allowed formats (.jpg, .png, .mp4, .mov) and rejects other formats with 'Unsupported file type' error per Frame 2383-11003.","BLOCKED: Form undeployed (404).","FAIL (Blocked by P0)","P1 - HIGH","Figma Frame 2383-11003 (desktop/my_account/Create Claim)"
+"TC-GW-CLM-048","Submission & Notifications","Confirmation Screen & Email Trigger","Authenticated (US Trade Customer)","Verify Post-Submission Confirmation Screen and Automated Email Trigger","User successfully submits a complete claim.","1. Complete review step and click [ SUBMIT CLAIM ]
+2. Verify confirmation page renders
+3. Verify display of NetSuite Case ID and timeline expectation
+4. Verify automated email dispatch.","Page renders confirmation banner with NetSuite Case Number, resolution SLA details, and dispatches confirmation email to customer email address per Frame 2383-11003 & Frame 630.","BLOCKED: Form undeployed (404).","FAIL (Blocked by P0)","P0 - CRITICAL","Figma Frame 630 & Frame 2383-11003"
+"TC-GW-CLM-049","Dual-Auth Matrix","Logged-Out Public Browsing Mode (AGENTS.md Rule 3)","Logged-Out / Guest User","Verify Unauthenticated Guest Access to Claims URL Redirects to Login with Referer","Guest user browsing storefront without logging in.","1. Open incognito/guest browser
+2. Navigate directly to https://mcstaging2.globewest.com/claims
+3. Verify HTTP status and redirection.","Unauthenticated users are redirected cleanly to /customer/account/login/ with referer parameter (or 404 masked); wholesale portal is strictly inaccessible per Rule 3 of AGENTS.md.","Pass: Guest cannot access authenticated claims data.","PASS","P1 - HIGH","AGENTS.md Dual-Auth Matrix"
+"TC-GW-CLM-050","Dual-Auth Matrix & AU Baseline","AU Storefront Anti-Regression Safeguard (AGENTS.md Rule 3)","Authenticated (AU Customer / Trade deepalilondhe576@gmail.com)","Verify AU Baseline Storefront Invariant Integrity (Zero Defect Leakage from US Scope)","User authenticated on AU Staging (https://mcstaging2.globewest.com.au).","1. Login with AU credentials (deepalilondhe576@gmail.com / Deep@123)
+2. Navigate to AU My Account
+3. Verify AU claims architecture remains unchanged without US experimental route leakage.","AU storefront operates on established baseline without regressions, broken redirects, or US theme leakage per Rule 3 of AGENTS.md.","Pass: AU baseline intact.","PASS","P1 - HIGH","AGENTS.md Dual-Auth Matrix & AU Baseline"
