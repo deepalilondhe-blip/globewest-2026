@@ -76,3 +76,39 @@ Test Case ID,Module,Feature Scope,Auth Matrix,Test Scenario / Title,Precondition
 "TC-GW-CLM-030","Need Help & Support Block","Regional Contact Information","Authenticated (US Trade Customer)","Verify Need Help Block Displays US Contact Information (Frame 630 Rule)","Inspect Need Help section at bottom of My Claims page.","1. Verify telephone number is US toll-free / local format
 2. Verify email is US support (e.g., support@globewest.com)
 3. Check for Australian contact leakage.","Need Help block must display US customer service contact information (not Australian +613 9518 1600 or sales@globewest.com.au) per Figma Frame 630 & Frame 2383-11454.","BLOCKED: Claims portal not deployed.","FAIL (Blocked by P0)","P1 - HIGH","Figma Frame 630 (Functional Specifications & Rules)"
+"TC-GW-CLM-031","Mobile Responsiveness","Claims Listing Mobile Layout (375px)","Authenticated (US Trade Customer)","Verify Mobile View Layout for My Claims Listing (375px Viewport)","User views claims portal on mobile device (375px viewport).","1. Set viewport to 375x812
+2. Navigate to My Claims
+3. Inspect layout hierarchy, compact table, and navigation selector.","Renders mobile layout per Frame 2383-11615: top compact account selector [ My Claims ⌵ ], compact 5-column table (Order, Date, Total, Status, Actions), full-width search input above horizontal scrolling status tabs, full-width [ CREATE NEW CLAIM ] button.","BLOCKED: 302 Redirect loop to My Dashboard on mobile.","FAIL (Blocked by P0)","P1 - HIGH","Figma Frame 2383-11615 (mobile/my_account/My Claims)"
+"TC-GW-CLM-032","Mobile Responsiveness","Create Claim Mobile Layout (375px)","Authenticated (US Trade Customer)","Verify Mobile View Layout for Create Claim Form (375px Viewport)","User accesses claim creation on mobile device.","1. Set viewport to 375x812
+2. Navigate to /claims/create
+3. Verify form fields, dropzone, and CTAs stacking.","Renders mobile form per Frame 2383-11131: single-column vertically stacked fields, full-width file dropzone, full-width stacked action buttons [ REVIEW ] and [ BACK ].","BLOCKED: Returns HTTP 404 Not Found.","FAIL (Blocked by P0)","P1 - HIGH","Figma Frame 2383-11131 (mobile/my_account/Create Claim)"
+"TC-GW-CLM-033","FAQ Accordion Block","FAQ Mutex & Admin Rule","Authenticated (US Trade Customer)","Verify FAQ Block Mutex Behavior and Max 8 Accordions Rule","User on My Claims or Create Claim page viewing FAQ block.","1. Count rendered FAQ accordion items (max 8)
+2. Verify all accordions closed by default
+3. Click to open Accordion 1
+4. Click to open Accordion 2
+5. Verify Accordion 1 closes automatically.","Up to 8 FAQs rendered; closed by default; strict mutex behavior enforced (opening an accordion closes previously opened accordion) per Frame 630.","BLOCKED: Portal undeployed.","FAIL (Blocked by P0)","P2 - MEDIUM","Figma Frame 630 (Functional Specifications & Rules)"
+"TC-GW-CLM-034","UI Table Behavior","Action Column Display Logic","Authenticated (US Trade Customer)","Verify Action Column Displays Direct 'VIEW' Link vs Dropdown (Frame 630 Rule)","User viewing claims grid.","1. Inspect row with only 'VIEW' action available
+2. Inspect row with multiple actions (e.g., View, Upload Documents, Cancel)
+3. Verify UI presentation.","Per Frame 630: If 'VIEW' is the only action, hide the dropdown wrapper and render 'VIEW' as a direct inline link. If multiple actions exist, house them inside an actions dropdown.","BLOCKED: Claims listing inaccessible.","FAIL (Blocked by P0)","P2 - MEDIUM","Figma Frame 630 (Functional Specifications & Rules)"
+"TC-GW-CLM-035","UI Table Behavior","Order Number Hyperlink Navigation","Authenticated (US Trade Customer)","Verify Order Number is Clickable Hyperlink to Order Details","User viewing claims list containing order reference numbers.","1. Inspect Order Number cell (e.g. #CH03021)
+2. Verify element is an anchor tag with href pointing to /sales/order/view/order_id/...
+3. Click Order link and verify navigation.","Per Frame 630: Order Number is an interactive clickable hyperlink navigating directly to that order's detail page.","BLOCKED: Claims listing inaccessible.","FAIL (Blocked by P0)","P1 - HIGH","Figma Frame 630 (Functional Specifications & Rules)"
+"TC-GW-CLM-036","UI Table Behavior","Pagination Controls & Item Counter","Authenticated (US Trade Customer)","Verify Pagination Controls and Items Counter per Frame 630","User has more claims than the configured items-per-page limit.","1. Inspect bottom of claims table
+2. Verify item count display on the left (e.g. 'X items')
+3. Verify page switcher on the right ([ 1 ] [ 2 ] [ > ])
+4. Click next page and verify grid update.","Renders pagination bar per Frame 630: counter on left, page switcher on right, backend-configurable items per page.","BLOCKED: Claims listing inaccessible.","FAIL (Blocked by P0)","P2 - MEDIUM","Figma Frame 630 (Functional Specifications & Rules)"
+"TC-GW-CLM-037","Create Claim Form","Help Tooltips (🛈)","Authenticated (US Trade Customer)","Verify Interactive Help Tooltips on Form Fields per Frame 631","User on Create Claim form.","1. Locate tooltips on: 'Claim type', 'Product or Invoice No', 'Quantity', 'Preferred resolution', 'Description of issue'
+2. Hover/click each tooltip
+3. Verify contextual helper popover appears with admin-configured text.","All 5 specified fields feature interactive 🛈 tooltips with administrative copy per Frame 631 & Frame 2383-11003.","BLOCKED: Create Claim form returns 404.","FAIL (Blocked by P0)","P2 - MEDIUM","Figma Frame 631 (Create Claim Functional Specifications)"
+"TC-GW-CLM-038","Create Claim Form","Media Dropzone & File Removal","Authenticated (US Trade Customer)","Verify Media Upload Thumbnail Rendering and File Deletion Action","User uploads valid images (.jpg, .png) or video (.mp4, .mov) under 100MB.","1. Upload 2 files to dropzone
+2. Verify thumbnail previews and filenames render
+3. Click [ DELETE ] button on file 1
+4. Verify file 1 is removed from upload queue while file 2 remains.","Thumbnails render dynamically alongside uploaded file names; [ DELETE ] action cleanly removes individual files prior to submission per Frame 2383-11003.","BLOCKED: Form undeployed (404).","FAIL (Blocked by P0)","P1 - HIGH","Figma Frame 2383-11003 (desktop/my_account/Create Claim)"
+"TC-GW-CLM-039","Create Claim Form","Preferred Resolution Selection","Authenticated (US Trade Customer)","Verify Preferred Resolution Dropdown Options and Selection","User filling Create Claim form.","1. Click 'Preferred resolution' dropdown
+2. Inspect available options
+3. Select an option (e.g., Replacement, Credit, Repair)
+4. Verify selected option persists.","Dropdown provides standardized resolution options (Replacement, Credit Note, Repair, Refund) per Figma Frame 2383-11003.","BLOCKED: Form undeployed (404).","FAIL (Blocked by P0)","P2 - MEDIUM","Figma Frame 2383-11003 (desktop/my_account/Create Claim)"
+"TC-GW-CLM-040","Create Claim Workflow","Review Summary & Form Progression","Authenticated (US Trade Customer)","Verify Form Progression: [ REVIEW ] Summary Step and [ BACK ] State Preservation","User has filled all required claim form fields.","1. Click [ REVIEW ] button
+2. Verify system displays Claim Summary review modal/page
+3. Click [ BACK ] button
+4. Verify user returns to edit form with all entered data, attached photos, and selections intact.","[ REVIEW ] navigates to summary review before lodging; [ BACK ] returns to form preserving all user input without data loss per Figma Frame 2383-11003 & Frame 631.","BLOCKED: Form undeployed (404).","FAIL (Blocked by P0)","P1 - HIGH","Figma Frame 631 & Frame 2383-11003"
