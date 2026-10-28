@@ -29,7 +29,7 @@
 | 12 | **Blog Index Page** | `/blog` | Blog Index Spec | **37 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Pagination styling & category filtering |
 | 13 | **Blog Article Template** | `/blog/sample-article` | Blog Detail Spec | **35 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 Defect: Social share links, related articles layout |
 | 14 | **Store Locator** | `/locator` | AU Baseline & US Figma | **35 TCs** (.xlsx & .csv) | AUDITED & RETESTED | 🟢 Google Maps API Fixed (Map canvas, satellite view, zoom, pins, keyboard accessibility & city/ZIP auto-navigation); 🟡 Remaining: Regional Copy Leaks, Footer Badge & WCAG Form Labels |
-| 15 | **Claims Portal** | `/customer/account/` (`/gw_sales/claim/`) | Frames 630 & 631, `desktop/my_account/My Claims`, `mobile/my_account/My Claims`, `Create Claim` | **50 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 P0 Blocker: Live US Staging Banner has dead link (`href="#"`), backend module redirects to dashboard |
+| 15 | **Claims Portal** | `/customer/account/` (`/gw_sales/claim/`) | Frames 630 & 631, `desktop/my_account/My Claims`, `mobile/my_account/My Claims`, `Create Claim` | **55 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🔴 P0 Blocker: Live US Staging Banner has dead link (`href="#"`), backend module redirects to dashboard |
 | 16 | **Enable Public Browsing Mode** | Storefront Public Views | Public Browsing Architecture | **21 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🟢 Pass / Verified Public Price Masking & Guest Access |
 | 17 | **Trade Pricing Toggle** | Header Utility & PLP/PDP/Search | Header Pricing Switcher Spec | **21 TCs** (.xlsx & .csv) | AUDITED & TESTED | 🟢 Pass / Verified Trade vs MSRP Modes & Dual Pricing |
 

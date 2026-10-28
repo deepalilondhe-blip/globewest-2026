@@ -735,6 +735,80 @@ const testCases = [
     "Status": "PASS",
     "Severity": "P1 - HIGH",
     "Figma Frame Reference": "AGENTS.md Dual-Auth Matrix & AU Baseline"
+  },
+
+  // -------------------------------------------------------------------------
+  // SECTION 9: FORM INTERACTION, AUTOCOMPLETE & ERROR BOUNDARIES (FRAME 631)
+  // -------------------------------------------------------------------------
+  {
+    "Test Case ID": "TC-GW-CLM-051",
+    "Module": "Search & Claim Creation",
+    "Feature Scope": "Autocomplete Suggestions Dropdown",
+    "Auth Matrix": "Authenticated (US Trade Customer)",
+    "Test Scenario / Title": "Verify Product Search Autocomplete Dropdown Renders Product Name, SKU, PO Number, and Invoice Number",
+    "Preconditions": "User on Create Claim form entering characters in the search field.",
+    "Test Steps": "1. Type partial product name (e.g. 'Pearce') in search field\n2. Wait for suggestion dropdown to appear\n3. Verify metadata displayed for each matching suggestion.",
+    "Expected Result (Spec)": "Live dropdown renders matching items showing Product Name, SKU, Customer PO Number, and Invoice Number for quick selection per Figma Frame 2383-11003 & Frame 631.",
+    "Actual Result (mcstaging2 Live)": "BLOCKED: Create Claim form undeployed (HTTP 404).",
+    "Status": "FAIL (Blocked by P0)",
+    "Severity": "P1 - HIGH",
+    "Figma Frame Reference": "Figma Frame 2383-11003 & Frame 631"
+  },
+  {
+    "Test Case ID": "TC-GW-CLM-052",
+    "Module": "Search & Claim Creation",
+    "Feature Scope": "Autocomplete Empty Result Feedback",
+    "Auth Matrix": "Authenticated (US Trade Customer)",
+    "Test Scenario / Title": "Verify Search Autocomplete Displays 'No Matching Purchased Products Found' for Non-Purchased Items",
+    "Preconditions": "User searches for a product or SKU never purchased by this trade account.",
+    "Test Steps": "1. Enter a non-purchased SKU or random product title\n2. Observe autocomplete dropdown area\n3. Verify messaging and absence of broken errors.",
+    "Expected Result (Spec)": "System gracefully displays informational feedback: 'No matching purchased products or invoices found' without crashing per Figma Frame 2383-11003.",
+    "Actual Result (mcstaging2 Live)": "BLOCKED: Form undeployed (404).",
+    "Status": "FAIL (Blocked by P0)",
+    "Severity": "P2 - MEDIUM",
+    "Figma Frame Reference": "Figma Frame 2383-11003 (desktop/my_account/Create Claim)"
+  },
+  {
+    "Test Case ID": "TC-GW-CLM-053",
+    "Module": "Create Claim Workflow",
+    "Feature Scope": "Multi-Product Claims Management",
+    "Auth Matrix": "Authenticated (US Trade Customer)",
+    "Test Scenario / Title": "Verify Removal of Individual Product Item from Multi-Product Claim Submission",
+    "Preconditions": "User added two products to a single claim using '+ ADD ANOTHER PRODUCT'.",
+    "Test Steps": "1. Locate second product item card in claim form\n2. Click '[ REMOVE ITEM ]' link / button\n3. Verify product 2 is removed while product 1 remains intact.",
+    "Expected Result (Spec)": "Selected product is removed cleanly from the claim package; remaining product fields and form state persist without page reload per Frame 2383-11003.",
+    "Actual Result (mcstaging2 Live)": "BLOCKED: Form undeployed (404).",
+    "Status": "FAIL (Blocked by P0)",
+    "Severity": "P1 - HIGH",
+    "Figma Frame Reference": "Figma Frame 2383-11003 (desktop/my_account/Create Claim)"
+  },
+  {
+    "Test Case ID": "TC-GW-CLM-054",
+    "Module": "Form Validation",
+    "Feature Scope": "Mandatory Fields Inline Validation",
+    "Auth Matrix": "Authenticated (US Trade Customer)",
+    "Test Scenario / Title": "Verify Inline Red Border and Validation Error Messages for All Mandatory Fields on Empty Submit",
+    "Preconditions": "User on Create Claim page with all fields blank.",
+    "Test Steps": "1. Leave all fields empty\n2. Click '[ REVIEW ]' button\n3. Verify error indicators on: Claim type, Product/Invoice, Quantity, Preferred resolution, Description, and Photo upload.",
+    "Expected Result (Spec)": "All empty mandatory fields receive red border outline and explicit contextual error copy (e.g. 'This is a required field', 'Minimum one photo required') per Frame 2383-11003 & Frame 631.",
+    "Actual Result (mcstaging2 Live)": "BLOCKED: Form undeployed (404).",
+    "Status": "FAIL (Blocked by P0)",
+    "Severity": "P1 - HIGH",
+    "Figma Frame Reference": "Figma Frame 631 (Create Claim Functional Specifications)"
+  },
+  {
+    "Test Case ID": "TC-GW-CLM-055",
+    "Module": "Need Help & Support Block",
+    "Feature Scope": "Help Centre CTA on Create Claim Page",
+    "Auth Matrix": "Authenticated (US Trade Customer)",
+    "Test Scenario / Title": "Verify Create Claim 'Questions about your claim?' Block and 'VISIT HELP CENTRE' Navigation",
+    "Preconditions": "User viewing bottom section of Create Claim page.",
+    "Test Steps": "1. Scroll to 'Questions about your claim?' block\n2. Verify copy and '[ VISIT HELP CENTRE ]' button\n3. Click button and verify clean navigation to Help Centre URL without 404.",
+    "Expected Result (Spec)": "Help block renders per Frame 2383-11003; button links to valid US Help Centre route with verified contact options.",
+    "Actual Result (mcstaging2 Live)": "BLOCKED: Create Claim page undeployed (404).",
+    "Status": "FAIL (Blocked by P0)",
+    "Severity": "P2 - MEDIUM",
+    "Figma Frame Reference": "Figma Frame 2383-11003 (desktop/my_account/Create Claim)"
   }
 ];
 
@@ -754,6 +828,20 @@ console.log(`✅ Saved CSV with Figma Frame References: ${csvPath}`);
 
 // 2. Export Excel (.xlsx)
 const worksheet = XLSX.utils.json_to_sheet(testCases);
+worksheet['!cols'] = [
+  { wch: 18 }, // Test Case ID
+  { wch: 26 }, // Module
+  { wch: 32 }, // Feature Scope
+  { wch: 35 }, // Auth Matrix
+  { wch: 45 }, // Test Scenario / Title
+  { wch: 45 }, // Preconditions
+  { wch: 65 }, // Test Steps
+  { wch: 60 }, // Expected Result (Spec)
+  { wch: 55 }, // Actual Result (mcstaging2 Live)
+  { wch: 18 }, // Status
+  { wch: 22 }, // Severity
+  { wch: 45 }  // Figma Frame Reference
+];
 const workbook = XLSX.utils.book_new();
 XLSX.utils.book_append_sheet(workbook, worksheet, 'Claims Portal Test Cases');
 const xlsxPath = path.join(BASE_DIR, 'Claims_Portal_Test_Cases.xlsx');
